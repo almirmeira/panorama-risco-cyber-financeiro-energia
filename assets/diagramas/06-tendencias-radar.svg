@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="900" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="46" fill="#e6edf3" font-size="25" font-weight="bold">Tendências 2026 — Horizonte de Tempo × Impacto Potencial</text>
+  <text x="40" y="72" fill="#8b949e" font-size="14">Síntese qualitativa do capítulo 06 — posicionamento relativo, não uma medição direta ou índice publicado por terceiros</text>
+  <line x1="40" y1="90" x2="1160" y2="90" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= ÁREA DO GRÁFICO ================= -->
+  <!-- Eixo Y: impacto potencial, 0 (baixo, y=660) a 10 (alto, y=130) -->
+  <!-- Eixo X: horizonte de tempo, 3 colunas: imediato / 1-2 anos / 3-5 anos -->
+
+  <!-- Colunas de horizonte (fundo alternado sutil) -->
+  <rect x="130" y="130" width="330" height="530" fill="#161b22"/>
+  <rect x="460" y="130" width="330" height="530" fill="#1c2128"/>
+  <rect x="790" y="130" width="330" height="530" fill="#161b22"/>
+
+  <!-- Linhas de grade horizontais (impacto: baixo/médio/alto) -->
+  <line x1="130" y1="660" x2="1120" y2="660" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="130" y1="395" x2="1120" y2="395" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="130" y1="130" x2="1120" y2="130" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Separadores verticais das colunas de horizonte -->
+  <line x1="460" y1="130" x2="460" y2="660" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="790" y1="130" x2="790" y2="660" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Eixo Y (linha vertical esquerda) -->
+  <line x1="130" y1="130" x2="130" y2="660" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Rótulos do eixo Y (impacto potencial) -->
+  <text x="115" y="140" fill="#8b949e" font-size="13" text-anchor="end">Alto</text>
+  <text x="115" y="399" fill="#8b949e" font-size="13" text-anchor="end">Médio</text>
+  <text x="115" y="665" fill="#8b949e" font-size="13" text-anchor="end">Baixo</text>
+
+  <text x="55" y="395" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle" transform="rotate(-90 55 395)">Impacto potencial</text>
+
+  <!-- Rótulos do eixo X (horizonte de tempo) -->
+  <text x="295" y="686" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">Imediato</text>
+  <text x="295" y="704" fill="#8b949e" font-size="12" text-anchor="middle">(já em curso)</text>
+
+  <text x="625" y="686" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">1–2 anos</text>
+
+  <text x="955" y="686" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">3–5 anos</text>
+  <text x="955" y="704" fill="#8b949e" font-size="12" text-anchor="middle">(ou mais)</text>
+
+  <text x="625" y="735" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">Horizonte de tempo</text>
+
+  <!-- ================= SETA DE LIGAÇÃO PQC: colheita agora -&gt; decifração futura ================= -->
+  <line x1="278" y1="460" x2="915" y2="185" stroke="#a371f7" stroke-width="1.5" stroke-dasharray="6,5" marker-end="url(#arrowPurple)"/>
+  <text x="560" y="300" fill="#a371f7" font-size="12" font-style="italic" text-anchor="middle">colhe agora, decifra depois ("harvest now, decrypt later")</text>
+
+  <defs>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#a371f7"/>
+    </marker>
+  </defs>
+
+  <!-- ================= PONTOS (BOLHAS) ================= -->
+
+  <!-- 1. IA ofensiva agêntica (ataque orquestrado) — vermelho -->
+  <circle cx="190" cy="167" r="15" fill="#f85149" fill-opacity="0.30" stroke="#f85149" stroke-width="2.5"/>
+  <circle cx="190" cy="167" r="4" fill="#f85149"/>
+  <text x="212" y="150" fill="#e6edf3" font-size="14" font-weight="bold">IA ofensiva agêntica</text>
+  <text x="212" y="167" fill="#8b949e" font-size="12">(ataque orquestrado, GTG-1002)</text>
+  <text x="212" y="183" fill="#8b949e" font-size="11" font-style="italic">30 alvos; sem financ./energia nomeados</text>
+
+  <!-- 2. Deepfake em fraude — âmbar -->
+  <circle cx="330" cy="222" r="15" fill="#e3b341" fill-opacity="0.30" stroke="#e3b341" stroke-width="2.5"/>
+  <circle cx="330" cy="222" r="4" fill="#e3b341"/>
+  <text x="352" y="222" fill="#e6edf3" font-size="14" font-weight="bold">Deepfake em fraude</text>
+  <text x="352" y="239" fill="#8b949e" font-size="12">(caso Arup: USD 25,6 mi)</text>
+
+  <!-- 3. Cadeia de suprimentos de software — azul -->
+  <circle cx="230" cy="285" r="15" fill="#58a6ff" fill-opacity="0.30" stroke="#58a6ff" stroke-width="2.5"/>
+  <circle cx="230" cy="285" r="4" fill="#58a6ff"/>
+  <text x="252" y="285" fill="#e6edf3" font-size="14" font-weight="bold">Cadeia de suprimentos</text>
+  <text x="252" y="302" fill="#8b949e" font-size="12">de software (OSS/npm)</text>
+
+  <!-- 4. Ransomware potencializado por IA — vermelho (borda tracejada = variante) -->
+  <circle cx="580" cy="196" r="15" fill="#f85149" fill-opacity="0.30" stroke="#f85149" stroke-width="2.5" stroke-dasharray="3,2"/>
+  <circle cx="580" cy="196" r="4" fill="#f85149"/>
+  <text x="602" y="188" fill="#e6edf3" font-size="14" font-weight="bold">Ransomware</text>
+  <text x="602" y="205" fill="#e6edf3" font-size="14" font-weight="bold">potencializado por IA</text>
+
+  <!-- 5. PQC — colheita de dados agora — roxo -->
+  <circle cx="260" cy="475" r="15" fill="#a371f7" fill-opacity="0.30" stroke="#a371f7" stroke-width="2.5"/>
+  <circle cx="260" cy="475" r="4" fill="#a371f7"/>
+  <text x="282" y="468" fill="#e6edf3" font-size="14" font-weight="bold">PQC — colheita de</text>
+  <text x="282" y="485" fill="#e6edf3" font-size="14" font-weight="bold">dados hoje</text>
+  <text x="282" y="501" fill="#8b949e" font-size="11" font-style="italic">impacto atual baixo, risco futuro</text>
+
+  <!-- 6. PQC — decifração futura — roxo -->
+  <circle cx="930" cy="172" r="17" fill="#a371f7" fill-opacity="0.30" stroke="#a371f7" stroke-width="2.5"/>
+  <circle cx="930" cy="172" r="4.5" fill="#a371f7"/>
+  <text x="880" y="150" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">PQC — decifração futura</text>
+  <text x="880" y="167" fill="#8b949e" font-size="12" text-anchor="middle">(computação quântica capaz)</text>
+  <text x="880" y="183" fill="#8b949e" font-size="11" font-style="italic" text-anchor="middle">FIPS 203/204/205 = resposta</text>
+
+  <!-- 7. Roteiro G7 CEG / migração PQC (defesa) — verde -->
+  <circle cx="650" cy="395" r="14" fill="#3fb950" fill-opacity="0.30" stroke="#3fb950" stroke-width="2.5"/>
+  <circle cx="650" cy="395" r="4" fill="#3fb950"/>
+  <text x="672" y="388" fill="#e6edf3" font-size="14" font-weight="bold">Roteiro G7 CEG</text>
+  <text x="672" y="405" fill="#8b949e" font-size="12">migração PQC (defesa, financeiro)</text>
+
+  <!-- ================= LEGENDA ================= -->
+  <line x1="40" y1="775" x2="1160" y2="775" stroke="#30363d" stroke-width="1"/>
+
+  <circle cx="60" cy="798" r="7" fill="#f85149" fill-opacity="0.5" stroke="#f85149" stroke-width="1.5"/>
+  <text x="78" y="803" fill="#c9d1d9" font-size="13" font-weight="bold">IA ofensiva / ransomware-IA</text>
+
+  <circle cx="330" cy="798" r="7" fill="#e3b341" fill-opacity="0.5" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="348" y="803" fill="#c9d1d9" font-size="13" font-weight="bold">Deepfake em fraude</text>
+
+  <circle cx="560" cy="798" r="7" fill="#58a6ff" fill-opacity="0.5" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="578" y="803" fill="#c9d1d9" font-size="13" font-weight="bold">Cadeia de suprimentos (OSS)</text>
+
+  <circle cx="850" cy="798" r="7" fill="#a371f7" fill-opacity="0.5" stroke="#a371f7" stroke-width="1.5"/>
+  <text x="868" y="803" fill="#c9d1d9" font-size="13" font-weight="bold">Ameaça quântica / PQC</text>
+
+  <circle cx="1050" cy="798" r="7" fill="#3fb950" fill-opacity="0.5" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="1068" y="803" fill="#c9d1d9" font-size="13" font-weight="bold">Marco defensivo</text>
+
+  <text x="40" y="835" fill="#8b949e" font-size="12">Posicionamento qualitativo atribuído pela síntese deste capítulo (06) a partir dos dados e ressalvas do dossiê de pesquisa — não é um índice publicado por terceiros.</text>
+  <text x="40" y="855" fill="#8b949e" font-size="12">A seta tracejada roxa ilustra que a "colheita" de dados cifrados para decifração quântica futura já pode estar ocorrendo hoje, mesmo com a capacidade de quebra a 3–5 anos ou mais de distância.</text>
+  <text x="40" y="875" fill="#8b949e" font-size="11" font-style="italic">Dados de escala/velocidade de IA agêntica ofensiva (seção "IA Generativa e Agêntica") citam apenas cobertura secundária dos relatórios primários — ver capítulo 06 para ressalvas completas.</text>
+</svg>
