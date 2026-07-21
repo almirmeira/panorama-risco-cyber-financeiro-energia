@@ -1,0 +1,48 @@
+:root {
+  --bg-base: #0d1117;
+  --bg-painel: #161b22;
+  --bg-cartao: #1c2128;
+  --borda: #30363d;
+  --txt-titulo: #e6edf3;
+  --txt-corpo: #c9d1d9;
+  --txt-sec: #8b949e;
+  --azul: #58a6ff;
+  --verde: #3fb950;
+  --vermelho: #f85149;
+  --ambar: #e3b341;
+  --ambar2: #d29922;
+  --roxo: #a371f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--txt-corpo);
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--txt-titulo);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.painel {
+  background: var(--bg-painel);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 16px;
+}
