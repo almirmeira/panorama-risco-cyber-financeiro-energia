@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="900" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="46" fill="#e6edf3" font-size="25" font-weight="bold">Radar Comparativo — Setor Financeiro × Setor Energia</text>
+  <text x="40" y="72" fill="#8b949e" font-size="14">Síntese qualitativa dos capítulos 02 e 03, escala 0 (mínimo) a 5 (máximo) — não é medição direta, é leitura comparativa</text>
+  <line x1="40" y1="90" x2="1160" y2="90" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= GRADE HEXAGONAL (níveis 1-5) ================= -->
+  <g fill="none" stroke="#30363d">
+    <polygon points="620,424 659.84,447 659.84,493 620,516 580.16,493 580.16,447" stroke-width="1"/>
+    <polygon points="620,378 699.67,424 699.67,516 620,562 540.33,516 540.33,424" stroke-width="1"/>
+    <polygon points="620,332 739.5,401 739.5,539 620,608 500.5,539 500.5,401" stroke-width="1"/>
+    <polygon points="620,286 779.34,378 779.34,562 620,654 460.66,562 460.66,378" stroke-width="1"/>
+    <polygon points="620,240 819.16,355 819.16,585 620,700 420.84,585 420.84,355" stroke-width="1.5"/>
+  </g>
+
+  <!-- Raios (eixos) do centro até o nível 5 -->
+  <g stroke="#30363d" stroke-width="1">
+    <line x1="620" y1="470" x2="620" y2="240"/>
+    <line x1="620" y1="470" x2="819.16" y2="355"/>
+    <line x1="620" y1="470" x2="819.16" y2="585"/>
+    <line x1="620" y1="470" x2="620" y2="700"/>
+    <line x1="620" y1="470" x2="420.84" y2="585"/>
+    <line x1="620" y1="470" x2="420.84" y2="355"/>
+  </g>
+
+  <!-- Marcações de escala (1-5) ao longo do eixo superior -->
+  <text x="628" y="428" fill="#8b949e" font-size="11">1</text>
+  <text x="628" y="382" fill="#8b949e" font-size="11">2</text>
+  <text x="628" y="336" fill="#8b949e" font-size="11">3</text>
+  <text x="628" y="290" fill="#8b949e" font-size="11">4</text>
+  <text x="628" y="244" fill="#8b949e" font-size="11">5</text>
+
+  <!-- ================= SÉRIES DE DADOS ================= -->
+  <!-- Setor Energia (âmbar) — desenhada primeiro para o Financeiro ficar por cima onde há sobreposição -->
+  <polygon points="620,309 819.16,355 739.5,539 620,585 500.5,539 420.84,355"
+    fill="#e3b341" fill-opacity="0.22" stroke="#e3b341" stroke-width="2.5"/>
+  <g fill="#e3b341" stroke="#e6edf3" stroke-width="1.2">
+    <circle cx="620" cy="309" r="5.5"/>
+    <circle cx="819.16" cy="355" r="5.5"/>
+    <circle cx="739.5" cy="539" r="5.5"/>
+    <circle cx="620" cy="585" r="5.5"/>
+    <circle cx="500.5" cy="539" r="5.5"/>
+    <circle cx="420.84" cy="355" r="5.5"/>
+  </g>
+
+  <!-- Setor Financeiro (azul) -->
+  <polygon points="620,240 639.92,458.5 819.16,585 620,654 440.74,573.5 480.57,389.5"
+    fill="#58a6ff" fill-opacity="0.22" stroke="#58a6ff" stroke-width="2.5"/>
+  <g fill="#58a6ff" stroke="#e6edf3" stroke-width="1.2">
+    <circle cx="620" cy="240" r="5.5"/>
+    <circle cx="639.92" cy="458.5" r="5.5"/>
+    <circle cx="819.16" cy="585" r="5.5"/>
+    <circle cx="620" cy="654" r="5.5"/>
+    <circle cx="440.74" cy="573.5" r="5.5"/>
+    <circle cx="480.57" cy="389.5" r="5.5"/>
+  </g>
+
+  <!-- Ponto central -->
+  <circle cx="620" cy="470" r="2.5" fill="#8b949e"/>
+
+  <!-- ================= RÓTULOS DOS EIXOS ================= -->
+  <text x="620" y="205" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">Frequência de</text>
+  <text x="620" y="223" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">ataque</text>
+
+  <text x="845" y="330" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="start">Impacto físico /</text>
+  <text x="845" y="348" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="start">segurança de vida</text>
+
+  <text x="845" y="592" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="start">Impacto financeiro</text>
+  <text x="845" y="610" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="start">direto</text>
+
+  <text x="620" y="740" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">Maturidade</text>
+  <text x="620" y="758" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="middle">defensiva</text>
+
+  <text x="395" y="592" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="end">Pressão</text>
+  <text x="395" y="610" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="end">regulatória</text>
+
+  <text x="395" y="330" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="end">Exposição a</text>
+  <text x="395" y="348" fill="#c9d1d9" font-size="15" font-weight="bold" text-anchor="end">APT estatal</text>
+
+  <!-- ================= LEGENDA ================= -->
+  <line x1="40" y1="800" x2="1160" y2="800" stroke="#30363d" stroke-width="1"/>
+
+  <rect x="60" y="820" width="22" height="14" fill="#58a6ff" fill-opacity="0.5" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="92" y="832" fill="#c9d1d9" font-size="14" font-weight="bold">Setor Financeiro</text>
+  <text x="92" y="850" fill="#8b949e" font-size="12">Fraude/roubo em escala, regulação madura, impacto majoritariamente financeiro (cap. 02)</text>
+
+  <rect x="600" y="820" width="22" height="14" fill="#e3b341" fill-opacity="0.5" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="632" y="832" fill="#c9d1d9" font-size="14" font-weight="bold">Setor Energia (OT/ICS)</text>
+  <text x="632" y="850" fill="#8b949e" font-size="12">APT estatal, impacto físico/disponibilidade, maturidade OT heterogênea (cap. 03)</text>
+
+  <text x="40" y="878" fill="#8b949e" font-size="12">Escala qualitativa (0–5) atribuída pela síntese deste capítulo a partir dos números e casos dos capítulos 02 e 03 — não é um índice publicado por terceiros.</text>
+</svg>
