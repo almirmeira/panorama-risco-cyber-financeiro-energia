@@ -936,3 +936,516 @@ inventar um valor consolidado.
 central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de ouro
 (acesso direto a documento primário, ou segunda fonte plenamente independente) não pôde ser cumprida integralmente
 em 2026-07-21.
+
+---
+
+## Energia
+
+> Pesquisa realizada em 2026-07-21, com o mesmo protocolo de verificação cruzada das seções anteriores: cada
+> número-chave com ≥2 fontes independentes; fontes secundárias marcadas como tal; divergências registradas
+> explicitamente; nenhum número inventado. **Atenção redobrada** nesta seção: atribuição de grupos/APTs e detalhes
+> técnicos de malware ICS são áreas de alta imprecisão pública — cada afirmação de atribuição é atribuída
+> explicitamente a quem a fez (Dragos, Mandiant, ESET, CISA etc.), sem tratamento como fato objetivo único.
+
+### Dragos OT/ICS Cybersecurity Year in Review 2025 (8ª edição, dados de 2024)
+
+- **Dado:** ataques de ransomware contra organizações industriais cresceram **mais de 87%** em relação ao ano
+  anterior; o número de grupos de ransomware mirando organizações industriais subiu para **80** (alta de 60% frente
+  aos 50 grupos de 2023). Manufatura respondeu por **mais de 50%** das vítimas de ransomware observadas. Em média,
+  **34 organizações industriais por semana** foram atacadas no 1º semestre de 2024, número que **mais que dobrou**
+  no 2º semestre.
+  - Fonte 1: Dragos. *Dragos Reports OT/ICS Cyber Threats Escalate Amid Geopolitical Conflicts and Increasing
+    Ransomware Attacks (2025 OT/ICS Cybersecurity Year in Review)*. Fevereiro de 2025.
+    https://www.dragos.com/resources/press-release/dragos-reports-ot-ics-cyber-threats-escalate-amid-geopolitical-conflicts-and-increasing-ransomware-attacks
+  - Fonte 2 (secundária, cobertura independente do mesmo relatório): TechTarget. *Dragos: Ransomware attacks
+    against industrial orgs up 87%*. 2025.
+    https://www.techtarget.com/searchsecurity/news/366619652/Dragos-Ransomware-attacks-against-industrial-orgs-up-87
+  - Observações: 8ª edição anual do relatório, cobrindo o ano-base 2024. Dragos também identificou 2 novos grupos
+    de ameaça ativos em operações OT (BAUXITE e GRAPHITE), totalizando 23 grupos de ameaça rastreados globalmente,
+    9 dos quais ativos em OT durante 2024. Quanto às vulnerabilidades, o relatório caracteriza (não quantifica em
+    número absoluto nesta cobertura) que 70% das vulnerabilidades identificadas estavam profundamente dentro de
+    redes ICS, 39% poderiam causar perda simultânea de visualização e controle, e 22% eram exploráveis pela rede e
+    expostas ao perímetro. Em 25% dos casos de ransomware houve parada completa do site OT; em 75% houve alguma
+    disrupção operacional.
+
+### Dragos OT/ICS Cybersecurity Year in Review 2026 (9ª edição, dados de 2025)
+
+- **Dado:** atividade geral de ransomware cresceu **64%** ano a ano; o número de grupos de ransomware mirando
+  setores industriais subiu para **119** (ante 80 em 2024), impactando coletivamente cerca de **3.300
+  organizações**. Manufatura respondeu por **mais de dois terços** de todas as vítimas reportadas. O tempo médio
+  de permanência (dwell time) de ransomware em ambientes OT foi de **42 dias**, mas organizações com visibilidade
+  OT abrangente conseguiram conter incidentes de ransomware OT em média em **5 dias**. Malware confirmado e
+  ransomware corresponderam, cada um, a **23%** dos engajamentos de resposta a incidentes da Dragos ao longo de
+  2025.
+  - Fonte 1: Dragos. *Dragos 2026 OT Report Shows Surge in Threat Groups and Ransomware*. Fevereiro de 2026.
+    https://www.dragos.com/resources/press-release/dragos-2026-year-in-review-new-ot-threats-ransomware
+  - Fonte 2 (secundária, cobertura independente): Cybersecurity Magazine. *Dragos: Operational Tech Under
+    Increasing Risk of Attack*. 2026. https://cybermagazine.com/news/dragos-ot-ics-cybersecurity-report
+  - Observações: 9ª edição anual, cobrindo o ano-base 2025 — portanto mais recente que a edição 2025 (ano-base
+    2024) citada acima; ambas registradas por complementaridade temporal. Dragos rastreou 26 grupos de ameaça
+    globais (11 ativos em 2025), com 3 novos grupos identificados (AZURITE, PYROXENE, SYLVANITE). Sem divergência
+    relevante entre as duas fontes quanto aos números centrais.
+
+---
+
+### Kaspersky ICS CERT — estatísticas de computadores ICS atacados (2025)
+
+- **Dado:** a porcentagem global de computadores ICS nos quais objetos maliciosos foram bloqueados ficou em
+  **21,9%** no 1º trimestre de 2025 (estável frente ao 4º trimestre de 2024, mas 2,5 pontos percentuais abaixo do
+  1º trimestre de 2024); caiu para **20,5%** no 2º trimestre e para **20,1%** no 3º trimestre de 2025 (queda de 0,4
+  p.p. frente ao trimestre anterior). No 1º semestre de 2025, o setor de **energia elétrica** teve **22,8%** de
+  computadores ICS atacados, tornando-se o **3º setor mais atacado globalmente**, atrás de biometria (28,1%) e
+  automação predial (25%); óleo e gás apareceu mais abaixo no ranking, com cerca de 15,8%–17,3% conforme o
+  trimestre (variação registrada entre coberturas). A internet permanece a principal fonte de infecção (cerca de
+  10% dos computadores ICS no 1T2025), seguida por clientes de e-mail (~2,8%) e mídia removível (~0,5%, em queda).
+  - Fonte 1: Kaspersky ICS CERT. *Threat landscape for industrial automation systems. Q1 2025* / *Q2 2025* / *Q3
+    2025*. 2025. https://ics-cert.kaspersky.com/publications/reports/2025/05/15/threat-landscape-for-industrial-automation-systems-q1-2025/
+    e https://ics-cert.kaspersky.com/publications/reports/2025/12/11/threat-landscape-for-industrial-automation-systems-q3-2025/
+  - Fonte 2 (secundária, cobertura do mesmo dado trimestral): BusinessWorld. *Malicious Objects Targeted 21.9% Of
+    ICS Computers Globally In Q1 2025: Report*. 2025.
+    https://www.businessworld.in/article/malicious-objects-targeted-219-of-ics-computers-globally-in-q1-2025-report-557276
+  - Observações: **nota de precisão** — o fetch direto do relatório oficial Q1 2025 confirmou os números globais
+    (21,9% / fontes de infecção) mas **não trouxe o detalhamento por setor** (biometria/energia elétrica/óleo e
+    gás) no corpo do texto acessado; esse detalhamento setorial foi obtido por meio de busca agregada (cobertura
+    de imprensa especializada que cita a mesma série de relatórios trimestrais da Kaspersky ICS CERT). O valor de
+    22,8% para energia elétrica refere-se especificamente ao 1º semestre de 2025 (agregação de Q1+Q2), não a um
+    único trimestre isolado. **[PARCIALMENTE CONFIRMADO — detalhamento setorial exato não verificado linha a linha
+    contra o PDF/página primária de cada trimestre em 2026-07-21]**.
+
+### Fortinet — 2025 State of Operational Technology and Cybersecurity Report
+
+- **Dado:** pesquisa global com mais de **550 profissionais de OT** em manufatura, energia, transporte e outros
+  setores críticos. **50%** das organizações relataram um ou mais incidentes de cibersegurança no último ano.
+  Interrupções operacionais com impacto em receita **caíram de 52% (2024) para 42% (2025)**. **52%** das
+  organizações já colocam a segurança OT sob responsabilidade do CISO (ante apenas 16% em 2022), com **80%**
+  planejando seguir o mesmo caminho. **78%** das organizações usam quatro ou menos fornecedores de OT (consolidação
+  estratégica); **49%** já incorporam threat intelligence, alta significativa frente a 2024.
+  - Fonte 1: Fortinet. *2025 State of Operational Technology and Cybersecurity Report*. 2025.
+    https://www.fortinet.com/resources/reports/state-ot-cybersecurity
+  - Fonte 2 (secundária, cobertura independente): Industrial Cyber. *OT cybersecurity becomes a board-level
+    priority as industrial security maturity rises, Fortinet finds*. 2025.
+    https://industrialcyber.co/industrial-cyber-attacks/ot-cybersecurity-becomes-a-board-level-priority-as-industrial-security-maturity-rises-fortinet-finds/
+  - Observações: sem divergência relevante entre fontes. A pesquisa cobre múltiplos setores (não exclusivamente
+    energia), mas energia é citada explicitamente entre os setores pesquisados.
+
+### Nozomi Networks — OT/IoT Cybersecurity Trends & Insights (2025)
+
+- **Dado:** "Manipulação de Dados" (Data Manipulation) foi a técnica mais detectada em ambientes de clientes da
+  Nozomi — **3 vezes mais frequente** que a segunda técnica mais detectada — e foi também a técnica dominante
+  especificamente nos três principais setores monitorados: Manufatura, Transporte e **Energia, Utilities e
+  Resíduos**. Média de **820 mil ataques a dispositivos IoT por dia** em 2025. Em análise de mais de 500 mil redes
+  sem fio no mundo, apenas **6%** estavam adequadamente protegidas contra ataques de desautenticação (deauth)
+  sem fio — vetor usado para obter acesso profundo a infraestrutura crítica.
+  - Fonte 1: Nozomi Networks. *OT/IoT Cybersecurity Trends & Insights, February 2025* e *Nozomi Networks Assesses
+    the 2025 OT/IoT Cybersecurity Threat Landscape (July 2025)*. 2025.
+    https://www.nozominetworks.com/ot-iot-cybersecurity-trends-insights-february-2025 e
+    https://www.nozominetworks.com/resources/ot-iot-security-report-july-2025
+  - Fonte 2 (secundária, mesmo relatório de rede sem fio): PR Newswire. *Nozomi Networks Labs Report Finds Wireless
+    Networks Unprotected as Threats to Critical Infrastructure Escalate*. 2025.
+    https://www.prnewswire.com/news-releases/nozomi-networks-labs-report-finds-wireless-networks-unprotected-as-threats-to-critical-infrastructure-escalate-302385820.html
+  - Observações: sem divergência relevante entre fontes. O achado de que Energia/Utilities está entre os três
+    setores onde "Manipulação de Dados" é a técnica dominante é diretamente relevante ao recorte desta pesquisa.
+
+### CISA — advisórios de vulnerabilidades ICS (2025)
+
+- **Dado:** mais de **450 advisórios ICS** publicados pela CISA em 2025, cobrindo vulnerabilidades em mais de
+  **200 fornecedores** e mais de **700 produtos** usados em linhas de manufatura, subestações, salas de controle,
+  redes industriais e sistemas automatizados de serviços essenciais — incluindo o setor de energia.
+  - Fonte 1 (secundária, agregador especializado que consolida os advisórios oficiais da CISA): SOCRadar. *CISA
+    Industrial Control Systems (ICS) Advisories Recap for 2025*. 2025.
+    https://socradar.io/blog/cisa-industrial-control-systems-ics-advisories-2025/
+  - Fonte 2 (secundária, cobertura independente): CyberSecurityNews. *CISA Releases Five ICS Advisories Covering
+    Vulnerabilities, and Exploits Surrounding ICS*. 2025. https://cybersecuritynews.com/cisa-releases-five-ics-advisories-covering-vulnerabilities/
+  - Observações: não foi possível acessar diretamente o índice completo oficial da CISA
+    (www.cisa.gov/news-events/ics-advisories) para contagem exata linha a linha; o número de "mais de 450" é uma
+    consolidação de agregadores especializados que acompanham os advisórios ao longo do ano — **[PARCIALMENTE
+    CONFIRMADO — contagem exata não verificada contra o índice primário da CISA em 2026-07-21]**.
+
+### IBM Cost of a Data Breach 2025 — detalhamento de tecnologia operacional (OT)
+
+- **Dado:** entre as organizações estudadas no relatório, **15%** sofreram incidentes de cibersegurança que
+  afetaram seu ambiente de OT; desse grupo, quase um quarto (**~25%**) relatou dano a sistemas ou equipamentos de
+  OT. Incidentes com impacto em OT custaram, em média, **USD 4,56 milhões** — acima da média global de USD 4,44
+  milhões (ver seção Global). Nos EUA, a norma NERC CIP (North American Electric Reliability Corporation Critical
+  Infrastructure Protection), aplicável ao setor elétrico, prevê multas de até **USD 1 milhão por dia por
+  violação** em caso de não conformidade, o que eleva o custo potencial de violações no setor.
+  - Fonte 1: IBM. *Cost of a Data Breach Report 2025*. 2025. https://www.ibm.com/reports/data-breach (ver também
+    análise setorial: https://www.ibm.com/think/insights/cost-of-a-data-breach-industrial-sector)
+  - Fonte 2 (secundária, agregador que reproduz os mesmos percentuais de OT e a referência a NERC CIP): DeepStrike.
+    *Energy and Utilities Cybersecurity Statistics 2026: OT & Grid Risk*. 2026.
+    https://deepstrike.io/blog/energy-utilities-cybersecurity-statistics
+  - Observações: o custo médio de violação especificamente do setor de energia (USD 4,83 milhões) já foi
+    registrado na seção Global; este item traz o detalhamento adicional, específico de OT, não presente na síntese
+    Global. O relatório 2025 não desagrega tempo de identificação/contenção especificamente para o setor de
+    energia (apenas para "industrial" como categoria mais ampla: 199 dias identificação + 73 dias contenção,
+    acima da média global) — **[NÃO CONFIRMADO um tempo de identificação/contenção específico para energia,
+    distinto de "industrial", em 2026-07-21]**.
+
+---
+
+### Malware ICS — BlackEnergy (ataque à rede elétrica ucraniana, 2015)
+
+- **Dado:** em **23 de dezembro de 2015**, invasores usando o malware **BlackEnergy 3** comprometeram remotamente
+  os sistemas de informação de três distribuidoras de energia ucranianas (Kyivoblenergo, Prykarpattyaoblenergo e
+  Chernivtsioblenergo) e interromperam temporariamente o fornecimento de eletricidade a um número de clientes
+  citado como **225 mil** por algumas fontes e **230 mil** por outras, por um período de **1 a 6 horas** — o
+  primeiro apagão da história causado publicamente por um ciberataque confirmado contra uma rede elétrica
+  nacional. O acesso inicial ocorreu por *spear-phishing* cerca de seis meses antes do apagão; os atacantes
+  progrediram da rede de TI corporativa até a rede SCADA, assumiram controle remoto de interfaces homem-máquina
+  (HMI) para abrir disjuntores, reconfiguraram nobreaks (UPS) das subestações, sobrescreveram firmware de
+  conversores serial-ethernet para dificultar a restauração remota, e lançaram um ataque de negação de serviço
+  contra as centrais de atendimento telefônico das distribuidoras para impedir que clientes reportassem a falta de
+  energia.
+  - Fonte 1: CISA. *Cyber-Attack Against Ukrainian Critical Infrastructure (IR-ALERT-H-16-056-01)*. 2016 (relatório
+    original produzido com E-ISAC e SANS ICS). https://www.cisa.gov/news-events/ics-alerts/ir-alert-h-16-056-01
+  - Fonte 2 (secundária, síntese técnica consolidada do mesmo incidente): E-ISAC / SANS ICS. *Analysis of the Cyber
+    Attack on the Ukrainian Power Grid (TLP:White)*. 2016.
+    https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2016/05/20081514/E-ISAC_SANS_Ukraine_DUC_5.pdf
+  - Observações: **divergência de número de clientes afetados registrada explicitamente** (225 mil vs. 230 mil) —
+    a diferença (~2%) provavelmente reflete metodologias distintas de contagem entre as três distribuidoras
+    afetadas e diferentes momentos de consolidação do dado, não uma contradição factual relevante. Atribuído por
+    múltiplas fontes (governo dos EUA, ESET, Dragos) ao grupo **Sandworm**, historicamente ligado à Rússia (ver
+    seção de atores abaixo) — atribuição de Estado-nação, registrada aqui como afirmação de terceiros, não como
+    fato verificado por esta pesquisa.
+
+### Malware ICS — Industroyer / CrashOverride (apagão de Kyiv, 2016)
+
+- **Dado:** em **17 de dezembro de 2016**, exatamente um ano após o ataque de 2015, um novo ciberataque
+  interrompeu o fornecimento de energia em cerca de **um quinto da cidade de Kyiv por cerca de uma hora**. O
+  malware usado — batizado **Industroyer** pela ESET (que primeiro obteve as amostras) e **CrashOverride** pela
+  Dragos — é descrito por ambas as empresas como o **primeiro malware conhecido projetado especificamente para
+  atacar redes elétricas**, com arquitetura modular capaz de se comunicar diretamente com protocolos industriais
+  (incluindo IEC 60870-5-101/104, IEC 61850 e OPC), permitindo abrir disjuntores de subestação diretamente, sem
+  depender de acesso a uma HMI como no ataque de 2015.
+  - Fonte 1: ESET (via cobertura técnica original) e Dragos, citados em: SecurityWeek. *'Industroyer' ICS Malware
+    Linked to Ukraine Power Grid Attack*. 2017. https://www.securityweek.com/industroyer-ics-malware-linked-ukraine-power-grid-attack/
+  - Fonte 2 (secundária, perfil consolidado): Wikipedia. *Industroyer*. https://en.wikipedia.org/wiki/Industroyer
+  - Observações: assim como no ataque de 2015, a atribuição ao grupo **Sandworm** é feita por ESET e Dragos com
+    base em sobreposições de infraestrutura e táticas, registrada aqui como atribuição de terceiros. O impacto
+    deste ataque (1 hora, ~1/5 de Kyiv) foi proporcionalmente menor que o de 2015 (225–230 mil clientes, até 6
+    horas), mas é considerado tecnicamente mais significativo pelos pesquisadores por representar malware
+    *purpose-built* para ICS elétrico, em vez de malware genérico de TI combinado a acesso manual via HMI.
+
+### Malware ICS — Industroyer2 (tentativa de apagão, abril de 2022)
+
+- **Dado:** em **8 de abril de 2022**, o CERT-UA, com apoio da ESET e da Microsoft, interveio em uma operação ativa
+  do grupo Sandworm contra uma distribuidora regional de eletricidade ucraniana que atendia cerca de **2 milhões de
+  pessoas**. Um binário Windows único (108_100.exe), com timestamp de compilação de **23 de março de 2022** e
+  endereços de objetos de informação IEC 60870-5-104 codificados especificamente para a subestação-alvo, foi
+  agendado para execução às 16h10 UTC do dia 8/4, seguido às 16h20 UTC pelo wiper **CaddyWiper** para destruir
+  estações de trabalho de operadores e dificultar a recuperação. Os atacantes já estavam na rede de TI da
+  concessionária desde pelo menos fevereiro de 2022, com movimento lateral para o ambiente ICS a partir de meados
+  de março. O ataque foi **neutralizado antes de causar um apagão real**, mas causou disrupção por meio de
+  múltiplos wipers destrutivos (CaddyWiper, OrcShred, SoloShred, AwfulShred).
+  - Fonte 1: ESET. *Industroyer2: Industroyer reloaded*. Abril de 2022. https://www.welivesecurity.com/2022/04/12/industroyer2-industroyer-reloaded/
+  - Fonte 2 (secundária, cobertura técnica independente): Claroty Team82. *Industroyer2 Variant Surfaces in Foiled
+    Attack Against Ukraine Electricity Provider*. 2022. https://claroty.com/team82/blog/industroyer2-variant-surfaces-in-foiled-attack-against-ukraine-electricity-provider
+  - Observações: sem divergência relevante entre fontes quanto à cronologia e aos números centrais. Diferente do
+    Industroyer/CrashOverride original (2016), que era modular e flexível a múltiplos protocolos, o Industroyer2 é
+    um binário único com endereços hardcoded para o alvo específico — mudança de design atribuída por
+    pesquisadores (ESET, Mandiant) a uma escolha deliberada dos atacantes, não a uma limitação técnica.
+
+### Malware ICS — Triton / Trisis / HatMan (petroquímica saudita, 2017)
+
+- **Dado:** em **agosto de 2017** (com sinais desde junho de 2017), o malware conhecido como **Triton** (também
+  chamado **Trisis** ou **HatMan**) foi usado para atingir controladores de **Sistema Instrumentado de Segurança
+  (SIS)** modelo Triconex, fabricados pela Schneider Electric, em uma planta petroquímica saudita. Em junho de
+  2017, o sistema de parada de emergência da planta foi acionado pelos atacantes e inicialmente confundido com uma
+  falha mecânica; o incidente só foi tornado público em dezembro de 2017. O malware é descrito pelas fontes como
+  capaz de desabilitar sistemas de segurança projetados para prevenir acidentes industriais catastróficos — o que
+  o diferencia de outros malwares ICS por mirar diretamente a camada de segurança física (SIS), não apenas o
+  controle de processo.
+  - Fonte 1 (secundária, síntese consolidada com múltiplas fontes primárias citadas — FireEye/Mandiant, Dragos,
+    CISA): Wikipedia. *Triton (malware)*. https://en.wikipedia.org/wiki/Triton_(malware)
+  - Fonte 2 (secundária, cobertura investigativa independente): MIT Technology Review. *Triton is the world's most
+    murderous malware, and it's spreading*. Março de 2019. https://www.technologyreview.com/2019/03/05/103328/cybersecurity-critical-infrastructure-triton-malware/
+  - Observações: não houve, segundo as fontes consultadas, dano físico ou ferimentos confirmados decorrentes deste
+    incidente especificamente. A atribuição a um instituto de pesquisa estatal russo (citada por FireEye/Mandiant
+    em relatórios de 2018) é mencionada por ambas as fontes com o grau de confiança das próprias empresas de
+    segurança que a fizeram, e é registrada aqui como atribuição de terceiros — **[NÃO CONFIRMADO de forma
+    independente por esta pesquisa; tratar como atribuição atribuída a FireEye/Mandiant, não como fato
+    estabelecido]**.
+
+### Malware ICS — Pipedream / Incontroller (Chernovite, 2022)
+
+- **Dado:** em **13 de abril de 2022**, CISA, FBI, NSA e o Departamento de Energia dos EUA publicaram um advisório
+  conjunto sobre um conjunto de ferramentas modulares de ataque a ICS/SCADA — chamado **Pipedream** pela Dragos e
+  **Incontroller** pela Mandiant — atribuído (com alta confiança pela Dragos) a um grupo de ameaça rastreado como
+  **CHERNOVITE**. O malware permite escanear, obter controle total e potencialmente sabotar controladores lógicos
+  programáveis (PLCs) Schneider Electric MODICON e MODICON Nano, PLCs OMRON Sysmac NJ e NX, e servidores OPC UA. A
+  Mandiant observou que a atividade é consistente com o histórico interesse da Rússia em ICS, mas, até a data do
+  advisório, a Dragos concluiu que o Pipedream **não havia sido identificado em uso ativo** ("in the wild").
+  - Fonte 1: CISA, FBI, NSA, Departamento de Energia dos EUA. *APT Cyber Tools Targeting ICS/SCADA Devices*.
+    Abril de 2022 (cobertura direta do advisório conjunto, via TheHackerNews). https://thehackernews.com/2022/04/us-warns-of-apt-hackers-targeting.html
+  - Fonte 2 (secundária, cobertura independente que detalha a atribuição Dragos/Mandiant): CyberScoop. *Feds warn
+    about foreign government-connected hackers aiming to disrupt vital industrial systems*. 2022.
+    https://cyberscoop.com/cisa-doe-fbi-nsa-pipedream-chernovite-ics/
+  - Observações: sem divergência relevante quanto aos fatos centrais. **Nomenclatura dupla registrada
+    explicitamente** (Pipedream = nome Dragos; Incontroller = nome Mandiant para o mesmo conjunto de ferramentas),
+    prática comum e já registrada em outros itens desta seção (Industroyer/CrashOverride). Não foi localizado, no
+    escopo desta pesquisa, um caso confirmado de uso real do Pipedream contra uma vítima específica após 2022 —
+    **[NÃO CONFIRMADO uso ativo do Pipedream contra vítima nomeada em 2025–2026]**.
+
+### Malware ICS — FrostyGoop (aquecimento distrital, Lviv, Ucrânia, 2024)
+
+- **Dado:** a Dragos identificou, em **abril de 2024**, o malware **FrostyGoop** — o **9º malware conhecido
+  especificamente voltado a ICS**, escrito em Golang e capaz de interagir diretamente com dispositivos industriais
+  via protocolo **Modbus TCP (porta 502)**. O malware foi usado em um ataque que começou no final de **janeiro de
+  2024** contra uma empresa municipal de aquecimento distrital em **Lviv, Ucrânia**, que fornecia aquecimento
+  central a mais de **600 edifícios residenciais**. O payload alterou os valores lidos por controladores de
+  temperatura **ENCO**, fazendo-os "acreditar" que a água já estava quente e, com isso, interrompendo o
+  aquecimento — resultando em cerca de **dois dias sem aquecimento** para os moradores durante temperaturas abaixo
+  de zero. O acesso inicial provavelmente ocorreu por meio de uma vulnerabilidade não determinada em um roteador
+  exposto à internet.
+  - Fonte 1: Dragos. *How to Protect Against FrostyGoop: ICS Malware Targeting Operational Technology*. 2024.
+    https://www.dragos.com/blog/protect-against-frostygoop-ics-malware-targeting-operational-technology
+  - Fonte 2 (secundária, cobertura técnica independente): The Record (Recorded Future News). *FrostyGoop malware
+    left 600 Ukrainian households without heat this winter*. 2024. https://therecord.media/frostygoop-malware-ukraine-heat
+  - Observações: sem divergência relevante entre fontes quanto aos fatos centrais. A Dragos avalia **com confiança
+    moderada** (não alta) que o FrostyGoop foi usado para atingir controladores ENCO especificamente, com base no
+    endereço IP de um dispositivo ENCO encontrado em um arquivo de configuração associado ao malware — grau de
+    confiança registrado aqui conforme a própria Dragos o classificou, não elevado a certeza pela presente
+    pesquisa. Não foi encontrada, no escopo desta pesquisa, atribuição pública nomeada de um grupo de ameaça
+    específico a este ataque — **[NÃO CONFIRMADO — nenhuma atribuição de grupo de ameaça ao FrostyGoop foi
+    localizada em 2026-07-21]**.
+
+---
+
+### Grupos/APTs — Sandworm / ELECTRUM (atribuição histórica a ataques ao setor de energia)
+
+- **Dado:** **Sandworm Team** (também rastreado como APT44, ELECTRUM, Telebots, Voodoo Bear, IRIDIUM, Seashell
+  Blizzard, Iron Viking, FROZENBARENTS, conforme o fornecedor de inteligência) é atribuído pelo governo dos EUA à
+  unidade militar russa **GRU 74455** (Centro Principal de Tecnologias Especiais). Ativo desde cerca de **2009**,
+  com atividade inicial de espionagem contra governo e energia na Ucrânia e Europa Oriental. Em **outubro de
+  2020**, o Departamento de Justiça dos EUA indiciou seis oficiais da Unidade 74455 do GRU por operações que
+  incluem os ataques de **2015 e 2016** contra distribuidoras de energia ucranianas, o ataque destrutivo
+  **NotPetya** de 2017, o ataque **Olympic Destroyer** contra os Jogos Olímpicos de Inverno de 2018, e operações
+  contra a Geórgia em 2018–2019. Desde **novembro de 2022**, o mesmo grupo (rastreado pelo Google/Mandiant como
+  **FROZENBARENTS**) tem mirado o setor de energia europeu, incluindo um ataque contra o **Caspian Pipeline
+  Consortium (CPC)**.
+  - Fonte 1: MITRE ATT&CK. *Sandworm Team, G0034*. https://attack.mitre.org/groups/G0034/
+  - Fonte 2 (secundária, perfil consolidado com cronologia de indiciamento do DOJ): Wikipedia. *Sandworm (hacker
+    group)*. https://en.wikipedia.org/wiki/Sandworm_(hacker_group)
+  - Observações: **nota de nomenclatura importante** — "ELECTRUM" é o nome que a Dragos atribui especificamente ao
+    grupo de ameaça associado ao malware CrashOverride/Industroyer (2016), que a Dragos e outros pesquisadores
+    avaliam **com sobreposição/vínculo** ao Sandworm mais amplo, mas os nomes não são estritamente sinônimos em
+    todas as fontes — registrado aqui como uma família de designações de diferentes fornecedores para atividade
+    relacionada/sobreposta, e não como um único grupo com um único nome estável entre todas as empresas de
+    inteligência. A atribuição ao Estado russo é feita pelo governo dos EUA (indiciamento formal do DOJ) e por
+    múltiplos fornecedores privados — grau de confirmação mais alto que os demais itens de atribuição desta seção.
+
+### Grupos/APTs — Volt Typhoon / VOLTZITE (pré-posicionamento em infraestrutura crítica dos EUA)
+
+- **Dado:** em **7 de fevereiro de 2024**, CISA, NSA e FBI publicaram um advisório conjunto ("AA24-038A") alertando
+  que atores estatais patrocinados pela **República Popular da China** — rastreados pela Microsoft como **Volt
+  Typhoon** — buscavam se pré-posicionar em redes de TI de infraestrutura crítica dos EUA para possibilitar
+  ciberataques disruptivos ou destrutivos em caso de crise ou conflito futuro com os EUA, usando técnicas
+  *living-off-the-land* (abuso de ferramentas administrativas legítimas já presentes na rede) para evitar detecção.
+  Os setores observados como comprometidos incluem **Comunicações, Energia, Sistemas de Transporte e Água/Esgoto**.
+  A Dragos rastreia um subgrupo com foco especificamente em OT sob o nome **VOLTZITE**. Em um caso documentado,
+  a concessionária de eletricidade municipal **Littleton Electric Light and Water Departments (LELWD)**, em
+  Massachusetts, foi comprometida por cerca de **300 dias** (de fevereiro a novembro de 2023) antes de o FBI
+  alertar a empresa; o objetivo observado foi a exfiltração de dados operacionais de OT (procedimentos de
+  operação, layout espacial da rede elétrica), não disrupção imediata. A Dragos afirma que a atividade da
+  VOLTZITE contra infraestrutura crítica dos EUA e de países alinhados ao Ocidente continuou ao longo de 2025.
+  - Fonte 1: CISA. *PRC State-Sponsored Actors Compromise and Maintain Persistent Access to U.S. Critical
+    Infrastructure (AA24-038A)*. Fevereiro de 2024. https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a
+  - Fonte 2 (secundária, caso LELWD, cobertura independente com detalhes do relatório da Dragos): SecurityWeek.
+    *China's Volt Typhoon Hackers Dwelled in US Electric Grid for 300 Days*. 2026.
+    https://www.securityweek.com/chinas-volt-typhoon-hackers-dwelled-in-us-electric-grid-for-300-days/
+  - Observações: sem divergência relevante entre fontes quanto aos fatos centrais. O caso LELWD ilustra
+    concretamente o padrão descrito no advisório de 2024 (pré-posicionamento silencioso, foco em dados de OT, não
+    em disrupção imediata) — mas a atribuição específica do incidente LELWD à VOLTZITE/Volt Typhoon é feita pela
+    Dragos e por reportagens que citam relatório da Dragos, registrada aqui como atribuição de terceiros.
+
+---
+
+### Caso — Colonial Pipeline (ransomware, maio de 2021)
+
+- **Dado:** em **7 de maio de 2021**, a Colonial Pipeline — operadora de um duto de **5.500 milhas** responsável
+  por cerca de **45% do combustível consumido na Costa Leste dos EUA** (gasolina, diesel e combustível de
+  aviação, atendendo mais de 50 milhões de pessoas em 14 estados) — sofreu um ataque de ransomware do grupo
+  **DarkSide**. O acesso inicial ocorreu por meio de uma **conta VPN desativada mas ainda válida**, com senha
+  comprometida (sem MFA habilitado); os atacantes exfiltraram cerca de **100 GB de dados em duas horas** antes de
+  ativar o ransomware. A empresa **desligou proativamente** o duto físico como medida de precaução (o ataque
+  atingiu sistemas de TI corporativos, não diretamente os sistemas de controle OT do duto). A Colonial pagou um
+  resgate de **75 bitcoins (cerca de USD 4,4 milhões)** ao DarkSide; a operação foi retomada em **12–13 de maio de
+  2021**. O FBI recuperou, em junho de 2021, cerca de **USD 2,3 milhões** em bitcoin do pagamento do resgate. O
+  Presidente Biden declarou estado de emergência devido à escassez de combustível e à compra em pânico em vários
+  estados.
+  - Fonte 1: Departamento de Energia dos EUA (DOE/CESER). *Colonial Pipeline Cyber Incident*.
+    https://www.energy.gov/ceser/colonial-pipeline-cyber-incident
+  - Fonte 2 (secundária, consolidação factual com detalhes adicionais — resgate, recuperação, vetor de acesso):
+    Wikipedia. *Colonial Pipeline ransomware attack*. https://en.wikipedia.org/wiki/Colonial_Pipeline_ransomware_attack
+  - Observações: sem divergência relevante entre fontes quanto aos números centrais. Este caso é frequentemente
+    citado como o incidente que elevou ransomware contra infraestrutura crítica a prioridade de segurança nacional
+    nos EUA, apesar de o comprometimento não ter atingido diretamente os sistemas de controle industrial (OT) do
+    duto — distinção relevante e às vezes obscurecida na cobertura popular do caso.
+
+---
+
+### Fundamentos — Modelo Purdue (níveis 0–5)
+
+- **Dado:** o **Modelo Purdue** (Purdue Enterprise Reference Architecture, 1991) organiza ambientes industriais em
+  níveis hierárquicos: **Nível 0** = processo físico; **Nível 1** = controladores (PLCs/RTUs); **Nível 2** =
+  supervisão (SCADA/HMI); **Nível 3** = gestão de operações do site (MES/historiador de dados); **Níveis 4–5** =
+  sistemas de TI corporativos/empresariais. Devido à convergência TI/OT, uma extensão amplamente adotada
+  (originada de trabalho do Departamento de Energia dos EUA) insere um **Nível 3,5 — a DMZ industrial** — como
+  zona-tampão obrigatória entre OT (níveis 0–3) e TI (níveis 4–5), já que a separação original entre esses domínios
+  deixou de ser suficiente com o aumento do fluxo de dados entre a camada de processo e a nuvem/TI corporativa.
+  - Fonte 1: Fortinet. *What Is the Purdue Model? | Fortinet Cyberglossary*. https://www.fortinet.com/resources/cyberglossary/purdue-model
+  - Fonte 2 (secundária): SentinelOne. *What Is the Purdue Model? Definition, Level & Best Practices*.
+    https://www.sentinelone.com/cybersecurity-101/cybersecurity/what-is-the-purdue-model/
+  - Observações: sem divergência relevante entre fontes quanto à estrutura de níveis; ambas confirmam o Nível 3,5
+    (DMZ industrial) como extensão posterior ao modelo original de 1991, não parte do desenho original.
+
+### Fundamentos — IEC 62443 (segurança de automação e controle industrial)
+
+- **Dado:** a série **ISA/IEC 62443** é o principal conjunto de normas internacionais de cibersegurança para
+  sistemas de automação e controle industrial (IACS), organizada em quatro grupos: **Fundamentos** (ex.: 62443-1-1
+  — terminologia, conceitos, modelos), **Políticas e Procedimentos** (ex.: 62443-2-1, 62443-2-4 — sistema de gestão
+  de cibersegurança), **Sistema** (ex.: 62443-3-2, 62443-3-3 — avaliação de risco, segmentação em zonas e definição
+  de **Níveis de Segurança, SL 1 a 4**) e **Componente** (ex.: 62443-4-1, 62443-4-2 — requisitos para produtos de
+  automação seguros). A norma define **7 requisitos fundamentais (FR)**: controle de identificação e autenticação
+  (IAC), controle de uso (UC), integridade do sistema (SI), confidencialidade de dados (DC), restrição de fluxo de
+  dados (RDF), resposta oportuna a eventos (TRE) e disponibilidade de recursos (RA). O modelo de **zonas e
+  conduítes** da norma constrói-se diretamente sobre a hierarquia de níveis do Modelo Purdue, mapeando cada nível a
+  uma zona de segurança com Nível de Segurança correspondente.
+  - Fonte 1 (secundária, síntese técnica em português consolidando a estrutura oficial da norma): O Setor Elétrico.
+    *IEC 62443: reforçando a segurança cibernética em infraestrutura crítica*.
+    https://www.osetoreletrico.com.br/iec-62443-reforcando-a-seguranca-cibernetica-em-infraestrutura-critica/
+  - Fonte 2 (secundária): ISA São Paulo Section. *Cibersegurança Industrial e a Norma ISA/IEC 62443: Essencial para
+    Engenheiros e Técnicos de Produção*. https://isasp.org.br/ciberseguranca-industrial-e-a-norma-isa-iec-62443-essencial-para-engenheiros-e-tecnicos-de-producao/
+  - Observações: sem divergência relevante entre fontes quanto à estrutura da norma. Não foi possível, no escopo
+    desta pesquisa, acessar diretamente o texto oficial pago da IEC (iec.ch) para citação primária — ambas as
+    fontes usadas são secundárias/explicativas em português, mas tecnicamente consistentes entre si e com a
+    descrição amplamente publicada da norma.
+
+---
+
+### Brasil — regulação ANEEL: Resolução Normativa nº 964/2021 e ARCiber
+
+- **Dado:** o marco regulatório de cibersegurança do setor elétrico brasileiro é a **Resolução Normativa ANEEL nº
+  964, de 14 de dezembro de 2021** (publicada no Diário Oficial da União em 22/12/2021, em vigor desde 1º de julho
+  de 2022), que estabelece as diretrizes e o conteúdo mínimo de políticas de segurança cibernética a serem
+  adotadas por concessionárias, permissionárias, autorizadas e demais agentes do setor elétrico, incluindo o ONS.
+  A resolução define o **ARCiber (Ambiente Regulado Cibernético)**, composto pelos centros de operação dos
+  agentes, pelos equipamentos de infraestrutura de troca de dados/voz para o ambiente operacional do ONS ou de
+  outros agentes, e pelo próprio ambiente operacional do ONS. A resolução foi precedida pela **Resolução CNPE nº
+  24/2021**, que atribuiu à ANEEL a coordenação de ações setoriais de resposta a incidentes cibernéticos.
+  - Fonte 1: ANEEL. *Resolução normativa Aneel nº 964, de 14 de dezembro de 2021* (texto oficial).
+    https://www2.aneel.gov.br/cedoc/ren2021964.html
+  - Fonte 2 (secundária, análise jurídico-regulatória que confirma data e escopo): PwC Brasil. *Resolução
+    Normativa da Aneel 964: sua empresa está preparada para cumpri-la?*. 2022.
+    https://www.pwc.com.br/pt/estudos/setores-atividade/energia/2022/resolucao-normativa-da-aneel-964.html
+  - Observações: sem divergência relevante entre fontes quanto ao número e à data da resolução (14/12/2021). Uma
+    tentativa de fetch de uma página institucional resumida da própria ANEEL retornou "10 de dezembro de 2021"
+    para a mesma resolução — divergência de 4 dias frente às duas fontes acima (texto oficial da própria ANEEL em
+    ren2021964.html e cobertura jurídica independente), que convergem em 14/12/2021; tratado como o dado correto
+    por ser confirmado por duas fontes concordantes contra uma única fonte discordante.
+
+### Brasil — ONS: Procedimento de Rede sobre segurança cibernética
+
+- **Dado:** o Operador Nacional do Sistema Elétrico (ONS) encaminhou à ANEEL, em **10 de dezembro de 2019**, uma
+  proposta de submódulo dos Procedimentos de Rede destinada a estabelecer os controles de segurança cibernética a
+  serem implementados no ARCiber — abrangendo os centros de operação dos agentes, os equipamentos de
+  infraestrutura de troca de dados entre ONS e agentes, e as salas de controle do próprio ONS. A implementação dos
+  requisitos e critérios propostos estava prevista para ocorrer em **três ondas consecutivas**, a **18, 27 e 36
+  meses** após o início de vigência do submódulo.
+  - Fonte 1: ONS. *ONS propõe Procedimento de Rede sobre segurança cibernética*. 2020.
+    https://www.ons.org.br/Paginas/Noticias/20200424-procedimentoderedesegurancacibernetica.aspx
+  - Fonte 2 (secundária, referência ao mesmo processo regulatório, análise de impacto): ANEEL. *Análise de Impacto
+    Regulatório (AIR) sobre segurança cibernética no Setor*. https://www2.aneel.gov.br/cedoc/air2021003srt.pdf
+  - Observações: **[NÃO CONFIRMADO — número exato do submódulo dos Procedimentos de Rede (ex.: 25.4, 25.9 ou
+    outro) e sua data final de aprovação/vigência não foram localizados com precisão em 2026-07-21]**; as fontes
+    disponíveis confirmam a proposta original (dez/2019) e o cronograma de três ondas, mas não o número definitivo
+    do submódulo nem eventual renumeração posterior. Recomenda-se verificação manual direta no site de
+    Procedimentos de Rede do ONS (ons.org.br/ProcedimentosDeRede) antes de uso no capítulo final do panorama.
+
+### Brasil — fiscalização ANEEL da política de segurança cibernética (2025)
+
+- **Dado:** por meio do **Despacho ANEEL nº 427, de 17 de fevereiro de 2025**, os agentes do setor elétrico
+  tiveram até **30 de junho de 2025** para enviar à ANEEL as informações necessárias ao acompanhamento da
+  implementação de suas políticas de segurança cibernética, conforme exigido pela Resolução Normativa nº 964/2021.
+  - Fonte 1: ANEEL. *Agentes do setor elétrico têm até o dia 30 de junho para enviar informações sobre segurança
+    cibernética*. Fevereiro de 2025. https://www.gov.br/aneel/pt-br/assuntos/noticias/2025/agentes-do-setor-eletrico-tem-ate-o-dia-30-de-junho-para-enviar-informacoes-sobre-seguranca-cibernetica
+  - Fonte 2 (secundária, cobertura independente do mesmo despacho): ISC Brasil. *Aneel inicia fiscalização da
+    segurança cibernética na redes de energia do país*. 2025.
+    https://www.iscbrasil.com.br/pt-br/blog/seguranca-publica/aneel-inicia-fiscalizacao-da-seguranca-cibernetica-na-redes-de-e.html
+  - Observações: sem divergência relevante entre fontes. Este despacho representa a primeira fiscalização
+    concreta e com prazo definido da ANEEL sobre a conformidade dos agentes com a RN 964/2021, mais de três anos
+    após a resolução entrar em vigor.
+
+---
+
+### Brasil — incidentes conhecidos no setor de energia: Eletrobras/Eletronuclear e Copel (fevereiro de 2021)
+
+- **Dado:** no início de **fevereiro de 2021**, duas grandes empresas de energia brasileiras sofreram ataques de
+  ransomware na mesma semana. Na **Eletrobras**, o incidente ocorreu na subsidiária **Eletronuclear** e afetou
+  servidores da rede administrativa, sem impacto nas usinas nucleares Angra 1 e Angra 2 (fisicamente desconectadas
+  da rede administrativa) nem no Sistema Interligado Nacional. Na **Copel** (Companhia Paranaense de Energia), o
+  ataque foi atribuído ao grupo de ransomware **DarkSide**, que alegou ter roubado mais de **1.000 GB de dados**,
+  incluindo informações de acesso a infraestrutura sensível e dados pessoais de executivos e clientes — os
+  atacantes alegaram ter obtido acesso à solução de gestão de acessos privilegiados **CyberArk** da empresa e
+  exfiltrado senhas em texto claro de sua infraestrutura local e de internet.
+  - Fonte 1: BleepingComputer. *Eletrobras, Copel energy companies hit by ransomware attacks*. 2021.
+    https://www.bleepingcomputer.com/news/security/eletrobras-copel-energy-companies-hit-by-ransomware-attacks/
+  - Fonte 2 (secundária, cobertura em português do mesmo incidente): Canaltech. *Eletrobras e Copel são vítimas de
+    ataques de ransomware*. 2021. https://canaltech.com.br/seguranca/eletrobras-e-copel-sao-vitimas-de-ataques-de-ransomware-178557/
+  - Observações: sem divergência relevante entre fontes. Ambos os incidentes ilustram um padrão recorrente nesta
+    pesquisa (visto também no setor financeiro): sistemas administrativos/corporativos de TI comprometidos, com
+    segmentação bem-sucedida evitando impacto nos sistemas de operação/OT críticos (usinas nucleares, no caso da
+    Eletrobras).
+
+### Brasil — incidente Petrobras / grupo Everest (novembro de 2025)
+
+- **Dado:** em **14 de novembro de 2025**, o grupo de ransomware/extorsão **Everest** publicou em seu site de
+  vazamento a alegação de ter invadido a **Petrobras** e sua parceira **SAExploration** (contratada de dados
+  sísmicos), afirmando ter roubado mais de **176 GB** de dados de navegação sísmica, dos quais mais de **90 GB**
+  pertenceriam diretamente à Petrobras — incluindo posicionamento de embarcações, configurações de equipamentos,
+  leituras de hidrofones e medições de profundidade. A Petrobras declarou que a violação envolve um **terceiro**
+  (a contratada) e que seus próprios sistemas permanecem íntegros.
+  - Fonte 1: Hackread. *Everest Ransomware Says It Breached Brazilian Energy Giant Petrobras*. Novembro de 2025.
+    https://hackread.com/everest-ransomware-brazil-petrobras-breach/
+  - Fonte 2 (secundária, cobertura independente do mesmo caso): Cybernews. *Hackers claim oil giant Petrobras,
+    alleging oil-rich maps theft*. 2025. https://cybernews.com/security/brazil-petrobras-ransomware-attack/
+  - Observações: **divergência potencial não totalmente resolvida** entre a alegação do grupo atacante (violação
+    direta implicando dados da Petrobras) e a posição oficial da empresa (violação de terceiro, sistemas próprios
+    intactos) — padrão já registrado em outros casos desta pesquisa (ex.: Banco Neon, seção Financeiro). **[PARCIALMENTE
+    CONFIRMADO — a extensão real do vazamento e se os dados atribuídos à Petrobras vieram exclusivamente da
+    SAExploration ou também de sistemas próprios da Petrobras não pôde ser arbitrada com certeza em 2026-07-21]**.
+    Este caso ilustra novamente o risco de cadeia de suprimentos/terceiros (contratada de serviços sísmicos), já
+    destacado como padrão recorrente na seção Financeiro (caso C&M Software/FictorPay).
+
+---
+
+### Tabela-resumo — Energia
+
+| Métrica | Valor | Relatório primário | Status |
+| :-- | :-- | :-- | :-- |
+| Ransomware contra organizações industriais (2023→2024) | +87% a/a; 80 grupos (+60%) | Dragos OT/ICS Year in Review 2025 (dados 2024) | Confirmado (2 fontes) |
+| Ransomware contra organizações industriais (2024→2025) | +64% a/a; 119 grupos; ~3.300 orgs. impactadas | Dragos OT/ICS Year in Review 2026 (dados 2025) | Confirmado (2 fontes) |
+| Dwell time de ransomware em OT | 42 dias (5 dias com visibilidade OT plena) | Dragos OT/ICS Year in Review 2026 | Confirmado (2 fontes) |
+| Computadores ICS atacados (global, 2025) | ~20–22% por trimestre | Kaspersky ICS CERT (Q1–Q3 2025) | Confirmado (2 fontes) |
+| Computadores ICS atacados — energia elétrica (H1 2025) | 22,8% (3º setor mais atacado) | Kaspersky ICS CERT | Parcialmente confirmado (detalhamento setorial via agregador) |
+| Incidentes de cibersegurança em OT (organizações pesquisadas) | 50% relataram ≥1 incidente | Fortinet 2025 State of OT/Cybersecurity | Confirmado (2 fontes) |
+| Técnica dominante em ambientes Energia/Utilities/Resíduos | Manipulação de Dados (3x mais frequente) | Nozomi Networks OT/IoT Trends 2025 | Confirmado (2 fontes) |
+| Advisórios ICS publicados pela CISA (2025) | >450, 200+ fornecedores, 700+ produtos | Agregação sobre advisórios CISA | Parcialmente confirmado (contagem via agregador) |
+| Incidentes com impacto em OT — custo médio | USD 4,56 milhões (15% das organizações afetadas) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
+| Apagão Ucrânia — BlackEnergy (dez/2015) | 225–230 mil clientes; 1–6 horas | CISA IR-ALERT-H-16-056-01 / E-ISAC-SANS | Confirmado (2 fontes); divergência de contagem registrada |
+| Apagão Kyiv — Industroyer/CrashOverride (dez/2016) | ~1/5 de Kyiv, ~1 hora | ESET / Dragos (via SecurityWeek) | Confirmado (2 fontes) |
+| Industroyer2 — distribuidora ucraniana (abr/2022) | ~2 milhões de pessoas na área; apagão evitado | ESET *WeLiveSecurity* | Confirmado (2 fontes) |
+| Triton/Trisis — petroquímica saudita (2017) | SIS Triconex comprometido; sem dano físico confirmado | Consolidação FireEye/Mandiant/Dragos (via Wikipedia/MIT Tech Review) | Confirmado (2 fontes); atribuição de Estado não confirmada de forma independente |
+| Pipedream/Incontroller — Chernovite (2022) | Framework modular; sem uso ativo confirmado em 2022 | CISA/FBI/NSA/DOE advisory conjunto | Confirmado (2 fontes) |
+| FrostyGoop — Lviv, Ucrânia (jan/2024) | 600+ prédios; ~2 dias sem aquecimento | Dragos | Confirmado (2 fontes) |
+| Colonial Pipeline — ransomware (mai/2021) | Resgate 75 BTC (~USD 4,4 mi); ~45% do combustível da Costa Leste | DOE/CESER | Confirmado (2 fontes) |
+| Volt Typhoon/VOLTZITE — caso LELWD (Massachusetts) | ~300 dias de permanência (fev–nov/2023) | CISA AA24-038A / Dragos (via SecurityWeek) | Confirmado (2 fontes) |
+| ANEEL — marco regulatório cibersegurança | RN nº 964/2021 (14/12/2021, vigência 1/7/2022) | ANEEL (texto oficial) | Confirmado (2 fontes); divergência de 4 dias em fonte terciária descartada |
+| ANEEL — fiscalização RN 964/2021 | Prazo até 30/6/2025 (Despacho nº 427/2025) | ANEEL | Confirmado (2 fontes) |
+| Brasil — Eletrobras/Eletronuclear e Copel (fev/2021) | Ransomware DarkSide (Copel); sem impacto em Angra 1/2 | BleepingComputer / Canaltech | Confirmado (2 fontes) |
+| Brasil — Petrobras/Everest (nov/2025) | >176 GB alegados (>90 GB atribuídos à Petrobras) | Hackread / Cybernews | Parcialmente confirmado — Petrobras contesta atribuição direta |
+
+**Legenda:** idêntica à das tabelas-resumo Global e Financeiro. "Parcialmente confirmado" indica que o valor
+numérico central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de
+ouro (acesso direto a documento primário, ou segunda fonte plenamente independente) não pôde ser cumprida
+integralmente em 2026-07-21.
