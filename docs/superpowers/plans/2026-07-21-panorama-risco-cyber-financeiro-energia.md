@@ -163,14 +163,14 @@ Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"
 - Consumes: estrutura do dossiê da Task 1.
 - Produces: seção "## Financeiro" com números e casos: fraude/DDoS/ransomware no setor, PIX e
   Open Finance como superfície, dados FS-ISAC, custo de violação em serviços financeiros (IBM),
-  regulação Bacen (Res. BCB 4.893/85 e correlatas), casos BR. Consumido pela Task 6.
+  regulação Bacen (Res. CMN 4.893/2021 e BCB 85/2021 e correlatas), casos BR. Consumido pela Task 6.
 
 - [ ] **Step 1: Rodar pesquisa profunda — financeiro global + Brasil**
 
 Invocar `deep-research`: "Ameaças cibernéticas ao setor financeiro 2025–2026: FS-ISAC reports;
 IBM X-Force / Cost of a Data Breach por indústria (financeiro); ataques a PIX/Pix e Open Finance;
 fraude com engenharia social e deepfake; ransomware a bancos e fintechs; DDoS; incidentes no Brasil;
-regulação do Banco Central (Resolução BCB 4.893 de segurança cibernética, Open Finance) e Febraban.
+regulação do Banco Central (Resolução CMN 4.893/2021 (e BCB 85/2021) de segurança cibernética, Open Finance) e Febraban.
 Atores relevantes (ex.: FIN7, LockBit, grupos de fraude PIX)."
 
 - [ ] **Step 2: Registrar achados com verificação cruzada. [V-FONTE]**
