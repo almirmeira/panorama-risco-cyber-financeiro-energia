@@ -51,7 +51,7 @@ raramente começam no núcleo mais protegido — Pix/SPI de um lado, SCADA/ICS d
 rede administrativa convencional (e-mail, VPN, Active Directory). Foi assim na Eletrobras/Copel em
 2021 (rede administrativa comprometida, usinas nucleares fisicamente segregadas preservadas) e é o
 mesmo padrão estrutural descrito no Modelo Purdue para energia — TI corporativa (níveis 4/5) como
-porta de entrada para a OT crítica (níveis 0–1) [13][14][19][20].
+porta de entrada para a OT crítica (níveis 0–1), fundamentos detalhados no capítulo 03 [13][14].
 
 A segunda é o **risco de terceiros e cadeia de suprimentos**, hoje o vetor de maior *blast radius*
 em ambos os setores. No financeiro, o comprometimento da C&M Software — um único provedor de

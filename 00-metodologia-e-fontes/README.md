@@ -189,7 +189,7 @@ Sector (Navigating Cyber 2025)*. Maio de 2025.
 https://www.fsisac.com/newsroom/heightened-cyber-threats-are-testing-the-operational-resilience-of-the-financial-sector
 
 [2] Google Cloud (Mandiant). *M-Trends 2025: Data, Insights, and Recommendations From the
-Frontlines*. 2025. (relatório oficial Mandiant/Google Cloud, ano-base 2024)
+Frontlines*. 2025. https://cloud.google.com/security/resources/m-trends
 
 [3] CrowdStrike. *2025 Global Threat Report*. 2025.
 https://go.crowdstrike.com/rs/281-OBQ-266/images/CrowdStrikeGlobalThreatReport2025.pdf
