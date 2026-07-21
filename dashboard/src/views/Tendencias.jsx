@@ -35,12 +35,24 @@ function setorPredominante(tendencia) {
 function Tendencias({ dados }) {
   const tendencias = dados?.tendencias ?? []
 
-  const pontos = tendencias.map((t) => ({
+  const pontosBrutos = tendencias.map((t) => ({
     nome: t.nome,
     x: horizonteParaX(t.horizonte),
     y: t.impacto,
     setor: setorPredominante(t),
   }))
+
+  // Jitter determinístico: quando dois ou mais pontos caem exatamente no
+  // mesmo (x, y), a bolha some por baixo da anterior. Deslocamos levemente
+  // o y de cada ocorrência repetida (por índice de ocorrência), sem alterar
+  // o dado original nem distorcer a leitura de horizonte/impacto.
+  const contagemPorPosicao = new Map()
+  const pontos = pontosBrutos.map((p) => {
+    const chave = `${p.x}|${p.y}`
+    const ocorrencia = contagemPorPosicao.get(chave) ?? 0
+    contagemPorPosicao.set(chave, ocorrencia + 1)
+    return ocorrencia === 0 ? p : { ...p, y: p.y + ocorrencia * 0.12 }
+  })
 
   return (
     <div className="container">

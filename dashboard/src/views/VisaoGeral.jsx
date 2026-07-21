@@ -11,9 +11,6 @@ function VisaoGeral({ dados }) {
 
   return (
     <div className="container">
-      <h1>{dados?.meta?.titulo}</h1>
-      {dados?.meta?.subtitulo && <p>{dados.meta.subtitulo}</p>}
-
       <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', marginTop: 16 }}>
         {setores.map((setor) => (
           <div className="painel" key={setor.id}>

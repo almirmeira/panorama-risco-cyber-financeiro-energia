@@ -5,6 +5,8 @@ import { palette } from '../theme.js'
  * opcional de estimativa/ressalva.
  */
 function FonteTag({ fonte, estimativa }) {
+  if (!fonte && !estimativa) return null
+
   return (
     <span
       style={{

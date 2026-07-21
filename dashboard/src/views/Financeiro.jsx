@@ -34,6 +34,7 @@ function Financeiro({ dados }) {
             nivel={dim.nivel}
             justificativa={dim.justificativa}
             fonte={dim.fonte}
+            estimativa={dim.estimativa}
           />
         ))}
       </div>
