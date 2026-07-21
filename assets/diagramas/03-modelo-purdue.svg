@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 920" width="1500" height="920" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1500" height="920" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="42" fill="#e6edf3" font-size="24" font-weight="bold">Modelo Purdue (PERA) — Níveis 0–5 e Vetores de Ataque TI → OT</text>
+  <text x="40" y="66" fill="#8b949e" font-size="13.5">Arquitetura de referência hierárquica de ambientes industriais, com a DMZ industrial (Nível 3,5) e a zona crítica OT em destaque</text>
+  <line x1="40" y1="82" x2="1460" y2="82" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= COLUNA DE ZONAS (esquerda) ================= -->
+  <rect x="90" y="120" width="16" height="110" rx="4" fill="#58a6ff" fill-opacity="0.55" stroke="#58a6ff" stroke-width="1"/>
+  <text x="70" y="175" fill="#58a6ff" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 70 175)">TI (Nível 4/5)</text>
+
+  <rect x="90" y="240" width="16" height="70" rx="4" fill="#e3b341" fill-opacity="0.55" stroke="#e3b341" stroke-width="1"/>
+  <text x="70" y="275" fill="#e3b341" font-size="11" font-weight="bold" text-anchor="middle" transform="rotate(-90 70 275)">DMZ (3,5)</text>
+
+  <rect x="90" y="320" width="16" height="440" rx="4" fill="#3fb950" fill-opacity="0.28" stroke="#3fb950" stroke-width="1"/>
+  <text x="70" y="540" fill="#3fb950" font-size="12" font-weight="bold" text-anchor="middle" transform="rotate(-90 70 540)">OT/ICS (Níveis 0–3)</text>
+
+  <!-- ================= ZONA CRÍTICA (contorno tracejado) ================= -->
+  <rect x="150" y="530" width="860" height="240" rx="10" fill="none" stroke="#f85149" stroke-width="3" stroke-dasharray="7,4"/>
+  <text x="138" y="650" fill="#f85149" font-size="13" font-weight="bold" text-anchor="middle" transform="rotate(-90 138 650)">ZONA CRÍTICA — Níveis 0–1</text>
+
+  <!-- ================= BANDA 1 — Nível 4/5, TI Corporativa/Enterprise ================= -->
+  <rect x="160" y="120" width="840" height="110" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="580" y="150" fill="#58a6ff" font-size="15" font-weight="bold" text-anchor="middle">Nível 4/5 — TI Corporativa / Enterprise</text>
+  <text x="580" y="176" fill="#c9d1d9" font-size="12" text-anchor="middle">ERP, e-mail corporativo, acesso à internet, sistemas administrativos</text>
+  <text x="580" y="200" fill="#8b949e" font-size="11" text-anchor="middle">Fora do perímetro de disponibilidade crítica — superfície de ataque semelhante à de TI tradicional</text>
+
+  <!-- ================= BANDA 2 — Nível 3,5, DMZ Industrial ================= -->
+  <rect x="160" y="240" width="840" height="70" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="2"/>
+  <text x="580" y="264" fill="#e3b341" font-size="14" font-weight="bold" text-anchor="middle">Nível 3,5 — DMZ Industrial</text>
+  <text x="580" y="284" fill="#c9d1d9" font-size="11.5" text-anchor="middle">Zona-tampão obrigatória TI↔OT — jump servers, réplica de dados unidirecional, patch management segregado</text>
+  <text x="580" y="300" fill="#8b949e" font-size="10" text-anchor="middle">Extensão pós-1991 ao modelo original (origem: Departamento de Energia dos EUA)</text>
+
+  <!-- ================= BANDA 3 — Nível 3, Operações de Manufatura (MES) ================= -->
+  <rect x="160" y="320" width="840" height="100" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="580" y="348" fill="#3fb950" font-size="14" font-weight="bold" text-anchor="middle">Nível 3 — Operações de Manufatura (MES)</text>
+  <text x="580" y="372" fill="#c9d1d9" font-size="12" text-anchor="middle">Historiador de dados, gestão de operações do site, agendamento de produção</text>
+  <text x="580" y="394" fill="#8b949e" font-size="11" text-anchor="middle">Ainda OT, mas sem controle direto sobre o processo físico</text>
+
+  <!-- ================= BANDA 4 — Nível 2, Supervisão (SCADA/HMI) ================= -->
+  <rect x="160" y="430" width="840" height="100" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="580" y="458" fill="#3fb950" font-size="14" font-weight="bold" text-anchor="middle">Nível 2 — Supervisão (SCADA / HMI)</text>
+  <text x="580" y="482" fill="#c9d1d9" font-size="12" text-anchor="middle">Interfaces homem-máquina, servidores SCADA, estações de engenharia</text>
+  <text x="580" y="504" fill="#8b949e" font-size="11" text-anchor="middle">Ponto de pivô clássico: HMI comprometida permitiu abrir disjuntores na Ucrânia (2015)</text>
+
+  <!-- ================= BANDA 5 — Nível 1, Controle (PLC/RTU) ================= -->
+  <rect x="160" y="540" width="840" height="100" rx="8" fill="#161b22" stroke="#f85149" stroke-width="3"/>
+  <text x="580" y="568" fill="#f85149" font-size="14" font-weight="bold" text-anchor="middle">Nível 1 — Controle (PLC / RTU)</text>
+  <text x="580" y="592" fill="#c9d1d9" font-size="12" text-anchor="middle">Controladores lógicos programáveis, unidades terminais remotas</text>
+  <text x="580" y="614" fill="#8b949e" font-size="11" text-anchor="middle">Alvo direto de Pipedream/Incontroller e do binário do Industroyer2</text>
+
+  <!-- ================= BANDA 6 — Nível 0, Processo Físico ================= -->
+  <rect x="160" y="650" width="840" height="110" rx="8" fill="#161b22" stroke="#f85149" stroke-width="3"/>
+  <text x="580" y="680" fill="#f85149" font-size="14" font-weight="bold" text-anchor="middle">Nível 0 — Processo Físico (Sensores / Atuadores)</text>
+  <text x="580" y="706" fill="#c9d1d9" font-size="12" text-anchor="middle">Disjuntores, válvulas, motores, transformadores — o mundo físico real</text>
+  <text x="580" y="730" fill="#8b949e" font-size="11" text-anchor="middle">Manipulação aqui produz impacto físico direto: apagão, dano a equipamento, risco à segurança</text>
+
+  <!-- ================= COLUNA DE VETORES DE ATAQUE (direita) ================= -->
+  <text x="1120" y="102" fill="#f85149" font-size="13" font-weight="bold" text-anchor="middle">Direção do comprometimento: TI → OT</text>
+  <line x1="1120" y1="115" x2="1120" y2="758" stroke="#f85149" stroke-width="3" stroke-dasharray="7,4"/>
+  <polygon points="1120,770 1110,752 1130,752" fill="#f85149"/>
+
+  <circle cx="1120" cy="235" r="15" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <text x="1120" y="240" fill="#0d1117" font-size="14" font-weight="bold" text-anchor="middle">1</text>
+  <text x="1150" y="228" fill="#e6edf3" font-size="12.5" font-weight="bold">Pivô TI→OT</text>
+  <text x="1150" y="246" fill="#c9d1d9" font-size="11">Movimento lateral a partir da rede corporativa</text>
+
+  <circle cx="1120" cy="315" r="15" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <text x="1120" y="320" fill="#0d1117" font-size="14" font-weight="bold" text-anchor="middle">2</text>
+  <text x="1150" y="308" fill="#e6edf3" font-size="12.5" font-weight="bold">Acesso remoto de terceiros</text>
+  <text x="1150" y="326" fill="#c9d1d9" font-size="11">VPN/RDP de fornecedores ou manutenção remota</text>
+
+  <circle cx="1120" cy="425" r="15" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <text x="1120" y="430" fill="#0d1117" font-size="14" font-weight="bold" text-anchor="middle">3</text>
+  <text x="1150" y="418" fill="#e6edf3" font-size="12.5" font-weight="bold">Mídia removível</text>
+  <text x="1150" y="436" fill="#c9d1d9" font-size="11">Pendrive infectado em estação de engenharia</text>
+
+  <circle cx="1120" cy="645" r="15" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <text x="1120" y="650" fill="#0d1117" font-size="14" font-weight="bold" text-anchor="middle">4</text>
+  <text x="1150" y="638" fill="#e6edf3" font-size="12.5" font-weight="bold">Comprometimento de fornecedor</text>
+  <text x="1150" y="656" fill="#c9d1d9" font-size="11">Firmware ou atualização maliciosa de fornecedor</text>
+
+  <!-- ================= LEGENDA ================= -->
+  <line x1="40" y1="790" x2="1460" y2="790" stroke="#30363d" stroke-width="1"/>
+  <text x="40" y="812" fill="#e6edf3" font-size="13" font-weight="bold">Legenda</text>
+
+  <circle cx="60" cy="834" r="7" fill="#58a6ff"/>
+  <text x="75" y="838" fill="#8b949e" font-size="11.5">TI corporativa (Níveis 4/5) — fora do escopo de disponibilidade crítica</text>
+  <circle cx="560" cy="834" r="7" fill="#e3b341"/>
+  <text x="575" y="838" fill="#8b949e" font-size="11.5">DMZ industrial (Nível 3,5) — zona-tampão obrigatória TI↔OT</text>
+  <circle cx="1020" cy="834" r="7" fill="#3fb950"/>
+  <text x="1035" y="838" fill="#8b949e" font-size="11.5">OT/ICS não crítico (Níveis 2–3) — supervisão e operações</text>
+
+  <circle cx="60" cy="858" r="7" fill="#f85149"/>
+  <text x="75" y="862" fill="#8b949e" font-size="11.5">Zona crítica OT (Níveis 0–1) — impacto físico direto; disponibilidade e segurança física antes de confidencialidade</text>
+
+  <text x="40" y="886" fill="#8b949e" font-size="11.5">Vetores de ataque ilustrativos, não exaustivos — adaptados aos casos-marco discutidos no capítulo (Ucrânia 2015/2016, Triton, Pipedream, FrostyGoop).</text>
+  <text x="40" y="904" fill="#8b949e" font-size="11.5">Fontes: Fortinet e SentinelOne (modelo Purdue); Dragos, ESET, CISA, Mandiant (casos e atribuições) — ver capítulo 03 — Setor Energia, seção "Fontes".</text>
+</svg>
