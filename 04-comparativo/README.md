@@ -34,7 +34,7 @@ foi estabelecido.
 
 | Eixo comparativo                          | Setor Financeiro                                                          | Setor Energia (OT/ICS)                                                     |
 |:--------------------------------------------|:------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
-| Superfície de ataque predominante          | APIs de Open Finance (128–154 milhões de consentimentos), app/Pix, terceiros de infraestrutura (C&M Software) [21][22] | Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (94% inadequadamente protegidas contra *deauth*) [23][24] |
+| Superfície de ataque predominante          | APIs de Open Finance (128–154 milhões de consentimentos), app/Pix, terceiros de infraestrutura (C&M Software) [21][22] | Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (≈94% inadequadamente protegidas contra *deauth*, complemento dos 6% adequados do cap. 03) [23][24] |
 | Atores dominantes (motivação)              | Cibercrime financeiramente motivado (90% Verizon DBIR); DPRK-nexus (USD 2,02 bi em 2025, +51%); FIN7, Qilin, Akira | Atores estatais (Sandworm/GRU 74455, Volt Typhoon/China) com foco em sabotagem/pré-posicionamento; *ransomware* oportunista (DarkSide, Everest) [5][6][7][8][17][18] |
 | Vetor de impacto principal                 | Financeiro/fraude — desvio direto de recursos, vazamento de dados pessoais | Físico/disponibilidade — apagão, dano a equipamento, risco potencial à vida [17][18][19][20] |
 | Tempo de permanência / detecção típica     | Detecção forçada em ~72h por prazo regulatório de notificação; 34% do custo de uma violação vai para detecção/escalonamento [25][26] | *Dwell time* médio de 42 dias em *ransomware* OT — cai para 5 dias com visibilidade OT plena [3][4] |
@@ -94,7 +94,7 @@ recente e desigual é a instrumentação de monitoramento em ambientes industria
 
 Por fim, a **natureza dos atores dominantes** diverge de forma estrutural. O Verizon DBIR mede 90%
 de motivação financeira nas violações do setor financeiro — cibercrime clássico, ainda que hoje
-turbinado por atores estatais nortistas-coreanos em busca de moeda forte (DPRK-nexus, USD 2,02
+turbinado por atores estatais norte-coreanos em busca de moeda forte (DPRK-nexus, USD 2,02
 bilhões roubados em 2025) [5][6][7][8]. Na energia, os casos mais graves e mais citados da
 literatura técnica — BlackEnergy, Industroyer/Industroyer2, Volt Typhoon/VOLTZITE — são atribuídos,
 por CISA, ESET, Dragos e pelo próprio governo dos EUA, a operações de inteligência militar ou
