@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 780" width="620" height="780" font-family="Segoe UI, Helvetica, Arial, sans-serif">
   <rect x="0" y="0" width="620" height="780" fill="#0d1117"/>
 
-  <text x="30" y="42" fill="#e6edf3" font-size="22" font-weight="bold">Paleta canonica — Panorama de Risco Cyber</text>
-  <text x="30" y="66" fill="#8b949e" font-size="13">GitHub dark dimmed · referencia viva para todos os SVGs do repositorio</text>
+  <text x="30" y="42" fill="#e6edf3" font-size="22" font-weight="bold">Paleta canônica — Panorama de Risco Cyber</text>
+  <text x="30" y="66" fill="#8b949e" font-size="13">GitHub dark dimmed · referência viva para todos os SVGs do repositório</text>
 
   <line x1="30" y1="82" x2="590" y2="82" stroke="#30363d" stroke-width="1"/>
 
@@ -18,9 +18,9 @@
   <text x="100" y="178" fill="#e6edf3" font-size="15" font-weight="bold">Fundo painel</text>
   <text x="100" y="198" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#161b22</text>
 
-  <!-- 3. Fundo cartao -->
+  <!-- 3. Fundo cartão -->
   <rect x="30" y="216" width="48" height="48" rx="6" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
-  <text x="100" y="234" fill="#e6edf3" font-size="15" font-weight="bold">Fundo cartao</text>
+  <text x="100" y="234" fill="#e6edf3" font-size="15" font-weight="bold">Fundo cartão</text>
   <text x="100" y="254" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#1c2128</text>
 
   <!-- 4. Borda -->
@@ -28,9 +28,9 @@
   <text x="100" y="290" fill="#e6edf3" font-size="15" font-weight="bold">Borda</text>
   <text x="100" y="310" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#30363d</text>
 
-  <!-- 5. Texto titulo -->
+  <!-- 5. Texto título -->
   <rect x="30" y="328" width="48" height="48" rx="6" fill="#e6edf3" stroke="#30363d" stroke-width="2"/>
-  <text x="100" y="346" fill="#e6edf3" font-size="15" font-weight="bold">Texto — titulo</text>
+  <text x="100" y="346" fill="#e6edf3" font-size="15" font-weight="bold">Texto — título</text>
   <text x="100" y="366" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#e6edf3</text>
 
   <!-- 6. Texto corpo -->
@@ -38,9 +38,9 @@
   <text x="100" y="402" fill="#e6edf3" font-size="15" font-weight="bold">Texto — corpo</text>
   <text x="100" y="422" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#c9d1d9</text>
 
-  <!-- 7. Texto secundario -->
+  <!-- 7. Texto secundário -->
   <rect x="30" y="440" width="48" height="48" rx="6" fill="#8b949e" stroke="#30363d" stroke-width="2"/>
-  <text x="100" y="458" fill="#e6edf3" font-size="15" font-weight="bold">Texto — secundario</text>
+  <text x="100" y="458" fill="#e6edf3" font-size="15" font-weight="bold">Texto — secundário</text>
   <text x="100" y="478" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#8b949e</text>
 
   <!-- 8. Azul -->
@@ -55,12 +55,12 @@
 
   <!-- 10. Vermelho -->
   <rect x="30" y="608" width="48" height="48" rx="6" fill="#f85149" stroke="#30363d" stroke-width="2"/>
-  <text x="100" y="626" fill="#e6edf3" font-size="15" font-weight="bold">Vermelho (ameaca / critico)</text>
+  <text x="100" y="626" fill="#e6edf3" font-size="15" font-weight="bold">Vermelho (ameaça / crítico)</text>
   <text x="100" y="646" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#f85149</text>
 
-  <!-- 11. Ambar -->
+  <!-- 11. Âmbar -->
   <rect x="30" y="664" width="48" height="48" rx="6" fill="#e3b341" stroke="#30363d" stroke-width="2"/>
-  <text x="100" y="682" fill="#e6edf3" font-size="15" font-weight="bold">Ambar / ouro (alerta)</text>
+  <text x="100" y="682" fill="#e6edf3" font-size="15" font-weight="bold">Âmbar / ouro (alerta)</text>
   <text x="100" y="702" fill="#8b949e" font-size="13" font-family="Consolas, Menlo, monospace">#e3b341 / #d29922</text>
   <rect x="440" y="664" width="24" height="48" rx="4" fill="#d29922" stroke="#30363d" stroke-width="2"/>
   <text x="474" y="682" fill="#8b949e" font-size="12" font-family="Consolas, Menlo, monospace">tom 2</text>
