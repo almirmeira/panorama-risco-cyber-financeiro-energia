@@ -1,5 +1,6 @@
 import BubbleQuadrant from '../components/BubbleQuadrant.jsx'
 import SemaforoCard from '../components/SemaforoCard.jsx'
+import { palette } from '../theme.js'
 
 /**
  * Converte o texto livre de `horizonte` em posição numérica no eixo x
@@ -30,28 +31,28 @@ function setorPredominante(tendencia) {
 
 /**
  * Tendências emergentes (2026–2028): dispersão em quadrante horizonte x
- * impacto e grade de cartões de urgência por tendência.
+ * impacto (bolhas numeradas + legenda) e grade de cartões de urgência.
  */
 function Tendencias({ dados }) {
   const tendencias = dados?.tendencias ?? []
 
-  const pontosBrutos = tendencias.map((t) => ({
+  const pontosBrutos = tendencias.map((t, i) => ({
     nome: t.nome,
+    rotulo: String(i + 1),
     x: horizonteParaX(t.horizonte),
     y: t.impacto,
     setor: setorPredominante(t),
   }))
 
-  // Jitter determinístico: quando dois ou mais pontos caem exatamente no
-  // mesmo (x, y), a bolha some por baixo da anterior. Deslocamos levemente
-  // o y de cada ocorrência repetida (por índice de ocorrência), sem alterar
-  // o dado original nem distorcer a leitura de horizonte/impacto.
+  // Quando dois ou mais pontos caem no mesmo (x, y), as bolhas se empilham.
+  // Deslocamos horizontalmente as ocorrências repetidas (leque no eixo do
+  // horizonte), preservando o impacto (y) exato — que é a leitura crítica.
   const contagemPorPosicao = new Map()
   const pontos = pontosBrutos.map((p) => {
     const chave = `${p.x}|${p.y}`
     const ocorrencia = contagemPorPosicao.get(chave) ?? 0
     contagemPorPosicao.set(chave, ocorrencia + 1)
-    return ocorrencia === 0 ? p : { ...p, y: p.y + ocorrencia * 0.12 }
+    return ocorrencia === 0 ? p : { ...p, x: p.x + ocorrencia * 0.42 }
   })
 
   return (
@@ -59,14 +60,34 @@ function Tendencias({ dados }) {
       <h1>Tendências emergentes</h1>
 
       <div className="painel" style={{ marginTop: 16 }}>
-        <BubbleQuadrant titulo="Horizonte x Impacto" pontos={pontos} />
+        <BubbleQuadrant titulo="Horizonte × Impacto" pontos={pontos} altura={440} />
+        <p style={{ color: palette.txtSec, fontSize: 12, margin: '4px 0 10px' }}>
+          Tamanho da bolha = impacto potencial · cor = setor de exposição predominante · escala qualitativa de síntese.
+        </p>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '6px 20px',
+            borderTop: `1px solid ${palette.borda}`,
+            paddingTop: 10,
+            fontSize: 13,
+            color: palette.txtCorpo,
+          }}
+        >
+          {tendencias.map((t, i) => (
+            <span key={t.nome}>
+              <strong style={{ color: palette.azul }}>{i + 1}.</strong> {t.nome}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', marginTop: 16 }}>
-        {tendencias.map((t) => (
+        {tendencias.map((t, i) => (
           <SemaforoCard
             key={t.nome}
-            nome={t.nome}
+            nome={`${i + 1}. ${t.nome}`}
             nivel={t.semaforoUrgencia}
             justificativa={`Horizonte: ${t.horizonte} · Exposição Financeiro ${t.exposicaoFin}/5 · Exposição Energia ${t.exposicaoEnergia}/5`}
             fonte={t.fonte}
