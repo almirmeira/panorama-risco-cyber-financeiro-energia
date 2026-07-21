@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1140" width="1600" height="1140" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1600" height="1140" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="42" fill="#e6edf3" font-size="24" font-weight="bold">Roadmap de Recomendações — Horizontes de Implementação por Setor</text>
+  <text x="40" y="66" fill="#8b949e" font-size="13.5">Trilhas paralelas Financeiro (azul) e Energia (âmbar), com faixa transversal de iniciativas comuns (verde) — síntese do capítulo 08</text>
+  <line x1="40" y1="82" x2="1560" y2="82" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= CABEÇALHO DE HORIZONTES ================= -->
+  <rect x="180" y="108" width="340" height="34" rx="17" fill="#1c2128" stroke="#30363d" stroke-width="1"/>
+  <text x="350" y="130" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">0–90 dias</text>
+
+  <rect x="530" y="108" width="330" height="34" rx="17" fill="#1c2128" stroke="#30363d" stroke-width="1"/>
+  <text x="695" y="130" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">3–6 meses</text>
+
+  <rect x="870" y="108" width="330" height="34" rx="17" fill="#1c2128" stroke="#30363d" stroke-width="1"/>
+  <text x="1035" y="130" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">6–12 meses</text>
+
+  <rect x="1210" y="108" width="330" height="34" rx="17" fill="#1c2128" stroke="#30363d" stroke-width="1"/>
+  <text x="1375" y="130" fill="#e6edf3" font-size="14" font-weight="bold" text-anchor="middle">12+ meses</text>
+
+  <!-- seta de progressão temporal -->
+  <line x1="180" y1="158" x2="1540" y2="158" stroke="#8b949e" stroke-width="1.5"/>
+  <polygon points="1540,158 1528,152 1528,164" fill="#8b949e"/>
+
+  <!-- linhas verticais divisórias de horizonte, atravessando as três trilhas -->
+  <line x1="520" y1="170" x2="520" y2="1005" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="860" y1="170" x2="860" y2="1005" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="1200" y1="170" x2="1200" y2="1005" stroke="#30363d" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ================= TRILHA FINANCEIRO (azul) ================= -->
+  <rect x="20" y="170" width="1540" height="280" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="42" y="200" fill="#58a6ff" font-size="16" font-weight="bold">FINANCEIRO</text>
+  <text x="42" y="220" fill="#8b949e" font-size="10.5">Pix · Open Finance ·</text>
+  <text x="42" y="234" fill="#8b949e" font-size="10.5">terceiros</text>
+
+  <!-- H1 -->
+  <rect x="196" y="188" width="308" height="108" rx="8" fill="#1c2128" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="212" y="210" fill="#e6edf3" font-size="12.5" font-weight="bold">Antifraude Pix reforçado</text>
+  <text x="212" y="228" fill="#c9d1d9" font-size="11">biometria comportamental, MED</text>
+  <text x="212" y="243" fill="#c9d1d9" font-size="11">e limites dinâmicos por risco</text>
+  <text x="212" y="264" fill="#8b949e" font-size="10">Crítica · esforço médio</text>
+  <text x="212" y="280" fill="#8b949e" font-size="10">CSF 2.0 Protect · Zero Trust</text>
+
+  <rect x="196" y="304" width="308" height="108" rx="8" fill="#1c2128" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="212" y="326" fill="#e6edf3" font-size="12.5" font-weight="bold">Adequação BCB 538 / CMN 5.274</text>
+  <text x="212" y="344" fill="#c9d1d9" font-size="11">gap analysis concluído antes do</text>
+  <text x="212" y="359" fill="#c9d1d9" font-size="11">prazo de março de 2026</text>
+  <text x="212" y="380" fill="#8b949e" font-size="10">Crítica · esforço alto</text>
+  <text x="212" y="396" fill="#8b949e" font-size="10">CSF 2.0 Govern · regulação BCB</text>
+
+  <!-- H2 -->
+  <rect x="546" y="188" width="298" height="108" rx="8" fill="#1c2128" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="562" y="210" fill="#e6edf3" font-size="12.5" font-weight="bold">Segurança de API Open Finance</text>
+  <text x="562" y="228" fill="#c9d1d9" font-size="11">rate limiting, detecção de</text>
+  <text x="562" y="243" fill="#c9d1d9" font-size="11">anomalia de consentimento</text>
+  <text x="562" y="264" fill="#8b949e" font-size="10">Alta · esforço alto</text>
+  <text x="562" y="280" fill="#8b949e" font-size="10">ISO 27001 · Zero Trust (pilar 3)</text>
+
+  <rect x="546" y="304" width="298" height="108" rx="8" fill="#1c2128" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="562" y="326" fill="#e6edf3" font-size="12.5" font-weight="bold">Resiliência a DDoS</text>
+  <text x="562" y="344" fill="#c9d1d9" font-size="11">mitigação dedicada, testes de</text>
+  <text x="562" y="359" fill="#c9d1d9" font-size="11">capacidade e plano de crise</text>
+  <text x="562" y="380" fill="#8b949e" font-size="10">Alta · esforço médio</text>
+  <text x="562" y="396" fill="#8b949e" font-size="10">CSF 2.0 Protect / Respond</text>
+
+  <!-- H3 -->
+  <rect x="886" y="246" width="298" height="108" rx="8" fill="#1c2128" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="902" y="268" fill="#e6edf3" font-size="12.5" font-weight="bold">Gestão contínua de terceiros</text>
+  <text x="902" y="286" fill="#c9d1d9" font-size="11">avaliação recorrente de</text>
+  <text x="902" y="301" fill="#c9d1d9" font-size="11">fornecedores do Pix/Open Finance</text>
+  <text x="902" y="322" fill="#8b949e" font-size="10">Crítica · esforço médio</text>
+  <text x="902" y="338" fill="#8b949e" font-size="10">CSF 2.0 Govern/Identify · ISO 27001</text>
+
+  <!-- H4 -->
+  <rect x="1226" y="246" width="298" height="108" rx="8" fill="#1c2128" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="1242" y="268" fill="#e6edf3" font-size="12.5" font-weight="bold">Migração PQC — dados financeiros</text>
+  <text x="1242" y="286" fill="#c9d1d9" font-size="11">inventário e priorização de dados</text>
+  <text x="1242" y="301" fill="#c9d1d9" font-size="11">de longa vida útil (roteiro G7 CEG)</text>
+  <text x="1242" y="322" fill="#8b949e" font-size="10">Média · esforço médio</text>
+  <text x="1242" y="338" fill="#8b949e" font-size="10">FIPS 203/204/205 · CSF Identify</text>
+
+  <!-- ================= FAIXA TRANSVERSAL (verde) ================= -->
+  <rect x="20" y="470" width="1540" height="230" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="42" y="500" fill="#3fb950" font-size="16" font-weight="bold">TRANSVERSAL</text>
+  <text x="42" y="520" fill="#8b949e" font-size="10.5">comum aos dois</text>
+  <text x="42" y="534" fill="#8b949e" font-size="10.5">setores</text>
+
+  <!-- H1: três quick wins empilhados -->
+  <rect x="196" y="486" width="308" height="58" rx="7" fill="#1c2128" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="212" y="507" fill="#e6edf3" font-size="12" font-weight="bold">MFA resistente a phishing</text>
+  <text x="212" y="524" fill="#8b949e" font-size="10">FIDO2/passkeys em acesso privilegiado</text>
+
+  <rect x="196" y="552" width="308" height="58" rx="7" fill="#1c2128" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="212" y="573" fill="#e6edf3" font-size="12" font-weight="bold">Inventário completo de ativos</text>
+  <text x="212" y="590" fill="#8b949e" font-size="10">base para segmentação e priorização</text>
+
+  <rect x="196" y="618" width="308" height="58" rx="7" fill="#1c2128" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="212" y="639" fill="#e6edf3" font-size="12" font-weight="bold">Backups isolados e testados</text>
+  <text x="212" y="656" fill="#8b949e" font-size="10">restauração validada de fato, não só configurada</text>
+
+  <!-- H2 -->
+  <rect x="546" y="530" width="298" height="108" rx="8" fill="#1c2128" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="562" y="552" fill="#e6edf3" font-size="12.5" font-weight="bold">Plano de resposta exercitado</text>
+  <text x="562" y="570" fill="#c9d1d9" font-size="11">simulação (tabletop) nos últimos</text>
+  <text x="562" y="585" fill="#c9d1d9" font-size="11">12 meses, financeiro e energia</text>
+  <text x="562" y="606" fill="#8b949e" font-size="10">Alto impacto · esforço baixo</text>
+  <text x="562" y="622" fill="#8b949e" font-size="10">CSF 2.0 Respond/Recover</text>
+
+  <!-- H3 -->
+  <rect x="886" y="530" width="298" height="108" rx="8" fill="#1c2128" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="902" y="552" fill="#e6edf3" font-size="12.5" font-weight="bold">Revisão de acessos de terceiros</text>
+  <text x="902" y="570" fill="#c9d1d9" font-size="11">revogação de acessos não</text>
+  <text x="902" y="585" fill="#c9d1d9" font-size="11">utilizados nos últimos 90 dias</text>
+  <text x="902" y="606" fill="#8b949e" font-size="10">Alto impacto · esforço baixo</text>
+  <text x="902" y="622" fill="#8b949e" font-size="10">CSF 2.0 Protect · ISO 27001 5.19–5.23</text>
+
+  <!-- H4: nota, sem caixa -->
+  <text x="1242" y="575" fill="#8b949e" font-size="11.5" font-style="italic">Maturidade contínua —</text>
+  <text x="1242" y="592" fill="#8b949e" font-size="11.5" font-style="italic">auditoria e revalidação</text>
+  <text x="1242" y="609" fill="#8b949e" font-size="11.5" font-style="italic">recorrente dos quick wins</text>
+
+  <!-- ================= TRILHA ENERGIA (âmbar) ================= -->
+  <rect x="20" y="720" width="1540" height="280" rx="10" fill="#161b22" stroke="#e3b341" stroke-width="2"/>
+  <text x="42" y="750" fill="#e3b341" font-size="16" font-weight="bold">ENERGIA</text>
+  <text x="42" y="770" fill="#8b949e" font-size="10.5">OT/ICS · IEC 62443 ·</text>
+  <text x="42" y="784" fill="#8b949e" font-size="10.5">ANEEL</text>
+
+  <!-- H1 -->
+  <rect x="196" y="738" width="308" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="212" y="760" fill="#e6edf3" font-size="12.5" font-weight="bold">Segmentação TI/OT</text>
+  <text x="212" y="778" fill="#c9d1d9" font-size="11">DMZ industrial (Nível 3,5 Purdue)</text>
+  <text x="212" y="793" fill="#c9d1d9" font-size="11">e revisão de acesso remoto</text>
+  <text x="212" y="814" fill="#8b949e" font-size="10">Crítica · esforço alto</text>
+  <text x="212" y="830" fill="#8b949e" font-size="10">IEC 62443 zonas/conduítes</text>
+
+  <rect x="196" y="854" width="308" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="212" y="876" fill="#e6edf3" font-size="12.5" font-weight="bold">Conformidade RN ANEEL 964/2021</text>
+  <text x="212" y="894" fill="#c9d1d9" font-size="11">evidência documental pronta para</text>
+  <text x="212" y="909" fill="#c9d1d9" font-size="11">fiscalização (ARCiber)</text>
+  <text x="212" y="930" fill="#8b949e" font-size="10">Alta · esforço médio</text>
+  <text x="212" y="946" fill="#8b949e" font-size="10">CSF 2.0 Govern · regulação ANEEL</text>
+
+  <!-- H2 -->
+  <rect x="546" y="738" width="298" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="562" y="760" fill="#e6edf3" font-size="12.5" font-weight="bold">Visibilidade OT dedicada</text>
+  <text x="562" y="778" fill="#c9d1d9" font-size="11">monitoramento passivo — dwell</text>
+  <text x="562" y="793" fill="#c9d1d9" font-size="11">time de 42 para 5 dias</text>
+  <text x="562" y="814" fill="#8b949e" font-size="10">Crítica · esforço alto</text>
+  <text x="562" y="830" fill="#8b949e" font-size="10">IEC 62443 · CSF 2.0 Detect</text>
+
+  <rect x="546" y="854" width="298" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="562" y="876" fill="#e6edf3" font-size="12.5" font-weight="bold">Plano de resposta a incidentes ICS</text>
+  <text x="562" y="894" fill="#c9d1d9" font-size="11">playbook de isolamento seguro</text>
+  <text x="562" y="909" fill="#c9d1d9" font-size="11">sem interromper o processo físico</text>
+  <text x="562" y="930" fill="#8b949e" font-size="10">Crítica · esforço médio</text>
+  <text x="562" y="946" fill="#8b949e" font-size="10">CSF 2.0 Respond/Recover</text>
+
+  <!-- H3 -->
+  <rect x="886" y="738" width="298" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="902" y="760" fill="#e6edf3" font-size="12.5" font-weight="bold">Avaliação de Nível de Segurança</text>
+  <text x="902" y="778" fill="#c9d1d9" font-size="11">SL por zona crítica, priorizando</text>
+  <text x="902" y="793" fill="#c9d1d9" font-size="11">geração e transmissão</text>
+  <text x="902" y="814" fill="#8b949e" font-size="10">Alta · esforço alto</text>
+  <text x="902" y="830" fill="#8b949e" font-size="10">IEC 62443 (SL 1–4)</text>
+
+  <rect x="886" y="854" width="298" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="902" y="876" fill="#e6edf3" font-size="12.5" font-weight="bold">Zero Trust na fronteira TI↔OT</text>
+  <text x="902" y="894" fill="#c9d1d9" font-size="11">verificação contínua entre zonas,</text>
+  <text x="902" y="909" fill="#c9d1d9" font-size="11">sem reautenticar dentro da zona</text>
+  <text x="902" y="930" fill="#8b949e" font-size="10">Alta · esforço alto</text>
+  <text x="902" y="946" fill="#8b949e" font-size="10">Zero Trust NIST SP 800-207 (adaptado)</text>
+
+  <!-- H4 -->
+  <rect x="1226" y="796" width="298" height="108" rx="8" fill="#1c2128" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="1242" y="818" fill="#e6edf3" font-size="12.5" font-weight="bold">Migração PQC — ativos de campo</text>
+  <text x="1242" y="836" fill="#c9d1d9" font-size="11">medidores inteligentes, IEDs de</text>
+  <text x="1242" y="851" fill="#c9d1d9" font-size="11">subestação, controladores</text>
+  <text x="1242" y="872" fill="#8b949e" font-size="10">Média · esforço alto</text>
+  <text x="1242" y="888" fill="#8b949e" font-size="10">FIPS 203/204/205 · IEC 62443</text>
+
+  <!-- ================= LEGENDA ================= -->
+  <rect x="20" y="1018" width="1540" height="100" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="42" y="1044" fill="#e6edf3" font-size="13" font-weight="bold">Legenda</text>
+
+  <rect x="42" y="1056" width="18" height="18" rx="4" fill="none" stroke="#58a6ff" stroke-width="2"/>
+  <text x="68" y="1070" fill="#c9d1d9" font-size="12">Trilha Financeiro — Pix, Open Finance, terceiros, DDoS</text>
+
+  <rect x="560" y="1056" width="18" height="18" rx="4" fill="none" stroke="#3fb950" stroke-width="2"/>
+  <text x="586" y="1070" fill="#c9d1d9" font-size="12">Faixa transversal — quick wins comuns aos dois setores</text>
+
+  <rect x="1100" y="1056" width="18" height="18" rx="4" fill="none" stroke="#e3b341" stroke-width="2"/>
+  <text x="1126" y="1070" fill="#c9d1d9" font-size="12">Trilha Energia — OT/ICS, IEC 62443, ANEEL</text>
+
+  <text x="42" y="1096" fill="#8b949e" font-size="10.5">Horizontes e esforços refletem prioridades relativas deste dossiê (capítulo 08), não um cronograma contratual publicado por terceiros.</text>
+</svg>
