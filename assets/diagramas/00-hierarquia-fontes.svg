@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="860" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="46" fill="#e6edf3" font-size="25" font-weight="bold">Hierarquia de Fontes — 4 Níveis</text>
+  <text x="40" y="72" fill="#8b949e" font-size="14">Da telemetria bruta de vendors globais ao recorte fino do mercado brasileiro</text>
+  <line x1="40" y1="90" x2="1160" y2="90" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= PIRÂMIDE (esquerda) ================= -->
+  <!-- Nível 1 — base — Vendors / Telemetria (azul) -->
+  <polygon points="70,680 550,680 505,545 115,545" fill="#161b22" stroke="#58a6ff" stroke-width="3"/>
+  <!-- Nível 2 — Órgãos / Consórcios (verde) -->
+  <polygon points="115,545 505,545 460,410 160,410" fill="#1c2128" stroke="#3fb950" stroke-width="3"/>
+  <!-- Nível 3 — Analistas de Mercado (âmbar) -->
+  <polygon points="160,410 460,410 415,275 205,275" fill="#161b22" stroke="#e3b341" stroke-width="3"/>
+  <!-- Nível 4 — topo — Fontes Nacionais BR (roxo) -->
+  <polygon points="205,275 415,275 370,140 250,140" fill="#1c2128" stroke="#a371f7" stroke-width="3"/>
+
+  <!-- Badge + rótulo Nível 1 -->
+  <circle cx="310" cy="598.5" r="17" fill="#58a6ff"/>
+  <text x="310" y="604" fill="#0d1117" font-size="16" font-weight="bold" text-anchor="middle">1</text>
+  <text x="310" y="636" fill="#e6edf3" font-size="16" font-weight="bold" text-anchor="middle">Vendors &amp; Telemetria</text>
+
+  <!-- Badge + rótulo Nível 2 -->
+  <circle cx="310" cy="463.5" r="17" fill="#3fb950"/>
+  <text x="310" y="469" fill="#0d1117" font-size="16" font-weight="bold" text-anchor="middle">2</text>
+  <text x="310" y="500" fill="#e6edf3" font-size="15" font-weight="bold" text-anchor="middle">Órgãos &amp; Consórcios</text>
+
+  <!-- Badge + rótulo Nível 3 -->
+  <circle cx="310" cy="328.5" r="16" fill="#e3b341"/>
+  <text x="310" y="334" fill="#0d1117" font-size="15" font-weight="bold" text-anchor="middle">3</text>
+  <text x="310" y="364" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">Analistas de Mercado</text>
+
+  <!-- Badge + rótulo Nível 4 -->
+  <circle cx="310" cy="193.5" r="15" fill="#a371f7"/>
+  <text x="310" y="199" fill="#0d1117" font-size="14" font-weight="bold" text-anchor="middle">4</text>
+  <text x="310" y="228" fill="#e6edf3" font-size="12" font-weight="bold" text-anchor="middle">Fontes Nacionais BR</text>
+
+  <!-- Setas de leitura da pirâmide -->
+  <text x="30" y="690" fill="#8b949e" font-size="11" text-anchor="start">▲ maior volume</text>
+  <text x="30" y="132" fill="#8b949e" font-size="11" text-anchor="start">▲ maior especificidade</text>
+
+  <!-- ================= CONECTORES ================= -->
+  <line x1="527.5" y1="612.5" x2="650" y2="725" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="482.5" y1="477.5" x2="650" y2="555" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="437.5" y1="342.5" x2="650" y2="385" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="392.5" y1="207.5" x2="650" y2="215" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- ================= PAINÉIS (direita) ================= -->
+
+  <!-- Painel Nível 4 -->
+  <rect x="650" y="140" width="510" height="150" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+  <text x="670" y="168" fill="#e6edf3" font-size="15" font-weight="bold">Nível 4 — Fontes Nacionais Brasileiras</text>
+  <text x="670" y="192" fill="#c9d1d9" font-size="12.5">Exemplos: Tempest, ISH, Redbelt, Cipher, NewSpace</text>
+  <text x="670" y="215" fill="#c9d1d9" font-size="12.5">Força: leitura fina do cenário de ameaça específico ao Brasil,</text>
+  <text x="670" y="232" fill="#c9d1d9" font-size="12.5">ausente dos relatórios globais.</text>
+  <text x="670" y="255" fill="#8b949e" font-size="12.5">Limitação: cobertura fragmentada, sem cadência anual</text>
+  <text x="670" y="272" fill="#8b949e" font-size="12.5">padronizada; exige verificação cruzada adicional.</text>
+
+  <!-- Painel Nível 3 -->
+  <rect x="650" y="310" width="510" height="150" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="2"/>
+  <text x="670" y="338" fill="#e6edf3" font-size="15" font-weight="bold">Nível 3 — Casas de Análise de Mercado</text>
+  <text x="670" y="362" fill="#c9d1d9" font-size="12.5">Exemplos: Gartner, Forrester</text>
+  <text x="670" y="385" fill="#c9d1d9" font-size="12.5">Força: síntese comparativa entre fornecedores e leitura</text>
+  <text x="670" y="402" fill="#c9d1d9" font-size="12.5">de tendência de investimento.</text>
+  <text x="670" y="425" fill="#8b949e" font-size="12.5">Limitação: relatórios completos são pagos; recortes</text>
+  <text x="670" y="442" fill="#8b949e" font-size="12.5">públicos têm baixa granularidade estatística.</text>
+
+  <!-- Painel Nível 2 -->
+  <rect x="650" y="480" width="510" height="150" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="670" y="508" fill="#e6edf3" font-size="15" font-weight="bold">Nível 2 — Órgãos, Reguladores e Consórcios</text>
+  <text x="670" y="532" fill="#c9d1d9" font-size="12.5">Exemplos: WEF, ENISA, NIST, CISA, FS-ISAC, E-ISAC, CERT.br,</text>
+  <text x="670" y="549" fill="#c9d1d9" font-size="12.5">Bacen, Febraban, ANEEL, ONS</text>
+  <text x="670" y="572" fill="#c9d1d9" font-size="12.5">Força: mandato público ou regulatório; dados oficiais e,</text>
+  <text x="670" y="589" fill="#c9d1d9" font-size="12.5">em regulação, força de lei.</text>
+  <text x="670" y="612" fill="#8b949e" font-size="12.5">Limitação: cadência mais lenta; foco regional/setorial</text>
+  <text x="670" y="629" fill="#8b949e" font-size="12.5">limita comparabilidade global.</text>
+
+  <!-- Painel Nível 1 -->
+  <rect x="650" y="650" width="510" height="150" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="670" y="678" fill="#e6edf3" font-size="15" font-weight="bold">Nível 1 — Relatórios de Vendors / Telemetria</text>
+  <text x="670" y="702" fill="#c9d1d9" font-size="12.5">Exemplos: CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM</text>
+  <text x="670" y="719" fill="#c9d1d9" font-size="12.5">X-Force, Mandiant, Dragos, Kaspersky ICS-CERT, entre outros</text>
+  <text x="670" y="742" fill="#c9d1d9" font-size="12.5">Força: telemetria real em escala planetária — a matéria-</text>
+  <text x="670" y="759" fill="#c9d1d9" font-size="12.5">prima bruta da inteligência de ameaças.</text>
+  <text x="670" y="782" fill="#8b949e" font-size="12.5">Limitação: viés de portfólio; metodologias não comparáveis</text>
+  <text x="670" y="799" fill="#8b949e" font-size="12.5">entre relatórios de vendors distintos.</text>
+
+  <!-- Rodapé -->
+  <line x1="40" y1="818" x2="1160" y2="818" stroke="#30363d" stroke-width="1"/>
+  <text x="40" y="840" fill="#8b949e" font-size="12">Regra de validação: todo número-chave citado no repositório é confirmado por ≥2 fontes independentes (ver capítulo 00 — Metodologia e Fontes).</text>
+</svg>
