@@ -1,5 +1,7 @@
 # 03 — Setor Energia / OT
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![OT/ICS](https://img.shields.io/badge/OT%2FICS-e3b341?style=flat-square) ![Purdue](https://img.shields.io/badge/Purdue-e3b341?style=flat-square) ![IEC 62443](https://img.shields.io/badge/IEC%2062443-58a6ff?style=flat-square) ![ANEEL](https://img.shields.io/badge/ANEEL-e3b341?style=flat-square) ![ONS](https://img.shields.io/badge/ONS-e3b341?style=flat-square)
+
 > **Resumo Executivo**
 > - *Ransomware* contra organizações industriais acelerou dois anos seguidos: +87% em 2024 (80 grupos
 >   ativos) e +64% em 2025 (119 grupos, ~3.300 organizações impactadas), com manufatura respondendo

@@ -1,5 +1,7 @@
 # Fontes e Referências
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![54 vendors](https://img.shields.io/badge/54%20vendors-a371f7?style=flat-square) ![25 vozes](https://img.shields.io/badge/25%20vozes-a371f7?style=flat-square) ![Bibliografia](https://img.shields.io/badge/Bibliografia-a371f7?style=flat-square)
+
 > **Resumo Executivo**
 > - Este arquivo consolida, em três partes, todo o aparato de evidência do panorama: a
 >   **bibliografia** citada nos capítulos 00 a 08 (deduplicada e agrupada pela hierarquia de

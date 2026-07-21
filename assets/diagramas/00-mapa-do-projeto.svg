@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 560" width="1040" height="560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e3b341"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1040" height="560" fill="#0d1117"/>
+
+  <!-- ================= TÍTULO ================= -->
+  <text x="520" y="34" fill="#e6edf3" font-size="22" font-weight="bold" text-anchor="middle">Panorama de Risco Cibernético — Financeiro × Energia</text>
+  <text x="520" y="54" fill="#8b949e" font-size="12.5" text-anchor="middle">Mapa do projeto: dois setores, um comparativo, nove capítulos, um método de curadoria</text>
+  <line x1="30" y1="66" x2="1010" y2="66" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= SETOR FINANCEIRO (esquerda) ================= -->
+  <rect x="30" y="80" width="300" height="170" rx="10" fill="#1c2128" stroke="#58a6ff" stroke-width="2.5"/>
+  <text x="180" y="112" fill="#58a6ff" font-size="17" font-weight="bold" text-anchor="middle">SETOR FINANCEIRO</text>
+  <line x1="55" y1="124" x2="305" y2="124" stroke="#30363d" stroke-width="1"/>
+
+  <rect x="55" y="136" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="112.5" y="154.5" fill="#c9d1d9" font-size="12" text-anchor="middle">PIX</text>
+
+  <rect x="190" y="136" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="247.5" y="154.5" fill="#c9d1d9" font-size="11.5" text-anchor="middle">Open Finance</text>
+
+  <rect x="55" y="174" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="112.5" y="192.5" fill="#c9d1d9" font-size="12" text-anchor="middle">Fraude</text>
+
+  <rect x="190" y="174" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="247.5" y="192.5" fill="#c9d1d9" font-size="12" text-anchor="middle">Terceiros</text>
+
+  <text x="180" y="230" fill="#8b949e" font-size="11" text-anchor="middle">Ver capítulo 02</text>
+
+  <!-- ================= SETOR ENERGIA (direita) ================= -->
+  <rect x="710" y="80" width="300" height="170" rx="10" fill="#1c2128" stroke="#e3b341" stroke-width="2.5"/>
+  <text x="860" y="112" fill="#e3b341" font-size="17" font-weight="bold" text-anchor="middle">SETOR ENERGIA</text>
+  <line x1="735" y1="124" x2="985" y2="124" stroke="#30363d" stroke-width="1"/>
+
+  <rect x="735" y="136" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="792.5" y="154.5" fill="#c9d1d9" font-size="12" text-anchor="middle">OT/ICS</text>
+
+  <rect x="870" y="136" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="927.5" y="154.5" fill="#c9d1d9" font-size="12" text-anchor="middle">Purdue</text>
+
+  <rect x="735" y="174" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="792.5" y="192.5" fill="#c9d1d9" font-size="11.5" text-anchor="middle">APT estatal</text>
+
+  <rect x="870" y="174" width="115" height="28" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="927.5" y="192.5" fill="#c9d1d9" font-size="12" text-anchor="middle">ANEEL</text>
+
+  <text x="860" y="230" fill="#8b949e" font-size="11" text-anchor="middle">Ver capítulo 03</text>
+
+  <!-- ================= NÓ CENTRAL — COMPARATIVO (clímax) ================= -->
+  <rect x="425" y="103" width="190" height="124" rx="14" fill="#161b22" stroke="#a371f7" stroke-width="3"/>
+  <rect x="433" y="111" width="174" height="108" rx="10" fill="none" stroke="#a371f7" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="520" y="150" fill="#a371f7" font-size="19" font-weight="bold" text-anchor="middle">COMPARATIVO</text>
+  <line x1="460" y1="162" x2="580" y2="162" stroke="#30363d" stroke-width="1"/>
+  <text x="520" y="184" fill="#c9d1d9" font-size="12" text-anchor="middle">Capítulo 04</text>
+  <text x="520" y="202" fill="#8b949e" font-size="11" text-anchor="middle">o clímax analítico</text>
+
+  <!-- Setas convergindo -->
+  <line x1="330" y1="165" x2="422" y2="165" stroke="#58a6ff" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <line x1="710" y1="165" x2="618" y2="165" stroke="#e3b341" stroke-width="3" marker-end="url(#arrowAmber)"/>
+
+  <!-- ================= TRILHA DOS 9 CAPÍTULOS ================= -->
+  <text x="520" y="272" fill="#e6edf3" font-size="13.5" font-weight="bold" text-anchor="middle">Trilha dos 9 capítulos</text>
+
+  <line x1="40" y1="344" x2="1000" y2="344" stroke="#30363d" stroke-width="2"/>
+
+  <!-- 00 Metodologia (abaixo) -->
+  <circle cx="40" cy="344" r="16" fill="#1c2128" stroke="#8b949e" stroke-width="2"/>
+  <text x="40" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">00</text>
+  <text x="40" y="380" fill="#c9d1d9" font-size="11" text-anchor="middle">Metodologia</text>
+
+  <!-- 01 Panorama Global (acima) -->
+  <circle cx="160" cy="344" r="16" fill="#1c2128" stroke="#8b949e" stroke-width="2"/>
+  <text x="160" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">01</text>
+  <text x="160" y="318" fill="#c9d1d9" font-size="11" text-anchor="middle">Global</text>
+
+  <!-- 02 Setor Financeiro (abaixo) -->
+  <circle cx="280" cy="344" r="16" fill="#1c2128" stroke="#58a6ff" stroke-width="2"/>
+  <text x="280" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">02</text>
+  <text x="280" y="380" fill="#c9d1d9" font-size="11" text-anchor="middle">Financeiro</text>
+
+  <!-- 03 Setor Energia (acima) -->
+  <circle cx="400" cy="344" r="16" fill="#1c2128" stroke="#e3b341" stroke-width="2"/>
+  <text x="400" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">03</text>
+  <text x="400" y="318" fill="#c9d1d9" font-size="11" text-anchor="middle">Energia</text>
+
+  <!-- 04 Comparativo (abaixo, destaque roxo) -->
+  <circle cx="520" cy="344" r="19" fill="#1c2128" stroke="#a371f7" stroke-width="3"/>
+  <text x="520" y="349" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">04</text>
+  <text x="520" y="383" fill="#e6edf3" font-size="11.5" font-weight="bold" text-anchor="middle">Comparativo</text>
+
+  <!-- 05 Atores e TTPs (acima) -->
+  <circle cx="640" cy="344" r="16" fill="#1c2128" stroke="#f85149" stroke-width="2"/>
+  <text x="640" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">05</text>
+  <text x="640" y="318" fill="#c9d1d9" font-size="11" text-anchor="middle">Atores/TTPs</text>
+
+  <!-- 06 Tendências 2026 (abaixo) -->
+  <circle cx="760" cy="344" r="16" fill="#1c2128" stroke="#f85149" stroke-width="2"/>
+  <text x="760" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">06</text>
+  <text x="760" y="380" fill="#c9d1d9" font-size="11" text-anchor="middle">Tendências</text>
+
+  <!-- 07 Defesa e Frameworks (acima) -->
+  <circle cx="880" cy="344" r="16" fill="#1c2128" stroke="#58a6ff" stroke-width="2"/>
+  <text x="880" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">07</text>
+  <text x="880" y="318" fill="#c9d1d9" font-size="11" text-anchor="middle">Defesa</text>
+
+  <!-- 08 Recomendações (abaixo) -->
+  <circle cx="1000" cy="344" r="16" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+  <text x="1000" y="349" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">08</text>
+  <text x="1000" y="380" fill="#c9d1d9" font-size="9.5" text-anchor="middle">Recomendações</text>
+
+  <!-- ================= SELOS DE MÉTODO ================= -->
+  <line x1="40" y1="418" x2="1000" y2="418" stroke="#30363d" stroke-width="1"/>
+  <text x="520" y="444" fill="#e6edf3" font-size="13.5" font-weight="bold" text-anchor="middle">Selos de método</text>
+
+  <rect x="184" y="464" width="141" height="36" rx="18" fill="#1c2128" stroke="#a371f7" stroke-width="2"/>
+  <text x="254.5" y="487" fill="#c9d1d9" font-size="12.5" text-anchor="middle">Global → Brasil</text>
+
+  <rect x="349" y="464" width="179" height="36" rx="18" fill="#1c2128" stroke="#3fb950" stroke-width="2"/>
+  <text x="438.5" y="487" fill="#c9d1d9" font-size="12.5" text-anchor="middle">≥2 fontes por número</text>
+
+  <rect x="552" y="464" width="101" height="36" rx="18" fill="#1c2128" stroke="#8b949e" stroke-width="2"/>
+  <text x="602.5" y="487" fill="#c9d1d9" font-size="12.5" text-anchor="middle">2025–2026</text>
+
+  <rect x="677" y="464" width="179" height="36" rx="18" fill="#1c2128" stroke="#a371f7" stroke-width="2"/>
+  <text x="766.5" y="487" fill="#c9d1d9" font-size="12.5" text-anchor="middle">54 vendors · 25 vozes</text>
+
+  <!-- ================= RODAPÉ ================= -->
+  <text x="40" y="540" fill="#8b949e" font-size="11" text-anchor="start">Leitura: financeiro e energia convergem no comparativo (cap. 04); a trilha percorre os 9 capítulos; os selos resumem o método de curadoria (cap. 00).</text>
+</svg>

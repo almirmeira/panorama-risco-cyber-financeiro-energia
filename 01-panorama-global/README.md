@@ -1,5 +1,7 @@
 # 01 — Panorama Global
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![WEF](https://img.shields.io/badge/WEF-a371f7?style=flat-square) ![IBM X-Force](https://img.shields.io/badge/IBM%20X--Force-a371f7?style=flat-square) ![Verizon DBIR](https://img.shields.io/badge/Verizon%20DBIR-a371f7?style=flat-square) ![CrowdStrike](https://img.shields.io/badge/CrowdStrike-a371f7?style=flat-square) ![ENISA](https://img.shields.io/badge/ENISA-a371f7?style=flat-square)
+
 > **Resumo Executivo**
 > - O custo médio global de uma violação de dados caiu pela primeira vez em cinco anos, mas isso não
 >   significa trégua: o volume e a sofisticação dos ataques seguem subindo, puxados por *ransomware*,

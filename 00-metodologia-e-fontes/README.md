@@ -1,5 +1,7 @@
 # 00 — Metodologia e Fontes
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![Metodologia](https://img.shields.io/badge/Metodologia-3fb950?style=flat-square) ![Hierarquia de Fontes](https://img.shields.io/badge/Hierarquia%20de%20Fontes-3fb950?style=flat-square) ![Curadoria](https://img.shields.io/badge/Curadoria-3fb950?style=flat-square)
+
 > **Resumo Executivo**
 > - Este panorama distingue inteligência de ameaças **operacional/tática** (telemetria proprietária,
 >   IOCs, feeds em tempo real — insumo de SOC) de inteligência **estratégica/de cenário** (relatórios
