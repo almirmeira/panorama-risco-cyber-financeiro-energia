@@ -46,3 +46,19 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   padding: 16px;
 }
+
+@keyframes pulso-selo {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.35);
+  }
+}
+
+.ponto-pulsante {
+  animation: pulso-selo 1.8s ease-in-out infinite;
+}

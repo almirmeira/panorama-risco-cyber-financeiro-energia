@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import dados from './data/dashboard.json'
+import { palette, semaforo } from './theme.js'
 import TabNav from './components/TabNav.jsx'
 import VisaoGeral from './views/VisaoGeral.jsx'
 import Financeiro from './views/Financeiro.jsx'
@@ -17,24 +18,149 @@ const ABAS = [
   { id: 'comparativo', rotulo: 'Comparativo' },
   { id: 'tendencias', rotulo: 'Tendências' },
   { id: 'recomendacoes', rotulo: 'Recomendações' },
-  { id: 'fontes', rotulo: 'Fontes' },
+  { id: 'fontes', rotulo: 'Fontes & Método' },
 ]
 
+const VIEWS = {
+  'visao-geral': VisaoGeral,
+  financeiro: Financeiro,
+  energia: Energia,
+  comparativo: Comparativo,
+  tendencias: Tendencias,
+  recomendacoes: Recomendacoes,
+  fontes: Fontes,
+}
+
+/**
+ * Formata uma data ISO (YYYY-MM-DD) como texto legível em PT-BR
+ * (ex.: "21 de julho de 2026"). Se a data não for parseável, retorna o
+ * valor original sem quebrar a renderização.
+ */
+function formatarDataPtBr(dataIso) {
+  if (!dataIso) return ''
+  const data = new Date(`${dataIso}T00:00:00`)
+  if (Number.isNaN(data.getTime())) return dataIso
+  return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(data)
+}
+
+/**
+ * Legenda fixa de semáforo — visível em todas as abas, explica o critério
+ * de cor usado nos cartões de postura de risco/urgência do dashboard.
+ */
+function LegendaSemaforo() {
+  const itens = [
+    { cor: semaforo.verde, rotulo: 'Verde', criterio: 'risco gerenciado / maturidade alta' },
+    { cor: semaforo.ambar, rotulo: 'Âmbar', criterio: 'atenção / em maturação' },
+    { cor: semaforo.vermelho, rotulo: 'Vermelho', criterio: 'risco elevado / lacuna' },
+  ]
+
+  return (
+    <div
+      className="painel"
+      style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 20 }}
+    >
+      <strong style={{ color: palette.txtSec, fontSize: 12, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+        Legenda do semáforo
+      </strong>
+      {itens.map((item) => (
+        <span key={item.rotulo} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 13 }}>
+          <span
+            aria-hidden="true"
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: '50%',
+              background: item.cor,
+              flexShrink: 0,
+              boxShadow: `0 0 0 3px ${item.cor}33`,
+            }}
+          />
+          <span style={{ color: palette.txtTitulo, fontWeight: 600 }}>{item.rotulo}</span>
+          <span style={{ color: palette.txtSec }}>= {item.criterio}</span>
+        </span>
+      ))}
+    </div>
+  )
+}
+
 function App() {
-  const [aba, setAba] = useState('visao-geral')
+  const [abaAtiva, setAbaAtiva] = useState('visao-geral')
+
+  const meta = dados?.meta ?? {}
+  const fontes = dados?.fontes ?? {}
+  const ViewAtiva = VIEWS[abaAtiva] ?? VisaoGeral
 
   return (
     <>
-      <div className="container">
-        <TabNav abas={ABAS} ativa={aba} onSelecionar={setAba} />
+      <header style={{ background: palette.bgPainel, borderBottom: `1px solid ${palette.borda}` }}>
+        <div
+          className="container"
+          style={{
+            paddingBottom: 16,
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            gap: 16,
+          }}
+        >
+          <div>
+            <h1 style={{ margin: 0, fontSize: 22 }}>{meta.titulo}</h1>
+            {meta.subtitulo && (
+              <p style={{ margin: '6px 0 0', color: palette.txtSec, fontSize: 14, maxWidth: 720 }}>
+                {meta.subtitulo}
+              </p>
+            )}
+          </div>
+
+          <span
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '6px 14px',
+              borderRadius: 999,
+              background: `${palette.azul}1a`,
+              border: `1px solid ${palette.azul}`,
+              color: palette.azul,
+              fontSize: 12,
+              fontWeight: 600,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <span
+              aria-hidden="true"
+              className="ponto-pulsante"
+              style={{ width: 8, height: 8, borderRadius: '50%', background: palette.azul, flexShrink: 0 }}
+            />
+            Última atualização: {formatarDataPtBr(meta.geradoEm)}
+          </span>
+        </div>
+
+        <div className="container" style={{ paddingTop: 0, paddingBottom: 16 }}>
+          <TabNav abas={ABAS} ativa={abaAtiva} onSelecionar={setAbaAtiva} />
+        </div>
+      </header>
+
+      <div className="container" style={{ paddingBottom: 0 }}>
+        <LegendaSemaforo />
       </div>
-      {aba === 'visao-geral' && <VisaoGeral dados={dados} />}
-      {aba === 'financeiro' && <Financeiro dados={dados} />}
-      {aba === 'energia' && <Energia dados={dados} />}
-      {aba === 'comparativo' && <Comparativo dados={dados} />}
-      {aba === 'tendencias' && <Tendencias dados={dados} />}
-      {aba === 'recomendacoes' && <Recomendacoes dados={dados} />}
-      {aba === 'fontes' && <Fontes dados={dados} />}
+
+      <ViewAtiva dados={dados} />
+
+      <footer
+        className="container"
+        style={{ marginTop: 8, paddingTop: 16, borderTop: `1px solid ${palette.borda}` }}
+      >
+        <p style={{ color: palette.txtSec, fontSize: 12, margin: 0 }}>
+          Leitura qualitativa de síntese executiva derivada da análise dos capítulos — não é índice quantitativo.
+        </p>
+        <p style={{ color: palette.txtSec, fontSize: 12, margin: '8px 0 0' }}>
+          {fontes.nVendors != null && `${fontes.nVendors} vendors e órgãos consultados · `}
+          {fontes.nVozes != null && `${fontes.nVozes} vozes/relatórios distintos · `}
+          Regra fixa: ≥2 fontes independentes por número-chave (dados sem segunda fonte recebem selo ⚠ estimativa).
+        </p>
+      </footer>
     </>
   )
 }

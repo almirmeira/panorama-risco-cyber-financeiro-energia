@@ -58,6 +58,7 @@ function Tendencias({ dados }) {
             nivel={t.semaforoUrgencia}
             justificativa={`Horizonte: ${t.horizonte} · Exposição Financeiro ${t.exposicaoFin}/5 · Exposição Energia ${t.exposicaoEnergia}/5`}
             fonte={t.fonte}
+            estimativa={t.estimativa}
           />
         ))}
       </div>
