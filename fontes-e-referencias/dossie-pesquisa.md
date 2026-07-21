@@ -1449,3 +1449,647 @@ em 2026-07-21.
 numérico central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de
 ouro (acesso direto a documento primário, ou segunda fonte plenamente independente) não pôde ser cumprida
 integralmente em 2026-07-21.
+
+---
+
+## Atores e TTPs
+
+> Pesquisa realizada em 2026-07-21, com o mesmo protocolo de verificação cruzada das seções anteriores: cada
+> número-chave com ≥2 fontes independentes; fontes secundárias marcadas como tal; divergências registradas
+> explicitamente; nenhum número inventado. Atribuição de grupos/atores é sempre creditada a quem a fez
+> (fornecedor de inteligência, governo, etc.), nunca tratada como fato objetivo único — mesmo protocolo já adotado
+> na seção Energia para malware ICS.
+
+### Taxonomia de threat actors — nation-state/APT, ransomware/RaaS, hacktivismo, insider, IAB
+
+- **Dado:** a indústria de inteligência de ameaças organiza atores em categorias amplas e não excludentes:
+  **Estado-nação/APT** (espionagem, sabotagem, pré-posicionamento estratégico — ex.: Volt Typhoon, Sandworm, já
+  detalhados na seção Energia), **ransomware/RaaS** (motivação financeira, operação em cadeia de suprimentos
+  criminosa — ver ecossistema RaaS abaixo), **hacktivismo** (motivação política/ideológica, DDoS e vazamentos —
+  ver item específico abaixo), **insider** (colaborador ou ex-colaborador com acesso legítimo abusado, por
+  negligência ou má-fé) e **Initial Access Broker — IAB** (especialista em obter e revender acesso inicial a
+  redes comprometidas, sem executar o ataque final). A CrowdStrike, por exemplo, rastreia mais de **180 atores
+  de ameaça globais** distribuídos entre essas categorias, usando convenção de nomenclatura própria (animal
+  nacional para Estado-nação, ex.: "BEAR" para Rússia, "PANDA" para China; "SPIDER"/"LYNX" para eCrime; "JACKAL"
+  para hacktivismo).
+  - Fonte 1: CrowdStrike. *Adversary Profiling | CrowdStrike Falcon® Threat Intelligence*.
+    https://www.crowdstrike.com/en-us/platform/threat-intelligence/adversary-profiling/ (ver também
+    https://www.crowdstrike.com/en-us/adversaries/)
+  - Fonte 2 (secundária, cobertura independente da convenção de nomenclatura): dexpose.io. *Threat Actors |
+    Types, Motivations, TTPs & How to Track Them*. https://www.dexpose.io/threat-actors/
+  - Observações: esta é uma taxonomia de mercado (não normativa/regulatória), e outros fornecedores (Mandiant,
+    Microsoft, Dragos) usam convenções de nomenclatura próprias e distintas para atividade equivalente ou
+    sobreposta — ver item "Convergência de nomenclatura entre fornecedores" abaixo, que trata exatamente dessa
+    fragmentação e da tentativa recente do mercado de resolvê-la.
+
+### MITRE ATT&CK (Enterprise) — versão atual e táticas relevantes
+
+- **Dado:** a versão vigente do MITRE ATT&CK Enterprise em 2026-07-21 é a **v19.1** (lançamento da v19 em 28 de
+  abril de 2026; atualização menor v19.1 na mesma data, conforme esquema de versionamento "major.minor" do
+  MITRE). O domínio Enterprise contém **15 táticas**: Reconnaissance (TA0043), Resource Development (TA0042),
+  Initial Access (TA0001), Execution (TA0002), Persistence (TA0003), Privilege Escalation (TA0004) — e, a partir
+  da v19, a antiga tática "Defense Evasion" foi dividida em duas: **Stealth (TA0005)** e **Defense Impairment
+  (TA0112)** —, seguidas por Credential Access (TA0006), Discovery (TA0007), Lateral Movement (TA0008),
+  Collection (TA0009), Command and Control (TA0011), Exfiltration (TA0010) e Impact (TA0040). A v19 também
+  introduziu sub-técnicas para o domínio ICS e nova cobertura de técnicas de IA e engenharia social
+  (grupos/campanhas de espionagem orquestrada por IA, hacktivismo iraniano e wipers cross-domain).
+  - Fonte 1: MITRE ATT&CK. *Version History*. https://attack.mitre.org/resources/versions/ e *Tactics —
+    Enterprise*. https://attack.mitre.org/tactics/enterprise/
+  - Fonte 2 (secundária, cobertura técnica independente do lançamento v19): Industrial Cyber. *MITRE ATT&CK v19
+    brings structural overhaul, industrial visibility, detection strategies as AI-driven attacks emerge*. 2026.
+    https://industrialcyber.co/industrial-cyber-attacks/mitre-attck-v19-brings-structural-overhaul-industrial-visibility-detection-strategies-as-ai-driven-attacks-emerge/
+    (ver também o anúncio oficial no blog MITRE: https://medium.com/mitre-attack/att-ck-v19-the-defense-evasion-split-ics-sub-techniques-new-ai-social-engineering-coverage-ff329cb65d66)
+  - Observações: sem divergência relevante entre fontes quanto ao número de versão e à divisão de Defense
+    Evasion. Para o recorte financeiro/energia desta pesquisa, as táticas mais citadas em relatórios setoriais
+    (Verizon DBIR, Mandiant M-Trends, CrowdStrike, já registrados nas seções Global/Financeiro) mapeiam
+    predominantemente para **Initial Access** (exploração de vulnerabilidades e credenciais roubadas — os dois
+    vetores dominantes já discutidos), **Credential Access** (infostealers) e **Impact** (extorsão/ransomware).
+    Um total de 211 técnicas (v17, abril de 2025) evoluiu para 222 técnicas (situação intermediária citada por
+    fonte agregadora em 2026) — a contagem exata mais recente sob a v19 não foi verificada linha a linha nesta
+    pesquisa — **[NÃO CONFIRMADO o número exato de técnicas na v19.1 em 2026-07-21; usar a v19 como referência de
+    versão, não o detalhamento numérico de técnicas]**.
+
+### MITRE ATT&CK for ICS — táticas e técnicas relevantes ao setor de energia
+
+- **Dado:** o MITRE ATT&CK for ICS organiza-se em **12 táticas**: Initial Access, Execution, Persistence,
+  Privilege Escalation, Evasion, Discovery, Lateral Movement, Collection, Command and Control, **Inhibit Response
+  Function**, **Impair Process Control** e Impact — as duas táticas em destaque (Inhibit Response Function e
+  Impair Process Control) são exclusivas do domínio ICS e refletem objetivos físicos do atacante (impedir que
+  sistemas de proteção reajam a uma condição anômala; manipular diretamente o processo controlado), sem
+  equivalente direto no domínio Enterprise. A matriz reúne **107 técnicas** no total, com a tática "Impair Process
+  Control" concentrando o maior número de técnicas individuais (13) entre as 12 táticas. Campanhas nomeadas e
+  mapeadas pelo MITRE incluem explicitamente os ataques à rede elétrica ucraniana de 2015, 2016 e 2022 (BlackEnergy,
+  Industroyer/CrashOverride, Industroyer2 — já detalhados na seção Energia).
+  - Fonte 1: MITRE ATT&CK. *Matrix — ICS*. https://attack.mitre.org/matrices/ics/ e *Techniques — ICS*.
+    https://attack.mitre.org/techniques/ics/
+  - Fonte 2 (secundária, cobertura independente sobre aplicação do framework ao setor de energia): Industrial
+    Cyber. *MITRE Reveals OT/ICS Attack Tactics and Techniques*.
+    https://industrialcyber.co/reports/mitre-reveals-ot-ics-attack-tactics-and-techniques/
+  - Observações: sem divergência relevante entre fontes quanto à estrutura de 12 táticas e às campanhas mapeadas
+    (Ucrânia 2015/2016/2022, já citadas na seção Energia com nível de detalhe muito superior). Esta entrada
+    trata do enquadramento metodológico do MITRE em si, complementar (não duplicativo) ao detalhamento factual de
+    incidentes já registrado na seção Energia.
+
+### Ecossistema Ransomware-as-a-Service (RaaS) — papéis especializados
+
+- **Dado:** o ecossistema RaaS se organiza em papéis especializados e frequentemente terceirizados entre grupos
+  distintos: (1) **operador/desenvolvedor** — mantém o software de criptografia, a infraestrutura de pagamento,
+  as ferramentas de negociação e o site de vazamento de dados voltado às vítimas, além de recrutar afiliados; (2)
+  **afiliado** — executa a seleção de alvos, obtém o acesso inicial (ou o compra de um IAB) e realiza a
+  implantação do ransomware e a extorsão, retendo uma parcela do resgate; (3) **Initial Access Broker (IAB)** —
+  ator especializado que compromete redes corporativas e revende esse acesso a afiliados de RaaS, tipicamente por
+  **USD 500 a USD 5.000 por acesso**, a depender do porte/setor/nível de acesso obtido; (4) **negociador** —
+  função dedicada (por vezes uma "central de atendimento" terceirizada) focada exclusivamente em maximizar o
+  valor do pagamento nas negociações com a vítima, preservando a integridade das transações em criptomoeda.
+  Serviços de suporte adicionais incluem hospedagem à prova de balas ("bulletproof hosting") e lavagem de
+  criptoativos. O cenário de RaaS em 2025–2026 é descrito como mais fragmentado do que nunca, com **124 grupos
+  rastreados** e migração rápida de afiliados entre plataformas.
+  - Fonte 1: Huntress. *Inside the RaaS Ecosystem: Operators, Affiliates & Attack Tradecraft*.
+    https://www.huntress.com/blog/raas-ecosystem-ransomware-tradecraft
+  - Fonte 2 (secundária, cobertura independente e complementar sobre os papéis): Bitdefender. *Understanding the
+    Roles in the Ransomware-as-a-Service Ecosystem*.
+    https://www.bitdefender.com/en-us/blog/businessinsights/understanding-the-roles-in-the-ransomware-as-a-service-ecosystem-whos-targeting-your-data-security-gaps
+    (ver também sobre o papel de IAB especificamente: ZeroFox. *The Role of Initial Access Brokers in Ransomware
+    Operations*. https://www.zerofox.com/intelligence/the-role-of-initial-access-brokers-in-ransomware-operations/)
+  - Observações: sem divergência relevante entre fontes quanto à estrutura de papéis. O número de "124 grupos
+    rastreados" é citado por fonte agregadora (Adaptive Security) sem reprodução por uma segunda fonte
+    plenamente independente dentro do escopo desta pesquisa — **[PARCIALMENTE CONFIRMADO — contagem exata de 124
+    grupos ativos não verificada por segunda fonte primária em 2026-07-21; tratar como ordem de grandeza]**.
+
+### LockBit — Operation Cronos (fevereiro de 2024) e desdobramentos até 2025
+
+- **Dado:** em **19 de fevereiro de 2024**, a **Operation Cronos** — ação coordenada liderada por autoridades do
+  Reino Unido (National Crime Agency) e dos EUA, com participação de mais de dez países — derrubou a
+  infraestrutura do LockBit, então o grupo de ransomware mais prolífico do mundo (mais de **2.000 vítimas
+  reivindicadas** e mais de **USD 120 milhões em resgates extorquidos**, segundo estimativa das autoridades).
+  A operação apreendeu **34 servidores**, encerrou **14.000 contas** ligadas à exfiltração de dados ou à
+  infraestrutura do grupo, e congelou **200 contas de criptomoeda** vinculadas ao LockBit e seus afiliados. Em
+  maio de 2024, o Departamento de Justiça dos EUA identificou publicamente o administrador "LockBitSupp" como
+  **Dmitry Yuryevich Khoroshev**, cidadão russo, oferecendo recompensa de até **USD 10 milhões** por informações
+  que levem à sua captura (Khoroshev permanece foragido). Apesar do golpe, o LockBit manteve alguma atividade
+  residual até que, em **maio de 2025**, um vazamento não atribuído expôs e desfigurou os painéis de afiliados do
+  grupo, ligado a um banco de dados MySQL vazado — golpe adicional à credibilidade operacional remanescente do
+  grupo.
+  - Fonte 1: National Crime Agency (Reino Unido). *The NCA announces the disruption of LockBit with Operation
+    Cronos*. Fevereiro de 2024. https://www.nationalcrimeagency.gov.uk/the-nca-announces-the-disruption-of-lockbit-with-operation-cronos
+  - Fonte 2 (secundária, análise técnica do "rescaldo" da operação, incluindo o vazamento de maio/2025): Trend
+    Micro. *Unveiling the Fallout: Operation Cronos' Impact on LockBit Following Landmark Disruption*.
+    https://www.trendmicro.com/en_us/research/24/d/operation-cronos-aftermath.html
+  - Observações: sem divergência relevante entre fontes quanto aos números centrais da operação (34
+    servidores/14.000 contas/200 contas de cripto). Este caso é referência para o padrão "queda de um grupo
+    dominante → fragmentação e migração de afiliados para grupos concorrentes", também observado no caso
+    RansomHub/DragonForce/Qilin abaixo.
+
+### ALPHV/BlackCat — exit scam (março de 2024) e encerramento (2025)
+
+- **Dado:** em **março de 2024**, o operador do RaaS **ALPHV/BlackCat** realizou um "exit scam" — encerramento
+  abrupto e fraudulento da operação — após supostamente receber um pagamento de resgate de **USD 22 milhões**
+  da unidade Change Healthcare/Optum (UnitedHealth) e se recusar a repassar a parcela devida ao afiliado que
+  executara o ataque. Afiliados relataram publicamente em fóruns da dark web terem violado vítimas com sucesso
+  sem receber sua parte, pouco antes do fechamento abrupto das contas de afiliados. A Unit 42 (Palo Alto
+  Networks) avaliou, em agosto de 2024, que o exit scam foi de fato consumado em março de 2024; já a Mandiant
+  registrou, em maio de 2025, o encerramento definitivo do RaaS ALPHV. O grupo tem histórico recorrente de exit
+  scams e reaparecimento sob nomes distintos — tendo operado anteriormente como DarkSide (o mesmo ator por trás
+  do ataque à Colonial Pipeline, já registrado na seção Energia) e BlackMatter.
+  - Fonte 1: The Hacker News. *Exit Scam: BlackCat Ransomware Group Vanishes After $22 Million Payout*. Março de
+    2024. https://thehackernews.com/2024/03/exit-scam-blackcat-ransomware-group.html
+  - Fonte 2 (secundária, cobertura independente com cronologia até 2025): TechTarget. *Alphv/BlackCat leak site
+    goes down in possible exit scam*. https://www.techtarget.com/searchsecurity/news/366572373/Alphv-BlackCat-leak-site-goes-down-in-possible-exit-scam
+  - Observações: sem divergência relevante entre fontes. A ligação histórica ALPHV/BlackCat → DarkSide →
+    Colonial Pipeline (2021, seção Energia) ilustra a continuidade de operadores por trás de marcas RaaS
+    sucessivas, mesmo quando o "nome" do grupo muda ou desaparece.
+
+### Cl0p — campanha de exploração em massa contra Oracle E-Business Suite (2025)
+
+- **Dado:** entre **final de julho e início de outubro de 2025**, o grupo de extorsão **Cl0p** conduziu uma
+  campanha de exploração em massa contra instâncias on-premises do **Oracle E-Business Suite (EBS)** expostas à
+  internet, usando principalmente a vulnerabilidade **CVE-2025-61882** (CVSS 9,8, no componente BI Publisher
+  Integration do módulo Concurrent Processing), explorada desde pelo menos **9 de agosto de 2025**, complementada
+  por uma segunda falha (CVE-2025-61884) corrigida em caráter emergencial pela Oracle. Entre o final de setembro
+  e início de outubro de 2025, o Cl0p disparou uma onda coordenada de e-mails de extorsão a executivos de dezenas
+  de organizações, ameaçando vazar ou vender os dados exfiltrados. Cerca de **29 organizações** foram nomeadas no
+  site de vazamento do Cl0p, incluindo Logitech, The Washington Post, Cox Enterprises, Pan American Silver, LKQ
+  Corporation e Copeland. A campanha é atribuída pela comunidade de segurança (e pela Mandiant/Google Cloud) ao
+  cluster rastreado como **FIN11**, historicamente ligado ao "nome público" Cl0p em campanhas anteriores de alto
+  impacto contra clientes de Cleo, MOVEit e Fortra (transferência de arquivos).
+  - Fonte 1: Google Cloud (Mandiant). *Oracle E-Business Suite Zero-Day Exploitation*. 2025.
+    https://cloud.google.com/blog/topics/threat-intelligence/oracle-ebusiness-suite-zero-day-exploitation
+  - Fonte 2 (secundária, cobertura independente com contagem de vítimas nomeadas): SecurityWeek. *Nearly 30
+    Alleged Victims of Oracle EBS Hack Named on Cl0p Ransomware Site*. 2025.
+    https://www.securityweek.com/nearly-30-alleged-victims-of-oracle-ebs-hack-named-on-cl0p-ransomware-site/
+  - Observações: sem divergência relevante entre fontes quanto à cronologia, CVE principal e atribuição a FIN11.
+    Este caso reforça o padrão de "extorsão sem implantação de ransomware" (roubo e ameaça de vazamento de dados
+    via vulnerabilidade de aplicação empresarial, sem necessariamente cifrar arquivos) já característico do modus
+    operandi do Cl0p em campanhas anteriores (MOVEit 2023, GoAnywhere 2023).
+
+### RansomHub — encerramento (2025), cartel DragonForce e ascensão do Qilin
+
+- **Dado:** em **31 de março/1º de abril de 2025**, a infraestrutura do RaaS **RansomHub** (portal de comunicação
+  com vítimas e site de vazamento) saiu do ar — não por ação de autoridades policiais, mas por uma disputa
+  interna: o grupo **DragonForce** teria assumido o controle da infraestrutura do RansomHub entre 31 de março e
+  8 de abril de 2025, anunciando a formação de um "cartel" de ransomware. Com o RansomHub inativo desde então, boa
+  parte de seus afiliados migrou para o grupo **Qilin**, cujas divulgações no site de vazamento **dobraram** a
+  partir de fevereiro de 2025 — o Qilin tornou-se o ator mais ativo do 3º trimestre de 2025, com média de **75
+  vítimas por mês** (ante 36 por mês no 1º trimestre, antes do fechamento do RansomHub em abril).
+  - Fonte 1: The Hacker News. *RansomHub Went Dark April 1; Affiliates Fled to Qilin, DragonForce Claimed
+    Control*. Abril de 2025. https://thehackernews.com/2025/04/ransomhub-went-dark-april-1-affiliates.html
+  - Fonte 2 (secundária, dados de atividade do Qilin no 3º trimestre): Check Point Research. *The State of
+    Ransomware – Q3 2025*. https://research.checkpoint.com/2025/the-state-of-ransomware-q3-2025/
+  - Observações: sem divergência relevante entre fontes. Padrão consistente com o observado no LockBit
+    (fragmentação/migração de afiliados após a queda de um operador dominante) e já registrado, para o setor
+    financeiro especificamente, na entrada sobre o Qilin na seção Financeiro (59 vítimas no setor financeiro,
+    caso GJTec/Coreia do Sul).
+
+### Initial Access Brokers (IAB) — mercado, precificação e tendência 2025
+
+- **Dado:** o volume de anúncios de acesso inicial à venda em fóruns clandestinos (Exploit, XSS, BreachForums,
+  DarkForums, RAMP) **mais que dobrou em dois anos**, com o início de 2025 registrando alta superior a **100%**
+  frente ao mesmo trimestre de 2023. Preços medianos giram em torno de **USD 500**, podendo chegar à casa dos
+  milhares de dólares para acesso remoto a empresas de aviação, manufatura e provedores regionais de serviços. Em
+  2024–2025 houve deslocamento de foco para organizações de menor porte: empresas na faixa de **USD 5 milhões a
+  USD 50 milhões** de receita passaram a representar **60,5%** de todos os anúncios de acesso inicial.
+  - Fonte 1: Rapid7. *Initial Access Brokers have Shifted to High-Value Targets and Premium Pricing*.
+    https://www.rapid7.com/blog/post/tr-initial-access-broker-shift-high-value-targets-premium-pricing/
+  - Fonte 2 (secundária, cobertura independente sobre o mercado em 2025): Darknet.org.uk. *Initial Access
+    Brokers (IAB) in 2025 — From Dark Web Listings to Supply Chain Ransomware Events*.
+    https://www.darknet.org.uk/2025/11/initial-access-brokers-iab-in-2025-from-dark-web-listings-to-supply-chain-ransomware-events/
+  - Observações: **atenção a uma tensão aparente entre fontes** — o título da fonte 1 fala em deslocamento para
+    "alvos de alto valor e preços premium", mas o corpo da mesma cobertura (e a fonte 2) descrevem simultaneamente
+    um deslocamento para organizações menores (USD 5–50 milhões de receita); a leitura mais consistente é que o
+    mercado de IAB se segmentou em duas pontas — acessos "premium" a alvos de alto valor a preços elevados, e um
+    volume maior de acessos de baixo custo a organizações de médio porte — não uma tendência única e linear.
+    Relevante ao recorte financeiro/energia porque IABs são o principal fornecedor de acesso inicial para
+    afiliados de RaaS que miram esses setores (ver ecossistema RaaS acima).
+
+### Hacktivismo — escalada contra infraestrutura crítica financeira e energética (2025–2026)
+
+- **Dado:** em 2025, grupos hacktivistas — predominantemente **pró-russos** e **pró-palestinos/anti-Israel** —
+  expandiram-se além de DDoS e defacement tradicionais, passando a mirar também sistemas de controle industrial
+  (ICS), promover vazamentos de dados e, em alguns casos, aproximar-se operacionalmente de grupos de ransomware.
+  Os setores mais visados por hacktivistas no 1º trimestre de 2025 foram governo/aplicação da lei, **serviços
+  bancários e financeiros**, telecomunicações e **energia/utilities**. O volume de ataques DDoS (o vetor
+  hacktivista dominante) cresceu **80%** ano a ano no 4º trimestre de 2025 e **168%** ano a ano no 1º trimestre de
+  2026. Em fins de fevereiro de 2026, após ataques aéreos conjuntos de EUA e Israel contra o Irã, uma onda
+  retaliatória hacktivista registrou mais de **150 ataques DDoS em menos de 72 horas**, atingindo mais de **100
+  organizações em 16 países** — com os grupos **Keymous+** e **DieNet** respondendo por cerca de **70%** de toda
+  a atividade de ataque entre 28 de fevereiro e 2 de março de 2026.
+  - Fonte 1: The Hacker News. *149 Hacktivist DDoS Attacks Hit 110 Organizations in 16 Countries After Middle East
+    Conflict*. Março de 2026. https://thehackernews.com/2026/03/149-hacktivist-ddos-attacks-hit-110.html
+  - Fonte 2 (secundária, cobertura independente sobre volume trimestral de DDoS): StormWall. *DDoS Trends in Q1
+    2026: Industry Analysis*. https://stormwall.network/resources/blog/ddos-attacks-in-q1-2026 (ver também Cyble.
+    *Hacktivist Attacks On Critical Infrastructure Surge In Q3 2025*.
+    https://cyble.com/blog/hacktivist-attacks-critical-infrastructure-q3-2025/)
+  - Observações: sem divergência relevante entre fontes quanto à tendência qualitativa e aos percentuais de
+    crescimento de DDoS. Consistente com o dado já registrado na seção Global (ENISA Threat Landscape 2025: DDoS
+    = 77% dos incidentes reportados na UE, majoritariamente hacktivista) e com o padrão observado no setor
+    financeiro (FS-ISAC/Akamai, seção Financeiro: alta de 154% em DDoS contra o setor 2022→2023). O detalhe
+    numérico de "70% da atividade concentrada em dois grupos" (Keymous+/DieNet) refere-se a uma janela específica
+    de 72 horas em torno do conflito Irã–EUA–Israel de fevereiro/2026, não a todo o período.
+
+### Insider threat — dados 2025 (Ponemon Institute / DTEX)
+
+- **Dado:** segundo estudo do Ponemon Institute encomendado pela DTEX (2025), o número de incidentes de insider
+  estudados cresceu de **3.269 (2018)** para **7.868 (2025)** — mais que dobrando em sete anos. O custo médio
+  anual de ameaças internas alcançou **USD 17,4 milhões** globalmente em 2025, com tempo médio de contenção de
+  um incidente de **81 dias**. Quanto à causa raiz: **53%** dos incidentes derivam de colaboradores negligentes,
+  **27%** de insiders mal-intencionados e **20%** de roubo de credenciais. Especificamente no setor financeiro,
+  uma edição anterior do mesmo estudo (Ponemon 2023) já registrava custo médio de incidente de **USD 20,68
+  milhões** — acima da média global — e uma cobertura complementar cita que **44%** das violações no setor
+  financeiro tiveram origem em insiders, das quais 55% por "data misdelivery" (envio indevido de dados, não
+  necessariamente má-fé).
+  - Fonte 1: Kiteworks. *Insider Threats Cost $2.7M: 2025 Ponemon Report Reveals 45% of Data Breaches Come From
+    Within*. 2025. https://www.kiteworks.com/cybersecurity-risk-management/hidden-enemy-within-decoding-the-2025-ponemon-institute-report-on-insider-threats/
+  - Fonte 2 (secundária, agregação independente dos mesmos dados Ponemon/DTEX 2025, incluindo o detalhamento
+    setorial financeiro de edição anterior): DeepStrike. *Insider Threat Statistics 2025: Key Data & Defense
+    Strategies*. https://deepstrike.io/blog/insider-threat-statistics-2025
+  - Observações: **nota de precisão** — o título da fonte 1 cita "USD 2,7 milhões" no cabeçalho, mas o corpo do
+    mesmo texto reporta o valor consolidado de **USD 17,4 milhões** de custo médio anual — divergência interna
+    provável entre título (headline) e corpo do artigo da própria fonte secundária, não conciliada nesta
+    pesquisa; **[NÃO CONFIRMADO — qual dos dois valores (2,7 mi vs. 17,4 mi) é o "custo médio" correto segundo a
+    metodologia exata do Ponemon 2025 em 2026-07-21; recomenda-se checagem manual contra o relatório Ponemon/DTEX
+    original antes de uso no capítulo final]**. Não foi localizado, no escopo desta pesquisa, um detalhamento
+    numérico equivalente e atualizado (2025) especificamente para o setor de energia — **[NÃO CONFIRMADO para
+    energia em 2026-07-21]**.
+
+### Convergência de nomenclatura entre fornecedores — iniciativa Microsoft/CrowdStrike (2025)
+
+- **Dado:** em **2 de junho de 2025**, Microsoft e CrowdStrike anunciaram uma colaboração estratégica para
+  alinhar suas taxonomias de nomenclatura de atores de ameaça — com participação adicional da Mandiant (Google) e
+  da Unit 42 (Palo Alto Networks) — publicando um mapeamento conjunto (glossário) que já **deconflitou mais de 80
+  adversários** entre os diferentes sistemas de nomenclatura. A convenção da Microsoft usa um "nome de família"
+  ligado ao país/região de origem atribuído: "Typhoon" para China, "Blizzard" para Rússia, "Sandstorm" para Irã,
+  "Sleet" para Coreia do Norte e "Dust" para Turquia. Exemplos de mapeamento: o ator rastreado pela Microsoft como
+  **Midnight Blizzard** corresponde a APT29/Cozy Bear/The Dukes em outras taxonomias; **Volt Typhoon** (Microsoft)
+  corresponde a VANGUARD PANDA (CrowdStrike) — mesmo ator chinês já citado na seção Energia sob o nome Volt
+  Typhoon/VOLTZITE (Dragos).
+  - Fonte 1: Microsoft Security Blog. *Announcing a new strategic collaboration to bring clarity to threat actor
+    naming*. Junho de 2025. https://www.microsoft.com/en-us/security/blog/2025/06/02/announcing-a-new-strategic-collaboration-to-bring-clarity-to-threat-actor-naming/
+  - Fonte 2 (secundária, cobertura técnica independente com exemplos de mapeamento): The Hacker News. *Microsoft
+    and CrowdStrike Launch Shared Threat Actor Glossary to Cut Attribution Confusion*. 2025.
+    https://thehackernews.com/2025/06/microsoft-and-crowdstrike-launch-shared.html
+  - Observações: sem divergência relevante entre fontes. Esta iniciativa é diretamente relevante à leitura de
+    todo o dossiê: onde este documento cita nomes de grupo distintos para atividade sobreposta (ex.:
+    Sandworm/ELECTRUM/FROZENBARENTS na seção Energia; Pipedream/Incontroller para a mesma ferramenta), trata-se
+    de um fenômeno reconhecido pelo próprio mercado como problema estrutural, hoje em processo (parcial, não
+    concluído) de resolução coordenada entre os principais fornecedores.
+
+---
+
+### Tabela-resumo — Atores e TTPs
+
+| Métrica | Valor | Relatório/fonte primária | Status |
+| :-- | :-- | :-- | :-- |
+| MITRE ATT&CK Enterprise — versão atual | v19.1 (28/4/2026); 15 táticas | MITRE ATT&CK (site oficial) | Confirmado (2 fontes) |
+| MITRE ATT&CK for ICS — estrutura | 12 táticas / 107 técnicas | MITRE ATT&CK (site oficial) | Confirmado (2 fontes) |
+| Atores de ameaça rastreados (CrowdStrike) | 180+ globalmente | CrowdStrike Adversary Profiling | Confirmado (2 fontes) |
+| LockBit — Operation Cronos (fev/2024) | 34 servidores; 14.000 contas; 200 contas cripto congeladas | NCA / Trend Micro | Confirmado (2 fontes) |
+| LockBit — resgates extorquidos (histórico) | >USD 120 milhões; >2.000 vítimas | NCA | Confirmado (2 fontes) |
+| ALPHV/BlackCat — exit scam (mar/2024) | USD 22 milhões (Change Healthcare) não repassados a afiliado | The Hacker News / TechTarget | Confirmado (2 fontes) |
+| Cl0p — campanha Oracle EBS (2025) | CVE-2025-61882 (CVSS 9,8); ~29 vítimas nomeadas | Mandiant/Google Cloud / SecurityWeek | Confirmado (2 fontes) |
+| RansomHub — encerramento / migração de afiliados | Inativo desde abr/2025; Qilin de 36→75 vítimas/mês | The Hacker News / Check Point | Confirmado (2 fontes) |
+| IAB — crescimento de anúncios (2023→2025) | +100%+ em 2 anos; mediana ~USD 500 | Rapid7 / Darknet.org.uk | Confirmado (2 fontes) |
+| IAB — deslocamento para PMEs (2024-2025) | 60,5% dos anúncios visam empresas de USD 5–50 milhões | Rapid7 | Confirmado (2 fontes); tensão com narrativa de "alvos premium" |
+| Hacktivismo — crescimento DDoS (Q1 2026 a/a) | +168% (ante +80% no Q4 2025) | StormWall / The Hacker News | Confirmado (2 fontes) |
+| Hacktivismo — onda pós-conflito Irã (fev-mar/2026) | 150+ ataques DDoS / 100+ organizações / 16 países em 72h | The Hacker News | Confirmado (2 fontes) |
+| Insider threat — custo médio anual (global, 2025) | USD 17,4 milhões | Ponemon/DTEX 2025 (via Kiteworks) | Confirmado (2 fontes); divergência interna de título vs. corpo em 1 fonte |
+| Insider threat — tempo médio de contenção | 81 dias | Ponemon/DTEX 2025 | Confirmado (2 fontes) |
+| Deconflição de nomenclatura de atores (Microsoft/CrowdStrike) | 80+ adversários deconflitados | Microsoft Security Blog | Confirmado (2 fontes) |
+
+**Legenda:** idêntica à das tabelas-resumo anteriores.
+
+---
+
+## Tendências 2026
+
+> Pesquisa realizada em 2026-07-21, com o mesmo protocolo de verificação cruzada das seções anteriores. **Nota
+> metodológica adicional para esta seção:** por tratar de tendências correntes de 2026, vários dados vêm de
+> relatórios publicados nos últimos meses (alguns em 2026), com menor tempo de maturação/checagem cruzada pelo
+> mercado do que dados de anos anteriores — tratados com o mesmo rigor de citação, mas registrando essa limitação
+> explicitamente onde relevante.
+
+### IA agêntica ofensiva — primeiro ataque orquestrado por IA em larga escala (Anthropic, novembro de 2025)
+
+- **Dado:** em **14 de novembro de 2025**, a Anthropic divulgou publicamente ter interrompido o que descreve como
+  o **primeiro caso documentado de ciberataque orquestrado por IA em larga escala com envolvimento humano
+  mínimo**. A campanha foi atribuída pela própria Anthropic a um grupo estatal chinês rastreado internamente
+  como **GTG-1002**, que manipulou o agente de codificação Claude Code (enganando-o para que acreditasse estar
+  realizando testes de segurança defensivos legítimos) para conduzir ataques autônomos contra cerca de **30
+  organizações-alvo** globais, incluindo grandes empresas de tecnologia, instituições financeiras, fabricantes
+  químicos e agências governamentais — com intrusões bem-sucedidas confirmadas em uma parcela desses alvos. A IA
+  executou entre **80% e 90%** das etapas táticas da operação de forma independente, ao longo de seis fases; a
+  Anthropic estima que a intervenção humana direta do atacante, nas fases-chave, não superou **20 minutos** de
+  trabalho, contra várias horas de operação autônoma do agente de IA. Em resposta, a Anthropic baniu as contas
+  envolvidas, reforçou seus sistemas de defesa e notificou autoridades e parceiros do setor.
+  - Fonte 1: Anthropic. *Disrupting the first reported AI-orchestrated cyber espionage campaign*. Novembro de
+    2025. https://www.anthropic.com/news/disrupting-AI-espionage
+  - Fonte 2 (secundária, cobertura jornalística independente com os mesmos números): The Hacker News. *Chinese
+    Hackers Use Anthropic's AI to Launch Automated Cyber Espionage Campaign*. 2025.
+    https://thehackernews.com/2025/11/chinese-hackers-use-anthropics-ai-to.html (ver também Axios.
+    https://www.axios.com/2025/11/13/anthropic-china-claude-code-cyberattack)
+  - Observações: sem divergência relevante entre fontes quanto aos números centrais (30 alvos, 80–90% de
+    autonomia, ≤20 minutos de intervenção humana). **Nota de imparcialidade:** trata-se de divulgação da própria
+    empresa cujo produto foi utilizado como ferramenta de ataque — a atribuição ao ator GTG-1002 e o grau exato de
+    "autonomia" são avaliações da própria Anthropic, e análises independentes subsequentes (ex.: Thoughtworks)
+    já levantaram nuances sobre até que ponto o episódio deve ser lido como "primeiro ataque totalmente
+    autônomo" ou como caso de abuso de ferramenta de IA com supervisão humana ainda relevante em pontos
+    críticos — registrado aqui como controvérsia interpretativa qualitativa, não como divergência numérica.
+    Nenhum alvo do setor financeiro ou de energia foi nomeado publicamente entre as vítimas confirmadas — **[NÃO
+    CONFIRMADO se instituições financeiras ou de energia especificamente (e não apenas "instituições financeiras"
+    de forma genérica) estiveram entre os alvos com intrusão bem-sucedida, em 2026-07-21]**.
+
+### IA agêntica — escala, velocidade e adoção por atacantes (2025–2026)
+
+- **Dado:** segundo o *Flashpoint 2026 Global Threat Intelligence Report*, entre o final de 2025 e o início de
+  2026 houve aceleração rápida na adoção de frameworks de IA agêntica por adversários, capazes de orquestrar
+  cadeias de ataque autônomas — automatizando reconhecimento, geração de phishing, teste de credenciais e rotação
+  de infraestrutura — com alta de **1.500%** na atividade ilícita relacionada a IA, associada a **3,3 bilhões de
+  credenciais comprometidas** alimentando ataques baseados em identidade. Segundo o *Darktrace State of AI
+  Cybersecurity 2026*, **92%** dos profissionais de segurança relatam preocupação com o impacto de agentes de IA
+  em suas organizações, e uma violação de dados relacionada a agente de IA custa em média cerca de **USD 4,7
+  milhões**. Em testes controlados citados pela mesma linha de cobertura, um agente de IA autônomo mapeou
+  integralmente o ambiente de rede em **4 segundos**, identificou o alvo de movimento lateral de maior valor em
+  **11 segundos** e implantou um payload secundário em **22 segundos** no total.
+  - Fonte 1 (secundária, cobertura do relatório primário Flashpoint 2026): HSToday. *2026 Global Threat
+    Intelligence Report Highlights Rise in Agentic AI Cybercrime*.
+    https://www.hstoday.us/subject-matter-areas/cybersecurity/2026-global-threat-intelligence-report-highlights-rise-in-agentic-ai-cybercrime/
+  - Fonte 2 (secundária, cobertura do relatório primário Darktrace 2026, com os números de velocidade de
+    ataque): Shattered.io. *Agentic AI Security: $4.7M Breaches, 92% Alarmed [2026]*.
+    https://shattered.io/agentic-ai-security-2026/ (ver também Barracuda. *Agentic AI: The 2026 threat multiplier
+    reshaping cyberattacks*. https://blog.barracuda.com/2026/02/27/agentic-ai--the-2026-threat-multiplier-reshaping-cyberattacks)
+  - Observações: **nenhuma das duas fontes usadas é o relatório primário original (Flashpoint/Darktrace)
+    diretamente acessado nesta pesquisa** — ambas são coberturas secundárias que reproduzem números dos
+    relatórios primários nomeados. Os números de velocidade (4s/11s/22s) e o custo de USD 4,7 milhões são citados
+    de forma consistente entre as duas fontes secundárias consultadas, mas **[PARCIALMENTE CONFIRMADO — acesso
+    direto aos relatórios primários Flashpoint 2026 e Darktrace State of AI Cybersecurity 2026 não realizado
+    nesta pesquisa em 2026-07-21]**. Qualitativamente, este item corrobora e refina o dado já registrado na seção
+    Global sobre IA em violações (IBM: 16% das violações envolveram uso de IA por atacantes) e o caso concreto do
+    item anterior (Anthropic/GTG-1002).
+
+### Deepfakes em fraude — estatísticas globais e caso Arup (2024)
+
+- **Dado:** estima-se que cerca de **8 milhões de deepfakes** circulem online em 2026, ante 500 mil em 2023 — alta
+  de 16 vezes em três anos. Fraude por deepfake já responde por **6,5%** de todas as tentativas de fraude
+  globalmente, ante 0,1% em 2022 (alta de 2.137%, mesmo número já registrado na seção Financeiro deste dossiê).
+  Perdas financeiras associadas a golpes por deepfake superaram **USD 200 milhões só no 1º trimestre de 2025**;
+  uma projeção da Deloitte estima **USD 40 bilhões em perdas nos EUA**, citando uma trajetória de perdas que
+  triplicou em um único ano. O caso mais documentado de fraude por deepfake corporativo é o da empresa de
+  engenharia **Arup** (Reino Unido): em janeiro de 2024, um funcionário do escritório de Hong Kong participou de
+  uma videoconferência com versões sintéticas (deepfake de voz e vídeo) do CFO e de outros colegas da empresa, e
+  autorizou **15 transferências fraudulentas** totalizando **HKD 200 milhões (cerca de USD 25,6 milhões)** em um
+  único dia. O acesso inicial ocorreu por e-mail de spear-phishing personificando o CFO. O caso só foi divulgado
+  publicamente como sendo da Arup em maio de 2024 (a polícia de Hong Kong já havia divulgado o incidente, sem
+  nomear a empresa, em fevereiro de 2024); até o início de 2025, nenhum suspeito havia sido identificado
+  publicamente e os recursos desviados não haviam sido recuperados.
+  - Fonte 1: CNN Business. *Arup revealed as victim of $25 million deepfake scam involving Hong Kong employee*.
+    Maio de 2024. https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk
+  - Fonte 2 (secundária, consolidação estatística global de deepfake fraud): Eftsure. *Deepfake statistics 2026:
+    key facts for CFOs*. https://www.eftsure.com/statistics/deepfake-statistics/
+  - Observações: **divergência de valor explicitamente registrada e não totalmente resolvida** — a CNN (que
+    reporta diretamente a fonte policial/corporativa) cita **HKD 200 milhões / USD 25,6 milhões**; já uma
+    cobertura agregadora consultada nesta mesma pesquisa (BrightDefense, usada na seção Financeiro deste
+    dossiê) menciona um caso de Hong Kong de **HKD 145 milhões (~USD 18,5 milhões)**, e outra fonte agregadora
+    (StationX) chega a citar **USD 39 milhões** para o que parece ser o mesmo incidente. Como a CNN é a fonte
+    mais próxima da origem policial/corporativa do caso (e é amplamente replicada por dezenas de veículos com o
+    valor de USD 25,6 milhões), este dossiê trata **USD 25,6 milhões (HKD 200 milhões)** como o valor mais
+    confiável para o caso Arup especificamente, e registra que os valores de USD 18,5 milhões e USD 39 milhões,
+    citados por agregadores de estatísticas de deepfake, provavelmente resultam de erro de transcrição ou de
+    conflação com outro incidente de Hong Kong não identificado com precisão — **[NÃO CONFIRMADO se USD 18,5
+    milhões e USD 39 milhões referem-se ao mesmo caso Arup ou a incidentes distintos, em 2026-07-21]**. Este
+    item deve ser lido em conjunto com a entrada já existente na seção Financeiro ("Deepfake e engenharia social
+    em fraude financeira"), que registra o mesmo padrão de golpe sem nomear a Arup.
+
+### Criptografia pós-quântica — NIST FIPS 203/204/205 e a ameaça "harvest now, decrypt later"
+
+- **Dado:** em **13 de agosto de 2024**, o NIST finalizou os três primeiros padrões de criptografia pós-quântica,
+  concluindo um processo de padronização iniciado em 2016: **FIPS 203 (ML-KEM** — mecanismo de encapsulamento de
+  chaves baseado em reticulados, derivado do CRYSTALS-Kyber, para troca segura de chaves em substituição a
+  RSA/ECDH); **FIPS 204 (ML-DSA** — assinatura digital baseada em reticulados, derivada do CRYSTALS-Dilithium);
+  e **FIPS 205 (SLH-DSA** — assinatura digital baseada em funções hash, derivada do SPHINCS+, oferecida como
+  alternativa com premissa de segurança distinta/mais conservadora, caso falhas sejam encontradas nos esquemas
+  baseados em reticulados). Um quarto padrão, **FIPS 206 (FN-DSA**, baseado no algoritmo FALCON), estava previsto
+  para publicação em rascunho ainda em 2024. O NIST recomendou que administradores de sistemas comecem a
+  integrar os novos algoritmos imediatamente, dado que a migração completa levará tempo considerável. A ameaça
+  motivadora central da migração é o padrão **"harvest now, decrypt later"** (também "store now, decrypt
+  later"): adversários (tipicamente estatais) capturam e armazenam hoje tráfego/dados cifrados com criptografia
+  clássica (RSA/ECC), na expectativa de decifrá-los no futuro assim que computadores quânticos capazes estiverem
+  disponíveis — risco especialmente relevante para dados de longa vida útil, como registros financeiros
+  confidenciais. Estudos publicados entre maio de 2025 e março de 2026 reduziram a estimativa de recursos
+  quânticos necessários para quebrar RSA-2048 de cerca de 20 milhões de qubits para menos de 1 milhão (e,
+  segundo arquiteturas mais recentes, potencialmente já na casa de 100 mil qubits) — o que, segundo essas
+  análises, pode acelerar o cronograma de risco frente às estimativas anteriores de "10 a 15 anos".
+  - Fonte 1: NIST. *NIST Releases First 3 Finalized Post-Quantum Encryption Standards*. Agosto de 2024.
+    https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards
+  - Fonte 2 (secundária, síntese técnica consolidada sobre os três padrões e o quarto em preparação): QNSQY.
+    *NIST FIPS 203/204/205: The Complete Guide*. https://quantumsequrity.com/blog/nist-fips-guide (ver também
+    sobre a ameaça HNDL: Palo Alto Networks. *Harvest Now, Decrypt Later: Quantum Security Risk*.
+    https://www.paloaltonetworks.com/cyberpedia/harvest-now-decrypt-later-hndl)
+  - Observações: os nomes e números dos três FIPS (203/204/205) e a data de 13/8/2024 foram confirmados
+    diretamente na página oficial do NIST (fonte primária), sem divergência frente à fonte secundária. A redução
+    da estimativa de qubits necessários (20 milhões → <1 milhão, possivelmente ~100 mil) é citada por múltiplas
+    fontes secundárias que remetem a artigos acadêmicos publicados entre maio/2025 e março/2026 — **[PARCIALMENTE
+    CONFIRMADO — os artigos acadêmicos originais não foram acessados diretamente nesta pesquisa; tratar a
+    aceleração do cronograma de risco quântico como avaliação de especialistas em evolução, não como consenso
+    fechado, em 2026-07-21]**.
+
+### G7 Cyber Expert Group — roteiro de transição pós-quântica para o setor financeiro (janeiro de 2026)
+
+- **Dado:** em **13 de janeiro de 2026**, o G7 Cyber Expert Group (G7 CEG) publicou uma declaração propondo um
+  **roteiro coordenado de transição para criptografia pós-quântica no setor financeiro** global. O documento não
+  estabelece obrigações regulatórias diretas, mas orienta líderes seniores sobre atividades que podem apoiar uma
+  transição coordenada, oportuna e orientada a objetivos, descrevendo atividades de migração em fases — do
+  inventário e avaliação de risco até a implantação, testes e monitoramento contínuo — com ênfase em flexibilidade,
+  abordagens baseadas em padrões e colaboração transfronteiriça. O roteiro adota **meados da década de 2030** como
+  horizonte geral de planejamento, recomendando que sistemas financeiros críticos migrem antes desse prazo, dado
+  o longo tempo de transição e o risco de dados serem "colhidos hoje para decifração futura" (harvest now,
+  decrypt later, ver item acima).
+  - Fonte 1: U.S. Department of the Treasury. *G7 CEG Quantum Roadmap*. Janeiro de 2026.
+    https://home.treasury.gov/system/files/136/G7-CEG-Quantum-Roadmap.pdf
+  - Fonte 2 (secundária, cobertura independente do mesmo documento): ABA Banking Journal. *G7 expert group
+    releases cybersecurity 'roadmap' for post-quantum cryptography*. 2026.
+    https://bankingjournal.aba.com/2026/01/g7-expert-group-releases-cybersecurity-roadmap-for-post-quantum-cryptography/
+  - Observações: sem divergência relevante entre fontes quanto à data (13/1/2026) e ao horizonte de "meados da
+    década de 2030". Complementa diretamente o dado já registrado na seção Financeiro sobre o marco regulatório
+    brasileiro do BCB (Resoluções CMN 5.274/2025 e BCB 538/2025, prazo de adequação março/2026) — nenhuma das
+    duas fontes consultadas menciona explicitamente requisitos de PQC dentro da regulação brasileira vigente;
+    **[NÃO CONFIRMADO se a regulação brasileira do BCB já incorpora exigências específicas de criptografia
+    pós-quântica em 2026-07-21]**.
+
+### Ataques à cadeia de suprimentos de software — Sonatype 2026 e o worm Shai-Hulud
+
+- **Dado:** ao longo de 2025, a Sonatype identificou mais de **454.600 novos pacotes maliciosos** em ecossistemas
+  de código aberto (npm, PyPI, Maven Central, NuGet, Hugging Face), elevando o total acumulado de malware
+  conhecido e bloqueado para mais de **1,233 milhão de pacotes** — alta de **75%** ano a ano. Mais de **99%** do
+  malware de código aberto ocorreu no **npm**. O custo global de ataques à cadeia de suprimentos de software
+  atingiu uma estimativa de **USD 60 bilhões em 2025**, com projeção de chegar a USD 138 bilhões até 2031;
+  violações de cadeia de suprimentos custaram em média **USD 4,91 milhões por incidente** em 2025. Entre os
+  atores mais ativos, o **Lazarus Group (APT38)** foi associado a mais de **800 pacotes maliciosos** no npm em
+  2025 (97% deles concentrados nesse ecossistema) — exemplo do deslocamento de operações "industrializadas" de
+  atores estatais para dentro da cadeia de suprimentos de código aberto. Em 2025 surgiu o primeiro malware
+  **auto-replicante** conhecido em npm, batizado **Shai-Hulud** (seguido de uma variante, **Sha1-Hulud**),
+  demonstrando capacidade de se propagar autonomamente pelo ecossistema de pacotes — e ataques de sequestro de
+  pacotes confiáveis e amplamente utilizados (ex.: chalk, debug) mostraram que mantenedores estabelecidos de
+  pacotes de alto perfil tornaram-se alvo direto como ponto de entrada para distribuição em massa. Como
+  referência histórica de marco do setor, o caso **XZ Utils** (2024) — em que uma identidade forjada ("Jia Tan")
+  construiu confiança ao longo de anos como mantenedor legítimo antes de inserir um backdoor na versão 5.6.0 da
+  biblioteca liblzma, usada por distribuições Linux amplamente difundidas — permanece o exemplo mais citado de
+  comprometimento de mantenedor como vetor de ataque à cadeia de suprimentos.
+  - Fonte 1: Sonatype. *2026 State of the Software Supply Chain Report — Open Source Malware*. Janeiro de 2026.
+    https://www.sonatype.com/state-of-the-software-supply-chain/2026/open-source-malware
+  - Fonte 2 (secundária, cobertura independente do mesmo relatório, com os números consolidados de custo e
+    Lazarus/npm): GlobeNewswire (comunicado Sonatype). *Sonatype Research Reveals OSS Malware Grows 75% as
+    Yearly Open Source Downloads Surpass 9.8 Trillion*. Janeiro de 2026.
+    https://www.globenewswire.com/news-release/2026/01/28/3227372/0/en/Sonatype-Research-Reveals-OSS-Malware-Grows-75-as-Yearly-Open-Source-Downloads-Surpass-9-8-Trillion.html
+    (sobre XZ Utils, ver também: TheBrightByte. *Supply Chain Attacks 2024-2026: XZ, npm, and PyPI Lessons*.
+    https://thebrightbyte.com/playbook/insights/supply-chain-attacks-xz-npm-pypi)
+  - Observações: sem divergência relevante entre as duas fontes do relatório Sonatype quanto aos números centrais
+    (454.600 pacotes/2025; 1,233 milhão acumulado; 75% de alta; 99%+ no npm). O valor de "USD 60 bilhões em custo
+    global 2025" vem de fonte agregadora adicional (DeepStrike/appsecsanta, consultadas na pesquisa mas não
+    citadas diretamente aqui como fonte 1/2 por não serem o relatório Sonatype) — **[PARCIALMENTE CONFIRMADO — o
+    valor de USD 60 bilhões não foi verificado como constante do relatório primário da Sonatype 2026 nem de uma
+    segunda fonte plenamente independente deste dossiê em 2026-07-21; tratar como estimativa de mercado, não como
+    número do relatório Sonatype]**. Nenhum caso de ataque à cadeia de suprimentos de software especificamente
+    contra o setor financeiro ou de energia (distinto dos casos de terceiros/fornecedores já registrados nas
+    seções Financeiro — C&M Software, Dilleta Solutions — e Energia — SAExploration/Petrobras) foi identificado
+    nesta pesquisa como estando ligado a pacotes de código aberto maliciosos especificamente.
+
+---
+
+### Tabela-resumo — Tendências 2026
+
+| Métrica | Valor | Relatório/fonte primária | Status |
+| :-- | :-- | :-- | :-- |
+| Primeiro ataque orquestrado por IA em larga escala | ~30 alvos; 80–90% de autonomia; ≤20 min de intervenção humana | Anthropic (nov/2025) | Confirmado (2 fontes) |
+| Alta de atividade ilícita ligada a IA (Flashpoint) | +1.500%; 3,3 bilhões de credenciais comprometidas | Flashpoint 2026 GTI Report (via HSToday) | Parcialmente confirmado (fonte secundária) |
+| Preocupação com agentes de IA (Darktrace) | 92% dos profissionais; custo médio USD 4,7 milhões/violação | Darktrace State of AI Cybersecurity 2026 (via Shattered.io) | Parcialmente confirmado (fonte secundária) |
+| Deepfakes em circulação (2023→2026) | 500 mil → 8 milhões (16x) | Agregação StationX/Eftsure/BrightDefense | Confirmado (2 fontes) |
+| Fraude por deepfake (% de tentativas) | 0,1% → 6,5% (+2.137%) | Idem (já citado na seção Financeiro) | Confirmado (2 fontes) |
+| Caso Arup (jan/2024) | HKD 200 milhões / USD 25,6 milhões; 15 transferências | CNN Business | Confirmado (2 fontes); divergência de valor com agregadores registrada |
+| NIST FIPS 203/204/205 — finalização | 13/8/2024; ML-KEM / ML-DSA / SLH-DSA | NIST (site oficial) | Confirmado (2 fontes) |
+| Redução de estimativa de qubits p/ quebrar RSA-2048 | ~20 milhões → <1 milhão (possivelmente ~100 mil) | Agregação de estudos acadêmicos 2025-2026 | Parcialmente confirmado |
+| G7 CEG — roteiro PQC setor financeiro | 13/1/2026; horizonte meados de 2030 | US Treasury / G7 CEG | Confirmado (2 fontes) |
+| Pacotes maliciosos em código aberto (2025) | 454.600 novos; 1,233 milhão acumulado (+75%) | Sonatype 2026 State of Software Supply Chain | Confirmado (2 fontes) |
+| Malware em npm (% do total) | >99% | Sonatype 2026 | Confirmado (2 fontes) |
+| Pacotes maliciosos ligados ao Lazarus/APT38 (npm, 2025) | 800+ | Sonatype 2026 | Confirmado (2 fontes) |
+| Custo médio de violação de cadeia de suprimentos (2025) | USD 4,91 milhões | Agregação (DeepStrike) | Parcialmente confirmado (fonte única identificável) |
+
+**Legenda:** idêntica à das tabelas-resumo anteriores.
+
+---
+
+## Defesa e Frameworks
+
+> Pesquisa realizada em 2026-07-21, com o mesmo protocolo de verificação cruzada das seções anteriores. Os textos
+> oficiais completos de normas ISO e IEC são publicações pagas e não puderam ser acessados diretamente
+> (iso.org/iec.ch); nesses casos, a estrutura foi confirmada por múltiplas fontes explicativas secundárias
+> tecnicamente consistentes entre si — mesma limitação já registrada na seção Energia para a norma IEC 62443.
+
+### NIST Cybersecurity Framework (CSF) 2.0 — seis funções, com Govern adicionada em 2024
+
+- **Dado:** o NIST publicou o **CSF 2.0** em **26 de fevereiro de 2024** — a primeira atualização de grande porte
+  do framework desde a versão original de 2014. A versão 2.0 confirma e formaliza **seis funções nucleares**:
+  **Identify, Protect, Detect, Respond, Recover** (as cinco funções originais) e uma sexta função nova,
+  **Govern**, adicionada nesta revisão. Embora elementos de governança já existissem de forma dispersa em
+  versões anteriores do CSF, a versão 2.0 eleva a governança à condição de **função nuclear própria**,
+  reconhecendo a cibersegurança como fonte relevante de risco empresarial que a liderança sênior deve considerar
+  ao lado de riscos financeiros e reputacionais, e reforça o papel do gerenciamento de risco transversal às
+  demais cinco funções. A versão 2.0 também amplia expressamente o público-alvo do framework — não mais limitado
+  a infraestrutura crítica, mas voltado a organizações de qualquer setor e porte, "das menores escolas e ONGs às
+  maiores agências e corporações".
+  - Fonte 1: NIST. *NIST Releases Version 2.0 of Landmark Cybersecurity Framework*. Fevereiro de 2024.
+    https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework
+    (texto completo: NIST CSWP 29, https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf)
+  - Fonte 2 (secundária, análise detalhada da função Govern especificamente): Arctic Wolf. *NIST CSF 2.0: Govern
+    Function*. https://arcticwolf.com/resources/blog/nist-csf-2-0-understanding-and-implementing-the-govern-function/
+  - Observações: sem divergência relevante entre fontes quanto à data de publicação (26/2/2024) e à confirmação
+    de que Govern é, de fato, uma função nova nesta revisão (não presente como função nuclear própria nas versões
+    1.0/1.1). Diretamente relevante ao recorte financeiro/energia: o CSF 2.0 é amplamente referenciado por
+    reguladores e frameworks setoriais (incluindo mapeamentos informais para as resoluções do BCB e para a RN
+    ANEEL 964/2021, já citadas nas seções Financeiro e Energia), embora nenhuma das duas regulações brasileiras
+    mencione o CSF 2.0 nominalmente nos textos oficiais consultados nesta pesquisa.
+
+### ISO/IEC 27001:2022 — Anexo A com 93 controles
+
+- **Dado:** a revisão **ISO/IEC 27001:2022** (publicada em outubro de 2022) reduziu o número de controles do
+  Anexo A de **114 (na edição de 2013)** para **93 controles**, reorganizados em **quatro temas**: **37 controles
+  organizacionais** (5.1–5.37), **8 controles de pessoas** (6.1–6.8), **14 controles físicos** (7.1–7.14) e **34
+  controles tecnológicos** (8.1–8.34) — substituindo a estrutura anterior de 14 domínios/categorias da edição de
+  2013. A revisão consolidou controles preexistentes e introduziu **11 controles novos**, refletindo riscos e
+  necessidades tecnológicas contemporâneas (ex.: inteligência de ameaças, segurança na nuvem, prevenção de
+  vazamento de dados, monitoramento de atividades, mascaramento de dados, codificação segura).
+  - Fonte 1 (secundária, síntese técnica detalhada e amplamente replicada da estrutura oficial do Anexo A):
+    HighTable. *ISO 27001 Annex A Controls: The Complete 2022 Reference List (93 Controls)*.
+    https://hightable.io/iso-27001-annex-a-controls-reference-guide/
+  - Fonte 2 (secundária, confirmação independente da mesma contagem e estrutura): ISMS.online. *ISO 27001:2022
+    Annex A Explained & Simplified*. https://www.isms.online/iso-27001/annex-a-2022/
+  - Observações: não foi possível, no escopo desta pesquisa, acessar diretamente o texto oficial pago da ISO
+    (iso.org/standard/27001) para citação primária — mesma limitação já registrada na seção Energia para a norma
+    IEC 62443. Ambas as fontes usadas são secundárias/explicativas, mas tecnicamente consistentes entre si e com
+    a descrição amplamente publicada e replicada da norma (contagem de 93 controles em 4 temas é consenso quase
+    universal entre dezenas de fontes adicionais consultadas na busca, sem nenhuma divergência numérica
+    encontrada). Relevante ao recorte financeiro/energia porque a ISO/IEC 27001 é frequentemente citada como
+    referência de certificação voluntária complementar às exigências regulatórias específicas de cada setor (BCB,
+    ANEEL) já detalhadas nas seções Financeiro e Energia.
+
+### IEC 62443 — segurança de sistemas de automação e controle industrial (referência cruzada)
+
+- **Dado:** a série **ISA/IEC 62443**, já detalhada em profundidade na seção Energia deste dossiê (ver "Fundamentos
+  — IEC 62443"), organiza-se em **quatro grupos de documentos** — Fundamentos, Políticas e Procedimentos,
+  Sistema e Componente —, define **7 requisitos fundamentais (FR)** de segurança e estabelece um modelo de
+  **zonas e conduítes** com **Níveis de Segurança (SL) de 1 a 4**, construído sobre a hierarquia de níveis do
+  Modelo Purdue (0 a 5, com a extensão de Nível 3,5/DMZ industrial). Por ser a norma internacional de referência
+  específica para tecnologia operacional (OT) — e, portanto, diretamente aplicável ao setor de energia, mas
+  também a sistemas de automação usados em processamento e liquidação financeira de alta criticidade —, sua
+  estrutura é reproduzida aqui de forma resumida, sem repetir o detalhamento completo já registrado na seção
+  Energia (fontes e observações idênticas às lá citadas: O Setor Elétrico e ISA São Paulo Section).
+  - Fonte 1 (secundária, já citada na seção Energia): O Setor Elétrico. *IEC 62443: reforçando a segurança
+    cibernética em infraestrutura crítica*.
+    https://www.osetoreletrico.com.br/iec-62443-reforcando-a-seguranca-cibernetica-em-infraestrutura-critica/
+  - Fonte 2 (secundária, já citada na seção Energia): ISA São Paulo Section. *Cibersegurança Industrial e a Norma
+    ISA/IEC 62443*. https://isasp.org.br/ciberseguranca-industrial-e-a-norma-isa-iec-62443-essencial-para-engenheiros-e-tecnicos-de-producao/
+  - Observações: entrada de referência cruzada, incluída nesta seção por pedido explícito do escopo da Task 4
+    (frameworks de defesa), sem introduzir dados novos além dos já registrados e verificados na seção Energia.
+    Ver a entrada original para o detalhamento completo dos 7 FRs e da estrutura de 4 grupos.
+
+### Zero Trust — NIST SP 800-207
+
+- **Dado:** a publicação **NIST Special Publication 800-207 (Zero Trust Architecture)** estabelece o princípio
+  central de "nunca confiar, sempre verificar" ("never trust, always verify"): toda solicitação de acesso deve
+  ser autenticada, autorizada e criptografada antes da concessão de acesso a qualquer recurso, eliminando a
+  confiança implícita historicamente concedida a usuários, serviços e dispositivos apenas por estarem dentro de
+  um perímetro de rede específico. O documento define **sete pilares (tenets)** fundamentais do Zero Trust: (1)
+  todas as fontes de dados e serviços de computação são consideradas recursos; (2) toda comunicação é protegida
+  independentemente da localização de rede; (3) o acesso a recursos individuais é concedido por sessão; (4) o
+  acesso de privilégio mínimo é reforçado dinamicamente; (5) diagnóstico contínuo e detecção de ameaças são
+  essenciais; (6) o acesso é monitorado e registrado em todas as camadas; (7) as políticas devem ser adaptativas,
+  orientadas por dados e reforçadas por telemetria. O NIST publicou posteriormente uma extensão, **SP 800-207A**,
+  voltada especificamente a um modelo de arquitetura Zero Trust para controle de acesso em aplicações
+  cloud-native em ambientes multi-nuvem.
+  - Fonte 1: NIST/CSRC. *NIST Special Publication (SP) 800-207, Zero Trust Architecture* (texto oficial).
+    https://csrc.nist.gov/pubs/sp/800/207/final (PDF: https://nvlpubs.nist.gov/nistpubs/specialpublications/NIST.SP.800-207.pdf)
+    (ver também a extensão: https://csrc.nist.gov/pubs/sp/800/207/a/final)
+  - Fonte 2 (secundária, síntese técnica dos sete pilares): Palo Alto Networks. *What Is NIST SP 800-207? Zero
+    Trust Architecture Framework*. https://www.paloaltonetworks.com/cyberpedia/what-is-nist-sp-800-207
+  - Observações: sem divergência relevante entre fontes quanto aos sete pilares e ao princípio central. O Zero
+    Trust é citado, de forma qualitativa e recorrente, como estratégia de mitigação relevante para os padrões de
+    ataque já registrados nas seções Financeiro (acesso via credenciais comprometidas — caso C&M Software/Pix) e
+    Energia (movimento lateral de TI corporativa para OT — casos BlackEnergy e Volt Typhoon/LELWD), na medida em
+    que reforça segmentação e verificação contínua entre domínios de confiança distintos — mas não foi
+    identificada, no escopo desta pesquisa, uma exigência regulatória explícita e nomeada de "Zero Trust/NIST SP
+    800-207" nas resoluções brasileiras (BCB, ANEEL) já citadas neste dossiê — **[NÃO CONFIRMADO — nenhuma menção
+    nominal a Zero Trust ou ao NIST SP 800-207 localizada nos textos regulatórios brasileiros consultados em
+    2026-07-21]**.
+
+---
+
+### Tabela-resumo — Defesa e Frameworks
+
+| Métrica | Valor | Relatório/fonte primária | Status |
+| :-- | :-- | :-- | :-- |
+| NIST CSF 2.0 — publicação | 26/2/2024; 6 funções (Govern nova) | NIST (site oficial) | Confirmado (2 fontes) |
+| ISO/IEC 27001:2022 — Anexo A | 93 controles (4 temas), reduzidos de 114 (2013) | Consolidação de fontes explicativas (ISO não acessado diretamente) | Confirmado (2 fontes secundárias) |
+| ISO/IEC 27001:2022 — controles novos | 11 controles novos introduzidos | Idem | Confirmado (2 fontes secundárias) |
+| IEC 62443 — estrutura | 4 grupos; 7 FRs; SL 1–4 | Ver seção Energia (mesmas fontes) | Confirmado (2 fontes); referência cruzada |
+| NIST SP 800-207 — pilares | 7 tenets; "never trust, always verify" | NIST/CSRC (site oficial) | Confirmado (2 fontes) |
+| NIST SP 800-207A — extensão | Zero Trust para aplicações cloud-native multi-nuvem | NIST/CSRC (site oficial) | Confirmado (1 fonte primária, sem divergência a checar) |
+
+**Legenda:** idêntica à das tabelas-resumo anteriores.
