@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 820" width="1560" height="820" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1560" height="820" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="42" fill="#e6edf3" font-size="23" font-weight="bold">Ecossistema Ransomware-as-a-Service (RaaS) — Papéis e Fluxo de Valor</text>
+  <text x="40" y="66" fill="#8b949e" font-size="13">Do broker de acesso inicial à divisão de lucros — papéis especializados e frequentemente terceirizados entre grupos distintos</text>
+  <line x1="40" y1="82" x2="1520" y2="82" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ================= FEEDERS SUPERIORES ================= -->
+  <!-- Operador/Desenvolvedor -->
+  <rect x="370" y="150" width="210" height="120" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+  <text x="475" y="176" fill="#a371f7" font-size="14" font-weight="bold" text-anchor="middle">Operador /</text>
+  <text x="475" y="194" fill="#a371f7" font-size="14" font-weight="bold" text-anchor="middle">Desenvolvedor</text>
+  <text x="475" y="216" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Malware, infra de pagamento,</text>
+  <text x="475" y="231" fill="#c9d1d9" font-size="10.5" text-anchor="middle">ferramentas de negociação,</text>
+  <text x="475" y="246" fill="#c9d1d9" font-size="10.5" text-anchor="middle">recrutamento de afiliados</text>
+  <text x="475" y="262" fill="#8b949e" font-size="9.5" text-anchor="middle">ex.: LockBit, ALPHV, RansomHub [7][8][9][10][11][12]</text>
+
+  <!-- Serviço de Exfiltração / Site de Vazamento -->
+  <rect x="680" y="150" width="210" height="120" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+  <text x="785" y="176" fill="#a371f7" font-size="14" font-weight="bold" text-anchor="middle">Serviço de</text>
+  <text x="785" y="194" fill="#a371f7" font-size="14" font-weight="bold" text-anchor="middle">Exfiltração / Vazamento</text>
+  <text x="785" y="216" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Site de vazamento (leak site)</text>
+  <text x="785" y="231" fill="#c9d1d9" font-size="10.5" text-anchor="middle">mantido pelo operador —</text>
+  <text x="785" y="246" fill="#c9d1d9" font-size="10.5" text-anchor="middle">pressiona a vítima a pagar</text>
+  <text x="785" y="262" fill="#8b949e" font-size="9.5" text-anchor="middle">extorsão sem cifrar dados: caso Cl0p [31][32]</text>
+
+  <!-- Conector Operador -> Serviço de Vazamento -->
+  <line x1="580" y1="200" x2="670" y2="200" stroke="#a371f7" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="673,200 664,195 664,205" fill="#a371f7"/>
+  <text x="625" y="192" fill="#8b949e" font-size="9" text-anchor="middle">mantém</text>
+
+  <!-- Conector Operador -> Afiliado (desce) -->
+  <line x1="475" y1="270" x2="475" y2="455" stroke="#a371f7" stroke-width="2"/>
+  <polygon points="475,458 470,448 480,448" fill="#a371f7"/>
+  <text x="490" y="380" fill="#8b949e" font-size="9.5">fornece malware</text>
+  <text x="490" y="393" fill="#8b949e" font-size="9.5">+ infra + parte do resgate</text>
+
+  <!-- Conector Serviço de Vazamento -> Vítima (desce) -->
+  <line x1="785" y1="270" x2="785" y2="455" stroke="#a371f7" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="785,458 780,448 790,448" fill="#a371f7"/>
+  <text x="800" y="380" fill="#8b949e" font-size="9.5">pressão pública</text>
+  <text x="800" y="393" fill="#8b949e" font-size="9.5">sobre a vítima</text>
+
+  <!-- ================= LINHA PRINCIPAL (fluxo de ataque) ================= -->
+  <!-- IAB -->
+  <rect x="60" y="460" width="210" height="120" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="165" y="486" fill="#58a6ff" font-size="14" font-weight="bold" text-anchor="middle">IAB</text>
+  <text x="165" y="504" fill="#c9d1d9" font-size="10.5" text-anchor="middle">(Initial Access Broker)</text>
+  <text x="165" y="524" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Compromete a rede e vende</text>
+  <text x="165" y="539" fill="#c9d1d9" font-size="10.5" text-anchor="middle">o acesso, sem atacar</text>
+  <text x="165" y="558" fill="#8b949e" font-size="9.5" text-anchor="middle">USD 500–5.000 por acesso [13][14]</text>
+
+  <!-- Arrow IAB -> Afiliado -->
+  <line x1="270" y1="520" x2="360" y2="520" stroke="#58a6ff" stroke-width="2.5"/>
+  <polygon points="363,520 353,514 353,526" fill="#58a6ff"/>
+  <text x="315" y="510" fill="#c9d1d9" font-size="9.5" text-anchor="middle">vende acesso</text>
+
+  <!-- Afiliado -->
+  <rect x="370" y="460" width="210" height="120" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2.5"/>
+  <text x="475" y="486" fill="#58a6ff" font-size="14" font-weight="bold" text-anchor="middle">Afiliado</text>
+  <text x="475" y="504" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Seleciona o alvo, implanta</text>
+  <text x="475" y="519" fill="#c9d1d9" font-size="10.5" text-anchor="middle">o ransomware e executa</text>
+  <text x="475" y="534" fill="#c9d1d9" font-size="10.5" text-anchor="middle">a extorsão</text>
+  <text x="475" y="558" fill="#8b949e" font-size="9.5" text-anchor="middle">retém parcela do resgate [29][30]</text>
+
+  <!-- Arrow Afiliado -> Vítima -->
+  <line x1="580" y1="520" x2="670" y2="520" stroke="#58a6ff" stroke-width="2.5"/>
+  <polygon points="673,520 663,514 663,526" fill="#58a6ff"/>
+  <text x="625" y="510" fill="#c9d1d9" font-size="9.5" text-anchor="middle">implanta / exfiltra</text>
+
+  <!-- Vítima (impacto crítico, vermelho) -->
+  <rect x="680" y="460" width="210" height="120" rx="8" fill="#1c2128" stroke="#f85149" stroke-width="3"/>
+  <text x="785" y="486" fill="#f85149" font-size="14.5" font-weight="bold" text-anchor="middle">Vítima</text>
+  <text x="785" y="504" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Dados cifrados e/ou</text>
+  <text x="785" y="519" fill="#c9d1d9" font-size="10.5" text-anchor="middle">exfiltrados — ameaça de</text>
+  <text x="785" y="534" fill="#c9d1d9" font-size="10.5" text-anchor="middle">publicação no leak site</text>
+  <text x="785" y="558" fill="#f85149" font-size="9.5" text-anchor="middle">ponto de impacto do ecossistema</text>
+
+  <!-- Arrow Vítima -> Negociador -->
+  <line x1="890" y1="520" x2="980" y2="520" stroke="#58a6ff" stroke-width="2.5"/>
+  <polygon points="983,520 973,514 973,526" fill="#58a6ff"/>
+  <text x="935" y="510" fill="#c9d1d9" font-size="9.5" text-anchor="middle">negocia</text>
+
+  <!-- Negociador -->
+  <rect x="990" y="460" width="210" height="120" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="1095" y="486" fill="#58a6ff" font-size="14" font-weight="bold" text-anchor="middle">Negociador</text>
+  <text x="1095" y="504" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Maximiza o valor do</text>
+  <text x="1095" y="519" fill="#c9d1d9" font-size="10.5" text-anchor="middle">pagamento, preserva a</text>
+  <text x="1095" y="534" fill="#c9d1d9" font-size="10.5" text-anchor="middle">transação em criptomoeda</text>
+  <text x="1095" y="558" fill="#8b949e" font-size="9.5" text-anchor="middle">função por vezes terceirizada</text>
+
+  <!-- Arrow Negociador -> Divisão de Lucros -->
+  <line x1="1200" y1="520" x2="1290" y2="520" stroke="#58a6ff" stroke-width="2.5"/>
+  <polygon points="1293,520 1283,514 1283,526" fill="#58a6ff"/>
+  <text x="1246" y="510" fill="#c9d1d9" font-size="9.5" text-anchor="middle">pagamento</text>
+
+  <!-- Divisão de Lucros -->
+  <rect x="1300" y="460" width="210" height="120" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2.5"/>
+  <text x="1405" y="486" fill="#3fb950" font-size="14" font-weight="bold" text-anchor="middle">Divisão de</text>
+  <text x="1405" y="504" fill="#3fb950" font-size="14" font-weight="bold" text-anchor="middle">Lucros</text>
+  <text x="1405" y="524" fill="#c9d1d9" font-size="10.5" text-anchor="middle">Resgate em cripto é</text>
+  <text x="1405" y="539" fill="#c9d1d9" font-size="10.5" text-anchor="middle">repartido — percentual</text>
+  <text x="1405" y="554" fill="#c9d1d9" font-size="10.5" text-anchor="middle">varia por grupo</text>
+  <text x="1405" y="572" fill="#8b949e" font-size="9" text-anchor="middle">não padronizado publicamente</text>
+
+  <!-- ================= RETORNO — DIVISÃO DE LUCROS (curvas) ================= -->
+  <!-- Retorno para o Afiliado (maior fatia) -->
+  <path d="M 1405 580 C 1405 660, 475 660, 475 583" fill="none" stroke="#3fb950" stroke-width="2" stroke-dasharray="7,4"/>
+  <polygon points="475,580 469,590 481,590" fill="#3fb950"/>
+  <text x="940" y="655" fill="#3fb950" font-size="10.5" text-anchor="middle">repasse ao afiliado — maior fatia do resgate</text>
+
+  <!-- Retorno para o Operador (comissão) -->
+  <path d="M 1510 460 C 1560 380, 1560 130, 1405 130 C 700 130, 700 130, 580 175" fill="none" stroke="#3fb950" stroke-width="2" stroke-dasharray="7,4"/>
+  <polygon points="580,175 590,171 587,181" fill="#3fb950"/>
+  <text x="1050" y="120" fill="#3fb950" font-size="10.5" text-anchor="middle">comissão repassada ao operador/desenvolvedor</text>
+
+  <!-- Nota IAB -->
+  <text x="165" y="600" fill="#8b949e" font-size="9.5" text-anchor="middle" font-style="italic">IAB é pago à vista, fora</text>
+  <text x="165" y="613" fill="#8b949e" font-size="9.5" text-anchor="middle" font-style="italic">da divisão de lucros do resgate</text>
+
+  <!-- ================= LEGENDA ================= -->
+  <rect x="40" y="700" width="16" height="16" rx="3" fill="#58a6ff"/>
+  <text x="64" y="713" fill="#c9d1d9" font-size="12">Fluxo do ataque — IAB → afiliado → vítima → negociação</text>
+
+  <rect x="40" y="726" width="16" height="16" rx="3" fill="#a371f7"/>
+  <text x="64" y="739" fill="#c9d1d9" font-size="12">Suporte do operador/desenvolvedor — malware, infraestrutura, site de vazamento</text>
+
+  <rect x="40" y="752" width="16" height="16" rx="3" fill="#3fb950"/>
+  <text x="64" y="765" fill="#c9d1d9" font-size="12">Fluxo de valor — pagamento e divisão de lucros entre operador e afiliado</text>
+
+  <rect x="40" y="778" width="16" height="16" rx="3" fill="#f85149"/>
+  <text x="64" y="791" fill="#c9d1d9" font-size="12">Ponto de impacto na vítima</text>
+
+  <text x="1520" y="791" fill="#8b949e" font-size="10.5" text-anchor="end">Fontes: capítulo 05 — Atores e TTPs [7][8][9][10][11][12][13][14][29][30]</text>
+</svg>
