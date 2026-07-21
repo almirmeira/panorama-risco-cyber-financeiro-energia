@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 640" width="1500" height="640" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1500" height="640" fill="#0d1117"/>
+
+  <!-- Título -->
+  <text x="40" y="42" fill="#e6edf3" font-size="24" font-weight="bold">Linha do Tempo — Marcos do Risco Cibernético Global (2015–2026)</text>
+  <text x="40" y="66" fill="#8b949e" font-size="13.5">Incidentes que moldaram a resposta do setor financeiro e de energia à ameaça cibernética</text>
+  <line x1="40" y1="82" x2="1460" y2="82" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Eixo horizontal -->
+  <line x1="80" y1="340" x2="1420" y2="340" stroke="#8b949e" stroke-width="2"/>
+  <polygon points="1420,340 1408,334 1408,346" fill="#8b949e"/>
+
+  <!-- ============ MARCO 1 — 2015 (acima) ============ -->
+  <line x1="80" y1="340" x2="80" y2="290" stroke="#f85149" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="80" cy="340" r="8" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="20" y="150" width="180" height="140" rx="8" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+  <text x="110" y="176" fill="#f85149" font-size="15" font-weight="bold" text-anchor="middle">2015</text>
+  <text x="110" y="200" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">BlackEnergy</text>
+  <text x="110" y="217" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">Ucrânia</text>
+  <text x="35" y="242" fill="#c9d1d9" font-size="11.5">Malware corta energia</text>
+  <text x="35" y="258" fill="#c9d1d9" font-size="11.5">de ~225 mil clientes</text>
+  <text x="35" y="274" fill="#8b949e" font-size="11">dez/2015 [29][30]</text>
+  <text x="80" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2015</text>
+
+  <!-- ============ MARCO 2 — 2016 (abaixo) ============ -->
+  <line x1="271" y1="340" x2="271" y2="390" stroke="#f85149" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="271" cy="340" r="8" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="181" y="390" width="180" height="140" rx="8" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+  <text x="271" y="414" fill="#f85149" font-size="15" font-weight="bold" text-anchor="middle">2016</text>
+  <text x="271" y="438" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">Industroyer /</text>
+  <text x="271" y="455" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">CrashOverride — Kyiv</text>
+  <text x="196" y="480" fill="#c9d1d9" font-size="11.5">Apagão atinge ~1/5</text>
+  <text x="196" y="496" fill="#c9d1d9" font-size="11.5">da capital ucraniana</text>
+  <text x="196" y="512" fill="#8b949e" font-size="11">dez/2016 [31][32]</text>
+  <text x="271" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2016</text>
+
+  <!-- ============ MARCO 3 — 2017 (acima) ============ -->
+  <line x1="463" y1="340" x2="463" y2="290" stroke="#f85149" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="463" cy="340" r="8" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="373" y="150" width="180" height="140" rx="8" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+  <text x="463" y="176" fill="#f85149" font-size="15" font-weight="bold" text-anchor="middle">2017</text>
+  <text x="463" y="200" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">NotPetya</text>
+  <text x="388" y="228" fill="#c9d1d9" font-size="11.5">Ataque destrutivo global</text>
+  <text x="388" y="244" fill="#c9d1d9" font-size="11.5">atribuído ao Sandworm</text>
+  <text x="388" y="260" fill="#c9d1d9" font-size="11.5">(GRU 74455)</text>
+  <text x="388" y="276" fill="#8b949e" font-size="11">2017 [33][34]</text>
+  <text x="463" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2017</text>
+
+  <!-- ============ MARCO 4 — 2021 (abaixo) ============ -->
+  <line x1="654" y1="340" x2="654" y2="390" stroke="#e3b341" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="654" cy="340" r="8" fill="#e3b341" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="564" y="390" width="180" height="140" rx="8" fill="#161b22" stroke="#e3b341" stroke-width="2"/>
+  <text x="654" y="414" fill="#e3b341" font-size="15" font-weight="bold" text-anchor="middle">2021</text>
+  <text x="654" y="438" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">Colonial Pipeline</text>
+  <text x="579" y="462" fill="#c9d1d9" font-size="11.5">Ransomware DarkSide</text>
+  <text x="579" y="478" fill="#c9d1d9" font-size="11.5">interrompe ~45% do</text>
+  <text x="579" y="494" fill="#c9d1d9" font-size="11.5">combustível da Costa Leste</text>
+  <text x="579" y="512" fill="#8b949e" font-size="11">mai/2021 [35][36]</text>
+  <text x="654" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2021</text>
+
+  <!-- ============ MARCO 5 — 2023 (acima) ============ -->
+  <line x1="846" y1="340" x2="846" y2="290" stroke="#a371f7" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="846" cy="340" r="8" fill="#a371f7" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="756" y="150" width="180" height="140" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+  <text x="846" y="176" fill="#a371f7" font-size="15" font-weight="bold" text-anchor="middle">2023</text>
+  <text x="846" y="200" fill="#e6edf3" font-size="13" font-weight="bold" text-anchor="middle">MOVEit / Cl0p</text>
+  <text x="771" y="228" fill="#c9d1d9" font-size="11.5">Exploração em massa de</text>
+  <text x="771" y="244" fill="#c9d1d9" font-size="11.5">transferência de arquivos</text>
+  <text x="771" y="260" fill="#c9d1d9" font-size="11.5">atinge cadeia de suprimentos</text>
+  <text x="771" y="276" fill="#8b949e" font-size="11">2023 [37][38]</text>
+  <text x="846" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2023</text>
+
+  <!-- ============ MARCO 6 — 2024 (abaixo, duplo) ============ -->
+  <line x1="1037" y1="340" x2="1037" y2="390" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="1037" cy="340" r="8" fill="#f85149" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="947" y="390" width="180" height="168" rx="8" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+  <text x="1037" y="414" fill="#e6edf3" font-size="15" font-weight="bold" text-anchor="middle">2024</text>
+  <text x="962" y="438" fill="#f85149" font-size="12.5" font-weight="bold">FrostyGoop</text>
+  <text x="962" y="454" fill="#c9d1d9" font-size="11">Aquecimento cortado</text>
+  <text x="962" y="469" fill="#c9d1d9" font-size="11">em Lviv (jan) [39][40]</text>
+  <line x1="962" y1="480" x2="1112" y2="480" stroke="#30363d" stroke-width="1"/>
+  <text x="962" y="500" fill="#3fb950" font-size="12.5" font-weight="bold">Operation Cronos</text>
+  <text x="962" y="516" fill="#c9d1d9" font-size="11">Polícia derruba o</text>
+  <text x="962" y="531" fill="#c9d1d9" font-size="11">LockBit (fev) [41][42]</text>
+  <text x="1037" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2024</text>
+
+  <!-- ============ MARCO 7 — 2025 (acima) ============ -->
+  <line x1="1229" y1="340" x2="1229" y2="290" stroke="#a371f7" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="1229" cy="340" r="8" fill="#a371f7" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="1139" y="150" width="180" height="140" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+  <text x="1229" y="176" fill="#a371f7" font-size="15" font-weight="bold" text-anchor="middle">2025</text>
+  <text x="1229" y="200" fill="#e6edf3" font-size="12.5" font-weight="bold" text-anchor="middle">Ataque orquestrado por IA</text>
+  <text x="1154" y="224" fill="#c9d1d9" font-size="11.5">Agente autônomo executa</text>
+  <text x="1154" y="240" fill="#c9d1d9" font-size="11.5">80–90% da operação contra</text>
+  <text x="1154" y="256" fill="#c9d1d9" font-size="11.5">~30 alvos (Anthropic)</text>
+  <text x="1154" y="272" fill="#8b949e" font-size="11">nov/2025 [10][11]</text>
+  <text x="1229" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2025</text>
+
+  <!-- ============ MARCO 8 — 2026 (abaixo) ============ -->
+  <line x1="1420" y1="340" x2="1420" y2="390" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="1420" cy="340" r="8" fill="#58a6ff" stroke="#e6edf3" stroke-width="1.5"/>
+  <rect x="1300" y="390" width="180" height="140" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="1390" y="414" fill="#58a6ff" font-size="15" font-weight="bold" text-anchor="middle">2026</text>
+  <text x="1390" y="436" fill="#e6edf3" font-size="12" font-weight="bold" text-anchor="middle">Onda hacktivista</text>
+  <text x="1390" y="452" fill="#e6edf3" font-size="12" font-weight="bold" text-anchor="middle">pós-conflito Irã</text>
+  <text x="1315" y="476" fill="#c9d1d9" font-size="11">150+ DDoS em 72h,</text>
+  <text x="1315" y="492" fill="#c9d1d9" font-size="11">100+ organizações,</text>
+  <text x="1315" y="508" fill="#c9d1d9" font-size="11">16 países</text>
+  <text x="1315" y="524" fill="#8b949e" font-size="11">fev-mar/2026 [8][9]</text>
+  <text x="1390" y="365" fill="#8b949e" font-size="12.5" text-anchor="middle">2026</text>
+
+  <!-- Rodapé -->
+  <line x1="40" y1="600" x2="1460" y2="600" stroke="#30363d" stroke-width="1"/>
+  <text x="40" y="622" fill="#8b949e" font-size="12">Espaçamento ilustrativo (não proporcional a anos-calendário); números entre colchetes remetem à seção Fontes do capítulo 01 — Panorama Global.</text>
+</svg>
