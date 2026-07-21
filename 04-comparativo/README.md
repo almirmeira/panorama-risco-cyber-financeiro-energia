@@ -35,12 +35,12 @@ foi estabelecido.
 | Eixo comparativo                          | Setor Financeiro                                                          | Setor Energia (OT/ICS)                                                     |
 |:--------------------------------------------|:------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
 | Superfície de ataque predominante          | APIs de Open Finance (128–154 milhões de consentimentos), app/Pix, terceiros de infraestrutura (C&M Software) [21][22] | Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (≈94% inadequadamente protegidas contra *deauth*, complemento dos 6% adequados do cap. 03) [23][24] |
-| Atores dominantes (motivação)              | Cibercrime financeiramente motivado (90% Verizon DBIR); DPRK-nexus (USD 2,02 bi em 2025, +51%); FIN7, Qilin, Akira | Atores estatais (Sandworm/GRU 74455, Volt Typhoon/China) com foco em sabotagem/pré-posicionamento; *ransomware* oportunista (DarkSide, Everest) [5][6][7][8][17][18] |
+| Atores dominantes (motivação)              | Cibercrime financeiramente motivado (90% Verizon DBIR); DPRK-nexus (USD 2,02 bi em 2025, +51%); FIN7, Qilin, Akira [5][6][7][8] | Atores estatais (Sandworm/GRU 74455, Volt Typhoon/China) com foco em sabotagem/pré-posicionamento; *ransomware* oportunista (DarkSide, Everest) [5][6][7][8][17][18] |
 | Vetor de impacto principal                 | Financeiro/fraude — desvio direto de recursos, vazamento de dados pessoais | Físico/disponibilidade — apagão, dano a equipamento, risco potencial à vida [17][18][19][20] |
 | Tempo de permanência / detecção típica     | Detecção forçada em ~72h por prazo regulatório de notificação; 34% do custo de uma violação vai para detecção/escalonamento [25][26] | *Dwell time* médio de 42 dias em *ransomware* OT — cai para 5 dias com visibilidade OT plena [3][4] |
 | Maturidade defensiva                       | Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude [27][28] | Heterogênea — 52% já colocam OT sob o CISO (ante 16% em 2022), mas sistemas legados sem suporte seguem comuns [23][24] |
 | Pressão / maturidade regulatória           | Alta e crescente — CMN 4.893/2021 + BCB 85/2021, atualizadas por CMN 5.274/2025 e BCB 538/2025, prazo março/2026 [9][11] | Em maturação — RN ANEEL nº 964/2021 (ARCiber) em vigor desde 2022, mas 1ª fiscalização concreta só em 2025 (Despacho ANEEL nº 427/2025) [10][12] |
-| Frequência/escala do ataque em 2025        | 202 incidentes diretos de *ransomware* (+30% a/a); 2º setor mais atacado globalmente (FS-ISAC) | ~3.300 organizações industriais impactadas por *ransomware* (+64% a/a); 22,8% dos computadores ICS de energia elétrica com objetos maliciosos bloqueados (3º setor mais atacado) [1][2][3][4][29][30] |
+| Frequência/escala do ataque em 2025        | 202 incidentes diretos de *ransomware* (+30% a/a); 2º setor mais atacado globalmente (FS-ISAC) [1][2][29] | ~3.300 organizações industriais impactadas por *ransomware* (+64% a/a); 22,8% dos computadores ICS de energia elétrica com objetos maliciosos bloqueados (3º setor mais atacado) [1][2][3][4][29][30] |
 | Custo médio de um incidente                | USD 5,56 milhões por violação (2º setor mais caro do mundo) [25][26]      | USD 4,83 milhões por violação no setor de energia; USD 4,56 milhões quando há impacto direto em OT (qualquer setor) [25][31] |
 
 ## Análise cross-over: onde os setores convergem
@@ -62,11 +62,19 @@ Petrobras envolveu a contratada SAExploration, não a própria operadora — mes
 via terceiro, com o mesmo tipo de disputa entre a alegação do atacante e a posição oficial da
 empresa (o precedente é direto: o caso Banco Neon, no capítulo 02) [15][16].
 
-A terceira é a **IA ofensiva como ameaça transversal**, que já não respeita fronteira setorial: o
-caso mais citado de fraude por *deepfake* de voz contra um executivo em 2025 não foi bancário, foi
-industrial — uma conglomerada de energia europeia perdeu **USD 25 milhões** quando atacantes usaram
-um clone de áudio do CFO para autorizar uma transferência eletrônica urgente, o mesmo mecanismo
-documentado dezenas de vezes contra bancos e fintechs no capítulo 02 [32][33]. O *ransomware* segue
+A terceira é a **IA ofensiva como ameaça transversal**, que já não respeita fronteira setorial: um
+dos casos mais repercutidos por agregadores de estatísticas de *deepfake* em 2025 foi justamente
+industrial, não bancário — uma conglomerada de energia europeia (não identificada nas fontes
+consultadas) teria perdido um valor citado como **USD 25 milhões** quando atacantes teriam usado um
+clone de áudio do CFO para autorizar uma transferência eletrônica urgente [32][33]. Esse valor não é
+consensual: ao descreverem o que parece ser o mesmo incidente, fontes diferentes citam também USD
+18,5 milhões e USD 39 milhões — o capítulo 02 já registra essa divergência, e o capítulo 06 associa
+o caso ao episódio mais documentado da consultoria de engenharia britânica Arup (janeiro de 2024),
+sinalizando uma possível conflação entre agregadores que este relatório não resolve. A tese de que o
+*deepfake* é uma ameaça transversal a setores não depende deste caso específico: o mesmo mecanismo
+de clonagem de voz contra executivos está documentado dezenas de vezes contra bancos e fintechs no
+capítulo 02, e é essa tendência estrutural — não um único incidente isolado — que sustenta a
+comparação entre financeiro e energia. O *ransomware* segue
 o mesmo padrão de neutralidade setorial: os mesmos grupos (Akira, por exemplo, com ~USD 244 milhões
 em proventos até setembro de 2025) operam de forma "cross-setorial", escolhendo alvos por
 oportunidade — superfície exposta, capacidade de pagamento, ausência de segmentação — e não por
