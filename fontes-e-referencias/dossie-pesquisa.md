@@ -488,3 +488,451 @@
 **Legenda:** "Confirmado (2 fontes)" = regra de ouro cumprida, sem divergência material. "Divergência não
 resolvida" = duas fontes discordam e nenhuma fonte primária adicional pôde arbitrar — registrado como tal, sem
 inventar um valor consolidado.
+
+---
+
+## Financeiro
+
+> Pesquisa realizada em 2026-07-21, com o mesmo protocolo de verificação cruzada da seção Global: cada
+> número-chave com ≥2 fontes independentes; fontes secundárias marcadas como tal; divergências registradas
+> explicitamente; nenhum número inventado.
+
+### FS-ISAC — Navigating Cyber 2025 (panorama do setor)
+
+- **Dado:** relatório anual da FS-ISAC baseado em mais de **5.000 firmas financeiras** membras em **75 países**
+  (ativos combinados de USD 100 trilhões), com dados de janeiro de 2024 a janeiro de 2025, analisados pelo Global
+  Intelligence Office da FS-ISAC. Segundo o relatório, **serviços financeiros é o 2º setor mais atacado
+  globalmente, atrás apenas de saúde**. Quatro categorias de ameaça foram destacadas como as mais relevantes: (1)
+  fraude e golpes potencializados por IA generativa (incluindo deepfakes visando executivos); (2) ataques à
+  cadeia de suprimentos/terceiros; (3) DDoS e ransomware em sofisticação crescente; (4) exploração de tensões
+  geopolíticas e incerteza econômica.
+  - Fonte 1: FS-ISAC. *Heightened Cyber Threats are Testing the Operational Resilience of the Financial Sector
+    (Navigating Cyber 2025)*. Maio de 2025. https://www.fsisac.com/newsroom/heightened-cyber-threats-are-testing-the-operational-resilience-of-the-financial-sector
+    (ver também a página do relatório: https://www.fsisac.com/navigatingcyber2025)
+  - Fonte 2 (secundária, corrobora a mesma ameaça qualitativa mas não reproduz metodologia/ranking): ABA Banking
+    Journal. *FS-ISAC releases annual report on financial sector cyber threats*. 2025.
+    https://bankingjournal.aba.com/2025/05/fs-isac-releases-annual-report-on-financial-sector-cyber-threats/
+  - Observações: o comunicado de imprensa da própria FS-ISAC não traz percentuais numéricos detalhados por
+    categoria de ameaça (apenas classificação qualitativa e o ranking "2º setor mais atacado"); a fonte
+    secundária (ABA) confirma as quatro categorias de ameaça mas também não reproduz números. Uma cobertura
+    agregada adicional (Vectra.ai) cita "velocidade de ataque 100x maior em quatro anos, com campanhas
+    habilitadas por IA comprimindo o ciclo de acesso inicial→exfiltração para cerca de 25 minutos" atribuída ao
+    contexto do setor financeiro — **[NÃO CONFIRMADO — não foi possível localizar esse número diretamente no
+    relatório primário Navigating Cyber 2025 nem atribuí-lo com segurança a uma fonte primária nomeada em
+    2026-07-21; tratar como não verificado]**.
+
+### DDoS no setor financeiro — FS-ISAC / Akamai
+
+- **Dado:** ataques DDoS contra o setor de serviços financeiros cresceram **154%** entre 2022 e 2023; o setor
+  respondeu por mais de **35%** de todos os ataques DDoS observados em 2023, ultrapassando o setor de games e
+  se tornando o vertical mais visado por esse tipo de ataque. Relatório atribui o salto ao aumento do poder de
+  botnets e ao hacktivismo ligado à guerra Rússia-Ucrânia.
+  - Fonte 1: FS-ISAC / Akamai. *DDoS: Here to Stay*. Março de 2024.
+    https://www.fsisac.com/newsroom/pr-akamai-ddos-report-2024 (ver também
+    https://www.akamai.com/newsroom/press-release/ddos-attacks-on-financial-services-industry-up-154-according-to-new-fs-isac-akamai-report)
+  - Fonte 2 (secundária, cobertura independente do mesmo relatório): Cybersecurity Dive. *Financial services sees
+    sharp increase in DDoS attacks as geopolitical tensions rise*. 2024.
+    https://www.cybersecuritydive.com/news/ddos-financial-services-fsisac-akamai/709623/
+  - Observações: relatório de base 2024 (dados de 2022–2023), citado aqui como referência de tendência estrutural
+    ainda válida em 2025–2026 e reforçada qualitativamente pelo Navigating Cyber 2025 (DDoS entre as quatro
+    ameaças principais ao setor). Não foi localizada uma atualização quantitativa equivalente (novo percentual)
+    específica para 2025/2026 no escopo desta pesquisa — **[NÃO CONFIRMADO para o período 2025–2026; o número de
+    154% refere-se à janela 2022–2023]**.
+
+---
+
+### IBM Cost of a Data Breach 2025 — detalhamento do setor financeiro
+
+- **Dado:** custo médio de violação no setor financeiro = **USD 5,56 milhões** (2º colocado entre 17 setores,
+  atrás de saúde), 25% acima da média global (USD 4,44 milhões) e queda de 9% frente aos USD 6,08 milhões de
+  2024. Composição de custo no setor financeiro difere do padrão global: detecção e escalonamento correspondem a
+  **34%** do custo (vs. 29% globalmente) — atribuído ao prazo regulatório comprimido de notificação, que força
+  resposta forense extensiva nas primeiras 72 horas; notificação corresponde a **8%** (vs. 6% globalmente),
+  refletindo obrigações de carta/call center por cliente e múltiplas obrigações de notificação a reguladores;
+  resposta pós-violação = 24% (vs. 27% globalmente); perda de negócios = 34% (vs. 38% globalmente). Reemissão de
+  cartão de débito/crédito após violação custa entre USD 5 e USD 15 por cartão, variando por tipo e complexidade.
+  - Fonte 1: IBM. *Cost of a Data Breach Report 2025*. 2025. https://www.ibm.com/reports/data-breach
+  - Fonte 2 (secundária, agregador dedicado que reproduz a tabela de custos do relatório): DataBreachCost.com.
+    *Financial Services Data Breach Cost (2025): $5.56M, #2 Sector*. 2025.
+    https://databreachcost.com/industry/financial-services
+  - Observações: nenhuma divergência relevante entre fontes quanto ao valor USD 5,56 milhões (já registrado
+    também na seção Global). O detalhamento por categoria de custo (34%/8%/24%/34%) é específico desta seção e
+    não consta na síntese da seção Global.
+
+---
+
+### Verizon DBIR 2025 — Finance Snapshot (setor financeiro e de seguros)
+
+- **Dado:** o recorte "Financial and Insurance" (NAICS 52) do DBIR 2025 registrou **3.336 incidentes** e **927
+  violações confirmadas**. Das violações confirmadas, **78%** envolveram atores externos, **22%** atores internos
+  e **1%** parceiros (categorias não somam 100% por sobreposição metodológica). **74%** das violações do setor
+  estão associadas a Intrusão de Sistema, Engenharia Social e Ataques Básicos a Aplicações Web; **90%** tiveram
+  motivação financeira e **12%** motivação de espionagem.
+  - Fonte 1: Verizon. *2025 Data Breach Investigations Report — Finance Snapshot*. 2025.
+    https://www.verizon.com/business/resources/infographics/2025-dbir-finance-snapshot.pdf
+  - Fonte 2 (secundária; agregação de cobertura especializada que reproduz os mesmos números do Finance
+    Snapshot — PDF original não pôde ser extraído por completo via fetch automatizado, ver observação): síntese
+    consolidada de múltiplas coberturas de imprensa especializada dos números do Finance Snapshot 2025
+    (mesma limitação já registrada na seção Global para este relatório).
+  - Observações: **[PARCIALMENTE CONFIRMADO]** — assim como já registrado na seção Global (ver "Setor financeiro
+    — Verizon DBIR 2025 (Finance Snapshot)"), o fetch direto do PDF do Finance Snapshot retornou apenas o fluxo
+    binário do arquivo (não texto extraível), de modo que os números 3.336/927/74%/90% foram confirmados por
+    convergência entre múltiplos resultados de busca independentes que citam a mesma infográfico, mas não por
+    dois documentos primários distintos. O detalhamento adicional desta seção (78%/22%/1% de atores; 12% de
+    espionagem) é novo em relação à síntese da seção Global e está sujeito à mesma ressalva de fonte. Tratar como
+    indicativo até confirmação manual contra o PDF oficial.
+
+---
+
+### CrowdStrike 2026 Financial Services Threat Landscape Report
+
+- **Dado:** atores ligados à Coreia do Norte (DPRK-nexus) impulsionaram alta de **51%** ano a ano no roubo de
+  ativos digitais em 2025, somando **USD 2,02 bilhões** roubados no setor; o cluster PRESSURE CHOLLIMA foi
+  responsável pelo maior roubo financeiro já registrado por um único incidente: **USD 1,46 bilhão** em
+  criptoativos via software trojanizado distribuído por comprometimento de cadeia de suprimentos. Intrusões
+  "hands-on-keyboard" (operadas manualmente, sem depender de malware automatizado) contra instituições
+  financeiras cresceram **43%** globalmente e **48%** na América do Norte em dois anos. Grupos de extorsão
+  dupla ("big game hunting") listaram **423 entidades do setor financeiro** em sites de vazamento dedicados, alta
+  de **27%** frente ao ano anterior.
+  - Fonte 1: CrowdStrike. *CrowdStrike 2026 Financial Services Threat Landscape Report*. 2026.
+    https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-financial-services-threat-landscape-report/
+    (ver também: https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-2026-financial-services-threat-landscape-report)
+  - Fonte 2 (secundária, cobertura independente que reproduz os mesmos números): DQ Channels. *CrowdStrike 2026
+    threat report exposes new banking risks*. 2026.
+    https://www.dqchannels.com/news/crowdstrike-2026-threat-report-exposes-new-banking-risks1-11837789
+  - Observações: relatório específico do setor financeiro (2026), portanto mais recente que o CrowdStrike Global
+    Threat Report 2025 já citado na seção Global (que cobre todos os setores). Sem divergência relevante entre as
+    duas fontes quanto aos números citados. Atores adicionais mencionados: FAMOUS CHOLLIMA (uso de identidades
+    geradas por IA para infiltrar exchanges de cripto, fintechs e bancos de varejo, com operações dobradas no
+    período); STARDUST CHOLLIMA (operação triplicada, usando personas de recrutador geradas por IA e ambientes
+    de videoconferência sintéticos contra fintechs na América do Norte, Europa e Ásia); VAULT PANDA
+    (ator chinês de espionagem, malware KEYPLUG via DLL search-order hijacking, mirando instituições financeiras e
+    entidades de suporte); MUTANT SPIDER (maior volume de intrusões no período, provável revendedor de acesso
+    para operadores de ransomware).
+
+### Black Kite — 2026 State of Financial Services Report
+
+- **Dado:** ataques diretos de ransomware contra instituições financeiras voltaram a crescer com força: de
+  **156 incidentes em 2024 para 202 em 2025** (alta de aproximadamente 30%); o 1º trimestre de 2026 já registrou
+  **65 incidentes** no setor, alta de **76%** frente ao mesmo trimestre de 2025. O número de grupos distintos
+  mirando o setor financeiro cresceu de 37 para 48. Firmas de investimento quase dobraram sua participação nos
+  incidentes (de 44 para 84, ~41,6% do total de divulgações do setor), enquanto bancos — subsetor mais visado em
+  2023, com 71 incidentes — caíram para 36 em 2025. O grupo Qilin reivindicou **59 vítimas** no setor financeiro
+  no período analisado; em um caso, o comprometimento de um único provedor de serviços gerenciados sul-coreano
+  (GJTec) permitiu movimento lateral para **32 instituições financeiras** sul-coreanas sem necessidade de invadir
+  cada uma individualmente, extraindo mais de 1 milhão de arquivos e mais de 2 terabytes de dados. Fornecedores
+  com CVEs críticas (CVSS ≥ 9) quase quintuplicaram entre os 140 fornecedores mais concentrados no setor
+  financeiro.
+  - Fonte 1: Black Kite. *2026 State of Financial Services Report*. 2026.
+    https://blackkite.com/reports/2026-financial-services-report (comunicado:
+    https://blackkite.com/press-releases/black-kites-2026-state-of-financial-services-report-reveals-ransomware-surge-and-vulnerability-deluge-driving-two-front-cyber-threat)
+  - Fonte 2 (secundária, cobertura independente que reproduz os mesmos números): Unite.AI. *Black Kite's 2026
+    Financial Services Report Warns of a Growing Cybersecurity Crisis Across Banking and Investment Firms*. 2026.
+    https://www.unite.ai/black-kites-2026-financial-services-report-warns-of-a-growing-cybersecurity-crisis-across-banking-and-investment-firms/
+  - Observações: sem divergência relevante entre as duas fontes. Complementa (não contradiz) o dado de "406
+    vítimas de ransomware publicamente divulgadas no setor financeiro entre 2024–2026" e "$244,17 milhões em
+    proventos do grupo Akira até final de setembro de 2025", citados por cobertura agregada adicional (Blaze
+    InfoSec/Invenio IT) mas que não foi possível confirmar por segunda fonte primária independente —
+    **[PARCIALMENTE CONFIRMADO — números de Akira/406 vítimas citados por fonte única identificável em
+    2026-07-21]**.
+
+---
+
+### Deepfake e engenharia social em fraude financeira (contexto global)
+
+- **Dado:** tentativas de fraude por deepfake cresceram **2.137%** nos últimos três anos, passando de 0,1% para
+  **6,5%** de todas as tentativas de fraude. Deepfakes de voz (voice cloning) cresceram **680%** ano a ano em
+  2024; combinados a um salto de **442%** em vishing e de **1.300%** em ataques de voz sintética, configuram
+  aumento acentuado e convergente. Clonagem de voz já teria cruzado o "limiar de indistinguibilidade" — poucos
+  segundos de áudio bastam para gerar clone convincente com entonação, ritmo e respiração naturais.
+  - Fonte 1 (agregador especializado que consolida múltiplos relatórios de fornecedores de segurança/antifraude,
+    2025-2026): Cyble. *Deepfake-as-a-Service Exploded In 2025: 2026 Threats Ahead*. 2026.
+    https://cyble.com/knowledge-hub/deepfake-as-a-service-exploded-in-2025/
+  - Fonte 2 (secundária, corrobora o crescimento de vishing/voz sintética com números convergentes):
+    Right-Hand.ai. *The State of Deep Fake Vishing Attacks in 2025*. 2025.
+    https://right-hand.ai/blog/deep-fake-vishing-attacks-2025/
+  - Observações: **atenção** — o número "442% de aumento em vishing" já aparece na seção Global atribuído
+    especificamente ao CrowdStrike Global Threat Report 2025 (crescimento entre o 1º e o 2º semestre de 2024);
+    aqui ele é citado por fontes de mercado de fraude/deepfake como parte de um conjunto mais amplo de métricas
+    de crescimento de ataques por voz — **os números não são necessariamente da mesma metodologia/período e não
+    devem ser somados**; a convergência qualitativa (forte alta de vishing/voz sintética) é, porém, consistente
+    entre as duas linhas de evidência.
+
+- **Dado:** casos concretos de fraude financeira via deepfake em 2025: em Hong Kong, fraudadores personificaram um
+  gerente financeiro usando clonagem de voz por IA e convenceram a vítima a transferir cerca de **HKD 145
+  milhões (~USD 18,5 milhões)** para contas cripto fraudulentas; no início de 2025, uma conglomerada de energia
+  europeia perdeu **USD 25 milhões** quando atacantes usaram um clone de áudio deepfake do CFO para emitir
+  instruções ao vivo de transferência eletrônica urgente. A Resemble AI relatou **980 casos de infiltração
+  corporativa** via deepfake em vídeo ao vivo durante reuniões no 3º trimestre de 2025 (Q3 2025), com objetivo de
+  autorizar transações fraudulentas.
+  - Fonte 1: StationX. *Deepfake Statistics [2026]: Growth, Fraud & Detection Data*. 2026.
+    https://app.stationx.net/articles/deepfake-statistics
+  - Fonte 2 (secundária, mesmo conjunto de casos citado independentemente): BrightDefense. *150+ Deepfake
+    Statistics (March 2026)*. 2026. https://www.brightdefense.com/resources/deepfake-statistics/
+  - Observações: o caso de Hong Kong é amplamente reportado desde 2024 (via a empresa de engenharia Arup) e
+    reaparece consolidado em compilações de 2025–2026; o caso da "conglomerada de energia europeia" é citado sem
+    nome da empresa nas duas fontes agregadoras consultadas — **[PARCIALMENTE CONFIRMADO — nome da empresa
+    europeia de energia vítima do golpe de USD 25 milhões não identificado/confirmável em 2026-07-21; valor e
+    modus operandi confirmados por 2 fontes, mas sem atribuição nominal verificável]**. Este caso, embora do
+    setor de energia, é registrado aqui por ilustrar a mesma técnica (deepfake de voz/vídeo de executivo) aplicável
+    a fraude no setor financeiro.
+
+---
+
+### Brasil — fraudes no PIX (volume e valor)
+
+- **Dado:** o Brasil registrou **28 milhões de fraudes envolvendo o Pix** entre janeiro e setembro de 2025,
+  segundo levantamento da Associação de Defesa de Dados Pessoais e do Consumidor (ADDP). Em métrica distinta e
+  não diretamente comparável, entre julho de 2024 e junho de 2025 cerca de **24 milhões de brasileiros** foram
+  vítimas de golpes financeiros envolvendo Pix ou boletos, com prejuízo estimado em quase **R$ 29 bilhões**
+  (dado citado por matéria da Rádio Senado). Fraude financeira representa cerca de **47%** de todos os crimes
+  digitais registrados no país; pessoas com mais de 50 anos respondem por cerca de **53%** das vítimas.
+  - Fonte 1: Contábeis (citando ADDP). *Golpes via Pix: 28 milhões de casos em 2025 e como combatê-los*. 2025.
+    https://www.contabeis.com.br/noticias/74404/golpes-via-pix-28-milhoes-de-casos-em-2025-e-como-combate-los/
+  - Fonte 2 (secundária, dado complementar de outra pesquisa/período): Rádio Senado. *Mais de 24 milhões de
+    pessoas foram vítimas de golpes pelo Pix*. 2025. https://www12.senado.leg.br/radio/1/noticia/2025/08/18/mais-de-24-milhoes-de-pessoas-foram-vitimas-de-golpes-pelo-pix
+  - Observações: **divergência de metodologia e período explicitamente registrada** — "28 milhões de fraudes"
+    (ADDP, jan–set/2025, contagem de casos/tentativas) e "24 milhões de vítimas" (jul/2024–jun/2025, contagem de
+    pessoas distintas) medem coisas diferentes (eventos vs. pessoas; janelas temporais distintas) e não devem ser
+    somados nem tratados como o mesmo número. O valor de prejuízo de "R$ 29 bilhões" citado pela Rádio Senado
+    aparenta se referir a fraudes digitais em geral (Pix + boleto), não exclusivamente Pix — **[PARCIALMENTE
+    CONFIRMADO — escopo exato do prejuízo de R$ 29 bilhões (só Pix vs. Pix+boleto) não pôde ser arbitrado com
+    certeza em 2026-07-21]**.
+
+- **Dado:** especificamente golpes via Pix (recorte Febraban, ver abaixo) causaram prejuízo de **R$ 2,7 bilhões**
+  em dois anos, alta de **43%** nas transações fraudulentas — número distinto e mais conservador que o "R$ 29
+  bilhões" acima, pois se refere apenas a fraudes formalmente contestadas/reportadas pelos bancos associados à
+  Febraban, não à totalidade de golpes autorreportados por vítimas em pesquisas de opinião.
+  - Fonte 1: Poder360 (citando Febraban). *Golpes causaram prejuízo de R$ 10,1 bi em 2024, diz Febraban*. 2025.
+    https://www.poder360.com.br/poder-economia/golpes-causaram-prejuizo-de-r-101-bi-em-2024-diz-febraban/
+  - Fonte 2 (secundária, mesma pesquisa Febraban): Finsiders Brasil. *Golpes com Pix dão prejuízos de quase R$ 3
+    bi em dois anos, diz Febraban*. 2025. https://finsidersbrasil.com.br/eventos/golpes-com-pix-dao-prejuizos-de-quase-r-3-bi-em-dois-anos-diz-febraban/
+  - Observações: sem divergência relevante entre as duas fontes quanto ao valor específico de Pix (R$ 2,7
+    bilhões/43%). Ver nota acima sobre a diferença metodológica frente aos números da ADDP/Rádio Senado — os
+    três números (28 milhões de casos, 24 milhões de vítimas, R$ 2,7 bilhões em fraude Pix formalmente apurada)
+    coexistem sem se contradizerem tecnicamente, mas medem populações/recortes diferentes e não devem ser
+    somados ou usados como sinônimos em um único parágrafo do relatório final.
+
+- **Dado:** o mecanismo de devolução do Pix (MED — Mecanismo Especial de Devolução) foi explorado por golpistas
+  em fraude de "devolução dupla": o golpista transfere para a conta da vítima, alega erro e pede devolução; ao
+  mesmo tempo, aciona o MED junto ao próprio banco, fazendo o valor sair da conta da vítima duas vezes. Em
+  resposta, o Banco Central aprimorou o MED para rastrear o caminho completo dos recursos fraudados por todas as
+  contas intermediárias até o destino final. A Resolução Conjunta BCB/CMN nº 6 passou a exigir que instituições
+  autorizadas compartilhem indícios de fraude/tentativas de fraude entre si por meio de sistema interoperável.
+  - Fonte 1: Contábeis. *Golpes via Pix: 28 milhões de casos em 2025 e como combatê-los*. 2025.
+    https://www.contabeis.com.br/noticias/74404/golpes-via-pix-28-milhoes-de-casos-em-2025-e-como-combate-los/
+  - Fonte 2 (secundária, descreve o mesmo mecanismo de golpe e resposta regulatória): Data Rudder. *Data Report
+    Pix 2025: a segurança em pagamentos instantâneos*. 2025. https://datarudder.com/report-pix-pagamentos-instantaneos/
+  - Observações: sem divergência relevante entre as fontes quanto à descrição do golpe e da resposta regulatória.
+
+---
+
+### Brasil — regulação do Banco Central (segurança cibernética)
+
+- **Dado:** o marco regulatório vigente de segurança cibernética para o sistema financeiro nacional é composto
+  por duas resoluções irmãs publicadas em 26/2/2021: **Resolução CMN nº 4.893/2021** (política de segurança
+  cibernética e requisitos de contratação de processamento/armazenamento de dados e computação em nuvem,
+  aplicável a bancos múltiplos, comerciais, de investimento, cooperativas de crédito, SCDs, SEPs e demais
+  instituições autorizadas a funcionar pelo BCB em sentido amplo) e **Resolução BCB nº 85/2021** (mesmo escopo
+  temático, mas aplicável especificamente a instituições de pagamento). Ambas foram atualizadas em 2025 pela
+  **Resolução CMN nº 5.274/2025** e pela **Resolução BCB nº 538/2025**, com prazo final de adequação em
+  **março de 2026**.
+  - Fonte 1: Banco Central do Brasil / ANCORD. *Resolução CMN n° 4.893 de 26/2/2021* (texto oficial).
+    https://www.ancord.org.br/wp-content/uploads/2021/03/Resolucao-CMN-n-4.893-de-26_2_2021.pdf
+  - Fonte 2 (secundária, análise jurídica que confirma a distinção CMN 4.893/BCB 85 e a atualização 2025): NDM
+    Advogados. *O que muda para a segurança cibernética das instituições autorizadas até março de 2026 com as
+    Resoluções BCB 538/2025 e CMN 5.274/2025*. 2025. https://ndmadvogados.com.br/artigo/seguranca-cibernetica-bcb-538-cmn-5274/
+  - Observações: sem divergência relevante entre fontes. **Nota de precisão em relação ao brief da Task 2:** o
+    brief cita "Resolução BCB nº 4.893" — o número correto é **Resolução CMN nº 4.893/2021** (Conselho Monetário
+    Nacional), não uma Resolução BCB; a resolução paralela do Banco Central com número próprio para instituições
+    de pagamento é a **Resolução BCB nº 85/2021**. A distinção é confirmada por múltiplas fontes jurídicas
+    (Migalhas, TozziniFreire, Grant Thornton, Decripte, SecOffice) e é relevante para não citar incorretamente o
+    número/órgão emissor no capítulo final do panorama.
+
+- **Dado:** requisitos centrais das resoluções incluem política de segurança cibernética documentada, plano de
+  resposta a incidentes, testes de penetração periódicos e gestão de risco de fornecedores de TI; a política deve
+  ser proporcional ao porte, perfil de risco, modelo de negócio e sensibilidade dos dados da instituição.
+  - Fonte 1: SecOffice. *Resolução CMN 4.893: Guia Completo sobre Segurança Cibernética para Instituições
+    Financeiras*. https://secoffice.com.br/blog/resolucao-cmn-4-893-guia-completo-sobre-seguranca-cibernetica-para-instituicoes-financeiras/
+  - Fonte 2 (secundária): Migalhas. *Instituições financeiras: Política de segurança cibernética*.
+    https://www.migalhas.com.br/depeso/343724/instituicoes-financeiras-politica-de-seguranca-cibernetica
+  - Observações: sem divergência relevante entre fontes; conteúdo qualitativo consistente com o texto oficial da
+    resolução.
+
+---
+
+### Brasil — Open Finance (superfície de ataque e escala)
+
+- **Dado:** o ecossistema de Open Finance no Brasil superou **128 milhões de consentimentos ativos** em janeiro
+  de 2026, segundo relatório "State of Open Finance – Brazil & World" (Sensedia/Let's Money), colocando o Brasil
+  na liderança global entre mais de 78 países com regulação do tema. A infraestrutura gera mais de **4,4 bilhões
+  de comunicações semanais** entre instituições. Expansão da API abre nova superfície de ataque: cada nova
+  integração mal protegida representa um ponto de entrada adicional para ameaças; fraudadores já exploram roubo e
+  manipulação de tokens, criação de consentimentos híbridos fraudulentos, bots especializados simulando
+  comportamento humano, e engenharia social hiperpersonalizada com apoio de IA generativa.
+  - Fonte 1: TI Inside. *Open Finance: Brasil lidera ranking global com 128 milhões de consentimentos ativos*.
+    Janeiro de 2026. https://tiinside.com.br/22/01/2026/open-finance-brasil-lidera-ranking-global-com-128-milhoes-de-consentimentos-ativos/
+  - Fonte 2 (secundária, mesmo dado, veículo distinto): Convergência Digital. *Open Finance: Brasil lidera
+    ranking global com 128 milhões de consentimentos ativos*. Janeiro de 2026.
+    https://convergenciadigital.com.br/mercado/open-finance-brasil-lidera-ranking-global-com-128-milhoes-de-consentimentos-ativos/
+  - Observações: **divergência de números entre fontes de datas próximas, registrada explicitamente** — a
+    Febraban, em fevereiro de 2026, citou **154 milhões de consentimentos ativos** e mais de 100 milhões de
+    clientes/contas conectados; já em publicação anterior da própria Febraban (sem data exata localizada, citando
+    "4 anos de Open Finance"), o número de consentimentos era de **62 milhões**. As três leituras (128M/jan-2026,
+    154M/fev-2026, 62M/"4 anos") não são necessariamente contraditórias — podem refletir crescimento real e rápido
+    do ecossistema ao longo de poucas semanas/meses, mas também poderiam refletir metodologias de contagem
+    distintas entre Sensedia e Febraban — **[PARCIALMENTE CONFIRMADO — não foi possível arbitrar se a diferença
+    128M→154M em cerca de um mês reflete crescimento real ou mudança de metodologia de contagem entre as fontes
+    em 2026-07-21]**. Também não foi possível confirmar de forma independente o percentual "91% das empresas
+    sofreram ao menos um incidente de segurança cibernética no último ano" citado por uma fonte (JuicyScore,
+    atribuído a pesquisa da Deloitte) sem acesso à pesquisa Deloitte original — **[NÃO CONFIRMADO]**.
+
+---
+
+### Brasil — Febraban (pesquisas de fraude e tecnologia bancária)
+
+- **Dado:** o volume de prejuízo com golpes financeiros no Brasil somou **R$ 10,1 bilhões em 2024**, alta de
+  **17%** frente aos R$ 8,6 bilhões de 2023, segundo a Pesquisa Febraban de Tecnologia Bancária 2025. A maior
+  parte do prejuízo (R$ 10 bilhões acumulados em 2 anos) decorre de fraudes em canais eletrônicos e cartões de
+  débito. Golpes baseados em perfis falsos/clonados (WhatsApp, anúncios, vendas simuladas) foram os mais
+  reportados por clientes em 2024. Quase **4 em cada 10 brasileiros** já sofreram algum tipo de golpe, segundo a
+  mesma pesquisa — o maior número da série histórica. Reconhecimento da biometria física como método de proteção
+  passou de 59% (2023) para **67%** (2024). Em 2023, instituições financeiras destinaram cerca de **R$ 5
+  bilhões** à prevenção de fraudes e crimes cibernéticos.
+  - Fonte 1: Poder360 (citando Pesquisa Febraban de Tecnologia Bancária 2025). *Golpes causaram prejuízo de R$
+    10,1 bi em 2024, diz Febraban*. 2025. https://www.poder360.com.br/poder-economia/golpes-causaram-prejuizo-de-r-101-bi-em-2024-diz-febraban/
+  - Fonte 2 (secundária, mesma pesquisa, veículo distinto): FEBRABAN Tech. *Quase 4 em cada 10 brasileiros já
+    sofreram golpe, aponta pesquisa da Febraban*. 2025.
+    https://febrabantech.febraban.org.br/temas/seguranca/quase-4-em-cada-10-brasileiros-ja-sofreram-golpe-aponta-pesquisa-da-febraban
+  - Observações: tentativa de fetch direto do PDF oficial da Pesquisa Febraban de Tecnologia Bancária 2025 (Vol.
+    1) retornou apenas o fluxo binário do arquivo, não texto extraível — números confirmados por convergência
+    entre duas coberturas jornalísticas independentes que citam a mesma pesquisa, e não pelo documento primário
+    diretamente. Sem divergência relevante entre as duas fontes quanto aos valores citados.
+
+---
+
+### Brasil — incidentes cibernéticos conhecidos no setor financeiro (2025)
+
+- **Dado:** em **11–12 de fevereiro de 2025**, um agente identificado como "banconeon" divulgou em fórum
+  cibercriminoso um pacote de dados supostamente extraído da base do **Banco Neon**, afetando (segundo o
+  divulgador) cerca de **30 milhões de clientes** — incluindo nome completo, CPF/CNPJ, telefone, e-mail, CEP,
+  profissão, nome da mãe, renda declarada, saldo bancário, número de conta, dados de transações via Pix, selfies
+  e imagens de documentos de verificação de identidade. O Banco Neon confirmou o incidente publicamente, mas
+  negou que a extensão tenha atingido 30 milhões de clientes, afirmando tratar-se de "pequena parcela" e que os
+  dados vazados "não permitem acessar as contas bancárias".
+  - Fonte 1: Mixvale. *Banco Neon sofre vazamento de dados de 30 milhões de clientes e alerta para possíveis
+    golpes*. Fevereiro de 2025. https://www.mixvale.com.br/2025/02/12/banco-neon-sofre-vazamento-de-dados-de-30-milhoes-de-clientes-e-alerta-para-possiveis-golpes/
+  - Fonte 2 (secundária, traz a versão/negação oficial do banco): InfoMoney. *Banco Neon confirma vazamento de
+    dados, mas nega 30 milhões de clientes afetados*. Fevereiro de 2025.
+    https://www.infomoney.com.br/consumo/dados-de-mais-de-30-milhoes-de-clientes-do-banco-neon-foram-vazados-diz-site/
+  - Observações: **divergência explícita entre a alegação do atacante e a posição oficial do banco**, registrada
+    como tal — o número "30 milhões" é a alegação do agente que publicou os dados no fórum, não um número
+    confirmado pela instituição afetada nem por órgão regulador independente. **[PARCIALMENTE CONFIRMADO — a
+    extensão real do vazamento (30 milhões vs. "pequena parcela") permanece contestada entre as partes em
+    2026-07-21]**.
+
+- **Dado:** em **4 de julho de 2025**, o Banco Central suspendeu preventivamente por até 60 dias (com base na
+  Resolução BC nº 30) três instituições participantes do Pix — **Transfeera, Soffy e Nuoro Pay** — após ataque
+  cibernético direcionado à **C&M Software**, empresa de tecnologia que atua como ponte entre instituições
+  financeiras e o Sistema de Pagamentos Brasileiro (SPB). O ataque resultou no desvio de pelo menos **R$ 400
+  milhões**. Investigações buscavam apurar participação direta ou indireta das instituições suspensas.
+  - Fonte 1: Agência Brasil (EBC). *BC suspende três instituições do Pix após ataque cibernético*. Julho de
+    2025. https://agenciabrasil.ebc.com.br/economia/noticia/2025-07/bc-suspende-tres-instituicoes-do-pix-apos-ataque-cibernetico
+  - Fonte 2 (secundária, mesmo caso, detalha a empresa-alvo original C&M Software): Finsiders Brasil. *BC
+    suspende do Pix os participantes Transfeera, Nuoro Pay e Soffy (atualização)*. Julho de 2025.
+    https://finsidersbrasil.com.br/reportagem-exclusiva-fintechs/bc-suspende-os-participantes-do-pix-transfeera-nuoro-pay-e-soffy/
+  - Observações: sem divergência relevante entre as fontes quanto ao valor (R$ 400 milhões) e à empresa-alvo
+    (C&M Software). Este incidente ilustra diretamente o risco de terceiros/cadeia de suprimentos no setor
+    financeiro brasileiro (item explicitamente pedido no brief da Task 2): a vulnerabilidade não foi nas
+    fintechs suspensas, mas em um provedor de infraestrutura tecnológica compartilhado.
+
+- **Dado:** em **19 de outubro de 2025**, a fintech **FictorPay** (Grupo Fictor) teve cerca de **R$ 26 milhões**
+  desviados por meio de aproximadamente **280 transações Pix** distribuídas em cerca de 270 contas fraudulentas
+  em diversos bancos e fintechs. O ataque explorou uma falha em aplicação de terceiro contratada pela empresa;
+  a Celcoin (provedora da infraestrutura Pix da FictorPay) afirmou não ter havido invasão de sua própria
+  infraestrutura tecnológica e que as operações suspeitas foram bloqueadas rapidamente após acionamento pelo
+  Banco Central. O caso marcou o **quarto incidente cibernético contra fintechs brasileiras em três meses**, com
+  perdas acumuladas superiores a **R$ 1,74 bilhão desde julho de 2024**.
+  - Fonte 1: TechTudo. *Ataque hacker desvia R$ 26 milhões; entenda caso contra fintech brasileira*. Outubro de
+    2025. https://www.techtudo.com.br/noticias/2025/10/ataque-hacker-desvia-r-26-milhoes-entenda-caso-contra-fintech-brasileira-edsoftwares.ghtml
+  - Fonte 2 (secundária, mesmo caso, aponta fornecedor de software adicional — Dilleta Solutions — como possível
+    origem do vazamento de credenciais e estima total desviado mais alto): Diário do Grande ABC. *Fintech é alvo
+    de ataque cibernético que desvia R$ 26 milhões*. Outubro de 2025.
+    https://www.dgabc.com.br/Noticia/4264537/fintech-e-alvo-de-ataque-cibernetico-que-desvia-rs-26-milhoes
+  - Observações: **divergência registrada** — a fonte 1 atribui a falha a uma aplicação de terceiro genérica e
+    cita a Celcoin como provedora de infraestrutura (isenta de invasão); a fonte 2 aponta a Dilleta Solutions
+    (outra prestadora de serviços à fintech) como a origem do vazamento de credenciais, e estima o total desviado
+    somando outros parceiros afetados da Dilleta em **pelo menos R$ 40 milhões** (acima dos R$ 26 milhões
+    confirmados especificamente para a FictorPay). **[PARCIALMENTE CONFIRMADO — o valor de R$ 26 milhões é
+    consistente entre fontes para a FictorPay isoladamente; o valor agregado de R$ 40 milhões (incluindo outros
+    clientes da Dilleta) tem fonte única identificável em 2026-07-21]**. Em resposta a esses incidentes
+    recorrentes, o Banco Central passou a exigir o encerramento de "contas-bolsão" a partir de dezembro de 2025,
+    criou teto para transações Pix/TED de certas instituições e elevou o capital mínimo exigido de fintechs (de
+    R$ 1 milhão para R$ 9 milhões).
+
+---
+
+### Atores de ameaça relevantes ao setor financeiro
+
+- **Dado:** **FIN7** (também rastreado como Carbon Spider, GOLD NIAGARA, ITG14, Sangria Tempest, Elbrus) é um
+  grupo financeiramente motivado ativo desde 2013, historicamente focado em roubo de dados de cartão de pagamento
+  via comprometimento de sistemas de ponto de venda (POS); desde 2020 migrou para "big game hunting" (implantação
+  de ransomware e extorsão em larga escala), incluindo uso de REvil e de RaaS próprio (Darkside). Alvos incluem
+  varejo, hotelaria, serviços financeiros, entre outros setores.
+  - Fonte 1: MITRE ATT&CK. *FIN7, G0046*. https://attack.mitre.org/groups/G0046/
+  - Fonte 2 (secundária, perfil independente do mesmo ator): Huntress. *FIN7 Cybercrime Group — Tactics, Tools,
+    and Threat Insights*. https://www.huntress.com/threat-library/threat-actors/fin7
+  - Observações: sem divergência relevante entre fontes; não foi localizada, no escopo desta pesquisa, uma
+    campanha específica e nomeada de FIN7 contra o setor financeiro datada especificamente de 2025–2026 (as
+    fontes descrevem o perfil histórico e atual do grupo, não um incidente pontual do período) — **[NÃO
+    CONFIRMADO um ataque específico de FIN7 em 2025–2026 dentro do escopo desta pesquisa]**.
+
+- **Dado:** clusters de atores ligados à Coreia do Norte (DPRK), coletivamente responsáveis por parte relevante
+  do roubo de ativos digitais em 2025 (ver CrowdStrike acima): **PRESSURE CHOLLIMA** (maior roubo cripto já
+  registrado, USD 1,46 bilhão, via cadeia de suprimentos de software), **FAMOUS CHOLLIMA** (identidades geradas
+  por IA para infiltrar exchanges/fintechs/bancos de varejo), **STARDUST CHOLLIMA** (personas de recrutador por
+  IA e videoconferência sintética). Ator chinês **VAULT PANDA** conduz espionagem contra instituições financeiras
+  com malware KEYPLUG. Grupos de ransomware mais ativos contra o setor em 2025: **Qilin** (59 vítimas no setor,
+  incluindo o caso GJTec/Coréia do Sul), **Akira** (~USD 244,17 milhões em proventos até final de setembro de
+  2025, cross-setorial) e **Kill Security**.
+  - Fonte 1: CrowdStrike. *CrowdStrike 2026 Financial Services Threat Landscape Report*. 2026.
+    https://www.crowdstrike.com/en-us/press-releases/crowdstrike-2026-financial-services-threat-landscape-report/
+  - Fonte 2 (secundária, corrobora os grupos de ransomware citados e o caso GJTec): Black Kite. *2026 State of
+    Financial Services Report*. 2026. https://blackkite.com/reports/2026-financial-services-report
+  - Observações: já detalhado nas entradas "CrowdStrike 2026" e "Black Kite 2026" acima; consolidado aqui como
+    referência rápida de atores. Sem divergência relevante entre as duas fontes quanto aos nomes de grupos e ao
+    caso GJTec.
+
+---
+
+### Tabela-resumo — Financeiro
+
+| Métrica | Valor | Relatório primário | Status |
+| :-- | :-- | :-- | :-- |
+| Setor mais atacado (ranking FS-ISAC) | 2º lugar, atrás de saúde | FS-ISAC Navigating Cyber 2025 | Confirmado (2 fontes) qualitativamente; sem % numérico |
+| DDoS no setor financeiro (2022→2023) | +154%; 35%+ de todo DDoS observado | FS-ISAC/Akamai *DDoS: Here to Stay* (2024) | Confirmado (2 fontes); janela 2022–2023, sem atualização 2025–2026 confirmada |
+| Custo médio de violação — financeiro | USD 5,56 milhões (-9% a/a) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
+| Composição de custo — detecção/escalonamento | 34% (vs. 29% global) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
+| Incidentes / violações confirmadas (Finance Snapshot) | 3.336 / 927 | Verizon DBIR 2025 Finance Snapshot | Parcialmente confirmado (PDF não extraível; convergência de buscas) |
+| Padrão dominante de ataque (setor) | 74% Intrusão de Sistema + Eng. Social + Web App | Verizon DBIR 2025 Finance Snapshot | Parcialmente confirmado |
+| Motivação financeira / espionagem (setor) | 90% / 12% | Verizon DBIR 2025 Finance Snapshot | Parcialmente confirmado |
+| Roubo de ativos digitais (DPRK-nexus, 2025) | USD 2,02 bilhões (+51% a/a) | CrowdStrike 2026 Financial Services Threat Landscape | Confirmado (2 fontes) |
+| Maior roubo cripto único (PRESSURE CHOLLIMA) | USD 1,46 bilhão | CrowdStrike 2026 Financial Services Threat Landscape | Confirmado (2 fontes) |
+| Intrusões hands-on-keyboard (2 anos) | +43% global / +48% América do Norte | CrowdStrike 2026 Financial Services Threat Landscape | Confirmado (2 fontes) |
+| Ransomware direto no setor financeiro (2024→2025) | 156 → 202 incidentes (+~30%) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
+| Ransomware setor financeiro, Q1 2026 vs. Q1 2025 | +76% (65 incidentes) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
+| Fraude por deepfake (evolução 3 anos) | 0,1% → 6,5% das tentativas (+2.137%) | Agregação Cyble/StationX/BrightDefense (2025-2026) | Confirmado (2 fontes); fonte primária única não identificada |
+| Fraudes envolvendo Pix (casos, jan–set/2025) | 28 milhões | ADDP (via Contábeis) | Confirmado (2 fontes); não somar com "24 milhões de vítimas" (outra métrica/período) |
+| Prejuízo com golpes financeiros no Brasil (2024) | R$ 10,1 bilhões (+17% a/a) | Pesquisa Febraban de Tecnologia Bancária 2025 | Confirmado (2 fontes) |
+| Prejuízo específico com golpes Pix (2 anos) | R$ 2,7 bilhões (+43%) | Pesquisa Febraban de Tecnologia Bancária 2025 | Confirmado (2 fontes) |
+| Consentimentos ativos — Open Finance Brasil | 128 milhões (jan/2026) | Sensedia/Let's Money *State of Open Finance* | Confirmado (2 fontes); diverge de 154M (Febraban, fev/2026) — ver observação |
+| Vazamento Banco Neon (fev/2025) | 30 milhões de clientes (alegado) | Divulgação em fórum cibercriminoso | Parcialmente confirmado — banco nega extensão |
+| Ataque C&M Software / suspensão Pix (jul/2025) | R$ 400 milhões desviados; 3 fintechs suspensas | Banco Central (Resolução BC nº 30) | Confirmado (2 fontes) |
+| Ataque FictorPay (out/2025) | R$ 26 milhões desviados; ~280 transações Pix | Cobertura de imprensa especializada | Confirmado (2 fontes) para o valor da FictorPay isoladamente |
+| Perdas acumuladas em ataques a fintechs BR (desde jul/2024) | R$ 1,74 bilhão | Cobertura de imprensa especializada | Confirmado (2 fontes) |
+| Ransomware Qilin no setor financeiro | 59 vítimas; caso GJTec afetou 32 instituições (Coreia do Sul) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
+
+**Legenda:** idêntica à da tabela-resumo Global. Itens "Parcialmente confirmado" indicam que o valor numérico
+central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de ouro
+(acesso direto a documento primário, ou segunda fonte plenamente independente) não pôde ser cumprida integralmente
+em 2026-07-21.
