@@ -36,11 +36,12 @@
         "fonte": "cap. 02"
       },
       "pizza": {
-        "titulo": "Motivação das violações (setor financeiro)",
+        "titulo": "Motivação das violações — % das violações do setor",
         "itens": [
           { "nome": "Financeira", "valor": 90 },
           { "nome": "Espionagem", "valor": 12 }
         ],
+        "nota": "Categorias do Verizon DBIR podem coocorrer — não somam 100%.",
         "fonte": "cap. 02"
       }
     },
@@ -72,12 +73,13 @@
         "fonte": "cap. 03"
       },
       "pizza": {
-        "titulo": "Origem das infecções em computadores ICS (energia, 1º tri. 2025)",
+        "titulo": "Origem das infecções em computadores ICS — % de máquinas ICS",
         "itens": [
           { "nome": "Internet", "valor": 10 },
           { "nome": "Clientes de e-mail", "valor": 2.8 },
           { "nome": "Mídia removível", "valor": 0.5 }
         ],
+        "nota": "Percentuais independentes por fonte (Kaspersky ICS-CERT, 1º tri. 2025) — não somam 100%.",
         "fonte": "cap. 03"
       }
     }

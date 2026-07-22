@@ -2,11 +2,11 @@ import GaugeRisco from '../components/GaugeRisco.jsx'
 import SemaforoCard from '../components/SemaforoCard.jsx'
 import KpiTile from '../components/KpiTile.jsx'
 import BarChart from '../components/BarChart.jsx'
-import PieChart from '../components/PieChart.jsx'
+import { palette } from '../theme.js'
 
 /**
  * Painel setorial — Financeiro: gauge de risco, dimensões de ameaça,
- * gráficos de barra/pizza e faixa de KPIs.
+ * gráficos de barras e faixa de KPIs.
  */
 function Financeiro({ dados }) {
   const setor = (dados?.setores ?? []).find((s) => s.id === 'financeiro')
@@ -50,7 +50,15 @@ function Financeiro({ dados }) {
         )}
         {setor.pizza && (
           <div className="painel">
-            <PieChart titulo={setor.pizza.titulo} itens={setor.pizza.itens} />
+            <BarChart
+              titulo={setor.pizza.titulo}
+              categorias={setor.pizza.itens.map((i) => i.nome)}
+              valores={setor.pizza.itens.map((i) => i.valor)}
+              cor={palette.roxo}
+            />
+            {setor.pizza.nota && (
+              <p style={{ color: palette.txtSec, fontSize: 12, margin: '6px 4px 0' }}>{setor.pizza.nota}</p>
+            )}
           </div>
         )}
       </div>
