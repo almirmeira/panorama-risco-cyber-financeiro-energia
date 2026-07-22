@@ -84,6 +84,25 @@
       }
     }
   ],
+  "global": {
+    "titulo": "Panorama global de atividade cibernética",
+    "kpis": [
+      { "label": "Custo médio global de violação", "valor": "4,44", "unidade": "US$ mi", "delta": "-9% a/a", "fonte": "cap. 01" },
+      { "label": "Dwell time mediano global (2024)", "valor": "11", "unidade": "dias", "delta": "piora p/ 14 em 2026", "fonte": "cap. 01" },
+      { "label": "Ransomware em violações confirmadas", "valor": "44", "unidade": "%", "fonte": "cap. 01" },
+      { "label": "IA como principal driver de mudança (2026)", "valor": "94", "unidade": "% líderes", "fonte": "cap. 01" }
+    ]
+  },
+  "comparativoGlobal": {
+    "titulo": "Setor financeiro × panorama global",
+    "barra": { "titulo": "Custo médio de violação (US$ mi)", "categorias": ["Setor financeiro", "Média global"], "valores": [5.56, 4.44], "fonte": "cap. 01" },
+    "tabela": [
+      { "metrica": "Custo médio de violação (2025)", "financeiro": "US$ 5,56 mi", "global": "US$ 4,44 mi", "leitura": "Financeiro ~25% acima da média global (2º setor mais caro)" },
+      { "metrica": "Volume de intrusões (Mandiant IR)", "financeiro": "1º — 17,4%", "global": "—", "leitura": "Setor financeiro é o alvo nº 1 por volume de intrusões investigadas" },
+      { "metrica": "Ransomware", "financeiro": "202 incidentes diretos (+30% a/a)", "global": "44% das violações", "leitura": "Ameaça transversal; setor financeiro entre os mais visados" },
+      { "metrica": "Dwell time (detecção)", "financeiro": "—", "global": "11 dias (2024) → 14 (2026)", "leitura": "Janela global de detecção; instituições maduras reduzem para dias" }
+    ]
+  },
   "comparativo": {
     "eixos": ["Frequência de ataque", "Impacto físico/vida", "Impacto financeiro", "Maturidade defensiva", "Pressão regulatória", "Exposição a APT estatal"],
     "serieFinanceiro": [5, 0.5, 5, 4, 4.5, 3.5],

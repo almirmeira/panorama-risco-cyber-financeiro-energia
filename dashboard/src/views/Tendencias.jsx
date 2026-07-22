@@ -1,6 +1,7 @@
 import BubbleQuadrant from '../components/BubbleQuadrant.jsx'
 import SemaforoCard from '../components/SemaforoCard.jsx'
 import { palette } from '../theme.js'
+import { isFinanceiro } from '../edition.js'
 
 /**
  * Converte o texto livre de `horizonte` em posição numérica no eixo x
@@ -19,7 +20,8 @@ function horizonteParaX(horizonte) {
 
 /**
  * Deriva o setor de exposição predominante de uma tendência comparando
- * `exposicaoFin` e `exposicaoEnergia`.
+ * `exposicaoFin` e `exposicaoEnergia`. Usado apenas na edição full — a
+ * edição "financeiro" não faz essa comparação (não cita energia).
  */
 function setorPredominante(tendencia) {
   const fin = Number(tendencia.exposicaoFin) || 0
@@ -31,7 +33,14 @@ function setorPredominante(tendencia) {
 
 /**
  * Tendências emergentes (2026–2028): dispersão em quadrante horizonte x
- * impacto (bolhas numeradas + legenda) e grade de cartões de urgência.
+ * impacto/exposição financeira (bolhas numeradas + legenda) e grade de
+ * cartões de urgência.
+ *
+ * Na edição "financeiro", o eixo y da bolha e a justificativa do cartão
+ * usam a exposição do setor financeiro (`exposicaoFin`) em vez do impacto
+ * geral, e não citam a exposição de energia. A edição full mantém o
+ * comportamento original (impacto geral + exposição comparada dos dois
+ * setores).
  */
 function Tendencias({ dados }) {
   const tendencias = dados?.tendencias ?? []
@@ -40,8 +49,8 @@ function Tendencias({ dados }) {
     nome: t.nome,
     rotulo: String(i + 1),
     x: horizonteParaX(t.horizonte),
-    y: t.impacto,
-    setor: setorPredominante(t),
+    y: isFinanceiro ? t.exposicaoFin : t.impacto,
+    setor: isFinanceiro ? undefined : setorPredominante(t),
   }))
 
   // Quando dois ou mais pontos caem no mesmo (x, y), as bolhas se empilham.
@@ -62,7 +71,9 @@ function Tendencias({ dados }) {
       <div className="painel" style={{ marginTop: 16 }}>
         <BubbleQuadrant titulo="Horizonte × Impacto" pontos={pontos} altura={440} />
         <p style={{ color: palette.txtSec, fontSize: 12, margin: '4px 0 10px' }}>
-          Tamanho da bolha = impacto potencial · cor = setor de exposição predominante · escala qualitativa de síntese.
+          {isFinanceiro
+            ? 'Tamanho da bolha = exposição do setor financeiro · escala qualitativa de síntese.'
+            : 'Tamanho da bolha = impacto potencial · cor = setor de exposição predominante · escala qualitativa de síntese.'}
         </p>
         <div
           style={{
@@ -89,7 +100,11 @@ function Tendencias({ dados }) {
             key={t.nome}
             nome={`${i + 1}. ${t.nome}`}
             nivel={t.semaforoUrgencia}
-            justificativa={`Horizonte: ${t.horizonte} · Exposição Financeiro ${t.exposicaoFin}/5 · Exposição Energia ${t.exposicaoEnergia}/5`}
+            justificativa={
+              isFinanceiro
+                ? `Horizonte: ${t.horizonte} · Exposição do setor financeiro: ${t.exposicaoFin}/5`
+                : `Horizonte: ${t.horizonte} · Exposição Financeiro ${t.exposicaoFin}/5 · Exposição Energia ${t.exposicaoEnergia}/5`
+            }
             fonte={t.fonte}
             estimativa={t.estimativa}
           />
