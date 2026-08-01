@@ -84,8 +84,9 @@ Alguns exemplos concretos, extraídos do dossiê de pesquisa que sustenta este p
 - O *Kaspersky ICS CERT* publica, trimestralmente, o percentual de computadores industriais (ICS)
   nos quais objetos maliciosos foram bloqueados, com recorte por setor (energia elétrica, óleo e gás,
   automação predial) [8].
-- O *IBM Cost of a Data Breach Report 2025* mede o custo médio global de uma violação de dados a
-  partir de centenas de organizações entrevistadas, registrando US$ 4,44 milhões em 2025 [9].
+- O *IBM Cost of a Data Breach Report* mede o custo médio global de uma violação de dados a partir de
+  centenas de organizações entrevistadas — US$ 4,44 milhões na edição 2025, revisado para US$ 4,99
+  milhões na edição 2026 (publicada em 29/7/2026), o maior valor já registrado [9][11].
 
 Em todos os casos, o dado bruto por trás do relatório é proprietário e não está disponível ao
 público — mas a **estatística agregada, curada e contextualizada** está, e é exatamente o nível de
@@ -214,3 +215,7 @@ https://ics-cert.kaspersky.com/publications/reports/2025/12/11/threat-landscape-
 
 [10] World Economic Forum. *Global Cybersecurity Outlook 2026*. Janeiro de 2026.
 https://reports.weforum.org/docs/WEF_Global_Cybersecurity_Outlook_2026.pdf
+
+[11] IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6
+Million on Average*. 29 de julho de 2026.
+https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average

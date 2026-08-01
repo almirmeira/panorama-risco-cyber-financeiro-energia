@@ -49,8 +49,8 @@ pesquisa.
 | Incidentes de cibersegurança em OT (organizações pesquisadas)       | 50% relataram ≥ 1 incidente no último ano      | Fortinet [5][6]              |
 | Técnica dominante em ambientes Energia/Utilities/Resíduos           | Manipulação de Dados (3x mais frequente)       | Nozomi Networks [7][8]       |
 | Advisórios ICS publicados pela CISA (2025)                         | > 450, 200+ fornecedores, 700+ produtos        | Agregação sobre CISA [9][10] |
-| Incidentes com impacto em OT — custo médio (cross-setorial)         | USD 4,56 milhões (15% das organizações afetadas) | IBM [11][12]                |
-| Custo médio de violação — setor de energia (qualquer violação)      | USD 4,83 milhões (4º setor mais caro)          | IBM [11][13]                 |
+| Incidentes com impacto em OT — custo médio (cross-setorial, ed. 2025) | USD 4,56 milhões (15% das organizações afetadas) | IBM [11][12]                |
+| Custo médio de violação — setor de energia (qualquer violação)      | USD 5,2 milhões (ante USD 4,83 milhões em 2025) | IBM [46][47]                 |
 
 ### Por que OT/ICS é diferente de TI
 
@@ -114,18 +114,26 @@ CISO, ante apenas 16% em 2022 [5][6].
 
 ### Custo de um incidente com impacto em OT
 
-O *Cost of a Data Breach Report 2025* da IBM mediu que **15%** das organizações estudadas sofreram
-incidentes de cibersegurança que afetaram seu ambiente de OT; desse grupo, quase um quarto (~25%)
-relatou dano a sistemas ou equipamentos de OT. Incidentes com impacto em OT custaram, em média, **USD
-4,56 milhões** — acima da média global de USD 4,44 milhões [11][12]. Este número é distinto (e não deve
-ser confundido) do custo médio de violação especificamente do setor de energia como um todo — **USD 4,83
-milhões**, 4º setor mais caro entre os medidos pela IBM, também acima da média global [11][13]: o
-primeiro mede incidentes com impacto em OT em qualquer setor; o segundo mede qualquer violação de dados
-no setor de energia, com ou sem impacto em OT. Como referência de severidade regulatória internacional
-— fora do escopo direto deste capítulo, mas relevante como contraponto ao que será discutido na seção
-Brasil —, a norma **NERC CIP** (North American Electric Reliability Corporation Critical Infrastructure
-Protection), aplicável ao setor elétrico dos EUA, prevê multas de até **USD 1 milhão por dia por
-violação** em caso de não conformidade [11][12].
+A edição **2026** do *Cost of a Data Breach Report* da IBM mediu o custo médio de violação
+especificamente do setor de energia em **USD 5,2 milhões** — alta frente aos USD 4,83 milhões da edição
+2025 [11][13], acompanhando o movimento geral de alta de 12% no custo médio global (que também subiu,
+para USD 4,99 milhões, revertendo a queda da edição anterior) [46][47]. Energia está, junto com o setor financeiro,
+entre os setores de maior concentração de ataques habilitados por IA dentro do grupo mais amplo de
+infraestrutura crítica (62% desse tipo de ataque, segundo a mesma edição 2026) [46][47]. A edição **2025**
+do mesmo relatório havia detalhado, especificamente, o recorte de incidentes com impacto em tecnologia
+operacional (OT): **15%** das organizações estudadas sofreram incidentes de cibersegurança que afetaram
+seu ambiente de OT; desse grupo, quase um quarto (~25%) relatou dano a sistemas ou equipamentos de OT.
+Incidentes com impacto em OT custaram, em média, **USD 4,56 milhões** — acima da média global daquela
+edição, USD 4,44 milhões [11][12]. Este número é distinto (e não deve ser confundido) do custo médio de
+violação do setor de energia como um todo, atualizado acima: o primeiro mede incidentes com impacto em OT
+em qualquer setor; o segundo mede qualquer violação de dados no setor de energia, com ou sem impacto em
+OT. **Nota de atualização:** não foi localizado, no escopo desta pesquisa, um detalhamento equivalente
+específico de impacto em OT (15%/25%/USD 4,56 milhões) para a edição 2026 — o valor de 2025 permanece
+como referência mais recente confirmada para esse recorte específico. Como referência de severidade
+regulatória internacional — fora do escopo direto deste capítulo, mas relevante como contraponto ao que
+será discutido na seção Brasil —, a norma **NERC CIP** (North American Electric Reliability Corporation
+Critical Infrastructure Protection), aplicável ao setor elétrico dos EUA, prevê multas de até **USD 1
+milhão por dia por violação** em caso de não conformidade [11][12].
 
 ### Casos-marco: das redes elétricas ucranianas ao Pipedream
 
@@ -445,3 +453,10 @@ https://hackread.com/everest-ransomware-brazil-petrobras-breach/
 
 [45] Cybernews. *Hackers claim oil giant Petrobras, alleging oil-rich maps theft*. 2025.
 https://cybernews.com/security/brazil-petrobras-ransomware-attack/
+
+[46] IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6
+Million on Average*. 29 de julho de 2026.
+https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+
+[47] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
+https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/

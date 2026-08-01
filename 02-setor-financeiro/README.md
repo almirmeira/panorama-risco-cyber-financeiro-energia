@@ -17,8 +17,9 @@
 > - Uma sequência de incidentes de terceiros em 2024–2025 (C&M Software, FictorPay) mostrou que a
 >   vulnerabilidade sistêmica do Pix está menos nos bancos centrais do sistema e mais nos provedores de
 >   infraestrutura e software compartilhados por múltiplas instituições.
-> - **Número-chave:** custo médio de uma violação de dados no setor financeiro em 2025 = **USD 5,56
->   milhões** — 2º setor mais caro do mundo, 25% acima da média global (USD 4,44 milhões) [1][2].
+> - **Número-chave:** custo médio de uma violação de dados no setor financeiro em 2026 = **USD 6,3
+>   milhões** (ante USD 5,56 milhões na edição 2025) — acompanhando a alta global de 12% no custo médio
+>   de violação de dados [36][37].
 
 ## Contexto Global
 
@@ -31,7 +32,7 @@ brasileiro — Pix, Open Finance, regulação do Banco Central e incidentes conh
 | Indicador                                              | Valor                                  | Fonte primária              |
 |:---------------------------------------------------------|:------------------------------------------|:--------------------------------|
 | Ranking de setor mais atacado (FS-ISAC)                   | 2º lugar, atrás de saúde                 | FS-ISAC [1][2]                  |
-| Custo médio de violação — setor financeiro                 | USD 5,56 milhões (-9% a/a)               | IBM [3][4]                      |
+| Custo médio de violação — setor financeiro                 | USD 6,3 milhões (ante USD 5,56 milhões em 2025) | IBM [36][37]              |
 | Detecção/escalonamento no custo total (setor financeiro)    | 34% (vs. 29% global)                     | IBM [3][4]                      |
 | Incidentes / violações confirmadas (Finance Snapshot)        | 3.336 / 927                              | Verizon DBIR [5]                |
 | Motivação financeira / espionagem (setor)                    | 90% / 12%                                | Verizon DBIR [5]                |
@@ -56,18 +57,25 @@ pesquisa deste projeto.
 
 ### Custo de violação: por que o setor financeiro paga mais para responder
 
-O *Cost of a Data Breach Report 2025* da IBM mediu custo médio de **USD 5,56 milhões** para o setor
-financeiro — 2º colocado entre 17 setores, atrás de saúde, e 25% acima da média global de USD 4,44
-milhões, ainda que 9% abaixo dos USD 6,08 milhões de 2024 [3][4]. A composição de custo do setor difere
-do padrão global de um jeito revelador: detecção e escalonamento correspondem a **34%** do custo total
-(vs. 29% globalmente) — atribuído ao prazo regulatório comprimido de notificação, que força resposta
-forense extensiva já nas primeiras 72 horas —, e notificação corresponde a **8%** (vs. 6% globalmente),
+A edição **2026** do *Cost of a Data Breach Report* da IBM (602 organizações estudadas globalmente,
+violações entre março de 2025 e fevereiro de 2026) mediu custo médio de **USD 6,3 milhões** para o setor
+financeiro — alta relevante frente aos USD 5,56 milhões da edição 2025, acompanhando o movimento geral de
+alta de 12% no custo médio global de violação de dados (revertendo a queda registrada na edição anterior)
+[36][37]. Financeiro está entre os setores de maior concentração de ataques habilitados por IA dentro do
+grupo mais amplo de infraestrutura crítica (62% desse tipo de ataque, segundo a mesma edição) [36][37]. A
+edição **2025** do mesmo relatório havia mostrado que o setor financeiro pagava mais para responder por
+um motivo estrutural: detecção e escalonamento correspondiam a **34%** do custo total (vs. 29%
+globalmente) — atribuído ao prazo regulatório comprimido de notificação, que força resposta forense
+extensiva já nas primeiras 72 horas —, e notificação correspondia a **8%** (vs. 6% globalmente),
 refletindo obrigações de carta/*call center* por cliente somadas a múltiplas obrigações de notificação a
 reguladores [3][4]. Resposta pós-violação (24% vs. 27% global) e perda de negócios (34% vs. 38% global)
-ficam, na comparação, proporcionalmente menores. Um detalhe operacional ilustra a escala do problema:
+ficavam, na comparação, proporcionalmente menores. Um detalhe operacional ilustra a escala do problema:
 reemitir um único cartão de débito/crédito após uma violação custa entre USD 5 e USD 15, dependendo do
 tipo e da complexidade — multiplicado pela base de clientes de um banco de varejo, o valor se torna
-material rapidamente [3][4].
+material rapidamente [3][4]. **Nota de atualização:** a edição 2026 não trouxe, no escopo desta pesquisa,
+um detalhamento equivalente de composição de custo por categoria específico para o setor financeiro — a
+distribuição percentual acima (34%/8%/24%/34%) permanece atribuída à edição 2025, mais recente confirmada
+para esse recorte específico.
 
 ### Verizon DBIR — perfil de ataque do setor financeiro
 
@@ -426,3 +434,10 @@ Julho de 2025. https://finsidersbrasil.com.br/reportagem-exclusiva-fintechs/bc-s
 
 [35] Diário do Grande ABC. *Fintech é alvo de ataque cibernético que desvia R$ 26 milhões*. Outubro de
 2025. https://www.dgabc.com.br/Noticia/4264537/fintech-e-alvo-de-ataque-cibernetico-que-desvia-rs-26-milhoes
+
+[36] IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6
+Million on Average*. 29 de julho de 2026.
+https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+
+[37] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
+https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/
