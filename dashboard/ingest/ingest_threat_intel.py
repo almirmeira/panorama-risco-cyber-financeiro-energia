@@ -39,6 +39,13 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 TAXONOMIA = os.path.join(AQUI, "taxonomia-financeira.json")
 
 THREATFOX_URL = "https://threatfox.abuse.ch/export/json/recent/"
+# Endpoint setorial, não o /recentvictims. O "recentes" devolve as 100 últimas
+# vítimas de TODOS os setores, o que na prática cobre uns 3 dias e rende meia
+# dúzia de casos financeiros — anunciar isso como janela de 90 dias seria
+# falso. O arquivo setorial traz o histórico completo do setor (1.751 casos
+# desde 2017), do qual recortamos a janela de verdade.
+RANSOMWARE_LIVE_URL = "https://api.ransomware.live/v2/sectorvictims/Financial%20Services"
+KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 TIMEOUT = 45
 UA = "CECyber-Panorama-Financeiro/1.0 (+https://score.cecyber.com)"
 
@@ -119,7 +126,7 @@ def coletar_threatfox(dias):
     return saida
 
 
-def coletar_misp(base_url, api_key, dias, verificar_tls=False):
+def coletar_misp(base_url, api_key, dias, verificar_tls=False, paginas=8, por_pagina=5000):
     """Atributos da instância MISP local via /attributes/restSearch."""
     import ssl
 
@@ -135,30 +142,40 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False):
     # OSINT, por exemplo, traz relatórios de 2015 (The Dukes, APT28) que
     # apareceriam no painel como atividade da semana. Por isso a recência real
     # é decidida abaixo, pela data do EVENTO.
-    corpo = json.dumps({
-        "returnFormat": "json",
-        "enforceWarninglist": True,   # descarta ruído conhecido (CDNs, IP de infra)
-        "includeEventTags": True,
-        "limit": 5000,
-        "page": 1,
-    }).encode()
-
-    req = urllib.request.Request(
-        base_url.rstrip("/") + "/attributes/restSearch",
-        data=corpo,
-        headers={
-            "Authorization": api_key,
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "User-Agent": UA,
-        },
-    )
-    with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as resp:
-        bruto = json.loads(resp.read().decode("utf-8", "replace"))
+    # Paginação. Os feeds geram eventos agregados enormes — só o URLhaus
+    # importou 17 mil atributos num único evento. Buscar uma página de 5.000
+    # deixava a maior parte do acervo invisível para o painel, que era
+    # exatamente o sintoma de "poucos indicadores do MISP na interface".
+    atributos = []
+    for pagina in range(1, paginas + 1):
+        corpo = json.dumps({
+            "returnFormat": "json",
+            "enforceWarninglist": True,   # descarta ruído conhecido (CDNs, IP de infra)
+            "includeEventTags": True,
+            "limit": por_pagina,
+            "page": pagina,
+        }).encode()
+        req = urllib.request.Request(
+            base_url.rstrip("/") + "/attributes/restSearch",
+            data=corpo,
+            headers={
+                "Authorization": api_key,
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "User-Agent": UA,
+            },
+        )
+        with urllib.request.urlopen(req, timeout=TIMEOUT * 2, context=ctx) as resp:
+            bruto = json.loads(resp.read().decode("utf-8", "replace"))
+        lote = bruto.get("response", {}).get("Attribute", [])
+        atributos += lote
+        if len(lote) < por_pagina:
+            break                     # última página
+    log(f"MISP: {len(atributos)} atributos brutos em até {paginas} páginas")
 
     corte = (datetime.now(timezone.utc) - timedelta(days=dias)).date()
     saida, descartados_antigos = [], 0
-    for a in bruto.get("response", {}).get("Attribute", []):
+    for a in atributos:
         evento = a.get("Event") or {}
         # Data do evento = quando o fato foi reportado. É a única leitura
         # honesta de recência num acervo que acabou de ser sincronizado.
@@ -177,11 +194,16 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False):
         # ("OSINT — Grandoreiro campaign targeting..."). Entra como candidato
         # à classificação, junto das tags.
         info = evento.get("info") or ""
+        # O comment do atributo costuma trazer a família e o papel do
+        # indicador ("KongTuke payload delivery URL (confidence level: 100%)").
+        # Entra no contexto porque, nos feeds em formato MISP, é onde a
+        # atribuição sobrevive à importação.
+        comentario = a.get("comment") or ""
         saida.append({
             "valor": a.get("value", ""),
             "tipo": a.get("type", "desconhecido"),
             "familiaBruta": "",
-            "contexto": info,
+            "contexto": f"{info} {comentario}".strip(),
             "ameaca": a.get("category") or "",
             "primeiraObs": datetime.combine(
                 data_evt, datetime.min.time(), tzinfo=timezone.utc).isoformat(),
@@ -195,6 +217,111 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False):
         log(f"MISP: {descartados_antigos} atributos fora da janela de {dias}d "
             f"(data do evento anterior a {corte}) — acervo histórico dos feeds")
     return saida
+
+
+def coletar_extorsao(dias):
+    """Vítimas de ransomware/extorsão do setor financeiro (ransomware.live).
+
+    Traz o que os feeds de IoC não têm: **quem está sendo atacado**, com setor
+    e país. É a única fonte aberta testada que carrega recorte setorial
+    explícito, o que a torna a peça mais diretamente financeira do painel.
+
+    Cuidados deliberados na publicação:
+      - o link de reivindicação (.onion) NUNCA sai daqui. Publicar rota para
+        um site de vazamento é distribuir a extorsão, não noticiá-la;
+      - o texto descritivo escrito pelo grupo criminoso também não sai — é
+        peça de pressão, não informação verificada;
+      - a vítima é nomeada, como fazem os rastreadores públicos da área, mas
+        sempre rotulada como REIVINDICAÇÃO NÃO VERIFICADA: grupos de ransomware
+        mentem, inflam e reciclam vítimas antigas.
+    """
+    dados = buscar_json(RANSOMWARE_LIVE_URL)
+    if not isinstance(dados, list):
+        raise ValueError("formato inesperado em ransomware.live")
+
+    corte = datetime.now(timezone.utc) - timedelta(days=dias)
+    janela, historico = [], []
+    for v in dados:
+        quando = v.get("attackdate") or v.get("discovered") or ""
+        try:
+            dt = datetime.fromisoformat(quando.replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        reg = {
+            "vitima": (v.get("victim") or v.get("domain") or "—")[:80],
+            "grupo": (v.get("group") or v.get("group_name") or "—")[:40],
+            "pais": (v.get("country") or "").upper()[:3],
+            "data": dt.date().isoformat(),
+        }
+        historico.append(reg)
+        if dt >= corte:
+            janela.append(reg)
+
+    janela.sort(key=lambda r: r["data"], reverse=True)
+    return janela, historico
+
+
+def serie_mensal_extorsao(historico, meses=12):
+    """Série mensal de vítimas do setor financeiro.
+
+    Ao contrário da série de IoC, esta é honesta desde o primeiro dia: o
+    endpoint setorial do ransomware.live é um ARQUIVO completo do setor desde
+    2017, não um dump rolante de itens recentes. Não há o viés que obriga a
+    série de indicadores a esperar coleta própria — aqui o passado está todo
+    lá, e contá-lo por mês é uma leitura legítima.
+    """
+    hoje = datetime.now(timezone.utc).date()
+    contagem = Counter(r["data"][:7] for r in historico)
+    serie = []
+    ano, mes = hoje.year, hoje.month
+    for _ in range(meses):
+        serie.append({"mes": f"{ano:04d}-{mes:02d}", "vitimas": contagem.get(f"{ano:04d}-{mes:02d}", 0)})
+        mes -= 1
+        if mes == 0:
+            mes, ano = 12, ano - 1
+    return list(reversed(serie))
+
+
+def coletar_kev(dias_recente=90):
+    """Catálogo CISA KEV — vulnerabilidades sob exploração ativa confirmada.
+
+    Não é uma fonte setorial: o KEV vale para todo mundo. Entra no painel
+    porque responde a uma pergunta que nenhum feed de IoC responde — "o que
+    corrigir primeiro" — e porque marca quais falhas já apareceram em campanha
+    de ransomware, que é o vetor de maior impacto no setor. Exibido como tal,
+    sem fingir recorte financeiro que não existe.
+    """
+    dados = buscar_json(KEV_URL)
+    vulns = dados.get("vulnerabilities", [])
+    corte = (datetime.now(timezone.utc) - timedelta(days=dias_recente)).date().isoformat()
+
+    recentes = []
+    for v in vulns:
+        if (v.get("dateAdded") or "") < corte:
+            continue
+        recentes.append({
+            "cve": v.get("cveID"),
+            "fornecedor": v.get("vendorProject"),
+            "produto": (v.get("product") or "").strip()[:60],
+            "nome": (v.get("vulnerabilityName") or "")[:110],
+            "adicionadaEm": v.get("dateAdded"),
+            "prazoCorrecao": v.get("dueDate"),
+            "usoEmRansomware": v.get("knownRansomwareCampaignUse") == "Known",
+        })
+    recentes.sort(key=lambda r: r["adicionadaEm"] or "", reverse=True)
+
+    return {
+        "catalogo": dados.get("catalogVersion"),
+        "totalCatalogo": len(vulns),
+        "totalComRansomware": sum(
+            1 for v in vulns if v.get("knownRansomwareCampaignUse") == "Known"),
+        "janelaDias": dias_recente,
+        "recentes": recentes[:40],
+        "recentesTotal": len(recentes),
+        "recentesComRansomware": sum(1 for r in recentes if r["usoEmRansomware"]),
+    }
 
 
 # --------------------------------------------------------------------------
@@ -386,6 +513,10 @@ def main():
     ap.add_argument("--historico", default="/var/lib/panorama-ti/historico-diario.json",
                     help="registro de quando cada indicador foi visto por nós pela 1ª vez")
     ap.add_argument("--dias", type=int, default=14)
+    # Extorsão tem volume muito menor que IoC: uma janela de 14 dias renderia
+    # meia dúzia de vítimas financeiras e um gráfico vazio. 90 dias dá massa
+    # crítica sem deixar de ser atual.
+    ap.add_argument("--dias-extorsao", type=int, default=90)
     ap.add_argument("--limite-tabela", type=int, default=120)
     ap.add_argument("--sem-misp", action="store_true",
                     help="ignora o MISP e usa só as fontes públicas diretas")
@@ -430,6 +561,36 @@ def main():
     else:
         fontes.append({"nome": "MISP (instância CECyber)", "tipo": "API restSearch",
                        "indicadores": 0, "status": "não configurado"})
+
+    # Extorsão — a única fonte aberta testada com recorte setorial explícito.
+    extorsao_fin, extorsao_hist = [], []
+    try:
+        extorsao_fin, extorsao_hist = coletar_extorsao(args.dias_extorsao)
+        fontes.append({"nome": "ransomware.live (setor financeiro)", "tipo": "API pública",
+                       "licenca": "Reivindicações públicas de grupos, uso livre",
+                       "indicadores": len(extorsao_fin), "status": "ok"})
+        log(f"extorsão: {len(extorsao_fin)} vítimas financeiras em {args.dias_extorsao}d "
+            f"(arquivo setorial com {len(extorsao_hist)} desde 2017)")
+    except Exception as e:                                  # noqa: BLE001
+        erros.append(f"ransomware.live: {e}")
+        fontes.append({"nome": "ransomware.live (setor financeiro)", "tipo": "API pública",
+                       "indicadores": 0, "status": "indisponível"})
+        log(f"ransomware.live FALHOU: {e}")
+
+    # KEV — o que corrigir primeiro.
+    kev = None
+    try:
+        kev = coletar_kev()
+        fontes.append({"nome": "CISA KEV", "tipo": "catálogo oficial",
+                       "licenca": "Domínio público (governo dos EUA)",
+                       "indicadores": kev["recentesTotal"], "status": "ok"})
+        log(f"KEV: {kev['recentesTotal']} CVEs adicionadas em {kev['janelaDias']}d "
+            f"({kev['recentesComRansomware']} com uso em ransomware)")
+    except Exception as e:                                  # noqa: BLE001
+        erros.append(f"CISA KEV: {e}")
+        fontes.append({"nome": "CISA KEV", "tipo": "catálogo oficial",
+                       "indicadores": 0, "status": "indisponível"})
+        log(f"CISA KEV FALHOU: {e}")
 
     if not brutos:
         log("ERRO: nenhuma fonte respondeu — preservando o JSON anterior")
@@ -493,6 +654,26 @@ def main():
         "serieEmFormacao": agregados["serieEmFormacao"],
         "ameacas": agregados["ameacas"],
         "iocs": financeiros[:args.limite_tabela],
+        "extorsao": {
+            "janelaDias": args.dias_extorsao,
+            "totalFinanceiro": len(extorsao_fin),
+            "totalHistorico": len(extorsao_hist),
+            "brasilJanela": sum(1 for v in extorsao_fin if v["pais"] == "BR"),
+            "brasilHistorico": sum(1 for v in extorsao_hist if v["pais"] == "BR"),
+            "porGrupo": [{"grupo": g, "vitimas": n} for g, n in
+                         Counter(v["grupo"] for v in extorsao_fin).most_common(10)],
+            "porPais": [{"pais": p or "??", "vitimas": n} for p, n in
+                        Counter(v["pais"] for v in extorsao_fin).most_common(12)],
+            "serieMensal": serie_mensal_extorsao(extorsao_hist),
+            "vitimas": extorsao_fin[:40],
+            "vitimasBrasil": [v for v in sorted(
+                extorsao_hist, key=lambda r: r["data"], reverse=True) if v["pais"] == "BR"][:15],
+            "aviso": ("Reivindicações publicadas pelos próprios grupos criminosos em seus sites "
+                      "de vazamento. NÃO são incidentes confirmados: grupos inflam listas, "
+                      "reciclam vítimas antigas e às vezes mentem. Nenhum link para site de "
+                      "vazamento é publicado aqui."),
+        },
+        "vulnerabilidades": kev,
     }
 
     os.makedirs(os.path.dirname(args.saida), exist_ok=True)

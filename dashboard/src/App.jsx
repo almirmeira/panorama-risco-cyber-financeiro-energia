@@ -11,6 +11,7 @@ import Tendencias from './views/Tendencias.jsx'
 import Recomendacoes from './views/Recomendacoes.jsx'
 import Fontes from './views/Fontes.jsx'
 import AmeacasAoVivo from './views/AmeacasAoVivo.jsx'
+import ExtorsaoExploracao from './views/ExtorsaoExploracao.jsx'
 
 // Views reais das Tasks 4–7.
 // Na edição "financeiro" (VITE_EDITION=financeiro), a aba Energia é
@@ -22,6 +23,7 @@ const ABAS_TODAS = [
   // recorte financeiro porque é dele que a aba trata, e antes do comparativo,
   // que já é leitura consolidada.
   { id: 'ameacas-ao-vivo', rotulo: 'Ameaças ao Vivo' },
+  { id: 'extorsao', rotulo: 'Extorsão & Exploração' },
   { id: 'energia', rotulo: 'Energia' },
   { id: 'comparativo', rotulo: 'Comparativo' },
   { id: 'tendencias', rotulo: 'Tendências' },
@@ -35,6 +37,7 @@ const VIEWS = {
   'visao-geral': VisaoGeral,
   financeiro: Financeiro,
   'ameacas-ao-vivo': AmeacasAoVivo,
+  extorsao: ExtorsaoExploracao,
   energia: Energia,
   comparativo: Comparativo,
   tendencias: Tendencias,
@@ -163,7 +166,7 @@ function App() {
       {/* A legenda explica o semáforo de postura de risco, que não existe na
           camada operacional — lá o semáforo é de frescor do dado. Mostrar as
           duas convenções juntas confundiria as leituras. */}
-      {abaAtiva !== 'ameacas-ao-vivo' && (
+      {!['ameacas-ao-vivo', 'extorsao'].includes(abaAtiva) && (
         <div className="container" style={{ paddingBottom: 0 }}>
           <LegendaSemaforo />
         </div>
