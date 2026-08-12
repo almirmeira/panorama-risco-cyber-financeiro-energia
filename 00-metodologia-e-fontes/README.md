@@ -46,10 +46,32 @@ confusão entre eles é a origem de boa parte da compra desnecessária de contra
   ela é respondida por **relatórios anuais, frameworks normativos e estatística setorial
   consolidada**, não por um feed de IOCs.
 
-Este repositório é, deliberadamente, um projeto de inteligência **estratégica**. Não há aqui — nem
-poderia haver, a partir de fontes públicas — telemetria em tempo real, listas de IOCs para bloqueio
-em firewall, ou atribuição forense própria de nenhum incidente. O que há é a leitura curada do que
-os maiores provedores de telemetria do mundo **já publicaram sobre seus próprios dados**.
+O corpo deste repositório — os capítulos 01 a 08 e os números que eles sustentam — é,
+deliberadamente, um projeto de inteligência **estratégica**. Não há nos capítulos atribuição
+forense própria de nenhum incidente, nem lista de IOCs para bloqueio em firewall. O que há é a
+leitura curada do que os maiores provedores de telemetria do mundo **já publicaram sobre seus
+próprios dados**.
+
+> **Adendo de 12/08/2026 — a camada operacional do painel.** Desde esta data o painel público
+> (score.cecyber.com) passou a exibir uma aba adicional, *Ameaças ao Vivo*, com indicadores
+> recentes de fontes abertas recortados para o setor financeiro, servidos por uma instância MISP
+> própria. Isso **não revoga** a distinção defendida acima; ao contrário, depende dela. As duas
+> camadas convivem separadas e rotuladas:
+>
+> | | Camada estratégica (caps. 01–08) | Camada operacional (aba *Ameaças ao Vivo*) |
+> | :-- | :-- | :-- |
+> | Unidade de análise | estatística setorial consolidada | indicador observado, individual |
+> | Regra de evidência | ≥2 fontes independentes por número | fato pontual reportado por uma fonte |
+> | Ritmo | anual/semestral, revisado a cada 3 dias | janela móvel de 14 dias, coleta a cada 20 min |
+> | Serve para | decidir orçamento e postura | ler atividade recente do setor |
+> | **Não** serve para | reagir a uma campanha em curso | ser citado como métrica de setor |
+>
+> A afirmação original permanece de pé no ponto que importa: **fonte pública aberta não substitui
+> threat intelligence paga para operar um SOC**, e a camada operacional aqui não pretende isso. O
+> recorte financeiro que ela consegue extrair das fontes abertas é fino e concentrado — na primeira
+> coleta, 369 indicadores financeiros em 6.614 coletados (5,6%), dos quais apenas 3 famílias de
+> trojan bancário. Esse número é, ele próprio, evidência a favor da tese deste capítulo: quem
+> precisa defender um banco em tempo real não se sustenta com o que há de aberto.
 
 ## Por que os relatórios anuais dos vendors já são a telemetria
 
@@ -110,7 +132,9 @@ públicas substitui essas funções:
   geografia, porte) justifica monitoramento contínuo e personalizado de atores específicos.
 
 Nenhuma dessas quatro funções é o objetivo deste repositório. O panorama aqui construído serve para
-**decisão estratégica e comunicação executiva** — não para operar um SOC.
+**decisão estratégica e comunicação executiva** — não para operar um SOC. Isso vale igualmente para
+a camada operacional do painel descrita no adendo acima: ela mostra atividade recente do setor a
+partir do que é público, o que é uma leitura de contexto — não um fluxo de bloqueio.
 
 ## Hierarquia de fontes (4 níveis)
 
