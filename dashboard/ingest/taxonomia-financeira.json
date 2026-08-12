@@ -188,6 +188,18 @@
     }
   },
 
+  "fontesFinanceiras": {
+    "_doc": "Feeds cujo ESCOPO INTEIRO é financeiro, permitindo atribuição no nível da fonte. Existe porque o MISP importa feeds CSV como um evento agregado por feed, sem família por indicador — a atribuição por família fica cega para eles. Só entra aqui feed cujo escopo declarado seja inequivocamente financeiro; um feed de malware genérico NÃO entra, mesmo que muitos dos seus itens sejam bancários.",
+    "porTituloDeEvento": {
+      "feodo": {
+        "nome": "Feodo Tracker (C2 bancário)",
+        "categoria": "banker",
+        "regiao": "global",
+        "justificativa": "O Feodo Tracker do abuse.ch rastreia exclusivamente servidores de comando e controle de trojans bancários — Emotet, Dridex, TrickBot e QakBot. Todo indicador do feed é, por construção, infraestrutura de malware bancário; não há no feed conteúdo de outra natureza."
+      }
+    }
+  },
+
   "tagsSetoriais": {
     "_doc": "Marcações que, quando presentes no dado da fonte, já bastam para o recorte financeiro — independem da família.",
     "prefixos": [

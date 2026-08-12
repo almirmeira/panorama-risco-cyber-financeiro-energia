@@ -217,6 +217,15 @@ def classificar_financeiro(ioc, taxonomia):
     if chave in familias:
         return True, familias[chave]
 
+    # Atribuição no nível da fonte: alguns feeds têm escopo inteiramente
+    # financeiro, e é a única via para eles — o MISP importa feed CSV como um
+    # evento agregado, sem família por indicador.
+    contexto_baixa = (ioc.get("contexto") or "").lower()
+    if contexto_baixa:
+        for chave, fam in taxonomia.get("fontesFinanceiras", {}).get("porTituloDeEvento", {}).items():
+            if chave in contexto_baixa:
+                return True, fam
+
     tags_baixa = [t.lower() for t in ioc.get("tags", [])]
     setoriais = taxonomia["tagsSetoriais"]
     for t in tags_baixa:
