@@ -13,17 +13,20 @@ import Fontes from './views/Fontes.jsx'
 import AmeacasAoVivo from './views/AmeacasAoVivo.jsx'
 import ExtorsaoExploracao from './views/ExtorsaoExploracao.jsx'
 
-// Views reais das Tasks 4–7.
-// Na edição "financeiro" (VITE_EDITION=financeiro), a aba Energia é
-// removida — a edição padrão ("full") mantém todas as abas.
+// Ordem das abas: a camada operacional vem primeiro.
+//
+// O painel abre no que está acontecendo agora — indicadores ao vivo e extorsão
+// em curso — e só então oferece a leitura consolidada. É o inverso da ordem
+// original, que começava pela síntese executiva.
+//
+// Na edição "financeiro" (VITE_EDITION=financeiro) a aba Energia é removida;
+// a edição padrão ("full") a mantém, logo após Financeiro, para os dois
+// recortes setoriais ficarem lado a lado.
 const ABAS_TODAS = [
-  { id: 'visao-geral', rotulo: 'Visão Geral' },
-  { id: 'financeiro', rotulo: 'Financeiro' },
-  // Camada operacional: indicadores recentes vindos do MISP. Fica logo após o
-  // recorte financeiro porque é dele que a aba trata, e antes do comparativo,
-  // que já é leitura consolidada.
   { id: 'ameacas-ao-vivo', rotulo: 'Ameaças ao Vivo' },
   { id: 'extorsao', rotulo: 'Extorsão & Exploração' },
+  { id: 'visao-geral', rotulo: 'Visão Geral' },
+  { id: 'financeiro', rotulo: 'Financeiro' },
   { id: 'energia', rotulo: 'Energia' },
   { id: 'comparativo', rotulo: 'Comparativo' },
   { id: 'tendencias', rotulo: 'Tendências' },
@@ -32,6 +35,10 @@ const ABAS_TODAS = [
 ]
 
 const ABAS = isFinanceiro ? ABAS_TODAS.filter((aba) => aba.id !== 'energia') : ABAS_TODAS
+
+// A aba inicial é sempre a primeira da lista, não um id fixo: assim reordenar
+// ABAS_TODAS não deixa para trás um default apontando para o meio da barra.
+const ABA_INICIAL = ABAS[0].id
 
 const VIEWS = {
   'visao-geral': VisaoGeral,
@@ -98,7 +105,7 @@ function LegendaSemaforo() {
 }
 
 function App() {
-  const [abaAtiva, setAbaAtiva] = useState('visao-geral')
+  const [abaAtiva, setAbaAtiva] = useState(ABA_INICIAL)
 
   const meta = dados?.meta ?? {}
   const fontes = dados?.fontes ?? {}
