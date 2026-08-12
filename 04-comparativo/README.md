@@ -41,7 +41,7 @@ foi estabelecido.
 | Maturidade defensiva                       | Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude [27][28] | Heterogênea — 52% já colocam OT sob o CISO (ante 16% em 2022), mas sistemas legados sem suporte seguem comuns [23][24] |
 | Pressão / maturidade regulatória           | Alta e crescente — CMN 4.893/2021 + BCB 85/2021, atualizadas por CMN 5.274/2025 e BCB 538/2025, prazo março/2026 [9][11] | Em maturação — RN ANEEL nº 964/2021 (ARCiber) em vigor desde 2022, mas 1ª fiscalização concreta só em 2025 (Despacho ANEEL nº 427/2025) [10][12] |
 | Frequência/escala do ataque em 2025        | 202 incidentes diretos de *ransomware* (+30% a/a); 2º setor mais atacado globalmente (FS-ISAC) [1][2][29] | ~3.300 organizações industriais impactadas por *ransomware* (+64% a/a); 22,8% dos computadores ICS de energia elétrica com objetos maliciosos bloqueados (3º setor mais atacado) [1][2][3][4][29][30] |
-| Custo médio de um incidente                | USD 5,56 milhões por violação (2º setor mais caro do mundo) [25][26]      | USD 4,83 milhões por violação no setor de energia; USD 4,56 milhões quando há impacto direto em OT (qualquer setor) [25][31] |
+| Custo médio de um incidente                | USD 6,3 milhões por violação (ed. 2026, ante USD 5,56 milhões em 2025) [34][35]      | USD 5,2 milhões por violação no setor de energia (ed. 2026, ante USD 4,83 milhões em 2025); USD 4,56 milhões quando há impacto direto em OT, qualquer setor (ed. 2025) [25][31][34][35] |
 
 ## Análise cross-over: onde os setores convergem
 
@@ -117,7 +117,7 @@ capítulo a partir dos capítulos 02 e 03 (não é um índice publicado por terc
 financeiro domina frequência de ataque, impacto financeiro direto e pressão regulatória; o setor de
 energia domina impacto físico/segurança de vida e exposição a APT estatal; a maturidade defensiva
 favorece o financeiro, mas por margem menor do que os demais eixos sugerem à primeira vista
-[1][2][3][4][5][6][7][8][9][10][11][12][17][18][19][20][25][26][27][28][29][30][31].*
+[1][2][3][4][5][6][7][8][9][10][11][12][17][18][19][20][25][26][27][28][29][30][31][34][35].*
 
 ## Convergência setorial: quando a fronteira desaparece
 
@@ -242,3 +242,10 @@ https://app.stationx.net/articles/deepfake-statistics
 
 [33] BrightDefense. *150+ Deepfake Statistics (March 2026)*. 2026.
 https://www.brightdefense.com/resources/deepfake-statistics/
+
+[34] IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6
+Million on Average*. 29 de julho de 2026.
+https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+
+[35] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
+https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/

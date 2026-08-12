@@ -49,10 +49,12 @@ permitindo extrair recortes só-executivos, só-financeiros ou só-de-energia co
 - **O *ransomware* acelerou nos dois setores em 2025, mas em intensidades diferentes:** +30% no
   setor financeiro (de 156 para 202 incidentes diretos) e +64% no universo industrial que inclui
   energia (119 grupos ativos, ~3.300 organizações impactadas) — ver capítulo 04.
-- **O custo médio de uma violação de dados caiu pela primeira vez em cinco anos** (USD 4,44 milhões
-  em 2025, -9% a/a), mas o setor financeiro segue como o 2º mais caro do mundo (USD 5,56 milhões) e
-  o de energia soma USD 4,83 milhões, chegando a USD 4,56 milhões quando há impacto direto em OT em
-  qualquer setor — ver capítulos 01, 02, 03 e 04.
+- **O custo médio de uma violação de dados caiu pela primeira vez em cinco anos na edição 2025** (USD
+  4,44 milhões, -9% a/a), mas a edição 2026 já reverteu o ganho: alta de 12%, para um recorde de USD
+  4,99 milhões. O setor financeiro segue entre os mais caros do mundo (USD 6,3 milhões, ante USD 5,56
+  milhões em 2025) e o de energia soma USD 5,2 milhões (ante USD 4,83 milhões), chegando a USD 4,56
+  milhões quando há impacto direto em OT em qualquer setor (dado da edição 2025) — ver capítulos 01,
+  02, 03 e 04.
 - **A IA ofensiva já não é hipótese, é operação corrente:** fraude por *deepfake* saltou de 0,1%
   para 6,5% de todas as tentativas de fraude entre 2022 e 2026 (alta de 2.137%), e em novembro de
   2025 a Anthropic documentou o primeiro ataque em larga escala com 80–90% das etapas táticas

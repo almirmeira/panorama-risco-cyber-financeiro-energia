@@ -4,6 +4,15 @@
 > Pesquisa realizada em 2026-07-21. Onde uma fonte primária não pôde ser recuperada diretamente (bloqueio de
 > acesso automatizado, PDF não extraível), o dado foi validado por ≥2 fontes secundárias que citam o relatório
 > primário, e isso é registrado explicitamente.
+>
+> **Atualização 2026-08-01 (refresh quinzenal):** confirmadas como edições completas e citáveis (≥2 fontes
+> independentes) quatro publicações que, em 2026-07-21, ainda não haviam sido incorporadas como fonte primária
+> plena — IBM *Cost of a Data Breach Report 2026* (29/7/2026), Mandiant *M-Trends 2026* (mar/2026), CrowdStrike
+> *2026 Global Threat Report* (24/2/2026) e Verizon *2026 DBIR* (19/5/2026). As entradas correspondentes desta
+> edição de 2025 foram **mantidas** (não excluídas) como trilha de pesquisa; novas entradas datadas marcam
+> explicitamente onde um valor mais atual está disponível. Nenhuma outra publicação relevante ao escopo
+> (WEF, ENISA, Dragos, Kaspersky ICS CERT, FS-ISAC, Fortinet, Nozomi, ANEEL/ONS, BACEN/CMN) teve edição nova
+> identificada nesta janela de 11 dias que atendesse à regra de duas fontes — ver seção de checagens ao final.
 
 ## Global
 
@@ -60,6 +69,58 @@
 
 ---
 
+### Atualização 2026-08-01 — IBM Cost of a Data Breach Report 2026 (nova edição)
+
+- **Dado:** a edição 2026 do relatório da IBM (publicada em 29/7/2026, com base em 602 organizações
+  estudadas globalmente, cobrindo violações ocorridas entre março de 2025 e fevereiro de 2026) reverteu a
+  melhora registrada na edição 2025: o custo médio global de uma violação de dados **subiu 12% e atingiu
+  USD 4,99 milhões**, o maior valor já registrado — encerrando a única queda anterior (2025, -9%) em cinco
+  anos. O tempo médio de identificação e contenção também piorou, para **247 dias** (+6 dias frente aos
+  241 dias de 2025) — primeira alta em cinco anos nessa métrica. Quanto à IA: **1 em cada 4 violações
+  maliciosas** já envolve uso de IA pelo atacante (alta de 56% a/a), com custo médio de **USD 6 milhões**
+  para essas violações (cerca de USD 1 milhão acima da média global); ataques habilitados por IA
+  concentram-se desproporcionalmente em infraestrutura crítica (**62%** dos casos), com **financeiro e
+  energia como os setores de maior concentração**. Organizações que usam IA/automação extensivamente em
+  segurança seguem reduzindo o custo médio em cerca de **USD 2 milhões**.
+  - Fonte 1: IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6
+    Million on Average*. 29 de julho de 2026.
+    https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+  - Fonte 2 (secundária, cobertura independente com os mesmos números): HIPAA Journal. *Global Data Breach
+    Cost Rises 12% to Almost $5 Million*. 2026. https://www.hipaajournal.com/2026-cost-data-breach-study-ibm/
+    (ver também Infosecurity Magazine, *The Average Cost of a Data Breach Rises to $5 Million*, 2026,
+    https://www.infosecurity-magazine.com/news/cost-of-a-data-breach-5m-ibm/, e ASIS International,
+    *Threat Actors Embrace AI, Helping Push the Average Cost of a Data Breach to $6 Million*, 2026,
+    https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2026/july/Average-Cost-Of-A-Data-Breach-Hits-Six-Million-Dollars/)
+  - Observações: **este dado substitui, como referência mais atual, o valor de USD 4,44 milhões (-9%) da
+    edição 2025 já registrado acima** — mantido no dossiê por preservar o histórico de pesquisa. Tentativas
+    de acesso direto ao PDF/página oficial via fetch automatizado retornaram HTTP 403 em 2026-08-01, mesma
+    limitação já registrada para a edição 2025; o número foi confirmado por múltiplas coberturas
+    independentes e consistentes entre si (IBM Newsroom, HIPAA Journal, Infosecurity Magazine, ASIS
+    International, Help Net Security, eeNews Europe), sem divergência relevante quanto aos valores centrais.
+
+### Atualização 2026-08-01 — IBM Cost of a Data Breach Report 2026 — setor financeiro e energia
+
+- **Dado:** na edição 2026, o custo médio de violação do **setor financeiro subiu para USD 6,3 milhões**
+  (ante USD 5,56 milhões na edição 2025) e o do **setor de energia subiu para USD 5,2 milhões** (ante
+  USD 4,83 milhões na edição 2025) — ambos acompanhando a alta global de 12%. Financeiro e energia estão
+  entre os setores de maior concentração de ataques habilitados por IA (dentro do grupo mais amplo de
+  infraestrutura crítica, responsável por 62% desses ataques, ver item acima).
+  - Fonte 1: IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6
+    Million on Average*. 29 de julho de 2026.
+    https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+  - Fonte 2 (secundária, cobertura independente com o mesmo detalhamento setorial): Global News. *Data
+    breach costs mount as attacks target critical infrastructure: IBM*. 2026.
+    https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/
+  - Observações: **estes dados substituem, como referência mais atual, os valores de USD 5,56 milhões
+    (financeiro) e USD 4,83 milhões (energia) da edição 2025**, já registrados nas seções Financeiro e
+    Energia deste dossiê e mantidos ali por preservar o histórico de pesquisa. Não foi localizado, no
+    escopo desta atualização, um detalhamento equivalente ao da edição 2025 sobre composição de custo
+    (detecção/escalonamento, notificação etc.) especificamente para 2026 — **[NÃO CONFIRMADO — detalhamento
+    de composição de custo por categoria para a edição 2026 não verificado em 2026-08-01; a composição
+    percentual já registrada (34%/8%/24%/34% para o setor financeiro) permanece atribuída à edição 2025]**.
+
+---
+
 ### Tempo de permanência do atacante (dwell time) — Mandiant M-Trends 2025
 
 - **Dado:** tempo de permanência mediano global = **11 dias** (alta em relação a 10 dias em 2023). Variação por
@@ -104,6 +165,41 @@
     de vulnerabilidades exploradas (20%) como vetores de entrada — ordem invertida em relação à Mandiant. Ambos
     os relatórios concordam que os dois vetores estão próximos e dominam o cenário, mas divergem em qual lidera.
 
+### Atualização 2026-08-01 — Mandiant M-Trends 2026 (edição completa, publicada em março de 2026)
+
+- **Dado:** a edição 2026 do M-Trends (mais de 500 mil horas de investigações da Mandiant ao longo de
+  2025) confirma a piora de tendência já sinalizada como nota em 2026-07-21: o tempo de permanência
+  mediano global (*dwell time*) **subiu para 14 dias** (ante 11 dias na edição 2025). A composição da
+  alta não é uniforme: a detecção **interna** na verdade melhorou (de 10 para 9 dias) e a taxa de
+  detecção interna subiu de 43% para **52%** dos casos; já o *dwell time* de casos com **notificação
+  externa** saltou de 11 para **25 dias**, puxado por campanhas de espionagem de longa duração e por
+  operações de trabalhadores de TI norte-coreanos infiltrados. Casos de espionagem cibernética têm
+  *dwell time* mediano de **122 dias** — o *backdoor* BRICKSTORM chegou a quase 400 dias em dispositivos
+  de borda (*network appliances*). Quanto ao setor mais visado, houve uma troca de liderança: **Alta
+  Tecnologia (17%) ultrapassou o setor financeiro (14,6%)**, que liderava havia dois anos consecutivos
+  (2023–2024). Nos vetores de acesso inicial, exploração de vulnerabilidades segue na liderança pelo 6º
+  ano consecutivo (**32%**), seguida por *vishing* (**11%**, em forte alta) e "comprometimento prévio"
+  (**10%**, líder isolado quando o recorte é apenas operações de *ransomware*, com 30%); *phishing* por
+  e-mail caiu para apenas **6%** (queda atribuída a controles automatizados mais maduros). Um novo
+  indicador de velocidade: o tempo entre o acesso inicial obtido por um *Initial Access Broker/Partner*
+  (IAP) e a entrega (*hand-off*) a um grupo secundário para exploração encolheu para **22 segundos** em
+  2025, ante mais de 8 horas em 2022.
+  - Fonte 1: Google Cloud (Mandiant). *M-Trends 2026: Data, Insights, and Strategies From the
+    Frontlines*. Março de 2026. https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2026
+  - Fonte 2 (secundária, cobertura técnica independente que reproduz os mesmos números): SecurityWeek.
+    *M-Trends 2026: Initial Access Handoff Shrinks From Hours to 22 Seconds*. 2026.
+    https://www.securityweek.com/m-trends-2026-initial-access-handoff-shrinks-from-hours-to-22-seconds/
+    (ver também Help Net Security, *Attackers are handing off access in 22 seconds, Mandiant finds*, 2026,
+    https://www.helpnetsecurity.com/2026/03/24/mandiant-m-trends-2026-report/, e Industrial Cyber,
+    *M-Trends 2026 reveals threat landscape shaped by faster, coordinated, and industrialized
+    cyberattacks*, 2026, https://industrialcyber.co/reports/m-trends-2026-reveals-threat-landscape-shaped-by-faster-coordinated-and-industrialized-cyberattacks/)
+  - Observações: **este dado substitui, como referência mais atual, os valores de 11 dias (dwell time) e
+    17,4%/financeiro (setor mais visado) da edição 2025 já registrados acima**, mantidos no dossiê por
+    preservar o histórico de pesquisa. Já havia uma nota de tendência sobre a piora do dwell time
+    registrada em 2026-07-21 (via TaoSecurity); esta entrada a substitui como fonte primária plena, agora
+    com acesso direto ao blog oficial do Google Cloud. Sem divergência relevante entre as duas fontes
+    quanto aos números centrais.
+
 ---
 
 ### Tempo de propagação lateral (breakout time) — CrowdStrike Global Threat Report 2025
@@ -142,6 +238,34 @@
   - Fonte 2 (secundária): CyberScoop. *CrowdStrike says attackers are moving through networks in under 30
     minutes*. 2025. https://cyberscoop.com/crowdstrike-annual-global-threat-report-attack-breakout-time/
   - Observações: sem divergência relevante.
+
+### Atualização 2026-08-01 — CrowdStrike 2026 Global Threat Report (edição completa, publicada em 24/2/2026)
+
+- **Dado:** a edição 2026 (dados de 2025) confirma e detalha a tendência já sinalizada como nota em
+  2026-07-21: o tempo médio de *breakout* (propagação lateral) caiu para **29 minutos** (ante 48 minutos
+  na edição 2025) — queda de cerca de 65% —, com o caso mais rápido registrado em **27 segundos**. As
+  detecções "*malware-free*" (sem uso de malware, técnicas *hands-on-keyboard*) subiram para **82%** do
+  total em 2025, ante **51% em 2020** — nota-se que a edição 2025 usava um comparativo de linha de base
+  diferente (79% ante 40% em 2019); os dois comparativos não são diretamente conciliáveis porque cada
+  edição da CrowdStrike escolhe seu próprio ano-base histórico de referência, mas ambos descrevem a mesma
+  tendência estrutural de alta. Operações de adversários habilitados por IA cresceram **89%** ano a ano;
+  **42%** das vulnerabilidades exploradas o foram **antes da divulgação pública** (exploração de
+  *zero-day*); intrusões "*cloud-conscious*" (deliberadamente direcionadas a ambientes de nuvem)
+  cresceram **37%** no total, com alta de **266%** especificamente em atores ligados a Estados-nação
+  mirando ambientes de nuvem para coleta de inteligência.
+  - Fonte 1: CrowdStrike. *2026 CrowdStrike Global Threat Report: AI Accelerates Adversaries and Reshapes
+    the Attack Surface* (comunicado oficial). Fevereiro de 2026.
+    https://ir.crowdstrike.com/news-releases/news-release-details/2026-crowdstrike-global-threat-report-ai-accelerates-adversaries/
+    (ver também o blog técnico: https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-global-threat-report-findings/)
+  - Fonte 2 (secundária, cobertura técnica independente que reproduz os mesmos números): eSecurity
+    Planet. *Crowdstrike 2026 Global Threat Report: Adversaries Use AI to Bypass Defenses*. 2026.
+    https://www.esecurityplanet.com/threats/crowdstrike-2026-global-threat-report-adversaries-use-ai-to-bypass-defenses/
+  - Observações: **este dado substitui, como referência mais atual, os valores de 48 minutos (breakout
+    time) e 79% (malware-free) da edição 2025 já registrados acima**, mantidos no dossiê por preservar o
+    histórico de pesquisa. A observação já registrada em 2026-07-21 (nota de que a cobertura da CyberScoop
+    já refletia dados da edição 2026 mesmo antes desta pesquisa formalizar a atualização) está confirmada:
+    os números de 29 min/27 s eram, de fato, corretos e definitivos para a edição 2026, agora citada como
+    fonte primária plena. Sem divergência relevante entre as duas fontes quanto aos números centrais.
 
 ---
 
@@ -197,6 +321,51 @@
   - Observações: **[PARCIALMENTE CONFIRMADO]** — os números quantitativos (3.336/927/74%/90%) vêm de uma única
     linha de evidência consolidada em resultados de busca; não foi possível fazer o fetch direto do PDF do
     Finance Snapshot para conferência linha a linha. Tratar com cautela até segunda fonte primária independente.
+
+### Atualização 2026-08-01 — Verizon 2026 DBIR (nova edição completa, publicada em 19/5/2026)
+
+- **Dado:** a edição 2026 do DBIR (incidentes de 1º de novembro de 2024 a 31 de outubro de 2025, em 145
+  países) é a maior já publicada: mais de **31.000 incidentes** analisados e mais de **22.000 violações
+  confirmadas**. A mudança mais relevante para este dossiê é uma **inversão que resolve a divergência já
+  registrada acima entre Verizon e Mandiant**: a exploração de vulnerabilidades passou a ser o vetor de
+  acesso inicial líder, em **31%** dos casos (ante 20% na edição anterior — alta de 55%), ultrapassando
+  credenciais roubadas pela primeira vez em anos — ou seja, DBIR e M-Trends 2026 (ver atualização acima)
+  agora **concordam** que exploração de vulnerabilidades lidera, encerrando a divergência de ordem
+  registrada na pesquisa original. *Ransomware* subiu para **48%** de todas as violações (ante 44%);
+  dentro do padrão "Intrusão de Sistema" (60% de todas as violações), *ransomware* aparece em 77% dos
+  casos. Violações envolvendo terceiros saltaram para **48%** de todo o conjunto de dados (ante 30% na
+  edição anterior). Quanto a pagamentos: **69%** das vítimas de *ransomware* não pagaram (ante 65%), e o
+  pagamento mediano informado nesta edição foi de **USD 139.875** (ante USD 150 mil, segundo a comparação
+  da própria edição 2026 — valor que diverge do "USD 115 mil" já registrado para a edição 2025 acima; ver
+  observação). Atores internos apareceram em **12%** das violações (queda ante 18%).
+  - Fonte 1: Verizon. *2026 Data Breach Investigations Report*. Maio de 2026.
+    https://www.verizon.com/business/resources/reports/2026-dbir-data-breach-investigations-report.pdf
+    (ver também o comunicado oficial: https://www.verizon.com/about/news/breach-industry-wide-dbir-finds)
+  - Fonte 2 (secundária, cobertura técnica independente que reproduz os mesmos números centrais):
+    SecurityWeek. *Verizon DBIR 2026: Vulnerability Exploitation Overtakes Credential Theft as Top Breach
+    Vector*. 2026. https://www.securityweek.com/verizon-dbir-2026-vulnerability-exploitation-overtakes-credential-theft-as-top-breach-vector/
+    (ver também Help Net Security, *Verizon DBIR: Vulnerability exploitation is the dominant initial
+    access vector*, 2026, https://www.helpnetsecurity.com/2026/05/20/verizon-2026-dbir-findings/, e
+    Industrial Cyber, *Verizon DBIR finds vulnerability exploitation overtakes stolen credentials as top
+    breach entry point for critical infrastructure*, 2026, https://industrialcyber.co/reports/verizon-dbir-finds-vulnerability-exploitation-overtakes-stolen-credentials-as-top-breach-entry-point-for-critical-infrastructure/)
+  - Observações: **este dado substitui, como referência mais atual, os valores de 22.052/12.195
+    incidentes/violações, 44% de ransomware, 22%/20% de vetores de acesso (credenciais>exploits) e 30% de
+    terceiros da edição 2025 já registrados acima**, mantidos no dossiê por preservar o histórico de
+    pesquisa. **Divergência não resolvida e explicitamente registrada:** o valor de pagamento mediano de
+    resgate desta edição (USD 139.875, comparado pela própria Verizon a USD 150 mil no ano anterior) não
+    bate com o valor de USD 115 mil já registrado neste dossiê para a edição 2025 (fonte: Halcyon, citando
+    a mesma DBIR 2025) — **[NÃO CONFIRMADO — não foi possível arbitrar em 2026-08-01 se a diferença reflete
+    uma reformulação metodológica da Verizon entre edições (recorte de dataset, população de vítimas) ou um
+    erro de transcrição em uma das duas coberturas; os dois valores são registrados lado a lado, sem
+    escolher um "vencedor"]**. Não foi possível, no escopo desta atualização, obter o *snapshot* setorial
+    específico "Finance and Insurance" da edição 2026 com números próprios e confirmados por 2 fontes — o
+    detalhamento por setor (financeiro) da edição 2025 permanece como referência mais recente confirmada
+    para esse recorte. Um *snapshot* específico de "*utilities*" (638 incidentes; 597 violações
+    confirmadas; 94% Intrusão de Sistema + Engenharia Social + Ataques Web; 97% atores externos; 71% de
+    motivação por espionagem) foi localizado via uma única linha de evidência (Industrial Cyber) sem
+    segunda fonte independente que reproduza os mesmos números exatos — **[NÃO CONFIRMADO — snapshot de
+    utilities/energia da DBIR 2026 não atende à regra de duas fontes em 2026-08-01; não incorporado aos
+    capítulos de conteúdo]**.
 
 ---
 
@@ -462,17 +631,27 @@
 
 | Métrica | Valor | Relatório primário | Status |
 | :-- | :-- | :-- | :-- |
-| Custo médio global de violação (2025) | USD 4,44 milhões (-9% a/a) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
-| Custo médio — setor financeiro | USD 5,56 milhões | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
-| Custo médio — setor energia | USD 4,83 milhões | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
-| Tempo médio identificação+contenção | 241 dias | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); métrica distinta de dwell time |
-| Dwell time mediano global | 11 dias (10→11 dias) | Mandiant M-Trends 2025 | Confirmado (2 fontes); ver nota de piora no ano seguinte |
-| Setor mais visado (intrusões) | Financeiro, 17,4% | Mandiant M-Trends 2025 | Confirmado (2 fontes); diverge do IBM X-Force (Manufatura) |
-| Breakout time médio (lateral) | 48 min (62→48 min) | CrowdStrike Global Threat Report 2025 | Confirmado (2 fontes) |
-| Detecções malware-free | 79% | CrowdStrike Global Threat Report 2025 | Confirmado (2 fontes) |
-| Ransomware em violações confirmadas | 44% (32%→44%) | Verizon DBIR 2025 | Confirmado (2 fontes) |
+| Custo médio global de violação (2025) | USD 4,44 milhões (-9% a/a) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Custo médio global de violação (2026, atualização 2026-08-01) | USD 4,99 milhões (+12% a/a, recorde) | IBM Cost of a Data Breach 2026 | Confirmado (2 fontes) |
+| Custo médio — setor financeiro | USD 5,56 milhões | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Custo médio — setor financeiro (2026, atualização 2026-08-01) | USD 6,3 milhões | IBM Cost of a Data Breach 2026 | Confirmado (2 fontes) |
+| Custo médio — setor energia | USD 4,83 milhões | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Custo médio — setor energia (2026, atualização 2026-08-01) | USD 5,2 milhões | IBM Cost of a Data Breach 2026 | Confirmado (2 fontes) |
+| Tempo médio identificação+contenção | 241 dias | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); métrica distinta de dwell time; **superado pela edição 2026** |
+| Tempo médio identificação+contenção (2026, atualização 2026-08-01) | 247 dias (1ª alta em 5 anos) | IBM Cost of a Data Breach 2026 | Confirmado (2 fontes) |
+| Dwell time mediano global | 11 dias (10→11 dias) | Mandiant M-Trends 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Dwell time mediano global (2026, atualização 2026-08-01) | 14 dias | Mandiant M-Trends 2026 | Confirmado (2 fontes) |
+| Setor mais visado (intrusões) | Financeiro, 17,4% | Mandiant M-Trends 2025 | Confirmado (2 fontes); diverge do IBM X-Force (Manufatura); **superado pela edição 2026** |
+| Setor mais visado (intrusões, 2026, atualização 2026-08-01) | Alta Tecnologia, 17% (financeiro caiu p/ 2º, 14,6%) | Mandiant M-Trends 2026 | Confirmado (2 fontes) |
+| Breakout time médio (lateral) | 48 min (62→48 min) | CrowdStrike Global Threat Report 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Breakout time médio (lateral, 2026, atualização 2026-08-01) | 29 min (mais rápido: 27 s) | CrowdStrike Global Threat Report 2026 | Confirmado (2 fontes) |
+| Detecções malware-free | 79% | CrowdStrike Global Threat Report 2025 | Confirmado (2 fontes); **superado pela edição 2026** |
+| Detecções malware-free (2026, atualização 2026-08-01) | 82% (vs. 51% em 2020) | CrowdStrike Global Threat Report 2026 | Confirmado (2 fontes) |
+| Ransomware em violações confirmadas | 44% (32%→44%) | Verizon DBIR 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Ransomware em violações confirmadas (2026, atualização 2026-08-01) | 48% (44%→48%) | Verizon DBIR 2026 | Confirmado (2 fontes) |
 | Ransomware em violações SMB vs. grandes empresas | 88% vs. 39% | Verizon DBIR 2025 | Confirmado (2 fontes) |
-| Vetores de acesso inicial | Credenciais 22% / Exploits 20% | Verizon DBIR 2025 | Confirmado (2 fontes); ordem diverge da Mandiant |
+| Vetores de acesso inicial | Credenciais 22% / Exploits 20% | Verizon DBIR 2025 | Confirmado (2 fontes); ordem diverge da Mandiant; **divergência resolvida na edição 2026, ver linha abaixo** |
+| Vetores de acesso inicial (2026, atualização 2026-08-01) | Exploits 31% (líder; 20%→31%), à frente de credenciais | Verizon DBIR 2026 | Confirmado (2 fontes); **agora convergente com Mandiant M-Trends 2026 (exploits também líder, 32%)** |
 | Espionagem (% de incidentes) | ~15–17% | Verizon DBIR 2025 | **Divergência não resolvida entre fontes** |
 | Motivação financeira agregada | ≥52% dos incidentes | Microsoft Digital Defense Report 2025 | Confirmado (2 fontes); cuidado com leitura de manchete |
 | Phishing com apoio de IA (taxa de clique) | 54% (4x o tradicional) | Microsoft Digital Defense Report 2025 | Confirmado (2 fontes) |
@@ -911,8 +1090,8 @@ inventar um valor consolidado.
 | :-- | :-- | :-- | :-- |
 | Setor mais atacado (ranking FS-ISAC) | 2º lugar, atrás de saúde | FS-ISAC Navigating Cyber 2025 | Confirmado (2 fontes) qualitativamente; sem % numérico |
 | DDoS no setor financeiro (2022→2023) | +154%; 35%+ de todo DDoS observado | FS-ISAC/Akamai *DDoS: Here to Stay* (2024) | Confirmado (2 fontes); janela 2022–2023, sem atualização 2025–2026 confirmada |
-| Custo médio de violação — financeiro | USD 5,56 milhões (-9% a/a) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
-| Composição de custo — detecção/escalonamento | 34% (vs. 29% global) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes) |
+| Custo médio de violação — financeiro | USD 5,56 milhões (-9% a/a) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); **superado pela edição 2026: USD 6,3 milhões, ver Global** |
+| Composição de custo — detecção/escalonamento | 34% (vs. 29% global) | IBM Cost of a Data Breach 2025 | Confirmado (2 fontes); detalhamento por categoria não reconfirmado para a edição 2026 |
 | Incidentes / violações confirmadas (Finance Snapshot) | 3.336 / 927 | Verizon DBIR 2025 Finance Snapshot | Parcialmente confirmado (PDF não extraível; convergência de buscas) |
 | Padrão dominante de ataque (setor) | 74% Intrusão de Sistema + Eng. Social + Web App | Verizon DBIR 2025 Finance Snapshot | Parcialmente confirmado |
 | Motivação financeira / espionagem (setor) | 90% / 12% | Verizon DBIR 2025 Finance Snapshot | Parcialmente confirmado |
@@ -2093,3 +2272,37 @@ integralmente em 2026-07-21.
 | NIST SP 800-207A — extensão | Zero Trust para aplicações cloud-native multi-nuvem | NIST/CSRC (site oficial) | Confirmado (1 fonte primária, sem divergência a checar) |
 
 **Legenda:** idêntica à das tabelas-resumo anteriores.
+
+---
+
+## Registro do refresh quinzenal — 2026-08-01
+
+Checagem de diligência conforme protocolo do repositório: para cada fonte primária listada na hierarquia de
+fontes (`00-metodologia-e-fontes/README.md`), verificar se uma edição mais nova foi publicada desde
+2026-07-21 e, em caso positivo, se atende à regra de duas fontes independentes antes de qualquer atualização.
+
+| Fonte primária | Edição vigente em 2026-07-21 | Resultado da checagem em 2026-08-01 |
+| :-- | :-- | :-- |
+| IBM Cost of a Data Breach | 2025 | **Edição 2026 publicada em 29/7/2026 — confirmada e incorporada** (ver seção Global) |
+| Mandiant M-Trends | 2025 (2026 citada só como nota de tendência) | **Edição 2026 (mar/2026) confirmada e incorporada como fonte primária plena** (ver seção Global) |
+| CrowdStrike Global Threat Report | 2025 (2026 citada só como nota de tendência) | **Edição 2026 (24/2/2026) confirmada e incorporada como fonte primária plena** (ver seção Global) |
+| Verizon DBIR | 2025 | **Edição 2026 (19/5/2026) confirmada e incorporada** (ver seção Global) |
+| WEF Global Cybersecurity Outlook / Global Risks Report | 2026 (jan/2026) | Sem edição nova — ciclo de publicação é anual (janeiro); próxima edição esperada em jan/2027 |
+| ENISA Threat Landscape | 2025 (out/2025) | Sem edição nova — ciclo de publicação é anual (outubro); próxima edição esperada em out/2026 |
+| Dragos OT/ICS Year in Review | 2026 (9ª edição, fev/2026) | Sem edição nova — ciclo de publicação é anual (fevereiro) |
+| Kaspersky ICS CERT | Q3 2025 | Buscas não localizaram um relatório Q4 2025/Q1 2026 com dois anos-fonte independentes dentro desta janela; não atualizado |
+| FS-ISAC Navigating Cyber | 2025 (mai/2025) | Sem edição "Navigating Cyber 2026" nomeada e publicada localizada com duas fontes; referências a "dados 2026" da FS-ISAC encontradas são de material avulso (advisórios), não do relatório anual — não atualizado |
+| Fortinet State of OT/Cybersecurity | 2025 | Sem edição 2026 localizada nesta janela |
+| Nozomi Networks OT/IoT Trends | 2025 | Sem edição 2026 localizada nesta janela |
+| ANEEL / ONS (regulação) | RN nº 964/2021; Despacho nº 427/2025 | Sem norma ou despacho novo localizado entre 2026-07-21 e 2026-08-01 |
+| Banco Central (BACEN/CMN) | Resoluções CMN 5.274/2025 e BCB 538/2025 (prazo mar/2026) | Localizada **Resolução BCB nº 547/2026** (janeiro de 2026, sobre credenciamento de Provedores de Serviços de Tecnologia da Informação — PSTI), anterior à janela de 11 dias e já vigente antes de 2026-07-21; não incorporada nesta atualização por não atender ao critério de "mudança desde a última pesquisa" — **[NÃO CONFIRMADO se a Res. BCB 547/2026 já constava implicitamente no escopo da pesquisa original de 2026-07-21; recomenda-se avaliação em ciclo futuro]** |
+
+**Observação metodológica sobre os quatro relatórios atualizados:** todos os quatro (IBM 2026, Mandiant
+M-Trends 2026, CrowdStrike 2026, Verizon DBIR 2026) já estavam publicados **antes** de 2026-07-21 (entre
+fevereiro e julho de 2026) — não são publicações novas desta janela quinzenal. A pesquisa original de
+2026-07-21 optou deliberadamente por manter as edições 2025 como referência principal desses quatro
+relatórios (citando as edições 2026 apenas como nota de tendência, quando citava). Este refresh de
+2026-08-01 reavaliou essa escolha e concluiu que, com as quatro edições já maduras (meses de circulação,
+múltiplas coberturas independentes convergentes, sem sinal de erratas), a edição mais recente de cada uma
+passa a ser a referência primária mais atual para este panorama — sem prejuízo da trilha de pesquisa
+original, mantida integralmente acima.
