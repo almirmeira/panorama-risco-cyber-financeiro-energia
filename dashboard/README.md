@@ -145,10 +145,15 @@ independentes:
 | Etapa | Onde roda | Quando | O que faz |
 |-------|-----------|--------|-----------|
 | **1. Refresh de pesquisa** | agente Claude Code em nuvem (`trig_01VWt1jLJSSwcxjwZLcLQrjN`) | a cada 3 dias, 20:00 (SP) | Reexecuta a pesquisa nas fontes primárias, atualiza dossiê, capítulos e `dashboard/src/data/dashboard.json`, abre PR e — apenas se as quatro validações passarem — faz merge na `main`. Qualquer validação que falhe deixa o PR aberto, sem merge. |
-| **2. Publicação** | VM 41 (`almir-projeto-vm1`), via cron | toda noite, 23:59 (SP) | Se a `main` tiver commit novo: `npm ci` → build da edição `financeiro` → backup do que está no ar → publicação em `/var/www/panorama-financeiro` → smoke test HTTP, com rollback automático se falhar. Sem commit novo, sai em ~2 s sem tocar em nada. |
+| **2. Publicação** | VM 41 (`almir-projeto-vm1`), via cron | toda noite, 23:59 (SP) = `59 2 * * *` UTC | Se a `main` tiver commit novo: `npm ci` → build da edição `financeiro` → backup do que está no ar → publicação em `/var/www/panorama-financeiro` → smoke test HTTP, com rollback automático se falhar. Sem commit novo, sai em ~2 s sem tocar em nada. |
 
 Script da etapa 2: [`deploy/deploy-vm41.sh`](deploy/deploy-vm41.sh) — versionado aqui e
 auto-sincronizado na VM ao fim de cada ciclo.
+
+> **Cuidado ao mexer no crontab da VM:** ela roda em UTC e o cron do Ubuntu **não** suporta fuso por
+> usuário (`man 5 crontab`, seção *LIMITATIONS*) — `CRON_TZ`/`TZ` no crontab mudam só o ambiente do
+> comando, não o horário de disparo. Por isso a entrada é `59 2 * * *` em UTC, equivalente a 23:59
+> em São Paulo. O Brasil não adota horário de verão desde 2019, então o UTC-3 é fixo o ano todo.
 
 **Por que a publicação verifica todas as noites se o refresh é a cada 3 dias:** o cron do agente em
 nuvem só expressa "a cada 3 dias" como `*/3` no campo dia-do-mês, e esse campo reinicia a cada mês

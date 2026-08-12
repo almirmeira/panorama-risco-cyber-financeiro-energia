@@ -11,6 +11,16 @@
 # publica se a main tiver commit novo — caso contrário sai em segundos, sem
 # build e sem tocar no que está no ar.
 #
+# ATENÇÃO ao editar o crontab: a VM roda em UTC e o cron do Ubuntu NÃO suporta
+# fuso por usuário — `man 5 crontab`, seção LIMITATIONS: "Even if a user
+# specifies the TZ environment variable in his crontab this will affect only
+# the commands executed in the crontab, not the execution of the crontab tasks
+# themselves". Ou seja, CRON_TZ/TZ no crontab NÃO muda o horário de disparo
+# (verificado empiricamente nesta VM). Por isso a entrada é `59 2 * * *` em
+# UTC, que equivale a 23:59 em São Paulo — o Brasil não adota horário de verão
+# desde 2019 (Decreto 9.772/2019), então o deslocamento UTC-3 é fixo o ano
+# todo. Os horários deste log são convertidos para São Paulo explicitamente.
+#
 # Por que a verificação é diária se o refresh é a cada 3 dias: o refresh de
 # pesquisa roda no agente em nuvem, cujo cron só entende "*/3" no campo
 # dia-do-mês — e esse campo reinicia a cada mês (31/08 -> 01/09 dá 1 dia, não
