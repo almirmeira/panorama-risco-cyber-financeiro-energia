@@ -132,9 +132,44 @@ Para atualizar o painel:
 3. Rode `npm run build` para gerar um novo `dist/` com os dados atualizados.
 4. Transfira o novo `dist/` para o servidor, conforme a seção anterior.
 
-> Existe uma **rotina automatizada quinzenal** que reexecuta a pesquisa do repositório e abre um
-> Pull Request com as atualizações de conteúdo e de dados — ao mesclar esse PR, repita os passos
-> 2–4 acima para publicar a nova versão do painel.
+Os passos acima descrevem a atualização **manual**. Em produção
+(https://score.cecyber.com) esse ciclo é automático — veja a seção seguinte.
+
+---
+
+## Atualização automática (score.cecyber.com)
+
+O painel público roda a edição `financeiro` e se mantém atualizado sozinho, em duas etapas
+independentes:
+
+| Etapa | Onde roda | Quando | O que faz |
+|-------|-----------|--------|-----------|
+| **1. Refresh de pesquisa** | agente Claude Code em nuvem (`trig_01VWt1jLJSSwcxjwZLcLQrjN`) | a cada 3 dias, 20:00 (SP) | Reexecuta a pesquisa nas fontes primárias, atualiza dossiê, capítulos e `dashboard/src/data/dashboard.json`, abre PR e — apenas se as quatro validações passarem — faz merge na `main`. Qualquer validação que falhe deixa o PR aberto, sem merge. |
+| **2. Publicação** | VM 41 (`almir-projeto-vm1`), via cron | toda noite, 23:59 (SP) | Se a `main` tiver commit novo: `npm ci` → build da edição `financeiro` → backup do que está no ar → publicação em `/var/www/panorama-financeiro` → smoke test HTTP, com rollback automático se falhar. Sem commit novo, sai em ~2 s sem tocar em nada. |
+
+Script da etapa 2: [`deploy/deploy-vm41.sh`](deploy/deploy-vm41.sh) — versionado aqui e
+auto-sincronizado na VM ao fim de cada ciclo.
+
+**Por que a publicação verifica todas as noites se o refresh é a cada 3 dias:** o cron do agente em
+nuvem só expressa "a cada 3 dias" como `*/3` no campo dia-do-mês, e esse campo reinicia a cada mês
+(31/08 → 01/09 é 1 dia, não 3). Dois relógios de 3 dias independentes sairiam de fase na virada de
+mês, e uma pesquisa nova poderia esperar até 2 dias para ir ao ar. Verificando toda noite, a
+publicação acompanha o refresh no mesmo dia — o trabalho pesado continua a cada 3 dias.
+
+Operação:
+
+```bash
+ssh ttx                                    # VM 41
+~/deploy-panorama.sh --force               # publicar agora, mesmo sem commit novo
+tail -f ~/deploy-panorama.log              # acompanhar os ciclos
+ls -1dt /var/www/.backups/panorama-*       # backups (os 5 mais recentes)
+```
+
+Rollback manual para uma versão anterior:
+
+```bash
+sudo rsync -a --delete /var/www/.backups/panorama-financeiro-AAAAMMDD-HHMM/ /var/www/panorama-financeiro/
+```
 
 ---
 
