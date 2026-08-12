@@ -179,6 +179,7 @@ function AmeacasAoVivo() {
   const timeline = dados.timeline ?? []
   const iocs = dados.iocs ?? []
   const fontes = dados.fontes ?? []
+  const acervo = dados.acervoMisp
 
   return (
     <div className="container">
@@ -354,6 +355,66 @@ function AmeacasAoVivo() {
           </table>
         </Painel>
       </div>
+
+      {acervo && (
+        <>
+          <h2 style={{ margin: '28px 0 0', fontSize: 17 }}>Acervo da instância MISP</h2>
+          <div className="painel" style={{ marginTop: 12 }}>
+            <p style={{ color: palette.txtSec, fontSize: 12.5, margin: 0, lineHeight: 1.5 }}>
+              Os blocos acima mostram a <strong style={{ color: palette.txtCorpo }}>janela recente</strong>.
+              Este mostra o que a instância <strong style={{ color: palette.txtCorpo }}>sabe</strong> — e são
+              coisas diferentes. Feed MISP aberto é majoritariamente arquivo, não fluxo diário: ao habilitar
+              dez feeds novos, o acervo cresceu de 486 para {acervo.eventos} eventos e a janela de{' '}
+              {meta.janelaDias} dias continuou com três. Os eventos chegam com a data do fato original,
+              não do dia da publicação. Mostrar só a janela esconderia o acervo e sugeriria que o MISP
+              contribui pouco.
+            </p>
+          </div>
+
+          <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginTop: 16 }}>
+            <KpiTile label="Eventos no acervo" valor={String(acervo.eventos)} unidade="eventos"
+              delta={`${acervo.periodo?.de?.slice(0, 4)}–${acervo.periodo?.ate?.slice(0, 4)}`} fonte="MISP" />
+            <KpiTile label="Atributos indexados" valor={acervo.atributos.toLocaleString('pt-BR')}
+              unidade="indicadores" delta="somando todos os eventos" fonte="MISP" />
+            <KpiTile label="Eventos de família financeira" valor={String(acervo.totalEventosFinanceiros)}
+              unidade="eventos" delta="título nomeia família da taxonomia" fonte="MISP" />
+          </div>
+
+          {acervo.eventosFinanceiros?.length > 0 && (
+            <div style={{ marginTop: 16 }}>
+              <Painel titulo="Eventos de malware financeiro no acervo"
+                nota="Eventos cujo título nomeia uma família da taxonomia do projeto. Vão além da janela recente — é conhecimento acumulado, útil para contexto histórico, não para leitura de atividade atual.">
+                <div style={{ overflowX: 'auto', maxHeight: 340, overflowY: 'auto' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                    <thead>
+                      <tr style={{ borderBottom: `1px solid ${palette.borda}` }}>
+                        {['Data', 'Família', 'Evento', 'Indicadores'].map((h) => (
+                          <th key={h} style={{
+                            textAlign: 'left', padding: '8px 10px', color: palette.txtSec, position: 'sticky', top: 0,
+                            background: palette.bgPainel, fontSize: 12, fontWeight: 600, textTransform: 'uppercase',
+                          }}>{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {acervo.eventosFinanceiros.map((e, i) => (
+                        <tr key={i} style={{ borderBottom: `1px solid ${palette.borda}` }}>
+                          <td style={{ padding: '8px 10px', color: palette.txtSec, whiteSpace: 'nowrap' }}>{e.data}</td>
+                          <td style={{ padding: '8px 10px', color: e.regiao === 'br' ? palette.ambar : palette.txtCorpo, whiteSpace: 'nowrap' }}>
+                            {e.regiao === 'br' && '🇧🇷 '}{e.familia}
+                          </td>
+                          <td style={{ padding: '8px 10px', color: palette.txtCorpo, maxWidth: 420, overflow: 'hidden', textOverflow: 'ellipsis' }} title={e.titulo}>{e.titulo}</td>
+                          <td style={{ padding: '8px 10px', color: palette.txtSec, textAlign: 'right' }}>{e.atributos}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </Painel>
+            </div>
+          )}
+        </>
+      )}
 
       <p style={{ color: palette.txtSec, fontSize: 11.5, marginTop: 16 }}>
         Ingestão via instância MISP própria · dados obtidos {buscadoEm ? buscadoEm.toLocaleTimeString('pt-BR') : '—'} ·

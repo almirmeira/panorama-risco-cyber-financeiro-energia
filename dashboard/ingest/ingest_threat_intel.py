@@ -219,6 +219,77 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False, paginas=8, por_pa
     return saida
 
 
+def coletar_misp_corpus(base_url, api_key, taxonomia, verificar_tls=False):
+    """Retrato do acervo inteiro da instância MISP, não só da janela recente.
+
+    Existe porque feed MISP aberto é majoritariamente ARQUIVO, não fluxo: ao
+    habilitar dez feeds novos, o acervo saltou de 486 para 574 eventos e a
+    janela de 14 dias continuou com três. Os eventos chegam com a data do fato
+    original — relatórios de 2015 a 2026 — e não como publicações do dia.
+
+    Insistir em mostrar só a janela recente esconderia o acervo todo e daria a
+    impressão errada de que o MISP contribui pouco. Então o painel mostra as
+    duas coisas separadas: o que é recente (aba ao vivo) e o que a instância
+    sabe (este bloco).
+    """
+    import ssl
+
+    ctx = ssl.create_default_context()
+    if not verificar_tls:
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+
+    req = urllib.request.Request(
+        base_url.rstrip("/") + "/events/index",
+        headers={"Authorization": api_key, "Accept": "application/json", "User-Agent": UA},
+    )
+    with urllib.request.urlopen(req, timeout=TIMEOUT * 2, context=ctx) as r:
+        eventos = json.loads(r.read().decode("utf-8", "replace"))
+    if not isinstance(eventos, list):
+        raise ValueError("formato inesperado em /events/index")
+
+    familias = taxonomia["familias"]
+    por_ano = Counter()
+    total_attrs = 0
+    eventos_financeiros = []
+    datas = []
+
+    for e in eventos:
+        data = e.get("date") or ""
+        if len(data) >= 4:
+            por_ano[data[:4]] += 1
+            datas.append(data)
+        try:
+            total_attrs += int(e.get("attribute_count") or 0)
+        except (TypeError, ValueError):
+            pass
+
+        # Um evento é "financeiro" se o título nomeia família da taxonomia.
+        titulo_norm = re.sub(r"[^a-z0-9]+", " ", (e.get("info") or "").lower())
+        for chave, fam in familias.items():
+            if len(chave) < 5:
+                continue
+            if re.search(rf"\b{re.escape(chave)}\b", titulo_norm):
+                eventos_financeiros.append({
+                    "data": data,
+                    "titulo": (e.get("info") or "")[:90],
+                    "familia": fam["nome"],
+                    "regiao": fam["regiao"],
+                    "atributos": e.get("attribute_count"),
+                })
+                break
+
+    eventos_financeiros.sort(key=lambda r: r["data"], reverse=True)
+    return {
+        "eventos": len(eventos),
+        "atributos": total_attrs,
+        "periodo": {"de": min(datas) if datas else None, "ate": max(datas) if datas else None},
+        "porAno": [{"ano": a, "eventos": n} for a, n in sorted(por_ano.items()) if a >= "2015"],
+        "eventosFinanceiros": eventos_financeiros[:25],
+        "totalEventosFinanceiros": len(eventos_financeiros),
+    }
+
+
 def coletar_extorsao(dias):
     """Vítimas de ransomware/extorsão do setor financeiro (ransomware.live).
 
@@ -545,7 +616,15 @@ def main():
     # MISP — a instância local.
     base = os.environ.get("MISP_URL")
     chave = os.environ.get("MISP_KEY")
+    corpus = None
     if not args.sem_misp and base and chave:
+        try:
+            corpus = coletar_misp_corpus(base, chave, taxonomia)
+            log(f"acervo MISP: {corpus['eventos']} eventos / {corpus['atributos']} atributos "
+                f"({corpus['periodo']['de']} a {corpus['periodo']['ate']}), "
+                f"{corpus['totalEventosFinanceiros']} eventos de família financeira")
+        except Exception as e:                              # noqa: BLE001
+            log(f"acervo MISP FALHOU: {e}")
         try:
             mi = coletar_misp(base, chave, args.dias)
             brutos += mi
@@ -674,6 +753,7 @@ def main():
                       "vazamento é publicado aqui."),
         },
         "vulnerabilidades": kev,
+        "acervoMisp": corpus,
     }
 
     os.makedirs(os.path.dirname(args.saida), exist_ok=True)
