@@ -7,14 +7,22 @@
 # edição financeiro → backup do que está no ar → publicação → smoke test →
 # rollback automático se o smoke test falhar.
 #
-# Cadência: o cron dispara todo dia às 23:59 (America/Sao_Paulo) e este script
-# decide se é dia de rodar. O critério é (dias desde a época Unix) % 3 == 0, que
-# dá um intervalo real de 3 dias — diferente de um "*/3" no campo dia-do-mês do
-# cron, que reinicia a cada mês e produz um intervalo de 1 dia na virada.
+# Cadência: o cron dispara todo dia às 23:59 (America/Sao_Paulo) e o script só
+# publica se a main tiver commit novo — caso contrário sai em segundos, sem
+# build e sem tocar no que está no ar.
+#
+# Por que a verificação é diária se o refresh é a cada 3 dias: o refresh de
+# pesquisa roda no agente em nuvem, cujo cron só entende "*/3" no campo
+# dia-do-mês — e esse campo reinicia a cada mês (31/08 -> 01/09 dá 1 dia, não
+# 3). Com as duas pontas em relógios de 3 dias independentes, elas sairiam de
+# fase na virada de mês e uma pesquisa nova poderia esperar até 2 dias para ir
+# ao ar. Verificando toda noite, a publicação acompanha o refresh sem atraso,
+# qualquer que seja o dia em que ele caia. O trabalho pesado (pesquisa, PR,
+# merge) continua acontecendo a cada 3 dias, na nuvem.
 #
 # Uso:
-#   ./deploy-vm41.sh            # respeita a cadência de 3 dias e o cache de commit
-#   ./deploy-vm41.sh --force    # roda agora e reconstrói mesmo sem commit novo
+#   ./deploy-vm41.sh            # publica só se houver commit novo na main
+#   ./deploy-vm41.sh --force    # reconstrói e publica mesmo sem commit novo
 #
 set -euo pipefail
 
@@ -27,7 +35,6 @@ LOG_FILE="$HOME/deploy-panorama.log"
 LOCK_FILE="/tmp/panorama-deploy.lock"
 SMOKE_URL="https://127.0.0.1:8080/"
 KEEP_BACKUPS=5
-CADENCIA_DIAS=3
 
 FORCE=0
 [ "${1:-}" = "--force" ] && FORCE=1
@@ -38,13 +45,6 @@ die() { log "ERRO: $*"; exit 1; }
 # Uma execução por vez — o build e o rsync não podem se sobrepor.
 exec 9>"$LOCK_FILE"
 flock -n 9 || { log "outra execução em andamento; abortando"; exit 0; }
-
-# --- Cadência de 3 dias -------------------------------------------------------
-if [ "$FORCE" -eq 0 ]; then
-  if [ $(( $(date -u +%s) / 86400 % CADENCIA_DIAS )) -ne 0 ]; then
-    exit 0   # silencioso: não é dia de rodar, não polui o log
-  fi
-fi
 
 log "=== início do ciclo de atualização ==="
 
