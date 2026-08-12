@@ -1,0 +1,20 @@
+# Teto de memoria: a VM 41 tambem serve o score.cecyber.com em nginx.
+# Sem isto, um pico do MISP poderia levar o OOM-killer a derrubar a vitrine.
+services:
+  db:
+    mem_limit: 1500m
+  misp-core:
+    mem_limit: 2500m
+    # O healthcheck padrao usa timeout de 1s. Nesta VM de 2 vCPU, que ainda
+    # serve o nginx do painel, o PHP responde em ~1-2s e o container era
+    # marcado "unhealthy" mesmo servindo HTTP 200 normalmente. Um container
+    # falsamente unhealthy atrapalha diagnostico futuro.
+    healthcheck:
+      timeout: 10s
+      interval: 30s
+      retries: 5
+      start_period: 300s
+  redis:
+    mem_limit: 256m
+  misp-modules:
+    mem_limit: 768m
