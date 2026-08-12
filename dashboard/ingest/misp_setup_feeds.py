@@ -25,17 +25,36 @@ import urllib.error
 import urllib.request
 
 # Casamento por substring em provider/name do catálogo padrão do MISP.
+#
+# A prioridade é feed em FORMATO MISP, não CSV. Feed CSV entra no MISP como um
+# evento agregado com atributos nus — a família de malware se perde na
+# importação, e é justamente ela que sustenta o recorte financeiro. Feed em
+# formato MISP preserva tag por atributo e o campo comment. Medido nesta
+# instância: o URLhaus em CSV rendeu 17.089 atributos e ~zero atribuição
+# financeira; um único evento ThreatFox em formato MISP traz família em tag
+# para cada indicador.
 FEEDS_DESEJADOS = [
     ("circl", "CIRCL OSINT Feed — eventos MISP com marcação TLP por evento"),
     ("botvrij", "botvrij.eu — feed OSINT em formato MISP"),
     ("urlhaus", "abuse.ch URLhaus — URLs de distribuição de malware"),
     ("threatfox", "abuse.ch ThreatFox — IoCs com família de malware atribuída"),
     ("feodo", "abuse.ch Feodo Tracker — C2 de trojans bancários"),
+    ("malwarebazaar", "abuse.ch MalwareBazaar — amostras indexadas por família, "
+                      "inclusive bankers; formato MISP preserva a atribuição"),
+    ("precisionsec", "PrecisionSec — C2 e domínios pré-classificados por família"),
+    ("bin.re", "Rösti (bin.re) — repackaging de OSINT em formato MISP"),
+    ("rectifyq", "Rectifyq — inteligência MISP curada e enriquecida"),
+    ("infoblox", "Infoblox — inteligência de infraestrutura de ameaça (DNS)"),
+    ("nocacti", "NOCACTI — feeds de intrusão e infraestrutura de adversário"),
 ]
+
+# Verificado como fora do ar em 2026-08-12 (manifest.json não responde).
+# Mantido aqui com o motivo para não voltar a ser habilitado por engano.
+FORA_DO_AR = ["digitalside"]
 
 # Nunca habilitar: exigem credencial, restringem redistribuição, ou a licença
 # não é explícita o bastante para uma página pública.
-BLOQUEADOS = ["phishtank", "openphish", "alienvault", "proofpoint", "spamhaus"]
+BLOQUEADOS = ["phishtank", "openphish", "alienvault", "proofpoint", "spamhaus"] + FORA_DO_AR
 
 
 def api(base, key, caminho, metodo="GET", corpo=None, timeout=90):
