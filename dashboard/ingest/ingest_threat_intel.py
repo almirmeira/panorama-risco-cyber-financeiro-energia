@@ -128,9 +128,15 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False):
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
 
+    # ATENÇÃO ao filtro de recência. O parâmetro 'last' do restSearch olha o
+    # timestamp do ATRIBUTO, que num feed recém-sincronizado é o momento da
+    # importação — não a data do fato. Pedir 'last=14d' logo após ligar um
+    # feed devolve o acervo histórico inteiro carimbado como recente: o CIRCL
+    # OSINT, por exemplo, traz relatórios de 2015 (The Dukes, APT28) que
+    # apareceriam no painel como atividade da semana. Por isso a recência real
+    # é decidida abaixo, pela data do EVENTO.
     corpo = json.dumps({
         "returnFormat": "json",
-        "last": f"{dias}d",
         "enforceWarninglist": True,   # descarta ruído conhecido (CDNs, IP de infra)
         "includeEventTags": True,
         "limit": 5000,
@@ -150,25 +156,44 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False):
     with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as resp:
         bruto = json.loads(resp.read().decode("utf-8", "replace"))
 
-    saida = []
+    corte = (datetime.now(timezone.utc) - timedelta(days=dias)).date()
+    saida, descartados_antigos = [], 0
     for a in bruto.get("response", {}).get("Attribute", []):
-        tags = [t.get("name", "") for t in (a.get("Tag") or [])]
-        ts = a.get("timestamp")
+        evento = a.get("Event") or {}
+        # Data do evento = quando o fato foi reportado. É a única leitura
+        # honesta de recência num acervo que acabou de ser sincronizado.
         try:
-            quando = datetime.fromtimestamp(int(ts), timezone.utc).isoformat()
-        except (TypeError, ValueError):
-            quando = None
+            data_evt = datetime.strptime(evento.get("date", ""), "%Y-%m-%d").date()
+        except ValueError:
+            descartados_antigos += 1
+            continue
+        if data_evt < corte:
+            descartados_antigos += 1
+            continue
+
+        tags = [t.get("name", "") for t in (a.get("Tag") or [])]
+        tags += [t.get("name", "") for t in (evento.get("Tag") or [])]
+        # O título do evento é onde os feeds MISP costumam nomear a família
+        # ("OSINT — Grandoreiro campaign targeting..."). Entra como candidato
+        # à classificação, junto das tags.
+        info = evento.get("info") or ""
         saida.append({
             "valor": a.get("value", ""),
             "tipo": a.get("type", "desconhecido"),
             "familiaBruta": "",
+            "contexto": info,
             "ameaca": a.get("category") or "",
-            "primeiraObs": quando,
+            "primeiraObs": datetime.combine(
+                data_evt, datetime.min.time(), tzinfo=timezone.utc).isoformat(),
             "confianca": None,
             "tags": tags,
             "fonte": "MISP (instância CECyber)",
             "tlp": next((t for t in tags if t.lower().startswith("tlp:")), "tlp:clear"),
         })
+
+    if descartados_antigos:
+        log(f"MISP: {descartados_antigos} atributos fora da janela de {dias}d "
+            f"(data do evento anterior a {corte}) — acervo histórico dos feeds")
     return saida
 
 
@@ -205,6 +230,19 @@ def classificar_financeiro(ioc, taxonomia):
         k = normalizar_familia(t.split("=")[-1].strip('"'))
         if k in familias:
             return True, familias[k]
+
+    # Último recurso: o título do evento MISP. Exige limite de palavra e nome
+    # com pelo menos 5 letras — sem isso, "Coyote" casaria com qualquer texto
+    # que mencione o animal e "Zeus" com qualquer relatório sobre mitologia ou
+    # sobre a operação policial de mesmo nome. Casar por substring solta aqui
+    # geraria falso positivo silencioso, que é o pior tipo num painel público.
+    contexto = (ioc.get("contexto") or "").lower()
+    if contexto:
+        for chave, fam in familias.items():
+            if len(chave) < 5:
+                continue
+            if re.search(rf"\b{re.escape(chave)}\b", re.sub(r"[^a-z0-9]+", " ", contexto)):
+                return True, fam
     return False, None
 
 
