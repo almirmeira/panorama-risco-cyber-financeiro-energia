@@ -3,7 +3,7 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-07-21",
+    "geradoEm": "2026-08-12",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -14,7 +14,7 @@
       "riscoScore": 72,
       "riscoLabel": "Elevado",
       "kpis": [
-        { "label": "Custo médio de violação de dados", "valor": "5,56", "unidade": "US$ mi", "delta": "-9% a/a", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Custo médio de violação de dados", "valor": "6,3", "unidade": "US$ mi", "delta": "+13% a/a (ante US$ 5,56 mi em 2025)", "fonte": "cap. 02", "estimativa": false },
         { "label": "Ransomware direto contra instituições", "valor": "202", "unidade": "incidentes em 2025", "delta": "+30% a/a (+76% Q1 2026)", "fonte": "cap. 02", "estimativa": false },
         { "label": "Motivação financeira das violações", "valor": "90", "unidade": "%", "delta": "espionagem: 12%", "fonte": "cap. 02", "estimativa": true },
         { "label": "Fraude por deepfake nas tentativas de fraude", "valor": "6,5", "unidade": "%", "delta": "+2.137% em 3 anos (de 0,1%)", "fonte": "cap. 02", "estimativa": false },
@@ -52,7 +52,7 @@
       "riscoScore": 75,
       "riscoLabel": "Crítico",
       "kpis": [
-        { "label": "Custo médio de violação de dados", "valor": "4,83", "unidade": "US$ mi", "delta": "4º setor mais caro do mundo", "fonte": "cap. 03", "estimativa": false },
+        { "label": "Custo médio de violação de dados", "valor": "5,2", "unidade": "US$ mi", "delta": "+8% a/a (ante US$ 4,83 mi em 2025)", "fonte": "cap. 03", "estimativa": false },
         { "label": "Organizações industriais impactadas por ransomware", "valor": "~3.300", "unidade": "organizações (2025)", "delta": "+64% a/a; 119 grupos ativos", "fonte": "cap. 03", "estimativa": false },
         { "label": "Computadores ICS atacados — energia elétrica", "valor": "22,8", "unidade": "% (H1 2025)", "delta": "3º setor mais atacado globalmente", "fonte": "cap. 03", "estimativa": true },
         { "label": "Dwell time de ransomware em OT", "valor": "42 → 5", "unidade": "dias", "delta": "8x mais rápido com visibilidade OT plena", "fonte": "cap. 03", "estimativa": false },
@@ -87,20 +87,20 @@
   "global": {
     "titulo": "Panorama global de atividade cibernética",
     "kpis": [
-      { "label": "Custo médio global de violação", "valor": "4,44", "unidade": "US$ mi", "delta": "-9% a/a", "fonte": "cap. 01" },
-      { "label": "Dwell time mediano global (2024)", "valor": "11", "unidade": "dias", "delta": "piora p/ 14 em 2026", "fonte": "cap. 01" },
-      { "label": "Ransomware em violações confirmadas", "valor": "44", "unidade": "%", "fonte": "cap. 01" },
+      { "label": "Custo médio global de violação", "valor": "4,99", "unidade": "US$ mi", "delta": "+12% a/a — recorde da série", "fonte": "cap. 01" },
+      { "label": "Dwell time mediano global (2026)", "valor": "14", "unidade": "dias", "delta": "piora: era 11 dias em 2025", "fonte": "cap. 01" },
+      { "label": "Ransomware em violações confirmadas", "valor": "48", "unidade": "%", "delta": "ante 44% na edição 2025", "fonte": "cap. 01" },
       { "label": "IA como principal driver de mudança (2026)", "valor": "94", "unidade": "% líderes", "fonte": "cap. 01" }
     ]
   },
   "comparativoGlobal": {
     "titulo": "Setor financeiro × panorama global",
-    "barra": { "titulo": "Custo médio de violação (US$ mi)", "categorias": ["Setor financeiro", "Média global"], "valores": [5.56, 4.44], "fonte": "cap. 01" },
+    "barra": { "titulo": "Custo médio de violação (US$ mi)", "categorias": ["Setor financeiro", "Média global"], "valores": [6.3, 4.99], "fonte": "cap. 01" },
     "tabela": [
-      { "metrica": "Custo médio de violação (2025)", "financeiro": "US$ 5,56 mi", "global": "US$ 4,44 mi", "leitura": "Financeiro ~25% acima da média global (2º setor mais caro)" },
-      { "metrica": "Volume de intrusões (Mandiant IR)", "financeiro": "1º — 17,4%", "global": "—", "leitura": "Setor financeiro é o alvo nº 1 por volume de intrusões investigadas" },
-      { "metrica": "Ransomware", "financeiro": "202 incidentes diretos (+30% a/a)", "global": "44% das violações", "leitura": "Ameaça transversal; setor financeiro entre os mais visados" },
-      { "metrica": "Dwell time (detecção)", "financeiro": "—", "global": "11 dias (2024) → 14 (2026)", "leitura": "Janela global de detecção; instituições maduras reduzem para dias" }
+      { "metrica": "Custo médio de violação (2026)", "financeiro": "US$ 6,3 mi", "global": "US$ 4,99 mi", "leitura": "Financeiro ~26% acima da média global; ambos em alta recorde na edição 2026" },
+      { "metrica": "Volume de intrusões (Mandiant IR)", "financeiro": "2º — 14,6%", "global": "Alta Tecnologia lidera com 17%", "leitura": "Financeiro perdeu a liderança após dois anos no topo, mas segue no pelotão de frente" },
+      { "metrica": "Ransomware", "financeiro": "202 incidentes diretos (+30% a/a)", "global": "48% das violações", "leitura": "Ameaça transversal em alta (44% → 48%); setor financeiro entre os mais visados" },
+      { "metrica": "Dwell time (detecção)", "financeiro": "—", "global": "14 dias (era 11 em 2025)", "leitura": "Primeira piora da janela global de detecção em anos; instituições maduras reduzem para dias" }
     ]
   },
   "comparativo": {
@@ -116,7 +116,7 @@
       { "eixo": "Maturidade defensiva", "financeiro": "Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude", "energia": "Heterogênea — 52% já colocam OT sob o CISO (ante 16% em 2022), mas sistemas legados sem suporte seguem comuns", "semaforoFin": "verde", "semaforoEnergia": "ambar" },
       { "eixo": "Pressão / maturidade regulatória", "financeiro": "Alta e crescente — CMN 4.893/2021 + BCB 85/2021, atualizadas por CMN 5.274/2025 e BCB 538/2025, prazo março/2026", "energia": "Em maturação — RN ANEEL nº 964/2021 (ARCiber) em vigor desde 2022, mas 1ª fiscalização concreta só em 2025", "semaforoFin": "verde", "semaforoEnergia": "ambar" },
       { "eixo": "Frequência/escala do ataque em 2025", "financeiro": "202 incidentes diretos de ransomware (+30% a/a); 2º setor mais atacado globalmente (FS-ISAC)", "energia": "~3.300 organizações industriais impactadas por ransomware (+64% a/a); 22,8% dos computadores ICS de energia elétrica com objetos maliciosos bloqueados (3º setor mais atacado)", "semaforoFin": "ambar", "semaforoEnergia": "vermelho" },
-      { "eixo": "Custo médio de um incidente", "financeiro": "USD 5,56 milhões por violação (2º setor mais caro do mundo)", "energia": "USD 4,83 milhões por violação no setor de energia; USD 4,56 milhões quando há impacto direto em OT (qualquer setor)", "semaforoFin": "ambar", "semaforoEnergia": "ambar" }
+      { "eixo": "Custo médio de um incidente", "financeiro": "USD 6,3 milhões por violação (ed. 2026, ante USD 5,56 milhões em 2025)", "energia": "USD 5,2 milhões por violação no setor de energia (ed. 2026, ante USD 4,83 milhões em 2025); USD 4,56 milhões quando há impacto direto em OT, qualquer setor (ed. 2025)", "semaforoFin": "ambar", "semaforoEnergia": "ambar" }
     ]
   },
   "tendencias": [
