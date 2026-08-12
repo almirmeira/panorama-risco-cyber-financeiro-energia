@@ -10,6 +10,7 @@ import Comparativo from './views/Comparativo.jsx'
 import Tendencias from './views/Tendencias.jsx'
 import Recomendacoes from './views/Recomendacoes.jsx'
 import Fontes from './views/Fontes.jsx'
+import AmeacasAoVivo from './views/AmeacasAoVivo.jsx'
 
 // Views reais das Tasks 4–7.
 // Na edição "financeiro" (VITE_EDITION=financeiro), a aba Energia é
@@ -17,6 +18,10 @@ import Fontes from './views/Fontes.jsx'
 const ABAS_TODAS = [
   { id: 'visao-geral', rotulo: 'Visão Geral' },
   { id: 'financeiro', rotulo: 'Financeiro' },
+  // Camada operacional: indicadores recentes vindos do MISP. Fica logo após o
+  // recorte financeiro porque é dele que a aba trata, e antes do comparativo,
+  // que já é leitura consolidada.
+  { id: 'ameacas-ao-vivo', rotulo: 'Ameaças ao Vivo' },
   { id: 'energia', rotulo: 'Energia' },
   { id: 'comparativo', rotulo: 'Comparativo' },
   { id: 'tendencias', rotulo: 'Tendências' },
@@ -29,6 +34,7 @@ const ABAS = isFinanceiro ? ABAS_TODAS.filter((aba) => aba.id !== 'energia') : A
 const VIEWS = {
   'visao-geral': VisaoGeral,
   financeiro: Financeiro,
+  'ameacas-ao-vivo': AmeacasAoVivo,
   energia: Energia,
   comparativo: Comparativo,
   tendencias: Tendencias,
@@ -154,9 +160,14 @@ function App() {
         </div>
       </header>
 
-      <div className="container" style={{ paddingBottom: 0 }}>
-        <LegendaSemaforo />
-      </div>
+      {/* A legenda explica o semáforo de postura de risco, que não existe na
+          camada operacional — lá o semáforo é de frescor do dado. Mostrar as
+          duas convenções juntas confundiria as leituras. */}
+      {abaAtiva !== 'ameacas-ao-vivo' && (
+        <div className="container" style={{ paddingBottom: 0 }}>
+          <LegendaSemaforo />
+        </div>
+      )}
 
       <ViewAtiva dados={dados} />
 
