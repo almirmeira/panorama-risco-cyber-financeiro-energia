@@ -1,9 +1,11 @@
 import { palette } from '../theme.js'
 import KpiTile from '../components/KpiTile.jsx'
+import { isFinanceiro } from '../edition.js'
 
 /**
  * Metodologia e fontes: tese condensada, hierarquia de fontes, contadores
- * de vendors/vozes e link ao repositório.
+ * de vendors/vozes e link ao repositório. Na edição "financeiro", exibe uma
+ * linha adicional no topo indicando o recorte setorial desta edição.
  */
 function Fontes({ dados }) {
   const fontes = dados?.fontes ?? {}
@@ -12,6 +14,14 @@ function Fontes({ dados }) {
   return (
     <div className="container">
       <h1>Metodologia e fontes</h1>
+
+      {isFinanceiro && (
+        <div className="painel" style={{ marginTop: 16 }}>
+          <p style={{ color: palette.txtSec, fontSize: 12, margin: 0, textTransform: 'uppercase', letterSpacing: 0.4 }}>
+            Edição: recorte do setor financeiro
+          </p>
+        </div>
+      )}
 
       {fontes.metodologiaResumo && (
         <div className="painel" style={{ marginTop: 16 }}>

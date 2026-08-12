@@ -1,14 +1,25 @@
 import { palette } from '../theme.js'
 import TimelineChart from '../components/TimelineChart.jsx'
+import { isFinanceiro } from '../edition.js'
+
+const TRILHAS_FINANCEIRO = new Set(['Financeiro', 'Comum'])
 
 /**
  * Roadmap de recomendações: linha do tempo por horizonte, checklist de
  * quick wins e perguntas que o board deve fazer.
+ *
+ * Na edição "financeiro", o roadmap é filtrado para as trilhas Financeiro
+ * e Comum (a trilha Energia é removida). Quick wins e perguntas de board
+ * são genéricas e permanecem inalteradas em ambas as edições.
  */
 function Recomendacoes({ dados }) {
   const recomendacoes = dados?.recomendacoes ?? {}
   const quickWins = recomendacoes.quickWins ?? []
   const perguntasBoard = recomendacoes.perguntasBoard ?? []
+  const roadmapCompleto = recomendacoes.roadmap ?? []
+  const roadmap = isFinanceiro
+    ? roadmapCompleto.filter((marco) => TRILHAS_FINANCEIRO.has(marco.trilha))
+    : roadmapCompleto
 
   return (
     <div className="container">
@@ -16,7 +27,7 @@ function Recomendacoes({ dados }) {
 
       <div className="painel" style={{ marginTop: 16 }}>
         <h2 style={{ marginTop: 0 }}>Roadmap por horizonte</h2>
-        <TimelineChart marcos={recomendacoes.roadmap} />
+        <TimelineChart marcos={roadmap} />
       </div>
 
       <div

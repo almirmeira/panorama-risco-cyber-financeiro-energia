@@ -1,6 +1,8 @@
 import { palette, semaforo } from '../theme.js'
 import RadarChart from '../components/RadarChart.jsx'
 import GaugeRisco from '../components/GaugeRisco.jsx'
+import BarChart from '../components/BarChart.jsx'
+import { isFinanceiro } from '../edition.js'
 
 /**
  * Bolinha de semáforo para uso dentro de célula de tabela.
@@ -25,10 +27,63 @@ function Bolinha({ nivel }) {
 }
 
 /**
- * Comparativo Financeiro x Energia: radar de eixos de risco, gauges lado a
- * lado e tabela-semáforo eixo a eixo.
+ * Comparativo (edição "financeiro"): Setor Financeiro x Panorama Global —
+ * barra de custo médio de violação e tabela comparativa de métricas-chave.
+ * Não usa o radar Financeiro x Energia desta edição.
  */
-function Comparativo({ dados }) {
+function ComparativoFinanceiro({ dados }) {
+  const comparativoGlobal = dados?.comparativoGlobal ?? {}
+  const barra = comparativoGlobal.barra ?? {}
+  const tabela = comparativoGlobal.tabela ?? []
+
+  return (
+    <div className="container">
+      <h1>{comparativoGlobal.titulo ?? 'Setor Financeiro × Panorama Global'}</h1>
+
+      <div className="painel" style={{ marginTop: 16 }}>
+        <BarChart titulo={barra.titulo} categorias={barra.categorias} valores={barra.valores} />
+      </div>
+
+      <div className="painel" style={{ marginTop: 16, overflowX: 'auto' }}>
+        <h2 style={{ marginTop: 0 }}>Setor financeiro x panorama global — tabela comparativa</h2>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+          <thead>
+            <tr style={{ textAlign: 'left', borderBottom: `1px solid ${palette.borda}` }}>
+              <th style={{ padding: '8px 10px', color: palette.txtTitulo }}>Métrica</th>
+              <th style={{ padding: '8px 10px', color: palette.txtTitulo }}>Setor financeiro</th>
+              <th style={{ padding: '8px 10px', color: palette.txtTitulo }}>Panorama global</th>
+              <th style={{ padding: '8px 10px', color: palette.txtTitulo }}>Leitura</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tabela.map((linha, i) => (
+              <tr key={i} style={{ borderBottom: `1px solid ${palette.borda}` }}>
+                <td style={{ padding: '8px 10px', color: palette.txtTitulo, fontWeight: 600, verticalAlign: 'top' }}>
+                  {linha.metrica}
+                </td>
+                <td style={{ padding: '8px 10px', color: palette.txtCorpo, verticalAlign: 'top' }}>
+                  {linha.financeiro}
+                </td>
+                <td style={{ padding: '8px 10px', color: palette.txtCorpo, verticalAlign: 'top' }}>
+                  {linha.global}
+                </td>
+                <td style={{ padding: '8px 10px', color: palette.txtSec, verticalAlign: 'top' }}>
+                  {linha.leitura}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+/**
+ * Comparativo (edição full): Financeiro x Energia — radar de eixos de
+ * risco, gauges lado a lado e tabela-semáforo eixo a eixo.
+ */
+function ComparativoFull({ dados }) {
   const comparativo = dados?.comparativo ?? {}
   const setores = dados?.setores ?? []
   const financeiro = setores.find((s) => s.id === 'financeiro')
@@ -95,6 +150,10 @@ function Comparativo({ dados }) {
       </div>
     </div>
   )
+}
+
+function Comparativo({ dados }) {
+  return isFinanceiro ? <ComparativoFinanceiro dados={dados} /> : <ComparativoFull dados={dados} />
 }
 
 export default Comparativo

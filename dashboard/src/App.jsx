@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import dados from './data/dashboard.json'
 import { palette, semaforo } from './theme.js'
+import { isFinanceiro } from './edition.js'
 import TabNav from './components/TabNav.jsx'
 import VisaoGeral from './views/VisaoGeral.jsx'
 import Financeiro from './views/Financeiro.jsx'
@@ -11,7 +12,9 @@ import Recomendacoes from './views/Recomendacoes.jsx'
 import Fontes from './views/Fontes.jsx'
 
 // Views reais das Tasks 4–7.
-const ABAS = [
+// Na edição "financeiro" (VITE_EDITION=financeiro), a aba Energia é
+// removida — a edição padrão ("full") mantém todas as abas.
+const ABAS_TODAS = [
   { id: 'visao-geral', rotulo: 'Visão Geral' },
   { id: 'financeiro', rotulo: 'Financeiro' },
   { id: 'energia', rotulo: 'Energia' },
@@ -20,6 +23,8 @@ const ABAS = [
   { id: 'recomendacoes', rotulo: 'Recomendações' },
   { id: 'fontes', rotulo: 'Fontes & Método' },
 ]
+
+const ABAS = isFinanceiro ? ABAS_TODAS.filter((aba) => aba.id !== 'energia') : ABAS_TODAS
 
 const VIEWS = {
   'visao-geral': VisaoGeral,
@@ -90,6 +95,13 @@ function App() {
   const fontes = dados?.fontes ?? {}
   const ViewAtiva = VIEWS[abaAtiva] ?? VisaoGeral
 
+  // Na edição "financeiro", cabeçalho reflete o recorte setorial; a edição
+  // padrão ("full") continua usando o título/subtítulo do JSON, inalterada.
+  const tituloExibido = isFinanceiro ? 'Panorama de Risco Cibernético — Setor Financeiro' : meta.titulo
+  const subtituloExibido = isFinanceiro
+    ? 'Recorte do setor financeiro · Brasil e o mundo, 2025–2026 · síntese executiva'
+    : meta.subtitulo
+
   return (
     <>
       <header style={{ background: palette.bgPainel, borderBottom: `1px solid ${palette.borda}` }}>
@@ -105,10 +117,10 @@ function App() {
           }}
         >
           <div>
-            <h1 style={{ margin: 0, fontSize: 22 }}>{meta.titulo}</h1>
-            {meta.subtitulo && (
+            <h1 style={{ margin: 0, fontSize: 22 }}>{tituloExibido}</h1>
+            {subtituloExibido && (
               <p style={{ margin: '6px 0 0', color: palette.txtSec, fontSize: 14, maxWidth: 720 }}>
-                {meta.subtitulo}
+                {subtituloExibido}
               </p>
             )}
           </div>
