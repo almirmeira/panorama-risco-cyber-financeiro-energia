@@ -24,6 +24,26 @@ JSON estático.
 | `misp_setup_feeds.py` | habilita os feeds no MISP (idempotente, pode rodar sempre) |
 | `misp-docker-compose.override.yml` | cópia versionada do override aplicado na VM (limites de RAM + healthcheck) |
 
+## Fontes e o que cada uma responde
+
+| Fonte | Pergunta que responde | Recorte financeiro |
+| :-- | :-- | :-- |
+| MISP (feeds abertos) | que infraestrutura maliciosa existe agora | por família/tag |
+| ThreatFox direto | qual família está por trás do indicador | por família |
+| **ransomware.live** (setor) | **quem está sendo atacado** | **explícito na fonte** |
+| **CISA KEV** | **o que corrigir primeiro** | transversal, sem recorte |
+
+O `ransomware.live` é consumido pelo endpoint **setorial**
+(`/v2/sectorvictims/Financial Services`), não pelo `/recentvictims`. O "recentes" devolve as 100
+últimas vítimas de todos os setores — na prática ~3 dias e meia dúzia de casos financeiros;
+anunciar isso como janela de 90 dias seria falso. O arquivo setorial traz o histórico completo do
+setor desde 2017.
+
+**Publicação de extorsão.** Nenhum link para site de vazamento sai daqui — publicar rota para um
+leak site é distribuir a extorsão, não noticiá-la. O texto escrito pelo grupo criminoso também não
+sai. A vítima é nomeada, como fazem os rastreadores públicos, sempre rotulada como reivindicação
+**não verificada**: grupos inflam listas e reciclam vítimas antigas.
+
 ## Operação
 
 ```bash
