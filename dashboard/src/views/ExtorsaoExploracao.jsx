@@ -18,21 +18,88 @@ import SeloFrescor from '../components/SeloFrescor.jsx'
  *     ransomware.
  */
 
-function Painel({ titulo, children, nota, borda }) {
+/**
+ * Cor por severidade, não por decoração. A regra é a mesma nos três gráficos:
+ * vermelho = o que exige atenção primeiro; âmbar = intermediário; azul = base.
+ * Pintar tudo de vermelho, como estava, gasta o único recurso visual que
+ * deveria significar "olhe aqui" e não distingue nada.
+ */
+function corPorIntensidade(valor, maximo) {
+  if (!maximo) return palette.azul
+  const proporcao = valor / maximo
+  if (proporcao >= 0.5) return palette.vermelho
+  if (proporcao >= 0.25) return palette.ambar
+  return palette.azul
+}
+
+const RANSOMWARE_LIVE = 'https://www.ransomware.live'
+
+/** Abre a fonte numa aba nova, sem passar referrer. */
+function abrirFonte(url) {
+  if (!url) return
+  window.open(url, '_blank', 'noopener,noreferrer')
+}
+
+function Painel({ titulo, children, nota, borda, fonteUrl, fonteRotulo }) {
   return (
     <div className="painel" style={borda ? { borderLeft: `3px solid ${borda}` } : undefined}>
-      {titulo && <h3 style={{ margin: '0 0 12px', fontSize: 14, color: palette.txtTitulo }}>{titulo}</h3>}
+      {titulo && (
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, marginBottom: 12 }}>
+          <h3 style={{ margin: 0, fontSize: 14, color: palette.txtTitulo }}>{titulo}</h3>
+          {fonteUrl && (
+            <a href={fonteUrl} target="_blank" rel="noopener noreferrer"
+              style={{ color: palette.azul, fontSize: 11.5, whiteSpace: 'nowrap', textDecoration: 'none' }}>
+              {fonteRotulo ?? 'ver fonte'} ↗
+            </a>
+          )}
+        </div>
+      )}
       {children}
       {nota && <p style={{ color: palette.txtSec, fontSize: 12, margin: '10px 0 0', lineHeight: 1.5 }}>{nota}</p>}
     </div>
   )
 }
 
+/** Legenda das cores — sem ela, a variação vira enfeite sem significado. */
+function LegendaSeveridade({ criterio }) {
+  const itens = [
+    { cor: palette.vermelho, rotulo: 'crítico' },
+    { cor: palette.ambar, rotulo: 'intermediário' },
+    { cor: palette.azul, rotulo: 'base' },
+  ]
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 14, marginBottom: 10 }}>
+      {itens.map((i) => (
+        <span key={i.rotulo} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11.5, color: palette.txtSec }}>
+          <span aria-hidden="true" style={{ width: 10, height: 10, borderRadius: 2, background: i.cor, flexShrink: 0 }} />
+          {i.rotulo}
+        </span>
+      ))}
+      {criterio && <span style={{ fontSize: 11.5, color: palette.txtSec }}>— {criterio}</span>}
+    </div>
+  )
+}
+
 function SerieMensal({ serie }) {
+  // A média exclui o mês corrente, que ainda está em curso — incluí-lo puxaria
+  // a referência para baixo e faria meses normais parecerem picos.
+  const fechados = serie.slice(0, -1)
+  const media = fechados.length
+    ? fechados.reduce((s, m) => s + m.vitimas, 0) / fechados.length
+    : 0
+
   const option = {
     ...echartsTheme,
-    grid: { left: 40, right: 16, top: 20, bottom: 40, containLabel: true },
-    tooltip: { trigger: 'axis' },
+    grid: { left: 40, right: 16, top: 30, bottom: 40, containLabel: true },
+    tooltip: {
+      trigger: 'axis',
+      formatter: (p) => {
+        const d = p[0]
+        const emCurso = d.dataIndex === serie.length - 1
+        return `${serie[d.dataIndex].mes}<br/><strong>${d.value}</strong> vítimas`
+          + (emCurso ? '<br/><em>mês em curso</em>' : `<br/>média dos fechados: ${media.toFixed(0)}`)
+      },
+    },
     xAxis: {
       type: 'category',
       data: serie.map((m) => m.mes.slice(5) + '/' + m.mes.slice(2, 4)),
@@ -48,25 +115,57 @@ function SerieMensal({ serie }) {
     series: [
       {
         type: 'bar',
-        data: serie.map((m, i) => ({
-          value: m.vitimas,
-          // O mês corrente ainda está em curso: pintar igual aos fechados
-          // sugeriria uma queda que é só do calendário.
-          itemStyle: { color: i === serie.length - 1 ? palette.txtSec : palette.vermelho },
-        })),
+        data: serie.map((m, i) => {
+          // Mês corrente em cinza: ainda está em curso, e pintá-lo como os
+          // fechados sugeriria uma queda que é só do calendário.
+          if (i === serie.length - 1) return { value: m.vitimas, itemStyle: { color: palette.txtSec } }
+          // Acima da média = mês pior que o normal do setor.
+          const cor = m.vitimas > media * 1.25
+            ? palette.vermelho
+            : m.vitimas >= media * 0.75
+              ? palette.ambar
+              : palette.azul
+          return { value: m.vitimas, itemStyle: { color: cor } }
+        }),
         barMaxWidth: 34,
+        markLine: media
+          ? {
+              silent: true,
+              symbol: 'none',
+              lineStyle: { color: palette.txtSec, type: 'dashed', width: 1 },
+              label: { formatter: 'média', color: palette.txtSec, fontSize: 10, position: 'insideEndTop' },
+              data: [{ yAxis: Math.round(media) }],
+            }
+          : undefined,
       },
     ],
   }
   return <ReactECharts option={option} style={{ height: 260, width: '100%' }} opts={{ renderer: 'svg' }} />
 }
 
-function BarrasHorizontais({ dados, campoNome, campoValor, cor }) {
+/**
+ * Barras horizontais clicáveis.
+ *
+ * `corDe(item, maximo)` decide a cor por severidade; `linkDe(item)` devolve a
+ * URL da fonte daquela barra. Clicar abre a página da fonte — é o caminho mais
+ * curto entre "este grupo lidera" e "quem é este grupo".
+ */
+function BarrasHorizontais({ dados, campoNome, campoValor, corDe, linkDe, alturaPorItem = 30 }) {
   const top = [...dados].slice(0, 8).reverse()
+  const maximo = Math.max(...top.map((d) => d[campoValor]), 0)
+  const clicavel = typeof linkDe === 'function'
+
   const option = {
     ...echartsTheme,
-    grid: { left: 8, right: 44, top: 8, bottom: 8, containLabel: true },
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    grid: { left: 8, right: 52, top: 8, bottom: 8, containLabel: true },
+    tooltip: {
+      trigger: 'item',
+      formatter: (p) => {
+        const item = top[p.dataIndex]
+        const base = `<strong>${item[campoNome]}</strong><br/>${item[campoValor]} vítimas`
+        return clicavel && linkDe(item) ? `${base}<br/><em>clique para abrir a fonte</em>` : base
+      },
+    },
     xAxis: {
       type: 'value',
       axisLine: { lineStyle: { color: palette.borda } },
@@ -82,14 +181,26 @@ function BarrasHorizontais({ dados, campoNome, campoValor, cor }) {
     series: [
       {
         type: 'bar',
-        data: top.map((d) => d[campoValor]),
-        itemStyle: { color: cor ?? palette.roxo },
+        data: top.map((d) => ({
+          value: d[campoValor],
+          itemStyle: { color: corDe ? corDe(d, maximo) : corPorIntensidade(d[campoValor], maximo) },
+        })),
         barMaxWidth: 16,
+        cursor: clicavel ? 'pointer' : 'default',
         label: { show: true, position: 'right', color: palette.txtSec, fontSize: 11 },
+        emphasis: { itemStyle: { opacity: 0.75 } },
       },
     ],
   }
-  return <ReactECharts option={option} style={{ height: 250, width: '100%' }} opts={{ renderer: 'svg' }} />
+
+  return (
+    <ReactECharts
+      option={option}
+      style={{ height: Math.max(200, top.length * alturaPorItem), width: '100%' }}
+      opts={{ renderer: 'svg' }}
+      onEvents={clicavel ? { click: (p) => abrirFonte(linkDe(top[p.dataIndex])) } : undefined}
+    />
+  )
 }
 
 function TabelaVitimas({ vitimas, destacarBrasil }) {
@@ -119,8 +230,23 @@ function TabelaVitimas({ vitimas, destacarBrasil }) {
                 {destacarBrasil && v.pais === 'BR' && <span style={{ marginRight: 6 }}>🇧🇷</span>}
                 {v.vitima}
               </td>
-              <td style={{ padding: '8px 10px', color: palette.vermelho, whiteSpace: 'nowrap' }}>{v.grupo}</td>
-              <td style={{ padding: '8px 10px', color: palette.txtSec, whiteSpace: 'nowrap' }}>{v.pais || '—'}</td>
+              <td style={{ padding: '8px 10px', whiteSpace: 'nowrap' }}>
+                {/* Link para o perfil do grupo — nunca para o site de vazamento. */}
+                <a href={`${RANSOMWARE_LIVE}/group/${encodeURIComponent(v.grupo)}`}
+                  target="_blank" rel="noopener noreferrer"
+                  style={{ color: palette.vermelho, textDecoration: 'none', borderBottom: `1px dotted ${palette.vermelho}` }}>
+                  {v.grupo}
+                </a>
+              </td>
+              <td style={{ padding: '8px 10px', color: palette.txtSec, whiteSpace: 'nowrap' }}>
+                {v.pais ? (
+                  <a href={`${RANSOMWARE_LIVE}/country/${encodeURIComponent(v.pais)}`}
+                    target="_blank" rel="noopener noreferrer"
+                    style={{ color: palette.txtSec, textDecoration: 'none', borderBottom: `1px dotted ${palette.borda}` }}>
+                    {v.pais}
+                  </a>
+                ) : '—'}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -146,7 +272,12 @@ function TabelaKev({ vulns }) {
         <tbody>
           {vulns.map((v) => (
             <tr key={v.cve} style={{ borderBottom: `1px solid ${palette.borda}` }}>
-              <td style={{ padding: '8px 10px', fontFamily: 'ui-monospace, monospace', color: palette.azul, whiteSpace: 'nowrap' }}>{v.cve}</td>
+              <td style={{ padding: '8px 10px', fontFamily: 'ui-monospace, monospace', whiteSpace: 'nowrap' }}>
+                <a href={`https://nvd.nist.gov/vuln/detail/${v.cve}`} target="_blank" rel="noopener noreferrer"
+                  style={{ color: palette.azul, textDecoration: 'none', borderBottom: `1px dotted ${palette.azul}` }}>
+                  {v.cve}
+                </a>
+              </td>
               <td style={{ padding: '8px 10px', color: palette.txtCorpo, whiteSpace: 'nowrap' }}>{v.fornecedor}</td>
               <td style={{ padding: '8px 10px', color: palette.txtSec, maxWidth: 260, overflow: 'hidden', textOverflow: 'ellipsis' }} title={v.produto}>{v.produto}</td>
               <td style={{ padding: '8px 10px', color: palette.txtSec, whiteSpace: 'nowrap' }}>
@@ -244,26 +375,42 @@ function ExtorsaoExploracao() {
 
           <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', marginTop: 16 }}>
             <Painel titulo="Vítimas financeiras por mês (12 meses)"
-              nota="O mês corrente aparece em cinza porque ainda está em curso — pintá-lo igual aos fechados sugeriria uma queda que é só do calendário. Série legítima: o arquivo setorial da fonte é completo desde 2017, não um dump rolante.">
+              fonteUrl={RANSOMWARE_LIVE} fonteRotulo="ransomware.live"
+              nota="Vermelho marca os meses acima da média do período; cinza é o mês corrente, ainda em curso — pintá-lo como os fechados sugeriria uma queda que é só do calendário. Série legítima: o arquivo setorial da fonte é completo desde 2017, não um dump rolante.">
+              <LegendaSeveridade criterio="comparação com a média dos meses fechados" />
               <SerieMensal serie={ext.serieMensal} />
             </Painel>
-            <Painel titulo={`Grupos mais ativos contra o setor (${ext.janelaDias} dias)`}>
-              <BarrasHorizontais dados={ext.porGrupo} campoNome="grupo" campoValor="vitimas" cor={palette.vermelho} />
+            <Painel titulo={`Grupos mais ativos contra o setor (${ext.janelaDias} dias)`}
+              fonteUrl={`${RANSOMWARE_LIVE}/groups`} fonteRotulo="todos os grupos"
+              nota="Clique numa barra para abrir o perfil do grupo no ransomware.live — histórico de vítimas, setores e período de atividade.">
+              <LegendaSeveridade criterio="volume relativo ao grupo mais ativo" />
+              <BarrasHorizontais
+                dados={ext.porGrupo} campoNome="grupo" campoValor="vitimas"
+                linkDe={(d) => `${RANSOMWARE_LIVE}/group/${encodeURIComponent(d.grupo)}`}
+              />
             </Painel>
           </div>
 
           <div className="grid" style={{ gridTemplateColumns: 'minmax(280px, 1fr) minmax(340px, 2fr)', marginTop: 16 }}>
-            <Painel titulo="Concentração por país">
-              <BarrasHorizontais dados={ext.porPais} campoNome="pais" campoValor="vitimas" cor={palette.roxo} />
+            <Painel titulo="Concentração por país"
+              nota="O Brasil aparece sempre em vermelho — é a exposição que interessa a este painel, independentemente do volume. Clique para abrir o país no ransomware.live.">
+              <BarrasHorizontais
+                dados={ext.porPais} campoNome="pais" campoValor="vitimas"
+                corDe={(d, max) => (d.pais === 'BR' ? palette.vermelho : corPorIntensidade(d.vitimas, max) === palette.vermelho ? palette.ambar : palette.azul)}
+                linkDe={(d) => (d.pais && d.pais !== '??' ? `${RANSOMWARE_LIVE}/country/${encodeURIComponent(d.pais)}` : null)}
+              />
             </Painel>
-            <Painel titulo={`Vítimas reivindicadas (${ext.janelaDias} dias)`}>
+            <Painel titulo={`Vítimas reivindicadas (${ext.janelaDias} dias)`}
+              fonteUrl={RANSOMWARE_LIVE} fonteRotulo="ransomware.live"
+              nota="O grupo e o país levam à fonte. Não há link para o site de vazamento — publicar rota para leak site é distribuir a extorsão, não noticiá-la.">
               <TabelaVitimas vitimas={ext.vitimas} destacarBrasil />
             </Painel>
           </div>
 
           {ext.vitimasBrasil?.length > 0 && (
             <div style={{ marginTop: 16 }}>
-              <Painel titulo="Recorte Brasil — histórico completo do arquivo" borda={palette.verde}
+              <Painel titulo="Recorte Brasil — histórico completo do arquivo" borda={palette.vermelho}
+                fonteUrl={`${RANSOMWARE_LIVE}/country/BR`} fonteRotulo="Brasil no ransomware.live"
                 nota="Todas as vítimas brasileiras do setor financeiro registradas pela fonte desde 2017. O volume baixo é informativo: reflete tanto menor incidência quanto menor cobertura das fontes abertas sobre o Brasil.">
                 <TabelaVitimas vitimas={ext.vitimasBrasil} />
               </Painel>
@@ -301,7 +448,8 @@ function ExtorsaoExploracao() {
 
           <div style={{ marginTop: 16 }}>
             <Painel titulo={`Adições recentes ao catálogo (${kev.janelaDias} dias)`}
-              nota="Ordenadas da mais recente. A coluna Ransomware marca as que já apareceram em campanha conhecida.">
+              fonteUrl="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" fonteRotulo="catálogo KEV"
+              nota="Ordenadas da mais recente. A coluna Ransomware marca as que já apareceram em campanha conhecida. Cada CVE leva à ficha completa no NVD.">
               <TabelaKev vulns={kev.recentes} />
             </Painel>
           </div>
