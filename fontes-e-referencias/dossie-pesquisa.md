@@ -1413,6 +1413,49 @@ em 2026-07-21.
     inteligência. A atribuição ao Estado russo é feita pelo governo dos EUA (indiciamento formal do DOJ) e por
     múltiplos fornecedores privados — grau de confirmação mais alto que os demais itens de atribuição desta seção.
 
+### Caso — Sandworm e a campanha contra o setor eólico e de cogeração da Polônia (dez/2025; segunda instalação revelada em ago/2026)
+
+- **Dado:** em **29 de dezembro de 2025**, uma campanha atribuída ao Sandworm comprometeu cerca de **30 instalações
+  eólicas e solares** na Polônia através de um dispositivo FortiGate (firewall/VPN) exposto à internet sem MFA em
+  uma delas. A partir desse ponto de apoio, os atacantes localizaram um roteador celular Teltonika RUTX50
+  conectado a uma **APN (Access Point Name) privada** operada pela distribuidora local, usaram-na para alcançar
+  uma usina de cogeração (CHP) que fornece calor a cerca de **50 mil residentes**, e — após cerca de uma semana de
+  reconhecimento — colocaram os CLPs Siemens da planta em modo STOP, desligando uma turbina a vapor e a estação de
+  tratamento de água do processo. O fornecimento de calor e eletricidade à população não foi interrompido; a
+  equipe da usina restabeleceu os sistemas rapidamente. O CERT Polska classificou esse vetor — pivô de TI para OT
+  por meio de uma APN celular privada compartilhada entre instalações não relacionadas do mesmo operador de
+  telecomunicações — como o **primeiro caso conhecido documentado** desse tipo de movimento lateral contra uma
+  rede OT. Em **9 de agosto de 2026**, na conferência DEF CON, o CERT Polska (Marcin Dudek) revelou que uma
+  **segunda instalação** — outra usina de aquecimento/cogeração menor, também alcançável a partir da mesma APN
+  privada — havia sido comprometida pela mesma campanha: a partir de **18 de dezembro de 2025**, os atacantes
+  varreram a rede em busca de VNC, HTTP e protocolos industriais (S7, Modbus) até encontrar um controlador
+  **WAGO PFC200** com credenciais administrativas padrão ainda ativas, usado como ponte para o SCADA da planta
+  **11 dias antes** da sabotagem. A análise dessa segunda instalação levou mais de três meses e, por isso, ficou de
+  fora do relatório inicial de janeiro de 2026.
+  - Fonte 1: ESET WeLiveSecurity. *ESET Research: Sandworm behind cyberattack on Poland's power grid in late
+    2025*. Janeiro de 2026.
+    https://www.welivesecurity.com/en/eset-research/eset-research-sandworm-cyberattack-poland-power-grid-late-2025/
+  - Fonte 2 (secundária, cobertura técnica independente sobre a divulgação da segunda instalação em ago/2026):
+    SecurityWeek. *Novel Private APN Pivot Let Hackers Sabotage Second Polish Energy Facility*. Agosto de 2026.
+    https://www.securityweek.com/novel-private-apn-pivot-let-hackers-sabotage-second-polish-energy-facility/
+    (ver também TheHackerNews, *Hackers Breach Polish Power Plant Controls via Private Cellular Network and Shut
+    Turbine*, agosto de 2026, https://thehackernews.com/2026/08/hackers-breach-polish-power-plant.html, e Help Net
+    Security, *Previously unseen entry vector used to breach Polish energy plant*, agosto de 2026,
+    https://www.helpnetsecurity.com/2026/08/11/poland-energy-sector-cyberattack-heating-plant-private-apn/)
+  - Observações: **atribuição contestada e registrada explicitamente** — a ESET (e, segundo cobertura de imprensa,
+    também a Dragos) associam a campanha ao Sandworm (GRU); já o CERT Polska, em atribuição própria, nomeou o ator
+    como **Static Tundra** (ligado ao FSB russo, Centro 16) — os nomes não são sinônimos em nenhuma taxonomia
+    consultada nesta pesquisa, e ambas as atribuições são registradas lado a lado sem escolher uma "vencedora".
+    Há também **divergência sobre a escala populacional** associada à distribuidora: uma linha de cobertura cita
+    a usina-alvo como responsável por "50 mil residentes", outra menciona o conjunto de instalações da região como
+    atendendo a "quase meio milhão de consumidores" — não ficou claro, nas fontes consultadas, se o número maior se
+    refere apenas à usina do incidente ou à área de concessão mais ampla da distribuidora — **[NÃO CONFIRMADO —
+    escala exata da população atendida pela usina-alvo não arbitrada com precisão em 2026-08-13]**. Este é o
+    primeiro caso incorporado a este dossiê como *novo incidente-marco* desde a pesquisa original de 2026-07-21,
+    identificado no refresh de 2026-08-13 e atendendo à regra de duas fontes independentes.
+
+---
+
 ### Grupos/APTs — Volt Typhoon / VOLTZITE (pré-posicionamento em infraestrutura crítica dos EUA)
 
 - **Dado:** em **7 de fevereiro de 2024**, CISA, NSA e FBI publicaram um advisório conjunto ("AA24-038A") alertando
@@ -1618,6 +1661,7 @@ em 2026-07-21.
 | Pipedream/Incontroller — Chernovite (2022) | Framework modular; sem uso ativo confirmado em 2022 | CISA/FBI/NSA/DOE advisory conjunto | Confirmado (2 fontes) |
 | FrostyGoop — Lviv, Ucrânia (jan/2024) | 600+ prédios; ~2 dias sem aquecimento | Dragos | Confirmado (2 fontes) |
 | Colonial Pipeline — ransomware (mai/2021) | Resgate 75 BTC (~USD 4,4 mi); ~45% do combustível da Costa Leste | DOE/CESER | Confirmado (2 fontes) |
+| Sandworm/Static Tundra — usinas eólicas/CHP Polônia (dez/2025; 2ª instalação rev. ago/2026) | ~30 instalações; turbina a vapor e ETA de usina CHP (50 mil residentes) desligadas; sem impacto à população | ESET WeLiveSecurity / SecurityWeek | Confirmado (2 fontes); atribuição de ator contestada (Sandworm vs. Static Tundra) |
 | Volt Typhoon/VOLTZITE — caso LELWD (Massachusetts) | ~300 dias de permanência (fev–nov/2023) | CISA AA24-038A / Dragos (via SecurityWeek) | Confirmado (2 fontes) |
 | ANEEL — marco regulatório cibersegurança | RN nº 964/2021 (14/12/2021, vigência 1/7/2022) | ANEEL (texto oficial) | Confirmado (2 fontes); divergência de 4 dias em fonte terciária descartada |
 | ANEEL — fiscalização RN 964/2021 | Prazo até 30/6/2025 (Despacho nº 427/2025) | ANEEL | Confirmado (2 fontes) |

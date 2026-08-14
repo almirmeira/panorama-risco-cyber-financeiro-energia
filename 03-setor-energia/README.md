@@ -150,6 +150,7 @@ fonte que a fez, nunca tratada como fato único e definitivo.
 | 2022 (8/4)       | Industroyer2 — tentativa de apagão contra distribuidora ucraniana | Sandworm, segundo ESET e CERT-UA [22][23]                              | ~2 milhões de pessoas na área de cobertura; apagão evitado por intervenção do CERT-UA |
 | 2022 (13/4)      | Pipedream / Incontroller — *framework* modular contra PLCs      | CHERNOVITE, segundo Dragos (alta confiança); Mandiant nota consistência com interesse histórico russo [24][25] | Sem uso ativo confirmado até a data do advisório conjunto CISA/FBI/NSA/DOE          |
 | 2024 (jan.; identificado em abr.) | FrostyGoop — interrupção de aquecimento distrital em Lviv, Ucrânia | Não identificado — nenhuma atribuição de grupo de ameaça localizada, segundo Dragos [26][27] | Mais de 600 prédios residenciais; ~2 dias sem aquecimento em temperaturas negativas   |
+| 2025 (29/12); 2ª instalação revelada em 9/8/2026 | Pivô por APN celular privada — de parque eólico a usina de cogeração (CHP) na Polônia | Sandworm, segundo ESET (Dragos também associa); Static Tundra/FSB, segundo CERT Polska — atribuição contestada [48][49] | ~30 instalações eólicas/solares comprometidas; turbina a vapor e estação de tratamento de água de usina CHP (50 mil residentes) desligadas por sabotagem; sem interrupção ao público; 1º caso documentado de pivô TI→OT via APN privada |
 
 O padrão histórico é revelador: o ataque de 2015 dependeu de acesso manual a interfaces homem-máquina
 (HMI) após meses de *spear-phishing* e movimento lateral da rede de TI corporativa até o SCADA; o
@@ -163,6 +164,15 @@ fevereiro de 2022 [22][23]. O caso Colonial Pipeline ilustra um padrão distinto
 comprometimento nunca atingiu diretamente os sistemas de controle do duto — o acesso inicial ocorreu por
 uma conta VPN desativada mas ainda válida, sem MFA — mas a resposta prudente da empresa foi desligar
 proativamente a operação física, uma distinção às vezes obscurecida na cobertura popular do caso [20][21].
+O caso mais recente da tabela, na Polônia, estende esse padrão de pivô TI→OT a um vetor até então inédito: em
+29 de dezembro de 2025 um firewall/VPN FortiGate exposto à internet, sem MFA, em um parque eólico serviu de
+ponto de apoio para os atacantes alcançarem, via um roteador celular Teltonika conectado a uma **APN privada**
+da distribuidora local, uma usina de cogeração (CHP) não relacionada, onde CLPs Siemens foram colocados em
+modo STOP. O CERT Polska classificou esse movimento — pivô entre instalações sem relação direta, unidas apenas
+por compartilharem a mesma rede celular privada de um operador — como o primeiro caso documentado desse tipo.
+Em 9 de agosto de 2026, no DEF CON, o CERT Polska revelou que uma segunda instalação menor havia sido
+comprometida pela mesma campanha por meio de um controlador WAGO PFC200 com credenciais padrão, achado cuja
+análise levou mais de três meses e por isso ficou fora do relatório original de janeiro de 2026 [48][49].
 
 ### Atores relevantes: Sandworm/ELECTRUM e Volt Typhoon/VOLTZITE
 
@@ -460,3 +470,10 @@ https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are
 
 [47] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
 https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/
+
+[48] ESET WeLiveSecurity. *ESET Research: Sandworm behind cyberattack on Poland's power grid in late 2025*.
+Janeiro de 2026.
+https://www.welivesecurity.com/en/eset-research/eset-research-sandworm-cyberattack-poland-power-grid-late-2025/
+
+[49] SecurityWeek. *Novel Private APN Pivot Let Hackers Sabotage Second Polish Energy Facility*. Agosto de
+2026. https://www.securityweek.com/novel-private-apn-pivot-let-hackers-sabotage-second-polish-energy-facility/
