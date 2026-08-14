@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Painel de risco cibernético — setor financeiro">
+  <title>score.cecyber.com — Painel de Risco Cibernético</title>
+
+  <!-- Fundo próprio, não transparente: a aba do navegador pode ser clara ou
+       escura, e ícone sem fundo desaparece numa das duas. #0d1117 é a base da
+       paleta canônica do projeto. Sem borda interna: a 16px ela vira um anel
+       cinza sujo em volta de tudo, custando pixels que o gauge precisa. -->
+  <rect width="64" height="64" rx="14" fill="#0d1117"/>
+
+  <!-- Gauge de risco: elemento-assinatura do painel e significado literal de
+       "score". Os três arcos são o semáforo canônico do repositório. Raio e
+       traço dimensionados pelo teste de 16px, não pela estética a 512px —
+       arco fino simplesmente morre em tamanho de aba. -->
+  <g fill="none" stroke-width="9.5" stroke-linecap="round">
+    <path d="M 10.5 41 A 21.5 21.5 0 0 1 21.25 22.38" stroke="#3fb950"/>
+    <path d="M 21.25 22.38 A 21.5 21.5 0 0 1 42.75 22.38" stroke="#e3b341"/>
+    <path d="M 42.75 22.38 A 21.5 21.5 0 0 1 53.5 41" stroke="#f85149"/>
+  </g>
+
+  <!-- Ponteiro em 50°, que num arco de 180° corresponde a ~72/100 — o mesmo
+       score "Elevado" que o painel atribui hoje ao setor financeiro. O ícone
+       carrega a conclusão, não só o assunto. Curto de propósito: se encostar
+       no arco, a 16px o vermelho e o branco viram uma mancha só. -->
+  <line x1="32" y1="41" x2="39.6" y2="31.9" stroke="#e6edf3" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="32" cy="41" r="5.5" fill="#e6edf3"/>
+  <circle cx="32" cy="41" r="2.1" fill="#0d1117"/>
+</svg>

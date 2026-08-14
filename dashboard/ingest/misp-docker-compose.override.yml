@@ -1,0 +1,26 @@
+# Teto de memoria: a VM 41 tambem serve o score.cecyber.com em nginx.
+# Sem isto, um pico do MISP poderia levar o OOM-killer a derrubar a vitrine.
+services:
+  db:
+    mem_limit: 1500m
+  misp-core:
+    mem_limit: 2500m
+    # O healthcheck padrao do misp-docker sonda a si mesmo pelo BASE_URL
+    # EXTERNO (https://192.168.20.41:8443). De dentro do container, alcancar a
+    # propria porta publicada pelo IP do host exigiria hairpin NAT, que o
+    # Docker nao faz por padrao — entao o probe trava ate estourar o timeout,
+    # qualquer que seja ele, e o container fica eternamente "unhealthy"
+    # servindo HTTP 200 normalmente. Medido nesta VM:
+    #   https://192.168.20.41:8443/users/heartbeat -> 000 apos 8s
+    #   https://127.0.0.1/users/heartbeat          -> 200 em 0,034s
+    # A correcao e sondar o proprio servico, nao o endereco publicado.
+    healthcheck:
+      test: ["CMD-SHELL", "curl -ksf -o /dev/null https://127.0.0.1/users/heartbeat || exit 1"]
+      timeout: 10s
+      interval: 30s
+      retries: 5
+      start_period: 120s
+  redis:
+    mem_limit: 256m
+  misp-modules:
+    mem_limit: 768m

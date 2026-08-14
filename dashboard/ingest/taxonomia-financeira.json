@@ -1,0 +1,219 @@
+{
+  "_doc": {
+    "proposito": "Define o que este projeto considera um indicador 'do setor financeiro'. É o critério de recorte da camada operacional do painel — precisa ser auditável, porque é ele que sustenta a afirmação 'inteligência de ameaças para o setor financeiro'.",
+    "principio": "Nenhum IoC entra no recorte financeiro por heurística vaga. Ou a família de malware é reconhecidamente financeira (lista abaixo, com justificativa por entrada), ou o próprio dado carrega marcação setorial explícita da fonte (tag/taxonomia). Nada de inferir setor por palavra solta no domínio.",
+    "manutencao": "Ao acrescentar uma família, preencher 'justificativa' com o que ela faz e por que é financeira. Entrada sem justificativa não deve existir.",
+    "camposFamilia": {
+      "chaves": "nomes normalizados (minúsculas, sem pontuação) como aparecem em malpedia/ThreatFox/MISP galaxy",
+      "categoria": "banker | stealer | rat | atm-pos | loader",
+      "regiao": "br | latam | global",
+      "justificativa": "por que esta família é considerada do setor financeiro"
+    }
+  },
+
+  "familias": {
+    "grandoreiro": {
+      "nome": "Grandoreiro",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário brasileiro, um dos mais longevos e disseminados contra clientes de bancos no Brasil; opera por sobreposição de janelas falsas sobre o internet banking legítimo."
+    },
+    "mekotio": {
+      "nome": "Mekotio",
+      "categoria": "banker",
+      "regiao": "latam",
+      "justificativa": "Trojan bancário latino-americano da mesma linhagem do Grandoreiro; mira instituições financeiras de Brasil, México, Chile e Espanha."
+    },
+    "casbaneiro": {
+      "nome": "Casbaneiro",
+      "categoria": "banker",
+      "regiao": "latam",
+      "justificativa": "Trojan bancário LatAm (também chamado Metamorfo), com foco em roubo de credenciais de internet banking e de carteiras de criptomoeda."
+    },
+    "javali": {
+      "nome": "Javali",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário brasileiro que mira clientes de bancos no Brasil e no México, distribuído por e-mail com anexos MSI."
+    },
+    "guildma": {
+      "nome": "Guildma",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário brasileiro (associado ao Astaroth) com forte foco em instituições financeiras nacionais."
+    },
+    "astaroth": {
+      "nome": "Astaroth",
+      "categoria": "stealer",
+      "regiao": "br",
+      "justificativa": "Ladrão de credenciais amplamente usado em campanhas contra clientes bancários no Brasil; historicamente encadeado ao Guildma."
+    },
+    "coyote": {
+      "nome": "Coyote",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário brasileiro identificado em 2024, mirando dezenas de instituições financeiras nacionais e carteiras de cripto."
+    },
+    "banload": {
+      "nome": "Banload",
+      "categoria": "loader",
+      "regiao": "br",
+      "justificativa": "Downloader brasileiro histórico cuja função é entregar trojans bancários; sua presença é indício direto de campanha bancária."
+    },
+    "chaes": {
+      "nome": "Chaes",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Malware bancário que mirou clientes de e-commerce e bancos no Brasil, com roubo de credenciais via extensão de navegador."
+    },
+    "basbanke": {
+      "nome": "BasBanke",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário para Android voltado a usuários brasileiros, com captura de credenciais e de teclado."
+    },
+    "ousaban": {
+      "nome": "Ousaban",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário brasileiro da mesma família de campanhas LatAm, distribuído por instaladores falsos."
+    },
+    "prilex": {
+      "nome": "Prilex",
+      "categoria": "atm-pos",
+      "regiao": "br",
+      "justificativa": "Grupo/malware brasileiro especializado em fraude de ponto de venda e caixas eletrônicos, incluindo captura de dados de cartão e bloqueio de pagamento por aproximação."
+    },
+    "dridex": {
+      "nome": "Dridex",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Trojan bancário global de longa data, associado a fraude de transferência bancária e, mais tarde, à entrega de ransomware."
+    },
+    "trickbot": {
+      "nome": "TrickBot",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Originalmente trojan bancário derivado do Dyre; evoluiu para plataforma modular de acesso inicial em fraudes e ransomware."
+    },
+    "qakbot": {
+      "nome": "QakBot",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Trojan bancário (Qbot) com roubo de credenciais financeiras e uso posterior como vetor de acesso para ransomware."
+    },
+    "icedid": {
+      "nome": "IcedID",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Trojan bancário (BokBot) voltado a roubo de credenciais de internet banking e fraude financeira."
+    },
+    "gozi": {
+      "nome": "Gozi/Ursnif",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Uma das famílias bancárias mais antigas em atividade, com injeção web contra portais de internet banking."
+    },
+    "isfb": {
+      "nome": "Gozi/ISFB",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Variante da linhagem Gozi/Ursnif, mesma finalidade de fraude bancária."
+    },
+    "danabot": {
+      "nome": "DanaBot",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Trojan bancário modular com injeção web contra bancos e roubo de credenciais e carteiras."
+    },
+    "emotet": {
+      "nome": "Emotet",
+      "categoria": "loader",
+      "regiao": "global",
+      "justificativa": "Nasceu como trojan bancário e permaneceu como principal vetor de entrega de malware bancário e ransomware ao setor."
+    },
+    "zloader": {
+      "nome": "ZLoader",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Derivado do ZeuS, voltado a fraude bancária e, posteriormente, a acesso inicial para ransomware."
+    },
+    "ramnit": {
+      "nome": "Ramnit",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Trojan bancário com módulo de injeção web contra portais financeiros."
+    },
+    "zeus": {
+      "nome": "ZeuS",
+      "categoria": "banker",
+      "regiao": "global",
+      "justificativa": "Família bancária fundacional cujo código-fonte vazado originou boa parte dos bankers modernos."
+    },
+    "remcos": {
+      "nome": "Remcos",
+      "categoria": "rat",
+      "regiao": "br",
+      "justificativa": "RAT comercial abusado de forma intensa em campanhas de fraude financeira contra alvos brasileiros; incluído por prevalência observada no recorte BR, não por ser bancário por design."
+    },
+    "lumma": {
+      "nome": "Lumma Stealer",
+      "categoria": "stealer",
+      "regiao": "global",
+      "justificativa": "Ladrão de credenciais e carteiras cujo produto final alimenta fraude financeira e tomada de conta."
+    },
+    "vidar": {
+      "nome": "Vidar",
+      "categoria": "stealer",
+      "regiao": "global",
+      "justificativa": "Ladrão de credenciais bancárias, dados de cartão e carteiras de criptomoeda."
+    },
+    "redline": {
+      "nome": "RedLine Stealer",
+      "categoria": "stealer",
+      "regiao": "global",
+      "justificativa": "Ladrão de credenciais e dados financeiros amplamente comercializado, insumo de fraude e tomada de conta."
+    },
+    "raccoon": {
+      "nome": "Raccoon Stealer",
+      "categoria": "stealer",
+      "regiao": "global",
+      "justificativa": "Ladrão como serviço com coleta de credenciais bancárias e carteiras."
+    },
+    "agenttesla": {
+      "nome": "Agent Tesla",
+      "categoria": "stealer",
+      "regiao": "global",
+      "justificativa": "Ladrão de credenciais muito usado em fraude de comprometimento de e-mail corporativo, com impacto financeiro direto."
+    }
+  },
+
+  "fontesFinanceiras": {
+    "_doc": "Feeds cujo ESCOPO INTEIRO é financeiro, permitindo atribuição no nível da fonte. Existe porque o MISP importa feeds CSV como um evento agregado por feed, sem família por indicador — a atribuição por família fica cega para eles. Só entra aqui feed cujo escopo declarado seja inequivocamente financeiro; um feed de malware genérico NÃO entra, mesmo que muitos dos seus itens sejam bancários.",
+    "porTituloDeEvento": {
+      "feodo": {
+        "nome": "Feodo Tracker (C2 bancário)",
+        "categoria": "banker",
+        "regiao": "global",
+        "justificativa": "O Feodo Tracker do abuse.ch rastreia exclusivamente servidores de comando e controle de trojans bancários — Emotet, Dridex, TrickBot e QakBot. Todo indicador do feed é, por construção, infraestrutura de malware bancário; não há no feed conteúdo de outra natureza."
+      }
+    }
+  },
+
+  "tagsSetoriais": {
+    "_doc": "Marcações que, quando presentes no dado da fonte, já bastam para o recorte financeiro — independem da família.",
+    "prefixos": [
+      "sector:finance",
+      "sector:financial",
+      "misp-galaxy:sector=\"Finance\"",
+      "ms-caro-malware:malware-type=\"Trojan-Banker\"",
+      "ms-caro-malware-full:malware-type=\"Trojan-Banker\""
+    ],
+    "palavras": ["banker", "banking", "trojan-banker", "financial", "finance", "atm", "pos-malware", "carding"]
+  },
+
+  "tlpAceitos": {
+    "_doc": "Só estes níveis podem ser republicados no painel público. Qualquer outro (green, amber, red) é descartado na ingestão — ver seção de governança no spec.",
+    "valores": ["tlp:white", "tlp:clear", "white", "clear"]
+  }
+}
