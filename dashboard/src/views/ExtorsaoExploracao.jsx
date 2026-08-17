@@ -393,7 +393,11 @@ function ExtorsaoExploracao() {
 
           <div className="grid" style={{ gridTemplateColumns: 'minmax(280px, 1fr) minmax(340px, 2fr)', marginTop: 16 }}>
             <Painel titulo="Concentração por país"
-              nota="O Brasil aparece sempre em vermelho — é a exposição que interessa a este painel, independentemente do volume. Clique para abrir o país no ransomware.live.">
+              nota={`O Brasil aparece sempre em vermelho — é a exposição que interessa a este painel, independentemente do volume. Clique para abrir o país no ransomware.live.${
+                ext.semPais
+                  ? ` ${ext.semPais} ${ext.semPais === 1 ? 'vítima da janela não tem' : 'vítimas da janela não têm'} país informado na fonte e ${ext.semPais === 1 ? 'ficou' : 'ficaram'} fora do gráfico: são reivindicações que o rastreador não conseguiu localizar, não um país.`
+                  : ''
+              }`}>
               <BarrasHorizontais
                 dados={ext.porPais} campoNome="pais" campoValor="vitimas"
                 corDe={(d, max) => (d.pais === 'BR' ? palette.vermelho : corPorIntensidade(d.vitimas, max) === palette.vermelho ? palette.ambar : palette.azul)}

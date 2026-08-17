@@ -865,8 +865,16 @@ def main():
             "brasilHistorico": sum(1 for v in extorsao_hist if v["pais"] == "BR"),
             "porGrupo": [{"grupo": g, "vitimas": n} for g, n in
                          Counter(v["grupo"] for v in extorsao_fin).most_common(10)],
-            "porPais": [{"pais": p or "??", "vitimas": n} for p, n in
-                        Counter(v["pais"] for v in extorsao_fin).most_common(12)],
+            # Só países de verdade entram no ranking. A fonte deixa `country`
+            # vazio quando não conseguiu classificar a vítima (6 das 110 da
+            # janela, em agosto/2026), e o balde de vazios chegava ao gráfico
+            # como "??" — competindo por posição com países reais e inflando em
+            # um o KPI "países atingidos", que conta esta lista. "??" na tela
+            # também lê como defeito de software, não como informação. O total
+            # não medido vira número declarado abaixo, em vez de virar categoria.
+            "porPais": [{"pais": p, "vitimas": n} for p, n in
+                        Counter(v["pais"] for v in extorsao_fin if v["pais"]).most_common(12)],
+            "semPais": sum(1 for v in extorsao_fin if not v["pais"]),
             "serieMensal": serie_mensal_extorsao(extorsao_hist),
             "vitimas": extorsao_fin[:40],
             "vitimasBrasil": [v for v in sorted(
