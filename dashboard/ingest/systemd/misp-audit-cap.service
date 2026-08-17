@@ -1,0 +1,12 @@
+[Unit]
+Description=Teto de 1 GiB para a tabela audit_logs do MISP (score.cecyber.com)
+Documentation=https://github.com/almirmeira/panorama-risco-cyber-financeiro-energia
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+# Precisa de root: fala com o socket do Docker e le o .ibd dentro do volume.
+User=root
+Environment=MISP_AUDIT_CAP_BYTES=1073741824
+ExecStart=/usr/local/sbin/misp-audit-cap.sh

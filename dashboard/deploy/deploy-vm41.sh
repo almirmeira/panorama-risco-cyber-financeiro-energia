@@ -49,6 +49,8 @@ KEEP_BACKUPS=5
 FORCE=0
 [ "${1:-}" = "--force" ] && FORCE=1
 
+ESPACO_MINIMO_MB="${ESPACO_MINIMO_MB:-1024}"   # abaixo disto o build e o git nem começam
+
 log() { printf '%s | %s\n' "$(TZ=America/Sao_Paulo date '+%Y-%m-%d %H:%M:%S %Z')" "$*" | tee -a "$LOG_FILE"; }
 die() { log "ERRO: $*"; exit 1; }
 
@@ -57,6 +59,22 @@ exec 9>"$LOCK_FILE"
 flock -n 9 || { log "outra execução em andamento; abortando"; exit 0; }
 
 log "=== início do ciclo de atualização ==="
+
+# --- 0. Espaço em disco --------------------------------------------------------
+# Em 2026-08-14 o disco da VM encheu (a tabela audit_logs do MISP passou de
+# 9 GB) e este script passou dois dias falhando com "git reset falhou" — uma
+# mensagem que não aponta para a causa nenhuma vez. Checar antes e dizer o
+# número transforma dois dias de painel congelado em uma linha de log óbvia.
+ESPACO_MB="$(df -Pm / | awk 'NR==2 {print $4}')"
+log "espaço livre em /: ${ESPACO_MB} MB"
+if [ "${ESPACO_MB:-0}" -lt "$ESPACO_MINIMO_MB" ]; then
+  # `sudo -n` porque o cron roda sem tty; sem privilégio o du não enxerga
+  # /var/lib/docker (justamente onde mora o banco do MISP, o suspeito nº 1) e
+  # relataria 242 MB onde há 12 GB — pior que não relatar nada.
+  OCUPANTES="$(sudo -n du -xh --max-depth=1 /var/lib 2>/dev/null | sort -rh | head -4 | tr '\n' ' ')"
+  [ -n "$OCUPANTES" ] || OCUPANTES="(sem privilégio para medir /var/lib)"
+  die "disco quase cheio (${ESPACO_MB} MB livres, mínimo ${ESPACO_MINIMO_MB} MB). Maiores ocupantes: ${OCUPANTES}"
+fi
 
 # --- 1. Atualiza o repositório ------------------------------------------------
 cd "$REPO_DIR"
