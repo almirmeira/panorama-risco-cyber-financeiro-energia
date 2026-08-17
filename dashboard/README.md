@@ -114,22 +114,37 @@ encontradas, caso a aplicação evolua para múltiplas rotas de navegador.
 
 ## Como atualizar os dados
 
-Todos os números, textos, níveis de semáforo e séries dos gráficos exibidos no painel vêm de um
-único arquivo:
+O painel tem **duas camadas de dado, com ciclos diferentes** — confundi-las é o erro mais provável
+para quem mexe aqui:
 
-```
-src/data/dashboard.json
-```
+| Camada | Arquivo | Quando muda | Vai ao ar |
+| :-- | :-- | :-- | :-- |
+| **Curada** (KPIs, semáforos, comparativos) | `src/data/dashboard.json`, embutido no build | a cada refresh de pesquisa (3 dias) | só com um build novo |
+| **Operacional** (Ameaças ao Vivo, Brasil, Extorsão & Exploração) | `/var/www/threat-live/threat-live.json`, lido em runtime | a cada 20 min, pela ingestão | sem rebuild — o SPA busca o arquivo |
 
-Cada item de dado é rastreável a um capítulo do repositório (campo `fonte`, ex.: `"cap. 02"`) e
-pode carregar a marcação `"estimativa": true` quando o número é uma estimativa ou está apenas
-parcialmente confirmado — a mesma convenção `⚠` usada no restante do dossiê.
+A camada operacional é produzida por [`ingest/`](ingest/) e **não** passa por este `npm run build`.
+Um painel publicado há três dias continua mostrando indicadores de vinte minutos atrás.
 
-Para atualizar o painel:
+### Camada curada — `src/data/dashboard.json`
 
-1. Edite `src/data/dashboard.json` (ajuste valores, adicione/altere KPIs, dimensões, séries etc.).
-2. Rode `npm run dev` para conferir visualmente o resultado antes de publicar.
-3. Rode `npm run build` para gerar um novo `dist/` com os dados atualizados.
+Cada item é rastreável a um capítulo do repositório (campo `fonte`, ex.: `"cap. 02"`) e pode
+carregar `"estimativa": true` quando o número é estimativa ou está parcialmente confirmado — a mesma
+convenção `⚠` do restante do dossiê.
+
+O bloco `meta` carrega **duas datas que não são a mesma coisa**:
+
+- `geradoEm` — quando um número do painel mudou pela última vez;
+- `verificadoEm` — quando as fontes foram varridas pela última vez, mesmo que nada tenha mudado.
+
+O carimbo do cabeçalho mostra as duas ("Verificado em X · dado de Y") sempre que diferem. Sem essa
+distinção, um ciclo saudável que conferiu tudo e não achou novidade fica indistinguível de uma
+rotina morta — foi exatamente a confusão que ocorreu em agosto de 2026.
+
+Para atualizar:
+
+1. Edite `src/data/dashboard.json` (valores, KPIs, dimensões, séries) e a data de `meta`.
+2. Rode `npm run dev` para conferir visualmente antes de publicar.
+3. Rode `npm run build` para gerar um novo `dist/`.
 4. Transfira o novo `dist/` para o servidor, conforme a seção anterior.
 
 Os passos acima descrevem a atualização **manual**. Em produção
@@ -139,13 +154,15 @@ Os passos acima descrevem a atualização **manual**. Em produção
 
 ## Atualização automática (score.cecyber.com)
 
-O painel público roda a edição `financeiro` e se mantém atualizado sozinho, em duas etapas
+O painel público roda a edição `financeiro` e se mantém atualizado sozinho, em etapas
 independentes:
 
 | Etapa | Onde roda | Quando | O que faz |
 |-------|-----------|--------|-----------|
-| **1. Refresh de pesquisa** | agente Claude Code em nuvem (`trig_01VWt1jLJSSwcxjwZLcLQrjN`) | a cada 3 dias, 20:00 (SP) | Reexecuta a pesquisa nas fontes primárias, atualiza dossiê, capítulos e `dashboard/src/data/dashboard.json`, abre PR e — apenas se as quatro validações passarem — faz merge na `main`. Qualquer validação que falhe deixa o PR aberto, sem merge. |
-| **2. Publicação** | VM 41 (`almir-projeto-vm1`), via cron | toda noite, 23:59 (SP) = `59 2 * * *` UTC | Se a `main` tiver commit novo: `npm ci` → build da edição `financeiro` → backup do que está no ar → publicação em `/var/www/panorama-financeiro` → smoke test HTTP, com rollback automático se falhar. Sem commit novo, sai em ~2 s sem tocar em nada. |
+| **1. Refresh de pesquisa** | agente Claude Code em nuvem (`trig_01VWt1jLJSSwcxjwZLcLQrjN`) | a cada 3 dias, 20:00 (SP) | Reexecuta a pesquisa nas fontes primárias, atualiza dossiê, capítulos e `dashboard/src/data/dashboard.json`, abre PR e — apenas se as quatro validações passarem — faz merge na `main`. Qualquer validação que falhe deixa o PR aberto, sem merge. Ciclo sem novidade não abre PR: só carimba `meta.verificadoEm` direto na `main`. |
+| **2. Publicação** | VM 41 (`almir-projeto-vm1`), via cron | toda noite, 23:59 (SP) = `59 2 * * *` UTC | Se a `main` tiver commit novo: checagem de espaço em disco → `npm ci` → build da edição `financeiro` → backup do que está no ar → publicação em `/var/www/panorama-financeiro` → smoke test HTTP, com rollback automático se falhar. Sem commit novo, sai em ~2 s sem tocar em nada. |
+| **3. Ingestão operacional** | VM 41, systemd timer `panorama-ti` | a cada 20 min | MISP + ThreatFox + ransomware.live (setor e país) + CISA KEV → `/var/www/threat-live/threat-live.json`. Não depende da etapa 2: o arquivo é lido em runtime pelo SPA. Detalhes em [`ingest/README.md`](ingest/README.md). |
+| **4. Teto da `audit_logs`** | VM 41, systemd timer `misp-audit-cap` | de hora em hora | Zera a tabela de auditoria do MISP quando passa de 1 GiB. Existe porque ela crescia ~2 GB/dia e encheu o disco em 14/08/2026, derrubando as etapas 2 e 3 ao mesmo tempo. |
 
 Script da etapa 2: [`deploy/deploy-vm41.sh`](deploy/deploy-vm41.sh) — versionado aqui e
 auto-sincronizado na VM ao fim de cada ciclo.
@@ -168,7 +185,16 @@ ssh ttx                                    # VM 41
 ~/deploy-panorama.sh --force               # publicar agora, mesmo sem commit novo
 tail -f ~/deploy-panorama.log              # acompanhar os ciclos
 ls -1dt /var/www/.backups/panorama-*       # backups (os 5 mais recentes)
+df -h /                                    # 1º lugar a olhar quando algo parou
+sudo systemctl start panorama-ti.service   # forçar uma ingestão operacional
+systemctl list-timers panorama-ti.timer misp-audit-cap.timer
 ```
+
+> **Se o painel parar de atualizar, cheque o disco antes de qualquer outra coisa.** Em agosto de 2026
+> o disco encheu e as duas metades pararam juntas — o publicador falhando num `git reset` que não
+> mencionava disco, e a ingestão sem conseguir gravar o JSON. Hoje o `deploy-vm41.sh` mede o espaço
+> livre no início do ciclo e aborta com o número e os maiores ocupantes de `/var/lib`, mas o reflexo
+> continua valendo: duas rotinas independentes falhando no mesmo dia é sinal de recurso compartilhado.
 
 Rollback manual para uma versão anterior:
 
@@ -183,15 +209,24 @@ sudo rsync -a --delete /var/www/.backups/panorama-financeiro-AAAAMMDD-HHMM/ /var
 | Caminho             | Conteúdo                                                                                   |
 |----------------------|---------------------------------------------------------------------------------------------|
 | `src/components/`    | componentes de visualização reutilizáveis (semáforo, velocímetro/gauge, barras, pizza, radar, timeline, KPI, quadrante de bolhas, navegação por abas etc.) |
-| `src/views/`          | telas do painel, uma por recorte de navegação (Visão Geral, Financeiro, Energia, Comparativo, Tendências, Fontes, Recomendações) |
-| `src/data/`           | fonte única de dados (`dashboard.json`) consumida por todas as views e componentes           |
+| `src/views/`          | telas do painel, uma por recorte de navegação — operacionais (Ameaças ao Vivo, **Brasil**, Extorsão & Exploração) e curadas (Visão Geral, Financeiro, Energia, Comparativo, Tendências, Recomendações, Fontes) |
+| `src/hooks/`          | `useThreatLive.js`, que busca o `threat-live.json` em runtime e calcula o frescor do dado    |
+| `src/data/`           | dados curados (`dashboard.json`), embutidos no build e consumidos pelas views setoriais       |
+| `ingest/`             | ingestão da camada operacional (MISP, ThreatFox, ransomware.live, CISA KEV), taxonomia financeira e o teto da `audit_logs` — roda na VM, fora do build |
+| `deploy/`             | `deploy-vm41.sh`, o publicador versionado que a VM auto-sincroniza a cada ciclo               |
 | `src/theme.js`        | paleta de cores canônica do repositório e tema visual do ECharts, para manter consistência com os demais diagramas do dossiê |
 
 ---
 
 ## Nota
 
-Este painel é **100% estático e offline** — não há backend, banco de dados, chamadas de API em
-tempo de execução ou dependência de serviços externos. Toda a estilização segue a **paleta
-canônica** já usada nos diagramas SVG do repositório (ver `ESTILO.md` na raiz), garantindo
-identidade visual consistente entre o dossiê em Markdown e o painel executivo.
+Este painel **não tem backend**: nenhum servidor de aplicação, banco de dados ou serviço externo
+sustenta o que está no ar. A camada curada é totalmente estática, embutida no build. A camada
+operacional acrescentou **uma única leitura em runtime** — o SPA busca `/data/threat-live.json`,
+um arquivo servido pelo mesmo nginx e produzido offline pela ingestão. Nada é buscado do navegador
+para fora do domínio, então o painel continua funcionando sem acesso a nenhuma API de terceiro; se
+o arquivo faltar, as abas operacionais dizem isso na tela em vez de quebrar.
+
+Toda a estilização segue a **paleta canônica** já usada nos diagramas SVG do repositório (ver
+`ESTILO.md` na raiz), garantindo identidade visual consistente entre o dossiê em Markdown e o
+painel executivo.

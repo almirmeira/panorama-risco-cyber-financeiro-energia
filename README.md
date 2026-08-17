@@ -106,6 +106,30 @@ consolidadas no capítulo [08 — Recomendações](08-recomendacoes/).
 | 07 | [Defesa e Frameworks](07-defesa-e-frameworks/) | NIST CSF 2.0, ISO/IEC 27001:2022, IEC 62443, Zero Trust |
 | 08 | [Recomendações](08-recomendacoes/) | Roadmap por setor, quick wins, perguntas de board |
 | — | [Fontes e Referências](fontes-e-referencias/) | Bibliografia, catálogo de vendors, Vozes de Referência |
+| — | [Painel executivo](dashboard/) | Aplicação web que publica este dossiê em **score.cecyber.com** |
+
+---
+
+## Painel público — score.cecyber.com
+
+O dossiê também é publicado como painel web em **[score.cecyber.com](https://score.cecyber.com)**
+(código em [`dashboard/`](dashboard/)). Ele tem duas camadas, com origens e ritmos diferentes:
+
+| Camada | O que mostra | De onde vem | Ritmo |
+| :-- | :-- | :-- | :-- |
+| **Curada** | KPIs, semáforos, comparativos setoriais | `dashboard/src/data/dashboard.json`, rastreável aos capítulos | refresh de pesquisa a cada 3 dias |
+| **Operacional** | Ameaças ao Vivo, **Brasil**, Extorsão & Exploração | instância MISP própria + ThreatFox, ransomware.live e CISA KEV | ingestão a cada 20 minutos |
+
+A camada operacional **não contradiz a tese do capítulo 00** — reforça-a. O capítulo argumenta que
+threat intel paga é insumo de SOC, não de apresentação estratégica; o painel demonstra na prática o
+que fontes abertas entregam, e o recorte medido (uma minoria dos indicadores é financeira, com
+poucas famílias de trojan bancário) é exatamente o argumento do capítulo, agora com número próprio.
+
+Cuidados editoriais que valem para qualquer alteração ali: nenhum link para site de vazamento sai
+publicado, o texto escrito pelo grupo criminoso nunca é reproduzido, vítimas são sempre rotuladas
+como **reivindicação não verificada**, indicadores saem em *defang* e só conteúdo TLP:WHITE/CLEAR
+vai ao ar. Operação, arquitetura e as armadilhas de dado já encontradas estão em
+[`dashboard/README.md`](dashboard/README.md) e [`dashboard/ingest/README.md`](dashboard/ingest/README.md).
 
 ---
 
