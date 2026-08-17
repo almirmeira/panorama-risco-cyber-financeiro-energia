@@ -1,0 +1,13 @@
+[Unit]
+Description=Verifica de hora em hora o tamanho da audit_logs do MISP
+
+[Timer]
+# A tabela cresce ~75 MB/h no pior caso medido (ingestao de feeds a todo vapor),
+# entao de hora em hora o teto de 1 GiB nunca e ultrapassado por muito.
+OnCalendar=hourly
+# Se a VM estiver desligada na hora, roda assim que subir.
+Persistent=true
+RandomizedDelaySec=120
+
+[Install]
+WantedBy=timers.target

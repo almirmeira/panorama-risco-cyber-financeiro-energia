@@ -23,6 +23,7 @@ JSON estático.
 | `ingest_threat_intel.py` | coleta, filtra TLP, aplica o recorte, agrega e escreve o JSON |
 | `misp_setup_feeds.py` | habilita os feeds no MISP (idempotente, pode rodar sempre) |
 | `misp-docker-compose.override.yml` | cópia versionada do override aplicado na VM (limites de RAM + healthcheck) |
+| `misp-audit-cap.sh` + `systemd/` | teto de 1 GiB para a tabela `audit_logs` do MISP (ver "O disco da VM 41") |
 
 ## Fontes e o que cada uma responde
 
@@ -58,6 +59,30 @@ Testar sem MISP (só fontes públicas diretas), útil para desenvolvimento:
 ```bash
 ./ingest_threat_intel.py --sem-misp --saida /tmp/t.json --historico /tmp/h.json
 ```
+
+## O disco da VM 41 (incidente de 2026-08-14)
+
+O MISP grava uma linha em `audit_logs` por objeto escrito. Com a ingestão de feeds abertos isso
+cresceu **~2 GB/dia** e, em 14/08, encheu o disco de 38 GB da VM. Com 0 byte livre as **duas
+metades do painel pararam ao mesmo tempo**: o publicador falhava no `git reset` (mensagem que não
+citava disco) e a ingestão não conseguia gravar o `threat-live.json`. Só apareceu no navegador,
+4 dias depois, como "inteligência operacional desatualizada".
+
+Três defesas foram instaladas por causa disso:
+
+```bash
+systemctl list-timers misp-audit-cap.timer     # teto horário de 1 GiB na audit_logs
+sudo /usr/local/sbin/misp-audit-cap.sh --dry-run   # só relata o tamanho atual
+sudo journalctl -u misp-audit-cap.service -n 20    # o que foi truncado e quando
+```
+
+1. **Teto na tabela** — passando de 1 GiB, `audit_logs` é zerada e recomeça. A auditoria do MISP
+   continua ligada; nenhum IoC é afetado (eventos, atributos e tags são outras tabelas).
+2. **`TRUNCATE` com plano B** — com o disco a 0 byte o `TRUNCATE` do InnoDB falha
+   (`ERROR 1114: table is full`), porque ele recria o tablespace vazio antes de liberar o antigo.
+   Nesse caso o script guarda o DDL, faz `DROP` (que libera o arquivo na hora) e recria a tabela.
+3. **Guarda no publicador** — `deploy-vm41.sh` mede o espaço livre antes de tudo e aborta com o
+   número e os maiores ocupantes de `/var/lib` no log, em vez de morrer num `git reset` mudo.
 
 ## Três coisas que não parecem, mas são
 
