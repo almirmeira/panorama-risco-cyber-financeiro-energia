@@ -32,7 +32,21 @@ JSON estático.
 | MISP (feeds abertos) | que infraestrutura maliciosa existe agora | por família/tag |
 | ThreatFox direto | qual família está por trás do indicador | por família |
 | **ransomware.live** (setor) | **quem está sendo atacado** | **explícito na fonte** |
+| **ransomware.live** (país BR) | **quem está sendo atacado no Brasil** | setor rotulado por vítima |
 | **CISA KEV** | **o que corrigir primeiro** | transversal, sem recorte |
+
+**Por que o recorte por país existe.** O recorte setorial é global, e nele o Brasil quase não aparece:
+15 vítimas financeiras brasileiras em todo o arquivo desde 2017, **uma** nos últimos 90 dias. Quem abria
+o painel aqui concluía que os ataques recentes não estavam sendo capturados — e não era o dado que
+faltava, era a consulta. Pelo país a mesma fonte tem **530 organizações brasileiras**, 68 nos últimos 90
+dias. A aba Brasil mostra todos os setores de propósito: fornecedor de tecnologia, escritório e operador
+logístico parados por ransomware chegam ao setor financeiro por terceiro, e são justamente eles que
+dominam a lista brasileira.
+
+**Cuidado operacional:** a API do ransomware.live limita **1 requisição por minuto** e responde o
+estouro com `{"message": "1 per 1 minute"}` em **HTTP 200** — só o corpo denuncia. Como o ciclo consulta
+dois endpoints, há uma pausa de 65 s entre eles e uma checagem explícita desse corpo; sem ela o limite
+viraria "0 vítimas" silenciosamente. Use `--sem-brasil` para pular a pausa em testes.
 
 O `ransomware.live` é consumido pelo endpoint **setorial**
 (`/v2/sectorvictims/Financial Services`), não pelo `/recentvictims`. O "recentes" devolve as 100

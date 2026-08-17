@@ -12,6 +12,7 @@ import Recomendacoes from './views/Recomendacoes.jsx'
 import Fontes from './views/Fontes.jsx'
 import AmeacasAoVivo from './views/AmeacasAoVivo.jsx'
 import ExtorsaoExploracao from './views/ExtorsaoExploracao.jsx'
+import Brasil from './views/Brasil.jsx'
 
 // Ordem das abas: a camada operacional vem primeiro.
 //
@@ -24,6 +25,7 @@ import ExtorsaoExploracao from './views/ExtorsaoExploracao.jsx'
 // recortes setoriais ficarem lado a lado.
 const ABAS_TODAS = [
   { id: 'ameacas-ao-vivo', rotulo: 'Ameaças ao Vivo' },
+  { id: 'brasil', rotulo: 'Brasil' },
   { id: 'extorsao', rotulo: 'Extorsão & Exploração' },
   { id: 'visao-geral', rotulo: 'Visão Geral' },
   { id: 'financeiro', rotulo: 'Financeiro' },
@@ -44,6 +46,7 @@ const VIEWS = {
   'visao-geral': VisaoGeral,
   financeiro: Financeiro,
   'ameacas-ao-vivo': AmeacasAoVivo,
+  brasil: Brasil,
   extorsao: ExtorsaoExploracao,
   energia: Energia,
   comparativo: Comparativo,
@@ -209,7 +212,7 @@ function App() {
       {/* A legenda explica o semáforo de postura de risco, que não existe na
           camada operacional — lá o semáforo é de frescor do dado. Mostrar as
           duas convenções juntas confundiria as leituras. */}
-      {!['ameacas-ao-vivo', 'extorsao'].includes(abaAtiva) && (
+      {!['ameacas-ao-vivo', 'extorsao', 'brasil'].includes(abaAtiva) && (
         <div className="container" style={{ paddingBottom: 0 }}>
           <LegendaSemaforo />
         </div>

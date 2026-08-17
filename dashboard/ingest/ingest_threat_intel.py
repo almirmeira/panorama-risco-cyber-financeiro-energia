@@ -30,6 +30,7 @@ import os
 import re
 import sys
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from collections import Counter, defaultdict
@@ -45,6 +46,18 @@ THREATFOX_URL = "https://threatfox.abuse.ch/export/json/recent/"
 # falso. O arquivo setorial traz o histórico completo do setor (1.751 casos
 # desde 2017), do qual recortamos a janela de verdade.
 RANSOMWARE_LIVE_URL = "https://api.ransomware.live/v2/sectorvictims/Financial%20Services"
+# Recorte por PAÍS, complementar ao setorial acima. Existe porque o recorte
+# financeiro global quase não tem Brasil: 15 vítimas financeiras brasileiras em
+# todo o arquivo desde 2017, sendo 1 nos últimos 90 dias. Quem abre o painel no
+# Brasil concluía, com razão, que "os ataques recentes não aparecem aqui" — e o
+# que faltava não era o dado, era a consulta. Pelo país são 530 vítimas, 68 nos
+# últimos 90 dias e 7 na última semana.
+RANSOMWARE_LIVE_BR_URL = "https://api.ransomware.live/v2/countryvictims/BR"
+# A API limita 1 requisição por minuto por origem e responde
+# {"message": "1 per 1 minute"} quando estoura — com HTTP 200, não 429, então
+# só o corpo denuncia. Como consultamos dois endpoints por ciclo, a pausa é
+# obrigatória; o timer roda a cada 20 minutos, então ela não atrasa nada.
+RANSOMWARE_LIVE_PAUSA_S = 65
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 TIMEOUT = 45
 UA = "CECyber-Panorama-Financeiro/1.0 (+https://score.cecyber.com)"
@@ -334,6 +347,93 @@ def coletar_extorsao(dias):
     return janela, historico
 
 
+def coletar_extorsao_brasil(dias):
+    """Vítimas brasileiras de extorsão — todos os setores, com o setor rotulado.
+
+    Complementa `coletar_extorsao`, que é setorial e global. As duas juntas
+    respondem perguntas diferentes: aquela mostra o que acontece com o setor
+    financeiro no mundo; esta mostra o que acontece no Brasil, incluindo os
+    setores que sustentam a operação de um banco (tecnologia, serviços
+    profissionais, logística) e cujo comprometimento chega ao financeiro por
+    terceiro.
+
+    Mesmos cuidados de publicação da coleta setorial: nada de `post_url` (é
+    link de leak site, frequentemente .onion), nada de `description` (é texto
+    escrito pelo grupo criminoso) e vítima sempre rotulada como reivindicação
+    não verificada.
+    """
+    dados = buscar_json(RANSOMWARE_LIVE_BR_URL)
+    if isinstance(dados, dict) and dados.get("message"):
+        # Corpo de rate limit chega com HTTP 200; sem esta checagem o formato
+        # inesperado viraria "0 vítimas" silenciosamente.
+        raise ValueError(f"rate limit da API: {dados['message']}")
+    if not isinstance(dados, list):
+        raise ValueError("formato inesperado em ransomware.live (país)")
+
+    corte = datetime.now(timezone.utc) - timedelta(days=dias)
+    janela, historico = [], []
+    for v in dados:
+        quando = v.get("discovered") or v.get("published") or ""
+        try:
+            dt = datetime.fromisoformat(quando.replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        setor = (v.get("activity") or "").strip()
+        # A fonte grava "Not Found" quando não classificou o setor; repetir isso
+        # na tela seria expor detalhe de implementação da fonte como se fosse
+        # informação.
+        if not setor or setor.lower() in ("not found", "unknown", "none"):
+            setor = "Não informado"
+        reg = {
+            "vitima": (v.get("post_title") or v.get("victim") or v.get("website") or "—")[:80],
+            "grupo": (v.get("group_name") or v.get("group") or "—")[:40],
+            "setor": setor[:40],
+            "pais": "BR",
+            "data": dt.date().isoformat(),
+        }
+        historico.append(reg)
+        if dt >= corte:
+            janela.append(reg)
+
+    janela.sort(key=lambda r: r["data"], reverse=True)
+    historico.sort(key=lambda r: r["data"], reverse=True)
+    return janela, historico
+
+
+def montar_bloco_brasil(janela, historico, dias):
+    """Agrega o recorte nacional para o painel."""
+    hoje = datetime.now(timezone.utc).date()
+    def desde(n):
+        corte = (hoje - timedelta(days=n)).isoformat()
+        return sum(1 for r in historico if r["data"] >= corte)
+
+    setores_fin = ("financial", "banking", "insurance")
+    financeiras = [r for r in historico
+                   if any(k in r["setor"].lower() for k in setores_fin)]
+
+    return {
+        "janelaDias": dias,
+        "totalJanela": len(janela),
+        "totalHistorico": len(historico),
+        "ultimos7": desde(7),
+        "ultimos30": desde(30),
+        "porGrupo": [{"grupo": g, "vitimas": n} for g, n in
+                     Counter(r["grupo"] for r in janela).most_common(10)],
+        "porSetor": [{"setor": s, "vitimas": n} for s, n in
+                     Counter(r["setor"] for r in janela).most_common(10)],
+        "serieMensal": serie_mensal_extorsao(historico),
+        "vitimas": janela[:40],
+        "financeiras": financeiras[:15],
+        "totalFinanceiras": len(financeiras),
+        "aviso": ("Reivindicações publicadas pelos próprios grupos criminosos. NÃO são incidentes "
+                  "confirmados — grupos inflam listas, reciclam vítimas antigas e às vezes mentem. "
+                  "Nenhum link para site de vazamento é publicado aqui, nem o texto escrito pelo "
+                  "grupo. A organização é nomeada como fazem os rastreadores públicos da área."),
+    }
+
+
 def serie_mensal_extorsao(historico, meses=12):
     """Série mensal de vítimas do setor financeiro.
 
@@ -591,6 +691,8 @@ def main():
     ap.add_argument("--limite-tabela", type=int, default=120)
     ap.add_argument("--sem-misp", action="store_true",
                     help="ignora o MISP e usa só as fontes públicas diretas")
+    ap.add_argument("--sem-brasil", action="store_true",
+                    help="pula o recorte Brasil (evita a pausa de 65s do rate limit em testes)")
     args = ap.parse_args()
 
     taxonomia = carregar_taxonomia()
@@ -655,6 +757,28 @@ def main():
         fontes.append({"nome": "ransomware.live (setor financeiro)", "tipo": "API pública",
                        "indicadores": 0, "status": "indisponível"})
         log(f"ransomware.live FALHOU: {e}")
+
+    # Extorsão no Brasil — mesmo provedor, recorte por país.
+    brasil = None
+    if not args.sem_brasil:
+        try:
+            # A pausa é entre as duas chamadas ao mesmo provedor, não no começo
+            # do ciclo: sem ela a segunda volta com o corpo de rate limit.
+            log(f"aguardando {RANSOMWARE_LIVE_PAUSA_S}s (limite de 1 requisição/minuto da API)")
+            time.sleep(RANSOMWARE_LIVE_PAUSA_S)
+            br_janela, br_hist = coletar_extorsao_brasil(args.dias_extorsao)
+            brasil = montar_bloco_brasil(br_janela, br_hist, args.dias_extorsao)
+            fontes.append({"nome": "ransomware.live (Brasil, todos os setores)", "tipo": "API pública",
+                           "licenca": "Reivindicações públicas de grupos, uso livre",
+                           "indicadores": brasil["totalJanela"], "status": "ok"})
+            log(f"extorsão BR: {brasil['totalJanela']} vítimas em {args.dias_extorsao}d "
+                f"({brasil['ultimos7']} em 7d, {brasil['totalHistorico']} no arquivo, "
+                f"{brasil['totalFinanceiras']} do setor financeiro)")
+        except Exception as e:                              # noqa: BLE001
+            erros.append(f"ransomware.live (BR): {e}")
+            fontes.append({"nome": "ransomware.live (Brasil, todos os setores)", "tipo": "API pública",
+                           "indicadores": 0, "status": "indisponível"})
+            log(f"ransomware.live BR FALHOU: {e}")
 
     # KEV — o que corrigir primeiro.
     kev = None
@@ -752,6 +876,7 @@ def main():
                       "reciclam vítimas antigas e às vezes mentem. Nenhum link para site de "
                       "vazamento é publicado aqui."),
         },
+        "brasil": brasil,
         "vulnerabilidades": kev,
         "acervoMisp": corpus,
     }

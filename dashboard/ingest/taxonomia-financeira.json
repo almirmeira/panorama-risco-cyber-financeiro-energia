@@ -10,7 +10,6 @@
       "justificativa": "por que esta família é considerada do setor financeiro"
     }
   },
-
   "familias": {
     "grandoreiro": {
       "nome": "Grandoreiro",
@@ -185,9 +184,26 @@
       "categoria": "stealer",
       "regiao": "global",
       "justificativa": "Ladrão de credenciais muito usado em fraude de comprometimento de e-mail corporativo, com impacto financeiro direto."
+    },
+    "bizarro": {
+      "nome": "Bizarro",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário de origem brasileira documentado pela Kaspersky em 2021, que usa afiliados para roubar credenciais de clientes de dezenas de bancos no Brasil e que depois passou a mirar também instituições europeias — é o caso de referência da exportação de banker brasileiro."
+    },
+    "chavecloak": {
+      "nome": "ChaveCloak",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário identificado pelo FortiGuard Labs em 2024, distribuído por PDF malicioso em português e voltado a clientes de bancos brasileiros, com sobreposição de tela para captura de credenciais."
+    },
+    "venon": {
+      "nome": "VENON",
+      "categoria": "banker",
+      "regiao": "br",
+      "justificativa": "Trojan bancário escrito em Rust, reportado em 2026, que mira 33 bancos brasileiros com sobreposição de tela para captura de credenciais e reaproveita técnicas de Grandoreiro, Mekotio e Coyote."
     }
   },
-
   "fontesFinanceiras": {
     "_doc": "Feeds cujo ESCOPO INTEIRO é financeiro, permitindo atribuição no nível da fonte. Existe porque o MISP importa feeds CSV como um evento agregado por feed, sem família por indicador — a atribuição por família fica cega para eles. Só entra aqui feed cujo escopo declarado seja inequivocamente financeiro; um feed de malware genérico NÃO entra, mesmo que muitos dos seus itens sejam bancários.",
     "porTituloDeEvento": {
@@ -199,7 +215,6 @@
       }
     }
   },
-
   "tagsSetoriais": {
     "_doc": "Marcações que, quando presentes no dado da fonte, já bastam para o recorte financeiro — independem da família.",
     "prefixos": [
@@ -209,11 +224,24 @@
       "ms-caro-malware:malware-type=\"Trojan-Banker\"",
       "ms-caro-malware-full:malware-type=\"Trojan-Banker\""
     ],
-    "palavras": ["banker", "banking", "trojan-banker", "financial", "finance", "atm", "pos-malware", "carding"]
+    "palavras": [
+      "banker",
+      "banking",
+      "trojan-banker",
+      "financial",
+      "finance",
+      "atm",
+      "pos-malware",
+      "carding"
+    ]
   },
-
   "tlpAceitos": {
     "_doc": "Só estes níveis podem ser republicados no painel público. Qualquer outro (green, amber, red) é descartado na ingestão — ver seção de governança no spec.",
-    "valores": ["tlp:white", "tlp:clear", "white", "clear"]
+    "valores": [
+      "tlp:white",
+      "tlp:clear",
+      "white",
+      "clear"
+    ]
   }
 }
