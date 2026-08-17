@@ -1191,6 +1191,48 @@ em 2026-07-21.
     único trimestre isolado. **[PARCIALMENTE CONFIRMADO — detalhamento setorial exato não verificado linha a linha
     contra o PDF/página primária de cada trimestre em 2026-07-21]**.
 
+### Atualização 2026-08-17 — Kaspersky ICS CERT Q4 2025 e Q1 2026 (série global estendida)
+
+- **Dado:** a porcentagem global de computadores ICS com objetos maliciosos bloqueados **continuou caindo**
+  após o 3º trimestre de 2025: **19,7%** no 4º trimestre de 2025 (menor nível desde 2022; −0,4 p.p. frente
+  ao trimestre anterior; queda de **1,35 vez** em três anos) e **19,6%** no 1º trimestre de 2026 (−0,1 p.p.;
+  menor valor em três anos). Amplitude regional muito maior que a variação global: **8,5%** (Norte da
+  Europa) a **27,3%** (África) no 4T2025; **9,1%** a **27,4%** nos mesmos extremos no 1T2026. Fontes de
+  infecção no 1T2026: internet **7,88%**, clientes de e-mail **2,59%**, mídia removível **0,26%**, pastas de
+  rede **0,029%** (no 4T2025: 7,67% / 2,76% / 0,31% / 0,04%). Setores em alta: **óleo e gás** foi o único a
+  subir no 4T2025; **manufatura** foi o único a subir no 1T2026 (**+1,0 p.p.**, com altas em 10 regiões).
+  Sistemas biométricos seguem no topo, com **26,4%** no 1T2026. A Kaspersky bloqueou malware de **10.142**
+  famílias no 4T2025 e **10.052** no 1T2026.
+  - Fonte 1 (primária): Kaspersky ICS CERT. *Threat landscape for industrial automation systems. Q4 2025*.
+    2 de abril de 2026.
+    https://ics-cert.kaspersky.com/publications/reports/2026/04/02/threat-landscape-for-industrial-automation-systems-q4-2025/
+    e *Threat landscape for industrial automation systems. Q1 2026*. 9 de junho de 2026.
+    https://ics-cert.kaspersky.com/publications/reports/2026/06/09/threat-landscape-for-industrial-automation-systems-q1-2026/
+  - Fonte 2 (secundária, veículo independente): ITWeb. *Kaspersky ICS CERT: The beginning of 2026 showed an
+    increase in cyber attacks on the manufacturing sector*. 8 de julho de 2026.
+    https://www.itweb.co.za/article/kaspersky-ics-cert-the-beginning-of-2026-showed-an-increase-in-cyber-attacks-on-the-manufacturing-sector/KzQenMjyX5j7Zd2r
+    (confirma 19,6% globais e a faixa regional 9,1%–27,4%)
+  - Fonte 3 (mesma casa, texto integral): Securelist. *Industrial threat report for Q4 2025* /
+    *for Q1 2026*. 2026. https://securelist.com/industrial-threat-report-q1-2026/120643/
+  - **Observações — três coisas que esta atualização NÃO permite afirmar:**
+    1. **Não há detalhamento setorial consolidado** nesses dois trimestres. Os relatórios do 4T2025 e do
+       1T2026 citam apenas o setor que subiu no período; não publicam a tabela por setor que existia nas
+       edições anteriores. Portanto os **22,8% de energia elétrica no 1º semestre de 2025 continuam sendo
+       o dado setorial mais recente** — e a queda global **não** pode ser transferida para o setor elétrico,
+       que simplesmente não foi remedido. Registrar a queda global como se fosse queda no setor seria
+       exatamente o tipo de inferência que a regra de duas fontes existe para impedir.
+    2. **Independência limitada por construção:** a telemetria é proprietária da Kaspersky, então não existe
+       fonte genuinamente independente para o número — a "fonte 2" é cobertura de imprensa do mesmo dado,
+       como já era o caso do registro de 2025 acima. Isso está declarado, não contornado.
+    3. O fetch direto das páginas primárias confirmou os agregados globais, regionais e as fontes de
+       infecção; **os percentuais por setor de 2026 não foram obtidos porque não existem no documento**, e
+       não porque a extração falhou.
+  - **Correção de rastreabilidade feita junto:** no capítulo `03-setor-energia/README.md`, os três trechos
+    atribuídos a "Kaspersky ICS CERT" citavam **[1][2]** — que na seção `## Fontes` daquele capítulo são
+    Dragos e TechTarget, não Kaspersky. A Kaspersky não constava da lista. As citações passaram para
+    **[50][51][52]** (entradas novas). A validação automática do refresh checa se toda citação `[n]` tem
+    entrada correspondente, o que passava; ela não checa se a entrada corresponde ao conteúdo citado.
+
 ### Fortinet — 2025 State of Operational Technology and Cybersecurity Report
 
 - **Dado:** pesquisa global com mais de **550 profissionais de OT** em manufatura, energia, transporte e outros

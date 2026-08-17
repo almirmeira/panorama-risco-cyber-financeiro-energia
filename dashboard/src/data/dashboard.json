@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-08-13",
-    "verificadoEm": "2026-08-16",
+    "geradoEm": "2026-08-17",
+    "verificadoEm": "2026-08-17",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -55,7 +55,7 @@
       "kpis": [
         { "label": "Custo médio de violação de dados", "valor": "5,2", "unidade": "US$ mi", "delta": "+8% a/a (ante US$ 4,83 mi em 2025)", "fonte": "cap. 03", "estimativa": false },
         { "label": "Organizações industriais impactadas por ransomware", "valor": "~3.300", "unidade": "organizações (2025)", "delta": "+64% a/a; 119 grupos ativos", "fonte": "cap. 03", "estimativa": false },
-        { "label": "Computadores ICS atacados — energia elétrica", "valor": "22,8", "unidade": "% (H1 2025)", "delta": "3º setor mais atacado globalmente", "fonte": "cap. 03", "estimativa": true },
+        { "label": "Computadores ICS atacados — energia elétrica", "valor": "22,8", "unidade": "% (H1 2025)", "delta": "3º setor mais atacado globalmente; último recorte setorial disponível — a série global caiu para 19,6% no 1º tri. 2026, mas o setor não foi remedido", "fonte": "cap. 03", "estimativa": true },
         { "label": "Dwell time de ransomware em OT", "valor": "42 → 5", "unidade": "dias", "delta": "8x mais rápido com visibilidade OT plena", "fonte": "cap. 03", "estimativa": false },
         { "label": "Organizações com ≥1 incidente de cibersegurança em OT", "valor": "50", "unidade": "% (último ano)", "delta": "Fortinet 2025", "fonte": "cap. 03", "estimativa": false },
         { "label": "Advisórios ICS publicados pela CISA (2025)", "valor": ">450", "unidade": "advisórios", "delta": "200+ fornecedores, 700+ produtos", "fonte": "cap. 03", "estimativa": true }
