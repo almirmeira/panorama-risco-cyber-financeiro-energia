@@ -64,6 +64,63 @@ function formatarDataPtBr(dataIso) {
   return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(data)
 }
 
+/** Mesma data em formato curto (21/07/2026), para quando duas aparecem juntas. */
+function formatarDataCurtaPtBr(dataIso) {
+  if (!dataIso) return ''
+  const data = new Date(`${dataIso}T00:00:00`)
+  if (Number.isNaN(data.getTime())) return dataIso
+  return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(data)
+}
+
+/**
+ * Carimbo de atualização do cabeçalho.
+ *
+ * Duas datas diferentes, e confundi-las já custou caro: `geradoEm` é quando um
+ * dado do painel mudou pela última vez; `verificadoEm` é quando as fontes
+ * foram varridas pela última vez. O refresh roda a cada 3 dias e, na maioria
+ * dos ciclos, não encontra nada novo — é o resultado esperado num painel de
+ * dados anuais. Mostrando só `geradoEm`, um ciclo saudável que confirmou tudo
+ * fica indistinguível de uma rotina morta, e o leitor conclui que o painel foi
+ * abandonado. Com as duas datas, silêncio das fontes e silêncio da máquina
+ * param de se parecer.
+ */
+function CarimboAtualizacao({ geradoEm, verificadoEm }) {
+  const temVerificacaoDistinta = verificadoEm && verificadoEm !== geradoEm
+  const texto = temVerificacaoDistinta
+    ? `Verificado em ${formatarDataCurtaPtBr(verificadoEm)} · dado de ${formatarDataCurtaPtBr(geradoEm)}`
+    : `Última atualização: ${formatarDataPtBr(geradoEm)}`
+
+  return (
+    <span
+      title={
+        temVerificacaoDistinta
+          ? 'As fontes são revisadas a cada 3 dias. A segunda data é a do último número que mudou — ciclos sem novidade confirmam os dados sem alterá-los.'
+          : undefined
+      }
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 8,
+        padding: '6px 14px',
+        borderRadius: 999,
+        background: `${palette.azul}1a`,
+        border: `1px solid ${palette.azul}`,
+        color: palette.azul,
+        fontSize: 12,
+        fontWeight: 600,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <span
+        aria-hidden="true"
+        className="ponto-pulsante"
+        style={{ width: 8, height: 8, borderRadius: '50%', background: palette.azul, flexShrink: 0 }}
+      />
+      {texto}
+    </span>
+  )
+}
+
 /**
  * Legenda fixa de semáforo — visível em todas as abas, explica o critério
  * de cor usado nos cartões de postura de risco/urgência do dashboard.
@@ -141,28 +198,7 @@ function App() {
             )}
           </div>
 
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '6px 14px',
-              borderRadius: 999,
-              background: `${palette.azul}1a`,
-              border: `1px solid ${palette.azul}`,
-              color: palette.azul,
-              fontSize: 12,
-              fontWeight: 600,
-              whiteSpace: 'nowrap',
-            }}
-          >
-            <span
-              aria-hidden="true"
-              className="ponto-pulsante"
-              style={{ width: 8, height: 8, borderRadius: '50%', background: palette.azul, flexShrink: 0 }}
-            />
-            Última atualização: {formatarDataPtBr(meta.geradoEm)}
-          </span>
+          <CarimboAtualizacao geradoEm={meta.geradoEm} verificadoEm={meta.verificadoEm} />
         </div>
 
         <div className="container" style={{ paddingTop: 0, paddingBottom: 16 }}>
