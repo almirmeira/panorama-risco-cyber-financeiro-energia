@@ -1,12 +1,17 @@
 # Fontes e Referências
 
 > **Resumo Executivo**
-> - Este arquivo consolida, em três partes, todo o aparato de evidência do panorama: a
+> - Este arquivo consolida, em quatro partes, todo o aparato de evidência do panorama: a
 >   **bibliografia** citada nos capítulos 00 a 08 (deduplicada e agrupada pela hierarquia de
 >   fontes definida em [`00-metodologia-e-fontes/README.md`](../00-metodologia-e-fontes/)), o
->   **catálogo de vendors e organizações** de referência do mercado de cibersegurança, e um
+>   **catálogo de vendors e organizações** de referência do mercado de cibersegurança, um
 >   **catálogo curado de "Vozes de Referência"** — pessoas cuja obra ajuda a contextualizar o
->   risco cibernético em infraestrutura financeira e energética.
+>   risco cibernético em infraestrutura financeira e energética — e o **catálogo das fontes
+>   operacionais** que alimentam as abas ao vivo do painel público.
+> - As três primeiras partes tratam da **camada estratégica**, sujeita à regra de duas fontes; a
+>   Parte 4 trata da **camada operacional**, que é observação bruta de fonte aberta e segue outra
+>   regra, declarada ali. Misturar as duas seria dar a um domínio visto ontem num feed o mesmo peso
+>   probatório de um relatório anual de telemetria.
 > - A bibliografia agrupa as fontes em quatro categorias, na mesma ordem definida no capítulo 00:
 >   (1) vendors e telemetria proprietária; (2) órgãos, reguladores e consórcios setoriais; (3)
 >   casas de análise e cobertura jornalística especializada que corrobora os dados primários; (4)
@@ -32,6 +37,12 @@
   técnica ou de pesquisa ajuda a contextualizar o cenário de risco cibernético discutido neste
   panorama, com perfis dedicados para os nomes mais centrais ao tema financeiro/energia e uma
   lista de menção honrosa para os demais.
+- **Parte 4** cataloga as fontes da camada operacional do painel — as que abastecem as abas
+  *Ameaças ao Vivo*, *Brasil* e *Extorsão & Exploração* —, incluindo os feeds abertos habilitados
+  na instância MISP própria, as fontes **testadas e recusadas** com o motivo de cada recusa, e a
+  governança de publicação que vale para esse material. Fonte recusada é informação de método:
+  sem o registro, a mesma fonte volta a ser avaliada a cada rodada e o leitor não distingue lacuna
+  de pesquisa de decisão tomada.
 
 ---
 
@@ -93,6 +104,15 @@
 - IBM. *Cost of a Data Breach Report 2025*. 2025. https://www.ibm.com/reports/data-breach
 - Kaspersky ICS CERT. *Threat Landscape for Industrial Automation Systems, Q3 2025*. 2025.
   https://ics-cert.kaspersky.com/publications/reports/2025/12/11/threat-landscape-for-industrial-automation-systems-q3-2025/
+- Kaspersky ICS CERT. *Threat landscape for industrial automation systems. Q4 2025*. 2 de abril de
+  2026.
+  https://ics-cert.kaspersky.com/publications/reports/2026/04/02/threat-landscape-for-industrial-automation-systems-q4-2025/
+- Kaspersky ICS CERT. *Threat landscape for industrial automation systems. Q1 2026*. 9 de junho de
+  2026.
+  https://ics-cert.kaspersky.com/publications/reports/2026/06/09/threat-landscape-for-industrial-automation-systems-q1-2026/
+- ITWeb. *Kaspersky ICS CERT: The beginning of 2026 showed an increase in cyber attacks on the
+  manufacturing sector*. 8 de julho de 2026. (segunda fonte independente para a série de 2026)
+  https://www.itweb.co.za/article/kaspersky-ics-cert-the-beginning-of-2026-showed-an-increase-in-cyber-attacks-on-the-manufacturing-sector/KzQenMjyX5j7Zd2r
 - Microsoft. *Microsoft Digital Defense Report 2025*. 2025.
   https://www.microsoft.com/en-us/corporate-responsibility/cybersecurity/microsoft-digital-defense-report-2025/
 - Microsoft Security Blog. *Announcing a new strategic collaboration to bring clarity to threat
@@ -441,7 +461,7 @@ tecnológica.*
 | Mandiant (Google Cloud) | 1 — Vendor/telemetria | *M-Trends 2025* | Ambos |
 | Splunk (Cisco) | 1 — Vendor/telemetria | State of Security Report (recurso genérico) | Ambos |
 | Trend Micro | 1 — Vendor/telemetria | *Unveiling the Fallout: Operation Cronos' Impact on LockBit* | Ambos |
-| Kaspersky | 1 — Vendor/telemetria | Kaspersky ICS CERT — *Threat Landscape for Industrial Automation Systems* | Energia |
+| Kaspersky | 1 — Vendor/telemetria | Kaspersky ICS CERT — *Threat Landscape for Industrial Automation Systems* (série trimestral; Q3/2025, Q4/2025 e Q1/2026 incorporados) | Energia |
 | Sophos | 1 — Vendor/telemetria | State of Ransomware Report (recurso genérico anual da Sophos) | Ambos |
 | Proofpoint | 1 — Vendor/telemetria | State of the Phish Report (recurso genérico) | Financeiro |
 | CyberArk | 1 — Vendor/telemetria | Identity Security Threat Landscape Report (recurso genérico) | Ambos |
@@ -603,6 +623,140 @@ tecnológica.*
   acompanha a indústria de fornecedores de segurança.
 - **Joseph Steinberg** — autor e consultor de cibersegurança, colunista sobre privacidade e
   tecnologias emergentes.
+
+---
+
+## Parte 4 — Fontes operacionais (camada ao vivo do painel)
+
+> As três partes anteriores catalogam a evidência dos **capítulos** — relatórios já publicados,
+> submetidos à regra de duas fontes independentes. Esta parte cataloga outra coisa: as fontes que
+> abastecem as abas operacionais do painel público ([score.cecyber.com](https://score.cecyber.com)),
+> que mostram indicadores observados nos últimos dias, não estatística setorial consolidada.
+>
+> A distinção está fundamentada no capítulo 00 e é deliberada. Aqui a unidade de análise é o
+> indicador individual, a evidência é um fato pontual reportado por uma fonte, e o ritmo é de
+> minutos — nada disso passa, nem deveria passar, pela regra de duas fontes que rege os capítulos.
+> O que substitui aquela regra é a governança descrita em 4.5: filtro de TLP, publicação em defang
+> e rotulagem explícita de reivindicação não verificada.
+
+### 4.1 — Fontes em uso
+
+| Fonte | Tipo de acesso | Pergunta que responde | Recorte | Licença/uso | Em uso desde |
+|:-----------------------------------|:-------------------------|:-----------------------------------------------------|:-------------------------------------------|:-------------------------------------------|:-----------|
+| Instância MISP própria (VM CECyber) | API `restSearch` (local) | Que infraestrutura maliciosa existe agora | Por família e tag da taxonomia financeira | Feeds abertos TLP:WHITE/CLEAR sincronizados | 12/08/2026 |
+| ThreatFox (abuse.ch), export direto | Export público em JSON | Qual família de malware está por trás do indicador | Por família | Uso livre com atribuição | 12/08/2026 |
+| ransomware.live — recorte setorial | API pública (`sectorvictims`) | Quem está sendo atacado no setor financeiro | Explícito na fonte (*Financial Services*), global | Reivindicações públicas de grupos de extorsão | 12/08/2026 |
+| ransomware.live — recorte Brasil | API pública (`countryvictims`) | Quem está sendo atacado no Brasil, em todos os setores | País (BR), com o setor rotulado por vítima | Reivindicações públicas de grupos de extorsão | 17/08/2026 |
+| CISA KEV | Catálogo oficial em JSON | O que corrigir primeiro | Transversal, sem recorte setorial | Domínio público (governo dos EUA) | 12/08/2026 |
+
+Duas escolhas de coleta que a tabela não mostra e mudam o resultado:
+
+- O **ThreatFox é consumido em duas vias de propósito** — pelo MISP e por export direto. O MISP
+  importa feed CSV como um evento agregado, e a família de malware por indicador se perde na
+  importação; é justamente o campo em que o recorte financeiro se apoia. O export direto o preserva.
+- O **ransomware.live é consultado pelo endpoint setorial, não pelo de vítimas recentes**. O de
+  recentes devolve as 100 últimas vítimas de todos os setores — na prática uns três dias e meia
+  dúzia de casos financeiros. Anunciar isso como janela de 90 dias seria falso. O arquivo setorial
+  cobre o setor desde 2017.
+
+### 4.2 — Feeds abertos habilitados na instância MISP
+
+A prioridade é feed em **formato MISP**, não CSV, pelo motivo descrito acima: o formato MISP
+preserva tag por atributo e o campo de comentário; o CSV chega como atributo nu. Medido nesta
+instância — o URLhaus em CSV rendeu 17.089 atributos com atribuição financeira praticamente nula,
+enquanto um único evento ThreatFox em formato MISP traz família em tag para cada indicador.
+
+| Feed | Provedor | O que traz |
+|:-----------------|:-----------------------|:--------------------------------------------------------------------|
+| CIRCL OSINT Feed | CIRCL (Luxemburgo) | Eventos MISP com marcação TLP por evento |
+| botvrij.eu | botvrij.eu | Feed OSINT em formato MISP |
+| URLhaus | abuse.ch | URLs de distribuição de malware |
+| ThreatFox | abuse.ch | IoCs com família de malware atribuída |
+| Feodo Tracker | abuse.ch | C2 de trojans bancários (Emotet, Dridex, TrickBot, QakBot) |
+| MalwareBazaar | abuse.ch | Amostras indexadas por família, inclusive *bankers* |
+| PrecisionSec | PrecisionSec | C2 e domínios pré-classificados por família |
+| Rösti | bin.re | Repackaging de OSINT em formato MISP |
+| Rectifyq | Rectifyq | Inteligência MISP curada e enriquecida |
+| Infoblox | Infoblox | Inteligência de infraestrutura de ameaça (DNS) |
+| NOCACTI | NOCACTI | Feeds de intrusão e infraestrutura de adversário |
+
+O que conta como indicador "do setor financeiro" está definido em
+[`dashboard/ingest/taxonomia-financeira.json`](../dashboard/ingest/taxonomia-financeira.json), com
+justificativa registrada família a família — hoje **32 famílias**, das quais **14 têm alvo
+brasileiro declarado**. As três últimas entraram em 17/08/2026: Bizarro, ChaveCloak e VENON, esta
+um trojan bancário escrito em Rust que mira 33 bancos brasileiros.
+
+### 4.3 — Por que existe um recorte por país (episódio de 17/08/2026)
+
+Até 17/08/2026 a extorsão era consultada apenas pelo recorte **setorial**, que é global. Nesse
+recorte o Brasil praticamente não existe: **15 vítimas financeiras brasileiras em todo o arquivo
+desde 2017, uma nos últimos 90 dias**. Quem abria o painel aqui concluía, com razão, que os ataques
+recentes não estavam sendo capturados.
+
+Não faltava dado nem fonte paga — faltava a consulta. Pelo endpoint de **país**, a mesma fonte
+aberta e gratuita tem **530 organizações brasileiras**, **68 nos últimos 90 dias** e **7 na última
+semana**. A aba *Brasil* mostra **todos os setores de propósito**: fornecedor de tecnologia,
+escritório e operador logístico parados por ransomware chegam ao setor financeiro por terceiro, e
+são justamente eles que dominam a lista brasileira (serviços profissionais e tecnologia).
+
+O episódio é, ele próprio, um argumento a favor da tese do capítulo 00: a lacuna não era de
+orçamento de inteligência, era de recorte.
+
+### 4.4 — Fontes avaliadas e recusadas, com o motivo
+
+| Fonte | Motivo da recusa | Verificado em |
+|:-------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:--------------|
+| URLhaus como fonte de recorte brasileiro | 8 URLs `.br` em 17.043 — cobertura brasileira residual. Segue em uso como fonte genérica de infraestrutura, não como evidência sobre o Brasil | 17/08/2026 |
+| OpenPhish | HTTP 429 no acesso aberto — limite de requisição impede coleta confiável | 17/08/2026 |
+| PhishStats | HTTP 404 — endpoint público indisponível | 17/08/2026 |
+| Shadowserver (dashboard por país) | Bom candidato para o recorte Brasil, mas exige chave de acesso | 17/08/2026 |
+| Feed MISP do Banco do Brasil (`cti.bb.com.br`) | Único feed financeiro do catálogo padrão do MISP e o mais relevante para o Brasil; segue fora do ar. Reavaliado a cada rodada | 12 e 17/08/2026 |
+| MISP do CERT.br, FS-ISAC e CIRCL Financial | Comunidades fechadas — o CERT.br exige ser CSIRT listado ou integrar grupo de confiança setorial. **Não existe plataforma MISP aberta específica do setor financeiro**; é esta a lacuna que cobriria a ameaça bancária brasileira | 12/08/2026 |
+| DigitalSide | Manifesto do feed não responde — fora do ar | 12/08/2026 |
+| PhishTank, AlienVault OTX, Proofpoint ET, Spamhaus | Exigem credencial ou restringem redistribuição; a licença não é explícita o bastante para uma página pública | 12/08/2026 |
+
+### 4.5 — Governança de publicação
+
+1. Só `tlp:white` e `tlp:clear` chegam à página pública. Marcação mais restritiva é descartada na
+   ingestão, antes de existir no arquivo publicado — o feed CIRCL OSINT, por exemplo, traz um evento
+   `tlp:amber` no meio de mais de 1.700 publicáveis.
+2. Indicadores saem em **defang** (`hxxp://`, `dominio[.]com`): são citados como evidência, não
+   distribuídos para bloqueio.
+3. **Nenhum link para site de vazamento** é publicado, nem o texto escrito pelo grupo criminoso —
+   publicar rota para um *leak site* é distribuir a extorsão, não noticiá-la.
+4. A vítima de extorsão **é nomeada**, como fazem os rastreadores públicos, e **sempre rotulada como
+   reivindicação não verificada**: grupos inflam listas e reciclam vítimas antigas. A política é a
+   mesma para organizações brasileiras e estrangeiras.
+5. Se uma fonte cai, o ciclo segue com as demais e a aba **nomeia quem falhou**. Se nenhuma responde,
+   o arquivo anterior é preservado, em vez de ser sobrescrito por uma página vazia que pareceria
+   "nenhuma ameaça".
+
+### 4.6 — Quatro cuidados que sustentam esses números
+
+1. **A série temporal não usa a data da fonte.** Feeds abertos publicam dumps rolantes de adições
+   recentes: centenas de itens com data de hoje e poucas dezenas de duas semanas atrás — porque os
+   antigos saem da janela, não porque houve menos ameaça. Um gráfico sobre esse dado sobe sozinho em
+   qualquer cenário. A série vem da observação própria acumulada, e só aparece com 7 ou mais dias de
+   coleta.
+2. **"Recente" no MISP não é recente.** O filtro por data olha o carimbo do atributo, que num feed
+   recém-sincronizado é a hora da importação. A primeira consulta trouxe 2.594 atributos de
+   relatórios de 2015 e 2016 como se fossem novos. A recência passou a sair da data do evento.
+3. **Janela recente e acervo são coisas diferentes.** Feed MISP aberto é majoritariamente arquivo,
+   não fluxo: habilitar dez feeds novos levou o acervo de 486 para mais de 600 eventos, e a janela de
+   14 dias continuou com três, porque os eventos chegam com a data do fato original. Os dois números
+   aparecem separados e rotulados, em vez de a janela ser esticada para simular recência.
+4. **Um limite de API que não se anuncia como erro.** A API de extorsão aceita 1 requisição por
+   minuto e devolve o estouro com **HTTP 200** e uma mensagem de limite no corpo — só o corpo
+   denuncia. Como o ciclo consulta dois recortes (setor e país), há uma pausa deliberada entre eles e
+   uma checagem explícita desse corpo; sem ela, o limite viraria "0 vítimas" sem nenhum erro na tela.
+
+### Onde este catálogo aparece
+
+O mesmo conteúdo é publicado na aba **Fontes & Método** do painel, alimentado por
+[`dashboard/src/data/dashboard.json`](../dashboard/src/data/dashboard.json) (chave `fontes`), e o
+funcionamento da coleta está documentado em
+[`dashboard/ingest/README.md`](../dashboard/ingest/README.md), com o desenho completo em
+[`docs/superpowers/specs/2026-08-12-camada-operacional-threat-intel-design.md`](../docs/superpowers/specs/2026-08-12-camada-operacional-threat-intel-design.md).
 
 ---
 

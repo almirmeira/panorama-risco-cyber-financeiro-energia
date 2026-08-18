@@ -172,15 +172,122 @@
     ]
   },
   "fontes": {
-    "metodologiaResumo": "Projeto de inteligência estratégica/de cenário (não operacional/tática): curadoria, recorte Brasil e verificação cruzada de dados públicos já publicados por vendors, reguladores e órgãos setoriais. Regra fixa de validação: nenhum número-chave citado com apenas uma fonte quando uma segunda estava disponível; toda divergência entre fontes é registrada explicitamente (nunca escondida); dados sem segunda fonte independente são marcados 'parcialmente confirmado' (selo ⚠ neste dashboard).",
+    "metodologiaResumo": "Projeto de inteligência de cenário sobre fontes públicas, hoje em duas camadas que não se misturam. A camada estratégica (capítulos 00 a 08) cura e verifica dados já publicados por vendors, reguladores e órgãos setoriais, sob regra fixa: nenhum número-chave citado com apenas uma fonte quando uma segunda estava disponível; toda divergência entre fontes é registrada explicitamente (nunca escondida); dado sem segunda fonte independente é marcado 'parcialmente confirmado' (selo ⚠). A camada operacional (abas Ameaças ao Vivo, Brasil e Extorsão & Exploração) é observação bruta de fontes abertas e NÃO passa por essa regra — está aqui declarada como o que é, com a governança de publicação própria descrita abaixo.",
+    "camadas": [
+      {
+        "nome": "Estratégica — o cenário consolidado",
+        "abas": "Visão Geral · Financeiro · Energia · Comparativo · Tendências · Recomendações",
+        "natureza": "Relatórios anuais e trimestrais de vendors, reguladores e órgãos setoriais, já publicados e citáveis.",
+        "regra": "≥2 fontes independentes por número-chave; divergência registrada; sem segunda fonte, selo ⚠ de estimativa.",
+        "ritmo": "Varredura de fontes a cada 3 dias; publicação só quando um número muda e passa nas validações."
+      },
+      {
+        "nome": "Operacional — o que está acontecendo agora",
+        "abas": "Ameaças ao Vivo · Brasil · Extorsão & Exploração",
+        "natureza": "Indicadores brutos de fontes abertas, via instância MISP própria e APIs públicas, lidos em tempo de execução.",
+        "regra": "Não passa pela regra de duas fontes — é observação, não número consolidado. Vale a governança de publicação (TLP, defang, reivindicação não verificada).",
+        "ritmo": "Ciclo de ingestão a cada 20 minutos."
+      }
+    ],
     "hierarquia": [
       { "nivel": "1 — Vendors e telemetria proprietária", "exemplos": "CrowdStrike, Microsoft (MDDR), Verizon (DBIR), IBM X-Force + Cost of a Data Breach, Mandiant (M-Trends), Unit 42, Fortinet, Check Point, Trellix, Dragos, Kaspersky ICS-CERT, Zscaler, SentinelOne" },
       { "nivel": "2 — Órgãos, reguladores e consórcios setoriais", "exemplos": "WEF, ENISA, NIST, CISA, FS-ISAC, E-ISAC, CERT.br, Banco Central (Bacen), Febraban, ANEEL, ONS" },
       { "nivel": "3 — Casas de análise de mercado", "exemplos": "Gartner, Forrester" },
       { "nivel": "4 — Fontes nacionais brasileiras", "exemplos": "Tempest, ISH Tecnologia, Redbelt Security, Cipher, NewSpace" }
     ],
+    "operacionais": [
+      {
+        "nome": "MISP — instância própria",
+        "chaveAoVivo": "MISP (instância CECyber)",
+        "responde": "que infraestrutura maliciosa existe agora",
+        "recorte": "por família e tag da taxonomia financeira",
+        "licenca": "feeds abertos TLP:WHITE/CLEAR sincronizados",
+        "detalhe": "11 feeds abertos habilitados: CIRCL OSINT, botvrij.eu, abuse.ch (URLhaus, ThreatFox, Feodo Tracker, MalwareBazaar), PrecisionSec, Rösti (bin.re), Rectifyq, Infoblox e NOCACTI. A prioridade é feed em formato MISP, não CSV: o CSV entra como evento agregado e perde a família por indicador, que é justamente o campo em que o recorte financeiro se apoia."
+      },
+      {
+        "nome": "ThreatFox (abuse.ch), export direto",
+        "chaveAoVivo": "ThreatFox (abuse.ch)",
+        "responde": "qual família de malware está por trás do indicador",
+        "recorte": "por família",
+        "licenca": "uso livre com atribuição",
+        "detalhe": "Consumido fora do MISP de propósito, em segunda via: o export direto preserva o campo de família que a importação CSV descarta."
+      },
+      {
+        "nome": "ransomware.live — recorte setorial",
+        "chaveAoVivo": "ransomware.live (setor financeiro)",
+        "responde": "quem está sendo atacado no setor financeiro",
+        "recorte": "explícito na fonte (Financial Services), global",
+        "licenca": "reivindicações públicas de grupos de extorsão",
+        "detalhe": "Endpoint setorial, e não o de vítimas recentes: o de recentes devolve as 100 últimas de todos os setores — na prática uns três dias — e anunciar isso como janela de 90 dias seria falso. O arquivo setorial cobre o setor desde 2017."
+      },
+      {
+        "nome": "ransomware.live — recorte Brasil",
+        "chaveAoVivo": "ransomware.live (Brasil, todos os setores)",
+        "responde": "quem está sendo atacado no Brasil, em todos os setores",
+        "recorte": "país (BR), com o setor rotulado por vítima",
+        "licenca": "reivindicações públicas de grupos de extorsão",
+        "detalhe": "Acrescentado em 17/08/2026. No recorte setorial global o Brasil quase não aparece — 15 vítimas financeiras brasileiras em todo o arquivo, uma nos últimos 90 dias — e a leitura natural era de que o painel não capturava os ataques recentes. Não faltava dado, faltava a consulta: pelo país, a mesma fonte tem 530 organizações brasileiras, 68 nos últimos 90 dias. Todos os setores entram de propósito, porque fornecedor de tecnologia, escritório e operador logístico parados por ransomware chegam ao setor financeiro por terceiro."
+      },
+      {
+        "nome": "CISA KEV",
+        "chaveAoVivo": "CISA KEV",
+        "responde": "o que corrigir primeiro",
+        "recorte": "transversal, sem recorte setorial",
+        "licenca": "domínio público (governo dos EUA)",
+        "detalhe": "Catálogo oficial de vulnerabilidades com exploração confirmada em campo, incluindo a marcação de uso conhecido em ransomware. Não tem recorte setorial e nem precisa: uma falha explorada vale para todo mundo."
+      }
+    ],
+    "incorporacoesRecentes": [
+      {
+        "data": "2026-08-17",
+        "fonte": "Kaspersky ICS CERT — Threat landscape for industrial automation systems, Q4/2025 e Q1/2026",
+        "oQueMudou": "A série global de computadores ICS com objetos maliciosos bloqueados foi estendida: 19,7% no 4º trimestre de 2025 e 19,6% no 1º trimestre de 2026, o menor patamar em três anos. Nenhum dos dois relatórios publica tabela setorial consolidada, então os 22,8% de energia elétrica (1º semestre de 2025) seguem sendo o dado setorial mais recente — a queda global não foi transferida ao setor elétrico, que não foi remedido."
+      },
+      {
+        "data": "2026-08-17",
+        "fonte": "ransomware.live — vítimas por país (BR)",
+        "oQueMudou": "Fonte nova da camada operacional e origem da aba Brasil: série mensal de vítimas, grupos ativos contra alvos brasileiros, setores atingidos e o arquivo do setor financeiro brasileiro."
+      },
+      {
+        "data": "2026-08-17",
+        "fonte": "Taxonomia financeira do recorte",
+        "oQueMudou": "De 29 para 32 famílias de malware, com Bizarro, ChaveCloak e VENON — esta última um trojan bancário em Rust que mira 33 bancos brasileiros. 14 das 32 famílias têm alvo brasileiro declarado."
+      }
+    ],
+    "descartadas": [
+      { "fonte": "URLhaus como fonte de recorte brasileiro", "motivo": "8 URLs .br em 17.043 — cobertura brasileira residual. Segue em uso como fonte genérica de infraestrutura maliciosa, não como evidência sobre o Brasil.", "quando": "17/08/2026" },
+      { "fonte": "OpenPhish", "motivo": "HTTP 429 no acesso aberto — limite de requisição impede coleta confiável.", "quando": "17/08/2026" },
+      { "fonte": "PhishStats", "motivo": "HTTP 404 — endpoint público indisponível.", "quando": "17/08/2026" },
+      { "fonte": "Shadowserver (dashboard por país)", "motivo": "Bom candidato para o recorte Brasil, mas exige chave de acesso.", "quando": "17/08/2026" },
+      { "fonte": "Feed MISP do Banco do Brasil (cti.bb.com.br)", "motivo": "Único feed financeiro do catálogo padrão do MISP e o mais relevante para o Brasil; segue fora do ar. Reavaliado a cada rodada.", "quando": "12 e 17/08/2026" },
+      { "fonte": "MISP do CERT.br, FS-ISAC e CIRCL Financial", "motivo": "Comunidades fechadas — o CERT.br exige ser CSIRT listado ou integrar grupo de confiança setorial. É a lacuna que cobriria a ameaça bancária brasileira; não existe plataforma MISP aberta específica do setor financeiro.", "quando": "12/08/2026" },
+      { "fonte": "DigitalSide", "motivo": "Manifesto do feed não responde — fora do ar.", "quando": "12/08/2026" },
+      { "fonte": "PhishTank, AlienVault OTX, Proofpoint ET e Spamhaus", "motivo": "Exigem credencial ou restringem redistribuição; a licença não é explícita o bastante para uma página pública.", "quando": "12/08/2026" }
+    ],
+    "governanca": [
+      "Só TLP:WHITE e TLP:CLEAR chegam à página pública. Marcação mais restritiva é descartada na ingestão, antes de existir no arquivo publicado.",
+      "Indicadores saem em defang (hxxp://, dominio[.]com): são citados como evidência, não distribuídos para bloqueio.",
+      "Nenhum link para site de vazamento é publicado, nem o texto escrito pelo grupo criminoso — publicar rota para um leak site é distribuir a extorsão, não noticiá-la.",
+      "A vítima de extorsão é nomeada, como fazem os rastreadores públicos, e sempre rotulada como reivindicação não verificada: grupos inflam listas e reciclam vítimas antigas.",
+      "Se uma fonte cai, o ciclo segue com as demais e a aba nomeia quem falhou. Se nenhuma responde, o arquivo anterior é preservado em vez de ser sobrescrito com uma página vazia."
+    ],
+    "cuidadosMetodologicos": [
+      { "titulo": "A série temporal não usa a data da fonte", "texto": "Feeds abertos publicam dumps rolantes de adições recentes: centenas de itens com data de hoje e poucas dezenas de duas semanas atrás — porque os antigos saem da janela, não porque houve menos ameaça. Um gráfico sobre esse dado sobe sozinho em qualquer cenário. A série vem da observação própria acumulada, que registra quando cada indicador foi visto aqui pela primeira vez, e só aparece com 7 ou mais dias de coleta." },
+      { "titulo": "\"Recente\" no MISP não é recente", "texto": "O filtro por data do MISP olha o carimbo do atributo, que num feed recém-sincronizado é a hora da importação. A primeira consulta trouxe 2.594 atributos de relatórios de 2015 e 2016 como se fossem novos. A recência passou a sair da data do evento." },
+      { "titulo": "Janela recente e acervo são coisas diferentes", "texto": "Feed MISP aberto é majoritariamente arquivo, não fluxo diário: habilitar dez feeds novos levou o acervo de 486 para mais de 600 eventos e a janela de 14 dias continuou com três, porque os eventos chegam com a data do fato original. Os dois números aparecem separados e rotulados, em vez de a janela ser esticada para simular recência." },
+      { "titulo": "Um limite de API que não se anuncia como erro", "texto": "A API de extorsão aceita 1 requisição por minuto e devolve o estouro com HTTP 200 e uma mensagem de limite no corpo — só o corpo denuncia. Como o ciclo consulta dois recortes (setor e país), há uma pausa deliberada entre eles e uma checagem explícita desse corpo; sem ela, o limite viraria \"0 vítimas\" sem nenhum erro na tela." }
+    ],
+    "cadencia": [
+      { "etapa": "Varredura de pesquisa", "ritmo": "a cada 3 dias", "oQueFaz": "Revisita as fontes da camada estratégica, atualiza dossiê, capítulos e números do painel. A publicação é automática apenas se quatro validações passarem (toda citação com entrada correspondente, dados parseáveis, texto sem corrupção de acentuação e build íntegro); qualquer falha vira revisão manual." },
+      { "etapa": "Publicação do painel", "ritmo": "diária, à noite", "oQueFaz": "Publica se houver mudança validada, com backup e verificação automática — se a página não responder, volta sozinha à versão anterior." },
+      { "etapa": "Ingestão operacional", "ritmo": "a cada 20 minutos", "oQueFaz": "Coleta as fontes abertas, aplica o filtro de TLP e o recorte financeiro e reescreve o arquivo lido pelas abas operacionais. Não exige nova publicação do painel." }
+    ],
+    "notaDatas": "O carimbo do cabeçalho traz duas datas de propósito: \"verificado em\" é a última varredura das fontes; \"dado de\" é a última vez que um número mudou. Ciclos que confirmam tudo sem novidade são o resultado esperado num painel de dados anuais — sem as duas datas, um ciclo saudável ficaria indistinguível de uma rotina morta.",
     "nVendors": 54,
     "nVozes": 25,
+    "nFontesOperacionais": 5,
+    "nFeedsMisp": 11,
+    "nFamiliasTaxonomia": 32,
     "repoUrl": "https://github.com/almirmeira/panorama-risco-cyber-financeiro-energia"
   }
 }

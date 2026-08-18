@@ -27,6 +27,11 @@ JSON estático.
 
 ## Fontes e o que cada uma responde
 
+O catálogo completo — com licença de cada fonte, os 11 feeds abertos habilitados no MISP, as fontes
+testadas e **recusadas** com o motivo, e a governança de publicação — está na
+[Parte 4 de `fontes-e-referencias/README.md`](../../fontes-e-referencias/) e é publicado na aba
+**Fontes & Método** do painel. Fonte que entra ou sai daqui precisa aparecer nos dois lugares.
+
 | Fonte | Pergunta que responde | Recorte financeiro |
 | :-- | :-- | :-- |
 | MISP (feeds abertos) | que infraestrutura maliciosa existe agora | por família/tag |

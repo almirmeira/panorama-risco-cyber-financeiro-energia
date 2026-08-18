@@ -58,7 +58,7 @@ próprios dados**.
 > própria. Isso **não revoga** a distinção defendida acima; ao contrário, depende dela. As duas
 > camadas convivem separadas e rotuladas:
 >
-> | | Camada estratégica (caps. 01–08) | Camada operacional (aba *Ameaças ao Vivo*) |
+> | | Camada estratégica (caps. 01–08) | Camada operacional (abas ao vivo) |
 > | :-- | :-- | :-- |
 > | Unidade de análise | estatística setorial consolidada | indicador observado, individual |
 > | Regra de evidência | ≥2 fontes independentes por número | fato pontual reportado por uma fonte |
@@ -72,6 +72,23 @@ próprios dados**.
 > coleta, 369 indicadores financeiros em 6.614 coletados (5,6%), dos quais apenas 3 famílias de
 > trojan bancário. Esse número é, ele próprio, evidência a favor da tese deste capítulo: quem
 > precisa defender um banco em tempo real não se sustenta com o que há de aberto.
+
+> **Adendo de 18/08/2026 — a camada operacional cresceu, e o catálogo dela também.** A camada
+> operacional passou de uma aba para três — *Ameaças ao Vivo*, *Brasil* e *Extorsão & Exploração* —
+> e ganhou fontes que não existiam no adendo acima: o catálogo **CISA KEV** e o recorte **por país**
+> do ransomware.live, que sustenta a aba *Brasil*.
+>
+> O episódio que produziu esse recorte reforça a tese deste capítulo em vez de arranhá-la. Até 17/08
+> a extorsão era consultada só pelo recorte setorial, que é global, e nele o Brasil quase não existe:
+> 15 vítimas financeiras brasileiras em todo o arquivo desde 2017, uma nos últimos 90 dias. A leitura
+> natural de quem abria o painel aqui era de que faltava fonte — provavelmente paga. Faltava a
+> consulta: pelo endpoint de país, a mesma fonte aberta e gratuita tem 530 organizações brasileiras e
+> 68 nos últimos 90 dias. A lacuna era de recorte, não de orçamento de inteligência.
+>
+> O catálogo completo dessas fontes — inclusive as que foram testadas e **recusadas**, com o motivo
+> de cada recusa, os feeds abertos habilitados na instância MISP e a governança de publicação — está
+> na [Parte 4 de `fontes-e-referencias/README.md`](../fontes-e-referencias/#parte-4--fontes-operacionais-camada-ao-vivo-do-painel)
+> e na aba *Fontes & Método* do painel.
 
 ## Por que os relatórios anuais dos vendors já são a telemetria
 
@@ -206,6 +223,12 @@ Qualquer leitor pode verificar a cadeia de evidência deste panorama sem depende
   arbitradas silenciosamente — quando uma escolha precisou ser feita entre duas leituras
   conflitantes, o critério de desempate (por exemplo, "duas fontes concordantes contra uma
   discordante") é explicado.
+- Para a **camada operacional**, que não passa pela regra de duas fontes, a auditoria é outra e está
+  igualmente publicada: quais fontes alimentam cada aba, quais foram testadas e recusadas e por quê,
+  e que regras de publicação valem para esse material — tudo na
+  [Parte 4 de `fontes-e-referencias/README.md`](../fontes-e-referencias/#parte-4--fontes-operacionais-camada-ao-vivo-do-painel).
+  O painel repete esse catálogo na aba *Fontes & Método*, para que o leitor não precise vir ao
+  repositório para saber de onde veio o que está vendo.
 
 ## Fontes
 

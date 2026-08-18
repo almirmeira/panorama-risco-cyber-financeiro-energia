@@ -140,6 +140,25 @@ O carimbo do cabeçalho mostra as duas ("Verificado em X · dado de Y") sempre q
 distinção, um ciclo saudável que conferiu tudo e não achou novidade fica indistinguível de uma
 rotina morta — foi exatamente a confusão que ocorreu em agosto de 2026.
 
+### A aba Fontes & Método — as duas camadas se declaram ali
+
+A chave `fontes` do `dashboard.json` alimenta a aba **Fontes & Método**, e ela cobre as **duas**
+camadas: `hierarquia` (estratégica), `operacionais` + `descartadas` + `governanca` (operacional),
+mais `camadas`, `cuidadosMetodologicos`, `cadencia` e `incorporacoesRecentes`. A aba é o único lugar
+do painel onde o leitor descobre de onde vem o que está vendo e por que uma fonte ausente está
+ausente.
+
+Cada entrada de `operacionais` traz um campo `chaveAoVivo`, que é o **nome exato** da fonte no
+`threat-live.json`. É por ele que a aba mostra o estado de cada fonte no último ciclo de ingestão.
+Se o nome mudar em [`ingest/ingest_threat_intel.py`](ingest/) e não aqui, a coluna "último ciclo"
+fica vazia sem quebrar nada — silenciosamente.
+
+> **Regra:** fonte nova (ou fonte testada e recusada) na ingestão só está entregue quando aparece em
+> três lugares: no script, aqui em `fontes` e na
+> [Parte 4 de `../fontes-e-referencias/README.md`](../fontes-e-referencias/). Foi exatamente essa
+> defasagem que deixou a aba descrevendo só a camada estratégica enquanto metade do painel já vinha
+> da operacional.
+
 Para atualizar:
 
 1. Edite `src/data/dashboard.json` (valores, KPIs, dimensões, séries) e a data de `meta`.
