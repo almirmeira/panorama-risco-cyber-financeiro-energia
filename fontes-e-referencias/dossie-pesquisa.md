@@ -13,6 +13,13 @@
 > explicitamente onde um valor mais atual está disponível. Nenhuma outra publicação relevante ao escopo
 > (WEF, ENISA, Dragos, Kaspersky ICS CERT, FS-ISAC, Fortinet, Nozomi, ANEEL/ONS, BACEN/CMN) teve edição nova
 > identificada nesta janela de 11 dias que atendesse à regra de duas fontes — ver seção de checagens ao final.
+>
+> **Atualização 2026-08-19 (refresh de 3 dias):** nenhuma edição nova de relatório primário foi identificada
+> nesta janela (CrowdStrike, Microsoft, Verizon, IBM, Mandiant, Dragos, Kaspersky ICS CERT, WEF, ENISA, FS-ISAC
+> seguem nas edições já registradas). Localizado, porém, um dado pré-existente relevante para o recorte Brasil
+> que não constava do dossiê: **76 incidentes cibernéticos "relevantes" reportados ao Banco Central em 2025
+> (+29% ante 59 em 2024)**, do Relatório Integrado do BC — ver seção Financeiro. Não foi identificado nenhum
+> incidente-marco novo nem atualização regulatória nova (ANEEL/ONS/BACEN) nesta janela — ver checagem ao final.
 
 ## Global
 
@@ -937,6 +944,53 @@ inventar um valor consolidado.
     https://www.migalhas.com.br/depeso/343724/instituicoes-financeiras-politica-de-seguranca-cibernetica
   - Observações: sem divergência relevante entre fontes; conteúdo qualitativo consistente com o texto oficial da
     resolução.
+
+---
+
+### Atualização 2026-08-19 — Brasil: incidentes cibernéticos relevantes reportados ao Banco Central (2025)
+
+- **Dado:** o **Relatório Integrado** do Banco Central referente a 2025 registrou **76 incidentes cibernéticos
+  considerados "relevantes"** no Sistema Financeiro Nacional (SFN) ao longo do ano — alta de **29%** frente aos
+  **59 casos** de 2024. Do total de 2025, **39 casos** foram classificados como fraude (ante apenas 9 em 2024) e
+  **27** corresponderam a falhas de tecnologia da informação; **65%** das ocorrências se concentraram no segundo
+  semestre do ano. O próprio Banco Central atribui o crescimento a fatores estruturais: dependência crescente de
+  prestadores de serviço terceirizados (PSTIs) e uso disseminado de APIs sem avaliação periódica de risco nem
+  monitoramento operacional adequado por parte das instituições supervisionadas. Entre os métodos de ataque
+  registrados: aliciamento de funcionários de PSTIs, interceptação/modificação de mensagens no ponto de
+  assinatura digital, e uso indevido de credenciais obtidas por engenharia social (phishing, malware, coação
+  direta de colaboradores).
+  - Fonte 1 (cobertura de agência/wire, replicada por múltiplos veículos com o mesmo texto): Mercado&Consumo /
+    ISTOÉ Dinheiro / Jornal do Comércio. *Incidentes cibernéticos sobem 29% em 2025, com avanço de fraudes,
+    mostra BC*. Abril de 2026.
+    https://mercadoeconsumo.com.br/01/04/2026/tecnologia/incidentes-ciberneticos-sobem-29-em-2025-com-avanco-de-fraudes-mostra-bc/
+    (ver também https://istoedinheiro.com.br/incidentes-ciberneticos-sobem-29-em-2025-com-avanco-de-fraudes-mostra-bc
+    e https://www.jornaldocomercio.com/geral/2026/04/1243260-incidentes-ciberneticos-sobem-29-em-2025-com-avanco-de-fraudes-mostra-bc.html)
+  - Fonte 2 (secundária, cobertura independente com ângulo e redação distintos, mesmos números centrais):
+    Portal Information Management. *Com Pix superando 170 milhões de usuários, Banco Central endurece regras
+    após alta de 29% nos ataques cibernéticos*. Agosto de 2026.
+    https://docmanagement.com.br/08/05/2026/com-pix-superando-170-milhoes-de-usuarios-banco-central-endurece-regras-apos-alta-de-29-nos-ataques-ciberneticos/
+    (ver também Blog Televendas & Cobrança, *BC registrou 76 incidentes cibernéticos graves em 2025*,
+    https://www.televendasecobranca.com.br/credito/bc-registrou-76-incidentes-ciberneticos-graves-em-2025-178992/)
+  - Observações: **dado pré-existente (publicado em abril de 2026) não incorporado nas edições anteriores deste
+    dossiê** — identificado nesta janela de checagem porque o Relatório Integrado do BC não constava, até aqui,
+    da lista de fontes primárias monitoradas para o recorte Brasil (apenas as Resoluções CMN/BCB eram
+    acompanhadas). Tentativa de acesso direto ao site bcb.gov.br para localizar o Relatório Integrado original
+    foi bloqueada pelo proxy de rede deste ambiente (mesma limitação de acesso já registrada para outras fontes
+    .gov ao longo deste dossiê); o número foi confirmado por convergência entre múltiplas coberturas de imprensa
+    especializada e financeira independentes entre si (Mercado&Consumo, ISTOÉ Dinheiro, Jornal do Comércio,
+    Portal Information Management, Televendas & Cobrança, Poder360, TI Inside), sem divergência relevante quanto
+    aos números centrais (76/59/+29%/39 fraude/27 TI). **Nota de reconciliação:** uma cobertura anterior (Poder360,
+    novembro de 2025, citando a edição de novembro/2025 do Relatório de Estabilidade Financeira — REF, um
+    documento distinto e mais frequente que o Relatório Integrado anual) registrava **68 incidentes** entre
+    janeiro e outubro de 2025 — número parcial consistente com o total final de 76 para o ano fechado, sem
+    contradição. A soma dos subtipos informados (39 fraude + 27 TI = 66) não bate exatamente com o total de 76
+    — **[NÃO CONFIRMADO — divergência de 10 casos entre a soma dos subtipos e o total agregado não foi possível
+    arbitrar em 2026-08-19 com as fontes secundárias disponíveis; possivelmente há uma terceira categoria não
+    detalhada pela cobertura de imprensa]**. Este número (incidência agregada reportada à autarquia supervisora)
+    é conceitualmente distinto dos números de fraude ao consumidor via Pix (28 milhões de casos, ADDP) e de
+    *ransomware* direto contra instituições (156→202, Black Kite) já registrados neste dossiê — mede a
+    contagem oficial de incidentes "relevantes" comunicados ao BC por instituições supervisionadas, uma métrica
+    de governança/supervisão, não de volume de ataques ou de vítimas.
 
 ---
 
@@ -2392,3 +2446,28 @@ relatórios (citando as edições 2026 apenas como nota de tendência, quando ci
 múltiplas coberturas independentes convergentes, sem sinal de erratas), a edição mais recente de cada uma
 passa a ser a referência primária mais atual para este panorama — sem prejuízo da trilha de pesquisa
 original, mantida integralmente acima.
+
+---
+
+## Registro do refresh — 2026-08-19
+
+Checagem de diligência de 3 dias (ciclo reduzido a partir de 2026-08-17, ver `dashboard/src/data/dashboard.json`
+e commits anteriores): verificação de novas edições de relatório primário, incidentes-marco e atualizações
+regulatórias desde o último refresh (2026-08-17).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-08-19 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada) |
+| Kaspersky ICS CERT | Sem edição nova além da série Q4 2025/Q1 2026 já incorporada em 2026-08-17 |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova (edição 2026, jan/2026, já vigente) |
+| ENISA Threat Landscape | Sem edição nova (próxima edição esperada out/2026) |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação) | Nenhuma norma ou despacho novo localizado nesta janela |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada; **identificado dado pré-existente (abril/2026) não incorporado anteriormente** — 76 incidentes cibernéticos relevantes reportados ao BC em 2025 (+29% vs. 59 em 2024), Relatório Integrado do BC — incorporado nesta atualização (ver seção Financeiro) |
+| Incidentes-marco novos (financeiro/energia) | Nenhum incidente novo identificado nesta janela que atenda à regra de duas fontes |
+
+**Observação:** o dado incorporado nesta janela (incidentes reportados ao BC) já era público desde abril de
+2026 — não é uma publicação desta janela de 3 dias, mas uma lacuna de cobertura identificada nesta checagem de
+rotina, incorporada por atender à regra de duas fontes independentes e por sua relevância direta ao recorte
+Brasil do capítulo Financeiro. Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas.
