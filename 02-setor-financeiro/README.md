@@ -42,6 +42,7 @@ brasileiro — Pix, Open Finance, regulação do Banco Central e incidentes conh
 | *Ransomware* direto no setor financeiro (2024→2025)           | 156 → 202 incidentes (+~30%)             | Black Kite [10][11]             |
 | *Ransomware* setor financeiro, Q1 2026 vs. Q1 2025            | +76% (65 incidentes)                     | Black Kite [10][11]             |
 | Fraude por *deepfake* (evolução em 3 anos)                    | 0,1% → 6,5% das tentativas (+2.137%)    | Cyble/StationX/BrightDefense [12][14] |
+| Incidentes relevantes reportados ao BC — Brasil (2024→2025)   | 59 → 76 incidentes (+29%)                | Banco Central (Relatório Integrado) [38][39] |
 
 ### FS-ISAC: as quatro ameaças que definem o setor
 
@@ -238,6 +239,21 @@ cada instituição [28][29].
 > BCB nº 85/2021**. As duas normas são irmãs, publicadas na mesma data, mas emitidas por órgãos e com
 > números distintos — distinção confirmada por múltiplas fontes jurídicas (Migalhas, NDM Advogados,
 > SecOffice) [26][27][28][29].
+
+### Panorama agregado: incidentes reportados ao Banco Central em 2025
+
+Além dos casos individuais documentados abaixo, o **Relatório Integrado** do Banco Central referente a 2025
+registrou **76 incidentes cibernéticos considerados "relevantes"** no Sistema Financeiro Nacional — alta de
+**29%** frente aos **59 casos** de 2024. Do total de 2025, **39 casos** foram classificados como fraude (ante
+apenas 9 em 2024) e **27** corresponderam a falhas de tecnologia da informação; **65%** das ocorrências se
+concentraram no segundo semestre do ano [38][39]. O próprio Banco Central atribui o crescimento a fatores
+estruturais — dependência crescente de prestadores de serviço terceirizados (PSTIs) e uso disseminado de APIs
+sem avaliação periódica de risco nem monitoramento operacional adequado pelas instituições supervisionadas
+—, o mesmo padrão de risco de terceiros ilustrado pelos casos C&M Software e FictorPay adiante [38][39]. Esta
+métrica é conceitualmente distinta do volume de fraude ao consumidor via Pix (28 milhões de casos, ver acima)
+e do *ransomware* direto contra instituições (156→202 incidentes, Black Kite): mede a contagem oficial de
+incidentes comunicados ao BC por instituições supervisionadas, uma métrica de governança/supervisão, não de
+volume de ataques ou de vítimas.
 
 ### Incidentes conhecidos no setor financeiro brasileiro (2025)
 
@@ -441,3 +457,11 @@ https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are
 
 [37] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
 https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/
+
+[38] Mercado&Consumo (cobertura de agência, replicada por ISTOÉ Dinheiro e Jornal do Comércio). *Incidentes
+cibernéticos sobem 29% em 2025, com avanço de fraudes, mostra BC*. Abril de 2026.
+https://mercadoeconsumo.com.br/01/04/2026/tecnologia/incidentes-ciberneticos-sobem-29-em-2025-com-avanco-de-fraudes-mostra-bc/
+
+[39] Portal Information Management. *Com Pix superando 170 milhões de usuários, Banco Central endurece regras
+após alta de 29% nos ataques cibernéticos*. Agosto de 2026.
+https://docmanagement.com.br/08/05/2026/com-pix-superando-170-milhoes-de-usuarios-banco-central-endurece-regras-apos-alta-de-29-nos-ataques-ciberneticos/

@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-08-17",
-    "verificadoEm": "2026-08-17",
+    "geradoEm": "2026-08-19",
+    "verificadoEm": "2026-08-19",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -21,14 +21,15 @@
         { "label": "Fraude por deepfake nas tentativas de fraude", "valor": "6,5", "unidade": "%", "delta": "+2.137% em 3 anos (de 0,1%)", "fonte": "cap. 02", "estimativa": false },
         { "label": "DDoS no setor (2022→2023)", "valor": "+154", "unidade": "%", "delta": "35%+ de todo DDoS observado", "fonte": "cap. 02", "estimativa": false },
         { "label": "Prejuízo com golpes financeiros no Brasil (2024)", "valor": "10,1", "unidade": "R$ bi", "delta": "+17% a/a", "fonte": "cap. 02", "estimativa": false },
-        { "label": "Consentimentos ativos de Open Finance (Brasil)", "valor": "128", "unidade": "milhões", "delta": "líder global entre 78+ países", "fonte": "cap. 02", "estimativa": false }
+        { "label": "Consentimentos ativos de Open Finance (Brasil)", "valor": "128", "unidade": "milhões", "delta": "líder global entre 78+ países", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Incidentes relevantes reportados ao BC (Brasil)", "valor": "76", "unidade": "incidentes em 2025", "delta": "+29% a/a (ante 59 em 2024)", "fonte": "cap. 02", "estimativa": false }
       ],
       "dimensoes": [
         { "nome": "Fraude / PIX", "nivel": "vermelho", "justificativa": "28 milhões de fraudes envolvendo Pix (jan–set/2025, ADDP); R$ 10,1 bi em prejuízo com golpes em 2024 (+17%); mecanismo de 'devolução dupla' explorado no MED; R$ 2,7 bi em fraude Pix formalmente apurada pela Febraban em 2 anos (+43%).", "fonte": "cap. 02" },
         { "nome": "DDoS", "nivel": "ambar", "justificativa": "Setor respondeu por mais de 35% de todo DDoS observado em 2023 (+154% frente a 2022), ultrapassando o setor de games; FS-ISAC reforça DDoS entre as quatro ameaças do setor, mas não há atualização quantitativa confirmada para 2025–2026.", "fonte": "cap. 02", "estimativa": true },
         { "nome": "Ransomware", "nivel": "vermelho", "justificativa": "156→202 incidentes diretos (2024→2025, +30%), com Q1 2026 já 76% acima do mesmo período de 2025; grupos ativos subiram de 37 para 48; Qilin reivindicou 59 vítimas, incluindo caso GJTec com 32 instituições sul-coreanas via um único MSP.", "fonte": "cap. 02" },
         { "nome": "Terceiros / cadeia de suprimentos", "nivel": "vermelho", "justificativa": "Caso C&M Software forçou suspensão de três instituições do Pix (Transfeera, Soffy, Nuoro Pay) e desvio de ao menos R$ 400 milhões; caso FictorPay (R$ 26 mi, ~280 transações Pix) foi o quarto incidente contra fintechs brasileiras em três meses, com R$ 1,74 bi em perdas acumuladas desde jul/2024.", "fonte": "cap. 02" },
-        { "nome": "Regulação", "nivel": "ambar", "justificativa": "Resoluções CMN nº 4.893/2021 e BCB nº 85/2021 estão entre as mais maduras do mundo, mas foram atualizadas por CMN nº 5.274/2025 e BCB nº 538/2025 com prazo de adequação em março de 2026 — janela regulatória apertada e ainda em curso.", "fonte": "cap. 02" }
+        { "nome": "Regulação", "nivel": "ambar", "justificativa": "Resoluções CMN nº 4.893/2021 e BCB nº 85/2021 estão entre as mais maduras do mundo, mas foram atualizadas por CMN nº 5.274/2025 e BCB nº 538/2025 com prazo de adequação em março de 2026 — janela regulatória apertada e ainda em curso. O próprio BC reportou 76 incidentes cibernéticos relevantes no SFN em 2025 (+29% vs. 59 em 2024), atribuídos a dependência de terceiros e uso de APIs sem avaliação de risco adequada.", "fonte": "cap. 02" }
       ],
       "barra": {
         "titulo": "Ransomware direto contra o setor financeiro (incidentes/ano)",
