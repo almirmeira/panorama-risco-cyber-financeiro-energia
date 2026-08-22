@@ -4,7 +4,7 @@
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
     "geradoEm": "2026-08-19",
-    "verificadoEm": "2026-08-19",
+    "verificadoEm": "2026-08-22",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
