@@ -162,6 +162,7 @@ fonte que a fez, nunca tratada como fato único e definitivo.
 | 2022 (13/4)      | Pipedream / Incontroller — *framework* modular contra PLCs      | CHERNOVITE, segundo Dragos (alta confiança); Mandiant nota consistência com interesse histórico russo [24][25] | Sem uso ativo confirmado até a data do advisório conjunto CISA/FBI/NSA/DOE          |
 | 2024 (jan.; identificado em abr.) | FrostyGoop — interrupção de aquecimento distrital em Lviv, Ucrânia | Não identificado — nenhuma atribuição de grupo de ameaça localizada, segundo Dragos [26][27] | Mais de 600 prédios residenciais; ~2 dias sem aquecimento em temperaturas negativas   |
 | 2025 (29/12); 2ª instalação revelada em 9/8/2026 | Pivô por APN celular privada — de parque eólico a usina de cogeração (CHP) na Polônia | Sandworm, segundo ESET (Dragos também associa); Static Tundra/FSB, segundo CERT Polska — atribuição contestada [48][49] | ~30 instalações eólicas/solares comprometidas; turbina a vapor e estação de tratamento de água de usina CHP (50 mil residentes) desligadas por sabotagem; sem interrupção ao público; 1º caso documentado de pivô TI→OT via APN privada |
+| 2026 (jul.; revelado em 23/8/2026) | Pequeno gerador de energia desligado por 4 dias no Reino Unido | Ligado ao Irã, segundo o *The Telegraph* — nome do grupo/APT não identificado [53][54] | Instalação de pequena escala; sem risco à rede nacional; 1º ataque desse tipo bem-sucedido contra infraestrutura de energia britânica, segundo autoridades |
 
 O padrão histórico é revelador: o ataque de 2015 dependeu de acesso manual a interfaces homem-máquina
 (HMI) após meses de *spear-phishing* e movimento lateral da rede de TI corporativa até o SCADA; o
@@ -183,7 +184,12 @@ modo STOP. O CERT Polska classificou esse movimento — pivô entre instalaçõe
 por compartilharem a mesma rede celular privada de um operador — como o primeiro caso documentado desse tipo.
 Em 9 de agosto de 2026, no DEF CON, o CERT Polska revelou que uma segunda instalação menor havia sido
 comprometida pela mesma campanha por meio de um controlador WAGO PFC200 com credenciais padrão, achado cuja
-análise levou mais de três meses e por isso ficou fora do relatório original de janeiro de 2026 [48][49].
+análise levou mais de três meses e por isso ficou fora do relatório original de janeiro de 2026 [48][49]. Mais
+um episódio de sabotagem contra infraestrutura de energia foi revelado em 23 de agosto de 2026, quando o
+*The Telegraph* noticiou que hackers ligados ao Irã haviam derrubado, em julho de 2026, um pequeno gerador de
+energia no Reino Unido por quatro dias — sem afetar a rede nacional, mas descrito por autoridades britânicas
+como o primeiro caso desse tipo bem-sucedido contra o setor de energia do país; o nome do grupo/APT responsável
+não foi identificado nas fontes consultadas [53][54].
 
 ### Atores relevantes: Sandworm/ELECTRUM e Volt Typhoon/VOLTZITE
 
@@ -500,3 +506,9 @@ https://www.businessworld.in/article/malicious-objects-targeted-219-of-ics-compu
 [52] ITWeb. *Kaspersky ICS CERT: The beginning of 2026 showed an increase in cyber attacks on the
 manufacturing sector*. 8 de julho de 2026.
 https://www.itweb.co.za/article/kaspersky-ics-cert-the-beginning-of-2026-showed-an-increase-in-cyber-attacks-on-the-manufacturing-sector/KzQenMjyX5j7Zd2r
+
+[53] CNBC. *Small UK power plant shut down after Iran-linked cyberattack: report*. 23 de agosto de 2026.
+https://www.cnbc.com/2026/08/23/small-uk-power-plant-shut-down-after-iran-linked-cyberattack-report.html
+
+[54] SecurityWeek. *Iran-Linked Hackers Shut Down UK Power Plant for Four Days*. Agosto de 2026.
+https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/
