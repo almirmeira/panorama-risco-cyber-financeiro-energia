@@ -20,6 +20,15 @@
 > que não constava do dossiê: **76 incidentes cibernéticos "relevantes" reportados ao Banco Central em 2025
 > (+29% ante 59 em 2024)**, do Relatório Integrado do BC — ver seção Financeiro. Não foi identificado nenhum
 > incidente-marco novo nem atualização regulatória nova (ANEEL/ONS/BACEN) nesta janela — ver checagem ao final.
+>
+> **Atualização 2026-08-25 (refresh de 3 dias):** nenhuma edição nova de relatório primário foi identificada
+> nesta janela (CrowdStrike, Microsoft, Verizon, IBM, Mandiant, Dragos, Kaspersky ICS CERT, WEF, ENISA, FS-ISAC
+> seguem nas edições já registradas) nem norma/despacho novo de ANEEL/ONS/BACEN. Localizado um **novo
+> incidente-marco relevante ao capítulo Energia**: hackers ligados ao Irã derrubaram por **quatro dias** um
+> pequeno gerador de energia no Reino Unido (ataque ocorrido em julho de 2026, revelado pelo *The Telegraph*
+> em 23/8/2026) — sem impacto à rede nacional, mas descrito por autoridades como o primeiro caso desse tipo
+> bem-sucedido contra infraestrutura de energia britânica — ver seção Energia. Nenhuma outra lacuna equivalente
+> foi identificada nas demais frentes verificadas nesta janela — ver checagem ao final.
 
 ## Global
 
@@ -1552,6 +1561,49 @@ em 2026-07-21.
 
 ---
 
+### Caso — ataque ligado ao Irã derruba pequeno gerador de energia no Reino Unido (jul/2026; revelado em ago/2026)
+
+- **Dado:** um ciberataque atribuído a hackers ligados ao Irã (segundo o *The Telegraph*, ao Corpo de Guardiões
+  da Revolução Islâmica) derrubou, em **julho de 2026**, um **pequeno gerador de energia** no Reino Unido, que
+  permaneceu **fora de operação por quatro dias**. O governo britânico classificou o alvo como uma instalação de
+  pequena escala e afirmou que, em nenhum momento, houve risco à rede elétrica nacional mais ampla. Autoridades
+  descreveram o caso como o **primeiro ataque desse tipo bem-sucedido contra infraestrutura de energia
+  britânica**, com intenção provável de demonstrar capacidade de acesso e disrupção contra infraestrutura do
+  Reino Unido, mais do que causar dano físico duradouro. O incidente ocorreu no mesmo período em que autoridades
+  dos EUA alertaram sobre atores cibernéticos maliciosos, suspeitos de vínculo com o Irã, mirando sistemas de
+  controle industrial de estações de tratamento de água em pelo menos sete estados americanos (a partir de
+  27/7/2026) — ambos os episódios enquadrados pela cobertura como parte do mesmo pano de fundo de tensão entre
+  Reino Unido/EUA e Irã. Em paralelo, o executivo-chefe do NCSC (agência de cibersegurança do Reino Unido),
+  Richard Horne, declarou publicamente que a agência lida com pelo menos **quatro ciberataques "de significância
+  nacional" por semana** — declaração feita de forma geral sobre o panorama de ameaças ao Reino Unido, não
+  especificamente sobre este incidente, mas citada pela mesma cobertura como contexto.
+  - Fonte 1 (secundária, cobertura direta que cita o furo original do *The Telegraph*, não acessível diretamente
+    por paywall): CNBC. *Small UK power plant shut down after Iran-linked cyberattack: report*. 23 de agosto de
+    2026. https://www.cnbc.com/2026/08/23/small-uk-power-plant-shut-down-after-iran-linked-cyberattack-report.html
+  - Fonte 2 (secundária, cobertura técnica independente com os mesmos números centrais): SecurityWeek.
+    *Iran-Linked Hackers Shut Down UK Power Plant for Four Days*. 2026.
+    https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/ (ver também
+    Security Affairs, *UK Power Plant Disabled for Four Days by Iran-Linked Hackers, Concurrent with US Water
+    Attacks*, 2026, https://securityaffairs.com/197734/cyber-warfare-2/uk-power-plant-disabled-for-four-days-by-iran-linked-hackers-concurrent-with-us-water-attacks.html,
+    e The Times of Israel, *Iran-linked cyberhackers blamed for four-day shutdown of UK power plant*, 2026,
+    https://www.timesofisrael.com/iran-linked-hackers-blamed-for-four-day-shutdown-of-uk-power-plant/)
+  - Observações: a fonte primária da revelação é o *The Telegraph* (Reino Unido), que não pôde ser acessado
+    diretamente por paywall/bloqueio de acesso automatizado nesta pesquisa; o dado foi confirmado por múltiplas
+    coberturas independentes (CNBC, SecurityWeek, Security Affairs, The Times of Israel, The Jerusalem Post,
+    New Civil Engineer) convergentes quanto aos fatos centrais (quatro dias, pequeno gerador, atribuição a
+    ator ligado ao Irã, sem impacto à rede nacional). **Nome do grupo/ator específico não identificado** nas
+    fontes consultadas — a atribuição é a um vínculo genérico com o Irã (uma cobertura cita especificamente o
+    Corpo de Guardiões da Revolução Islâmica), sem nome de grupo de ameaça nomeado (ex.: no padrão
+    Sandworm/Volt Typhoon já usado neste dossiê) — **[NÃO CONFIRMADO — nome específico do grupo/APT responsável
+    não localizado em 2026-08-25]**. Não foi possível confirmar o nome da instalação afetada nem sua localização
+    exata dentro do Reino Unido nas fontes consultadas — **[NÃO CONFIRMADO — identidade/local exato do gerador
+    não verificado em 2026-08-25, tratado apenas como "pequeno gerador" conforme descrito pelo governo
+    britânico]**. Este é o segundo caso incorporado a este dossiê como *novo incidente-marco* desde a pesquisa
+    original de 2026-07-21 (o primeiro foi o caso Sandworm/Polônia, refresh de 2026-08-13), identificado nesta
+    janela de 2026-08-25 e atendendo à regra de duas fontes independentes.
+
+---
+
 ### Grupos/APTs — Volt Typhoon / VOLTZITE (pré-posicionamento em infraestrutura crítica dos EUA)
 
 - **Dado:** em **7 de fevereiro de 2024**, CISA, NSA e FBI publicaram um advisório conjunto ("AA24-038A") alertando
@@ -1759,6 +1811,7 @@ em 2026-07-21.
 | Colonial Pipeline — ransomware (mai/2021) | Resgate 75 BTC (~USD 4,4 mi); ~45% do combustível da Costa Leste | DOE/CESER | Confirmado (2 fontes) |
 | Sandworm/Static Tundra — usinas eólicas/CHP Polônia (dez/2025; 2ª instalação rev. ago/2026) | ~30 instalações; turbina a vapor e ETA de usina CHP (50 mil residentes) desligadas; sem impacto à população | ESET WeLiveSecurity / SecurityWeek | Confirmado (2 fontes); atribuição de ator contestada (Sandworm vs. Static Tundra) |
 | Volt Typhoon/VOLTZITE — caso LELWD (Massachusetts) | ~300 dias de permanência (fev–nov/2023) | CISA AA24-038A / Dragos (via SecurityWeek) | Confirmado (2 fontes) |
+| Ator ligado ao Irã — pequeno gerador de energia, Reino Unido (jul/2026; revelado ago/2026) | 4 dias fora de operação; sem impacto à rede nacional | CNBC (citando *The Telegraph*) / SecurityWeek | Confirmado (2 fontes); nome do grupo/ator não identificado |
 | ANEEL — marco regulatório cibersegurança | RN nº 964/2021 (14/12/2021, vigência 1/7/2022) | ANEEL (texto oficial) | Confirmado (2 fontes); divergência de 4 dias em fonte terciária descartada |
 | ANEEL — fiscalização RN 964/2021 | Prazo até 30/6/2025 (Despacho nº 427/2025) | ANEEL | Confirmado (2 fontes) |
 | Brasil — Eletrobras/Eletronuclear e Copel (fev/2021) | Ransomware DarkSide (Copel); sem impacto em Angra 1/2 | BleepingComputer / Canaltech | Confirmado (2 fontes) |
@@ -2471,3 +2524,27 @@ regulatórias desde o último refresh (2026-08-17).
 2026 — não é uma publicação desta janela de 3 dias, mas uma lacuna de cobertura identificada nesta checagem de
 rotina, incorporada por atender à regra de duas fontes independentes e por sua relevância direta ao recorte
 Brasil do capítulo Financeiro. Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas.
+
+---
+
+## Registro do refresh — 2026-08-25
+
+Checagem de diligência de 3 dias: verificação de novas edições de relatório primário, incidentes-marco e
+atualizações regulatórias desde o último refresh (2026-08-22, apenas carimbo de verificação sem mudanças).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-08-25 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada) |
+| Kaspersky ICS CERT | Sem edição nova além da série Q4 2025/Q1 2026 já incorporada |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova (edição 2026, jan/2026, já vigente) |
+| ENISA Threat Landscape | Sem edição nova (próxima edição esperada out/2026) |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação) | Nenhuma norma ou despacho novo localizado nesta janela |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada nesta janela |
+| Incidentes-marco novos (financeiro/energia) | **Identificado um novo incidente-marco no capítulo Energia**: ataque ligado ao Irã derruba pequeno gerador de energia no Reino Unido por 4 dias (ataque em jul/2026, revelado em 23/8/2026) — incorporado nesta atualização, atendendo à regra de duas fontes independentes (ver seção Energia). Nenhum incidente novo localizado para o capítulo Financeiro nesta janela |
+
+**Observação:** o incidente do gerador de energia no Reino Unido foi divulgado publicamente em 23/8/2026 pelo
+*The Telegraph* e reproduzido de forma consistente por múltiplas coberturas técnicas e jornalísticas
+independentes já no dia seguinte — está, portanto, dentro da janela de 3 dias deste refresh (2026-08-22 a
+2026-08-25). Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas.
