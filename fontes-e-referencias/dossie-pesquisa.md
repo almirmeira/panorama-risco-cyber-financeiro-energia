@@ -29,6 +29,16 @@
 > em 23/8/2026) — sem impacto à rede nacional, mas descrito por autoridades como o primeiro caso desse tipo
 > bem-sucedido contra infraestrutura de energia britânica — ver seção Energia. Nenhuma outra lacuna equivalente
 > foi identificada nas demais frentes verificadas nesta janela — ver checagem ao final.
+>
+> **Atualização 2026-08-28 (refresh de 3 dias):** nenhuma edição nova de relatório primário foi identificada
+> nesta janela (CrowdStrike, Microsoft, Verizon, IBM, Mandiant, Dragos, Kaspersky ICS CERT, WEF, ENISA, FS-ISAC
+> seguem nas edições já registradas) nem norma/despacho novo de ANEEL/ONS/BACEN. Localizado um **novo
+> incidente-marco relevante ao capítulo Financeiro**: onda de ataques de *vishing* por IA (clonagem de voz)
+> atingiu grandes gestoras de Wall Street (Citadel, Point72, Two Sigma, Millennium Management) em 5/8/2026,
+> atribuída ao cluster UNC6671/BlackFile — dado pré-existente (não desta janela de 3 dias, mas ainda não
+> incorporado ao dossiê) localizado nesta checagem de rotina e confirmado por ≥2 fontes independentes — ver
+> seção Financeiro. Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas nesta
+> janela — ver checagem ao final.
 
 ## Global
 
@@ -872,6 +882,44 @@ inventar um valor consolidado.
     setor de energia, é registrado aqui por ilustrar a mesma técnica (deepfake de voz/vídeo de executivo) aplicável
     a fraude no setor financeiro.
 
+### Atualização 2026-08-28 — Incidente-marco: ataque de vishing por IA contra grandes gestoras de Wall Street
+
+- **Dado:** em **5 de agosto de 2026**, uma onda coordenada de ataques de *vishing* (phishing por voz) com uso de
+  clonagem de voz por IA atingiu diversas das maiores gestoras de recursos de Wall Street, incluindo **Citadel,
+  Point72 Asset Management, Two Sigma Investments e Millennium Management**, além de gestoras de *private equity*
+  não identificadas. Os atacantes miraram equipes de suporte técnico (*IT helpdesk*) para obter acesso a sistemas
+  corporativos, personificando executivos ou colegas com voz sintética. O ataque foi atribuído ao cluster
+  **UNC6671**, ligado ao grupo de extorsão **BlackFile** (também referido como "Cordial Spider", "Pink" e
+  "Redact"), ativo desde o início de 2026 e que já mirava organizações de varejo/hotelaria na América do Norte,
+  Austrália e Reino Unido antes de voltar-se ao setor financeiro. Foi o primeiro teste em campo do **Financial
+  Intelligence Fusion Center**, portal de compartilhamento de inteligência de ameaças lançado pela FINRA em
+  março de 2026, que passou a apoiar as gestoras afetadas na resposta. A maior parte das tentativas foi bloqueada:
+  Two Sigma relatou ter barrado a intrusão sem impacto a dados ou sistemas; Point72 informou a investidores não
+  ter encontrado evidência de roubo de dados de clientes; Citadel não comentou publicamente sobre comprometimento.
+  - Fonte 1 (agência de notícias financeira, cobertura original): Bloomberg (via Yahoo Finance). *Major Hedge
+    Funds Targeted in Wave of Attempted Cyberattacks*. 6 de agosto de 2026.
+    https://finance.yahoo.com/technology/ai/articles/major-hedge-funds-targeted-wave-154044981.html
+  - Fonte 2 (imprensa técnica de segurança, independente, com detalhamento de atribuição ao ator de ameaça):
+    BleepingComputer. *Hedge fund cyberattacks tied to BlackFile-linked UNC6671 extortion group*. Agosto de 2026.
+    https://www.bleepingcomputer.com/news/security/hedge-fund-cyberattacks-tied-to-blackfile-linked-unc6671-extortion-group/
+  - Fonte 3 (corrobora nomes das gestoras, data e resposta da FINRA): InvestmentNews. *Point72, Citadel among
+    hedge funds hit by AI vishing attacks*. 2026.
+    https://www.investmentnews.com/fintech/point72-citadel-among-hedge-funds-hit-by-ai-vishing-attacks/267708
+    (ver também TechTimes, *Wall Street Hedge Funds Hit by Coordinated AI Vishing: FINRA Fusion Center
+    Activated*, 6/8/2026, https://www.techtimes.com/articles/323265/20260806/wall-street-hedge-funds-hit-coordinated-ai-vishing-finra-fusion-center-activated.htm,
+    e Akin Gump, *Wave of Recent "Vishing" Attacks Target Hedge Funds and Other Financial Services Firms*, 2026,
+    https://www.akingump.com/en/insights/alerts/wave-of-recent-vishing-attacks-target-hedge-funds-and-other-financial-services-firms)
+  - Observações: tentativas de acesso direto via *fetch* automatizado a boa parte das fontes (Bloomberg,
+    BleepingComputer, InvestmentNews, TechTimes, Akin Gump, Biometric Update) foram bloqueadas pelo proxy de
+    saída deste ambiente; o dado foi confirmado por meio dos resumos de busca de múltiplas coberturas
+    independentes e consistentes entre si quanto a data (5/8/2026), gestoras nomeadas, método (vishing/clonagem
+    de voz visando *helpdesk*) e resposta da FINRA. **Este é o primeiro incidente-marco novo incorporado ao
+    capítulo Financeiro desde a pesquisa original de 2026-07-21** — os demais refreshes de 3 dias (08-19, 08-25)
+    não haviam localizado incidente equivalente para este capítulo. Não há impacto identificado em nenhum
+    número-chave (KPI) já publicado no painel — o caso ilustra qualitativamente a tendência de vishing/deepfake já
+    quantificada acima (crescimento de 442% em vishing, CrowdStrike 2025) e não introduz um novo dado numérico
+    agregado passível de virar KPI por si só.
+
 ---
 
 ### Brasil — fraudes no PIX (volume e valor)
@@ -1144,6 +1192,19 @@ inventar um valor consolidado.
   - Observações: já detalhado nas entradas "CrowdStrike 2026" e "Black Kite 2026" acima; consolidado aqui como
     referência rápida de atores. Sem divergência relevante entre as duas fontes quanto aos nomes de grupos e ao
     caso GJTec.
+
+- **Dado (incorporado em 2026-08-28):** **UNC6671**, cluster ligado ao grupo de extorsão **BlackFile** (também
+  referido como "Cordial Spider", "Pink" e "Redact"), ativo desde o início de 2026, especializado em *vishing*
+  com temática de *IT helpdesk* para obter acesso inicial. Mirou originalmente organizações de varejo/hotelaria
+  na América do Norte, Austrália e Reino Unido, e em 5/8/2026 voltou-se ao setor financeiro em ataque coordenado
+  contra Citadel, Point72, Two Sigma e Millennium Management (ver seção "Atualização 2026-08-28" acima).
+  - Fonte 1: BleepingComputer. *Hedge fund cyberattacks tied to BlackFile-linked UNC6671 extortion group*.
+    Agosto de 2026. https://www.bleepingcomputer.com/news/security/hedge-fund-cyberattacks-tied-to-blackfile-linked-unc6671-extortion-group/
+  - Fonte 2 (secundária, corrobora nomenclatura e escopo de vítimas do grupo BlackFile/UNC6671): SecurityWeek.
+    *In Other News: AI Slop Limits Apple Bounties, North Carolina Port Attacks, Hackers Target Wall Street*.
+    Agosto de 2026. https://www.securityweek.com/in-other-news-ai-slop-limits-apple-bounties-north-carolina-port-attacks-hackers-target-wall-street/
+  - Observações: acesso direto às duas fontes via *fetch* automatizado foi bloqueado pelo proxy de saída deste
+    ambiente; nomenclatura confirmada via resumo de busca convergente entre as duas coberturas independentes.
 
 ---
 
@@ -2548,3 +2609,28 @@ atualizações regulatórias desde o último refresh (2026-08-22, apenas carimbo
 *The Telegraph* e reproduzido de forma consistente por múltiplas coberturas técnicas e jornalísticas
 independentes já no dia seguinte — está, portanto, dentro da janela de 3 dias deste refresh (2026-08-22 a
 2026-08-25). Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas.
+
+---
+
+## Registro do refresh — 2026-08-28
+
+Checagem de diligência de 3 dias: verificação de novas edições de relatório primário, incidentes-marco e
+atualizações regulatórias desde o último refresh (2026-08-25).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-08-28 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes. Localizado o *CrowdStrike 2026 Threat Hunting Report* (3/8/2026), fora da janela de 3 dias e sem números setoriais financeiro/energia quantificáveis distintos dos já incorporados — não gerou atualização |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada) |
+| Kaspersky ICS CERT | Sem edição nova além da série Q4 2025/Q1 2026 já incorporada |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova (edição 2026, jan/2026, já vigente) |
+| ENISA Threat Landscape | Sem edição nova (próxima edição esperada out/2026) |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação) | Nenhuma norma ou despacho novo localizado nesta janela |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada nesta janela |
+| Incidentes-marco novos (financeiro/energia) | **Identificado um novo incidente-marco no capítulo Financeiro**: onda de ataques de *vishing* por IA contra gestoras de Wall Street (Citadel, Point72, Two Sigma, Millennium Management), ocorrida em 5/8/2026 e atribuída ao cluster UNC6671/BlackFile — incorporada nesta atualização, atendendo à regra de duas fontes independentes (ver seção Financeiro). Nenhum incidente novo localizado para o capítulo Energia nesta janela |
+
+**Observação:** assim como ocorreu com o dado do Banco Central incorporado em 2026-08-19, o incidente de
+*vishing* contra gestoras de Wall Street não é um fato desta janela específica de 3 dias — ocorreu em 5/8/2026,
+antes até do refresh de 2026-08-19 — mas é uma lacuna de cobertura do capítulo Financeiro identificada apenas
+nesta checagem de rotina, incorporada por atender à regra de duas fontes independentes. Nenhuma outra lacuna
+equivalente foi identificada nas demais frentes verificadas.
