@@ -144,6 +144,17 @@ vivo de transferência eletrônica urgente [14][15]. A Resemble AI relatou **980
 corporativa** via *deepfake* em vídeo ao vivo durante reuniões no 3º trimestre de 2025, com o objetivo de
 autorizar transações fraudulentas [14][15].
 
+Em **5 de agosto de 2026**, essa tendência ganhou um caso concreto de grande escala: uma onda coordenada de
+ataques de *vishing* com clonagem de voz por IA atingiu simultaneamente várias das maiores gestoras de recursos
+de Wall Street — **Citadel, Point72 Asset Management, Two Sigma Investments e Millennium Management**, além de
+gestoras de *private equity* não identificadas. Os atacantes miraram equipes de suporte técnico (*IT helpdesk*)
+personificando executivos e colegas com voz sintética, na tentativa de obter acesso a sistemas corporativos. O
+ataque foi atribuído ao cluster **UNC6671**, ligado ao grupo de extorsão **BlackFile**, ativo desde o início de
+2026. Foi o primeiro teste em campo do *Financial Intelligence Fusion Center*, portal de compartilhamento de
+inteligência de ameaças lançado pela FINRA em março de 2026. A maior parte das tentativas foi bloqueada — Two
+Sigma barrou a intrusão sem impacto a dados ou sistemas, e Point72 não encontrou evidência de roubo de dados de
+clientes [40][41].
+
 ### Atores de ameaça relevantes ao setor financeiro
 
 | Ator / cluster            | Perfil                                                                  | Evidência          |
@@ -155,6 +166,7 @@ autorizar transações fraudulentas [14][15].
 | VAULT PANDA (China)          | Espionagem contra instituições financeiras com malware KEYPLUG (DLL search-order hijacking) | CrowdStrike [8][9]    |
 | Qilin                       | 59 vítimas no setor em 2025; caso GJTec afetou 32 instituições sul-coreanas via um único MSP | Black Kite [10][11]   |
 | Akira                        | ~USD 244,17 milhões em proventos até final de setembro de 2025 (cross-setorial) | Black Kite [10][11]   |
+| UNC6671 (BlackFile)           | *Vishing* via *IT helpdesk* com clonagem de voz por IA; atacou Citadel, Point72, Two Sigma e Millennium Management em 5/8/2026 | BleepingComputer [40][41] |
 
 Nenhuma campanha específica e nomeada de FIN7 contra o setor financeiro datada de 2025–2026 foi
 localizada no escopo desta pesquisa — as fontes descrevem o perfil histórico e atual do grupo, não um
@@ -465,3 +477,9 @@ https://mercadoeconsumo.com.br/01/04/2026/tecnologia/incidentes-ciberneticos-sob
 [39] Portal Information Management. *Com Pix superando 170 milhões de usuários, Banco Central endurece regras
 após alta de 29% nos ataques cibernéticos*. Agosto de 2026.
 https://docmanagement.com.br/08/05/2026/com-pix-superando-170-milhoes-de-usuarios-banco-central-endurece-regras-apos-alta-de-29-nos-ataques-ciberneticos/
+
+[40] Bloomberg (via Yahoo Finance). *Major Hedge Funds Targeted in Wave of Attempted Cyberattacks*. 6 de
+agosto de 2026. https://finance.yahoo.com/technology/ai/articles/major-hedge-funds-targeted-wave-154044981.html
+
+[41] BleepingComputer. *Hedge fund cyberattacks tied to BlackFile-linked UNC6671 extortion group*. Agosto de
+2026. https://www.bleepingcomputer.com/news/security/hedge-fund-cyberattacks-tied-to-blackfile-linked-unc6671-extortion-group/
