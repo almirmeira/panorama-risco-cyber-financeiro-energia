@@ -191,6 +191,17 @@ energia no Reino Unido por quatro dias — sem afetar a rede nacional, mas descr
 como o primeiro caso desse tipo bem-sucedido contra o setor de energia do país; o nome do grupo/APT responsável
 não foi identificado nas fontes consultadas [53][54].
 
+Poucos dias depois, em 26 de agosto de 2026, o governo dos EUA deu uma resposta regulatória de peso a esse tipo
+de ameaça: o presidente assinou a **Ordem Executiva 14420**, declarando **emergência nacional** sobre riscos
+associados a equipamentos elétricos do sistema de energia em massa (*bulk-power system*) produzidos no exterior,
+citando explicitamente riscos de cibersegurança, acesso remoto não autorizado, sabotagem e disrupção de cadeia de
+suprimentos. A ordem autoriza o Departamento de Energia dos EUA (DOE) a proibir, condicionar ou desfazer
+transações envolvendo esses equipamentos, com prazo de **120 dias** (até 24/12/2026) para regras de implementação
+e **180 dias** (até 22/2/2027) para recomendações de revisão do regulamento federal de aquisições (FAR) [55][56].
+É a primeira declaração formal de emergência nacional dos EUA motivada especificamente por risco
+cibernético/cadeia de suprimentos ao sistema elétrico identificada nesta pesquisa — as regras de implementação do
+DOE ainda não haviam sido publicadas até a data desta atualização, então o efeito prático segue em aberto.
+
 ### Atores relevantes: Sandworm/ELECTRUM e Volt Typhoon/VOLTZITE
 
 **Sandworm Team** — também rastreado como APT44, ELECTRUM, Telebots, Voodoo Bear, Seashell Blizzard ou
@@ -512,3 +523,11 @@ https://www.cnbc.com/2026/08/23/small-uk-power-plant-shut-down-after-iran-linked
 
 [54] SecurityWeek. *Iran-Linked Hackers Shut Down UK Power Plant for Four Days*. Agosto de 2026.
 https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/
+
+[55] The White House. *Declaring a National Emergency to Secure the United States Bulk-Power System*. 26 de
+agosto de 2026.
+https://www.whitehouse.gov/presidential-actions/2026/08/declaring-a-national-emergency-to-secure-the-united-states-bulk-power-system/
+
+[56] Holland & Knight. *Executive Order Declares National Emergency to Secure U.S. Bulk-Power System*.
+Setembro de 2026.
+https://www.hklaw.com/en/insights/publications/2026/09/executive-order-declares-national-emergency-to-secure-us
