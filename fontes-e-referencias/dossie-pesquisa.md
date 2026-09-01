@@ -39,6 +39,14 @@
 > incorporado ao dossiê) localizado nesta checagem de rotina e confirmado por ≥2 fontes independentes — ver
 > seção Financeiro. Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas nesta
 > janela — ver checagem ao final.
+>
+> **Atualização 2026-09-01 (refresh de 3 dias):** nenhuma edição nova de relatório primário foi identificada
+> nesta janela (CrowdStrike, Microsoft, Verizon, IBM, Mandiant, Dragos, Kaspersky ICS CERT, WEF, ENISA, FS-ISAC
+> seguem nas edições já registradas) nem norma/despacho novo de ANEEL/ONS/BACEN. Localizada uma **nova
+> atualização regulatória relevante ao capítulo Energia**: em 26/8/2026 o governo dos EUA declarou emergência
+> nacional sobre riscos cibernéticos e de cadeia de suprimentos ao sistema elétrico de energia em massa
+> (*bulk-power system*), via Ordem Executiva 14420 — ver seção Energia. Nenhum incidente-marco novo foi
+> identificado no capítulo Financeiro nesta janela — ver checagem ao final.
 
 ## Global
 
@@ -1715,6 +1723,43 @@ em 2026-07-21.
 
 ---
 
+### Atualização 2026-09-01 — Resposta regulatória dos EUA: emergência nacional para o sistema de energia em massa
+
+- **Dado:** em **26 de agosto de 2026**, o presidente dos EUA assinou a **Ordem Executiva 14420**, declarando
+  emergência nacional sobre riscos associados a equipamentos elétricos do sistema de energia em massa
+  (*bulk-power system*) produzidos no exterior — citando explicitamente riscos de cibersegurança, acesso
+  remoto não autorizado, sabotagem e disrupção de cadeia de suprimentos. A ordem, baseada no *International
+  Emergency Economic Powers Act* e no *National Emergencies Act*, autoriza o Departamento de Energia dos EUA
+  (DOE) a proibir, condicionar ou desfazer transações envolvendo equipamentos elétricos de infraestrutura
+  crítica produzidos no exterior, e estabelece um marco de qualificação de fornecedores. Prazos definidos:
+  **120 dias** (até 24/12/2026) para o DOE publicar regras de implementação, e **180 dias** (até 22/2/2027)
+  para o DOE submeter recomendações de revisão do *Federal Acquisition Regulation* (FAR) voltadas a
+  infraestrutura de energia federal.
+  - Fonte 1: The White House. *Declaring a National Emergency to Secure the United States Bulk-Power
+    System*. 26 de agosto de 2026.
+    https://www.whitehouse.gov/presidential-actions/2026/08/declaring-a-national-emergency-to-secure-the-united-states-bulk-power-system/
+    (ver também o *fact sheet* oficial:
+    https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-declares-a-national-emergency-to-secure-americas-bulk-power-system/,
+    e a publicação no *Federal Register*: https://www.govinfo.gov/content/pkg/FR-2026-08-31/pdf/2026-17843.pdf)
+  - Fonte 2 (secundária, análise jurídica independente que reproduz os mesmos prazos e base legal): Holland
+    & Knight. *Executive Order Declares National Emergency to Secure U.S. Bulk-Power System*. Setembro de
+    2026. https://www.hklaw.com/en/insights/publications/2026/09/executive-order-declares-national-emergency-to-secure-us
+    (ver também Morgan Lewis, *Bulk-Power System Executive Order Adds a New Grid Supply Chain Compliance
+    Layer*, 2026, https://www.morganlewis.com/blogs/powerandpipes/2026/08/bulk-power-system-executive-order-adds-a-new-grid-supply-chain-compliance-layer,
+    e HSToday, *Trump Declares National Emergency Over Foreign Threats to U.S. Bulk-Power Electrical
+    Systems*, 2026, https://www.hstoday.us/subject-matter-areas/critical-infrastructure/trump-declares-national-emergency-over-foreign-threats-to-u-s-bulk-power-electrical-systems/)
+  - Observações: esta é a primeira declaração formal de emergência nacional dos EUA motivada especificamente
+    por risco cibernético/cadeia de suprimentos ao sistema elétrico identificada nesta pesquisa — publicada
+    poucos dias depois do incidente do gerador de energia no Reino Unido (ver acima, ator ligado ao Irã) e no
+    contexto da persistência documentada de Volt Typhoon/VOLTZITE em infraestrutura elétrica dos EUA (ver
+    abaixo). **[NÃO CONFIRMADO — o texto das regras de implementação do DOE ainda não havia sido publicado em
+    2026-09-01; a ordem, neste estágio, estabelece apenas o arcabouço legal e os prazos, não controles
+    técnicos específicos]**. Fora do escopo direto de ANEEL/ONS/BACEN (é regulação dos EUA, não do Brasil),
+    mas registrado aqui como contraponto regulatório internacional relevante ao capítulo Energia, no mesmo
+    padrão já usado para a norma NERC CIP.
+
+---
+
 ### Fundamentos — Modelo Purdue (níveis 0–5)
 
 - **Dado:** o **Modelo Purdue** (Purdue Enterprise Reference Architecture, 1991) organiza ambientes industriais em
@@ -1877,6 +1922,7 @@ em 2026-07-21.
 | ANEEL — fiscalização RN 964/2021 | Prazo até 30/6/2025 (Despacho nº 427/2025) | ANEEL | Confirmado (2 fontes) |
 | Brasil — Eletrobras/Eletronuclear e Copel (fev/2021) | Ransomware DarkSide (Copel); sem impacto em Angra 1/2 | BleepingComputer / Canaltech | Confirmado (2 fontes) |
 | Brasil — Petrobras/Everest (nov/2025) | >176 GB alegados (>90 GB atribuídos à Petrobras) | Hackread / Cybernews | Parcialmente confirmado — Petrobras contesta atribuição direta |
+| EUA — Emergência Nacional para o Bulk-Power System (26/8/2026) | Ordem Executiva 14420; prazos DOE: 120 dias (regras) / 180 dias (revisão FAR) | The White House / Holland & Knight | Confirmado (2 fontes); regras de implementação do DOE ainda não publicadas |
 
 **Legenda:** idêntica à das tabelas-resumo Global e Financeiro. "Parcialmente confirmado" indica que o valor
 numérico central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de
@@ -2634,3 +2680,27 @@ atualizações regulatórias desde o último refresh (2026-08-25).
 antes até do refresh de 2026-08-19 — mas é uma lacuna de cobertura do capítulo Financeiro identificada apenas
 nesta checagem de rotina, incorporada por atender à regra de duas fontes independentes. Nenhuma outra lacuna
 equivalente foi identificada nas demais frentes verificadas.
+
+---
+
+## Registro do refresh — 2026-09-01
+
+Checagem de diligência de 3 dias: verificação de novas edições de relatório primário, incidentes-marco e
+atualizações regulatórias desde o último refresh (2026-08-31, apenas carimbo de verificação sem mudanças).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-09-01 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada) |
+| Kaspersky ICS CERT | Sem edição nova além da série Q4 2025/Q1 2026 já incorporada |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova (edição 2026, jan/2026, já vigente) |
+| ENISA Threat Landscape | Sem edição nova (próxima edição esperada out/2026) |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação Brasil) | Nenhuma norma ou despacho novo localizado nesta janela |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada nesta janela |
+| Incidentes-marco / atualizações regulatórias novas (financeiro/energia) | **Identificada uma nova atualização regulatória no capítulo Energia**: Ordem Executiva 14420 (26/8/2026), que declara emergência nacional dos EUA sobre riscos cibernéticos/cadeia de suprimentos ao *bulk-power system* — incorporada nesta atualização, atendendo à regra de duas fontes independentes (ver seção Energia). Nenhum incidente-marco novo localizado para o capítulo Financeiro nesta janela; a onda de ataques (vishing em Wall Street, com Apollo Global Management como nova vítima confirmada em cobertura de agosto de 2026) segue a mesma campanha UNC6671 já registrada em 2026-08-28, sem número novo a incorporar |
+
+**Observação:** esta é uma atualização qualitativa/regulatória, sem número-chave quantificável que altere KPIs
+do painel (`dashboard/src/data/dashboard.json`) — o `04-comparativo` e os capítulos setoriais não têm nenhum
+indicador numérico dependente deste dado. Nenhuma outra lacuna equivalente foi identificada nas demais frentes
+verificadas.
