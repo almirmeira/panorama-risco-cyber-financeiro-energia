@@ -18,8 +18,9 @@
 >   permanência em uma concessionária elétrica de Massachusetts antes da detecção).
 > - No Brasil, a ANEEL estabeleceu em 2021 o marco regulatório central de cibersegurança do setor
 >   elétrico (RN nº 964/2021, ARCiber), mas a primeira fiscalização concreta só ocorreu em 2025;
->   incidentes conhecidos (Eletrobras/Copel 2021, Petrobras/Everest 2025) mostram, até aqui,
->   segmentação bem-sucedida entre TI corporativa comprometida e OT crítico preservado.
+>   incidentes conhecidos (Eletrobras/Copel 2021, Petrobras/Everest 2025, Cemig 2026) mostram, até
+>   aqui, segmentação bem-sucedida entre TI corporativa/atendimento comprometidos e OT crítico
+>   preservado.
 > - **Número-chave:** no 1º semestre de 2025, **22,8%** dos computadores ICS do setor de energia
 >   elétrica tiveram objetos maliciosos bloqueados — 3º setor mais atacado globalmente, atrás apenas
 >   de biometria e automação predial [1][2].
@@ -332,6 +333,15 @@ entre a alegação do grupo atacante e a posição oficial da empresa permanece 
 possível arbitrá-la com certeza no escopo desta pesquisa — o mesmo padrão de contestação já registrado no
 caso do Banco Neon, no capítulo 02.
 
+Em **14 de maio de 2026**, a **Cemig** (Companhia Energética de Minas Gerais) confirmou acesso não
+autorizado a uma de suas bases de dados, resultando em vazamento de dados cadastrais — nome, CPF,
+endereço, e-mail, telefone e valor de fatura — de cerca de **135 mil clientes** [57][58]. A empresa
+afirmou que o incidente **não teve impacto operacional** e que o acesso indevido foi bloqueado assim que
+detectado; o caso foi comunicado à ANPD, à ANEEL e à autoridade policial [57][58]. Diferentemente dos
+casos Eletrobras/Copel e Petrobras/Everest, não houve reivindicação de grupo de *ransomware* nas fontes
+consultadas — ainda assim, o caso segue o mesmo padrão recorrente de sistemas de TI corporativa/atendimento
+ao cliente comprometidos sem impacto confirmado em OT.
+
 ## Ameaças × impacto no setor de energia
 
 | Ameaça                                                    | Probabilidade | Impacto  | Evidência                                                                    |
@@ -342,6 +352,7 @@ caso do Banco Neon, no capítulo 02.
 | Malware *purpose-built* para ICS elétrico (classe Industroyer)  | Baixa           | Crítico    | Industroyer, Industroyer2, FrostyGoop — 3 casos documentados em 6 anos [16][17][22][23][26][27] |
 | *Ransomware* em TI com impacto colateral em OT (padrão Colonial) | Alta           | Alto       | Colonial Pipeline: desligamento preventivo, 45% do combustível da Costa Leste dos EUA [20][21] |
 | Comprometimento de fornecedor/terceiro (cadeia de suprimentos)  | Média          | Alto       | Petrobras/SAExploration (contestado); padrão já visto no setor financeiro [44][45] |
+| Vazamento de dados em massa                                    | Média          | Médio-Alto | Caso Cemig (~135 mil clientes, mai/2026), sem impacto operacional [57][58]        |
 
 ## Obrigações regulatórias do setor elétrico brasileiro
 
@@ -531,3 +542,9 @@ https://www.whitehouse.gov/presidential-actions/2026/08/declaring-a-national-eme
 [56] Holland & Knight. *Executive Order Declares National Emergency to Secure U.S. Bulk-Power System*.
 Setembro de 2026.
 https://www.hklaw.com/en/insights/publications/2026/09/executive-order-declares-national-emergency-to-secure-us
+
+[57] CanalEnergia. *Cemig confirma vazamento de dados de 135 mil clientes após ataque cibernético*. Maio de
+2026. https://www.canalenergia.com.br/noticias/53347138/cemig-confirma-vazamento-de-dados-de-135-mil-clientes-apos-ataque-cibernetico
+
+[58] ConvergenciaDigital. *Cemig assume vazamento de dados de cerca de 135 mil clientes*. Maio de 2026.
+https://convergenciadigital.com.br/mercado/cemig-assume-vazamento-de-dados-de-cerca-de-135-mil-clientes/

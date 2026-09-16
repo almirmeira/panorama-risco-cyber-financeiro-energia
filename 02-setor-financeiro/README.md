@@ -14,9 +14,9 @@
 >   — com mais de 128 milhões de consentimentos ativos — abre uma superfície de ataque nova via API;
 >   a resposta regulatória do Banco Central (Resolução CMN nº 4.893/2021 e Resolução BCB nº 85/2021,
 >   atualizadas em 2025) é uma das mais maduras do mundo em cibersegurança financeira.
-> - Uma sequência de incidentes de terceiros em 2024–2025 (C&M Software, FictorPay) mostrou que a
->   vulnerabilidade sistêmica do Pix está menos nos bancos centrais do sistema e mais nos provedores de
->   infraestrutura e software compartilhados por múltiplas instituições.
+> - Uma sequência de incidentes de terceiros em 2024–2026 (C&M Software, FictorPay, Banco do Nordeste)
+>   mostrou que a vulnerabilidade sistêmica do Pix está menos nos bancos centrais do sistema e mais nos
+>   provedores de infraestrutura e software compartilhados por múltiplas instituições.
 > - **Número-chave:** custo médio de uma violação de dados no setor financeiro em 2026 = **USD 6,3
 >   milhões** (ante USD 5,56 milhões na edição 2025) — acompanhando a alta global de 12% no custo médio
 >   de violação de dados [36][37].
@@ -298,6 +298,14 @@ essa sequência de incidentes, o Banco Central passou a exigir o encerramento de
 de dezembro de 2025, criou teto para transações Pix/TED de certas instituições e elevou o capital mínimo
 exigido de fintechs (de R$ 1 milhão para R$ 9 milhões) [34][35].
 
+O padrão de risco de terceiros não se limitou a fintechs: em **26 de janeiro de 2026**, o **Banco do
+Nordeste** (banco público federal) comunicou um "incidente de cibersegurança" que forçou a suspensão
+temporária do Pix, após falha em um **prestador de serviços de TI (PSTI) terceirizado** que permitiu o
+desvio de recursos de uma conta-bolsão da própria terceirizada — sem, segundo o banco, vazamento de dados
+ou dano às contas de clientes [42][43]. A extensão financeira do incidente só veio a público **quatro
+meses depois**, quando o balanço do 1º trimestre de 2026 (divulgado em 13 de maio de 2026) revelou um item
+não recorrente de **R$ 146,6 milhões** em prejuízo [43].
+
 ## Superfície de ataque: Pix e Open Finance
 
 A figura abaixo mapeia a topologia lógica do fluxo Pix — do aplicativo do cliente à instituição
@@ -337,7 +345,7 @@ exigência-chave associada [23][26][27][28][29].*
 |:----------------------------------------------|:----------------:|:------------------|:----------------------------------------------------------------|
 | *Ransomware* direto contra a instituição       | Alta            | Crítico           | 156→202 incidentes (2024→2025), +76% Q1 2026 [10][11]           |
 | Fraude por engenharia social / *deepfake*      | Alta            | Alto              | *Deepfake* 0,1%→6,5% das tentativas em 3 anos [12][13]          |
-| Risco de terceiros / cadeia de suprimentos     | Média-Alta      | Crítico           | Caso C&M Software (R$ 400 mi); GJTec (32 instituições) [10][11][32][33] |
+| Risco de terceiros / cadeia de suprimentos     | Média-Alta      | Crítico           | Caso C&M Software (R$ 400 mi); GJTec (32 instituições); Banco do Nordeste (R$ 146,6 mi) [10][11][32][33][42][43] |
 | Roubo de ativos digitais (atores DPRK-nexus)   | Média           | Alto              | USD 2,02 bi roubados em 2025, +51% a/a [8][9]                   |
 | Abuso de API / consentimento fraudulento (Open Finance) | Média  | Alto              | 128–154 milhões de consentimentos ativos, superfície em expansão [24][25] |
 | DDoS                                          | Alta            | Baixo-Médio       | +154% (2022→2023), 35%+ de todo DDoS observado no setor [6][7]  |
@@ -483,3 +491,9 @@ agosto de 2026. https://finance.yahoo.com/technology/ai/articles/major-hedge-fun
 
 [41] BleepingComputer. *Hedge fund cyberattacks tied to BlackFile-linked UNC6671 extortion group*. Agosto de
 2026. https://www.bleepingcomputer.com/news/security/hedge-fund-cyberattacks-tied-to-blackfile-linked-unc6671-extortion-group/
+
+[42] Agência Brasil (EBC). *Banco do Nordeste suspende Pix após sofrer ataque hacker*. Janeiro de 2026.
+https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/banco-do-nordeste-suspende-pix-apos-sofrer-ataque-hacker
+
+[43] Finsiders Brasil. *Banco do Nordeste revela perda milionária após ataque ao Pix*. Maio de 2026.
+https://finsidersbrasil.com.br/pagamentos/pix/ataque-hacker-pix-bnb-perda-146-milhoes/

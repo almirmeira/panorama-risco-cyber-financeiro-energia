@@ -47,6 +47,28 @@
 > nacional sobre riscos cibernéticos e de cadeia de suprimentos ao sistema elétrico de energia em massa
 > (*bulk-power system*), via Ordem Executiva 14420 — ver seção Energia. Nenhum incidente-marco novo foi
 > identificado no capítulo Financeiro nesta janela — ver checagem ao final.
+>
+> **Atualização 2026-09-16 (refresh de 3 dias):** nenhuma edição nova de relatório primário foi identificada
+> nesta janela (CrowdStrike, Microsoft, Verizon, IBM, Mandiant, Dragos, Kaspersky ICS CERT, WEF, ENISA, FS-ISAC
+> seguem nas edições já registradas) nem norma/despacho novo de ANEEL/ONS relevante ao escopo já coberto.
+> Localizados dois **incidentes pré-existentes (não desta janela de 3 dias, mas ainda não incorporados ao
+> dossiê) relevantes aos capítulos Financeiro e Energia**, confirmados por ≥2 fontes independentes nesta
+> checagem de rotina: (1) **Financeiro** — o **Banco do Nordeste** sofreu, em 26/1/2026, ataque cibernético via
+> prestador de serviços de TI (PSTI) terceirizado que resultou em desvio de recursos de uma "conta-bolsão" da
+> própria terceirizada, com suspensão temporária do Pix; o prejuízo de **R$ 146,6 milhões** só foi revelado
+> publicamente em 13/5/2026, como item não recorrente no balanço do 1º trimestre de 2026 — ver seção
+> Financeiro. (2) **Energia** — a **Cemig** confirmou, em 14/5/2026, vazamento de dados cadastrais (CPF,
+> endereço, telefone, valor de fatura) de cerca de **135 mil clientes** após acesso não autorizado a sua base
+> de dados, sem impacto operacional; o incidente foi comunicado à ANPD, à ANEEL e à autoridade policial — ver
+> seção Energia. Também verificada e **descartada como incidente-marco** (sem impacto confirmado, ataques
+> "tentados" e "sem sucesso" segundo a própria reportagem): campanha de hackers ligados ao Irã contra
+> infraestrutura de água, telecomunicações e energia nos EUA, noticiada pela NBC News em 2/9/2026 — trata-se de
+> continuidade qualitativa da mesma campanha já registrada em jul/2026 (ataque a estações de tratamento de água
+> concomitante ao caso do gerador no Reino Unido), sem novo dado quantificável ou disrupção confirmada em
+> energia que atenda à regra de duas fontes para um novo caso. Também verificada e **descartada** a Resolução
+> BCB nº 498, por ser de 5/9/2025 (já anterior e distinta da Resolução BCB nº 538/2025 já registrada como mais
+> recente). Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas nesta janela — ver
+> checagem ao final.
 
 ## Global
 
@@ -1168,6 +1190,31 @@ inventar um valor consolidado.
     criou teto para transações Pix/TED de certas instituições e elevou o capital mínimo exigido de fintechs (de
     R$ 1 milhão para R$ 9 milhões).
 
+### Atualização 2026-09-16 — Brasil — incidente Banco do Nordeste (janeiro de 2026, prejuízo revelado em maio de 2026)
+
+- **Dado:** em **26 de janeiro de 2026**, o **Banco do Nordeste** (banco público federal) comunicou ao mercado
+  um "incidente de cibersegurança" que forçou a suspensão temporária de suas operações via Pix. A invasão
+  ocorreu por meio de uma falha em um **prestador de serviços de tecnologia da informação (PSTI) terceirizado**,
+  com desvio de recursos a partir de uma **conta-bolsão** dessa empresa terceira — não das contas de clientes do
+  banco. Na comunicação inicial à CVM, o banco afirmou não ter identificado vazamento de dados nem dano às
+  contas de clientes. Somente em **13 de maio de 2026**, ao divulgar o balanço do 1º trimestre de 2026, o
+  Banco do Nordeste revelou a extensão financeira do incidente: um item não recorrente de **R$ 146,6 milhões**
+  em prejuízo.
+  - Fonte 1: Agência Brasil (EBC). *Banco do Nordeste suspende Pix após sofrer ataque hacker*. Janeiro de 2026.
+    https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/banco-do-nordeste-suspende-pix-apos-sofrer-ataque-hacker
+  - Fonte 2 (secundária, cobre a revelação financeira do prejuízo no balanço do 1º tri. 2026, publicado em
+    13/5/2026): Finsiders Brasil. *Banco do Nordeste revela perda milionária após ataque ao Pix*. Maio de 2026.
+    https://finsidersbrasil.com.br/pagamentos/pix/ataque-hacker-pix-bnb-perda-146-milhoes/
+  - Observações: incidente **pré-existente à janela de 3 dias desta atualização** (o ataque original é de
+    janeiro de 2026 e a revelação financeira, de maio de 2026), mas ainda não incorporado ao dossiê — localizado
+    nesta checagem de rotina e confirmado por ≥2 fontes independentes (adicionalmente corroborado por
+    ConvergenciaDigital, TecMundo e Agência Brasil regional, todos convergindo nos mesmos números). Este caso
+    estende o mesmo padrão de risco de terceiros/cadeia de suprimentos já registrado nos casos C&M Software e
+    FictorPay: a vulnerabilidade não esteve nos sistemas próprios do banco, mas em um PSTI terceirizado com
+    acesso a uma conta-bolsão. Diferentemente da FictorPay/C&M Software (falha ativamente explorada é reportada
+    perto da data do ataque), aqui o valor do prejuízo só veio a público quatro meses depois, via divulgação de
+    resultado financeiro trimestral — um padrão de transparência tardia que vale registrar como tal.
+
 ---
 
 ### Atores de ameaça relevantes ao setor financeiro
@@ -1241,6 +1288,7 @@ inventar um valor consolidado.
 | Ataque C&M Software / suspensão Pix (jul/2025) | R$ 400 milhões desviados; 3 fintechs suspensas | Banco Central (Resolução BC nº 30) | Confirmado (2 fontes) |
 | Ataque FictorPay (out/2025) | R$ 26 milhões desviados; ~280 transações Pix | Cobertura de imprensa especializada | Confirmado (2 fontes) para o valor da FictorPay isoladamente |
 | Perdas acumuladas em ataques a fintechs BR (desde jul/2024) | R$ 1,74 bilhão | Cobertura de imprensa especializada | Confirmado (2 fontes) |
+| Ataque Banco do Nordeste / PSTI terceirizado (jan/2026; prejuízo revelado mai/2026) | R$ 146,6 milhões (item não recorrente no balanço 1º tri. 2026) | Agência Brasil / Finsiders Brasil | Confirmado (2 fontes) |
 | Ransomware Qilin no setor financeiro | 59 vítimas; caso GJTec afetou 32 instituições (Coreia do Sul) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
 
 **Legenda:** idêntica à da tabela-resumo Global. Itens "Parcialmente confirmado" indicam que o valor numérico
@@ -1893,6 +1941,29 @@ em 2026-07-21.
     Este caso ilustra novamente o risco de cadeia de suprimentos/terceiros (contratada de serviços sísmicos), já
     destacado como padrão recorrente na seção Financeiro (caso C&M Software/FictorPay).
 
+### Atualização 2026-09-16 — Brasil — incidente Cemig (vazamento de dados, maio de 2026)
+
+- **Dado:** em **14 de maio de 2026**, a **Cemig** (Companhia Energética de Minas Gerais) confirmou ataque
+  cibernético com acesso não autorizado a uma de suas bases de dados, resultando em vazamento de dados
+  cadastrais de cerca de **135 mil clientes** — nome, filiação, CPF, endereço, e-mail, telefone e valor de
+  fatura. A empresa afirmou que o vazamento **não causou impacto operacional** (sem afetar sistemas de
+  distribuição/OT) e que o acesso indevido à base de dados foi bloqueado assim que detectado. O incidente foi
+  comunicado à Autoridade Nacional de Proteção de Dados (ANPD), à ANEEL e à autoridade policial.
+  - Fonte 1: CanalEnergia. *Cemig confirma vazamento de dados de 135 mil clientes após ataque cibernético*.
+    Maio de 2026.
+    https://www.canalenergia.com.br/noticias/53347138/cemig-confirma-vazamento-de-dados-de-135-mil-clientes-apos-ataque-cibernetico
+  - Fonte 2 (secundária, mesmo caso, mesmos números): ConvergenciaDigital. *Cemig assume vazamento de dados de
+    cerca de 135 mil clientes*. Maio de 2026.
+    https://convergenciadigital.com.br/mercado/cemig-assume-vazamento-de-dados-de-cerca-de-135-mil-clientes/
+  - Observações: incidente **pré-existente à janela de 3 dias desta atualização** (o ataque é de maio de 2026),
+    mas ainda não incorporado ao dossiê — localizado nesta checagem de rotina e confirmado por ≥2 fontes
+    independentes (adicionalmente corroborado por Agência iNFRA, JF Informa e Pordentrodeminas, todos
+    convergindo nos mesmos números). Diferentemente dos casos Eletrobras/Copel (2021) e Petrobras/Everest
+    (2025) — que envolveram *ransomware*/extorsão —, o caso Cemig é um vazamento de dados cadastrais de
+    clientes sem reivindicação de grupo de *ransomware* identificada nas fontes consultadas; ainda assim,
+    ilustra o mesmo padrão recorrente de sistemas de TI corporativa/atendimento ao cliente comprometidos sem
+    impacto confirmado em OT, já registrado nos dois casos anteriores desta seção.
+
 ---
 
 ### Tabela-resumo — Energia
@@ -1922,6 +1993,7 @@ em 2026-07-21.
 | ANEEL — fiscalização RN 964/2021 | Prazo até 30/6/2025 (Despacho nº 427/2025) | ANEEL | Confirmado (2 fontes) |
 | Brasil — Eletrobras/Eletronuclear e Copel (fev/2021) | Ransomware DarkSide (Copel); sem impacto em Angra 1/2 | BleepingComputer / Canaltech | Confirmado (2 fontes) |
 | Brasil — Petrobras/Everest (nov/2025) | >176 GB alegados (>90 GB atribuídos à Petrobras) | Hackread / Cybernews | Parcialmente confirmado — Petrobras contesta atribuição direta |
+| Brasil — Cemig (vazamento de dados, mai/2026) | ~135 mil clientes; sem impacto operacional | CanalEnergia / ConvergenciaDigital | Confirmado (2 fontes) |
 | EUA — Emergência Nacional para o Bulk-Power System (26/8/2026) | Ordem Executiva 14420; prazos DOE: 120 dias (regras) / 180 dias (revisão FAR) | The White House / Holland & Knight | Confirmado (2 fontes); regras de implementação do DOE ainda não publicadas |
 
 **Legenda:** idêntica à das tabelas-resumo Global e Financeiro. "Parcialmente confirmado" indica que o valor
@@ -2704,3 +2776,32 @@ atualizações regulatórias desde o último refresh (2026-08-31, apenas carimbo
 do painel (`dashboard/src/data/dashboard.json`) — o `04-comparativo` e os capítulos setoriais não têm nenhum
 indicador numérico dependente deste dado. Nenhuma outra lacuna equivalente foi identificada nas demais frentes
 verificadas.
+
+---
+
+## Registro do refresh — 2026-09-16
+
+Checagem de diligência de 3 dias: verificação de novas edições de relatório primário, incidentes-marco e
+atualizações regulatórias desde o último refresh de conteúdo (2026-09-01; os ciclos intermediários de
+2026-09-04, 2026-09-07, 2026-09-10 e 2026-09-13 foram apenas carimbos de verificação sem mudanças).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-09-16 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada); estatísticas específicas (grupos AZURITE/PYROXENE/SYLVANITE, +64% ransomware) já confirmadas no dossiê |
+| Kaspersky ICS CERT | Sem edição nova além da série Q4 2025/Q1 2026 já incorporada |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova localizada |
+| ENISA Threat Landscape | Sem edição nova (Single Reporting Platform entrou em operação em 11/9/2026, mas é marco operacional/administrativo, não dado de ameaça quantificável ao escopo deste dossiê) |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação Brasil) | Nenhuma norma ou despacho novo localizado nesta janela; notícias de set/2026 sobre "grupo de trabalho" ANEEL/MME/GSI/EPE/CCEE referem-se a estrutura já existente desde a Resolução CNPE nº 1/2021, sem despacho novo |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada nesta janela; Resolução BCB nº 498 checada e descartada por ser anterior (5/9/2025) e já superada pela Resolução BCB nº 538/2025 já registrada |
+| Incidentes-marco / atualizações regulatórias novas (financeiro/energia) | **Identificados dois incidentes pré-existentes ainda não incorporados ao dossiê**: Banco do Nordeste (ataque via PSTI em 26/1/2026; prejuízo de R$ 146,6 milhões revelado em 13/5/2026) no capítulo Financeiro, e Cemig (vazamento de dados de ~135 mil clientes em 14/5/2026) no capítulo Energia — ambos incorporados nesta atualização, atendendo à regra de duas fontes independentes. Campanha de hackers ligados ao Irã contra infraestrutura dos EUA (água/telecom/energia, NBC News, 2/9/2026) verificada e **descartada** como novo incidente-marco por não ter disrupção confirmada em energia (ataques "tentados"/"sem sucesso") |
+
+**Observação:** os dois incidentes incorporados (Banco do Nordeste e Cemig) não alteram nenhum KPI agregado
+já existente no painel (`dashboard/src/data/dashboard.json`) — nenhum dos dois está incluído nas séries
+"Ransomware direto" (Black Kite), "Incidentes reportados ao BC" (Relatório Integrado) ou "Ransomware
+industrial" (Dragos) já cravadas no painel. Ambos foram, no entanto, adicionados à narrativa qualitativa das
+dimensões "Terceiros/cadeia de suprimentos" (Financeiro) e "Segmentação TI/OT" (Energia) no
+`dashboard/src/data/dashboard.json`, e aos capítulos `02-setor-financeiro/README.md` e
+`03-setor-energia/README.md`, para manter o painel e os capítulos sincronizados com o dossiê. Nenhuma outra
+lacuna equivalente foi identificada nas demais frentes verificadas.
