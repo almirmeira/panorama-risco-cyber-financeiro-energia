@@ -47,7 +47,7 @@ pesquisa.
 | *Ransomware* contra orgs. industriais (2024→2025)                   | +64% a/a; 119 grupos; ~3.300 orgs. impactadas | Dragos [3][4]                |
 | *Dwell time* de *ransomware* em ambientes OT                        | 42 dias (5 dias com visibilidade OT plena)     | Dragos [3][4]                |
 | Computadores ICS atacados — energia elétrica (1º sem. 2025)        | 22,8% (3º setor mais atacado globalmente)      | Kaspersky ICS CERT [50][51]  |
-| Computadores ICS atacados — global (1º tri. 2026)                   | 19,6% (menor patamar em três anos)             | Kaspersky ICS CERT [50][52]  |
+| Computadores ICS atacados — global (2º tri. 2026)                   | 19,15% (menor patamar desde 2022)              | Kaspersky ICS CERT [50][59][60] |
 | Incidentes de cibersegurança em OT (organizações pesquisadas)       | 50% relataram ≥ 1 incidente no último ano      | Fortinet [5][6]              |
 | Técnica dominante em ambientes Energia/Utilities/Resíduos           | Manipulação de Dados (3x mais frequente)       | Nozomi Networks [7][8]       |
 | Advisórios ICS publicados pela CISA (2025)                         | > 450, 200+ fornecedores, 700+ produtos        | Agregação sobre CISA [9][10] |
@@ -90,23 +90,30 @@ engajamentos de resposta a incidentes da Dragos ao longo de 2025 [3][4].
 
 A Kaspersky ICS CERT mediu, ao longo de 2025, entre **20,1% e 21,9%** de computadores ICS globais com
 objetos maliciosos bloqueados por trimestre, e a série seguiu **em queda** desde então: **19,7%** no 4º
-trimestre de 2025 e **19,6%** no 1º trimestre de 2026 — o menor patamar em três anos, uma redução de
-**1,35 vez** no acumulado do período [50][51][52]. A dispersão regional é muito maior que a variação
-global: no 1º trimestre de 2026 o indicador foi de **9,1%** no Norte da Europa a **27,4%** na África
-[50][52]. No recorte específico do setor de **energia elétrica**, o 1º semestre de 2025 registrou
-**22,8%**, tornando o setor o **3º mais atacado globalmente**, atrás apenas de biometria (28,1%) e
-automação predial (25%) [50][51]. A internet permanece a principal fonte de infecção — **7,88%** dos
-computadores ICS no 1º trimestre de 2026 (ante ~10% no 1T2025) —, seguida por clientes de e-mail
-(**2,59%**) e mídia removível (**0,26%**, em queda contínua) [50].
+trimestre de 2025, **19,6%** no 1º trimestre de 2026 e **19,15%** no 2º trimestre de 2026 — o menor
+patamar desde 2022 [50][51][52][59][60]. A dispersão regional é muito maior que a variação global: no 2º
+trimestre de 2026 o indicador foi de **8,1%** no Norte da Europa a **27,9%** na África [59][60]. No
+recorte específico do setor de **energia elétrica**, o 1º semestre de 2025 registrou **22,8%**, tornando
+o setor o **3º mais atacado globalmente**, atrás apenas de biometria (28,1%) e automação predial (25%)
+[50][51]. A internet permanece a principal fonte de infecção — **7,88%** dos computadores ICS no 1º
+trimestre de 2026 (ante ~10% no 1T2025) —, seguida por clientes de e-mail (**2,59%**) e mídia removível
+(**0,26%**, em queda contínua) [50]. Um sinal em direção oposta à do indicador agregado: a porcentagem de
+computadores ICS visados especificamente por *ransomware* **subiu em quase todas as regiões** entre o 1º
+e o 2º trimestre de 2026 — Austrália/Nova Zelândia (+67%), Sudeste Asiático (+50%), América do Sul (+38%),
+África e Ásia Central (+31% cada) e Oriente Médio (+11%) [59][60].
 
 **Duas notas de precisão.** Primeira: o detalhamento setorial exato (biometria/energia/óleo e gás) não
 foi confirmado linha a linha contra o documento primário de cada trimestre — o valor foi obtido por
 agregação de cobertura especializada que cita a mesma série trimestral da Kaspersky, e é tratado aqui
-como parcialmente confirmado [51]. Segunda: os relatórios do 4º trimestre de 2025 e do 1º trimestre de
-2026 **não publicam tabela setorial consolidada**, apenas o setor que subiu no trimestre (óleo e gás no
-4T2025; manufatura, +1,0 p.p., no 1T2026) [50][52]. Por isso os **22,8%** do 1º semestre de 2025
-seguem sendo o dado setorial mais recente disponível para energia elétrica — a queda do indicador
-global **não** deve ser lida como queda equivalente no setor elétrico, que não foi medido de novo.
+como parcialmente confirmado [51]. Segunda: os relatórios do 4º trimestre de 2025, do 1º trimestre de
+2026 e do 2º trimestre de 2026 **não publicam tabela setorial consolidada**, apenas o setor líder isolado
+(óleo e gás em alta no 4T2025; manufatura, +1,0 p.p., no 1T2026; biometria segue líder isolada, com
+**26,44%**, no 2T2026) [50][52][59][60]. Por isso os **22,8%** do 1º semestre de 2025 seguem sendo o dado
+setorial mais recente disponível para energia elétrica — a queda do indicador global **não** deve ser lida
+como queda equivalente no setor elétrico, que não foi medido de novo. Uma busca inicial sobre o 2T2026
+retornou uma alegação avulsa de **21,3%** especificamente para energia elétrica, mas uma segunda checagem
+direcionada ao conteúdo do relatório primário não a reproduziu — não incorporada, por não atender à regra
+de duas fontes com o mesmo número.
 
 A CISA publicou mais de **450 advisórios ICS** em 2025, cobrindo vulnerabilidades em mais de 200
 fornecedores e mais de 700 produtos usados em linhas de manufatura, subestações, salas de controle e
@@ -548,3 +555,10 @@ https://www.hklaw.com/en/insights/publications/2026/09/executive-order-declares-
 
 [58] ConvergenciaDigital. *Cemig assume vazamento de dados de cerca de 135 mil clientes*. Maio de 2026.
 https://convergenciadigital.com.br/mercado/cemig-assume-vazamento-de-dados-de-cerca-de-135-mil-clientes/
+
+[59] Kaspersky ICS CERT / Securelist. *Threat landscape for industrial automation systems. Q2 2026*
+(*Industrial threat report for Q2 2026*). 25 de agosto de 2026.
+https://securelist.com/industrial-threat-report-q2-2026/121159/
+
+[60] Security MEA. *Rise in Ransomware Targeting Industrial Control Systems*. 26 de agosto de 2026.
+https://securitymea.com/2026/08/26/rise-in-ransomware-targeting-industrial-control-systems/
