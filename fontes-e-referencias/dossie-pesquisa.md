@@ -69,6 +69,28 @@
 > BCB nº 498, por ser de 5/9/2025 (já anterior e distinta da Resolução BCB nº 538/2025 já registrada como mais
 > recente). Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas nesta janela — ver
 > checagem ao final.
+>
+> **Atualização 2026-09-19 (refresh de 3 dias):** nenhuma edição nova de relatório primário foi identificada
+> nesta janela para CrowdStrike, Microsoft, Verizon, IBM, Mandiant, Dragos, WEF, ENISA ou FS-ISAC, nem
+> norma/despacho novo de ANEEL/ONS/BACEN. Localizada uma **extensão pré-existente da série trimestral da
+> Kaspersky ICS CERT** (Q2 2026, publicada em 25/8/2026, ainda não incorporada ao dossiê): a porcentagem
+> global de computadores ICS com objetos maliciosos bloqueados caiu para **19,15%** (ante 19,6% no 1º
+> trimestre de 2026) — ver seção Energia. Assim como nos dois trimestres anteriores, o relatório não publica
+> tabela setorial consolidada, então os **22,8% de energia elétrica (1º semestre de 2025) permanecem o dado
+> setorial mais recente** — nenhuma mudança ao KPI correspondente do painel. Uma alegação de percentual
+> setorial específico para "energia elétrica" (21,3%) apareceu em buscas gerais mas **não foi possível
+> confirmá-la contra o conteúdo do relatório primário** (buscas direcionadas ao texto do relatório não a
+> reproduzem) — **[NÃO CONFIRMADO em 2026-09-19 — descartada por insuficiência de evidência, não
+> incorporada]**. Também identificado, sem incorporação por não atender à regra de duas fontes com número
+> fechado: (1) Picus Security *Blue Report 2026*, que mede o setor de Energia e Utilities bloqueando 69% de
+> ataques simulados (ante 73% em 2025) — métrica de simulação de ataque (BAS), de natureza distinta das já
+> usadas neste capítulo, marcada para avaliação de inclusão em ciclo futuro; (2) fraude via Pix contra a
+> fintech Listo (mai/2026) — sem valor de prejuízo divulgado publicamente nas fontes consultadas, portanto
+> sem número a registrar; (3) ata da 66ª reunião do Comef (BC), divulgada em 2-3/9/2026, com alerta
+> qualitativo sobre uso de ativos virtuais para escoamento de fraudes e riscos do ecossistema *Banking as a
+> Service* — sem incidente ou número novo e fechado além do que já consta na seção Financeiro. Nenhum
+> incidente-marco novo foi identificado nos capítulos Financeiro ou Energia nesta janela — ver checagem ao
+> final.
 
 ## Global
 
@@ -1412,6 +1434,38 @@ em 2026-07-21.
     Dragos e TechTarget, não Kaspersky. A Kaspersky não constava da lista. As citações passaram para
     **[50][51][52]** (entradas novas). A validação automática do refresh checa se toda citação `[n]` tem
     entrada correspondente, o que passava; ela não checa se a entrada corresponde ao conteúdo citado.
+
+### Atualização 2026-09-19 — Kaspersky ICS CERT Q2 2026 (série global estendida)
+
+- **Dado:** a porcentagem global de computadores ICS com objetos maliciosos bloqueados **continuou caindo**
+  no 2º trimestre de 2026: **19,15%**, ante 19,6% no 1º trimestre — o menor patamar desde 2022. Amplitude
+  regional: **8,1%** (Norte da Europa) a **27,9%** (África). A Kaspersky bloqueou malware de **10.904**
+  famílias no período. O setor de biometria seguiu como o mais afetado, com **26,44%** — patamar consistente
+  com os 26,4% já registrados para o 1º trimestre de 2026. Um sinal de alerta qualitativo: a porcentagem de
+  computadores ICS visados por *ransomware* **subiu em quase todas as regiões** do trimestre anterior para
+  este — Austrália/Nova Zelândia (+67%), Sudeste Asiático (+50%), América do Sul (+38%), África e Ásia
+  Central (+31% cada), Oriente Médio (+11%) —, mesmo com a queda do indicador agregado de objetos
+  maliciosos. Um relatório complementar da mesma casa registrou **163 incidentes confirmados publicamente**
+  por vítimas no trimestre.
+  - Fonte 1 (primária): Kaspersky ICS CERT / Securelist. *Threat landscape for industrial automation
+    systems. Q2 2026* (*Industrial threat report for Q2 2026*). 25 de agosto de 2026.
+    https://securelist.com/industrial-threat-report-q2-2026/121159/
+  - Fonte 2 (secundária, veículo independente que reproduz os mesmos números): Security MEA. *Rise in
+    Ransomware Targeting Industrial Control Systems*. 26 de agosto de 2026.
+    https://securitymea.com/2026/08/26/rise-in-ransomware-targeting-industrial-control-systems/ (ver também
+    IT-Online, *Rise in ransomware targeting ICS systems*, 27 de agosto de 2026,
+    https://it-online.co.za/2026/08/27/rise-in-ransomware-targeting-ics-systems/)
+  - Observações: **mesma limitação já registrada nas duas atualizações anteriores desta série** — o
+    relatório do 2º trimestre de 2026 não publica uma tabela setorial consolidada (biometria/energia
+    elétrica/óleo e gás), apenas o setor líder isolado (biometria). Por isso os **22,8% de energia elétrica
+    do 1º semestre de 2025 continuam sendo o dado setorial mais recente disponível** — a queda do indicador
+    global (19,6% → 19,15%) **não** deve ser lida como queda equivalente no setor elétrico, que não foi
+    remedido nesta edição. Uma busca inicial retornou uma alegação de **21,3%** especificamente para o setor
+    de energia elétrica no 2º trimestre de 2026, mas uma busca de acompanhamento, direcionada ao conteúdo do
+    relatório primário, não reproduziu esse número (apenas confirmou o dado de biometria) — tratado como
+    **[NÃO CONFIRMADO — não incorporado por insuficiência de evidência, em 2026-09-19]**, para não repetir o
+    erro que a regra de duas fontes existe para evitar. Independência limitada por construção, como já
+    registrado: a telemetria é proprietária da Kaspersky.
 
 ### Fortinet — 2025 State of Operational Technology and Cybersecurity Report
 
@@ -2805,3 +2859,28 @@ dimensões "Terceiros/cadeia de suprimentos" (Financeiro) e "Segmentação TI/OT
 `dashboard/src/data/dashboard.json`, e aos capítulos `02-setor-financeiro/README.md` e
 `03-setor-energia/README.md`, para manter o painel e os capítulos sincronizados com o dossiê. Nenhuma outra
 lacuna equivalente foi identificada nas demais frentes verificadas.
+
+---
+
+## Registro do refresh — 2026-09-19
+
+Checagem de diligência de 3 dias: verificação de novas edições de relatório primário, incidentes-marco e
+atualizações regulatórias desde o último refresh de conteúdo (2026-09-16).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-09-19 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada) |
+| Kaspersky ICS CERT | **Localizada extensão pré-existente da série trimestral (Q2 2026, publicada 25/8/2026)** — global caiu para 19,15% (ante 19,6% no 1T2026); sem tabela setorial consolidada, como nos dois trimestres anteriores — incorporada nesta atualização (ver seção Energia). Uma alegação avulsa de 21,3% para o setor de energia elétrica não resistiu a uma segunda checagem direcionada e foi descartada |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova (pesquisa para a edição 2027 aberta até 2/10/2026, ainda sem relatório publicado) |
+| ENISA Threat Landscape | Sem edição nova localizada |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação Brasil) | Nenhuma norma ou despacho novo localizado nesta janela |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada nesta janela; ata da 66ª reunião do Comef (divulgada 2–3/9/2026) traz alerta qualitativo sobre ativos virtuais no escoamento de fraudes e riscos do ecossistema *Banking as a Service*, sem número novo e fechado a incorporar |
+| Incidentes-marco / atualizações regulatórias novas (financeiro/energia) | Nenhum incidente-marco novo localizado. Verificados e **não incorporados** por não fecharem a regra de duas fontes com número: fraude via Pix contra a fintech Listo (mai/2026, sem prejuízo divulgado publicamente) e Picus Security *Blue Report 2026* (setor de Energia e Utilities bloqueia 69% de ataques simulados, ante 73% em 2025 — métrica de simulação de ataque, de natureza distinta das já usadas no capítulo; candidata a avaliação de inclusão em ciclo futuro, não descartada) |
+
+**Observação:** a única mudança quantificável desta janela (Kaspersky, série global de ICS) não altera o
+KPI "Computadores ICS atacados — energia elétrica" do painel (`dashboard/src/data/dashboard.json`), que
+permanece em 22,8%/H1 2025 — apenas o texto de apoio (`delta`) desse KPI e o registro de fontes recentes
+foram atualizados para refletir o trimestre mais recente da série global. Nenhuma outra lacuna equivalente
+foi identificada nas demais frentes verificadas.
