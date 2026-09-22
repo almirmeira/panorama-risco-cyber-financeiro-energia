@@ -306,6 +306,15 @@ ou dano às contas de clientes [42][43]. A extensão financeira do incidente só
 meses depois**, quando o balanço do 1º trimestre de 2026 (divulgado em 13 de maio de 2026) revelou um item
 não recorrente de **R$ 146,6 milhões** em prejuízo [43].
 
+Um vetor distinto do padrão de terceiros apareceu na manhã de **21 de abril de 2026**, quando o **Banco
+Rendimento** (instituição atuante principalmente no segmento de câmbio) identificou e conteve um ataque
+que afetou canais de acesso e **contas de clientes do próprio banco** — não um prestador terceirizado.
+Criminosos desviaram cerca de **R$ 100 milhões**, dos quais o banco conseguiu bloquear parte da rota,
+resultando em prejuízo líquido estimado entre **R$ 20 milhões e R$ 40 milhões** [44][45]. Há indícios de
+exploração de falha em mecanismos de autenticação — um dos vetores já anotados no diagrama de superfície de
+ataque do Pix/Open Finance abaixo (*credential stuffing* contra o acesso do cliente) —, mas o vetor técnico
+exato não está plenamente confirmado nas fontes disponíveis [44][45].
+
 ## Superfície de ataque: Pix e Open Finance
 
 A figura abaixo mapeia a topologia lógica do fluxo Pix — do aplicativo do cliente à instituição
@@ -497,3 +506,9 @@ https://agenciabrasil.ebc.com.br/economia/noticia/2026-01/banco-do-nordeste-susp
 
 [43] Finsiders Brasil. *Banco do Nordeste revela perda milionária após ataque ao Pix*. Maio de 2026.
 https://finsidersbrasil.com.br/pagamentos/pix/ataque-hacker-pix-bnb-perda-146-milhoes/
+
+[44] CNN Brasil. *Banco Rendimento diz que serviço foi normalizado após ataque hacker*. Abril de 2026.
+https://www.cnnbrasil.com.br/economia/negocios/banco-rendimento-e-alvo-de-ataque-cibernetico-mas-diz-ter-normalizado-servicos/
+
+[45] ConvergenciaDigital. *Ataque hacker atinge mais um banco no Brasil e, agora, nas contas dos clientes*.
+Abril de 2026. https://convergenciadigital.com.br/mercado/ataque-hacker-atinge-mais-um-banco-no-brasil-e-agora-nas-contas-dos-clientes/
