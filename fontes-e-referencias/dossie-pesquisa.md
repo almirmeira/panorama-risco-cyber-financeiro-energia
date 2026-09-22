@@ -1237,6 +1237,34 @@ inventar um valor consolidado.
     perto da data do ataque), aqui o valor do prejuízo só veio a público quatro meses depois, via divulgação de
     resultado financeiro trimestral — um padrão de transparência tardia que vale registrar como tal.
 
+### Atualização 2026-09-22 — Brasil — incidente Banco Rendimento (abril de 2026)
+
+- **Dado:** na manhã de **terça-feira, 21 de abril de 2026**, o **Banco Rendimento** (instituição financeira
+  brasileira atuante principalmente no segmento de câmbio) identificou e conteve um incidente de segurança
+  cibernética que afetou canais de acesso e contas de clientes. Criminosos desviaram cerca de **R$ 100
+  milhões**; o banco conseguiu identificar e bloquear parte da rota dos recursos, resultando em prejuízo
+  estimado entre **R$ 20 milhões e R$ 40 milhões**. Diferentemente dos três casos anteriores registrados
+  neste dossiê (C&M Software, FictorPay, Banco do Nordeste), o foco do ataque **não foi um prestador de
+  serviços terceirizado**, e sim as próprias contas de clientes do banco — há indícios de exploração de
+  falha em mecanismos de autenticação, ainda **não plenamente confirmados quanto ao vetor técnico exato**.
+  Serviços foram normalizados e o caso foi comunicado às autoridades competentes.
+  - Fonte 1: CNN Brasil. *Banco Rendimento diz que serviço foi normalizado após ataque hacker*. Abril de
+    2026. https://www.cnnbrasil.com.br/economia/negocios/banco-rendimento-e-alvo-de-ataque-cibernetico-mas-diz-ter-normalizado-servicos/
+  - Fonte 2 (independente, mesmo caso, detalha o valor desviado e a natureza do vetor client-side):
+    ConvergenciaDigital. *Ataque hacker atinge mais um banco no Brasil e, agora, nas contas dos clientes*.
+    Abril de 2026. https://convergenciadigital.com.br/mercado/ataque-hacker-atinge-mais-um-banco-no-brasil-e-agora-nas-contas-dos-clientes/
+  - Observações: incidente **pré-existente à janela de 3 dias desta atualização** (ataque de abril de 2026),
+    localizado nesta checagem de rotina de 2026-09-22 e ainda não incorporado ao dossiê. Acesso direto às
+    fontes via *fetch* automatizado foi bloqueado pelo proxy de saída deste ambiente (mesma limitação já
+    registrada em 2026-08-28); valores e narrativa confirmados por convergência entre CNN Brasil e
+    ConvergenciaDigital, adicionalmente corroborados por TecMundo, Tribuna do Sertão (22/4/2026), Athena
+    Security e Investidor10, todos citando os mesmos números (R$ 100 milhões desviados; R$ 20–40 milhões de
+    prejuízo líquido). **Este caso não estende o padrão de risco de terceiros** registrado nos três casos
+    anteriores — é um vetor distinto (comprometimento direto de conta de cliente) — por isso não foi somado
+    à dimensão "Terceiros / cadeia de suprimentos" do painel (`dashboard/src/data/dashboard.json`); documentado
+    aqui e no capítulo `02-setor-financeiro/README.md` como caso autônomo. **[NÃO PLENAMENTE CONFIRMADO: o
+    mecanismo técnico exato da falha de autenticação]**.
+
 ---
 
 ### Atores de ameaça relevantes ao setor financeiro
@@ -1311,6 +1339,7 @@ inventar um valor consolidado.
 | Ataque FictorPay (out/2025) | R$ 26 milhões desviados; ~280 transações Pix | Cobertura de imprensa especializada | Confirmado (2 fontes) para o valor da FictorPay isoladamente |
 | Perdas acumuladas em ataques a fintechs BR (desde jul/2024) | R$ 1,74 bilhão | Cobertura de imprensa especializada | Confirmado (2 fontes) |
 | Ataque Banco do Nordeste / PSTI terceirizado (jan/2026; prejuízo revelado mai/2026) | R$ 146,6 milhões (item não recorrente no balanço 1º tri. 2026) | Agência Brasil / Finsiders Brasil | Confirmado (2 fontes) |
+| Ataque Banco Rendimento / conta de cliente (abr/2026) | R$ 100 milhões desviados; prejuízo líquido R$ 20–40 milhões | CNN Brasil / ConvergenciaDigital | Confirmado (2 fontes); vetor técnico exato **[NÃO PLENAMENTE CONFIRMADO]** |
 | Ransomware Qilin no setor financeiro | 59 vítimas; caso GJTec afetou 32 instituições (Coreia do Sul) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
 
 **Legenda:** idêntica à da tabela-resumo Global. Itens "Parcialmente confirmado" indicam que o valor numérico
@@ -2884,3 +2913,32 @@ KPI "Computadores ICS atacados — energia elétrica" do painel (`dashboard/src/
 permanece em 22,8%/H1 2025 — apenas o texto de apoio (`delta`) desse KPI e o registro de fontes recentes
 foram atualizados para refletir o trimestre mais recente da série global. Nenhuma outra lacuna equivalente
 foi identificada nas demais frentes verificadas.
+
+---
+
+## Registro do refresh — 2026-09-22
+
+Checagem de diligência de 3 dias: verificação de novas edições de relatório primário, incidentes-marco e
+atualizações regulatórias desde o último refresh de conteúdo (2026-09-19).
+
+| Fonte / frente verificada | Resultado da checagem em 2026-09-22 |
+| :-- | :-- |
+| CrowdStrike, Microsoft MDDR, Verizon DBIR, IBM Cost of a Data Breach, Mandiant M-Trends | Sem edição nova; edições já registradas seguem vigentes |
+| Dragos OT/ICS Year in Review | Sem edição nova (9ª edição, fev/2026, já incorporada); análise trimestral de ransomware (Q1 2026) já refletida no dossiê, sem número setorial novo nesta janela |
+| Kaspersky ICS CERT | Sem edição nova além da série Q2 2026 já incorporada em 2026-09-19 |
+| WEF Global Cybersecurity Outlook / Global Risks Report | Sem edição nova (pesquisa para a edição 2027 ainda aberta, sem relatório publicado) |
+| ENISA Threat Landscape | Sem edição nova localizada |
+| FS-ISAC Navigating Cyber | Sem edição nova localizada |
+| ANEEL / ONS (regulação Brasil) | Nenhuma norma ou despacho novo localizado nesta janela; notícias de set/2026 sobre fiscalização da ANEEL em centros de operação que seguem comandos do ONS referem-se a ação de fiscalização (não normativa) já no âmbito da Resolução Normativa nº 964/2021, sem despacho novo |
+| Banco Central (BACEN/CMN) | Nenhuma resolução nova localizada nesta janela |
+| Incidentes-marco / atualizações regulatórias novas (financeiro/energia) | **Identificado um incidente pré-existente ainda não incorporado ao dossiê**: Banco Rendimento (ataque de 21/4/2026 a contas de clientes; ~R$ 100 milhões desviados, prejuízo líquido de R$ 20–40 milhões) no capítulo Financeiro — incorporado nesta atualização, atendendo à regra de duas fontes independentes (ver seção Financeiro). Verificado e **descartado** como incidente novo: recirculação, em coberturas de SEO/agregadores datadas de 2026, do ataque de ransomware de fevereiro de **2021** contra a Eletronuclear (subsidiária nuclear da Eletrobras) — confirmado, ao checar a URL/data original das fontes (Forbes, Investing.com), tratar-se do mesmo evento histórico de 2021, não de um incidente novo de 2025–2026, portanto fora do escopo temporal deste dossiê. Também verificado o "Exercício Guardião" do Comando de Defesa Cibernética (ComDCiber), 21–25/9/2026 — é um exercício de simulação nacional envolvendo bancos, energia, água e setor nuclear, não um incidente real, portanto não incorporável como incidente-marco |
+
+**Observação:** o incidente incorporado (Banco Rendimento) é qualitativamente distinto dos três casos de
+"Terceiros / cadeia de suprimentos" já registrados (C&M Software, FictorPay, Banco do Nordeste) — o ataque
+mirou diretamente contas de clientes do banco, não um prestador de serviços terceirizado — por isso **não
+foi somado a nenhuma dimensão quantitativa existente do painel** (`dashboard/src/data/dashboard.json`); o
+painel não teve nenhum KPI ou dimensão alterada nesta janela. O incidente está documentado no dossiê e no
+capítulo `02-setor-financeiro/README.md` como caso autônomo. Acesso direto às fontes primárias via *fetch*
+automatizado seguiu bloqueado pelo proxy de saída deste ambiente (mesma limitação já registrada em
+2026-08-28); os valores foram confirmados por convergência entre múltiplas coberturas de imprensa
+independentes entre si. Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas.
