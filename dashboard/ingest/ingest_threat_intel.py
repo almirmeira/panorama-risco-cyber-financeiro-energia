@@ -237,6 +237,41 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False, paginas=8, por_pa
     return saida
 
 
+def coletar_misp_feeds(base_url, api_key, verificar_tls=False):
+    """Feeds habilitados AGORA na instância MISP, lidos da própria API.
+
+    A aba Fontes & Método listava os feeds num texto escrito à mão no
+    dashboard.json — que envelheceu calado: dizia 11 feeds quando a instância
+    tinha 18. Vindo daqui, a lista é a que de fato alimentou este ciclo.
+    """
+    import ssl
+
+    ctx = ssl.create_default_context()
+    if not verificar_tls:
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+    req = urllib.request.Request(
+        base_url.rstrip("/") + "/feeds/index",
+        headers={"Authorization": api_key, "Accept": "application/json", "User-Agent": UA},
+    )
+    with urllib.request.urlopen(req, timeout=TIMEOUT * 2, context=ctx) as r:
+        feeds = json.loads(r.read().decode("utf-8", "replace"))
+    if not isinstance(feeds, list):
+        raise ValueError("formato inesperado em /feeds/index")
+    saida = []
+    for f in feeds:
+        fe = f.get("Feed", f)
+        if str(fe.get("enabled")).lower() not in ("true", "1"):
+            continue
+        saida.append({
+            "nome": fe.get("name") or "",
+            "provedor": fe.get("provider") or "",
+            "formato": fe.get("source_format") or "",
+        })
+    saida.sort(key=lambda x: (x["provedor"].lower(), x["nome"].lower()))
+    return saida
+
+
 def coletar_misp_corpus(base_url, api_key, taxonomia, verificar_tls=False):
     """Retrato do acervo inteiro da instância MISP, não só da janela recente.
 
@@ -724,7 +759,13 @@ def main():
     base = os.environ.get("MISP_URL")
     chave = os.environ.get("MISP_KEY")
     corpus = None
+    feeds_misp = None
     if not args.sem_misp and base and chave:
+        try:
+            feeds_misp = coletar_misp_feeds(base, chave)
+            log(f"MISP: {len(feeds_misp)} feeds habilitados")
+        except Exception as e:                              # noqa: BLE001
+            log(f"lista de feeds do MISP FALHOU: {e}")
         try:
             corpus = coletar_misp_corpus(base, chave, taxonomia)
             log(f"acervo MISP: {corpus['eventos']} eventos / {corpus['atributos']} atributos "
@@ -904,6 +945,14 @@ def main():
         "brasil": brasil,
         "vulnerabilidades": kev,
         "acervoMisp": corpus,
+        # Configuração em vigor neste ciclo — a aba Fontes & Método lê daqui em
+        # vez de manter contagens escritas à mão no dashboard.json.
+        "configuracao": {
+            "feedsMisp": feeds_misp,
+            "nFeedsMisp": len(feeds_misp) if feeds_misp is not None else None,
+            "nFontesOperacionais": len(fontes),
+            "nFamiliasTaxonomia": len(taxonomia["familias"]),
+        },
     }
 
     os.makedirs(os.path.dirname(args.saida), exist_ok=True)

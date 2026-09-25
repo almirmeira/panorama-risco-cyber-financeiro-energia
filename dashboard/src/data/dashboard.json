@@ -203,7 +203,7 @@
         "responde": "que infraestrutura maliciosa existe agora",
         "recorte": "por família e tag da taxonomia financeira",
         "licenca": "feeds abertos TLP:WHITE/CLEAR sincronizados",
-        "detalhe": "11 feeds abertos habilitados: CIRCL OSINT, botvrij.eu, abuse.ch (URLhaus, ThreatFox, Feodo Tracker, MalwareBazaar), PrecisionSec, Rösti (bin.re), Rectifyq, Infoblox e NOCACTI. A prioridade é feed em formato MISP, não CSV: o CSV entra como evento agregado e perde a família por indicador, que é justamente o campo em que o recorte financeiro se apoia."
+        "detalhe": "Feeds abertos de CIRCL, botvrij.eu, abuse.ch, PrecisionSec, Rösti (bin.re), Rectifyq, Infoblox e NOCACTI; a lista exata em vigor e o tamanho do acervo aparecem logo abaixo, lidos do último ciclo de ingestão. A prioridade é feed em formato MISP, não CSV: o CSV entra como evento agregado e perde a família por indicador, que é justamente o campo em que o recorte financeiro se apoia. Os feeds-arquivo do abuse.ch (um evento por dia desde 2021) têm retenção de 30 dias — o painel só lê a janela de 14."
       },
       {
         "nome": "ThreatFox (abuse.ch), export direto",
@@ -239,6 +239,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-09-24",
+        "fonte": "MISP — instância própria",
+        "oQueMudou": "O MISP voltou a alimentar a aba Ameaças ao Vivo (a consulta passou a filtrar pela data do evento) e os indicadores repetidos entre MISP e ThreatFox passaram a contar uma vez só. Entraram na janela famílias que o painel não via — Casbaneiro, Grandoreiro, Emotet e QakBot. A contagem de feeds e o acervo desta aba passaram a ser lidos do ciclo de ingestão, e não mais escritos à mão."
+      },
       {
         "data": "2026-09-19",
         "fonte": "Kaspersky ICS CERT — Threat landscape for industrial automation systems, Q2/2026",
@@ -281,7 +286,9 @@
       { "titulo": "A série temporal não usa a data da fonte", "texto": "Feeds abertos publicam dumps rolantes de adições recentes: centenas de itens com data de hoje e poucas dezenas de duas semanas atrás — porque os antigos saem da janela, não porque houve menos ameaça. Um gráfico sobre esse dado sobe sozinho em qualquer cenário. A série vem da observação própria acumulada, que registra quando cada indicador foi visto aqui pela primeira vez, e só aparece com 7 ou mais dias de coleta." },
       { "titulo": "\"Recente\" no MISP não é recente", "texto": "O filtro por data do MISP olha o carimbo do atributo, que num feed recém-sincronizado é a hora da importação. A primeira consulta trouxe 2.594 atributos de relatórios de 2015 e 2016 como se fossem novos. A recência passou a sair da data do evento." },
       { "titulo": "Janela recente e acervo são coisas diferentes", "texto": "Feed MISP aberto é majoritariamente arquivo, não fluxo diário: habilitar dez feeds novos levou o acervo de 486 para mais de 600 eventos e a janela de 14 dias continuou com três, porque os eventos chegam com a data do fato original. Os dois números aparecem separados e rotulados, em vez de a janela ser esticada para simular recência." },
-      { "titulo": "Um limite de API que não se anuncia como erro", "texto": "A API de extorsão aceita 1 requisição por minuto e devolve o estouro com HTTP 200 e uma mensagem de limite no corpo — só o corpo denuncia. Como o ciclo consulta dois recortes (setor e país), há uma pausa deliberada entre eles e uma checagem explícita desse corpo; sem ela, o limite viraria \"0 vítimas\" sem nenhum erro na tela." }
+      { "titulo": "Um limite de API que não se anuncia como erro", "texto": "A API de extorsão aceita 1 requisição por minuto e devolve o estouro com HTTP 200 e uma mensagem de limite no corpo — só o corpo denuncia. Como o ciclo consulta dois recortes (setor e país), há uma pausa deliberada entre eles e uma checagem explícita desse corpo; sem ela, o limite viraria \"0 vítimas\" sem nenhum erro na tela." },
+      { "titulo": "Uma consulta sem data esconde o que é novo", "texto": "Até 24/09/2026 a consulta ao MISP não levava filtro de data: trazia as 40 mil linhas mais antigas do acervo e o filtro local descartava todas por velhice — o MISP chegava à aba Ameaças ao Vivo com zero indicador, e ninguém via, porque o ThreatFox sozinho enchia a tela. Com o corte pela data do evento na própria consulta, o recorte financeiro de 14 dias passou de 199 para 1.145 indicadores, já sem as cópias do mesmo indicador que o MISP e o ThreatFox direto traziam em dobro." },
+      { "titulo": "Feed-arquivo enche disco", "texto": "Os feeds do abuse.ch em formato MISP publicam um evento por dia desde 2021, e o MISP baixa o histórico inteiro: o acervo foi de 190 mil a 26,8 milhões de atributos e encheu o servidor, o que parou a publicação do painel por duas semanas em setembro de 2026. Hoje esses feeds têm retenção de 30 dias, e o que sai da retenção entra numa lista de bloqueio para não ser baixado de novo." }
     ],
     "cadencia": [
       { "etapa": "Varredura de pesquisa", "ritmo": "a cada 3 dias", "oQueFaz": "Revisita as fontes da camada estratégica, atualiza dossiê, capítulos e números do painel. A publicação é automática apenas se quatro validações passarem (toda citação com entrada correspondente, dados parseáveis, texto sem corrupção de acentuação e build íntegro); qualquer falha vira revisão manual." },
@@ -292,7 +299,7 @@
     "nVendors": 54,
     "nVozes": 25,
     "nFontesOperacionais": 5,
-    "nFeedsMisp": 11,
+    "nFeedsMisp": 18,
     "nFamiliasTaxonomia": 32,
     "repoUrl": "https://github.com/almirmeira/panorama-risco-cyber-financeiro-energia"
   }

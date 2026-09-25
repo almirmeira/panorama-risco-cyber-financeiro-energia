@@ -72,6 +72,15 @@ function Fontes({ dados }) {
   if (estado === 'ok') {
     for (const f of aoVivo?.fontes ?? []) estadoPorFonte[f.nome] = f
   }
+  // Contagens da configuração em vigor vêm do ciclo de ingestão (a cada 20 min);
+  // os valores do dashboard.json ficam só como reserva se o arquivo ao vivo
+  // não carregar. Escritas à mão, elas envelheciam sem ninguém notar.
+  const config = estado === 'ok' ? aoVivo?.configuracao ?? {} : {}
+  const acervo = estado === 'ok' ? aoVivo?.acervoMisp : null
+  const feedsMisp = Array.isArray(config.feedsMisp) ? config.feedsMisp : null
+  const nFeedsMisp = config.nFeedsMisp ?? fontes.nFeedsMisp
+  const nFontesOperacionais = config.nFontesOperacionais ?? fontes.nFontesOperacionais
+  const nFamiliasTaxonomia = config.nFamiliasTaxonomia ?? fontes.nFamiliasTaxonomia
 
   return (
     <div className="container">
@@ -94,9 +103,9 @@ function Fontes({ dados }) {
       <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', marginTop: 16 }}>
         <KpiTile label="Vendors e órgãos consultados" valor={fontes.nVendors} />
         <KpiTile label="Vozes/relatórios distintos" valor={fontes.nVozes} />
-        <KpiTile label="Fontes da camada operacional" valor={fontes.nFontesOperacionais} />
-        <KpiTile label="Feeds abertos no MISP próprio" valor={fontes.nFeedsMisp} />
-        <KpiTile label="Famílias na taxonomia financeira" valor={fontes.nFamiliasTaxonomia} />
+        <KpiTile label="Fontes da camada operacional" valor={nFontesOperacionais} />
+        <KpiTile label="Feeds abertos no MISP próprio" valor={nFeedsMisp} />
+        <KpiTile label="Famílias na taxonomia financeira" valor={nFamiliasTaxonomia} />
       </div>
 
       {camadas.length > 0 && (
@@ -172,6 +181,20 @@ function Fontes({ dados }) {
                       {fonte.detalhe && (
                         <p style={{ color: palette.txtSec, fontSize: 12, fontWeight: 400, lineHeight: 1.55, margin: '8px 0 0' }}>
                           {fonte.detalhe}
+                        </p>
+                      )}
+                      {fonte.chaveAoVivo === 'MISP (instância CECyber)' && feedsMisp && (
+                        <p style={{ color: palette.txtSec, fontSize: 12, fontWeight: 400, lineHeight: 1.55, margin: '8px 0 0' }}>
+                          <strong style={{ color: palette.txtCorpo }}>
+                            {feedsMisp.length} feeds habilitados neste ciclo:{' '}
+                          </strong>
+                          {feedsMisp.map((f) => f.nome).join(' · ')}.
+                          {acervo?.eventos != null && (
+                            <>
+                              {' '}Acervo: {acervo.eventos.toLocaleString('pt-BR')} eventos e{' '}
+                              {acervo.atributos.toLocaleString('pt-BR')} atributos.
+                            </>
+                          )}
                         </p>
                       )}
                     </td>
