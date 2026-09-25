@@ -14,6 +14,9 @@
 >   documentou o **JadePuffer**, descrito como o primeiro ataque de *ransomware* conduzido de ponta a
 >   ponta por um agente de IA, e a IBM X-Force atribuiu ao grupo Hive0163 o uso do *malware*
 >   **Slopoly**, provavelmente gerado por IA, em uma operação do *ransomware* Interlock [18][19][20][21].
+>   Em **setembro de 2026**, a Unit 42 (Palo Alto Networks) documentou um salto de sofisticação: uma
+>   frota de agentes de IA operando em paralelo violou uma rede corporativa em menos de **10 horas**
+>   (ante ~2 semanas para uma equipe humana), explorando mais de **50 técnicas MITRE ATT&CK** [35][36].
 > - Fraude por *deepfake* já responde por **6,5%** de todas as tentativas de fraude globalmente
 >   (ante 0,1% em 2022), impulsionada por casos como o da **Arup** (Hong Kong, janeiro de 2024):
 >   **15 transferências fraudulentas** autorizadas após videoconferência com clones sintéticos de
@@ -92,7 +95,8 @@ empresa cujo produto foi abusado, e o relatório não nomeia vítimas do setor f
 
 ### *Ransomware* conduzido por IA (2026)
 
-Dois casos de 2026 tiram o *ransomware* potencializado por IA do campo da projeção:
+Três casos de 2026 tiram o *ransomware* potencializado por IA do campo da projeção, numa progressão
+de sofisticação crescente ao longo do ano:
 
 - **JadePuffer (Sysdig, julho de 2026):** descrito pela Sysdig como a primeira infecção de
   *ransomware* documentada em que um agente LLM conduziu a operação inteira de extorsão. O acesso
@@ -108,10 +112,26 @@ Dois casos de 2026 tiram o *ransomware* potencializado por IA do campo da proje�
   persistência de mais de uma semana no servidor comprometido. A própria IBM ressalta que a
   ferramenta é pouco sofisticada — o ponto relevante é a velocidade com que a IA permite produzir
   *malware* sob medida [20][21].
+- **Investigação Unit 42 (Palo Alto Networks, setembro de 2026):** um atacante humano orquestrou uma
+  frota coordenada de agentes de IA de fronteira para violar uma rede corporativa em menos de **10
+  horas** — trabalho que uma equipe humana de *red team* levaria cerca de **duas semanas**. Agentes
+  especializados dividiram tarefas: um agente de reconhecimento mapeou os microsserviços internos,
+  subagentes vasculharam repositórios de código em busca de tokens e senhas embutidas, outro agente
+  usou essas credenciais para invadir o sistema de gestão de segredos e obter credenciais
+  administrativas de root, e um agente dedicado sequestrou os fluxos de CI/CD para exfiltrar chaves
+  de acesso à nuvem — ao todo, mais de **50 técnicas do MITRE ATT&CK** foram exploradas. O atacante
+  instruiu a própria IA a deixar, ao final, um "relatório" de 80 páginas auditando tecnicamente as
+  falhas exploradas na vítima. Em relação ao JadePuffer (um único agente LLM, julho de 2026), o caso
+  de setembro mostra o salto seguinte: múltiplos agentes de fronteira operando em paralelo,
+  reduzindo semanas de trabalho humano a horas [35][36].
 
 Para os dois setores, a lição é a mesma: o agente não precisa de técnica nova — basta encontrar
 infraestrutura negligenciada exposta à internet, e o custo marginal do ataque cai perto de zero
-(avaliação da Sysdig reproduzida pela SecurityWeek) [19].
+(avaliação da Sysdig reproduzida pela SecurityWeek) [19]. O caso Unit 42 acrescenta um segundo ponto:
+mesmo quando a infraestrutura não está obviamente exposta, uma frota de agentes especializados
+reduz de semanas para horas o tempo necessário para encadear reconhecimento, roubo de credenciais e
+exfiltração — o que, para o setor financeiro e de energia, comprime ainda mais a janela de detecção
+já discutida abaixo.
 
 ### Escala e velocidade da adoção agêntica por atacantes (2025–2026)
 
@@ -476,3 +496,14 @@ https://www.trenchrossi.com/en/legal-alerts/bcb-and-cmn-establish-additional-cyb
 
 [34] Grant Thornton Brasil. *Segurança cibernética: o que muda com a Resolução CMN nº 5.274/2025?*
 2025. https://www.grantthornton.com.br/insights/artigos-e-publicacoes/seguranca-cibernetica-o-que-muda-com-a-cmn-5.2742025/
+
+[35] The Register. *AI agents carried out every step of this ransomware attack – then left the
+victim an 80-page security audit*. 2 de setembro de 2026.
+https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009
+(relatório primário: Unit 42, Palo Alto Networks. *An AI-Assisted Cyber Attack: Inside a Unit 42
+Investigation*. Setembro de 2026. https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/)
+
+[36] Cybernews. *AI agents speed ransomware breach to under 10 hours*. Setembro de 2026.
+https://cybernews.com/security/ai-agents-ransomware-attack-security-audit/ (ver também TechTimes.
+*Agentic Ransomware Took Down Enterprise in Ten Hours: AI Left 80-Page Audit*. 3 de setembro de 2026.
+https://www.techtimes.com/articles/326409/20260903/agentic-ransomware-took-down-enterprise-ten-hours-ai-left-80-page-audit.htm)

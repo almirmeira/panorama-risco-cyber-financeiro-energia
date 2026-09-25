@@ -2274,6 +2274,26 @@ integralmente em 2026-07-21.
     financeiro especificamente, na entrada sobre o Qilin na seção Financeiro (59 vítimas no setor financeiro,
     caso GJTec/Coreia do Sul).
 
+#### Atualização 2026-09-25 — Qilin consolida-se como grupo de ransomware mais ativo (dados até ago/2026)
+
+- **Dado:** a ascensão do Qilin registrada acima (3º trimestre de 2025) se sustentou ao longo de todo o ano
+  seguinte: entre **1º de setembro de 2025 e 31 de agosto de 2026**, o Qilin reivindicou pelo menos **1.480
+  incidentes** — mais que o dobro do 2º colocado no período, o grupo "The Gentlemen" (767). No 1º semestre de
+  2026 isoladamente, o Qilin foi o RaaS mais prolífico, com **641 vítimas reivindicadas**; em **agosto de 2026**
+  atingiu recorde mensal de **165 incidentes**, o maior número para um único grupo até aquele mês em 2026. O site
+  de vazamento do grupo já listou mais de **2.100 organizações** desde 2022. Os números confirmam e atualizam,
+  com série mais longa, a tendência já registrada acima (36→75 vítimas/mês entre 1º e 3º trimestres de 2025).
+  - Fonte 1: ZeroFox. *Flash Report: Qilin Claims Record Number of Monthly Attacks for 2026*. 2026.
+    https://www.zerofox.com/intelligence/flash-report-qilin-claims-record-number-of-monthly-attacks-for-2026/
+  - Fonte 2 (secundária, cobertura independente com dados do 1º semestre de 2026): Barracuda Networks. *Qilin
+    ransomware surges into 2026*. Janeiro de 2026. https://blog.barracuda.com/2026/01/15/qilin-ransomware-surges-into-2026
+    (ver também Check Point Research. *The State of Ransomware – Q1 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q1-2026/)
+  - Observações: sem divergência relevante entre fontes quanto à posição de liderança do Qilin ao longo de 2026.
+    A contagem exata de incidentes varia ligeiramente conforme a metodologia de cada rastreador (site de
+    vazamento vs. telemetria própria) — tratado como ordem de grandeza consistente entre fontes, não como número
+    único definitivo. Complementa, sem substituir, o caso setorial já registrado na seção Financeiro (59 vítimas
+    financeiras, caso GJTec).
+
 ### Initial Access Brokers (IAB) — mercado, precificação e tendência 2025
 
 - **Dado:** o volume de anúncios de acesso inicial à venda em fóruns clandestinos (Exploit, XSS, BreachForums,
@@ -2345,6 +2365,34 @@ integralmente em 2026-07-21.
     numérico equivalente e atualizado (2025) especificamente para o setor de energia — **[NÃO CONFIRMADO para
     energia em 2026-07-21]**.
 
+#### Atualização 2026-09-25 — Insider threat: nova edição Ponemon Institute / DTEX 2026
+
+- **Dado:** a edição **2026** do estudo Ponemon Institute/DTEX (base 8.750 profissionais de TI/segurança em 354
+  organizações globais) elevou o custo médio anual de incidentes de insider para **USD 19,5 milhões** — alta de
+  **~12%** ante os USD 17,4 milhões da edição 2025 (que, por sua vez, já havia mais que dobrado frente aos USD
+  8,76 milhões de 2018). O detalhamento por causa passou a diferenciar custo por evento, não só por incidente
+  agregado: um incidente malicioso custa em média **USD 715.366**, contra **USD 676.517** de um incidente por
+  negligência (diferença de ~5,7%); o roubo de credenciais é a causa mais cara por evento, em **USD 779.707**
+  (15% acima de um incidente por negligência). A velocidade de contenção segue determinando o custo total: acima
+  de **90 dias** para conter, o custo médio sobe a **USD 21,9 milhões**; abaixo de **30 dias**, cai para **USD
+  14,2 milhões**. Organizações com programa formal de gestão de risco de insider economizam, em média, **USD 8,2
+  milhões/ano** e evitam **7 incidentes/ano** a mais que organizações sem programa formal.
+  - Fonte 1 (primária): Ponemon Institute. *Lessons Learned from the 2026 Global Cost of Insider Risks*. 2026.
+    https://www.ponemon.org/news-updates/blog/security/lessons-learned-from-the-2026-global-cost-of-insider-risks.html
+    (relatório completo patrocinado pela DTEX: https://ponemon.dtex.ai/)
+  - Fonte 2 (secundária, cobertura jornalística independente com os mesmos números): Infosecurity Magazine. *Cost
+    of Insider Incidents Surges 20% to Nearly $20m*. 2026.
+    https://www.infosecurity-magazine.com/news/cost-of-insider-incidents-surges/ (ver também Kiteworks. *The
+    Threat Is Already Inside: What the 2026 DTEX Insider Risk Report Says*.
+    https://www.kiteworks.com/cybersecurity-risk-management/dtex-2026-insider-threat-report-data-security-compliance-findings/)
+  - Observações: sem divergência relevante entre fontes quanto ao valor de USD 19,5 milhões e à comparação com
+    2025. O percentual de variação citado por Infosecurity Magazine no título ("+20%") não bate exatamente com o
+    cálculo direto 17,4→19,5 (**+12%**); a fonte não detalha a métrica exata por trás do "+20%" (pode incluir
+    ajuste de amostra ou metodologia) — registrado aqui como **[NÃO CONCILIADO — usar USD 19,5 milhões como valor
+    vigente; tratar o percentual de variação com cautela]**. Segue sem detalhamento numérico equivalente e
+    atualizado especificamente para o setor de energia. Valor de 2025 (USD 17,4 milhões) preservado abaixo como
+    referência histórica, não mais vigente.
+
 ### Convergência de nomenclatura entre fornecedores — iniciativa Microsoft/CrowdStrike (2025)
 
 - **Dado:** em **2 de junho de 2025**, Microsoft e CrowdStrike anunciaram uma colaboração estratégica para
@@ -2380,13 +2428,14 @@ integralmente em 2026-07-21.
 | LockBit — resgates extorquidos (histórico) | >USD 120 milhões; >2.000 vítimas | NCA | Confirmado (2 fontes) |
 | ALPHV/BlackCat — exit scam (mar/2024) | USD 22 milhões (Change Healthcare) não repassados a afiliado | The Hacker News / TechTarget | Confirmado (2 fontes) |
 | Cl0p — campanha Oracle EBS (2025) | CVE-2025-61882 (CVSS 9,8); ~29 vítimas nomeadas | Mandiant/Google Cloud / SecurityWeek | Confirmado (2 fontes) |
-| RansomHub — encerramento / migração de afiliados | Inativo desde abr/2025; Qilin de 36→75 vítimas/mês | The Hacker News / Check Point | Confirmado (2 fontes) |
+| RansomHub — encerramento / migração de afiliados | Inativo desde abr/2025; Qilin de 36→75 vítimas/mês (3T/2025) | The Hacker News / Check Point | Confirmado (2 fontes) |
+| Qilin — liderança sustentada em 2026 [atualizado 25/09] | 1.480 incidentes (set/2025–ago/2026); 641 vítimas no 1S/2026; recorde de 165 em ago/2026 | ZeroFox / Barracuda (Check Point Q1/2026) | Confirmado (2 fontes) |
 | IAB — crescimento de anúncios (2023→2025) | +100%+ em 2 anos; mediana ~USD 500 | Rapid7 / Darknet.org.uk | Confirmado (2 fontes) |
 | IAB — deslocamento para PMEs (2024-2025) | 60,5% dos anúncios visam empresas de USD 5–50 milhões | Rapid7 | Confirmado (2 fontes); tensão com narrativa de "alvos premium" |
 | Hacktivismo — crescimento DDoS (Q1 2026 a/a) | +168% (ante +80% no Q4 2025) | StormWall / The Hacker News | Confirmado (2 fontes) |
 | Hacktivismo — onda pós-conflito Irã (fev-mar/2026) | 150+ ataques DDoS / 100+ organizações / 16 países em 72h | The Hacker News | Confirmado (2 fontes) |
-| Insider threat — custo médio anual (global, 2025) | USD 17,4 milhões | Ponemon/DTEX 2025 (via Kiteworks) | Confirmado (2 fontes); divergência interna de título vs. corpo em 1 fonte |
-| Insider threat — tempo médio de contenção | 81 dias | Ponemon/DTEX 2025 | Confirmado (2 fontes) |
+| Insider threat — custo médio anual (global) [atualizado 25/09] | USD 19,5 milhões em 2026 (ante USD 17,4 mi em 2025; superado, mantido como referência histórica) | Ponemon/DTEX 2026 (Ponemon.org / Infosecurity Magazine) | Confirmado (2 fontes) |
+| Insider threat — tempo médio de contenção | 81 dias (edição 2025; sem atualização direta na edição 2026, que passou a reportar custo por faixa de dias de contenção: <30d = USD 14,2 mi; >90d = USD 21,9 mi) | Ponemon/DTEX 2025 e 2026 | Confirmado (2 fontes) |
 | Deconflição de nomenclatura de atores (Microsoft/CrowdStrike) | 80+ adversários deconflitados | Microsoft Security Blog | Confirmado (2 fontes) |
 
 **Legenda:** idêntica à das tabelas-resumo anteriores.
@@ -3267,3 +3316,46 @@ fonte única marcados como não confirmados e não incorporados.
 - DLT / TD SYNNEX Public Sector. *Navigating the Latest CISA Guidance on Agentic AI*. 04/06/2026. https://www.dlt.com/blog/2026/06/04/navigating-latest-cisa-guidance-agentic-ai
 - NIST. *IR 8596 iprd — Cyber AI Profile*. 16/12/2025. https://csrc.nist.gov/pubs/ir/8596/iprd
 - KPMG. *NIST draft Cybersecurity Framework Profile for AI* (Regulatory Alert). Fev/2026. https://kpmg.com/us/en/articles/2026/cybersecurity-nist-draft-cybersecurity-framework-for-ai-reg-alert.html
+
+## Registro do refresh — 2026-09-25 (varredura rotativa: grupo 4 — Tendências/Recomendações + Atores e TTPs)
+
+Ciclo de 3 dias de 2026-09-25. GRUPO = (dia-do-ano 268 ÷ 3) mod 5 = **4** → `tendencias`, `recomendacoes` +
+caps. 05 (Atores e TTPs), 06, 07 e 08. Observação importante: a revisão profunda do dia anterior
+(2026-09-24/25, ver seção acima) já havia coberto **caps. 06/07/08** como uma das cinco frentes da varredura
+completa — por isso este ciclo aprofundou principalmente o **cap. 05 (Atores e TTPs)**, que não fizera parte
+daquela varredura, e revalidou 06/07/08 apenas para captar o que pode ter mudado nas ~24h seguintes.
+
+| Item verificado | Veredito em 2026-09-25 |
+| :-- | :-- |
+| Insider threat — custo médio anual (Ponemon/DTEX) | **Atualizado**: edição 2026 traz USD 19,5 mi (ante USD 17,4 mi em 2025), com detalhamento por causa (malicioso USD 715.366; negligente USD 676.517; credencial roubada USD 779.707) e por velocidade de contenção (<30d USD 14,2 mi; >90d USD 21,9 mi). Percentual de variação "+20%" do título da fonte secundária não bate com o cálculo direto (+12%) — registrado como não conciliado, valor absoluto mantido |
+| RansomHub/Qilin — atividade do Qilin | **Atualizado**: liderança de 3T/2025 (75 vítimas/mês) se sustentou por todo 2026 — 1.480 incidentes (set/2025–ago/2026), 641 vítimas no 1S/2026, recorde de 165 em ago/2026 |
+| *Ransomware* conduzido por IA (cap. 06) | **Atualizado**: 3º caso de 2026 incorporado — investigação Unit 42 (set/2026), frota de agentes de IA em paralelo violou rede corporativa em <10h (ante ~2 semanas humanas), >50 técnicas MITRE ATT&CK, "auditoria" de 80 páginas deixada pelo atacante. Horizonte e semáforo do painel já estavam no máximo ("Imediato"/vermelho); nenhum KPI numérico do `dashboard.json` mudou |
+| MITRE ATT&CK Enterprise — versão | **Não confirmado / baixa materialidade**: há indício de release ágil v19.2 (agosto de 2026, adiciona grupos como ShinyHunters), mas o site oficial (attack.mitre.org) está bloqueado pela política de rede desta sessão e não foi localizada uma segunda fonte plenamente independente (não derivada da própria página MITRE) — mantido v19.1 no texto, sem troca |
+| Cl0p — contagem de vítimas Oracle EBS | Confirmado sem mudança: ~29-30 organizações nomeadas segue sendo o número mais recente localizado (mesmo em cobertura de set/2026) |
+| IAB — preço mediano e migração de fóruns | Confirmado sem mudança material: mediana segue ~USD 500; indício de queda de atividade no fórum XSS (~200 tópicos em 2024 → ~20 no 2S/2025) com deslocamento para DarkForums/RAMP é qualitativo, sem número novo que substitua os já registrados — não incorporado |
+| Cap. 06 — PQC (FIPS 206, HQC, IR 8547/OMB M-26-15), cadeia de suprimentos OSS, deepfake | Confirmado sem mudança desde a revisão profunda de 24/09 (menos de 24h) |
+| Cap. 07 — NIST CSF 2.0, ISO/IEC 27001:2022+Amd1, IEC 62443, Zero Trust SP 800-207 | Confirmado sem mudança: nenhuma nova edição localizada para nenhum dos quatro frameworks |
+| Cap. 08 — recomendações | Revisado; nenhuma afirmação numérica desatualizada localizada |
+| Obsolescência temporal (item 2c) | Nenhum trecho remanescente tratando como futuro algo já vencido nos caps. 05–08 — os itens já haviam sido corrigidos na revisão profunda de 24/09 (CMN 5.274/BCB 538) |
+| Janela recente (item 2) — incidentes-marco financeiro/energia | Ataque de PLC ligado ao Irã contra gerador no Reino Unido e advisório CISA AA26-097A já registrados no ciclo anterior; nenhum incidente-marco novo localizado nesta janela |
+
+**Arquivos alterados:** `fontes-e-referencias/dossie-pesquisa.md` (seções Atores e TTPs — Insider threat e
+RansomHub/Qilin), `05-atores-e-ttps/README.md` (corpo + tabela de grupos-marco + refs. [33]–[36]),
+`06-tendencias-2026/README.md` (resumo executivo + seção *Ransomware* conduzido por IA + refs. [35][36]).
+Nenhum número do `dashboard/src/data/dashboard.json` precisou mudar: a entrada "Ransomware potencializado por
+IA" já estava no horizonte/semáforo máximo, e não há KPI dedicado a custo de insider threat ou a contagem
+global de incidentes do Qilin no painel (o painel só cita Qilin no contexto setorial financeiro, caso GJTec,
+que não muda). Adicionada entrada em `fontes.incorporacoesRecentes`.
+
+#### Fontes desta revisão
+
+- Ponemon Institute. *Lessons Learned from the 2026 Global Cost of Insider Risks*. 2026. https://www.ponemon.org/news-updates/blog/security/lessons-learned-from-the-2026-global-cost-of-insider-risks.html
+- Infosecurity Magazine. *Cost of Insider Incidents Surges 20% to Nearly $20m*. 2026. https://www.infosecurity-magazine.com/news/cost-of-insider-incidents-surges/
+- Kiteworks. *The Threat Is Already Inside: What the 2026 DTEX Insider Risk Report Says*. 2026. https://www.kiteworks.com/cybersecurity-risk-management/dtex-2026-insider-threat-report-data-security-compliance-findings/
+- ZeroFox. *Flash Report: Qilin Claims Record Number of Monthly Attacks for 2026*. 2026. https://www.zerofox.com/intelligence/flash-report-qilin-claims-record-number-of-monthly-attacks-for-2026/
+- Barracuda Networks. *Qilin ransomware surges into 2026*. Jan/2026. https://blog.barracuda.com/2026/01/15/qilin-ransomware-surges-into-2026
+- Check Point Research. *The State of Ransomware – Q1 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q1-2026/
+- The Register. *AI agents carried out every step of this ransomware attack – then left the victim an 80-page security audit*. 02/09/2026. https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009
+- Unit 42 (Palo Alto Networks). *An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation*. Set/2026. https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/
+- Cybernews. *AI agents speed ransomware breach to under 10 hours*. Set/2026. https://cybernews.com/security/ai-agents-ransomware-attack-security-audit/
+- TechTimes. *Agentic Ransomware Took Down Enterprise in Ten Hours: AI Left 80-Page Audit*. 03/09/2026. https://www.techtimes.com/articles/326409/20260903/agentic-ransomware-took-down-enterprise-ten-hours-ai-left-80-page-audit.htm

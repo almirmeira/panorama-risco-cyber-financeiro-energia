@@ -75,14 +75,18 @@ estado-nação — "BEAR" para Rússia, "PANDA" para China —; "SPIDER"/"LYNX" 
   **DieNet** responderam por cerca de 70% dessa atividade concentrada [23][24]. Peso setorial:
   atinge **ambos** os setores de forma comparável.
 - **Insider** — colaborador ou ex-colaborador com acesso legítimo abusado, por negligência ou
-  má-fé. Segundo o Ponemon Institute/DTEX (2025), o número de incidentes estudados cresceu de 3.269
-  (2018) para 7.868 (2025), com custo médio anual de **USD 17,4 milhões** globalmente e tempo médio
-  de contenção de 81 dias; a causa raiz é 53% negligência, 27% má-fé e 20% roubo de credenciais
-  [25][26]. No setor financeiro especificamente, uma edição anterior do mesmo estudo (2023) já
-  registrava custo médio de incidente de USD 20,68 milhões — acima da média global — e uma cobertura
-  complementar atribui a insiders 44% das violações do setor [25][26]. Peso setorial: mais
-  documentado no **financeiro**; não foi localizado, no escopo desta pesquisa, um detalhamento
-  numérico equivalente e atualizado para energia.
+  má-fé. Segundo o Ponemon Institute/DTEX, o número de incidentes estudados cresceu de 3.269 (2018)
+  para 7.868 (2025); a causa raiz é 53% negligência, 27% má-fé e 20% roubo de credenciais [25][26].
+  A edição **2026** do mesmo estudo elevou o custo médio anual global para **USD 19,5 milhões** (ante
+  USD 17,4 milhões em 2025) e passou a detalhar o custo por evento: incidente malicioso custa em
+  média USD 715.366, negligente USD 676.517 e roubo de credenciais USD 779.707 (o mais caro); conter
+  em menos de 30 dias custa em média USD 14,2 milhões, contra USD 21,9 milhões acima de 90 dias;
+  programas formais de gestão de risco de insider economizam USD 8,2 milhões/ano [33][34]. No setor
+  financeiro especificamente, uma edição anterior do mesmo estudo (2023) já registrava custo médio de
+  incidente de USD 20,68 milhões — acima da média global — e uma cobertura complementar atribui a
+  insiders 44% das violações do setor [25][26]. Peso setorial: mais documentado no **financeiro**;
+  não foi localizado, no escopo desta pesquisa, um detalhamento numérico equivalente e atualizado
+  para energia.
 - **Initial Access Broker (IAB)** — especialista que compromete redes corporativas e revende esse
   acesso a afiliados de RaaS, sem executar o ataque final. Preço mediano em torno de **USD 500**,
   podendo chegar à casa dos milhares de dólares conforme setor/porte do alvo; o volume de anúncios
@@ -190,7 +194,7 @@ atividade agregada pare:
 |:--------------------|:-----------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:-------------|
 | LockBit             | *Operation Cronos* — ação policial coordenada por NCA (Reino Unido) e mais de dez países (19/fev/2024) | 34 servidores apreendidos, 14.000 contas encerradas, 200 contas de criptomoeda congeladas; administrador "LockBitSupp" identificado como Dmitry Khoroshev (foragido, recompensa de USD 10 milhões); vazamento adicional em mai/2025 desfigurou os painéis remanescentes | NCA / Trend Micro [7][8] |
 | ALPHV/BlackCat      | *Exit scam* (mar/2024) após resgate de USD 22 milhões pago pela Change Healthcare/Optum        | Encerramento fraudulento das contas de afiliados sem repasse da parcela devida; Mandiant confirma o RaaS extinto em mai/2025; o mesmo operador já havia atuado como DarkSide (Colonial Pipeline, cap. 03) e BlackMatter | The Hacker News / TechTarget [9][10] |
-| RansomHub → Qilin   | Infraestrutura do RansomHub sai do ar (31/mar–1º/abr/2025) em disputa interna com o grupo DragonForce | Afiliados migram majoritariamente para o Qilin, que salta de 36 para 75 vítimas/mês entre o 1º e o 3º trimestre de 2025, tornando-se o ator mais ativo do período | The Hacker News / Check Point Research [11][12] |
+| RansomHub → Qilin   | Infraestrutura do RansomHub sai do ar (31/mar–1º/abr/2025) em disputa interna com o grupo DragonForce | Afiliados migram majoritariamente para o Qilin, que salta de 36 para 75 vítimas/mês entre o 1º e o 3º trimestre de 2025; a liderança se sustenta ao longo de 2026 — 1.480 incidentes reivindicados entre set/2025 e ago/2026 (mais que o dobro do 2º colocado), 641 vítimas só no 1º semestre de 2026 e recorde mensal de 165 em agosto de 2026 | The Hacker News / Check Point Research [11][12]; atualização 2026: ZeroFox / Barracuda [35][36] |
 | Cl0p                | Campanha de exploração em massa contra o Oracle E-Business Suite (jul–out/2025), sem implantar *ransomware* | CVE-2025-61882 (CVSS 9,8) explorada desde ago/2025; ~29 organizações nomeadas no site de vazamento (Logitech, The Washington Post, Cox Enterprises, entre outras); atribuída a FIN11 | Google Cloud/Mandiant / SecurityWeek [31][32] |
 
 Este padrão — já observado no setor financeiro especificamente no caso do próprio Qilin (59 vítimas
@@ -299,3 +303,19 @@ https://cloud.google.com/blog/topics/threat-intelligence/oracle-ebusiness-suite-
 
 [32] SecurityWeek. *Nearly 30 Alleged Victims of Oracle EBS Hack Named on Cl0p Ransomware Site*. 2025.
 https://www.securityweek.com/nearly-30-alleged-victims-of-oracle-ebs-hack-named-on-cl0p-ransomware-site/
+
+[33] Ponemon Institute. *Lessons Learned from the 2026 Global Cost of Insider Risks*. 2026.
+https://www.ponemon.org/news-updates/blog/security/lessons-learned-from-the-2026-global-cost-of-insider-risks.html
+(relatório completo patrocinado pela DTEX: https://ponemon.dtex.ai/)
+
+[34] Infosecurity Magazine. *Cost of Insider Incidents Surges 20% to Nearly $20m*. 2026.
+https://www.infosecurity-magazine.com/news/cost-of-insider-incidents-surges/ (ver também Kiteworks.
+*The Threat Is Already Inside: What the 2026 DTEX Insider Risk Report Says*.
+https://www.kiteworks.com/cybersecurity-risk-management/dtex-2026-insider-threat-report-data-security-compliance-findings/)
+
+[35] ZeroFox. *Flash Report: Qilin Claims Record Number of Monthly Attacks for 2026*. 2026.
+https://www.zerofox.com/intelligence/flash-report-qilin-claims-record-number-of-monthly-attacks-for-2026/
+
+[36] Barracuda Networks. *Qilin ransomware surges into 2026*. Janeiro de 2026.
+https://blog.barracuda.com/2026/01/15/qilin-ransomware-surges-into-2026 (ver também Check Point
+Research. *The State of Ransomware – Q1 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q1-2026/)
