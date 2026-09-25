@@ -118,24 +118,96 @@ function CarimboAtualizacao({ geradoEm, verificadoEm }) {
   const ponto = (cor) => ({ width: 8, height: 8, borderRadius: '50%', background: cor, flexShrink: 0 })
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-end' }}>
-      <span
-        style={pilula(palette.azul)}
-        title="Síntese estratégica (abas Visão Geral a Recomendações). As fontes são revisadas a cada 3 dias; ciclos sem novidade confirmam os dados sem alterá-los."
-      >
-        <span aria-hidden="true" style={ponto(palette.azul)} />
-        {textoPesquisa}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-end' }}>
+        <span
+          style={pilula(palette.azul)}
+          title="Síntese estratégica (abas Visão Geral a Recomendações). As fontes são revisadas a cada 3 dias; ciclos sem novidade confirmam os dados sem alterá-los."
+        >
+          <span aria-hidden="true" style={ponto(palette.azul)} />
+          {textoPesquisa}
+        </span>
+        <span
+          style={pilula(corVivo)}
+          title={
+            geradoVivo
+              ? `Camada operacional (Ameaças ao Vivo, Brasil, Extorsão & Exploração), coletada a cada 20 min. Última coleta: ${new Date(geradoVivo).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })} (horário de São Paulo).`
+              : 'Camada operacional (Ameaças ao Vivo, Brasil, Extorsão & Exploração), coletada a cada 20 min.'
+          }
+        >
+          <span aria-hidden="true" className="ponto-pulsante" style={ponto(corVivo)} />
+          {textoVivo}
+        </span>
+      </div>
+      <RelogioSP />
+    </div>
+  )
+}
+
+/**
+ * Relógio de referência no fuso de São Paulo.
+ *
+ * O painel mistura dados de relógios diferentes — pesquisa revista a cada 3
+ * dias, ameaças coletadas a cada 20 min — e o visitante pode estar em qualquer
+ * fuso. Um relógio fixo em America/Sao_Paulo dá a régua comum para ler "há 12
+ * min" e as datas do cabeçalho. O fuso vem do Intl (base de dados de fusos do
+ * navegador), não de um deslocamento fixo: se o Brasil voltar a ter horário de
+ * verão, o relógio acompanha sem mudança de código.
+ */
+const FORMATO_SP = new Intl.DateTimeFormat('pt-BR', {
+  timeZone: 'America/Sao_Paulo',
+  weekday: 'short',
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: false,
+})
+
+function RelogioSP() {
+  const [agora, setAgora] = useState(() => new Date())
+  useEffect(() => {
+    const id = setInterval(() => setAgora(new Date()), 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  const partes = Object.fromEntries(FORMATO_SP.formatToParts(agora).map((p) => [p.type, p.value]))
+  const diaSemana = (partes.weekday || '').replace('.', '')
+  const data = `${diaSemana}, ${partes.day}/${partes.month}/${partes.year}`
+  const hora = `${partes.hour}:${partes.minute}:${partes.second}`
+
+  return (
+    <div
+      role="timer"
+      aria-label={`Horário de São Paulo: ${data}, ${hora}`}
+      title="Horário oficial de São Paulo (America/Sao_Paulo) — referência para as datas e os tempos deste painel."
+      style={{
+        display: 'inline-flex',
+        alignItems: 'baseline',
+        gap: 10,
+        padding: '6px 14px',
+        borderRadius: 10,
+        border: `1px solid ${palette.borda}`,
+        background: palette.bgPainel,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <span style={{ color: palette.txtSec, fontSize: 11, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+        São Paulo
       </span>
+      <span style={{ color: palette.txtCorpo, fontSize: 12 }}>{data}</span>
       <span
-        style={pilula(corVivo)}
-        title={
-          geradoVivo
-            ? `Camada operacional (Ameaças ao Vivo, Brasil, Extorsão & Exploração), coletada a cada 20 min. Última coleta: ${new Date(geradoVivo).toLocaleString('pt-BR')}.`
-            : 'Camada operacional (Ameaças ao Vivo, Brasil, Extorsão & Exploração), coletada a cada 20 min.'
-        }
+        style={{
+          color: palette.txtTitulo,
+          fontSize: 18,
+          fontWeight: 600,
+          fontVariantNumeric: 'tabular-nums',
+          letterSpacing: 0.5,
+        }}
       >
-        <span aria-hidden="true" className="ponto-pulsante" style={ponto(corVivo)} />
-        {textoVivo}
+        {hora}
       </span>
     </div>
   )
