@@ -24,6 +24,7 @@ JSON estático.
 | `misp_setup_feeds.py` | habilita os feeds no MISP (idempotente, pode rodar sempre) |
 | `misp-docker-compose.override.yml` | cópia versionada do override aplicado na VM (limites de RAM + healthcheck) |
 | `misp-audit-cap.sh` + `systemd/` | teto de 1 GiB para a tabela `audit_logs` do MISP (ver "O disco da VM 41") |
+| `misp-retencao.sh` + `systemd/` | retenção diária de 30 dias para os feeds-arquivo do abuse.ch e para a tabela `logs` (idem) |
 
 ## Fontes e o que cada uma responde
 
@@ -102,6 +103,35 @@ sudo journalctl -u misp-audit-cap.service -n 20    # o que foi truncado e quando
    Nesse caso o script guarda o DDL, faz `DROP` (que libera o arquivo na hora) e recria a tabela.
 3. **Guarda no publicador** — `deploy-vm41.sh` mede o espaço livre antes de tudo e aborta com o
    número e os maiores ocupantes de `/var/lib` no log, em vez de morrer num `git reset` mudo.
+
+### Reincidência em setembro: o volume estava nos atributos
+
+Entre 10/09 e 24/09 o disco encheu de novo, e o teto da `audit_logs` não ajudou, porque dessa vez
+o volume estava nos **atributos**. Os feeds em formato MISP do abuse.ch (URLhaus, MalwareBazaar,
+ThreatFox) publicam **um evento por dia desde 2021**, e o MISP baixa o manifesto inteiro. O acervo
+foi de ~190 mil para **26,8 milhões de atributos, 21 GB de MySQL** (94% do banco vinha do
+abuse.ch). A publicação ficou parada 14 noites seguidas com `ERRO: disco quase cheio` no
+`deploy-panorama.log`, e ninguém leu o log. O painel ficou duas semanas com dados velhos, mesmo
+com a `main` recebendo refresh a cada 3 dias.
+
+Correção:
+
+1. **Purga única** (24/09) dos eventos do abuse.ch com mais de 30 dias, feita por
+   copiar-e-trocar (`CREATE … LIKE` + `INSERT … SELECT` do que fica + `RENAME` + `DROP`). Um
+   `DELETE` não devolveria o espaço ao disco, e um `OPTIMIZE` precisaria de espaço livre que não
+   existia. Os UUIDs removidos foram para a `event_blocklists`; sem isso, o próximo fetch baixaria
+   tudo de volta.
+2. **Retenção diária**, `misp-retencao.sh` (timer às 06:30 UTC): faz a mesma coisa em regime,
+   evento a evento, e poda a tabela `logs` do MISP. A ingestão olha só 14 dias; 30 dá folga.
+
+```bash
+systemctl list-timers misp-retencao.timer
+sudo /usr/local/sbin/misp-retencao.sh --dry-run    # o que seria removido hoje
+sudo journalctl -u misp-retencao.service -n 20
+```
+
+**Lição:** a guarda do publicador *detectou* o problema no primeiro dia e só escreveu num log. Um
+alarme que ninguém recebe não é alarme.
 
 ## Três coisas que não parecem, mas são
 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Aplica diariamente a retenção dos feeds-arquivo do MISP
+
+[Timer]
+# 06:30 UTC = 03:30 em São Paulo: longe da publicação (02:59 UTC) e do refresh
+# de pesquisa (23:00 UTC). Cada dia envelhece ~1 evento por feed.
+OnCalendar=*-*-* 06:30:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
