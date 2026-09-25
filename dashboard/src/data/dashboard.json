@@ -242,6 +242,11 @@
     "incorporacoesRecentes": [
       {
         "data": "2026-09-25",
+        "fonte": "Varredura rotativa (grupo 4/5) — Tendências/Recomendações e Atores e TTPs, caps. 05-08",
+        "oQueMudou": "Cap. 05: custo médio anual de insider threat atualizado para USD 19,5 mi (Ponemon/DTEX 2026, ante USD 17,4 mi em 2025), com detalhamento por causa e por velocidade de contenção; atividade do Qilin em 2026 confirmada e ampliada (1.480 incidentes set/2025-ago/2026, recorde de 165 em ago/2026), consolidando-o como grupo de ransomware mais ativo do período. Cap. 06: incorporado 3º caso de ransomware conduzido por IA — investigação Unit 42 (set/2026), frota de agentes de IA violou rede corporativa em menos de 10h (ante ~2 semanas humanas). Nenhum KPI numérico do dashboard precisou mudar (radar de ransomware com IA já estava no horizonte/semáforo máximo). MITRE ATT&CK v19.2 (release ágil de ago/2026) identificado mas não incorporado por falta de segunda fonte independente do site oficial (bloqueado pela política de rede desta sessão)."
+      },
+      {
+        "data": "2026-09-25",
         "fonte": "Revisão profunda de todas as abas estratégicas (5 frentes, fora da janela de 3 dias)",
         "oQueMudou": "Números superados havia meses foram substituídos: DDoS no setor financeiro (+154% de 2022→2023 → duração mediana +738% em 2025, alvo nº 1 em 2024), consentimentos de Open Finance (128 mi → mais de 200 mi em jul/2026), OT com intrusão (Fortinet 2026: 71%), advisórios ICS da CISA (>500 em 2025) e a origem das infecções ICS (1º tri. 2026). Prazos vencidos deixaram de aparecer como futuros (CMN 5.274/BCB 538, encerrado em 1º/03/2026) e entraram MED 2.0 obrigatório, Res. BCB 587/2026, Sinqia, Operação Pane Seca, AA26-097A, Armored Likho, ransomware conduzido por IA e o memorando OMB M-26-15 de PQC. Errata: os valores atribuídos ao Banco Rendimento no ciclo de 22/09 eram do ataque ao BTG Pactual. Itens com fonte única (DBIR 2026 setorial, ENISA 2026) ficaram registrados como não confirmados, sem troca."
       },
