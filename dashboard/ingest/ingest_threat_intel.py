@@ -159,10 +159,16 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False, paginas=8, por_pa
     # importou 17 mil atributos num único evento. Buscar uma página de 5.000
     # deixava a maior parte do acervo invisível para o painel, que era
     # exatamente o sintoma de "poucos indicadores do MISP na interface".
+    # O corte vai NA CONSULTA ('from' filtra pela data do EVENTO no MISP). Sem
+    # ele o restSearch devolvia as primeiras 40 mil linhas do acervo — as mais
+    # antigas — e o filtro local abaixo descartava todas: em 2026-09-24, com
+    # 1,6 mi de atributos no acervo, a contribuição do MISP à janela era zero.
+    corte = (datetime.now(timezone.utc) - timedelta(days=dias)).date()
     atributos = []
     for pagina in range(1, paginas + 1):
         corpo = json.dumps({
             "returnFormat": "json",
+            "from": corte.isoformat(),
             "enforceWarninglist": True,   # descarta ruído conhecido (CDNs, IP de infra)
             "includeEventTags": True,
             "limit": por_pagina,
@@ -186,7 +192,6 @@ def coletar_misp(base_url, api_key, dias, verificar_tls=False, paginas=8, por_pa
             break                     # última página
     log(f"MISP: {len(atributos)} atributos brutos em até {paginas} páginas")
 
-    corte = (datetime.now(timezone.utc) - timedelta(days=dias)).date()
     saida, descartados_antigos = [], 0
     for a in atributos:
         evento = a.get("Event") or {}
@@ -729,11 +734,23 @@ def main():
             log(f"acervo MISP FALHOU: {e}")
         try:
             mi = coletar_misp(base, chave, args.dias)
-            brutos += mi
+            # Deduplicação por valor. O MISP sincroniza o próprio ThreatFox, e o
+            # mesmo indicador costuma estar em vários eventos; sem isto, cada
+            # cópia contava de novo nos totais e nas famílias. Quem chegou
+            # primeiro fica — o ThreatFox direto, cuja família é a confiável.
+            ja_vistos = {i["valor"].strip().lower() for i in brutos}
+            novos = []
+            for i in mi:
+                v = i["valor"].strip().lower()
+                if v and v not in ja_vistos:
+                    ja_vistos.add(v)
+                    novos.append(i)
+            brutos += novos
             fontes.append({"nome": "MISP (instância CECyber)", "tipo": "API restSearch",
                            "licenca": "Feeds TLP:WHITE/CLEAR sincronizados",
-                           "indicadores": len(mi), "status": "ok"})
-            log(f"MISP: {len(mi)} atributos")
+                           "indicadores": len(novos), "status": "ok"})
+            log(f"MISP: {len(mi)} atributos, {len(novos)} inéditos após deduplicar "
+                f"com o ThreatFox e entre eventos")
         except Exception as e:                              # noqa: BLE001
             erros.append(f"MISP: {e}")
             fontes.append({"nome": "MISP (instância CECyber)", "tipo": "API restSearch",
