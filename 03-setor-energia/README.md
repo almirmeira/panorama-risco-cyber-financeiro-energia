@@ -2,7 +2,8 @@
 
 > **Resumo Executivo**
 > - *Ransomware* contra organizações industriais acelerou dois anos seguidos: +87% em 2024 (80 grupos
->   ativos) e +64% em 2025 (119 grupos, ~3.300 organizações impactadas), com manufatura respondendo
+>   ativos) e +64% nos ataques em 2025 (grupos +49%, de 80 para 119; ~3.300 organizações impactadas) — e
+>   seguiu subindo em 2026 (1.140 incidentes no 2º trimestre, +12% sobre o 1º) —, com manufatura respondendo
 >   por mais de dois terços das vítimas — mas a energia elétrica já é o 3º setor mais atacado do mundo
 >   por volume de objetos maliciosos bloqueados em computadores ICS.
 > - A Ucrânia sofreu os dois apagões mais documentados da história causados por ciberataque —
@@ -17,7 +18,8 @@
 >   pré-posiciona-se silenciosamente em infraestrutura crítica dos EUA (caso documentado: ~300 dias de
 >   permanência em uma concessionária elétrica de Massachusetts antes da detecção).
 > - No Brasil, a ANEEL estabeleceu em 2021 o marco regulatório central de cibersegurança do setor
->   elétrico (RN nº 964/2021, ARCiber), mas a primeira fiscalização concreta só ocorreu em 2025;
+>   elétrico (RN nº 964/2021, ARCiber), e o ONS fixou os controles mínimos do ARCiber no Submódulo 5.13
+>   (RO-CB.BR.01, vigente desde 9/7/2021), mas a primeira fiscalização concreta da ANEEL só ocorreu em 2025;
 >   incidentes conhecidos (Eletrobras/Copel 2021, Petrobras/Everest 2025, Cemig 2026) mostram, até
 >   aqui, segmentação bem-sucedida entre TI corporativa/atendimento comprometidos e OT crítico
 >   preservado.
@@ -44,15 +46,16 @@ pesquisa.
 | Indicador                                                          | Valor                                          | Fonte primária          |
 |:------------------------------------------------------------------|:------------------------------------------------|:-----------------------------|
 | *Ransomware* contra orgs. industriais (2023→2024)                   | +87% a/a; 80 grupos ativos (+60%)              | Dragos [1][2]                |
-| *Ransomware* contra orgs. industriais (2024→2025)                   | +64% a/a; 119 grupos; ~3.300 orgs. impactadas | Dragos [3][4]                |
+| *Ransomware* contra orgs. industriais (2024→2025)                   | Ataques +64% a/a; grupos +49% (80→119); ~3.300 orgs. impactadas | Dragos [3][4][73]            |
+| *Ransomware* industrial (1º→2º tri. 2026)                           | 1.140 incidentes no 2º tri. (+12% sobre 1.020 no 1º) | Dragos [61][62]              |
 | *Dwell time* de *ransomware* em ambientes OT                        | 42 dias (5 dias com visibilidade OT plena)     | Dragos [3][4]                |
 | Computadores ICS atacados — energia elétrica (1º sem. 2025)        | 22,8% (3º setor mais atacado globalmente)      | Kaspersky ICS CERT [50][51]  |
 | Computadores ICS atacados — global (2º tri. 2026)                   | 19,15% (menor patamar desde 2022)              | Kaspersky ICS CERT [50][59][60] |
-| Incidentes de cibersegurança em OT (organizações pesquisadas)       | 50% relataram ≥ 1 incidente no último ano      | Fortinet [5][6]              |
+| Intrusões em OT (organizações pesquisadas, ed. 2026)                | 71% relataram de 1 a 9 intrusões (ante 47%); 24% com intrusão simultânea TI+OT (ante 60%) — ed. 2025: 50% com ≥ 1 incidente | Fortinet [63][64] (ed. 2025: [5][6]) |
 | Técnica dominante em ambientes Energia/Utilities/Resíduos           | Manipulação de Dados (3x mais frequente)       | Nozomi Networks [7][8]       |
-| Advisórios ICS publicados pela CISA (2025)                         | > 450, 200+ fornecedores, 700+ produtos        | Agregação sobre CISA [9][10] |
+| Advisórios ICS publicados pela CISA (2025)                         | > 500 (508 segundo a Forescout; 506 no repositório CSAF da CISA) — antes: > 450 | Forescout; CISA [9][10]       |
 | Incidentes com impacto em OT — custo médio (cross-setorial, ed. 2025) | USD 4,56 milhões (15% das organizações afetadas) | IBM [11][12]                |
-| Custo médio de violação — setor de energia (qualquer violação)      | USD 5,2 milhões (ante USD 4,83 milhões em 2025) | IBM [46][47]                 |
+| Custo médio de violação — setor de energia (qualquer violação)      | USD 5,2 milhões (5,24; ante USD 4,83 milhões em 2025) | IBM [46][47][65]             |
 
 ### Por que OT/ICS é diferente de TI
 
@@ -77,14 +80,17 @@ com o número de grupos de *ransomware* mirando esse universo subindo para **80*
 50 grupos de 2023); manufatura respondeu por mais de 50% das vítimas observadas, e em média **34
 organizações industriais por semana** foram atacadas no 1º semestre de 2024 — número que mais que
 dobrou no 2º semestre [1][2]. A 9ª edição do mesmo relatório (dados de 2025) mostrou que a tendência não
-desacelerou: atividade geral de *ransomware* cresceu **64%** ano a ano, o número de grupos mirando
-setores industriais subiu para **119**, impactando coletivamente cerca de **3.300 organizações**, e
-manufatura passou a responder por mais de dois terços de todas as vítimas reportadas [3][4]. Um dado
+desacelerou: os ataques de *ransomware* cresceram **64%** ano a ano e o número de grupos mirando
+setores industriais subiu **49%**, de 80 para **119**, impactando coletivamente cerca de **3.300 organizações**, e
+manufatura passou a responder por mais de dois terços de todas as vítimas reportadas [3][4][73]. Um dado
 operacionalmente relevante: o tempo médio de permanência (*dwell time*) de *ransomware* em ambientes OT
 foi de **42 dias** em 2025, mas organizações com visibilidade OT abrangente conseguiram conter incidentes
 em média em apenas **5 dias** — uma diferença de quase 8x que ilustra o valor concreto de instrumentação
 e monitoramento OT dedicados [3][4]. Malware confirmado e *ransomware* corresponderam, cada um, a 23% dos
-engajamentos de resposta a incidentes da Dragos ao longo de 2025 [3][4].
+engajamentos de resposta a incidentes da Dragos ao longo de 2025 [3][4]. Em 2026 a curva seguiu subindo:
+**1.020** incidentes de *ransomware* industrial no 1º trimestre e **1.140** no 2º (+12%). No 2º trimestre,
+a Dragos não observou nenhum operador alcançando o Estágio 2 da ICS Cyber Kill Chain — a disrupção de
+produção veio de TI, ERP e virtualização, sem acesso direto ao controle [61][62].
 
 ### Vulnerabilidades, superfície de exposição e técnica dominante
 
@@ -115,27 +121,30 @@ retornou uma alegação avulsa de **21,3%** especificamente para energia elétri
 direcionada ao conteúdo do relatório primário não a reproduziu — não incorporada, por não atender à regra
 de duas fontes com o mesmo número.
 
-A CISA publicou mais de **450 advisórios ICS** em 2025, cobrindo vulnerabilidades em mais de 200
-fornecedores e mais de 700 produtos usados em linhas de manufatura, subestações, salas de controle e
-redes industriais — incluindo o setor de energia; esse número também não foi verificado contra o índice
-primário completo da CISA, sendo tratado como parcialmente confirmado [9][10]. Já a Nozomi Networks
+A CISA publicou mais de **500 advisórios ICS** em 2025 — **508**, com **2.155 CVEs**, segundo a
+Forescout, o primeiro ano acima de 500; o repositório CSAF oficial da CISA contém **506** advisórios de
+2025 (482 ICSA e 24 ICSMA) —, com energia como 2º setor mais afetado [9][10]. (Os números "200+
+fornecedores / 700+ produtos" que constavam aqui não se confirmaram para 2025: os 689 fornecedores e
+2.783 produtos da Forescout são acumulados desde 2010.) Já a Nozomi Networks
 identificou que **"Manipulação de Dados"** (*Data Manipulation*) foi a técnica mais detectada em
-ambientes de clientes ao longo de 2025 — três vezes mais frequente que a segunda técnica mais detectada
+ambientes de clientes nos relatórios publicados em 2025 — três vezes mais frequente que a segunda técnica mais detectada
 — e também a técnica dominante especificamente nos três setores mais monitorados: Manufatura, Transporte
-e **Energia, Utilities e Resíduos** [7][8]. Em análise de mais de 500 mil redes sem fio no mundo, apenas
+e **Energia, Utilities e Resíduos** [7][8]. Em análise de mais de 500 mil redes sem fio no mundo (2º semestre de 2024), apenas
 **6%** estavam adequadamente protegidas contra ataques de desautenticação (*deauth*) sem fio — vetor
-usado para obter acesso profundo a infraestrutura crítica [7][8]. A pesquisa *2025 State of Operational
-Technology and Cybersecurity* da Fortinet, com mais de 550 profissionais de OT em múltiplos setores
-críticos (incluindo energia), constatou que **50%** das organizações relataram um ou mais incidentes de
-cibersegurança no último ano, ainda que interrupções operacionais com impacto em receita tenham caído de
-52% (2024) para 42% (2025); **52%** das organizações já colocam a segurança OT sob responsabilidade do
-CISO, ante apenas 16% em 2022 [5][6].
+usado para obter acesso profundo a infraestrutura crítica [7][8]. A pesquisa *2026 State of Operational
+Technology and Cybersecurity* da Fortinet (junho de 2026, mais de 700 profissionais de OT em setores
+críticos, incluindo energia) constatou que **71%** das organizações relataram de 1 a 9 intrusões no
+último ano (ante 47% na edição 2025) — alta que a própria Fortinet atribui em parte à melhor capacidade
+de detecção —, enquanto as intrusões simultâneas em TI e OT caíram para **24%** (ante 60%); *phishing*
+(76%) e *ransomware* (50%) seguem entre os vetores mais citados [63][64]. Na edição anterior (2025, mais
+de 550 profissionais), **50%** relatavam um ou mais incidentes, interrupções com impacto em receita
+tinham caído de 52% para 42%, e **52%** já colocavam a segurança OT sob o CISO, ante 16% em 2022 [5][6].
 
 ### Custo de um incidente com impacto em OT
 
 A edição **2026** do *Cost of a Data Breach Report* da IBM mediu o custo médio de violação
-especificamente do setor de energia em **USD 5,2 milhões** — alta frente aos USD 4,83 milhões da edição
-2025 [11][13], acompanhando o movimento geral de alta de 12% no custo médio global (que também subiu,
+especificamente do setor de energia em **USD 5,2 milhões** (5,24) — alta frente aos USD 4,83 milhões da edição
+2025 [11][13][65], acompanhando o movimento geral de alta de 12% no custo médio global (que também subiu,
 para USD 4,99 milhões, revertendo a queda da edição anterior) [46][47]. Energia está, junto com o setor financeiro,
 entre os setores de maior concentração de ataques habilitados por IA dentro do grupo mais amplo de
 infraestrutura crítica (62% desse tipo de ataque, segundo a mesma edição 2026) [46][47]. A edição **2025**
@@ -170,6 +179,7 @@ fonte que a fez, nunca tratada como fato único e definitivo.
 | 2022 (13/4)      | Pipedream / Incontroller — *framework* modular contra PLCs      | CHERNOVITE, segundo Dragos (alta confiança); Mandiant nota consistência com interesse histórico russo [24][25] | Sem uso ativo confirmado até a data do advisório conjunto CISA/FBI/NSA/DOE          |
 | 2024 (jan.; identificado em abr.) | FrostyGoop — interrupção de aquecimento distrital em Lviv, Ucrânia | Não identificado — nenhuma atribuição de grupo de ameaça localizada, segundo Dragos [26][27] | Mais de 600 prédios residenciais; ~2 dias sem aquecimento em temperaturas negativas   |
 | 2025 (29/12); 2ª instalação revelada em 9/8/2026 | Pivô por APN celular privada — de parque eólico a usina de cogeração (CHP) na Polônia | Sandworm, segundo ESET (Dragos também associa); Static Tundra/FSB, segundo CERT Polska — atribuição contestada [48][49] | ~30 instalações eólicas/solares comprometidas; turbina a vapor e estação de tratamento de água de usina CHP (50 mil residentes) desligadas por sabotagem; sem interrupção ao público; 1º caso documentado de pivô TI→OT via APN privada |
+| 2026 (desde mar.; advisório de 7/4, atualizado em 22/7) | Manipulação de PLCs expostos e falsificação de telas IHM/SCADA em Energia, Água e Governo (EUA) | APT afiliado ao Irã, segundo FBI, CISA, NSA, EPA, DOE e CNMF (AA26-097A) [69][70] | Interrupções operacionais e perdas financeiras em múltiplas vítimas |
 | 2026 (jul.; revelado em 23/8/2026) | Pequeno gerador de energia desligado por 4 dias no Reino Unido | Ligado ao Irã, segundo o *The Telegraph* — nome do grupo/APT não identificado [53][54] | Instalação de pequena escala; sem risco à rede nacional; 1º ataque desse tipo bem-sucedido contra infraestrutura de energia britânica, segundo autoridades |
 
 O padrão histórico é revelador: o ataque de 2015 dependeu de acesso manual a interfaces homem-máquina
@@ -292,29 +302,29 @@ agentes, e pelo próprio ambiente operacional do ONS [36][37].
 
 Em paralelo, o ONS encaminhou à ANEEL, em 10 de dezembro de 2019, uma proposta de submódulo dos
 **Procedimentos de Rede** destinada a estabelecer os controles técnicos de segurança cibernética a serem
-implementados no ARCiber, com cronograma de implementação previsto em três ondas consecutivas — a 18, 27
-e 36 meses após o início de vigência do submódulo [38][39]. **Nota de precisão:** o número exato desse
-submódulo (ex.: 25.4, 25.9 ou outro) e sua data final de aprovação/vigência não foram localizados com
-precisão nesta pesquisa; as fontes disponíveis confirmam a proposta original (dez/2019) e o cronograma de
-três ondas, mas não o número definitivo nem eventual renumeração posterior — recomenda-se verificação
-manual direta no site de Procedimentos de Rede do ONS antes de uso deste dado fora deste capítulo
-[38][39]. Essa lacuna ilustra um padrão relevante: enquanto a camada regulatória (ANEEL) já está em
-vigor e sob fiscalização, a camada operacional específica do ONS para cibersegurança segue, nas fontes
-disponíveis, sem confirmação pública de conclusão.
+implementados no ARCiber, com cronograma de implementação em ondas [38][39]. A proposta virou a **Rotina Operacional
+RO-CB.BR.01** (rev. 00), *Controles mínimos de segurança cibernética para o Ambiente Regulado
+Cibernético*, no **Submódulo 5.13** do Manual de Procedimentos da Operação, **vigente desde 9 de julho de
+2021**, com duas ondas de implementação — 18 e 27 meses, ou seja, até janeiro e outubro de 2023, quando a
+conformidade passou a ser exigida [66][67][68]. (Correção em 24/09/2026: versões anteriores deste
+capítulo registravam como lacuna o número e a vigência do submódulo, e três ondas de 18, 27 e 36 meses.
+Uma fonte data a publicação em 22/3/2023, provavelmente de revisão posterior; não se verificou se existe
+revisão ≥ 01.)
 
 A primeira fiscalização concreta veio somente quatro anos depois: por meio do **Despacho ANEEL nº 427,
 de 17 de fevereiro de 2025**, os agentes do setor elétrico tiveram até **30 de junho de 2025** para
 enviar à ANEEL as informações necessárias ao acompanhamento da implementação de suas políticas de
 segurança cibernética, conforme exigido pela RN nº 964/2021 [40][41]. A Figura 2 organiza essas camadas
 regulatórias em linha do tempo, incluindo a referência técnica internacional da IEC 62443 (não é norma
-brasileira, mas é amplamente usada para operacionalizar os requisitos mais genéricos da RN 964/2021) e a
-lacuna do submódulo ONS ainda sem confirmação de número/vigência final.
+brasileira, mas é amplamente usada para operacionalizar os requisitos mais genéricos da RN 964/2021) e o
+submódulo de cibersegurança do ONS (Submódulo 5.13, vigente desde 9/7/2021).
 
 ![Mapa em linha do tempo das camadas regulatórias do setor elétrico brasileiro: Resolução CNPE nº 24/2021, RN ANEEL nº 964/2021 (ARCiber), IEC 62443 como referência técnica internacional, Despacho ANEEL nº 427/2025 e a lacuna do submódulo de cibersegurança do ONS ainda sem número/vigência final confirmados](../assets/diagramas/03-mapa-regulatorio-energia-br.svg)
 
 *Figura 2 — Linha do tempo das camadas regulatórias e de referência técnica que incidem sobre o setor
-elétrico brasileiro, de 2019 (proposta original do ONS) a 2026, incluindo a lacuna registrada quanto ao
-submódulo de cibersegurança dos Procedimentos de Rede [36][37][38][39][40][41].*
+elétrico brasileiro, de 2019 (proposta original do ONS) a 2026. A figura ainda representa o submódulo do ONS como lacuna; o
+dado correto é o Submódulo 5.13, vigente desde 9/7/2021, e a figura será atualizada
+[36][37][38][39][40][41][66].*
 
 ### Incidentes conhecidos no setor de energia brasileiro
 
@@ -340,6 +350,11 @@ entre a alegação do grupo atacante e a posição oficial da empresa permanece 
 possível arbitrá-la com certeza no escopo desta pesquisa — o mesmo padrão de contestação já registrado no
 caso do Banco Neon, no capítulo 02.
 
+Em **julho de 2026**, a Kaspersky descreveu a campanha **Armored Likho**, que combina espionagem e crime
+contra órgãos de governo e o **setor elétrico** no Brasil, na Rússia e no Cazaquistão: *spear-phishing*,
+o coletor BusySnake e o túnel Go2Tunnel, com um carregador que traz indícios de código gerado por IA. Não
+há vítima brasileira nomeada nem impacto operacional relatado [71][72].
+
 Em **14 de maio de 2026**, a **Cemig** (Companhia Energética de Minas Gerais) confirmou acesso não
 autorizado a uma de suas bases de dados, resultando em vazamento de dados cadastrais — nome, CPF,
 endereço, e-mail, telefone e valor de fatura — de cerca de **135 mil clientes** [57][58]. A empresa
@@ -360,6 +375,7 @@ ao cliente comprometidos sem impacto confirmado em OT.
 | *Ransomware* em TI com impacto colateral em OT (padrão Colonial) | Alta           | Alto       | Colonial Pipeline: desligamento preventivo, 45% do combustível da Costa Leste dos EUA [20][21] |
 | Comprometimento de fornecedor/terceiro (cadeia de suprimentos)  | Média          | Alto       | Petrobras/SAExploration (contestado); padrão já visto no setor financeiro [44][45] |
 | Vazamento de dados em massa                                    | Média          | Médio-Alto | Caso Cemig (~135 mil clientes, mai/2026), sem impacto operacional [57][58]        |
+| Espionagem APT contra o setor elétrico brasileiro             | Média          | Alto       | Armored Likho, jul/2026 [71][72] |
 
 ## Obrigações regulatórias do setor elétrico brasileiro
 
@@ -368,7 +384,7 @@ ao cliente comprometidos sem impacto confirmado em OT.
 | LGPD (Lei nº 13.709/2018)                                    | Congresso Nacional / ANPD | Todos os setores, dados pessoais                   | Consentimento e governança de dados                  | Em vigor desde 2020 (transversal)                |
 | Resolução CNPE nº 24/2021                                    | CNPE                       | Coordenação setorial de resposta a incidentes       | Atribui à ANEEL a coordenação setorial                | Em vigor                                          |
 | RN ANEEL nº 964/2021                                        | ANEEL                      | Concessionárias, permissionárias, autorizadas, ONS  | Política de segurança cibernética + define o ARCiber  | Vigente desde 1º/7/2022                          |
-| Submódulo de cibersegurança dos Procedimentos de Rede (ONS)  | ONS / ANEEL                | Centros de operação e infraestrutura ONS↔agentes    | Controles técnicos de segurança cibernética no ARCiber | Proposto em dez/2019; número/vigência final não confirmados |
+| Submódulo 5.13 — RO-CB.BR.01 (ONS)                           | ONS / ANEEL                | Centros de operação e infraestrutura ONS↔agentes    | Controles mínimos de segurança cibernética no ARCiber | Vigente desde 9/7/2021; ondas de 18 e 27 meses (até out/2023) |
 | Despacho ANEEL nº 427/2025                                   | ANEEL                      | Todos os agentes sob a RN nº 964/2021               | Envio de informações sobre implementação da política  | Prazo encerrado em 30/6/2025                     |
 | ISA/IEC 62443                                                | ISA/IEC (internacional)   | IACS em geral — referência técnica                  | Zonas, conduítes, Níveis de Segurança (SL 1–4)        | Referência técnica; não é lei brasileira         |
 
@@ -402,11 +418,11 @@ https://www.nozominetworks.com/ot-iot-cybersecurity-trends-insights-february-202
 Infrastructure Escalate*. 2025.
 https://www.prnewswire.com/news-releases/nozomi-networks-labs-report-finds-wireless-networks-unprotected-as-threats-to-critical-infrastructure-escalate-302385820.html
 
-[9] SOCRadar. *CISA Industrial Control Systems (ICS) Advisories Recap for 2025*. 2025.
-https://socradar.io/blog/cisa-industrial-control-systems-ics-advisories-2025/
+[9] Forescout. *ICS Cybersecurity in 2026: Vulnerabilities and the Path Forward*. 19 de fevereiro de 2026.
+https://www.forescout.com/blog/ics-cybersecurity-in-2026-vulnerabilities-and-the-path-forward/
 
-[10] CyberSecurityNews. *CISA Releases Five ICS Advisories Covering Vulnerabilities, and Exploits
-Surrounding ICS*. 2025. https://cybersecuritynews.com/cisa-releases-five-ics-advisories-covering-vulnerabilities/
+[10] CISA. Repositório oficial de advisórios em CSAF (`cisagov/CSAF`, pasta `csaf_files/OT/white/2025`,
+506 arquivos de 2025), consultado em 24 de setembro de 2026. https://github.com/cisagov/CSAF
 
 [11] IBM. *Cost of a Data Breach Report 2025*. 2025. https://www.ibm.com/reports/data-breach
 
@@ -514,8 +530,8 @@ https://cybernews.com/security/brazil-petrobras-ransomware-attack/
 Million on Average*. 29 de julho de 2026.
 https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
 
-[47] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
-https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/
+[47] eDiscovery Today. *2026 Cost of a Data Breach Report by IBM*. 30 de julho de 2026.
+https://ediscoverytoday.com/2026/07/30/2026-cost-of-a-data-breach-report-by-ibm-cybersecurity-trends/
 
 [48] ESET WeLiveSecurity. *ESET Research: Sandworm behind cyberattack on Poland's power grid in late 2025*.
 Janeiro de 2026.
@@ -562,3 +578,46 @@ https://securelist.com/industrial-threat-report-q2-2026/121159/
 
 [60] Security MEA. *Rise in Ransomware Targeting Industrial Control Systems*. 26 de agosto de 2026.
 https://securitymea.com/2026/08/26/rise-in-ransomware-targeting-industrial-control-systems/
+
+[61] Dragos. *Industrial Ransomware Analysis for Q2 2026*. 10 de agosto de 2026.
+https://www.dragos.com/blog/dragos-industrial-ransomware-analysis-q2-2026
+
+[62] Help Net Security. *Ransomware gangs don't need control system access to disrupt industrial
+production*. 11 de agosto de 2026. https://www.helpnetsecurity.com/2026/08/11/industrial-ransomware-attacks-q2-2026/
+
+[63] Fortinet. *While OT Security Is Maturing, Risk Is Not Slowing Down* (2026 State of Operational
+Technology and Cybersecurity Report). 9 de junho de 2026.
+https://www.fortinet.com/blog/operational-technology/while-ot-security-is-maturing-risk-is-not-slowing-down
+
+[64] Cybersecurity Insiders. *Fortinet OT Cybersecurity Report: 53% of Industrial Orgs Now Under CISO*.
+11 de junho de 2026. https://www.cybersecurity-insiders.com/fortinet-ot-cybersecurity-report-ciso-ownership/
+
+[65] DataBreachCost.com. *IBM Cost of a Data Breach Report 2026: Key Findings*. 2026.
+https://databreachcost.com/report/2026
+
+[66] ONS. *Manual de Procedimentos da Operação, Módulo 5, Submódulo 5.13 — RO-CB.BR.01 rev. 00, Controles
+mínimos de segurança cibernética para o Ambiente Regulado Cibernético* (vigência em 09/07/2021).
+https://www.ons.org.br/acervodigitaldocumentosepublicacoes/ro-cb.br.01_rev.00.pdf
+
+[67] Secureway. *ONS: agentes e operadores em conformidade com a rotina cibernética*. 2022.
+https://secureway.com.br/ons-agentes-e-operadores-em-conformidade-com-a-rotina-cibernetica/
+
+[68] EDR Tecnologia. *Submódulo 5.13 — Ambiente Regulado Cibernético (ARCiber) do Procedimento de Rede do
+ONS*. https://www.edrtecnologia.com.br/post/subm%C3%B3dulo-5-13-ambiente-regulado-cibernetico-arciber-do-procedimento-de-rede-do-ons-o-que-signi
+
+[69] CISA, FBI, NSA, EPA, DOE e CNMF. *AA26-097A — Iranian-Affiliated Cyber Actors Exploit Programmable
+Logic Controllers Across US Critical Infrastructure*. 7 de abril de 2026 (atualizado em 22 de julho de
+2026). https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-097a
+
+[70] Crowell & Moring. *Federal Agencies Warn of Iranian-Affiliated Cyber Actors Exploiting
+Internet-Facing Operational Technology Devices*. Abril de 2026.
+https://www.crowell.com/en/insights/client-alerts/federal-agencies-warn-of-iranian-affiliated-cyber-actors-exploiting-internet-facing-operational-technology-devices
+
+[71] The Hacker News. *Armored Likho Targets Government Agencies, Power Sector with BusySnake Stealer*.
+3 de julho de 2026. https://thehackernews.com/2026/07/armored-likho-targets-government.html
+
+[72] SecurityWeek. *Armored Likho APT Targeting Government, Electric Power Entities*. 6 de julho de 2026.
+https://www.securityweek.com/armored-likho-apt-targeting-government-electric-power-entities/
+
+[73] Infosecurity Magazine. *Significant Rise in Ransomware Targeting Industrial Operations*. 17 de
+fevereiro de 2026. https://www.infosecurity-magazine.com/news/rise-in-ransomware-targeting/

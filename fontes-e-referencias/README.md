@@ -680,11 +680,29 @@ enquanto um único evento ThreatFox em formato MISP traz família em tag para ca
 | Infoblox | Infoblox | Inteligência de infraestrutura de ameaça (DNS) |
 | NOCACTI | NOCACTI | Feeds de intrusão e infraestrutura de adversário |
 
+Os provedores acima somam **18 feeds** habilitados (Rectifyq, NOCACTI, URLhaus e ThreatFox têm mais de
+um). Desde 24/09/2026 a lista exata em vigor não depende deste texto: a ingestão lê `/feeds/index` do
+MISP a cada ciclo e publica os feeds e o tamanho do acervo no `threat-live.json`, de onde a aba
+*Fontes & Método* os exibe.
+
+**Retenção dos feeds-arquivo (24/09/2026).** URLhaus, MalwareBazaar e ThreatFox em formato MISP publicam
+um evento por dia desde 2021, e o MISP baixa o manifesto inteiro: o acervo foi de ~190 mil a
+**26,8 milhões de atributos (21 GB)** e encheu o disco do servidor, parando a publicação do painel de
+10/09 a 24/09/2026. Hoje eventos do abuse.ch com mais de **30 dias** são removidos diariamente
+(`dashboard/ingest/misp-retencao.sh`) e entram na lista de bloqueio do MISP para não voltarem no fetch
+seguinte. O painel lê só a janela de 14 dias, então nada do que ele usa é afetado.
+
 O que conta como indicador "do setor financeiro" está definido em
 [`dashboard/ingest/taxonomia-financeira.json`](../dashboard/ingest/taxonomia-financeira.json), com
 justificativa registrada família a família — hoje **32 famílias**, das quais **14 têm alvo
 brasileiro declarado**. As três últimas entraram em 17/08/2026: Bizarro, ChaveCloak e VENON, esta
 um trojan bancário escrito em Rust que mira 33 bancos brasileiros.
+
+**Consulta sem filtro de data (corrigido em 24/09/2026).** A consulta `restSearch` da ingestão não
+levava corte de data: trazia as 40 mil linhas mais antigas do acervo e o filtro local descartava todas,
+de modo que o MISP contribuía com **zero** indicador para a janela ao vivo sem nenhum erro visível. O
+corte passou para a própria consulta (`from` = data do evento), e os indicadores repetidos entre MISP e
+ThreatFox direto passaram a contar uma vez só. Recorte financeiro de 14 dias: 199 → 1.145 indicadores.
 
 ### 4.3 — Por que existe um recorte por país (episódio de 17/08/2026)
 

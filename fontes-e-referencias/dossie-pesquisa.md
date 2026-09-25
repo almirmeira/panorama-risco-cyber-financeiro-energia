@@ -2942,3 +2942,328 @@ capítulo `02-setor-financeiro/README.md` como caso autônomo. Acesso direto às
 automatizado seguiu bloqueado pelo proxy de saída deste ambiente (mesma limitação já registrada em
 2026-08-28); os valores foram confirmados por convergência entre múltiplas coberturas de imprensa
 independentes entre si. Nenhuma outra lacuna equivalente foi identificada nas demais frentes verificadas.
+---
+
+## Revisão profunda de 2026-09-24/25 — varredura completa fora da janela de 3 dias
+
+Motivação: a rotina de 3 dias só enxerga o que foi publicado desde o ciclo anterior, e números superados
+havia meses seguiam no ar (DDoS de 2023, consentimentos de Open Finance de janeiro, prazos regulatórios
+vencidos tratados como futuros). Esta revisão rechecou cada número do painel e dos capítulos 01–08 contra
+a edição mais recente publicada **em qualquer data**, em cinco frentes, com a regra de ≥2 fontes
+independentes. Inclui uma **errata**: os valores atribuídos ao Banco Rendimento no refresh de 2026-09-22
+pertencem ao ataque ao BTG Pactual (ver frente Brasil). A partir desta data, a rotina passa a fazer uma
+dessas cinco frentes a cada ciclo (varredura rotativa).
+
+### Registro de revisão retroativa — 2026-09-24 (frente Global / Comparativo)
+
+Revisão fora da janela de 3 dias: cada número dos blocos `global`, `comparativoGlobal` e `comparativo` do
+painel e dos capítulos 01 e 04 foi rechecado contra a edição mais recente publicada **em qualquer data**,
+para capturar dados já superados que a rotina de 3 dias não teria visto.
+
+| Fonte / frente verificada | Resultado da checagem em 2026-09-24 |
+| :-- | :-- |
+| IBM Cost of a Data Breach 2026 | Confirmado atual: USD 4,99 mi (+12%), financeiro USD 6,3 mi, energia USD 5,2 mi, 247 dias. **Divergência de 2ª casa registrada**: DataBreachCost.com traz 6,29 (ante 5,57) e 5,24 (ante 4,85), contra 6,3 (ante 5,56) e 5,2 (ante 4,83) do comunicado IBM. Mantidos os valores do comunicado oficial |
+| Mandiant M-Trends 2026 | Confirmado atual (14 dias; Alta Tecnologia 17%; financeiro 14,6%). **Rótulo corrigido**: 14 dias = M-Trends 2026, dados de 2025; 11 dias = M-Trends 2025, dados de 2024. O painel dizia "era 11 dias em 2025" |
+| Verizon DBIR 2026 | Confirmado atual (48% ransomware, ante 44%). O recorte "90% de motivação financeira" do setor financeiro segue sendo da edição 2025: não foi localizado *snapshot* financeiro 2026 (a URL presumida retorna 404) |
+| CrowdStrike 2026 Global Threat Report | Confirmado atual (29 min; 27 s). **Erro de redação corrigido no cap. 01**: o texto dizia "queda de cerca de 65%" de 48 para 29 min. A CrowdStrike fala em "65% increase in speed"; em tempo, a queda é de cerca de 40% |
+| WEF Global Cybersecurity Outlook 2026 | Confirmado atual (94%). **Rótulo corrigido no cap. 01**: os 91% referem-se às *maiores* organizações; na base geral, 64% incorporam ataques geopolíticos no risco |
+| Open Finance Brasil (consentimentos ativos) | **Atualizado**: ~209–240 mi em jul/2026 (ante 154 mi em dez/2025). Duas fontes divergentes, ambas citando o dashboard oficial: Let's Money 208,79 mi (31/07/2026) e Zetta 239,8 mi (jul/2026). Registradas lado a lado, sem média |
+| Fortinet State of OT 2026 (09/06/2026) | **Edição nova registrada**: 60% apontam o CISO como responsável final pela segurança OT (ante 69% em 2025), confirmado por 2 fontes. Uma cobertura secundária cita 53% sob CISO/CSO (ante 16% em 2022) — **[NÃO CONFIRMADO — fonte única e métrica distinta; não substitui os 52% da edição 2025]** |
+| ENISA Threat Landscape 2026 | **Edição nova localizada**: publicada em 22/09/2026, cobre jan–dez/2025. Os números da nova edição **[NÃO CONFIRMADO — só a própria ENISA; coberturas secundárias inacessíveis (403) ou com números da edição 2025]**. Os capítulos seguem com os números do ETL 2025 e trazem nota de que a nova edição saiu |
+| Kaspersky ICS CERT (energia elétrica) | 21,3% (1º–3º tri de 2025, energia elétrica em 3º lugar) consta no comunicado oficial da Kaspersky de 09/12/2025, mas a 2ª fonte localizada (Security MEA) é republicação do mesmo comunicado — **[NÃO CONFIRMADO — independência parcial; mantido 22,8%/H1 2025]** |
+| Black Kite, Dragos, Chainalysis | Confirmados atuais (202 incidentes, +30%; cerca de 3.300 organizações, +64%, e 42 → 5 dias; DPRK US$ 2,02 bi, +51%) |
+| Microsoft MDDR / FS-ISAC Navigating Cyber | Sem edição 2026 localizada; as edições 2025 seguem vigentes |
+
+**Observação:** foram alterados os capítulos `01-panorama-global/README.md` (refs. [51][52]) e
+`04-comparativo/README.md` (refs. [36]–[41]). As mudanças correspondentes do painel
+(`dashboard/src/data/dashboard.json`) são o rótulo do dwell time, o eixo Open Finance, o eixo de maturidade
+OT e a nota de divergência IBM. Não mudou nenhuma nota qualitativa do radar. Pendem os SVGs e o cap. 02,
+que ainda citam 128–154 mi de consentimentos.
+
+#### Fontes desta revisão
+
+- IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6 Million on
+  Average*. 29/07/2026. https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+- DataBreachCost.com. *IBM Cost of a Data Breach Report 2026: Key Findings ($4.99M Global)*. 2026.
+  https://databreachcost.com/report/2026
+- Help Net Security. *Data breach cost 2026 averaged $4.99 million, AI attacks ran higher*. 30/07/2026.
+  https://www.helpnetsecurity.com/2026/07/30/ibm-cost-of-a-data-breach-2026/
+- Google Cloud (Mandiant). *M-Trends 2026: Data, Insights, and Strategies From the Frontlines*. 2026.
+  https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2026/
+- SecurityWeek. *M-Trends 2026: Initial Access Handoff Shrinks From Hours to 22 Seconds*. 2026.
+  https://www.securityweek.com/m-trends-2026-initial-access-handoff-shrinks-from-hours-to-22-seconds/
+- CrowdStrike. *2026 CrowdStrike Global Threat Report: AI Accelerated Adversaries* (comunicado). Fev/2026.
+  https://www.crowdstrike.com/en-us/press-releases/2026-crowdstrike-global-threat-report/
+- CRN Asia. *AI cuts cyberattack breakout time to 29 minutes, reveals CrowdStrike report*. 2026.
+  https://www.crnasia.com/news/2026/cybersecurity/ai-cuts-cyberattack-breakout-time-to-29-minutes-reveals-crowdstrike-report
+- Fortinet CISO Collective. *World Economic Forum Global Cybersecurity Outlook 2026: Key Takeaways for
+  CISOs*. 2026. https://www.fortinet.com/blog/ciso-collective/world-economic-forum-global-cybersecurity-outlook-2026-key-takeaways-for-cisos
+- Let's Money. *Open Finance entra em nova fase com desafio de governança*. 27/08/2026 (atualizado em
+  12/09/2026). https://www.letsmoney.com.br/noticias/open-finance-208-milhoes-consentimentos-governanca/
+- Zetta. *Cinco anos de transformação e uma agenda para o futuro — Open Finance no Brasil*. Set/2026.
+  https://static.poder360.com.br/uploads/2026/09/Zetta_2026_Open-Finance-no-Brasil_Final-1-1.pdf
+- Fortinet. *While OT Security Is Maturing, Risk Is Not Slowing Down*. 09/06/2026.
+  https://www.fortinet.com/blog/operational-technology/while-ot-security-is-maturing-risk-is-not-slowing-down
+- CyberSecurityStats.com. *2026 State of Operational Technology and Cybersecurity — Fortinet*. 2026.
+  https://cybersecuritystats.com/reports/fortinet/2026-state-of-operational-technology-and-cybersecurity
+- Cybersecurity Insiders. *Fortinet OT Cybersecurity Report: 53% of Industrial Orgs Now Under CISO*.
+  11/06/2026. https://www.cybersecurity-insiders.com/fortinet-ot-cybersecurity-report-ciso-ownership/
+- ENISA. *ENISA Threat Landscape 2026*. 22/09/2026.
+  https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
+- Kaspersky. *Kaspersky ICS CERT shares trends and predictions for the next year*. 09/12/2025.
+  https://www.kaspersky.com/about/press-releases/kaspersky-ics-cert-shares-trends-and-predictions-for-the-next-year
+- Security MEA. *Kaspersky Reveals Industrial Security Trends for 2026*. 19/12/2025.
+  https://securitymea.com/2025/12/19/kaspersky-reveals-industrial-security-trends-for-2026/
+### Atualização 2026-09-24 — setor financeiro, recorte global (varredura de defasagem)
+
+| Item | Valor no painel | Status | Evidência |
+|:---|:---|:---:|:---|
+| Custo médio de violação (IBM CODB 2026) | USD 6,3 mi (+13% vs. 5,56) | Confirmado atual | IBM Newsroom 29/7/2026; DataBreachCost.com (USD 6,29 mi) |
+| *Ransomware* direto (Black Kite) | 156→202 (2024→2025); Q1 2026 +76% (65) | Confirmado atual | Página do relatório + Unite.AI; série vai até Q1 2026 |
+| Grupos de *ransomware* no setor | 37 (2023) → 48 (2025) | Confirmado; divergência 2024 | 43 (página do relatório) × 45 (press release e Unite.AI) |
+| *Ransomware* Q2/H1 2026 | — | Não confirmado (fonte única cada) | CYFIRMA: 114 vítimas na janela "Q2 2026" (+46,2%), datada de 18/5/2026; Comparitech: 257 ataques no H1 2026 (22 confirmados) |
+| Motivação (DBIR 2025 Finance Snapshot) | 90% financeira / 12% espionagem | Confirmado (lido no PDF) | Encerra a ressalva "parcialmente confirmado" |
+| Motivação (DBIR 2026, p. 84) | 98% / 3%; 3.809 incidentes / 1.300 violações | Não confirmado (fonte primária única) | *Finance Snapshot* 2026 não localizado; "12% espionagem" de resumos de 2026 é o número global |
+| *Deepfake* | 6,5% das tentativas (+2.137% em 3 anos) | Confirmado; atribuição corrigida | Fonte primária: Signicat (fev/2025); complemento: Entrust 2026 — 20% da fraude biométrica. Sumsub "11%" = "top first-party schemes", não comparável |
+| DDoS | +154% (2022→2023) | Atualizado | FS-ISAC/Akamai (jun/2025): alvo nº 1 de DDoS volumétrico em 2024, L7 +23%; Akamai SOTI 2026: duração mediana L3/L4 +738% desde 2024 |
+| DDoS — descartados | 37% L3/L4 em 2024; +236% escala máx.; Cloudflare "+67%" | Não confirmado | Fonte única ou inexistente no documento |
+| FS-ISAC *Navigating Cyber 2026* | — | Não localizado | Edição mais recente: 2025 |
+
+Fontes:
+- IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6 Million on Average*. 29/7/2026. https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+- DataBreachCost.com. *IBM Cost of a Data Breach Report 2026: Key Findings*. 2026. https://databreachcost.com/report/2026
+- Black Kite. *2026 State of Financial Services Report*. 2026. https://blackkite.com/reports/2026-financial-services-report
+- Black Kite. *Black Kite's 2026 State of Financial Services Report Reveals Ransomware Surge…*. 3/6/2026. https://blackkite.com/press-releases/black-kites-2026-state-of-financial-services-report-reveals-ransomware-surge-and-vulnerability-deluge-driving-two-front-cyber-threat
+- Unite.AI. *Black Kite's 2026 Financial Services Report Warns of a Growing Cybersecurity Crisis…*. 2026. https://www.unite.ai/black-kites-2026-financial-services-report-warns-of-a-growing-cybersecurity-crisis-across-banking-and-investment-firms/
+- CYFIRMA. *Finance Q2 2026: Industry Report*. 2026. https://www.cyfirma.com/research/finance-q2-2026-industry-report/
+- Comparitech. *Ransomware Roundup: H1 2026 stats…*. 2/7/2026. https://www.comparitech.com/news/ransomware-roundup-h1-2026-stats-on-attacks-ransoms-and-active-gangs/
+- Verizon. *2025 DBIR — Finance Snapshot*. 2025. https://www.verizon.com/business/resources/infographics/2025-dbir-finance-snapshot.pdf
+- Verizon. *2026 Data Breach Investigations Report* (p. 84). 2026. https://www.verizon.com/business/resources/Td15/reports/2026-dbir-data-breach-investigations-report.pdf
+- Signicat. *Fraud attempts with deepfakes have increased by 2137%…*. 2025. https://www.signicat.com/press-releases/fraud-attempts-with-deepfakes-have-increased-by-2137-over-the-last-three-year
+- Intelligent CISO. Idem. 24/2/2025. https://www.intelligentciso.com/2025/02/24/fraud-attempts-with-deepfakes-have-increased-by-2137-over-the-last-three-years/
+- Entrust. *Entrust 2026 Identity Fraud Report…*. 18/11/2025. https://www.entrust.com/company/newsroom/deepfakes-social-engineering-and-injection-attacks-on-the-rise
+- FinTech Magazine. *Deepfakes Drive 20% of Biometric Fraud Attempts*. 2025. https://fintechmagazine.com/news/cybercrime-when-the-sun-is-down-entrust-shows-attack-surge
+- Sumsub. *Sumsub's Annual Report…* (para registrar o "11%" como não comparável). 25/11/2025. https://sumsub.com/newsroom/sumsubs-annual-report-fraud-shifts-to-complex-multi-step-schemes-in-2025-agentic-ai-scams-poised-to-surge-in-2026/
+- FS-ISAC. *DDoS Attackers Increase Targeting of Global Financial Sector…*. 10/6/2025. https://www.fsisac.com/newsroom/ddos-attackers-increase-targeting-of-global-financial-sector-according-to-fsisac-and-akamai-report
+- FS-ISAC / Akamai. *From Nuisance to Strategic Threat* (PDF). Jun/2025. https://www.akamai.com/site/en/documents/white-paper/2025/ddos-attacks-acrosst-the-financial-sector.pdf
+- Infosecurity Magazine. *DDoS Attacks on Financial Sector Surge in Scale and Sophistication*. Jun/2025. https://www.infosecurity-magazine.com/news/ddos-financial-sector-surge/
+- Akamai. *Financial Services at Risk: DDoS Attacks Are Bigger, Longer, and More Complex…*. 20/5/2026. https://www.akamai.com/newsroom/press-release/financial-services-at-risk-ddos-attacks-are-bigger-longer-and-more-complex-akamai-research-finds
+- TFiR. *AI Powered Attacks Breaking Bank Defenses*. 2026. https://tfir.io/akamai-api-ddos-financial-services-2026-steve-winterfeld/
+### Registro do refresh — 2026-09-24 (revisão profunda do recorte Brasil, setor financeiro)
+
+Revisão fora da janela de 3 dias: cada número/afirmação do recorte Brasil do capítulo 02 foi reverificado
+contra a data corrente, para capturar dados superados há meses. Regra aplicada: mudança só com ≥ 2 fontes
+independentes efetivamente abertas.
+
+#### Errata 2026-09-24 — Banco Rendimento × BTG Pactual
+
+- **Erro corrigido:** o registro "Atualização 2026-09-22 — Brasil — incidente Banco Rendimento" (e a linha
+  correspondente da tabela-resumo) atribuiu ao Banco Rendimento **~R$ 100 milhões desviados** e **prejuízo
+  líquido de R$ 20–40 milhões**. **[SUPERADO em 2026-09-24 — ERRO DE ATRIBUIÇÃO]** Esses valores são do
+  ataque ao **BTG Pactual** de 22/3/2026. A CNN Brasil registra, sobre o Rendimento, que o banco "não abriu
+  o número de usuários impactados, nem eventuais volumes financeiros"; a ConvergenciaDigital cita os
+  R$ 100 mi / R$ 20–40 mi como números do ataque **anterior** ao BTG. A afirmação de "indícios de falha em
+  mecanismos de autenticação" também não consta das fontes abertas e foi retirada do capítulo.
+- **Dado correto (Rendimento):** ataque em 21/4/2026 a canais de acesso e contas de clientes; parte dos
+  recursos bloqueada; serviço normalizado; volumes financeiros e vetor técnico **não divulgados**.
+  - Fonte 1: CNN Brasil. *Banco Rendimento diz que serviço foi normalizado após ataque hacker*. 22/4/2026.
+    https://www.cnnbrasil.com.br/economia/negocios/banco-rendimento-e-alvo-de-ataque-cibernetico-mas-diz-ter-normalizado-servicos/
+  - Fonte 2: ConvergenciaDigital. *Ataque hacker atinge mais um banco no Brasil e, agora, nas contas dos
+    clientes*. 22/4/2026. https://convergenciadigital.com.br/mercado/ataque-hacker-atinge-mais-um-banco-no-brasil-e-agora-nas-contas-dos-clientes/
+
+#### Atualização 2026-09-24 — Brasil — BTG Pactual (março de 2026)
+
+- **Dado:** em 22/3/2026 (domingo), o BTG Pactual identificou atividades atípicas no Pix, suspendeu o
+  serviço e o retomou em 23/3, após desvio de cerca de **R$ 100 milhões**; falha "localizada internamente",
+  sem acesso a contas de clientes nem a dados pessoais; vetor não divulgado. Segundo a ConvergenciaDigital,
+  restavam **R$ 20–40 milhões** a rastrear (dado de fonte única — citar como "segundo a imprensa").
+  - Fonte 1: Agência Brasil (EBC). *BTG Pactual retoma Pix após ataque hacker que desviou R$ 100 milhões*.
+    23/3/2026. https://agenciabrasil.ebc.com.br/economia/noticia/2026-03/btg-pactual-retoma-pix-apos-ataque-hacker-que-desviou-r-100-milhoes
+  - Fonte 2: ConvergenciaDigital (mesma URL da errata acima).
+
+#### Atualização 2026-09-24 — Brasil — Open Finance
+
+- **Valor antigo:** 128 milhões de consentimentos ativos (jan/2026, Sensedia/Let's Money). **[SUPERADO em
+  2026-09-24]**
+- **Valor novo:** **mais de 200 milhões** em jul/2026. Leituras do dashboard oficial divergem: **208,79 mi**
+  em 31/7/2026 (Let's Money) × **239,8 mi** em jul/2026, consulta em 18/8/2026 (Zetta). Divergência não
+  arbitrada; adotado o piso comum.
+- **Resolução da divergência 128 × 154 (registrada em fev/2026):** segundo a série do dashboard reproduzida
+  pela Zetta, 154 mi era o número de **dez/2025** (41,9 mi em dez/2023; 61,9 mi em dez/2024), de modo que o
+  128 mi da Sensedia já estava defasado.
+  - Fonte 1: Let's Money. *Open Finance entra em nova fase com desafio de governança*. 27/8/2026 (atual.
+    12/9/2026). https://www.letsmoney.com.br/noticias/open-finance-208-milhoes-consentimentos-governanca/
+  - Fonte 2: Zetta. *Cinco anos de transformação e uma agenda para o futuro — Open Finance no Brasil*.
+    Set/2026. https://static.poder360.com.br/uploads/2026/09/Zetta_2026_Open-Finance-no-Brasil_Final-1-1.pdf
+
+#### Atualização 2026-09-24 — Brasil — golpes e estelionato (complementar)
+
+- **R$ 10,1 bi (2024, Febraban):** **confirmado como o dado mais recente da série** — a Pesquisa Febraban de
+  Tecnologia Bancária 2026 (jun/2026) não traz o prejuízo de 2025.
+- **Novo (complementar, não somável):** FBSP, *Anuário Brasileiro de Segurança Pública 2026*: **2.261.055**
+  registros de estelionato em 2025 (+2,7% vs. 2.193.122 em 2024; +429,8% desde 2018); estelionato por meio
+  eletrônico **346.753** (+20,6% vs. 286.226).
+  - Fonte 1: FBSP. *Anuário Brasileiro de Segurança Pública 2026* (tabela p. 120). Jul/2026.
+    https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf
+  - Fonte 2: Jornal da Nova. *Estelionatos batem recorde e somam 2,26 milhões de casos*. Jul/2026.
+    https://jornaldanova.com.br/noticia/473690/estelionatos-batem-recorde-e-somam-226-milhoes-de-casos-alta-e-de-quase-430-desde-2018
+- **Novo (ESTIMATIVA POR SURVEY):** GASA, *O Estado dos Golpes no Brasil 2026* (6/8/2026): ~16,5 mi de
+  brasileiros perderam dinheiro, ~R$ 21,2 bi (mar/2025–fev/2026), 34 bi de tentativas; amostra de ~1.000
+  respondentes.
+  - Fonte 1: Boqnews. Ago/2026. https://www.boqnews.com/nacional/brasil-conviveu-com-mais-de-34-bi-de-tentativas-de-golpes-digitais-em-2025/
+  - Fonte 2: Consecti. Ago/2026. https://consecti.org.br/brasil-conviveu-com-mais-de-34-bilhoes-de-tentativas-de-golpes-digitais-em-2025-estima-ong-internacional/
+
+#### Atualização 2026-09-24 — Brasil — C&M Software e Sinqia (2025)
+
+- **C&M — valor antigo:** "ao menos R$ 400 milhões". **[SUPERADO em 2026-09-24]** mantido como estimativa
+  inicial. **Valor novo:** **R$ 813 milhões** (Polícia Federal, Operação Magna Fraus); bloqueio de até
+  R$ 640 mi; 21 presos; operador de TI da C&M confessou venda de credenciais.
+  - Fonte 1: CNN Brasil. *PF pede extradição de suspeitos de ataque hacker que afetou Pix*. 7/11/2025.
+    https://www.cnnbrasil.com.br/nacional/brasil/pf-pede-extradicao-de-suspeitos-de-ataque-hacker-que-afetou-pix/
+  - Fonte 2: Jornal de Brasília. *Com ajuda da Interpol, PF faz nova operação contra hackers que desviaram
+    R$ 813 milhões*. 30/10/2025. https://jornaldebrasilia.com.br/noticias/brasil/com-ajuda-da-interpol-pf-faz-nova-operacao-contra-hackers-que-desviaram-r-813-milhoes/
+- **Sinqia (lacuna preenchida):** fim de ago/2025, ~R$ 710 mi desviados (R$ 669 mi HSBC; R$ 41 mi SCD
+  Artta), R$ 589 mi (83%) bloqueados; transações introduzidas via credenciais legítimas de fornecedores de TI.
+  - Fonte 1: InfoMoney. *Desvio de recursos em ataque hacker ao Pix vai a R$ 710 mi; maior parte foi
+    bloqueada*. Set/2025. https://www.infomoney.com.br/economia/desvio-de-recursos-em-ataque-hacker-ao-pix-vai-a-r-710-mi-maior-parte-foi-bloqueada/
+  - Fonte 2: CartaCapital. *Ataque hacker desviou R$ 710 milhões em transações Pix, diz empresa que opera
+    sistema*. 2/9/2025. https://www.cartacapital.com.br/economia/ataque-hacker-desviou-r-710-milhoes-em-transacoes-pix-diz-empresa-que-opera-sistema/
+
+#### Atualização 2026-09-24 — Brasil — incidentes de agosto de 2026
+
+- **Operação Pane Seca (PF, 18/8/2026):** grupo acusado de invasões a sistemas de instituições financeiras
+  (transferências e boletos → contas intermediárias → cripto); prejuízo ~R$ 227 mi; R$ 226,2 mi em bens
+  bloqueados; Projeto Tentáculos (PF + Febraban). Instituições não nomeadas.
+  - Fonte 1: Polícia Federal. 18/8/2026. https://www.gov.br/pf/pt-br/assuntos/noticias/2026/08/pf-desarticula-grupo-criminoso-responsavel-por-invasoes-a-sistemas-de-instituicoes-financeiras
+  - Fonte 2: Metrópoles. Ago/2026. https://www.metropoles.com/colunas/mirelle-pinheiro/grupo-invade-sistemas-financeiros-e-causa-prejuizo-de-r-227-milhoes
+- **TAG / Stone (ago/2026):** tentativa de fraude de ~R$ 350 mi em recebíveis de cartão (troca de
+  titularidade para conta laranja), barrada após alerta de instituição financeira; sem prejuízo.
+  - Fonte 1: Let's Money (citando Valor Econômico). 17/8/2026. https://www.letsmoney.com.br/noticias/registradora-stone-fraude-recebiveis-350-milhoes/
+  - Fonte 2: Vero Notícias. 16/8/2026. https://veronoticias.com/economia/registradora-da-stone-identifica-fraude-de-r-350-milhoes/
+
+#### Atualização 2026-09-24 — Brasil — regulação
+
+- **CMN 5.274/2025 + BCB 538/2025:** aprovadas em 18/12/2025; prazo de adequação **1º/3/2026 — VENCIDO**.
+  O texto "prazo em março de 2026 — janela ainda em curso" está **[SUPERADO em 2026-09-24]**.
+  - Fonte 1: NDM Advogados. https://ndmadvogados.com.br/artigo/seguranca-cibernetica-bcb-538-cmn-5274/
+  - Fonte 2: Clavis. https://clavis.com.br/blog/banco-central-reforca-exigencias-de-seguranca-cibernetica/
+- **MED 2.0 — Resolução BCB nº 493, de 28/8/2025:** facultativo desde 23/11/2025; **obrigatório desde
+  2/2/2026**, com autoatendimento para contestação. "MED reforçado em 2025" **[SUPERADO em 2026-09-24]**.
+  - Fonte 1: Agência Brasil (EBC). *Novas regras de segurança do Pix entram em vigor*. Fev/2026.
+    https://agenciabrasil.ebc.com.br/economia/noticia/2026-02/novas-regras-de-seguranca-do-pix-entram-em-vigor-veja-mudancas
+  - Fonte 2: CSMV Advogados. *Resolução BCB nº 493/2025*. https://www.csmv.com.br/boletins/boletim-01/
+- **Resolução BCB nº 587, de 18/9/2026 (nova):** marcação de "fundada suspeita de fraude" de CPF/CNPJ no DICT
+  (até 5 anos), rejeição de Pix de usuários marcados (exceto devoluções), contestação em até 7 dias,
+  exclusão imediata de participante; comunicação ao usuário e cobrança híbrida em 1º/2/2027; Pix Automático
+  em conta-salário em 1º/7/2027.
+  - Fonte 1: Poder360. 18/9/2026. https://www.poder360.com.br/poder-economia/entenda-quais-sao-as-mudancas-no-pix-anunciadas-pelo-bc/
+  - Fonte 2: TI Inside. 18/9/2026. https://tiinside.com.br/18/09/2026/bc-endurece-regras-contra-fraudes-e-altera-funcionamento-do-pix/
+
+#### Confirmados atuais (sem mudança) e não confirmados
+
+- **Confirmados atuais:** 76 incidentes relevantes reportados ao BC em 2025 (+29%; 39 fraudes; 27 falhas de
+  TI; 65% no 2º semestre) — IstoÉ Dinheiro, abr/2026, https://istoedinheiro.com.br/incidentes-ciberneticos-sobem-29-em-2025-com-avanco-de-fraudes-mostra-bc ;
+  28 mi de fraudes Pix (jan–set/2025, ADDP); R$ 2,7 bi de fraude Pix apurada pela Febraban (+43%).
+- **Não confirmados (1 fonte; não incorporados):** Resolução BCB nº 547, de 30/1/2026 (credenciamento de
+  PSTI, PL de R$ 15 mi — só LegisWeb); declaração do BC de ≥ 8 incidentes com R$ 1,5 bi desviados em
+  jul–ago/2025 (só ConvergenciaDigital).
+### Atualização 2026-09-24 — Setor Energia (verificação de KPIs superados)
+
+| Item | Valor anterior (superado em 2026-09-24) | Valor atual | Fontes |
+|:--|:--|:--|:--|
+| Ransomware industrial 2025 (Dragos) | "+64% a/a; 119 grupos" (ambíguo) | Ataques +64%; grupos +49% (80→119); ~3.300 orgs. | Dragos YIR 2026 (17/2/2026); Infosecurity Magazine (17/2/2026) |
+| Ransomware industrial 2026 | — (não havia) | 1.140 incidentes no 2T2026, +12% s/ 1.020 no 1T2026 | Dragos Q2 2026 (10/8/2026); Help Net Security (11/8/2026) |
+| Incidentes/intrusões em OT (Fortinet) | 50% com ≥1 incidente (ed. 2025) — **superado** | 71% com 1–9 intrusões (ante 47%); TI+OT simultâneas 24% (ante 60%) | Fortinet Blog (9/6/2026); Cybersecurity Insiders (11/6/2026) |
+| Advisórios ICS CISA 2025 | ">450; 200+ fornecedores; 700+ produtos" — **superado** | >500: 508 (Forescout) / 506 arquivos CSAF 2025 (CISA) | Forescout (19/2/2026); CISA CSAF (GitHub cisagov/CSAF, pasta OT/white/2025, contagem em 2026-09-24) |
+| Submódulo ONS de cibersegurança | "número/vigência final não confirmados; 3 ondas 18/27/36 meses" — **superado** | Submódulo 5.13, RO-CB.BR.01 rev.00, vigência 09/07/2021; 2 ondas (18 e 27 meses) | ONS (PDF primário); Secureway; EDR Tecnologia |
+| Custo violação energia (IBM 2026) | ref. Global News — **não sustentava** (US$ 5,2 mi ali = média do Canadá) | US$ 5,24 mi (confirmado) | IBM Newsroom (29/7/2026); eDiscovery Today (30/7/2026); DataBreachCost 2026 |
+| Pizza origem de infecções ICS | 10 / 2,8 / 0,5 (1T2025) — **superado** | 7,88 / 2,59 / 0,26 (1T2026) | Kaspersky ICS CERT Q1 2026; Securelist Q1 2026 (mesma organização) |
+| Nozomi deauth 6% | datado como "2025" | dado do 2º sem. 2024 (release 26/2/2025) | Nozomi Networks press release; PR Newswire |
+
+**Novos marcos (não havia no painel):**
+- CISA AA26-097A (7/4/2026; atualizado 22/7/2026) — APT afiliado ao Irã explora PLCs expostos (Rockwell/Allen-Bradley, Schneider, Siemens) em Energia, Água e Governo nos EUA; manipulação de projetos e de telas IHM/SCADA, interrupções e perdas financeiras; ativo desde mar/2026. Fontes: CISA; Crowell & Moring.
+- Armored Likho (Kaspersky, jul/2026) — APT de espionagem/crime contra governo e **setor elétrico no Brasil**, Rússia e Cazaquistão (spear-phishing, BusySnake Stealer, Go2Tunnel; loader com indícios de código gerado por IA). Fontes: The Hacker News (3/7/2026); SecurityWeek (6/7/2026).
+
+**Não confirmados (fonte única / divergência) — não usados:**
+- Energia elétrica 21,43% no 1S2026 (Kaspersky) — só em resumo de busca; primário não traz.
+- Kaspersky 2T2026 fontes de infecção 7,61 / 2,84 / 0,24 — só Securelist.
+- Fortinet 2026: CISO 60% (Fortinet) × 53% (Cybersecurity Insiders); "interrupções 42%" possivelmente reciclado de 2025.
+- IBM 2025 energia: US$ 4,83 mi (maioria) × US$ 4,85 mi (DataBreachCost 2026).
+- Dragos 2T2026 por setor (utilidades elétricas 8; O&G 45; renováveis 12) — só Dragos.
+- Nozomi fev/2026 (2S2025): AiTM > ¼ dos alertas; 68% das redes Wi-Fi sem MFP — só Nozomi.
+- ANEEL 2026: nenhum ato novo localizado (resultado do Despacho 427/2025, revisão da REN 964).
+
+**Fontes completas:**
+- Dragos. *Dragos 2026 OT Report Shows Surge in Threat Groups and Ransomware*. 17/2/2026. https://www.dragos.com/resources/press-release/dragos-2026-year-in-review-new-ot-threats-ransomware
+- Infosecurity Magazine. *Significant Rise in Ransomware Targeting Industrial Operations*. 17/2/2026. https://www.infosecurity-magazine.com/news/rise-in-ransomware-targeting/
+- Dragos. *Industrial Ransomware Analysis for Q2 2026*. 10/8/2026. https://www.dragos.com/blog/dragos-industrial-ransomware-analysis-q2-2026
+- Help Net Security. *Ransomware gangs don't need control system access to disrupt industrial production*. 11/8/2026. https://www.helpnetsecurity.com/2026/08/11/industrial-ransomware-attacks-q2-2026/
+- Fortinet. *While OT Security Is Maturing, Risk Is Not Slowing Down*. 9/6/2026. https://www.fortinet.com/blog/operational-technology/while-ot-security-is-maturing-risk-is-not-slowing-down
+- Cybersecurity Insiders. *Fortinet OT Cybersecurity Report: 53% of Industrial Orgs Now Under CISO*. 11/6/2026. https://www.cybersecurity-insiders.com/fortinet-ot-cybersecurity-report-ciso-ownership/
+- Forescout. *ICS Cybersecurity in 2026: Vulnerabilities and the Path Forward*. 19/2/2026. https://www.forescout.com/blog/ics-cybersecurity-in-2026-vulnerabilities-and-the-path-forward/
+- CISA. *CSAF — ICS advisories, OT/white/2025* (repositório oficial cisagov/CSAF; 506 arquivos JSON icsa/icsma-25, contagem em 24/9/2026). https://github.com/cisagov/CSAF/tree/develop/csaf_files/OT/white/2025
+- ONS. *Manual de Procedimentos da Operação — Módulo 5, Submódulo 5.13 — RO-CB.BR.01 rev. 00: Controles mínimos de segurança cibernética para o Ambiente Regulado Cibernético*. Vigência 09/07/2021. https://www.ons.org.br/acervodigitaldocumentosepublicacoes/ro-cb.br.01_rev.00.pdf
+- Secureway. *ONS: agentes e operadores em conformidade com a rotina cibernética*. 2022. https://secureway.com.br/ons-agentes-e-operadores-em-conformidade-com-a-rotina-cibernetica/
+- EDR Tecnologia. *Submódulo 5.13 — Ambiente Regulado Cibernético (ARCiber) do Procedimento de Rede do ONS*. https://www.edrtecnologia.com.br/post/subm%C3%B3dulo-5-13-ambiente-regulado-cibernetico-arciber-do-procedimento-de-rede-do-ons-o-que-signi
+- IBM Newsroom. *IBM Study: One in Four Malicious Breaches are AI-Enabled, Costing Companies $6 Million on Average*. 29/7/2026. https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are-ai-enabled,-costing-companies-6-million-on-average
+- eDiscovery Today. *2026 Cost of a Data Breach Report by IBM*. 30/7/2026. https://ediscoverytoday.com/2026/07/30/2026-cost-of-a-data-breach-report-by-ibm-cybersecurity-trends/
+- DataBreachCost.com. *IBM Cost of a Data Breach Report 2026: Key Findings*. 2026. https://databreachcost.com/report/2026
+- Kaspersky ICS CERT. *Threat landscape for industrial automation systems. Q1 2026*. 9/6/2026. https://ics-cert.kaspersky.com/publications/reports/2026/06/09/threat-landscape-for-industrial-automation-systems-q1-2026/
+- Securelist. *Threat landscape for industrial automation systems. Q1 2026*. 2026. https://securelist.com/industrial-threat-report-q1-2026/120643/
+- Nozomi Networks. *Nozomi Networks Labs Report Finds Wireless Networks Unprotected as Threats to Critical Infrastructure Escalate*. 26/2/2025 (dados do 2S2024). https://www.nozominetworks.com/press-release/nozomi-networks-labs-report-finds-wireless-networks-unprotected-as-threats-to-critical-infrastructure-escalate
+- CISA et al. *AA26-097A — Iranian-Affiliated Cyber Actors Exploit Programmable Logic Controllers Across US Critical Infrastructure*. 7/4/2026 (atualizado 22/7/2026). https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-097a
+- Crowell & Moring. *Federal Agencies Warn of Iranian-Affiliated Cyber Actors Exploiting Internet-Facing Operational Technology Devices*. Abr/2026. https://www.crowell.com/en/insights/client-alerts/federal-agencies-warn-of-iranian-affiliated-cyber-actors-exploiting-internet-facing-operational-technology-devices
+- The Hacker News. *Armored Likho Targets Government Agencies, Power Sector with BusySnake Stealer*. 3/7/2026. https://thehackernews.com/2026/07/armored-likho-targets-government.html
+- SecurityWeek. *Armored Likho APT Targeting Government, Electric Power Entities*. 6/7/2026. https://www.securityweek.com/armored-likho-apt-targeting-government-electric-power-entities/
+### Registro do refresh — 2026-09-24 (Tendências e Recomendações)
+
+Revisão de obsolescência temporal e atualização dos capítulos 06, 07 e 08 e dos blocos `tendencias` e
+`recomendacoes` do painel. Regra aplicada: toda mudança com ≥2 fontes independentes abertas; itens com
+fonte única marcados como não confirmados e não incorporados.
+
+| Frente verificada | Resultado em 2026-09-24 | Fontes |
+| :-- | :-- | :-- |
+| Resoluções CMN 5.274/2025 e BCB 538/2025 | Publicadas em 18/12/2025; **prazo de adequação encerrado em 1º/03/2026**; nenhuma prorrogação localizada. Textos que tratavam o prazo como futuro foram reescritos como exigência vigente | Trench Rossi Watanabe (2025); Grant Thornton Brasil (2025) |
+| NIST FIPS 206 (FN-DSA) | Rascunho submetido para aprovação em 28/08/2025; status apresentado na 6ª Conferência PQC (set/2025). Finalizados seguem só FIPS 203/204/205. Previsão de versão final (fim de 2026/início de 2027) é de fonte única (DigiCert) — **não confirmada** | DigiCert (set/2025); NIST CSRC, apresentação R. Perlner (set/2025) |
+| HQC | Selecionado pelo NIST em 11/03/2025 como 5º algoritmo (KEM de reserva, baseado em códigos); rascunho previsto ~1 ano depois; final previsto para 2027. Publicação do rascunho em 2026 **não confirmada** | NIST (mar/2025); SecurityWeek (mar/2025) |
+| NIST IR 8547 e OMB M-26-15 | IR 8547 segue como Initial Public Draft (nov/2024): deprecar RSA/ECC 112 bits após 2030, proibir após 2035. OMB M-26-15 (24/06/2026), implementando ordem executiva de 22/06/2026: mitigação prioritária até 31/12/2030, migração completa até 2035, planos alinhados ao IR 8547; não se aplica a sistemas de segurança nacional | OMB M-26-15 (PDF oficial); The Quantum Insider (mai/2026); NIST IR 8547 ipd |
+| Horizonte PQC "3–5 anos" | Sem fonte localizada para o número; substituído por horizonte de planejamento 2030–2035 (NIST/OMB/G7 CEG). Semáforo âmbar mantido | idem acima + G7 CEG (jan/2026, já no dossiê) |
+| Ransomware com IA | JadePuffer (Sysdig, jul/2026): primeiro ransomware conduzido de ponta a ponta por agente LLM; CVE-2025-3248 (Langflow); 1.342 itens Nacos cifrados. Slopoly (IBM X-Force, início de 2026): backdoor PowerShell provavelmente gerado por IA, Hive0163/Interlock, persistência >1 semana. **Horizonte alterado para "Imediato (já em curso)"**; semáforo vermelho mantido | The Register (02/07/2026); SecurityWeek (jul/2026); IBM X-Force (2026); The Hacker News (mar/2026) |
+| IA ofensiva/agêntica | Relatório Anthropic set/2026 (dez/2025–ago/2026): modelo autônomo do GTG-1002 proliferou para criminosos e hacktivistas; comprometimentos de nuvem em 2–3 h. Horizonte e semáforo mantidos | Anthropic (set/2026); Fonearena (set/2026) |
+| Cadeia de suprimentos OSS | Shai-Hulud 2.0 (21–23/11/2025): centenas de pacotes npm (contagem diverge: 621 Check Point, 796 outras), ~25 mil repositórios GitHub (Check Point). CHAINDROP (ago/2026): >400 pacotes, >1.300 versões, ~2 bi downloads/mês, mira chaves de ferramentas de IA. "Mini Shai-Hulud" (mai/2026, npm+PyPI) só na Microsoft — **não confirmado** | Check Point (2025); Microsoft (09/12/2025); CSA Singapura AD-2026-009 (06/08/2026); Elastic Security Labs (ago/2026) |
+| Deepfake em fraude | Números novos de 2026 (US$ 3,7 bi Surfshark; Resemble H1/2026) só de agregadores — **não incorporados**; texto mantido | — |
+| ISO/IEC 27001 | Edição vigente: 27001:2022 + Amd 1:2024 (clima, cláusulas 4.1/4.2; Anexo A inalterado, 93 controles). Não existe "27001:2026" | ISO (iso.org/standard/88435); HighTable (2024) |
+| OWASP Top 10 for Agentic Applications 2026 | Publicado em 09/12/2025 (ASI01–ASI10) | OWASP GenAI Security Project; Teleport (2026) |
+| Guia CISA/Five Eyes de IA agêntica | *Careful Adoption of Agentic AI Services*, 30/04–01/05/2026 | CISA (mai/2026); DLT/TD SYNNEX (jun/2026) |
+| NIST IR 8596 (Cyber AI Profile) | Rascunho preliminar de 16/12/2025 (comentários até 30/01/2026); sem versão final | NIST CSRC; KPMG (fev/2026) |
+| ANEEL (RN 964/2021) | Nenhuma revisão normativa ou resultado de fiscalização localizado; texto mantido | — |
+
+#### Referências completas desta revisão
+
+- Trench Rossi Watanabe. *BCB and CMN Establish Additional Cyber Security Requirements*. 2025. https://www.trenchrossi.com/en/legal-alerts/bcb-and-cmn-establish-additional-cyber-security-requirements/
+- Grant Thornton Brasil. *Segurança cibernética: o que muda com a Resolução CMN nº 5.274/2025?* 2025. https://www.grantthornton.com.br/insights/artigos-e-publicacoes/seguranca-cibernetica-o-que-muda-com-a-cmn-5.2742025/
+- DigiCert. *Quantum-Ready FN-DSA (FIPS 206) Nears Draft Approval from NIST*. Set/2025. https://www.digicert.com/blog/quantum-ready-fndsa-nears-draft-approval-from-nist
+- NIST CSRC. *FIPS 206: FN-DSA (Falcon)*. Set/2025. https://csrc.nist.gov/presentations/2025/fips-206-fn-dsa-falcon
+- NIST. *NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption*. Mar/2025. https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption
+- SecurityWeek. *NIST Announces HQC as Fifth Standardized Post Quantum Algorithm*. Mar/2025. https://www.securityweek.com/nist-announces-hqc-as-fifth-standardized-post-quantum-algorithm/
+- OMB. *M-26-15 — Execution of the Migration to Post-Quantum Cryptography*. 24/06/2026. https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf
+- The Quantum Insider. *Quantum Security Deadlines are Here — What Happens Next?* Mai/2026. https://thequantuminsider.com/2026/05/08/post-quantum-migration-timelines-government-industry-impact/
+- NIST. *IR 8547 ipd — Transition to Post-Quantum Cryptography Standards*. Nov/2024. https://csrc.nist.gov/pubs/ir/8547/ipd
+- The Register. *Smooth AI criminal drives 'first' end-to-end agentic ransomware attack*. 02/07/2026. https://www.theregister.com/security/2026/07/02/smooth-ai-criminal-drives-first-end-to-end-agentic-ransomware-attack/5266073
+- SecurityWeek. *Agentic AI Used to Conduct Ransomware Attack via Langflow*. Jul/2026. https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/
+- IBM X-Force. *A Slopoly start to AI-enhanced ransomware attacks*. 2026. https://www.ibm.com/think/x-force/slopoly-start-ai-enhanced-ransomware-attacks
+- The Hacker News. *Hive0163 Uses AI-Assisted Slopoly Malware for Persistent Access in Ransomware Attacks*. Mar/2026. https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html
+- Anthropic. *Countering misuse of AI: September 2026*. Set/2026. https://www.anthropic.com/threat-intelligence-report-september-2026
+- Fonearena. *Anthropic September 2026 Threat Report*. Set/2026. https://www.fonearena.com/blog/492107/anthropic-september-2026-threat-report.html
+- Check Point Research. *Shai-Hulud 2.0: Inside The Second Coming*. 2025. https://blog.checkpoint.com/research/shai-hulud-2-0-inside-the-second-coming-the-most-aggressive-npm-supply-chain-attack-of-2025/
+- Microsoft Security Blog. *Shai-Hulud 2.0: Guidance for detecting, investigating, and defending against the supply chain attack*. 09/12/2025. https://www.microsoft.com/en-us/security/blog/2025/12/09/shai-hulud-2-0-guidance-for-detecting-investigating-and-defending-against-the-supply-chain-attack/
+- Cyber Security Agency of Singapore. *AD-2026-009*. 06/08/2026. https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-009/
+- Elastic Security Labs. *Shai-Hulud strikes again: CHAINDROP worm hits 400+ npm packages*. Ago/2026. https://www.elastic.co/security-labs/shai-hulud-chaindrop-npm-supply-chain
+- ISO. *ISO/IEC 27001:2022/Amd 1:2024 — Climate action changes*. Fev/2024. https://www.iso.org/standard/88435.html
+- HighTable. *ISO 27001:2022 Amendment 1*. 2024. https://hightable.io/iso270012022-amendment-1-absolutely-everything-you-need-to-know/
+- OWASP GenAI Security Project. *OWASP Top 10 for Agentic Applications for 2026*. 09/12/2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+- Teleport. *OWASP Top 10 for Agentic Applications 2026*. 2026. https://goteleport.com/blog/owasp-top-10-agentic-applications/
+- CISA. *CISA, US and International Partners Release Guide to Secure Adoption of Agentic AI*. Mai/2026. https://www.cisa.gov/news-events/news/cisa-us-and-international-partners-release-guide-secure-adoption-agentic-ai
+- DLT / TD SYNNEX Public Sector. *Navigating the Latest CISA Guidance on Agentic AI*. 04/06/2026. https://www.dlt.com/blog/2026/06/04/navigating-latest-cisa-guidance-agentic-ai
+- NIST. *IR 8596 iprd — Cyber AI Profile*. 16/12/2025. https://csrc.nist.gov/pubs/ir/8596/iprd
+- KPMG. *NIST draft Cybersecurity Framework Profile for AI* (Regulatory Alert). Fev/2026. https://kpmg.com/us/en/articles/2026/cybersecurity-nist-draft-cybersecurity-framework-for-ai-reg-alert.html

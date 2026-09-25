@@ -7,6 +7,13 @@
 >   cerca de 30 organizações, executando **80–90%** das etapas táticas sem intervenção humana
 >   direta [1][2]. Nenhum alvo do setor financeiro ou de energia foi nomeado publicamente entre as
 >   vítimas confirmadas.
+>   Em **setembro de 2026**, a própria Anthropic relatou que esse modelo de ataque autônomo
+>   **proliferou para todas as classes de ator** que investigou — inclusive criminosos com motivação
+>   financeira e hacktivistas —, e não apenas grupos estatais [16][17].
+> - O *ransomware* potencializado por IA deixou de ser projeção: em **julho de 2026** a Sysdig
+>   documentou o **JadePuffer**, descrito como o primeiro ataque de *ransomware* conduzido de ponta a
+>   ponta por um agente de IA, e a IBM X-Force atribuiu ao grupo Hive0163 o uso do *malware*
+>   **Slopoly**, provavelmente gerado por IA, em uma operação do *ransomware* Interlock [18][19][20][21].
 > - Fraude por *deepfake* já responde por **6,5%** de todas as tentativas de fraude globalmente
 >   (ante 0,1% em 2022), impulsionada por casos como o da **Arup** (Hong Kong, janeiro de 2024):
 >   **15 transferências fraudulentas** autorizadas após videoconferência com clones sintéticos de
@@ -15,14 +22,21 @@
 >   pós-quântica — **FIPS 203 (ML-KEM)**, **FIPS 204 (ML-DSA)** e **FIPS 205 (SLH-DSA)** —,
 >   respondendo à ameaça de longo prazo **"harvest now, decrypt later"**: dados cifrados hoje com
 >   RSA/ECC podem ser capturados agora para decifração futura por computação quântica [9][10].
+>   Em **24 de junho de 2026**, o memorando **OMB M-26-15** fixou para o governo federal dos EUA a
+>   mitigação prioritária do risco quântico até **31/12/2030** e a migração completa até **2035**,
+>   alinhada ao NIST IR 8547 — que, porém, **segue como rascunho** (nov/2024) [26][27][28].
 > - Ataques à cadeia de suprimentos de código aberto escalaram fortemente em 2025: a Sonatype
 >   identificou **454.600 novos pacotes maliciosos** (total acumulado acima de **1,233 milhão**,
 >   alta de **75%** ano a ano), com o primeiro malware auto-replicante conhecido em npm
 >   (**Shai-Hulud**) e mais de **800 pacotes** ligados ao Lazarus Group/APT38 [13][14].
+>   A família seguiu ativa em 2026: em **agosto de 2026**, a variante **CHAINDROP** comprometeu mais de
+>   **1.300 versões** de pacotes npm populares (cerca de **2 bilhões** de downloads mensais combinados),
+>   mirando também credenciais de ferramentas de IA [31][32].
 > - As quatro tendências têm horizontes de exposição distintos e cruzam os dois setores de forma
->   desigual: IA ofensiva, *deepfake* e cadeia de suprimentos já são risco **imediato**; a ameaça
->   quântica é de horizonte **3 a 5 anos ou mais** para a decifração em si, mas a captura de dados
->   ("colheita") já ocorre **hoje** — o que a torna urgente apesar do prazo distante.
+>   desigual: IA ofensiva, *ransomware* com IA, *deepfake* e cadeia de suprimentos já são risco **imediato**; para
+>   a ameaça quântica, o horizonte de planejamento de referência é **2030–2035** (NIST IR 8547, OMB
+>   M-26-15, G7 CEG), mas a captura de dados ("colheita") já ocorre **hoje** — o que a torna urgente
+>   apesar do prazo distante [11][26][28].
 > - **Número-chave:** fraude por *deepfake* saltou de **0,1% para 6,5%** de todas as tentativas de
 >   fraude entre 2022 e 2026 — alta de **2.137%** em quatro anos [3][4].
 
@@ -61,6 +75,43 @@ interpretativa qualitativa, não uma divergência de números. Segunda: **nenhum
 financeiro ou de energia foi nomeado publicamente** entre as vítimas confirmadas; não há confirmação
 de que instituições financeiras ou de energia especificamente (e não apenas "instituições
 financeiras" de forma genérica) estivessem entre os alvos com intrusão bem-sucedida.
+
+### Proliferação do modelo autônomo (Anthropic, setembro de 2026)
+
+O relatório de inteligência de ameaças que a Anthropic publicou em **setembro de 2026**, cobrindo
+operações interrompidas entre **dezembro de 2025 e agosto de 2026**, registra que o modelo
+operacional de ataque autônomo documentado no caso GTG-1002 **proliferou para todas as classes de
+ator** investigadas — criminosos com motivação financeira e hacktivistas, e não só grupos estatais.
+Segundo o relatório, LLMs passaram a ser embutidos em *frameworks* multiagente que executam
+reconhecimento, exploração e exfiltração em velocidade de máquina, com casos de comprometimento de
+nuvem concluídos em **2 a 3 horas** por operadores individuais; a principal mudança não seria a
+criação de técnicas inéditas, mas a redução do custo de mão de obra que antes separava Estados de
+atores com poucos recursos. Valem as mesmas ressalvas do caso anterior: é divulgação da própria
+empresa cujo produto foi abusado, e o relatório não nomeia vítimas do setor financeiro ou de energia
+[16][17].
+
+### *Ransomware* conduzido por IA (2026)
+
+Dois casos de 2026 tiram o *ransomware* potencializado por IA do campo da projeção:
+
+- **JadePuffer (Sysdig, julho de 2026):** descrito pela Sysdig como a primeira infecção de
+  *ransomware* documentada em que um agente LLM conduziu a operação inteira de extorsão. O acesso
+  inicial explorou uma instância Langflow exposta à internet (**CVE-2025-3248**, falha crítica de
+  autenticação ausente); o agente coletou credenciais, alcançou um servidor MySQL de produção e uma
+  plataforma de configuração Nacos, cifrou **1.342 itens de configuração** e chegou a apagar
+  *schemas* inteiros de banco — o que torna a recuperação impossível mesmo com pagamento do resgate.
+  Os *payloads* traziam comentários em linguagem natural justificando cada ação, típicos de código
+  gerado por LLM [18][19].
+- **Slopoly (IBM X-Force, início de 2026):** *backdoor* em PowerShell avaliado pela IBM como
+  provavelmente gerado por IA, usado pelo grupo de motivação financeira **Hive0163** em uma operação
+  do *ransomware* **Interlock**, com acesso inicial via engenharia social do tipo *ClickFix* e
+  persistência de mais de uma semana no servidor comprometido. A própria IBM ressalta que a
+  ferramenta é pouco sofisticada — o ponto relevante é a velocidade com que a IA permite produzir
+  *malware* sob medida [20][21].
+
+Para os dois setores, a lição é a mesma: o agente não precisa de técnica nova — basta encontrar
+infraestrutura negligenciada exposta à internet, e o custo marginal do ataque cai perto de zero
+(avaliação da Sysdig reproduzida pela SecurityWeek) [19].
 
 ### Escala e velocidade da adoção agêntica por atacantes (2025–2026)
 
@@ -155,10 +206,26 @@ pós-quântica, concluindo um processo de padronização iniciado em 2016:
   segurança distinta (mais conservadora), caso falhas sejam encontradas nos esquemas baseados em
   reticulados.
 
-Um quarto padrão, **FIPS 206 (FN-DSA**, baseado no algoritmo FALCON), estava previsto para
-publicação em rascunho ainda em 2024. O NIST recomendou que administradores de sistemas comecem a
-integrar os novos algoritmos imediatamente, dado que a migração completa levará tempo considerável
-[9][10].
+O NIST recomendou que administradores de sistemas comecem a integrar os novos algoritmos
+imediatamente, dado que a migração completa levará tempo considerável [9][10].
+
+### O que veio depois: FIPS 206, HQC e o cronograma 2030–2035
+
+- **FIPS 206 — FN-DSA** (assinatura baseada no FALCON): o rascunho foi **submetido para aprovação em
+  28 de agosto de 2025**, e o NIST apresentou seu status na 6ª Conferência de Padronização PQC, em
+  setembro de 2025. Até setembro de 2026, os padrões PQC **finalizados** continuam sendo apenas
+  FIPS 203, 204 e 205 [22][23].
+- **HQC** (*Hamming Quasi-Cyclic*): em **11 de março de 2025**, o NIST selecionou o HQC como quinto
+  algoritmo, um mecanismo de encapsulamento de chaves baseado em códigos corretores de erro, para
+  servir de reserva ao ML-KEM caso surjam fragilidades nos reticulados. O plano anunciado era um
+  rascunho de padrão cerca de um ano depois e a versão final em **2027** [24][25].
+- **Cronograma de deprecação:** o **NIST IR 8547** propõe **deprecar** RSA/ECC de 112 bits após
+  **2030** e **proibi-los** após **2035** — mas o documento **permanece como rascunho** (*Initial
+  Public Draft*, novembro de 2024). Em **24 de junho de 2026**, o memorando **OMB M-26-15**, que
+  implementa uma ordem executiva de 22 de junho de 2026, deu força normativa a esse horizonte no
+  governo federal dos EUA: as agências devem mitigar "o máximo de risco quântico viável" até
+  **31 de dezembro de 2030**, completar a migração até **2035** e alinhar seus planos ao IR 8547 (o
+  memorando não se aplica a sistemas de segurança nacional) [26][27][28].
 
 ### "Harvest now, decrypt later"
 
@@ -175,9 +242,11 @@ confirmado**: os artigos acadêmicos originais não foram acessados diretamente 
 aceleração do cronograma deve ser lida como avaliação de especialistas em evolução, não como
 consenso fechado [9][10].
 
-Por definição, a "colheita" de dados criptografados pode estar ocorrendo **agora**, mesmo que a
-capacidade de decifração fique a **3 a 5 anos ou mais** de distância — o que torna a migração para
-PQC uma prioridade de curto prazo apesar do horizonte de impacto distante (ver SVG desta seção).
+Por definição, a "colheita" de dados criptografados pode estar ocorrendo **agora**, mesmo que a capacidade de decifração ainda esteja distante. Não há data consensual para ela; o
+horizonte de **planejamento** adotado pelas referências oficiais é **2030–2035** (NIST IR 8547, OMB
+M-26-15 e, para o setor financeiro, "meados da década de 2030" no roteiro do G7 CEG) — o que torna a
+migração para PQC uma prioridade de curto prazo apesar do horizonte de impacto distante (ver SVG
+desta seção) [11][26][28].
 
 ### G7 Cyber Expert Group — roteiro de transição para o setor financeiro (janeiro de 2026)
 
@@ -192,8 +261,7 @@ tempo de transição e o risco de "harvest now, decrypt later" [11][12].
 
 Nenhuma das fontes consultadas menciona explicitamente requisitos de PQC dentro da regulação
 brasileira vigente — não há confirmação de que a regulação brasileira do Banco Central (Resolução
-CMN nº 5.274/2025 e Resolução BCB nº 538/2025, já detalhadas no capítulo 02, com prazo de adequação
-em março de 2026) já incorpore exigências específicas de criptografia pós-quântica.
+CMN nº 5.274/2025 e Resolução BCB nº 538/2025, já detalhadas no capítulo 02, cujo prazo de adequação se encerrou em 1º de março de 2026 [33][34]) incorpore exigências específicas de criptografia pós-quântica.
 
 ### Relevância para o setor energia — sistemas OT de longa vida
 
@@ -236,6 +304,19 @@ autonomamente pelo ecossistema de pacotes — e ataques de sequestro de pacotes 
 utilizados (ex.: `chalk`, `debug`) mostraram que mantenedores estabelecidos de pacotes de alto perfil
 tornaram-se alvo direto como ponto de entrada para distribuição em massa [13][14].
 
+A família não parou em 2025. Entre **21 e 23 de novembro de 2025**, o **Shai-Hulud 2.0** ("The
+Second Coming") comprometeu centenas de pacotes npm — de projetos como Zapier, PostHog e Postman —,
+executando o *payload* já na fase `preinstall` (antes de testes e verificações, e mesmo quando a
+instalação falha) e publicando os segredos roubados em repositórios GitHub criados nas contas das
+vítimas; a Check Point contabilizou cerca de **25 mil repositórios** afetados [29][30]. Em **agosto
+de 2026**, a variante **CHAINDROP** partiu do sequestro da conta de um mantenedor do `keyv` e usou
+as credenciais npm roubadas para contaminar automaticamente todos os pacotes que ele podia publicar:
+mais de **400 pacotes** e mais de **1.300 versões** (`keyv`, `flat-cache`, `cacheable-request`,
+entre outros), com cerca de **2 bilhões** de downloads mensais combinados. Além de credenciais de
+nuvem, GitHub, SSH e Kubernetes, o coletor mira explicitamente chaves de ferramentas de IA
+(Anthropic/Claude, OpenAI, Codex, Cursor, Gemini) — um sinal de que o ambiente do desenvolvedor que
+usa agentes de IA virou alvo próprio [31][32].
+
 Como referência histórica de marco do setor, o caso **XZ Utils** (2024) — em que uma identidade
 forjada ("Jia Tan") construiu confiança ao longo de anos como mantenedor legítimo antes de inserir um
 *backdoor* na versão 5.6.0 da biblioteca `liblzma`, usada por distribuições Linux amplamente
@@ -259,7 +340,7 @@ uso genérico) carrega o potencial de impacto físico já discutido no capítulo
 ## Síntese — Horizonte de Tempo × Impacto Setorial
 
 A figura abaixo posiciona as cinco tendências discutidas neste capítulo por horizonte de tempo
-(eixo X: imediato → 3–5 anos) e impacto potencial (eixo Y: baixo → alto). A escala é **qualitativa**
+(eixo X: imediato → horizonte de planejamento 2030–2035) e impacto potencial (eixo Y: baixo → alto). A escala é **qualitativa**
 — uma leitura de síntese deste capítulo a partir dos dados acima, não um índice publicado por
 terceiros.
 
@@ -268,11 +349,11 @@ terceiros.
 | Tendência                                    | Horizonte de tempo         | Exposição — Financeiro | Exposição — Energia |
 |:----------------------------------------------|:----------------------------|:-------------------------|:-----------------------|
 | IA ofensiva/agêntica (ataque orquestrado)      | Imediato (já em curso)      | Alta                      | Média-alta              |
-| *Ransomware* potencializado por IA             | Imediato → 1–2 anos         | Alta                      | Alta                     |
+| *Ransomware* potencializado por IA             | Imediato (já em curso)      | Alta                      | Alta                     |
 | *Deepfake* em fraude                          | Imediato (já em curso)      | Alta                      | Média (foco administrativo/financeiro) |
 | Cadeia de suprimentos de software (OSS)        | Imediato (já em curso)      | Alta                      | Alta                     |
 | Ameaça quântica / PQC — colheita de dados hoje | Imediato (colheita)          | Alta (dados de longa vida) | Média                    |
-| Ameaça quântica / PQC — decifração futura      | 3–5 anos (ou mais)          | Alta                      | Alta (ativos OT de décadas) |
+| Ameaça quântica / PQC — decifração futura      | Planejamento 2030–2035      | Alta                      | Alta (ativos OT de décadas) |
 
 **Legenda de exposição:** síntese qualitativa deste capítulo (Alta / Média-alta / Média), não um
 índice publicado por terceiros — ver observações de cada seção acima para o raciocínio setorial por
@@ -333,3 +414,65 @@ Lessons*. https://thebrightbyte.com/playbook/insights/supply-chain-attacks-xz-np
 suprimentos de software (USD 60 bilhões em 2025; USD 4,91 milhões por incidente) — URL específica
 não verificada de forma independente nesta pesquisa; ver nota de confiabilidade em
 `fontes-e-referencias/dossie-pesquisa.md`, seção "Tendências 2026".
+
+[16] Anthropic. *Countering misuse of AI: September 2026* (relatório de inteligência de ameaças).
+Setembro de 2026. https://www.anthropic.com/threat-intelligence-report-september-2026
+
+[17] Fonearena. *Anthropic September 2026 Threat Report: AI Misuse Across Cyber Operations,
+Surveillance and Weapons*. Setembro de 2026.
+https://www.fonearena.com/blog/492107/anthropic-september-2026-threat-report.html
+
+[18] The Register. *Smooth AI criminal drives 'first' end-to-end agentic ransomware attack*. 2 de
+julho de 2026. https://www.theregister.com/security/2026/07/02/smooth-ai-criminal-drives-first-end-to-end-agentic-ransomware-attack/5266073
+
+[19] SecurityWeek. *Agentic AI Used to Conduct Ransomware Attack via Langflow*. Julho de 2026.
+https://www.securityweek.com/agentic-ai-used-to-conduct-ransomware-attack-via-langflow/
+
+[20] IBM X-Force. *A Slopoly start to AI-enhanced ransomware attacks*. 2026.
+https://www.ibm.com/think/x-force/slopoly-start-ai-enhanced-ransomware-attacks
+
+[21] The Hacker News. *Hive0163 Uses AI-Assisted Slopoly Malware for Persistent Access in Ransomware
+Attacks*. Março de 2026. https://thehackernews.com/2026/03/hive0163-uses-ai-assisted-slopoly.html
+
+[22] DigiCert. *Quantum-Ready FN-DSA (FIPS 206) Nears Draft Approval from NIST*. Setembro de 2025.
+https://www.digicert.com/blog/quantum-ready-fndsa-nears-draft-approval-from-nist
+
+[23] NIST CSRC. *FIPS 206: FN-DSA (Falcon)* — apresentação de Ray Perlner na 6ª Conferência de
+Padronização PQC. Setembro de 2025. https://csrc.nist.gov/presentations/2025/fips-206-fn-dsa-falcon
+
+[24] NIST. *NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption*. Março de 2025.
+https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption
+
+[25] SecurityWeek. *NIST Announces HQC as Fifth Standardized Post Quantum Algorithm*. Março de 2025.
+https://www.securityweek.com/nist-announces-hqc-as-fifth-standardized-post-quantum-algorithm/
+
+[26] Office of Management and Budget (EUA). *M-26-15 — Execution of the Migration to Post-Quantum
+Cryptography*. 24 de junho de 2026.
+https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf
+
+[27] The Quantum Insider. *Quantum Security Deadlines are Here — What Happens Next?* Maio de 2026.
+https://thequantuminsider.com/2026/05/08/post-quantum-migration-timelines-government-industry-impact/
+
+[28] NIST. *NIST IR 8547 (Initial Public Draft) — Transition to Post-Quantum Cryptography
+Standards*. Novembro de 2024. https://csrc.nist.gov/pubs/ir/8547/ipd
+
+[29] Check Point Research. *Shai-Hulud 2.0: Inside The Second Coming, the Most Aggressive NPM Supply
+Chain Attack of 2025*. 2025.
+https://blog.checkpoint.com/research/shai-hulud-2-0-inside-the-second-coming-the-most-aggressive-npm-supply-chain-attack-of-2025/
+
+[30] Microsoft Security Blog. *Shai-Hulud 2.0: Guidance for detecting, investigating, and defending
+against the supply chain attack*. 9 de dezembro de 2025.
+https://www.microsoft.com/en-us/security/blog/2025/12/09/shai-hulud-2-0-guidance-for-detecting-investigating-and-defending-against-the-supply-chain-attack/
+
+[31] Cyber Security Agency of Singapore. *AD-2026-009 — Ongoing npm Supply Chain Attack Affecting
+Keyv and Related Packages ("Shai-Hulud" Worm)*. 6 de agosto de 2026.
+https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-009/
+
+[32] Elastic Security Labs. *Shai-Hulud strikes again: CHAINDROP worm hits 400+ npm packages*.
+Agosto de 2026. https://www.elastic.co/security-labs/shai-hulud-chaindrop-npm-supply-chain
+
+[33] Trench Rossi Watanabe. *BCB and CMN Establish Additional Cyber Security Requirements*. 2025.
+https://www.trenchrossi.com/en/legal-alerts/bcb-and-cmn-establish-additional-cyber-security-requirements/
+
+[34] Grant Thornton Brasil. *Segurança cibernética: o que muda com a Resolução CMN nº 5.274/2025?*
+2025. https://www.grantthornton.com.br/insights/artigos-e-publicacoes/seguranca-cibernetica-o-que-muda-com-a-cmn-5.2742025/
