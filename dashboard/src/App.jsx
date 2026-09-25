@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import dados from './data/dashboard.json'
 import { palette, semaforo } from './theme.js'
 import { isFinanceiro } from './edition.js'
@@ -13,6 +13,7 @@ import Fontes from './views/Fontes.jsx'
 import AmeacasAoVivo from './views/AmeacasAoVivo.jsx'
 import ExtorsaoExploracao from './views/ExtorsaoExploracao.jsx'
 import Brasil from './views/Brasil.jsx'
+import { useThreatLive, tempoRelativo, semaforoFrescor } from './hooks/useThreatLive.js'
 
 // Ordem das abas: a camada operacional vem primeiro.
 //
@@ -55,19 +56,7 @@ const VIEWS = {
   fontes: Fontes,
 }
 
-/**
- * Formata uma data ISO (YYYY-MM-DD) como texto legível em PT-BR
- * (ex.: "21 de julho de 2026"). Se a data não for parseável, retorna o
- * valor original sem quebrar a renderização.
- */
-function formatarDataPtBr(dataIso) {
-  if (!dataIso) return ''
-  const data = new Date(`${dataIso}T00:00:00`)
-  if (Number.isNaN(data.getTime())) return dataIso
-  return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(data)
-}
-
-/** Mesma data em formato curto (21/07/2026), para quando duas aparecem juntas. */
+/** Data ISO (YYYY-MM-DD) em formato curto PT-BR (21/07/2026); se não parsear, devolve o valor original. */
 function formatarDataCurtaPtBr(dataIso) {
   if (!dataIso) return ''
   const data = new Date(`${dataIso}T00:00:00`)
@@ -76,51 +65,79 @@ function formatarDataCurtaPtBr(dataIso) {
 }
 
 /**
- * Carimbo de atualização do cabeçalho.
+ * Carimbo de atualização do cabeçalho — duas camadas, duas datas.
  *
- * Duas datas diferentes, e confundi-las já custou caro: `geradoEm` é quando um
- * dado do painel mudou pela última vez; `verificadoEm` é quando as fontes
- * foram varridas pela última vez. O refresh roda a cada 3 dias e, na maioria
- * dos ciclos, não encontra nada novo — é o resultado esperado num painel de
- * dados anuais. Mostrando só `geradoEm`, um ciclo saudável que confirmou tudo
- * fica indistinguível de uma rotina morta, e o leitor conclui que o painel foi
- * abandonado. Com as duas datas, silêncio das fontes e silêncio da máquina
- * param de se parecer.
+ * O painel tem dois relógios e um selo só confundia os dois: o leitor via
+ * "Última atualização: 22 de setembro" em cima da aba Ameaças ao Vivo, que
+ * tinha sido atualizada minutos antes, e concluía que o painel estava parado.
+ *
+ * - Pesquisa: `geradoEm`/`verificadoEm` do dashboard.json, que o refresh a cada
+ *   3 dias revisa. Ciclo sem novidade confirma os dados sem mudá-los — daí
+ *   mostrar as duas datas quando diferem (silêncio das fontes não é silêncio
+ *   da máquina).
+ * - Ameaças ao vivo: `meta.geradoEm` do threat-live.json (ciclo de 20 min),
+ *   com o mesmo semáforo de frescor da aba ao vivo, para uma ingestão morta
+ *   aparecer no topo de todas as abas, e não só numa.
  */
 function CarimboAtualizacao({ geradoEm, verificadoEm }) {
+  const { estado, dados: vivo } = useThreatLive()
+  // Re-render por minuto para o "há N min" não congelar entre as buscas.
+  const [, setTique] = useState(0)
+  useEffect(() => {
+    const id = setInterval(() => setTique((n) => n + 1), 60 * 1000)
+    return () => clearInterval(id)
+  }, [])
+
   const temVerificacaoDistinta = verificadoEm && verificadoEm !== geradoEm
-  const texto = temVerificacaoDistinta
-    ? `Verificado em ${formatarDataCurtaPtBr(verificadoEm)} · dado de ${formatarDataCurtaPtBr(geradoEm)}`
-    : `Última atualização: ${formatarDataPtBr(geradoEm)}`
+  const textoPesquisa = temVerificacaoDistinta
+    ? `Pesquisa: verificada em ${formatarDataCurtaPtBr(verificadoEm)} · dado de ${formatarDataCurtaPtBr(geradoEm)}`
+    : `Pesquisa: ${formatarDataCurtaPtBr(geradoEm)}`
+
+  const geradoVivo = vivo?.meta?.geradoEm
+  const corVivo = estado === 'ok' ? semaforo[semaforoFrescor(geradoVivo)] : semaforo.vermelho
+  const textoVivo =
+    estado === 'carregando'
+      ? 'Ameaças ao vivo: carregando…'
+      : estado === 'erro' || !geradoVivo
+        ? 'Ameaças ao vivo: indisponível'
+        : `Ameaças ao vivo: ${tempoRelativo(geradoVivo)}`
+
+  const pilula = (cor) => ({
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 8,
+    padding: '6px 14px',
+    borderRadius: 999,
+    background: `${cor}1a`,
+    border: `1px solid ${cor}`,
+    color: cor,
+    fontSize: 12,
+    fontWeight: 600,
+    whiteSpace: 'nowrap',
+  })
+  const ponto = (cor) => ({ width: 8, height: 8, borderRadius: '50%', background: cor, flexShrink: 0 })
 
   return (
-    <span
-      title={
-        temVerificacaoDistinta
-          ? 'As fontes são revisadas a cada 3 dias. A segunda data é a do último número que mudou — ciclos sem novidade confirmam os dados sem alterá-los.'
-          : undefined
-      }
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 8,
-        padding: '6px 14px',
-        borderRadius: 999,
-        background: `${palette.azul}1a`,
-        border: `1px solid ${palette.azul}`,
-        color: palette.azul,
-        fontSize: 12,
-        fontWeight: 600,
-        whiteSpace: 'nowrap',
-      }}
-    >
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-end' }}>
       <span
-        aria-hidden="true"
-        className="ponto-pulsante"
-        style={{ width: 8, height: 8, borderRadius: '50%', background: palette.azul, flexShrink: 0 }}
-      />
-      {texto}
-    </span>
+        style={pilula(palette.azul)}
+        title="Síntese estratégica (abas Visão Geral a Recomendações). As fontes são revisadas a cada 3 dias; ciclos sem novidade confirmam os dados sem alterá-los."
+      >
+        <span aria-hidden="true" style={ponto(palette.azul)} />
+        {textoPesquisa}
+      </span>
+      <span
+        style={pilula(corVivo)}
+        title={
+          geradoVivo
+            ? `Camada operacional (Ameaças ao Vivo, Brasil, Extorsão & Exploração), coletada a cada 20 min. Última coleta: ${new Date(geradoVivo).toLocaleString('pt-BR')}.`
+            : 'Camada operacional (Ameaças ao Vivo, Brasil, Extorsão & Exploração), coletada a cada 20 min.'
+        }
+      >
+        <span aria-hidden="true" className="ponto-pulsante" style={ponto(corVivo)} />
+        {textoVivo}
+      </span>
+    </div>
   )
 }
 
