@@ -37,11 +37,11 @@ capítulo, para consulta rápida antes de entrar no detalhe de cada um.
 | Custo médio global de violação (2026)                | USD 4,99 milhões (+12% a/a, recorde) | IBM [1][2][43][44]       |
 | Custo médio — setor financeiro                       | USD 6,3 milhões                      | IBM [43][44]             |
 | Custo médio — setor energia                          | USD 5,2 milhões                      | IBM [43][44]             |
-| Organizações que mudaram estratégia por geopolítica   | 91%                                   | WEF [4][5]               |
+| Grandes organizações que mudaram estratégia por geopolítica | 91% (base geral: 64% incorporam ataques geopolíticos no risco) | WEF [4][5] |
 | IA como principal *driver* de mudança (2026)          | 94% dos líderes                      | WEF [4][5]               |
 | Ranking de "insegurança cibernética" (horizonte 2 anos) | #6                                  | WEF [6][7]               |
 | Setor mais visado por volume de intrusões (IR)         | Alta Tecnologia, 17% (financeiro caiu p/ 2º, 14,6%) | Mandiant [45][46] |
-| Dwell time mediano global                             | 14 dias (11→14 dias)                 | Mandiant [45][46]        |
+| Dwell time mediano global (M-Trends 2026, dados de 2025) | 14 dias (ante 11 dias no M-Trends 2025, dados de 2024) | Mandiant [45][46] |
 | Breakout time médio (movimento lateral)               | 29 minutos                           | CrowdStrike [47][48]     |
 | Ransomware em violações confirmadas                   | 48%                                   | Verizon DBIR [49][50]    |
 
@@ -55,7 +55,11 @@ custo médio global **subiu 12%, para USD 4,99 milhões** — o maior valor já 
 A leitura setorial segue o mesmo movimento de alta: o setor **financeiro** passou a **USD 6,3 milhões**
 (ante USD 5,56 milhões em 2025 [1][3]) e o setor de **energia**, para **USD 5,2 milhões** (ante USD 4,83
 milhões [1][3]) — ambos acima da média global, consistente com o enquadramento dos dois como
-infraestrutura crítica altamente regulada [43][44]. O ciclo de identificação e contenção de uma violação também piorou
+infraestrutura crítica altamente regulada [43][44]. *Nota de divergência:* a compilação da
+DataBreachCost.com para a edição 2026 traz **USD 6,29 milhões** (financeiro, ante USD 5,57 milhões) e
+**USD 5,24 milhões** (energia, ante USD 4,85 milhões) [51] — diferença apenas na 2ª casa decimal em
+relação ao comunicado da IBM; este panorama mantém os valores do comunicado oficial e registra a
+divergência. O ciclo de identificação e contenção de uma violação também piorou
 pela primeira vez em cinco anos, para **247 dias** (ante 241 em 2025) [43][44]. Este é um indicador
 metodologicamente distinto do *dwell time* (tempo de permanência) que aparece adiante: o ciclo do IBM
 mede identificação **mais** contenção; o *dwell time* da Mandiant mede apenas o tempo até a detecção. Os
@@ -147,7 +151,10 @@ incidentes analisados, seguida de transporte (7,5%), infraestrutura e serviços 
 explicação mais provável é metodológica: a ENISA mede volume bruto (dominado por DDoS de baixo impacto
 promovido por hacktivistas — 77% dos incidentes reportados, mas apenas 2% com disrupção real de
 serviço), enquanto Mandiant e IBM medem severidade/tipo de engajamento (*ransomware*, exploração
-industrial). Uma quarta leitura, agregando cobertura de mercado sobre 2025, estima que cerca de **70%**
+industrial). *Nota de atualização:* a ENISA publicou o *ENISA Threat Landscape 2026* em 22 de setembro
+de 2026, cobrindo o período de janeiro a dezembro de 2025 [52]; os números da ENISA citados neste
+capítulo seguem sendo os da edição 2025 até que os da nova edição sejam confirmados em uma segunda
+fonte independente. Uma quarta leitura, agregando cobertura de mercado sobre 2025, estima que cerca de **70%**
 de todos os incidentes do ano envolveram organizações em setores críticos (energia, manufatura,
 finanças, transporte, saúde), com **2.332 dos 4.701** incidentes de *ransomware* registrados (50%)
 mirando especificamente esses setores, e alta de **80%** ano a ano em *ransomware* contra energia e
@@ -171,7 +178,8 @@ seguinte, nem são uniformes entre tipos de ataque.
 
 Uma métrica distinta, mas complementar, é o tempo de propagação lateral após o acesso inicial
 (*breakout time*), medido pela telemetria da plataforma CrowdStrike Falcon: caiu para **29 minutos** em
-2025 (ante 48 minutos no ano anterior [22][23], queda de cerca de 65%), com o caso mais rápido registrado
+2025 (ante 48 minutos no ano anterior [22][23]) — segundo a CrowdStrike, um ataque **cerca de 65% mais
+rápido**; em tempo, a queda é de cerca de 40% —, com o caso mais rápido registrado
 em **27 segundos** [47][48]. No mesmo relatório, **82%** das detecções da CrowdStrike em 2025 já eram
 "*malware-free*" — ataques conduzidos por técnicas *hands-on-keyboard* sem uso de malware, ante 51% em
 2020 —, operações ligadas a adversários habilitados por IA cresceram **89%** ano a ano, e **42%** das
@@ -228,7 +236,7 @@ de risco cibernético.
 |:------------------------------------------|:-------------------------------------------------|:----------------------------------------------------|:----------------------------------------------------------------------------|
 | Setor mais atacado globalmente             | Mandiant: Alta Tecnologia, 17% (#1); financeiro caiu ao 2º (14,6%) [45][46] | IBM X-Force: Manufatura, #1 pelo 4º ano [19][20]     | Metodologias distintas (IR Mandiant × base própria IBM X-Force); registrar ambas, não eleger uma |
 | Vetor de acesso inicial líder              | *Histórico* (edição 2025): Mandiant *exploits* 33% > credenciais 16% [17][18]; Verizon credenciais 22% > *exploits* 20% [24][25] | *Atual* (edição 2026): Mandiant *exploits* 32% [45][46] **e** Verizon *exploits* 31% [49][50] — ambos concordam | Divergência de ordem registrada em 2025 **resolveu-se** na edição 2026; os dois vetores seguem dominantes e próximos, tratar como prioridade conjunta de defesa |
-| Tendência do *dwell time*                  | M-Trends 2025: 11 dias (leve melhora) [17][18]   | M-Trends 2026: 14 dias (piora, confirmado como fonte primária atual) [21][45][46] | Série não é monotônica; ganho de um ano-base não garante manutenção no seguinte |
+| Tendência do *dwell time*                  | M-Trends 2025 (dados de 2024): 11 dias (leve melhora) [17][18]   | M-Trends 2026 (dados de 2025): 14 dias (piora, confirmado como fonte primária atual) [21][45][46] | Série não é monotônica; ganho de um ano-base não garante manutenção no seguinte |
 | Organizações que incorporam geopolítica no risco | WEF (relatório original): 64% [4]              | Fortinet (cobertura secundária): 65% [5]            | Divergência pequena, provável arredondamento entre coberturas do mesmo dado |
 
 ## Mapa de ameaças: probabilidade × impacto
@@ -449,3 +457,9 @@ https://www.verizon.com/business/resources/reports/2026-dbir-data-breach-investi
 [50] SecurityWeek. *Verizon DBIR 2026: Vulnerability Exploitation Overtakes Credential Theft as Top
 Breach Vector*. 2026.
 https://www.securityweek.com/verizon-dbir-2026-vulnerability-exploitation-overtakes-credential-theft-as-top-breach-vector/
+
+[51] DataBreachCost.com. *IBM Cost of a Data Breach Report 2026: Key Findings ($4.99M Global)*. 2026.
+https://databreachcost.com/report/2026
+
+[52] ENISA. *ENISA Threat Landscape 2026*. 22 de setembro de 2026.
+https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026

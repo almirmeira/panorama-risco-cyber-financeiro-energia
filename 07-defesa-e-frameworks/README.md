@@ -90,6 +90,12 @@ necessidades tecnológicas contemporâneas — entre eles, inteligência de amea
 prevenção de vazamento de dados, monitoramento de atividades, mascaramento de dados e codificação
 segura [3][4].
 
+A edição vigente é a **ISO/IEC 27001:2022 com a Emenda 1:2024** (*Climate action changes*,
+fevereiro de 2024). A emenda acrescenta à cláusula 4.1 a exigência de a organização determinar se a
+mudança climática é uma questão relevante para o SGSI e inclui uma nota na cláusula 4.2 sobre
+requisitos climáticos de partes interessadas; **não altera o Anexo A**, que segue com 93 controles.
+Não existe uma "ISO/IEC 27001:2026" [9][10].
+
 **Relevância para finanças e energia:** a ISO/IEC 27001 é frequentemente citada como referência de
 **certificação voluntária** complementar às exigências regulatórias específicas de cada setor — BCB
 no financeiro, ANEEL no energia —, ambas já detalhadas nos capítulos 02 e 03. Diferentemente do CSF
@@ -174,6 +180,20 @@ Não foi identificada, no escopo desta pesquisa, uma exigência regulatória exp
 **[NÃO CONFIRMADO — nenhuma menção nominal a Zero Trust ou ao NIST SP 800-207 localizada nos textos
 regulatórios brasileiros consultados em 2026-07-21]** [7].
 
+## Referências para IA agêntica (2025–2026)
+
+Com a IA agêntica já usada como ferramenta de ataque (capítulo 06), três referências recentes
+passaram a orientar a adoção defensiva de agentes de IA nos dois setores:
+
+| Referência                                             | Emissor e data                         | Status em set/2026        | Uso prático                                                     |
+|:---------------------------------------------------------|:------------------------------------------|:-----------------------------|:-------------------------------------------------------------------|
+| OWASP Top 10 for Agentic Applications 2026 (ASI01–ASI10) | OWASP GenAI Security Project, 09/12/2025  | Publicado                    | Catálogo de riscos: sequestro de objetivo, uso indevido de ferramentas, abuso de identidade e privilégio, cadeia de suprimentos agêntica, envenenamento de memória, agentes fora de controle |
+| *Careful Adoption of Agentic AI Services*                | CISA com parceiros Five Eyes, abr–mai/2026 | Publicado                    | Privilégio mínimo para agentes, começar por casos de baixo risco, integrar ao processo de risco existente, supervisão humana em ações sensíveis |
+| NIST IR 8596 — *Cyber AI Profile* (perfil do CSF 2.0)    | NIST, 16/12/2025                          | **Rascunho preliminar** (sem versão final) | Mapear segurança de componentes de IA, defesa com IA e resposta a ataques com IA às funções do CSF 2.0 |
+
+Nenhuma das três é exigida pela regulação brasileira do Banco Central ou da ANEEL; são referências de
+boa prática [11][12][13][14][15][16].
+
 ## Defesa em profundidade e Zero Trust em camadas
 
 A figura abaixo organiza os quatro frameworks acima em um modelo único de **defesa em profundidade**,
@@ -229,3 +249,28 @@ https://csrc.nist.gov/pubs/sp/800/207/a/final)
 
 [8] Palo Alto Networks. *What Is NIST SP 800-207? Zero Trust Architecture Framework*.
 https://www.paloaltonetworks.com/cyberpedia/what-is-nist-sp-800-207
+
+[9] ISO. *ISO/IEC 27001:2022/Amd 1:2024 — Climate action changes*. Fevereiro de 2024.
+https://www.iso.org/standard/88435.html
+
+[10] HighTable. *ISO 27001:2022 Amendment 1 – Absolutely Everything You Need to Know*. 2024.
+https://hightable.io/iso270012022-amendment-1-absolutely-everything-you-need-to-know/
+
+[11] OWASP GenAI Security Project. *OWASP Top 10 for Agentic Applications for 2026*. 9 de dezembro
+de 2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+
+[12] Teleport. *OWASP Top 10 for Agentic Applications 2026: Key Takeaways & How to Take Action*.
+2026. https://goteleport.com/blog/owasp-top-10-agentic-applications/
+
+[13] CISA. *CISA, US and International Partners Release Guide to Secure Adoption of Agentic AI*
+(*Careful Adoption of Agentic Artificial Intelligence (AI) Services*). Maio de 2026.
+https://www.cisa.gov/news-events/news/cisa-us-and-international-partners-release-guide-secure-adoption-agentic-ai
+
+[14] DLT / TD SYNNEX Public Sector. *Navigating the Latest CISA Guidance on Agentic AI*. 4 de junho
+de 2026. https://www.dlt.com/blog/2026/06/04/navigating-latest-cisa-guidance-agentic-ai
+
+[15] NIST. *NIST IR 8596 (iprd) — Cybersecurity Framework Profile for Artificial Intelligence (Cyber
+AI Profile)*. 16 de dezembro de 2025. https://csrc.nist.gov/pubs/ir/8596/iprd
+
+[16] KPMG. *NIST draft Cybersecurity Framework Profile for AI* (Regulatory Alert). 2026.
+https://kpmg.com/us/en/articles/2026/cybersecurity-nist-draft-cybersecurity-framework-for-ai-reg-alert.html

@@ -34,14 +34,14 @@ foi estabelecido.
 
 | Eixo comparativo                          | Setor Financeiro                                                          | Setor Energia (OT/ICS)                                                     |
 |:--------------------------------------------|:------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|
-| Superfície de ataque predominante          | APIs de Open Finance (128–154 milhões de consentimentos), app/Pix, terceiros de infraestrutura (C&M Software) [21][22] | Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (≈94% inadequadamente protegidas contra *deauth*, complemento dos 6% adequados do cap. 03) [23][24] |
+| Superfície de ataque predominante          | APIs de Open Finance (~209–240 milhões de consentimentos ativos em jul/2026, ante 154 milhões em dez/2025 — Let's Money registra 208,79 mi em 31/07/2026 e a Zetta, 239,8 mi em jul/2026, ambas citando o dashboard oficial; divergência registrada) [36][37], app/Pix, terceiros de infraestrutura (C&M Software) [21][22] | Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (≈94% inadequadamente protegidas contra *deauth*, complemento dos 6% adequados do cap. 03) [23][24] |
 | Atores dominantes (motivação)              | Cibercrime financeiramente motivado (90% Verizon DBIR); DPRK-nexus (USD 2,02 bi em 2025, +51%); FIN7, Qilin, Akira [5][6][7][8] | Atores estatais (Sandworm/GRU 74455, Volt Typhoon/China) com foco em sabotagem/pré-posicionamento; *ransomware* oportunista (DarkSide, Everest) [5][6][7][8][17][18] |
 | Vetor de impacto principal                 | Financeiro/fraude — desvio direto de recursos, vazamento de dados pessoais | Físico/disponibilidade — apagão, dano a equipamento, risco potencial à vida [17][18][19][20] |
 | Tempo de permanência / detecção típica     | Detecção forçada em ~72h por prazo regulatório de notificação; 34% do custo de uma violação vai para detecção/escalonamento [25][26] | *Dwell time* médio de 42 dias em *ransomware* OT — cai para 5 dias com visibilidade OT plena [3][4] |
-| Maturidade defensiva                       | Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude [27][28] | Heterogênea — 52% já colocam OT sob o CISO (ante 16% em 2022), mas sistemas legados sem suporte seguem comuns [23][24] |
+| Maturidade defensiva                       | Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude [27][28] | Heterogênea — 52% já colocavam OT sob o CISO na edição 2025 (ante 16% em 2022) [23]; na edição 2026, 60% apontam o CISO como responsável final pela segurança OT (ante 69% em 2025) [38][39] — uma cobertura secundária cita 53% sob CISO/CSO, métrica distinta e de fonte única, não adotada [40] —, mas sistemas legados sem suporte seguem comuns [23][24] |
 | Pressão / maturidade regulatória           | Alta e crescente — CMN 4.893/2021 + BCB 85/2021, atualizadas por CMN 5.274/2025 e BCB 538/2025, prazo março/2026 [9][11] | Em maturação — RN ANEEL nº 964/2021 (ARCiber) em vigor desde 2022, mas 1ª fiscalização concreta só em 2025 (Despacho ANEEL nº 427/2025) [10][12] |
 | Frequência/escala do ataque em 2025        | 202 incidentes diretos de *ransomware* (+30% a/a); 2º setor mais atacado globalmente (FS-ISAC) [1][2][29] | ~3.300 organizações industriais impactadas por *ransomware* (+64% a/a); 22,8% dos computadores ICS de energia elétrica com objetos maliciosos bloqueados (3º setor mais atacado) [1][2][3][4][29][30] |
-| Custo médio de um incidente                | USD 6,3 milhões por violação (ed. 2026, ante USD 5,56 milhões em 2025) [34][35]      | USD 5,2 milhões por violação no setor de energia (ed. 2026, ante USD 4,83 milhões em 2025); USD 4,56 milhões quando há impacto direto em OT, qualquer setor (ed. 2025) [25][31][34][35] |
+| Custo médio de um incidente                | USD 6,3 milhões por violação (ed. 2026, ante USD 5,56 milhões em 2025) [34][35]; a compilação DataBreachCost.com traz USD 6,29 mi (ante 5,57) — divergência na 2ª casa decimal [41]      | USD 5,2 milhões por violação no setor de energia (ed. 2026, ante USD 4,83 milhões em 2025; DataBreachCost.com: USD 5,24 mi, ante 4,85 [41]); USD 4,56 milhões quando há impacto direto em OT, qualquer setor (ed. 2025) [25][31][34][35] |
 
 ## Análise cross-over: onde os setores convergem
 
@@ -249,3 +249,23 @@ https://newsroom.ibm.com/2026-07-29-ibm-study-one-in-four-malicious-breaches-are
 
 [35] Global News. *Data breach costs mount as attacks target critical infrastructure: IBM*. 2026.
 https://globalnews.ca/news/11998290/ibm-data-breach-costs-canada/
+
+[36] Let's Money. *Open Finance entra em nova fase com desafio de governança*. 27 de agosto de 2026
+(atualizado em 12 de setembro de 2026).
+https://www.letsmoney.com.br/noticias/open-finance-208-milhoes-consentimentos-governanca/
+
+[37] Zetta. *Cinco anos de transformação e uma agenda para o futuro — Open Finance no Brasil*. Setembro
+de 2026. https://static.poder360.com.br/uploads/2026/09/Zetta_2026_Open-Finance-no-Brasil_Final-1-1.pdf
+
+[38] Fortinet. *While OT Security Is Maturing, Risk Is Not Slowing Down* (2026 State of Operational
+Technology and Cybersecurity Report). 9 de junho de 2026.
+https://www.fortinet.com/blog/operational-technology/while-ot-security-is-maturing-risk-is-not-slowing-down
+
+[39] CyberSecurityStats.com. *2026 State of Operational Technology and Cybersecurity — Fortinet*. 2026.
+https://cybersecuritystats.com/reports/fortinet/2026-state-of-operational-technology-and-cybersecurity
+
+[40] Cybersecurity Insiders. *Fortinet OT Cybersecurity Report: 53% of Industrial Orgs Now Under CISO*.
+11 de junho de 2026. https://www.cybersecurity-insiders.com/fortinet-ot-cybersecurity-report-ciso-ownership/
+
+[41] DataBreachCost.com. *IBM Cost of a Data Breach Report 2026: Key Findings ($4.99M Global)*. 2026.
+https://databreachcost.com/report/2026

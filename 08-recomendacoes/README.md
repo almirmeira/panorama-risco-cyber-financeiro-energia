@@ -14,8 +14,9 @@
 >   já causou os dois maiores incidentes de credencial/acesso documentados neste relatório — C&M
 >   Software no financeiro [2][3] e o pré-posicionamento de ~300 dias do Volt Typhoon/VOLTZITE em uma
 >   concessionária de Massachusetts, na energia [23][24].
-> - A janela regulatória já está aberta e tem prazo: o setor financeiro tem até **março de 2026**
->   para se adequar às Resoluções CMN nº 5.274/2025 e BCB nº 538/2025; a ANEEL iniciou em 2025 sua
+> - A janela regulatória já está fechada no financeiro: o prazo de adequação às Resoluções CMN nº
+>   5.274/2025 e BCB nº 538/2025 encerrou-se em **1º de março de 2026**, e a partir daí a não
+>   conformidade é achado de supervisão [8][25][26]; a ANEEL iniciou em 2025 sua
 >   primeira fiscalização concreta da RN nº 964/2021 (ARCiber), quatro anos depois da norma entrar em
 >   vigor — nenhum dos dois setores deve tratar a regulação como teto de maturidade, apenas como piso
 >   [8][9][10].
@@ -35,6 +36,8 @@ recomendação se ancora. A audiência principal é de liderança executiva e bo
 recomendada é: primeiro o bloco por setor, depois os quick wins de 90 dias (que qualquer organização,
 financeira ou de energia, deveria já ter em andamento), e por fim as perguntas de governança que um
 conselho deve dirigir à liderança de segurança.
+Os horizontes das tabelas (0–90 dias, 3–6 meses, 6–12 meses, 12+ meses) contam **a partir de
+setembro de 2026**, data desta revisão.
 
 ## Recomendações — Setor Financeiro
 
@@ -49,8 +52,9 @@ gestão de risco de terceiros.
 | Segurança de API do Open Finance: *rate limiting*, detecção de anomalia de consentimento, revogação automática de tokens suspeitos [1][12] | Alta          | 3–6 meses       | Alto       | ISO/IEC 27001 (controles tecnológicos, 8.x); Zero Trust (pilar 3, acesso por sessão) |
 | Resiliência a DDoS: contrato de mitigação dedicado, testes de capacidade e plano de comunicação de crise durante indisponibilidade [13][14] | Alta          | 3–6 meses       | Médio      | NIST CSF 2.0 (*Protect*, *Respond*)                            |
 | Verificação fora de banda para aprovação de transferências de alto valor, mitigando fraude por *deepfake* de executivo [6][15] | Alta          | 0–90 dias       | Baixo      | NIST CSF 2.0 (*Protect*); Zero Trust (pilar 4)                 |
-| Adequação plena às Resoluções CMN nº 5.274/2025 e BCB nº 538/2025 antes do prazo de março de 2026, com gap analysis já concluído [8]        | Crítica       | 0–90 dias       | Alto       | NIST CSF 2.0 (*Govern*); regulação BCB                         |
-| Inventário e priorização de migração PQC para dados financeiros de longa vida útil, alinhado ao roteiro do G7 CEG (meados dos anos 2030) [16] | Média         | 6–12 meses      | Médio      | NIST CSF 2.0 (*Identify*); PQC (FIPS 203/204/205)              |
+| Evidenciar a conformidade com as Resoluções CMN nº 5.274/2025 e BCB nº 538/2025 (prazo encerrado em 1º/03/2026): 14 controles mínimos, isolamento de Pix/STR e teste de intrusão anual independente, com evidência pronta para a supervisão [8][25][26] | Crítica       | 0–90 dias       | Alto       | NIST CSF 2.0 (*Govern*); regulação BCB                         |
+| Inventário e priorização de migração PQC para dados financeiros de longa vida útil, alinhado ao roteiro do G7 CEG (meados dos anos 2030) e aos marcos 2030/2035 do NIST IR 8547 (ainda rascunho) e do OMB M-26-15 [16][29][30] | Média         | 6–12 meses      | Médio      | NIST CSF 2.0 (*Identify*); PQC (FIPS 203/204/205)              |
+| Inventário e governança de agentes de IA em uso: privilégio mínimo, supervisão humana em ações que movimentam valores ou tocam processo físico, conforme OWASP Top 10 for Agentic Applications 2026 e guia da CISA [27][28] | Alta          | 3–6 meses       | Médio      | NIST CSF 2.0 (*Govern*, *Identify*); Zero Trust (pilar 3)      |
 
 ## Recomendações — Setor Energia
 
@@ -67,6 +71,7 @@ já detalhado no Modelo Purdue do capítulo 03 e na aplicação cautelosa de Zer
 | Avaliação formal de Nível de Segurança (SL) por zona crítica, priorizando SL mais alto para geração e transmissão [17][19] | Alta          | 6–12 meses      | Alto       | IEC 62443 (SL 1–4)                                             |
 | Aplicação cautelosa de Zero Trust na fronteira TI↔OT (verificação contínua entre domínios, não reautenticação constante dentro da zona de controle) [6][7] | Alta          | 6–12 meses      | Alto       | Zero Trust (NIST SP 800-207, aplicação adaptada a OT)          |
 | Planejamento de migração PQC para ativos de campo de longa vida útil (medidores inteligentes, IEDs de subestação) [16][20] | Média         | 12+ meses       | Alto       | PQC (FIPS 203/204/205); IEC 62443                              |
+| Inventário e governança de agentes de IA em uso: privilégio mínimo, supervisão humana em ações que movimentam valores ou tocam processo físico, conforme OWASP Top 10 for Agentic Applications 2026 e guia da CISA [27][28] | Alta          | 3–6 meses       | Médio      | NIST CSF 2.0 (*Govern*, *Identify*); Zero Trust (pilar 3)      |
 
 ## Quick wins de 90 dias (transversais aos dois setores)
 
@@ -81,7 +86,7 @@ ferramentas já existentes na maioria das organizações de ambos os setores.
 | Backups isolados (*air-gapped* ou imutáveis) e restauração testada de fato, não apenas configurada | Financeiro + Energia | Médio   | Mitigação direta do vetor dominante de *ransomware* nos dois setores (capítulos 02 e 03) [4][5] |
 | Plano de resposta a incidentes exercitado em simulação (*tabletop*) nos últimos 12 meses | Financeiro + Energia | Baixo   | Reduz o tempo de decisão sob pressão; setor financeiro já opera sob prazo regulatório de notificação em horas [8] |
 | Revisão e revogação de acessos de terceiros/fornecedores não utilizados nos últimos 90 dias | Financeiro + Energia | Baixo   | Reduz a superfície de exposição que caracterizou C&M Software e Petrobras/SAExploration [2][18] |
-| Gap analysis formal contra o framework aplicável (BCB/CMN para financeiro, RN ANEEL 964 para energia) | Financeiro + Energia | Baixo   | Antecipa exigências de prazo já vigentes (março/2026 no financeiro; fiscalização ativa na energia) [8][9] |
+| Gap analysis formal contra o framework aplicável (BCB/CMN para financeiro, RN ANEEL 964 para energia) | Financeiro + Energia | Baixo   | Documenta a conformidade com exigências já exigíveis (desde 1º/03/2026 no financeiro; fiscalização ativa na energia) [8][9][25] |
 
 ## Perguntas que o board deve fazer
 
@@ -98,9 +103,10 @@ efetiva sobre a liderança de segurança, e não apenas receber um relatório de
 3. Temos um inventário atualizado de todo fornecedor com acesso a sistemas críticos (Pix/Open
    Finance no financeiro; OT/ICS na energia), e sabemos qual seria o *blast radius* se um deles fosse
    comprometido, como ocorreu com C&M Software e com a contratada da Petrobras [2][18]?
-4. Estamos dentro do prazo regulatório aplicável — março de 2026 para as Resoluções BCB/CMN no
-   financeiro, exigências da RN ANEEL nº 964/2021 já sob fiscalização ativa na energia — e existe
-   evidência documental pronta para auditoria, não apenas a intenção declarada [8][9]?
+4. Com o prazo das Resoluções CMN nº 5.274/2025 e BCB nº 538/2025 encerrado em 1º de março de 2026,
+   conseguimos demonstrar hoje, com evidência documental, a conformidade com cada um dos 14 controles
+   mínimos — e, na energia, com as exigências da RN ANEEL nº 964/2021, já sob fiscalização ativa —,
+   não apenas a intenção declarada [8][9][25]?
 5. Qual parcela do nosso orçamento de segurança está alocada a detecção e resposta, versus apenas
    prevenção — e essa alocação reflete o custo real de detecção tardia (34% do custo total de uma
    violação no setor financeiro) [22]?
@@ -115,7 +121,8 @@ efetiva sobre a liderança de segurança, e não apenas receber um relatório de
    documentada pelo board antes do incidente, ou seria tomada sob pressão no momento do ataque?
 10. Nosso plano de migração para criptografia pós-quântica (PQC) já começou o inventário de dados e
     ativos de longa vida útil, dado que a "colheita" de dados cifrados hoje para decifração futura já
-    está em curso, segundo o roteiro do G7 CEG [16]?
+    está em curso, segundo o roteiro do G7 CEG [16], e com os marcos 2030/2035 que o NIST IR 8547 (rascunho) e o OMB M-26-15 já usam como referência
+    [29][30]?
 
 ![Roadmap de implementação em quatro horizontes de tempo — 0–90 dias, 3–6 meses, 6–12 meses e 12+ meses — com trilhas paralelas para o setor financeiro (azul) e o setor de energia (âmbar), e uma faixa transversal em verde para iniciativas comuns aos dois setores](../assets/diagramas/08-roadmap.svg)
 
@@ -200,3 +207,22 @@ https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a
 
 [24] SecurityWeek. *China's Volt Typhoon Hackers Dwelled in US Electric Grid for 300 Days*. 2026.
 https://www.securityweek.com/chinas-volt-typhoon-hackers-dwelled-in-us-electric-grid-for-300-days/
+
+[25] Trench Rossi Watanabe. *BCB and CMN Establish Additional Cyber Security Requirements*. 2025.
+https://www.trenchrossi.com/en/legal-alerts/bcb-and-cmn-establish-additional-cyber-security-requirements/
+
+[26] Grant Thornton Brasil. *Segurança cibernética: o que muda com a Resolução CMN nº 5.274/2025?*
+2025. https://www.grantthornton.com.br/insights/artigos-e-publicacoes/seguranca-cibernetica-o-que-muda-com-a-cmn-5.2742025/
+
+[27] OWASP GenAI Security Project. *OWASP Top 10 for Agentic Applications for 2026*. 9 de dezembro
+de 2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+
+[28] CISA. *CISA, US and International Partners Release Guide to Secure Adoption of Agentic AI*.
+Maio de 2026. https://www.cisa.gov/news-events/news/cisa-us-and-international-partners-release-guide-secure-adoption-agentic-ai
+
+[29] Office of Management and Budget (EUA). *M-26-15 — Execution of the Migration to Post-Quantum
+Cryptography*. 24 de junho de 2026.
+https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf
+
+[30] NIST. *NIST IR 8547 (Initial Public Draft) — Transition to Post-Quantum Cryptography
+Standards*. Novembro de 2024. https://csrc.nist.gov/pubs/ir/8547/ipd

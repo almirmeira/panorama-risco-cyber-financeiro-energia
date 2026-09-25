@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-09-22",
-    "verificadoEm": "2026-09-22",
+    "geradoEm": "2026-09-25",
+    "verificadoEm": "2026-09-25",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -17,19 +17,19 @@
       "kpis": [
         { "label": "Custo médio de violação de dados", "valor": "6,3", "unidade": "US$ mi", "delta": "+13% a/a (ante US$ 5,56 mi em 2025)", "fonte": "cap. 02", "estimativa": false },
         { "label": "Ransomware direto contra instituições", "valor": "202", "unidade": "incidentes em 2025", "delta": "+30% a/a (+76% Q1 2026)", "fonte": "cap. 02", "estimativa": false },
-        { "label": "Motivação financeira das violações", "valor": "90", "unidade": "%", "delta": "espionagem: 12%", "fonte": "cap. 02", "estimativa": true },
-        { "label": "Fraude por deepfake nas tentativas de fraude", "valor": "6,5", "unidade": "%", "delta": "+2.137% em 3 anos (de 0,1%)", "fonte": "cap. 02", "estimativa": false },
-        { "label": "DDoS no setor (2022→2023)", "valor": "+154", "unidade": "%", "delta": "35%+ de todo DDoS observado", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Motivação financeira das violações (DBIR 2025)", "valor": "90", "unidade": "%", "delta": "espionagem: 12% (DBIR 2026 traz 98%/3% — não confirmado)", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Fraude por deepfake nas tentativas de fraude (Signicat, 2025)", "valor": "6,5", "unidade": "%", "delta": "+2.137% em 3 anos (de 0,1%); 20% da fraude biométrica (Entrust 2026)", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Duração mediana de DDoS L3/L4 no setor (desde 2024)", "valor": "+738", "unidade": "%", "delta": "alvo nº 1 de DDoS volumétrico em 2024; L7 +23% 2023→2024 (antes: +154% 2022→2023)", "fonte": "cap. 02", "estimativa": false },
         { "label": "Prejuízo com golpes financeiros no Brasil (2024)", "valor": "10,1", "unidade": "R$ bi", "delta": "+17% a/a", "fonte": "cap. 02", "estimativa": false },
-        { "label": "Consentimentos ativos de Open Finance (Brasil)", "valor": "128", "unidade": "milhões", "delta": "líder global entre 78+ países", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Consentimentos ativos de Open Finance (Brasil, jul/2026)", "valor": "200+", "unidade": "milhões", "delta": "ante 154 mi em dez/2025 e 128 mi em jan/2026 (Sensedia); leituras do dashboard oficial divergem: 208,8–239,8 mi", "fonte": "cap. 02", "estimativa": false },
         { "label": "Incidentes relevantes reportados ao BC (Brasil)", "valor": "76", "unidade": "incidentes em 2025", "delta": "+29% a/a (ante 59 em 2024)", "fonte": "cap. 02", "estimativa": false }
       ],
       "dimensoes": [
-        { "nome": "Fraude / PIX", "nivel": "vermelho", "justificativa": "28 milhões de fraudes envolvendo Pix (jan–set/2025, ADDP); R$ 10,1 bi em prejuízo com golpes em 2024 (+17%); mecanismo de 'devolução dupla' explorado no MED; R$ 2,7 bi em fraude Pix formalmente apurada pela Febraban em 2 anos (+43%).", "fonte": "cap. 02" },
-        { "nome": "DDoS", "nivel": "ambar", "justificativa": "Setor respondeu por mais de 35% de todo DDoS observado em 2023 (+154% frente a 2022), ultrapassando o setor de games; FS-ISAC reforça DDoS entre as quatro ameaças do setor, mas não há atualização quantitativa confirmada para 2025–2026.", "fonte": "cap. 02", "estimativa": true },
-        { "nome": "Ransomware", "nivel": "vermelho", "justificativa": "156→202 incidentes diretos (2024→2025, +30%), com Q1 2026 já 76% acima do mesmo período de 2025; grupos ativos subiram de 37 para 48; Qilin reivindicou 59 vítimas, incluindo caso GJTec com 32 instituições sul-coreanas via um único MSP.", "fonte": "cap. 02" },
-        { "nome": "Terceiros / cadeia de suprimentos", "nivel": "vermelho", "justificativa": "Caso C&M Software forçou suspensão de três instituições do Pix (Transfeera, Soffy, Nuoro Pay) e desvio de ao menos R$ 400 milhões; caso FictorPay (R$ 26 mi, ~280 transações Pix) foi o quarto incidente contra fintechs brasileiras em três meses, com R$ 1,74 bi em perdas acumuladas desde jul/2024. Em jan/2026, o Banco do Nordeste sofreu ataque via PSTI terceirizado com prejuízo de R$ 146,6 mi, só revelado no balanço do 1º tri. 2026.", "fonte": "cap. 02" },
-        { "nome": "Regulação", "nivel": "ambar", "justificativa": "Resoluções CMN nº 4.893/2021 e BCB nº 85/2021 estão entre as mais maduras do mundo, mas foram atualizadas por CMN nº 5.274/2025 e BCB nº 538/2025 com prazo de adequação em março de 2026 — janela regulatória apertada e ainda em curso. O próprio BC reportou 76 incidentes cibernéticos relevantes no SFN em 2025 (+29% vs. 59 em 2024), atribuídos a dependência de terceiros e uso de APIs sem avaliação de risco adequada.", "fonte": "cap. 02" }
+        { "nome": "Fraude / PIX", "nivel": "vermelho", "justificativa": "28 milhões de fraudes envolvendo Pix (jan–set/2025, ADDP); R$ 10,1 bi em prejuízo com golpes em 2024 (+17%, Febraban — ainda o dado mais recente da série); 2,26 milhões de estelionatos registrados em 2025 (+2,7%; +20,6% por meio eletrônico, FBSP); R$ 2,7 bi em fraude Pix formalmente apurada pela Febraban em 2 anos (+43%). Resposta regulatória: MED 2.0 obrigatório desde 02/02/2026 (Res. BCB 493/2025) e marcação de suspeita de fraude no DICT (Res. BCB 587, de 18/09/2026).", "fonte": "cap. 02" },
+        { "nome": "DDoS", "nivel": "ambar", "justificativa": "Setor foi o alvo nº 1 de DDoS volumétrico em 2024, com DDoS de aplicação (L7) +23% frente a 2023 (FS-ISAC/Akamai, jun/2025); em 2025 a duração mediana dos ataques L3/L4 subiu 738% frente a 2024 (Akamai SOTI 2026). Série anterior: +154% em 2022→2023, com 35%+ de todo DDoS observado.", "fonte": "cap. 02", "estimativa": false },
+        { "nome": "Ransomware", "nivel": "vermelho", "justificativa": "156→202 incidentes diretos (2024→2025, +30%), com Q1 2026 já 76% acima do mesmo período de 2025; grupos ativos subiram de 37 (2023) para 48 (2025); Qilin reivindicou 59 vítimas, incluindo caso GJTec com 32 instituições sul-coreanas via um único MSP.", "fonte": "cap. 02" },
+        { "nome": "Terceiros / cadeia de suprimentos", "nivel": "vermelho", "justificativa": "Caso C&M Software forçou suspensão de três instituições do Pix (Transfeera, Soffy, Nuoro Pay), com R$ 813 mi desviados segundo a PF (estimativa inicial: ≥ R$ 400 mi); no fim de ago/2025, a Sinqia teve R$ 710 mi desviados (HSBC e Artta) via credenciais de fornecedores de TI; caso FictorPay (R$ 26 mi, ~280 transações Pix) foi o quarto incidente contra fintechs brasileiras em três meses, com R$ 1,74 bi em perdas acumuladas desde jul/2024. Em jan/2026, o Banco do Nordeste sofreu ataque via PSTI terceirizado com prejuízo de R$ 146,6 mi, só revelado no balanço do 1º tri. 2026. Em ago/2026, a registradora TAG (Stone) barrou tentativa de fraude de R$ 350 mi em recebíveis, e a PF deflagrou a Operação Pane Seca (invasões a sistemas de instituições financeiras, ~R$ 227 mi).", "fonte": "cap. 02" },
+        { "nome": "Regulação", "nivel": "ambar", "justificativa": "Resoluções CMN nº 4.893/2021 e BCB nº 85/2021 estão entre as mais maduras do mundo e foram atualizadas por CMN nº 5.274/2025 e BCB nº 538/2025 (18/12/2025), cujo prazo de adequação venceu em 1º/03/2026 — o marco está agora em fase de supervisão. Em 2026 vieram o MED 2.0 obrigatório (Res. BCB 493/2025, desde 02/02/2026) e a Res. BCB 587/2026 (marcação de suspeita de fraude no DICT). O próprio BC reportou 76 incidentes cibernéticos relevantes no SFN em 2025 (+29% vs. 59 em 2024), atribuídos a dependência de terceiros e uso de APIs sem avaliação de risco adequada.", "fonte": "cap. 02" }
       ],
       "barra": {
         "titulo": "Ransomware direto contra o setor financeiro (incidentes/ano)",
@@ -38,12 +38,12 @@
         "fonte": "cap. 02"
       },
       "pizza": {
-        "titulo": "Motivação das violações — % das violações do setor",
+        "titulo": "Motivação das violações — % das violações do setor (DBIR 2025)",
         "itens": [
           { "nome": "Financeira", "valor": 90 },
           { "nome": "Espionagem", "valor": 12 }
         ],
-        "nota": "Categorias do Verizon DBIR podem coocorrer — não somam 100%.",
+        "nota": "Categorias do Verizon DBIR podem coocorrer — não somam 100%. DBIR 2026 (p. 84) traz 98%/3%, fonte primária única, não confirmado em 24/09/2026.",
         "fonte": "cap. 02"
       }
     },
@@ -54,19 +54,19 @@
       "riscoScore": 75,
       "riscoLabel": "Crítico",
       "kpis": [
-        { "label": "Custo médio de violação de dados", "valor": "5,2", "unidade": "US$ mi", "delta": "+8% a/a (ante US$ 4,83 mi em 2025)", "fonte": "cap. 03", "estimativa": false },
-        { "label": "Organizações industriais impactadas por ransomware", "valor": "~3.300", "unidade": "organizações (2025)", "delta": "+64% a/a; 119 grupos ativos", "fonte": "cap. 03", "estimativa": false },
+        { "label": "Custo médio de violação de dados", "valor": "5,2", "unidade": "US$ mi", "delta": "+8% a/a (US$ 5,24 mi; ante US$ 4,83 mi em 2025)", "fonte": "cap. 03", "estimativa": false },
+        { "label": "Organizações industriais impactadas por ransomware", "valor": "~3.300", "unidade": "organizações (2025)", "delta": "ataques +64% a/a; grupos +49% (80→119); 2T2026: 1.140 incidentes (+12% s/ 1T2026)", "fonte": "cap. 03", "estimativa": false },
         { "label": "Computadores ICS atacados — energia elétrica", "valor": "22,8", "unidade": "% (H1 2025)", "delta": "3º setor mais atacado globalmente; último recorte setorial disponível — a série global caiu para 19,15% no 2º tri. 2026, mas o setor não foi remedido", "fonte": "cap. 03", "estimativa": true },
         { "label": "Dwell time de ransomware em OT", "valor": "42 → 5", "unidade": "dias", "delta": "8x mais rápido com visibilidade OT plena", "fonte": "cap. 03", "estimativa": false },
-        { "label": "Organizações com ≥1 incidente de cibersegurança em OT", "valor": "50", "unidade": "% (último ano)", "delta": "Fortinet 2025", "fonte": "cap. 03", "estimativa": false },
-        { "label": "Advisórios ICS publicados pela CISA (2025)", "valor": ">450", "unidade": "advisórios", "delta": "200+ fornecedores, 700+ produtos", "fonte": "cap. 03", "estimativa": true }
+        { "label": "Organizações com 1 a 9 intrusões em OT", "valor": "71", "unidade": "% (Fortinet 2026)", "delta": "ante 47% em 2025 (parte da alta = melhor detecção); TI+OT simultâneas: 24% (ante 60%); antes: 50% com ≥1 incidente (Fortinet 2025)", "fonte": "cap. 03", "estimativa": false },
+        { "label": "Advisórios ICS publicados pela CISA (2025)", "valor": ">500", "unidade": "advisórios", "delta": "508 (Forescout; 2.155 CVEs) / 506 no repositório CSAF da CISA; 1º ano acima de 500; antes: >450", "fonte": "cap. 03", "estimativa": false }
       ],
       "dimensoes": [
         { "nome": "Segmentação TI/OT", "nivel": "ambar", "justificativa": "Padrão observado de segmentação bem-sucedida em incidentes brasileiros (Eletrobras/Copel 2021, Petrobras/SAExploration 2025, Cemig 2026 — vazamento de ~135 mil clientes, sem impacto operacional), mas a convergência TI/OT crescente exige reforço constante da DMZ industrial (Nível 3,5 do Modelo Purdue).", "fonte": "cap. 03" },
-        { "nome": "APT estatal", "nivel": "vermelho", "justificativa": "Sandworm/GRU 74455 (BlackEnergy 2015, Industroyer 2016, Industroyer2 2022, e a campanha contra ~30 instalações eólicas/solares e uma usina de cogeração na Polônia em dez/2025 — atribuição contestada, CERT Polska nomeia Static Tundra/FSB), Volt Typhoon/VOLTZITE (pré-posicionamento de ~300 dias em concessionária de Massachusetts) e um ator ligado ao Irã (pequeno gerador de energia no Reino Unido desligado por 4 dias, jul/2026, grupo não identificado) ilustram foco de atores estatais em sabotagem/pré-posicionamento geopolítico.", "fonte": "cap. 03" },
-        { "nome": "Ransomware industrial", "nivel": "vermelho", "justificativa": "+64% a/a em 2025 (119 grupos ativos, ~3.300 organizações impactadas), após +87% em 2024; dwell time médio de 42 dias em ambientes OT, caindo para 5 dias apenas com visibilidade OT dedicada.", "fonte": "cap. 03" },
-        { "nome": "Regulação ANEEL", "nivel": "ambar", "justificativa": "RN ANEEL nº 964/2021 (ARCiber) em vigor desde jul/2022, mas a 1ª fiscalização concreta só ocorreu via Despacho ANEEL nº 427/2025; submódulo de cibersegurança dos Procedimentos de Rede do ONS segue sem número/vigência final confirmados.", "fonte": "cap. 03" },
-        { "nome": "Sistemas legados", "nivel": "vermelho", "justificativa": "ICS legados com ciclo de vida de décadas, frequentemente sem suporte de segurança do fabricante; apenas 6% de mais de 500 mil redes sem fio analisadas estavam adequadamente protegidas contra ataques de desautenticação (deauth).", "fonte": "cap. 03" }
+        { "nome": "APT estatal", "nivel": "vermelho", "justificativa": "Sandworm/GRU 74455 (BlackEnergy 2015, Industroyer 2016, Industroyer2 2022, e a campanha contra ~30 instalações eólicas/solares e uma usina de cogeração na Polônia em dez/2025 — atribuição contestada, CERT Polska nomeia Static Tundra/FSB), Volt Typhoon/VOLTZITE (pré-posicionamento de ~300 dias em concessionária de Massachusetts), um ator ligado ao Irã (pequeno gerador de energia no Reino Unido desligado por 4 dias, jul/2026, grupo não identificado) e o APT afiliado ao Irã que manipulou PLCs e falsificou telas IHM/SCADA em organizações de energia, água e governo nos EUA desde mar/2026 (CISA AA26-097A) ilustram foco de atores estatais em sabotagem/pré-posicionamento geopolítico.", "fonte": "cap. 03" },
+        { "nome": "Ransomware industrial", "nivel": "vermelho", "justificativa": "Ataques +64% a/a em 2025 (grupos +49%, de 80 para 119; ~3.300 organizações impactadas), após +87% em 2024, e nova alta em 2026 (1.140 incidentes no 2º tri., +12% sobre o 1º); dwell time médio de 42 dias em ambientes OT, caindo para 5 dias apenas com visibilidade OT dedicada.", "fonte": "cap. 03" },
+        { "nome": "Regulação ANEEL", "nivel": "ambar", "justificativa": "RN ANEEL nº 964/2021 (ARCiber) em vigor desde jul/2022 e controles mínimos do ONS no Submódulo 5.13 (RO-CB.BR.01, vigente desde 9/7/2021, conformidade exigida até out/2023), mas a 1ª fiscalização concreta da ANEEL só ocorreu via Despacho nº 427/2025; o setor elétrico brasileiro já é alvo de APT (Armored Likho, jul/2026).", "fonte": "cap. 03" },
+        { "nome": "Sistemas legados", "nivel": "vermelho", "justificativa": "ICS legados com ciclo de vida de décadas, frequentemente sem suporte de segurança do fabricante; apenas 6% de mais de 500 mil redes sem fio analisadas (Nozomi, 2º sem. 2024) estavam adequadamente protegidas contra ataques de desautenticação (deauth).", "fonte": "cap. 03" }
       ],
       "barra": {
         "titulo": "Grupos de ransomware mirando organizações industriais (ativos/ano)",
@@ -77,11 +77,11 @@
       "pizza": {
         "titulo": "Origem das infecções em computadores ICS — % de máquinas ICS",
         "itens": [
-          { "nome": "Internet", "valor": 10 },
-          { "nome": "Clientes de e-mail", "valor": 2.8 },
-          { "nome": "Mídia removível", "valor": 0.5 }
+          { "nome": "Internet", "valor": 7.88 },
+          { "nome": "Clientes de e-mail", "valor": 2.59 },
+          { "nome": "Mídia removível", "valor": 0.26 }
         ],
-        "nota": "Percentuais independentes por fonte (Kaspersky ICS-CERT, 1º tri. 2025) — não somam 100%.",
+        "nota": "Percentuais independentes por fonte (Kaspersky ICS CERT, 1º tri. 2026; antes: 10 / 2,8 / 0,5 no 1T2025) — não somam 100%.",
         "fonte": "cap. 03"
       }
     }
@@ -90,7 +90,7 @@
     "titulo": "Panorama global de atividade cibernética",
     "kpis": [
       { "label": "Custo médio global de violação", "valor": "4,99", "unidade": "US$ mi", "delta": "+12% a/a — recorde da série", "fonte": "cap. 01" },
-      { "label": "Dwell time mediano global (2026)", "valor": "14", "unidade": "dias", "delta": "piora: era 11 dias em 2025", "fonte": "cap. 01" },
+      { "label": "Dwell time mediano global (M-Trends 2026)", "valor": "14", "unidade": "dias", "delta": "piora: dados de 2025, ante 11 dias no M-Trends 2025 (dados de 2024)", "fonte": "cap. 01" },
       { "label": "Ransomware em violações confirmadas", "valor": "48", "unidade": "%", "delta": "ante 44% na edição 2025", "fonte": "cap. 01" },
       { "label": "IA como principal driver de mudança (2026)", "valor": "94", "unidade": "% líderes", "fonte": "cap. 01" }
     ]
@@ -102,7 +102,7 @@
       { "metrica": "Custo médio de violação (2026)", "financeiro": "US$ 6,3 mi", "global": "US$ 4,99 mi", "leitura": "Financeiro ~26% acima da média global; ambos em alta recorde na edição 2026" },
       { "metrica": "Volume de intrusões (Mandiant IR)", "financeiro": "2º — 14,6%", "global": "Alta Tecnologia lidera com 17%", "leitura": "Financeiro perdeu a liderança após dois anos no topo, mas segue no pelotão de frente" },
       { "metrica": "Ransomware", "financeiro": "202 incidentes diretos (+30% a/a)", "global": "48% das violações", "leitura": "Ameaça transversal em alta (44% → 48%); setor financeiro entre os mais visados" },
-      { "metrica": "Dwell time (detecção)", "financeiro": "—", "global": "14 dias (era 11 em 2025)", "leitura": "Primeira piora da janela global de detecção em anos; instituições maduras reduzem para dias" }
+      { "metrica": "Dwell time (detecção)", "financeiro": "—", "global": "14 dias (M-Trends 2026, dados de 2025; ante 11 no M-Trends 2025)", "leitura": "Primeira piora da janela global de detecção em anos; instituições maduras reduzem para dias" }
     ]
   },
   "comparativo": {
@@ -111,22 +111,22 @@
     "serieEnergia": [3.5, 5, 3, 2.5, 3, 5],
     "escalaNota": "Escala qualitativa 0–5 atribuída pela síntese do capítulo 04 a partir dos números e casos dos capítulos 02 e 03 — não é um índice publicado por terceiros.",
     "tabela": [
-      { "eixo": "Superfície de ataque predominante", "financeiro": "APIs de Open Finance (128–154 milhões de consentimentos), app/Pix, terceiros de infraestrutura (C&M Software)", "energia": "Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (~94% inadequadamente protegidas contra deauth)", "semaforoFin": "ambar", "semaforoEnergia": "vermelho" },
+      { "eixo": "Superfície de ataque predominante", "financeiro": "APIs de Open Finance (~209–240 milhões de consentimentos ativos em jul/2026, ante 154 milhões em dez/2025), app/Pix, terceiros de infraestrutura (C&M Software)", "energia": "Convergência TI/OT, protocolos ICS legados, acesso remoto de terceiros, redes sem fio (~94% inadequadamente protegidas contra deauth)", "semaforoFin": "ambar", "semaforoEnergia": "vermelho" },
       { "eixo": "Atores dominantes (motivação)", "financeiro": "Cibercrime financeiramente motivado (90% Verizon DBIR); DPRK-nexus (USD 2,02 bi em 2025, +51%); FIN7, Qilin, Akira", "energia": "Atores estatais (Sandworm/GRU 74455, Volt Typhoon/China) com foco em sabotagem/pré-posicionamento; ransomware oportunista (DarkSide, Everest)", "semaforoFin": "ambar", "semaforoEnergia": "vermelho" },
       { "eixo": "Vetor de impacto principal", "financeiro": "Financeiro/fraude — desvio direto de recursos, vazamento de dados pessoais", "energia": "Físico/disponibilidade — apagão, dano a equipamento, risco potencial à vida", "semaforoFin": "ambar", "semaforoEnergia": "vermelho" },
       { "eixo": "Tempo de permanência / detecção típica", "financeiro": "Detecção forçada em ~72h por prazo regulatório de notificação; 34% do custo de uma violação vai para detecção/escalonamento", "energia": "Dwell time médio de 42 dias em ransomware OT — cai para 5 dias com visibilidade OT plena", "semaforoFin": "verde", "semaforoEnergia": "vermelho" },
-      { "eixo": "Maturidade defensiva", "financeiro": "Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude", "energia": "Heterogênea — 52% já colocam OT sob o CISO (ante 16% em 2022), mas sistemas legados sem suporte seguem comuns", "semaforoFin": "verde", "semaforoEnergia": "ambar" },
-      { "eixo": "Pressão / maturidade regulatória", "financeiro": "Alta e crescente — CMN 4.893/2021 + BCB 85/2021, atualizadas por CMN 5.274/2025 e BCB 538/2025, prazo março/2026", "energia": "Em maturação — RN ANEEL nº 964/2021 (ARCiber) em vigor desde 2022, mas 1ª fiscalização concreta só em 2025", "semaforoFin": "verde", "semaforoEnergia": "ambar" },
+      { "eixo": "Maturidade defensiva", "financeiro": "Alta — biometria física reconhecida por 67% dos clientes, ~R$ 5 bi/ano investidos em prevenção de fraude", "energia": "Heterogênea — 52% colocavam OT sob o CISO na edição 2025 (ante 16% em 2022); na edição 2026, 60% apontam o CISO como responsável final (ante 69% em 2025), mas sistemas legados sem suporte seguem comuns", "semaforoFin": "verde", "semaforoEnergia": "ambar" },
+      { "eixo": "Pressão / maturidade regulatória", "financeiro": "Alta e crescente — CMN 4.893/2021 + BCB 85/2021, atualizadas por CMN 5.274/2025 e BCB 538/2025 (prazo vencido em 01/03/2026); MED 2.0 (BCB 493/2025) e BCB 587/2026 no Pix", "energia": "Em maturação — RN ANEEL nº 964/2021 (ARCiber) em vigor desde 2022, mas 1ª fiscalização concreta só em 2025", "semaforoFin": "verde", "semaforoEnergia": "ambar" },
       { "eixo": "Frequência/escala do ataque em 2025", "financeiro": "202 incidentes diretos de ransomware (+30% a/a); 2º setor mais atacado globalmente (FS-ISAC)", "energia": "~3.300 organizações industriais impactadas por ransomware (+64% a/a); 22,8% dos computadores ICS de energia elétrica com objetos maliciosos bloqueados (3º setor mais atacado)", "semaforoFin": "ambar", "semaforoEnergia": "vermelho" },
       { "eixo": "Custo médio de um incidente", "financeiro": "USD 6,3 milhões por violação (ed. 2026, ante USD 5,56 milhões em 2025)", "energia": "USD 5,2 milhões por violação no setor de energia (ed. 2026, ante USD 4,83 milhões em 2025); USD 4,56 milhões quando há impacto direto em OT, qualquer setor (ed. 2025)", "semaforoFin": "ambar", "semaforoEnergia": "ambar" }
     ]
   },
   "tendencias": [
     { "nome": "IA ofensiva/agêntica (ataque orquestrado)", "horizonte": "Imediato (já em curso)", "impacto": 5, "exposicaoFin": 5, "exposicaoEnergia": 4, "semaforoUrgencia": "vermelho", "fonte": "cap. 06", "estimativa": true },
-    { "nome": "Ransomware potencializado por IA", "horizonte": "Imediato → 1–2 anos", "impacto": 5, "exposicaoFin": 5, "exposicaoEnergia": 5, "semaforoUrgencia": "vermelho", "fonte": "cap. 06", "estimativa": true },
+    { "nome": "Ransomware potencializado por IA", "horizonte": "Imediato (já em curso)", "impacto": 5, "exposicaoFin": 5, "exposicaoEnergia": 5, "semaforoUrgencia": "vermelho", "fonte": "cap. 06", "estimativa": true },
     { "nome": "Deepfake em fraude", "horizonte": "Imediato (já em curso)", "impacto": 4, "exposicaoFin": 5, "exposicaoEnergia": 3, "semaforoUrgencia": "vermelho", "fonte": "cap. 06", "estimativa": true },
     { "nome": "Cadeia de suprimentos de software (OSS)", "horizonte": "Imediato (já em curso)", "impacto": 4, "exposicaoFin": 5, "exposicaoEnergia": 5, "semaforoUrgencia": "vermelho", "fonte": "cap. 06", "estimativa": true },
-    { "nome": "Criptografia pós-quântica (PQC) — colheita hoje, decifração futura", "horizonte": "Colheita: imediato; decifração: 3–5 anos ou mais", "impacto": 4, "exposicaoFin": 5, "exposicaoEnergia": 5, "semaforoUrgencia": "ambar", "fonte": "cap. 06", "estimativa": true }
+    { "nome": "Criptografia pós-quântica (PQC) — colheita hoje, decifração futura", "horizonte": "Colheita: imediato; decifração: planejamento 2030–2035", "impacto": 4, "exposicaoFin": 5, "exposicaoEnergia": 5, "semaforoUrgencia": "ambar", "fonte": "cap. 06", "estimativa": true }
   ],
   "recomendacoes": {
     "roadmap": [
@@ -139,14 +139,15 @@
       { "horizonte": "0–90 dias", "trilha": "Financeiro", "item": "Reforçar antifraude no Pix: biometria comportamental, MED e limites dinâmicos por perfil de risco" },
       { "horizonte": "0–90 dias", "trilha": "Financeiro", "item": "Gestão de risco de terceiros com avaliação contínua de fornecedores críticos do Pix/Open Finance" },
       { "horizonte": "0–90 dias", "trilha": "Financeiro", "item": "Verificação fora de banda para aprovação de transferências de alto valor, mitigando fraude por deepfake de executivo" },
-      { "horizonte": "0–90 dias", "trilha": "Financeiro", "item": "Adequação plena às Resoluções CMN nº 5.274/2025 e BCB nº 538/2025 antes do prazo de março de 2026" },
+      { "horizonte": "0–90 dias", "trilha": "Financeiro", "item": "Evidenciar a conformidade com as Resoluções CMN nº 5.274/2025 e BCB nº 538/2025 (prazo encerrado em 1º/03/2026): 14 controles mínimos, isolamento de Pix/STR e teste de intrusão anual independente" },
       { "horizonte": "0–90 dias", "trilha": "Energia", "item": "Segmentação TI/OT com DMZ industrial (Nível 3,5 Purdue) e revisão de todo acesso remoto de terceiros" },
       { "horizonte": "0–90 dias", "trilha": "Energia", "item": "Conformidade plena com a RN ANEEL nº 964/2021 (ARCiber) antes da próxima janela de fiscalização" },
       { "horizonte": "3–6 meses", "trilha": "Financeiro", "item": "Segurança de API do Open Finance: rate limiting, detecção de anomalia de consentimento, revogação automática de tokens" },
       { "horizonte": "3–6 meses", "trilha": "Financeiro", "item": "Resiliência a DDoS: contrato de mitigação dedicado, testes de capacidade e plano de comunicação de crise" },
       { "horizonte": "3–6 meses", "trilha": "Energia", "item": "Visibilidade OT dedicada (monitoramento passivo) para reduzir o dwell time de 42 para 5 dias" },
       { "horizonte": "3–6 meses", "trilha": "Energia", "item": "Plano de resposta a incidentes específico para ICS, com playbook de isolamento seguro de OT" },
-      { "horizonte": "6–12 meses", "trilha": "Financeiro", "item": "Inventário e priorização de migração PQC para dados financeiros de longa vida útil (roteiro G7 CEG)" },
+      { "horizonte": "3–6 meses", "trilha": "Comum", "item": "Inventário e governança de agentes de IA: privilégio mínimo e supervisão humana em ações que movimentam valores ou tocam processo físico (OWASP Agentic 2026; guia CISA)" },
+      { "horizonte": "6–12 meses", "trilha": "Financeiro", "item": "Inventário e priorização de migração PQC para dados financeiros de longa vida útil (roteiro G7 CEG; marcos 2030/2035 do NIST IR 8547 e OMB M-26-15)" },
       { "horizonte": "6–12 meses", "trilha": "Energia", "item": "Avaliação formal de Nível de Segurança (SL) por zona crítica, priorizando geração e transmissão" },
       { "horizonte": "6–12 meses", "trilha": "Energia", "item": "Aplicação cautelosa de Zero Trust na fronteira TI↔OT (verificação contínua entre domínios)" },
       { "horizonte": "12+ meses", "trilha": "Energia", "item": "Planejamento de migração PQC para ativos de campo de longa vida útil (medidores inteligentes, IEDs de subestação)" }
@@ -163,13 +164,13 @@
       "Qual é o nosso dwell time médio hoje — tempo entre comprometimento inicial e detecção — e como ele se compara à referência setorial (42 dias em OT sem visibilidade dedicada, caindo para 5 dias com ela)?",
       "Quando testamos pela última vez a restauração completa de um backup crítico, não apenas sua existência — e quanto tempo levou?",
       "Temos um inventário atualizado de todo fornecedor com acesso a sistemas críticos (Pix/Open Finance no financeiro; OT/ICS na energia), e sabemos qual seria o blast radius se um deles fosse comprometido?",
-      "Estamos dentro do prazo regulatório aplicável — março de 2026 para as Resoluções BCB/CMN no financeiro, exigências da RN ANEEL nº 964/2021 já sob fiscalização ativa na energia — com evidência documental pronta para auditoria?",
+      "Com o prazo das Resoluções CMN nº 5.274/2025 e BCB nº 538/2025 encerrado em 1º de março de 2026, conseguimos demonstrar hoje, com evidência documental, a conformidade com cada um dos 14 controles mínimos — e, na energia, com as exigências da RN ANEEL nº 964/2021, já sob fiscalização ativa?",
       "Qual parcela do nosso orçamento de segurança está alocada a detecção e resposta, versus apenas prevenção — e essa alocação reflete o custo real de detecção tardia (34% do custo total de uma violação no setor financeiro)?",
       "Já exercitamos, em simulação realista, nosso plano de resposta a um incidente que force decisão de isolar sistemas críticos (SPI/Pix no financeiro; um ativo OT na energia) sob pressão de tempo e com informação incompleta?",
       "Temos clareza sobre qual autoridade interna decide, em uma crise real, entre continuidade operacional e contenção total — e essa pessoa está no comitê executivo, não apenas na área técnica?",
       "Qual é a nossa exposição a fraude por deepfake de executivo em processos de aprovação financeira de alto valor, e existe verificação fora de banda obrigatória para esses casos?",
       "Se formos atingidos por ransomware hoje, pagaríamos o resgate — e essa decisão já foi debatida e documentada pelo board antes do incidente, ou seria tomada sob pressão no momento do ataque?",
-      "Nosso plano de migração para criptografia pós-quântica (PQC) já começou o inventário de dados e ativos de longa vida útil, dado que a 'colheita' de dados cifrados hoje para decifração futura já está em curso?"
+      "Nosso plano de migração para criptografia pós-quântica (PQC) já começou o inventário de dados e ativos de longa vida útil, dado que a 'colheita' de dados cifrados já está em curso e que as referências oficiais (NIST IR 8547, OMB M-26-15, G7 CEG) trabalham com marcos em 2030 e 2035?"
     ]
   },
   "fontes": {
@@ -240,6 +241,11 @@
     ],
     "incorporacoesRecentes": [
       {
+        "data": "2026-09-25",
+        "fonte": "Revisão profunda de todas as abas estratégicas (5 frentes, fora da janela de 3 dias)",
+        "oQueMudou": "Números superados havia meses foram substituídos: DDoS no setor financeiro (+154% de 2022→2023 → duração mediana +738% em 2025, alvo nº 1 em 2024), consentimentos de Open Finance (128 mi → mais de 200 mi em jul/2026), OT com intrusão (Fortinet 2026: 71%), advisórios ICS da CISA (>500 em 2025) e a origem das infecções ICS (1º tri. 2026). Prazos vencidos deixaram de aparecer como futuros (CMN 5.274/BCB 538, encerrado em 1º/03/2026) e entraram MED 2.0 obrigatório, Res. BCB 587/2026, Sinqia, Operação Pane Seca, AA26-097A, Armored Likho, ransomware conduzido por IA e o memorando OMB M-26-15 de PQC. Errata: os valores atribuídos ao Banco Rendimento no ciclo de 22/09 eram do ataque ao BTG Pactual. Itens com fonte única (DBIR 2026 setorial, ENISA 2026) ficaram registrados como não confirmados, sem troca."
+      },
+      {
         "data": "2026-09-24",
         "fonte": "MISP — instância própria",
         "oQueMudou": "O MISP voltou a alimentar a aba Ameaças ao Vivo (a consulta passou a filtrar pela data do evento) e os indicadores repetidos entre MISP e ThreatFox passaram a contar uma vez só. Entraram na janela famílias que o painel não via — Casbaneiro, Grandoreiro, Emotet e QakBot. A contagem de feeds e o acervo desta aba passaram a ser lidos do ciclo de ingestão, e não mais escritos à mão."
@@ -291,7 +297,7 @@
       { "titulo": "Feed-arquivo enche disco", "texto": "Os feeds do abuse.ch em formato MISP publicam um evento por dia desde 2021, e o MISP baixa o histórico inteiro: o acervo foi de 190 mil a 26,8 milhões de atributos e encheu o servidor, o que parou a publicação do painel por duas semanas em setembro de 2026. Hoje esses feeds têm retenção de 30 dias, e o que sai da retenção entra numa lista de bloqueio para não ser baixado de novo." }
     ],
     "cadencia": [
-      { "etapa": "Varredura de pesquisa", "ritmo": "a cada 3 dias", "oQueFaz": "Revisita as fontes da camada estratégica, atualiza dossiê, capítulos e números do painel. A publicação é automática apenas se quatro validações passarem (toda citação com entrada correspondente, dados parseáveis, texto sem corrupção de acentuação e build íntegro); qualquer falha vira revisão manual." },
+      { "etapa": "Varredura de pesquisa", "ritmo": "a cada 3 dias", "oQueFaz": "Revisita as fontes da camada estratégica em duas passadas: a janela desde o ciclo anterior e uma varredura profunda rotativa, que audita a cada ciclo um dos cinco grupos do painel (global, financeiro global, financeiro Brasil, energia, tendências e recomendações) contra a edição mais recente de cada fonte — o painel inteiro é revisto a cada ~15 dias — e procura prazos já vencidos tratados como futuros. Atualiza dossiê, capítulos e números do painel; a publicação é automática apenas se quatro validações passarem (toda citação com entrada correspondente, dados parseáveis, texto sem corrupção de acentuação e build íntegro); qualquer falha vira revisão manual." },
       { "etapa": "Publicação do painel", "ritmo": "diária, à noite", "oQueFaz": "Publica se houver mudança validada, com backup e verificação automática — se a página não responder, volta sozinha à versão anterior." },
       { "etapa": "Ingestão operacional", "ritmo": "a cada 20 minutos", "oQueFaz": "Coleta as fontes abertas, aplica o filtro de TLP e o recorte financeiro e reescreve o arquivo lido pelas abas operacionais. Não exige nova publicação do painel." }
     ],

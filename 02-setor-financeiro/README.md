@@ -8,13 +8,14 @@
 > - *Ransomware* direto contra instituições financeiras voltou a acelerar: de 156 incidentes em 2024
 >   para 202 em 2025 (+30%), com o 1º trimestre de 2026 já 76% acima do mesmo período do ano anterior.
 > - Fraude por *deepfake* deixou de ser hipótese: cresceu 2.137% em três anos e já responde por 6,5% de
->   todas as tentativas de fraude, com casos concretos de dezenas de milhões de dólares desviados por
+>   todas as tentativas de fraude detectadas pela Signicat (dado de 2025), com casos concretos de dezenas de milhões de dólares desviados por
 >   clonagem de voz de executivos.
 > - No Brasil, o Pix concentra o epicentro do risco de fraude ao consumidor, enquanto o Open Finance
->   — com mais de 128 milhões de consentimentos ativos — abre uma superfície de ataque nova via API;
->   a resposta regulatória do Banco Central (Resolução CMN nº 4.893/2021 e Resolução BCB nº 85/2021,
->   atualizadas em 2025) é uma das mais maduras do mundo em cibersegurança financeira.
-> - Uma sequência de incidentes de terceiros em 2024–2026 (C&M Software, FictorPay, Banco do Nordeste)
+>   — com mais de 200 milhões de consentimentos ativos em julho de 2026 — abre uma superfície de ataque
+>   nova via API; a resposta regulatória do Banco Central (Resolução CMN nº 4.893/2021 e Resolução BCB
+>   nº 85/2021, atualizadas em 2025, com prazo de adequação vencido em 1º/3/2026) é uma das mais maduras
+>   do mundo em cibersegurança financeira.
+> - Uma sequência de incidentes de terceiros em 2025–2026 (C&M Software, Sinqia, FictorPay, Banco do Nordeste)
 >   mostrou que a vulnerabilidade sistêmica do Pix está menos nos bancos centrais do sistema e mais nos
 >   provedores de infraestrutura e software compartilhados por múltiplas instituições.
 > - **Número-chave:** custo médio de uma violação de dados no setor financeiro em 2026 = **USD 6,3
@@ -34,14 +35,17 @@ brasileiro — Pix, Open Finance, regulação do Banco Central e incidentes conh
 | Ranking de setor mais atacado (FS-ISAC)                   | 2º lugar, atrás de saúde                 | FS-ISAC [1][2]                  |
 | Custo médio de violação — setor financeiro                 | USD 6,3 milhões (ante USD 5,56 milhões em 2025) | IBM [36][37]              |
 | Detecção/escalonamento no custo total (setor financeiro)    | 34% (vs. 29% global)                     | IBM [3][4]                      |
-| Incidentes / violações confirmadas (Finance Snapshot)        | 3.336 / 927                              | Verizon DBIR [5]                |
-| Motivação financeira / espionagem (setor)                    | 90% / 12%                                | Verizon DBIR [5]                |
-| DDoS no setor financeiro (2022→2023)                        | +154%; 35%+ de todo DDoS observado       | FS-ISAC/Akamai [6][7]           |
+| Incidentes / violações confirmadas (DBIR 2025 Finance Snapshot) | 3.336 / 927                           | Verizon DBIR [5]                |
+| Motivação financeira / espionagem (DBIR 2025 Finance Snapshot)  | 90% / 12%                             | Verizon DBIR [5]                |
+| DDoS no setor financeiro (2024)                             | Alvo nº 1 de DDoS volumétrico; DDoS de aplicação (L7) +23% frente a 2023 | FS-ISAC/Akamai [71][72] |
+| DDoS no setor financeiro (2025)                             | Duração mediana dos ataques L3/L4 +738% desde 2024 | Akamai SOTI 2026 [73][74] |
+| DDoS no setor financeiro (2022→2023, série anterior)        | +154%; 35%+ de todo DDoS observado       | FS-ISAC/Akamai [6][7]           |
 | Roubo de ativos digitais (DPRK-nexus, 2025)                  | USD 2,02 bilhões (+51% a/a)              | CrowdStrike [8][9]              |
 | Maior roubo cripto único (PRESSURE CHOLLIMA)                 | USD 1,46 bilhão                          | CrowdStrike [8][9]              |
 | *Ransomware* direto no setor financeiro (2024→2025)           | 156 → 202 incidentes (+~30%)             | Black Kite [10][11]             |
 | *Ransomware* setor financeiro, Q1 2026 vs. Q1 2025            | +76% (65 incidentes)                     | Black Kite [10][11]             |
-| Fraude por *deepfake* (evolução em 3 anos)                    | 0,1% → 6,5% das tentativas (+2.137%)    | Cyble/StationX/BrightDefense [12][14] |
+| Fraude por *deepfake* (evolução em 3 anos, dado de 2025)      | 0,1% → 6,5% das tentativas (+2.137%)    | Signicat [67][68]               |
+| *Deepfake* nas tentativas de fraude biométrica (2025)         | 1 em cada 5 (20%)                        | Entrust 2026 [69][70]           |
 | Incidentes relevantes reportados ao BC — Brasil (2024→2025)   | 59 → 76 incidentes (+29%)                | Banco Central (Relatório Integrado) [38][39] |
 
 ### FS-ISAC: as quatro ameaças que definem o setor
@@ -85,27 +89,42 @@ Verizon registrou **3.336 incidentes** e **927 violações confirmadas**. Das vi
 envolveram atores externos, 22% atores internos e 1% parceiros (categorias não somam 100% por
 sobreposição metodológica) [5]. **74%** das violações do setor estão associadas a três padrões — Intrusão
 de Sistema, Engenharia Social e Ataques Básicos a Aplicações Web —, **90%** tiveram motivação financeira
-e **12%** motivação de espionagem [5]. Este detalhamento é qualificado no dossiê de pesquisa como
-"parcialmente confirmado": o *fetch* direto do PDF do *Finance Snapshot* retornou apenas o fluxo binário
-do arquivo, e os números foram validados por convergência entre múltiplos resultados de busca
-independentes que citam o mesmo infográfico, mas não por dois documentos primários distintos — uma
-ressalva que se recomenda manter ao citar estes números externamente.
+e **12%** motivação de espionagem [5]. Em 24/9/2026 esses números foram conferidos diretamente no texto
+do PDF do *2025 DBIR Finance Snapshot* (frequência, padrões, atores e motivações), o que encerra a
+ressalva de confirmação parcial registrada anteriormente no dossiê.
+
+**Nota de atualização (não confirmada):** o *2026 DBIR* (incidentes de 1º/11/2024 a 31/10/2025) traz, na
+página 84, um novo recorte "Financial and Insurance": **3.809 incidentes** e **1.300 violações
+confirmadas**; atores externos em 88% e internos em 12%; e motivação **financeira em 98%** e de
+**espionagem em 3%** das violações [66]. O dado foi lido na fonte primária, mas é fonte única — o
+*Finance Snapshot* 2026 não foi localizado e nenhuma segunda fonte independente reproduz esses números —,
+por isso permanece **não confirmado em 24/9/2026** e os valores de referência deste capítulo seguem sendo
+os do DBIR 2025. Atenção a um erro frequente em resumos de terceiros: o "12% de espionagem" citado para o
+DBIR 2026 é o número **global** do relatório, não o do setor financeiro.
 
 ### DDoS e *ransomware*: sofisticação crescente
 
 Ataques DDoS contra o setor de serviços financeiros cresceram **154%** entre 2022 e 2023, segundo relatório
 conjunto FS-ISAC/Akamai; o setor respondeu por mais de **35%** de todos os ataques DDoS observados em
 2023, ultrapassando o setor de *games* e se tornando o vertical mais visado por esse tipo de ataque — salto
-atribuído ao aumento do poder de *botnets* e ao hacktivismo ligado à guerra Rússia-Ucrânia [6][7]. Não foi
-localizada, no escopo da pesquisa deste dossiê, uma atualização quantitativa equivalente para
-2025–2026, mas o *Navigating Cyber 2025* da FS-ISAC reforça qualitativamente o DDoS entre as quatro
-ameaças principais ao setor [1][2][6][7].
+atribuído ao aumento do poder de *botnets* e ao hacktivismo ligado à guerra Rússia-Ucrânia [6][7]. A série
+tem atualização quantitativa para 2024 e 2025. O relatório conjunto seguinte da FS-ISAC com a Akamai,
+*From Nuisance to Strategic Threat: DDoS Attacks Against the Financial Sector* (junho de 2025, dados de
+2024), mostra o setor financeiro como **alvo nº 1 de DDoS volumétrico em 2024**, com pico em outubro, e
+alta de **23%** nos ataques DDoS de camada de aplicação (L7) frente a 2023; os atacantes passaram a
+combinar reconhecimento sistemático e táticas adaptativas em campanhas multivetor [71][72]. Para 2025, o
+*State of the Internet — Financial Services 2026* da Akamai (maio de 2026) registra alta de **738%** na
+duração mediana dos ataques DDoS de camadas 3 e 4 contra o setor desde 2024 — ataques de minutos que
+viraram campanhas prolongadas [73][74]. O *Navigating Cyber 2025* da FS-ISAC mantém o DDoS entre as quatro
+ameaças principais ao setor [1][2].
 
 Do lado do *ransomware* direto (não apenas DDoS como vetor de extorsão), o *2026 State of Financial
 Services Report* da Black Kite registra reaceleração: de **156 incidentes em 2024 para 202 em 2025**
 (alta de aproximadamente 30%), com o 1º trimestre de 2026 já somando **65 incidentes** — alta de **76%**
 frente ao mesmo trimestre de 2025 [10][11]. O número de grupos distintos mirando o setor financeiro
-cresceu de 37 para 48. A composição por subsetor mudou: firmas de investimento quase dobraram sua
+cresceu de **37 em 2023 para 48 em 2025**; para o ano intermediário há divergência dentro da própria
+Black Kite — 43 grupos em 2024 na página do relatório, 45 no comunicado à imprensa e na cobertura do
+Unite.AI [10][11][75]. A composição por subsetor mudou: firmas de investimento quase dobraram sua
 participação nos incidentes (de 44 para 84, ~41,6% do total de divulgações do setor), enquanto bancos —
 subsetor mais visado em 2023, com 71 incidentes — caíram para 36 em 2025 [10][11]. O grupo **Qilin**
 reivindicou **59 vítimas** no setor financeiro no período analisado; em um caso, o comprometimento de um
@@ -115,6 +134,14 @@ mais de 1 milhão de arquivos e mais de 2 terabytes de dados — um exemplo dire
 terceiros amplifica o *blast radius* de um único comprometimento [10][11]. Fornecedores com CVEs críticas
 (CVSS ≥ 9) quase quintuplicaram entre os 140 fornecedores mais concentrados no setor financeiro no mesmo
 período [10][11].
+
+**Nota de monitoramento (fonte única, não confirmada):** a série da Black Kite vai até o 1º trimestre de
+2026. Dois rastreadores de *leak sites*, com metodologias próprias e não comparáveis à da Black Kite,
+sinalizam que a pressão continuou: a CYFIRMA contou **114 vítimas** do setor financeiro em sua janela de
+90 dias do "Q2 2026" (ante 78 na janela anterior, +46,2%), em relatório datado de 18/5/2026 — ou seja,
+uma janela que não coincide com o trimestre-calendário [76]; a Comparitech registrou **257 ataques** ao
+setor financeiro no 1º semestre de 2026, dos quais 22 confirmados, patamar próximo dos 260 do 2º semestre
+de 2025 [77]. Cada número tem uma única fonte e serve apenas para acompanhamento.
 
 ### Roubo de ativos digitais: atores DPRK-nexus
 
@@ -130,8 +157,15 @@ dedicados, alta de **27%** frente ao ano anterior [8][9].
 
 ### Deepfake e engenharia social: a nova fronteira da fraude
 
-Tentativas de fraude por *deepfake* cresceram **2.137%** nos últimos três anos, passando de 0,1% para
-**6,5%** de todas as tentativas de fraude [12][13]. *Deepfakes* de voz (*voice cloning*) cresceram
+Tentativas de fraude por *deepfake* cresceram **2.137%** em três anos, passando de 0,1% para **6,5%** de
+todas as tentativas de fraude — cerca de 1 em cada 15 casos —, segundo o relatório *The Battle Against
+AI-Driven Identity Fraud* da Signicat, divulgado em fevereiro de 2025 e baseado nas tentativas detectadas
+em sua própria base de clientes, concentrada em serviços financeiros; o mesmo estudo atribui à IA 42,5%
+das tentativas de fraude detectadas no setor financeiro [67][68]. O número de 6,5% circula em compilações
+de 2026 [12][14], mas é dado de 2025 e ainda é o mais recente nesta métrica. Um indicador complementar,
+que mede outra coisa, vem do *2026 Identity Fraud Report* da Entrust (novembro de 2025, mais de 1 bilhão de
+verificações de identidade): *deepfakes* respondem por **1 em cada 5 (20%) tentativas de fraude
+biométrica**, e as *selfies deepfake* cresceram 58% em 2025 [69][70]. *Deepfakes* de voz (*voice cloning*) cresceram
 **680%** ano a ano em 2024; combinados a um salto de **442%** em *vishing* e de **1.300%** em ataques de
 voz sintética, configuram aumento acentuado e convergente — clonagem de voz já teria cruzado o "limiar de
 indistinguibilidade": poucos segundos de áudio bastam para gerar um clone convincente, com entonação,
@@ -200,7 +234,20 @@ vítima, alega erro e pede devolução; ao mesmo tempo, aciona o MED junto ao pr
 sair da conta da vítima duas vezes [18][22]. Em resposta, o Banco Central aprimorou o MED para rastrear o
 caminho completo dos recursos fraudados por todas as contas intermediárias até o destino final, e a
 **Resolução Conjunta BCB/CMN nº 6** passou a exigir que instituições autorizadas compartilhem indícios de
-fraude/tentativas de fraude entre si por meio de sistema interoperável [18][22].
+fraude/tentativas de fraude entre si por meio de sistema interoperável [18][22]. O aprimoramento ganhou
+nome e norma: o **MED 2.0**, instituído pela **Resolução BCB nº 493, de 28/8/2025**, passou a seguir o
+caminho do dinheiro pelas contas para as quais os valores foram transferidos após a fraude; a
+implementação foi facultativa a partir de 23/11/2025 e tornou-se **obrigatória em 2/2/2026**, junto com o
+**autoatendimento** para contestação de fraude diretamente no aplicativo da instituição [53][54].
+
+Em **18 de setembro de 2026**, a **Resolução BCB nº 587** alterou novamente o regulamento do Pix: as
+instituições passam a poder registrar no DICT uma marcação de "fundada suspeita de fraude" vinculada ao CPF
+ou CNPJ envolvido, que pode permanecer por até **5 anos**; operações Pix de usuários marcados devem ser
+rejeitadas (exceto devoluções); o usuário tem direito a pedir revisão, com prazo de até **7 dias** para
+análise; e a exclusão de participante do Pix passa a ter efeito imediato. Segundo as duas fontes
+consultadas, a marcação, o bloqueio e a contestação valem de imediato, enquanto as obrigações de
+comunicação ao usuário e a cobrança híbrida entram em vigor em 1º/2/2027 e o Pix Automático em
+conta-salário em 1º/7/2027 [55][56].
 
 ### Febraban: prejuízo, tecnologia e investimento em defesa
 
@@ -212,7 +259,20 @@ reportados por clientes em 2024. Quase **4 em cada 10 brasileiros** já sofreram
 o maior número da série histórica da própria pesquisa [20][23]. Do lado defensivo, o reconhecimento da
 biometria física como método de proteção passou de 59% (2023) para **67%** (2024), e em 2023 as
 instituições financeiras destinaram cerca de **R$ 5 bilhões** à prevenção de fraudes e crimes
-cibernéticos [20][23].
+cibernéticos [20][23]. Até a data desta revisão (24/9/2026), não foi localizado número equivalente da
+Febraban para o prejuízo de 2025 — a edição 2026 da Pesquisa Febraban de Tecnologia Bancária não o traz —,
+e os R$ 10,1 bilhões de 2024 seguem como o dado mais recente dessa série.
+
+Dois indicadores de 2025–2026, de metodologia distinta e **não somáveis** aos números da Febraban,
+complementam o quadro. O **Anuário Brasileiro de Segurança Pública 2026** (Fórum Brasileiro de Segurança
+Pública) contabilizou **2.261.055 registros de estelionato em 2025**, alta de **2,7%** frente aos 2.193.122
+de 2024 e de **429,8%** desde 2018; o estelionato por meio eletrônico cresceu **20,6%**, de 286.226 para
+**346.753** registros — contagem de boletins de ocorrência, não de prejuízo [47][48]. Já o relatório *O
+Estado dos Golpes no Brasil 2026*, da Global Anti-Scam Alliance (GASA, 6/8/2026), **estima**, a partir de
+pesquisa amostral com cerca de mil respondentes, que **16,5 milhões de brasileiros** perderam dinheiro com
+golpes entre março de 2025 e fevereiro de 2026, com prejuízo de cerca de **R$ 21,2 bilhões** e mais de
+34 bilhões de tentativas — **estimativa por *survey***, a ser lida como ordem de grandeza, e não como
+apuração contábil [49][50].
 
 ### Open Finance: expansão acelerada, superfície de ataque nova
 
@@ -221,9 +281,18 @@ O ecossistema de Open Finance no Brasil superou **128 milhões de consentimentos
 Brasil na liderança global entre mais de 78 países com regulação do tema; a infraestrutura gera mais de
 **4,4 bilhões de comunicações semanais** entre instituições [24][25]. A própria Febraban, em fevereiro de
 2026, citou um número maior — **154 milhões de consentimentos ativos** e mais de 100 milhões de
-clientes/contas conectados — divergência registrada aqui sem que se tenha conseguido arbitrar, no escopo
-desta pesquisa, se reflete crescimento real em poucas semanas ou diferença de metodologia de contagem
-entre Sensedia e Febraban [24][25]. O que é inequívoco é a direção: a expansão da API abre nova superfície
+clientes/contas conectados. A divergência 128 × 154 fica resolvida pela série do dashboard oficial do Open
+Finance Brasil reproduzida pela Zetta: **154 milhões** era o número de **dezembro de 2025** (ante 61,9
+milhões em dez/2024 e 41,9 milhões em dez/2023), de modo que os 128 milhões da Sensedia já estavam
+defasados em relação ao dashboard quando publicados [52].
+
+O número mais recente supera com folga os dois: em **julho de 2026** o ecossistema passou de **200 milhões
+de consentimentos ativos**. As duas leituras do dashboard oficial localizadas divergem entre si — **208,79
+milhões** em 31/7/2026, segundo a Let's Money, e **239,8 milhões** em julho de 2026 (consulta em
+18/8/2026), segundo o relatório da Zetta, que fala em "quase 240 milhões" e cerca de 800 instituições
+participantes [51][52]. A divergência, provavelmente de recorte ou de data de extração, não foi arbitrada
+nesta pesquisa; por isso o panorama adota o piso comum, "mais de 200 milhões". O que é inequívoco é a
+direção: a expansão da API abre nova superfície
 de ataque, na qual cada nova integração mal protegida representa um ponto de entrada adicional. Fraudadores
 já exploram roubo e manipulação de tokens, criação de consentimentos híbridos fraudulentos, *bots*
 especializados simulando comportamento humano, e engenharia social hiperpersonalizada com apoio de IA
@@ -238,12 +307,18 @@ processamento/armazenamento de dados e computação em nuvem, aplicável a banco
 investimento, cooperativas de crédito, Sociedades de Crédito Direto (SCDs), Sociedades de Empréstimo entre
 Pessoas (SEPs) e demais instituições autorizadas a funcionar pelo Banco Central em sentido amplo — e a
 **Resolução BCB nº 85/2021**, do próprio Banco Central, com o mesmo escopo temático mas aplicável
-especificamente a instituições de pagamento [26][27]. Ambas foram atualizadas em 2025 pela **Resolução CMN
-nº 5.274/2025** e pela **Resolução BCB nº 538/2025**, com prazo final de adequação em **março de 2026**
-[26][27]. Os requisitos centrais das resoluções incluem política de segurança cibernética documentada,
-plano de resposta a incidentes, testes de penetração periódicos e gestão de risco de fornecedores de TI; a
+especificamente a instituições de pagamento [26][27]. Ambas foram atualizadas pela **Resolução CMN
+nº 5.274/2025** e pela **Resolução BCB nº 538/2025**, aprovadas em **18/12/2025**, com prazo de adequação
+para as instituições em funcionamento em **1º/3/2026** — prazo **já vencido**: o marco atualizado está
+agora em fase de supervisão, e não mais de adequação [27][57]. Entre as mudanças estão autenticação
+multifator em cenários sensíveis, segurança desde a concepção (*security by design*) como obrigação, teste
+de intrusão anual por terceiro independente, trilhas de auditoria com retenção definida e controles
+específicos para sistemas críticos (Pix, STR, RSFN) [27]. Os requisitos centrais das resoluções incluem
+política de segurança cibernética documentada, plano de resposta a incidentes, testes de penetração periódicos e gestão de risco de fornecedores de TI; a
 política deve ser proporcional ao porte, perfil de risco, modelo de negócio e sensibilidade dos dados de
-cada instituição [28][29].
+cada instituição [28][29]. Em 2026, o arcabouço específico do Pix também avançou, com o MED 2.0 obrigatório
+desde 2/2/2026 (Resolução BCB nº 493/2025) e a marcação de suspeita de fraude no DICT (Resolução BCB
+nº 587/2026), detalhados na seção sobre fraude no Pix [53][54][55][56].
 
 > **Nota de precisão regulatória:** não existe uma "Resolução BCB nº 4.893" — o número correto é
 > **Resolução CMN nº 4.893/2021** (emitida pelo Conselho Monetário Nacional). A resolução paralela,
@@ -267,11 +342,11 @@ e do *ransomware* direto contra instituições (156→202 incidentes, Black Kite
 incidentes comunicados ao BC por instituições supervisionadas, uma métrica de governança/supervisão, não de
 volume de ataques ou de vítimas.
 
-### Incidentes conhecidos no setor financeiro brasileiro (2025)
+### Incidentes conhecidos no setor financeiro brasileiro (2025–2026)
 
-Três incidentes documentados em 2025 ilustram, na prática, os vetores de risco discutidos acima —
-vazamento de dados em massa, comprometimento de fornecedor de infraestrutura crítica do Pix e exploração
-de aplicação de terceiro.
+Os incidentes documentados em 2025 e 2026 ilustram, na prática, os vetores de risco discutidos acima —
+vazamento de dados em massa, comprometimento de fornecedores de infraestrutura crítica do Pix (PSTIs),
+exploração de aplicação de terceiro e ataques a canais e contas das próprias instituições.
 
 Em **11–12 de fevereiro de 2025**, um agente identificado como "banconeon" divulgou em fórum
 cibercriminoso um pacote de dados supostamente extraído da base do **Banco Neon**, afetando — segundo o
@@ -284,10 +359,20 @@ do banco que permanece contestada.
 Em **4 de julho de 2025**, o Banco Central suspendeu preventivamente por até 60 dias (com base na
 Resolução BC nº 30) três instituições participantes do Pix — **Transfeera, Soffy e Nuoro Pay** — após
 ataque cibernético direcionado à **C&M Software**, empresa de tecnologia que atua como ponte entre
-instituições financeiras e o Sistema de Pagamentos Brasileiro (SPB). O ataque resultou no desvio de pelo
-menos **R$ 400 milhões** [32][33]. Este incidente ilustra diretamente o risco de terceiros/cadeia de
-suprimentos no setor financeiro brasileiro: a vulnerabilidade não esteve nas fintechs suspensas, mas em um
-provedor de infraestrutura tecnológica compartilhado por múltiplas instituições [32][33].
+instituições financeiras e o Sistema de Pagamentos Brasileiro (SPB). A estimativa inicial divulgada na
+época foi de desvio de pelo menos **R$ 400 milhões** [32][33]; a investigação da Polícia Federal (Operação
+Magna Fraus) apurou depois **R$ 813 milhões** desviados de instituições de pagamento no início de julho, com
+bloqueio judicial de bens de até R$ 640 milhões e 21 presos (13 no Brasil e 8 no exterior); um operador de
+TI da C&M confessou ter vendido suas credenciais de acesso [58][59]. Este incidente ilustra diretamente o
+risco de terceiros/cadeia de suprimentos no setor financeiro brasileiro: a vulnerabilidade não esteve nas
+fintechs suspensas, mas em um provedor de infraestrutura tecnológica compartilhado por múltiplas
+instituições [32][33].
+
+No fim de **agosto de 2025**, o padrão se repetiu na **Sinqia**, outra empresa que conecta instituições ao
+Pix: transações não autorizadas, introduzidas no ambiente Pix da Sinqia por meio de **credenciais legítimas
+de fornecedores de TI** da empresa, desviaram cerca de **R$ 710 milhões** — R$ 669 milhões do **HSBC** e
+R$ 41 milhões da sociedade de crédito direto **Artta** —, dos quais R$ 589 milhões (83%) foram bloqueados
+[60][61]. Segundo a própria Sinqia, o incidente se limitou ao seu ambiente Pix [61].
 
 Em **19 de outubro de 2025**, a fintech **FictorPay** (Grupo Fictor) teve cerca de **R$ 26 milhões**
 desviados por meio de aproximadamente **280 transações Pix** distribuídas em cerca de 270 contas
@@ -306,14 +391,39 @@ ou dano às contas de clientes [42][43]. A extensão financeira do incidente só
 meses depois**, quando o balanço do 1º trimestre de 2026 (divulgado em 13 de maio de 2026) revelou um item
 não recorrente de **R$ 146,6 milhões** em prejuízo [43].
 
+Em **22 de março de 2026** (domingo), o **BTG Pactual** identificou atividades atípicas em operações Pix,
+suspendeu o serviço preventivamente e o retomou no dia seguinte, após um ataque que desviou cerca de
+**R$ 100 milhões**. Segundo o banco, a falha foi "localizada internamente", não afetou a estrutura geral
+do sistema de pagamentos e nenhuma conta de cliente nem dado pessoal foi acessado; o vetor técnico não foi
+divulgado [45][46]. Segundo a imprensa, a maior parte do valor foi recuperada, restando entre **R$ 20
+milhões e R$ 40 milhões** a rastrear [45].
+
 Um vetor distinto do padrão de terceiros apareceu na manhã de **21 de abril de 2026**, quando o **Banco
 Rendimento** (instituição atuante principalmente no segmento de câmbio) identificou e conteve um ataque
 que afetou canais de acesso e **contas de clientes do próprio banco** — não um prestador terceirizado.
-Criminosos desviaram cerca de **R$ 100 milhões**, dos quais o banco conseguiu bloquear parte da rota,
-resultando em prejuízo líquido estimado entre **R$ 20 milhões e R$ 40 milhões** [44][45]. Há indícios de
-exploração de falha em mecanismos de autenticação — um dos vetores já anotados no diagrama de superfície de
-ataque do Pix/Open Finance abaixo (*credential stuffing* contra o acesso do cliente) —, mas o vetor técnico
-exato não está plenamente confirmado nas fontes disponíveis [44][45].
+Parte dos recursos teve o destino identificado e foi bloqueada, e o serviço foi normalizado; o banco **não
+divulgou** o número de usuários afetados nem os volumes financeiros envolvidos, e o vetor técnico exato
+também não foi divulgado — o acesso a canais do cliente corresponde a um dos vetores anotados no diagrama
+de superfície de ataque do Pix/Open Finance abaixo (*credential stuffing* contra o acesso do cliente), sem
+que as fontes confirmem essa técnica [44][45].
+
+> **Errata (24/9/2026):** versão anterior deste capítulo atribuía ao Banco Rendimento um desvio de cerca de
+> R$ 100 milhões e prejuízo líquido de R$ 20–40 milhões. Esses números referem-se ao ataque ao **BTG
+> Pactual** de 22/3/2026, citado na mesma reportagem da ConvergenciaDigital como caso anterior; a
+> cobertura do incidente do Rendimento registra que o banco não abriu volumes financeiros [44][45][46].
+
+Em **agosto de 2026**, dois episódios reforçaram a pressão sobre o ecossistema. No dia **18**, a Polícia
+Federal deflagrou a **Operação Pane Seca** contra um grupo acusado de invadir sistemas de instituições
+financeiras e realizar transferências e pagamentos de boletos, com os recursos passando por contas
+intermediárias e corretoras de criptoativos; o prejuízo estimado é de cerca de **R$ 227 milhões**, com
+bloqueio de R$ 226,2 milhões em bens — as instituições atingidas não foram nomeadas, e a investigação usou
+dados do Projeto Tentáculos, acordo de cooperação entre a PF e a Febraban [62][63]. Na mesma quinzena, a
+**TAG**, registradora de recebíveis controlada pela **Stone**, barrou uma tentativa de fraude de cerca de
+**R$ 350 milhões**: criminosos credenciados na rede como participantes do ecossistema de cartões tentaram
+trocar a titularidade de recebíveis de grandes empresas e liquidar os valores em uma conta laranja; o
+alerta de uma instituição financeira permitiu cancelar as operações antes da liquidação, **sem prejuízo
+financeiro** [64][65]. O caso estende o risco de terceiros a uma infraestrutura menos visível do sistema,
+a de registro de recebíveis.
 
 ## Superfície de ataque: Pix e Open Finance
 
@@ -340,12 +450,14 @@ setores), a Resolução CMN nº 4.893/2021 e a Resolução BCB nº 85/2021 (pol�
 específicas do setor financeiro), o arcabouço do Open Finance Brasil (compartilhamento de dados sob
 consentimento) e as regras do Pix/Banco Central (SPI, DICT, MED, Resolução Conjunta BCB/CMN nº 6). A
 atualização de 2025 (Resolução CMN nº 5.274/2025 e Resolução BCB nº 538/2025), com prazo de adequação em
-março de 2026, fecha a linha do tempo.
+1º/3/2026 — já vencido —, fecha a linha do tempo da figura. Posteriores a ela, e ainda não representados no
+diagrama, estão o MED 2.0 obrigatório desde 2/2/2026 (Resolução BCB nº 493/2025) e a Resolução BCB
+nº 587/2026, de 18/9/2026, que institui a marcação de suspeita de fraude no DICT [53][54][55][56].
 
 ![Mapa em linha do tempo das obrigações regulatórias do setor financeiro brasileiro: LGPD, Resolução CMN 4.893/2021, Resolução BCB 85/2021, Open Finance Brasil, regras do Pix e a atualização 2025 com prazo em março de 2026](../assets/diagramas/02-mapa-regulatorio-financeiro-br.svg)
 
 *Figura 2 — Linha do tempo das obrigações regulatórias do setor financeiro brasileiro, de 2020 (LGPD em
-vigor) a março de 2026 (prazo final de adequação às resoluções atualizadas em 2025). Cada camada mostra a
+vigor) a 1º/3/2026 (prazo final de adequação às resoluções atualizadas em 2025, já vencido). Cada camada mostra a
 exigência-chave associada [23][26][27][28][29].*
 
 ## Ameaças × impacto no setor financeiro
@@ -353,11 +465,11 @@ exigência-chave associada [23][26][27][28][29].*
 | Ameaça                                     | Probabilidade | Impacto        | Evidência                                                  |
 |:----------------------------------------------|:----------------:|:------------------|:----------------------------------------------------------------|
 | *Ransomware* direto contra a instituição       | Alta            | Crítico           | 156→202 incidentes (2024→2025), +76% Q1 2026 [10][11]           |
-| Fraude por engenharia social / *deepfake*      | Alta            | Alto              | *Deepfake* 0,1%→6,5% das tentativas em 3 anos [12][13]          |
-| Risco de terceiros / cadeia de suprimentos     | Média-Alta      | Crítico           | Caso C&M Software (R$ 400 mi); GJTec (32 instituições); Banco do Nordeste (R$ 146,6 mi) [10][11][32][33][42][43] |
+| Fraude por engenharia social / *deepfake*      | Alta            | Alto              | *Deepfake* 0,1%→6,5% das tentativas em 3 anos (Signicat, 2025); 20% das tentativas de fraude biométrica (Entrust 2026) [67][68][69][70]          |
+| Risco de terceiros / cadeia de suprimentos     | Média-Alta      | Crítico           | C&M Software (R$ 813 mi, PF; estimativa inicial ≥ R$ 400 mi); Sinqia (R$ 710 mi); GJTec (32 instituições); Banco do Nordeste (R$ 146,6 mi) [10][11][32][33][42][43][58][59][60][61] |
 | Roubo de ativos digitais (atores DPRK-nexus)   | Média           | Alto              | USD 2,02 bi roubados em 2025, +51% a/a [8][9]                   |
-| Abuso de API / consentimento fraudulento (Open Finance) | Média  | Alto              | 128–154 milhões de consentimentos ativos, superfície em expansão [24][25] |
-| DDoS                                          | Alta            | Baixo-Médio       | +154% (2022→2023), 35%+ de todo DDoS observado no setor [6][7]  |
+| Abuso de API / consentimento fraudulento (Open Finance) | Média  | Alto              | Mais de 200 milhões de consentimentos ativos em jul/2026 (208,8–239,8 mi, conforme a leitura do dashboard), superfície em expansão [51][52] |
+| DDoS                                          | Alta            | Baixo-Médio       | Alvo nº 1 de DDoS volumétrico em 2024, L7 +23% (2023→2024); duração mediana L3/L4 +738% desde 2024 [71][72][73][74] |
 | Vazamento de dados em massa                    | Média           | Alto              | Caso Banco Neon (alegação de 30 milhões de clientes) [30][31]   |
 
 ## Obrigações regulatórias do setor financeiro brasileiro
@@ -368,8 +480,10 @@ exigência-chave associada [23][26][27][28][29].*
 | Resolução CMN nº 4.893/2021                | Conselho Monetário Nacional | Bancos, cooperativas, SCDs/SEPs e demais instituições autorizadas | Política de segurança cibernética documentada | Atualizada por CMN 5.274/2025 |
 | Resolução BCB nº 85/2021                    | Banco Central do Brasil  | Instituições de pagamento                  | Política de segurança cibernética documentada | Atualizada por BCB 538/2025 |
 | Open Finance Brasil                        | Banco Central do Brasil  | Compartilhamento de dados sob consentimento | Gestão de consentimento e segurança de API | Em expansão contínua  |
-| Regras do Pix (SPI/DICT/MED)               | Banco Central do Brasil  | Instituições participantes do Pix          | Rastreabilidade de fraude, MED aprimorado  | Vigente; MED reforçado em 2025 |
-| Resolução CMN nº 5.274/2025 + BCB nº 538/2025 | CMN / Banco Central do Brasil | Atualização do marco de segurança cibernética | Adequação ao novo texto regulatório       | Março de 2026         |
+| Regras do Pix (SPI/DICT/MED)               | Banco Central do Brasil  | Instituições participantes do Pix          | Rastreabilidade de fraude, MED aprimorado  | Vigente               |
+| Resolução BCB nº 493/2025 (MED 2.0)        | Banco Central do Brasil  | Participantes do Pix (provedores de conta transacional e liquidantes especiais) | Rastreio do caminho do dinheiro na devolução; autoatendimento para contestação | Obrigatório desde 2/2/2026 |
+| Resolução CMN nº 5.274/2025 + BCB nº 538/2025 | CMN / Banco Central do Brasil | Atualização do marco de segurança cibernética | MFA, *security by design*, pentest anual independente, trilhas de auditoria | Vencido em 1º/3/2026  |
+| Resolução BCB nº 587/2026                  | Banco Central do Brasil  | Participantes do Pix                       | Marcação de suspeita de fraude no DICT (até 5 anos), bloqueio e contestação | Imediato (18/9/2026); demais itens 1º/2/2027 e 1º/7/2027 |
 
 ## Fontes
 
@@ -512,3 +626,112 @@ https://www.cnnbrasil.com.br/economia/negocios/banco-rendimento-e-alvo-de-ataque
 
 [45] ConvergenciaDigital. *Ataque hacker atinge mais um banco no Brasil e, agora, nas contas dos clientes*.
 Abril de 2026. https://convergenciadigital.com.br/mercado/ataque-hacker-atinge-mais-um-banco-no-brasil-e-agora-nas-contas-dos-clientes/
+
+[46] Agência Brasil (EBC). *BTG Pactual retoma Pix após ataque hacker que desviou R$ 100 milhões*. 23 de
+março de 2026. https://agenciabrasil.ebc.com.br/economia/noticia/2026-03/btg-pactual-retoma-pix-apos-ataque-hacker-que-desviou-r-100-milhoes
+
+[47] Fórum Brasileiro de Segurança Pública. *Anuário Brasileiro de Segurança Pública 2026* (tabela de
+estelionato e estelionato por meio eletrônico, p. 120). Julho de 2026.
+https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.pdf
+
+[48] Jornal da Nova. *Estelionatos batem recorde e somam 2,26 milhões de casos; alta é de quase 430% desde
+2018*. Julho de 2026. https://jornaldanova.com.br/noticia/473690/estelionatos-batem-recorde-e-somam-226-milhoes-de-casos-alta-e-de-quase-430-desde-2018
+
+[49] Boqnews (citando GASA, *O Estado dos Golpes no Brasil 2026*). *Brasil conviveu com mais de 34 bi de
+tentativas de golpes digitais em 2025*. Agosto de 2026.
+https://www.boqnews.com/nacional/brasil-conviveu-com-mais-de-34-bi-de-tentativas-de-golpes-digitais-em-2025/
+
+[50] Consecti (citando GASA). *Brasil conviveu com mais de 34 bilhões de tentativas de golpes digitais em
+2025, estima ONG internacional*. Agosto de 2026.
+https://consecti.org.br/brasil-conviveu-com-mais-de-34-bilhoes-de-tentativas-de-golpes-digitais-em-2025-estima-ong-internacional/
+
+[51] Let's Money. *Open Finance entra em nova fase com desafio de governança*. 27 de agosto de 2026
+(atualizado em 12 de setembro de 2026).
+https://www.letsmoney.com.br/noticias/open-finance-208-milhoes-consentimentos-governanca/
+
+[52] Zetta. *Cinco anos de transformação e uma agenda para o futuro — Open Finance no Brasil* (dados do
+dashboard oficial do Open Finance Brasil, consulta em 18/8/2026). Setembro de 2026.
+https://static.poder360.com.br/uploads/2026/09/Zetta_2026_Open-Finance-no-Brasil_Final-1-1.pdf
+
+[53] Agência Brasil (EBC). *Novas regras de segurança do Pix entram em vigor; veja mudanças*. Fevereiro de
+2026. https://agenciabrasil.ebc.com.br/economia/noticia/2026-02/novas-regras-de-seguranca-do-pix-entram-em-vigor-veja-mudancas
+
+[54] CSMV Advogados. *Resolução BCB nº 493/2025 — Aperfeiçoamento do Mecanismo Especial de Devolução (MED)
+do Pix*. 2025. https://www.csmv.com.br/boletins/boletim-01/
+
+[55] Poder360. *Entenda quais são as mudanças no Pix anunciadas pelo BC*. 18 de setembro de 2026.
+https://www.poder360.com.br/poder-economia/entenda-quais-sao-as-mudancas-no-pix-anunciadas-pelo-bc/
+
+[56] TI Inside. *BC endurece regras contra fraudes e altera funcionamento do Pix*. 18 de setembro de 2026.
+https://tiinside.com.br/18/09/2026/bc-endurece-regras-contra-fraudes-e-altera-funcionamento-do-pix/
+
+[57] Clavis. *Banco Central reforça exigências de segurança cibernética: o que muda para instituições até
+março de 2026*. 2025. https://clavis.com.br/blog/banco-central-reforca-exigencias-de-seguranca-cibernetica/
+
+[58] CNN Brasil. *PF pede extradição de suspeitos de ataque hacker que afetou Pix*. 7 de novembro de 2025.
+https://www.cnnbrasil.com.br/nacional/brasil/pf-pede-extradicao-de-suspeitos-de-ataque-hacker-que-afetou-pix/
+
+[59] Jornal de Brasília. *Com ajuda da Interpol, PF faz nova operação contra hackers que desviaram R$ 813
+milhões*. 30 de outubro de 2025.
+https://jornaldebrasilia.com.br/noticias/brasil/com-ajuda-da-interpol-pf-faz-nova-operacao-contra-hackers-que-desviaram-r-813-milhoes/
+
+[60] InfoMoney. *Desvio de recursos em ataque hacker ao Pix vai a R$ 710 mi; maior parte foi bloqueada*.
+Setembro de 2025. https://www.infomoney.com.br/economia/desvio-de-recursos-em-ataque-hacker-ao-pix-vai-a-r-710-mi-maior-parte-foi-bloqueada/
+
+[61] CartaCapital. *Ataque hacker desviou R$ 710 milhões em transações Pix, diz empresa que opera sistema*.
+2 de setembro de 2025. https://www.cartacapital.com.br/economia/ataque-hacker-desviou-r-710-milhoes-em-transacoes-pix-diz-empresa-que-opera-sistema/
+
+[62] Polícia Federal. *PF combate grupo responsável por invasões a sistemas de instituições financeiras*
+(Operação Pane Seca). 18 de agosto de 2026.
+https://www.gov.br/pf/pt-br/assuntos/noticias/2026/08/pf-desarticula-grupo-criminoso-responsavel-por-invasoes-a-sistemas-de-instituicoes-financeiras
+
+[63] Metrópoles. *Grupo invade sistemas financeiros e causa prejuízo de R$ 227 milhões*. Agosto de 2026.
+https://www.metropoles.com/colunas/mirelle-pinheiro/grupo-invade-sistemas-financeiros-e-causa-prejuizo-de-r-227-milhoes
+
+[64] Let's Money (citando Valor Econômico). *Registradora da Stone barra fraude de R$ 350 milhões*. 17 de
+agosto de 2026. https://www.letsmoney.com.br/noticias/registradora-stone-fraude-recebiveis-350-milhoes/
+
+[65] Vero Notícias. *Registradora da Stone identifica fraude de R$ 350 milhões*. 16 de agosto de 2026.
+https://veronoticias.com/economia/registradora-da-stone-identifica-fraude-de-r-350-milhoes/
+
+[66] Verizon. *2026 Data Breach Investigations Report* (p. 84, "Financial and Insurance"). 2026.
+https://www.verizon.com/business/resources/Td15/reports/2026-dbir-data-breach-investigations-report.pdf
+
+[67] Signicat. *Fraud attempts with deepfakes have increased by 2137% over the last three years* (The Battle
+Against AI-Driven Identity Fraud). 2025.
+https://www.signicat.com/press-releases/fraud-attempts-with-deepfakes-have-increased-by-2137-over-the-last-three-year
+
+[68] Intelligent CISO. *Fraud attempts with deepfakes have increased by 2137% over the last three years*. 24 de
+fevereiro de 2025.
+https://www.intelligentciso.com/2025/02/24/fraud-attempts-with-deepfakes-have-increased-by-2137-over-the-last-three-years/
+
+[69] Entrust. *Deepfakes, Social Engineering, and Injection Attacks on the Rise: Entrust 2026 Identity Fraud
+Report Reveals Surging Attacks and Diversifying Tactics*. 18 de novembro de 2025.
+https://www.entrust.com/company/newsroom/deepfakes-social-engineering-and-injection-attacks-on-the-rise
+
+[70] FinTech Magazine. *Deepfakes Drive 20% of Biometric Fraud Attempts*. 2025.
+https://fintechmagazine.com/news/cybercrime-when-the-sun-is-down-entrust-shows-attack-surge
+
+[71] FS-ISAC. *DDoS Attackers Increase Targeting of Global Financial Sector, According to FS-ISAC and Akamai
+Report* (From Nuisance to Strategic Threat: DDoS Attacks Against the Financial Sector). 10 de junho de 2025.
+https://www.fsisac.com/newsroom/ddos-attackers-increase-targeting-of-global-financial-sector-according-to-fsisac-and-akamai-report
+
+[72] Infosecurity Magazine. *DDoS Attacks on Financial Sector Surge in Scale and Sophistication*. Junho de
+2025. https://www.infosecurity-magazine.com/news/ddos-financial-sector-surge/
+
+[73] Akamai. *Financial Services at Risk: DDoS Attacks Are Bigger, Longer, and More Complex, Akamai Research
+Finds* (State of the Internet — Financial Services 2026). 20 de maio de 2026.
+https://www.akamai.com/newsroom/press-release/financial-services-at-risk-ddos-attacks-are-bigger-longer-and-more-complex-akamai-research-finds
+
+[74] TFiR. *AI Powered Attacks Breaking Bank Defenses* (entrevista com Steve Winterfeld, Akamai). 2026.
+https://tfir.io/akamai-api-ddos-financial-services-2026-steve-winterfeld/
+
+[75] Black Kite. *Black Kite's 2026 State of Financial Services Report Reveals Ransomware Surge and
+Vulnerability Deluge Driving Two-Front Cyber Threat*. 3 de junho de 2026.
+https://blackkite.com/press-releases/black-kites-2026-state-of-financial-services-report-reveals-ransomware-surge-and-vulnerability-deluge-driving-two-front-cyber-threat
+
+[76] CYFIRMA. *Finance Q2 2026: Industry Report*. 2026.
+https://www.cyfirma.com/research/finance-q2-2026-industry-report/
+
+[77] Comparitech. *Ransomware Roundup: H1 2026 stats on attacks, ransoms, and active gangs*. 2 de julho de
+2026. https://www.comparitech.com/news/ransomware-roundup-h1-2026-stats-on-attacks-ransoms-and-active-gangs/
