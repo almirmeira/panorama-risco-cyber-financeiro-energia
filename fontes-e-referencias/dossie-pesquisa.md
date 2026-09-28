@@ -690,6 +690,46 @@
     do número #6. Baseado em mais de 1.300 especialistas globais. Ranking #1 do horizonte de 2 anos é
     "confronto geoeconômico"; #2 é "conflito armado entre estados"; #3 é "polarização social".
 
+### Atualização 2026-09-28 — ENISA Threat Landscape 2026 (nova edição, publicada em 22/09/2026)
+
+- **Dado:** a edição 2026 do ENISA Threat Landscape (publicada em 22/9/2026, cobrindo o período de
+  janeiro a dezembro de 2025) analisou **8.257 incidentes** — ante 4.875 na edição 2025 (jul/2024–
+  jun/2025). Administração pública segue como setor mais visado por volume, agora com **32%** dos alvos
+  (ante 38,2%), seguida por serviços empresariais e manufatura, empatados em **8%** cada — energia e
+  finanças deixaram de aparecer nominalmente entre os setores mais citados desta edição. **73%** das
+  vítimas identificadas são entidades essenciais ou importantes conforme a Diretiva NIS2 (ante 53,7%).
+  Quanto ao tipo de ataque: DDoS segue líder em volume, mas com participação menor, **51,3%** dos
+  incidentes (ante 77% na edição anterior), e acesso não autorizado aparece em **39,5%**. Dentro dos
+  eventos financeiramente motivados (categoria nova em relação à edição 2025), *ransomware* responde por
+  **40%**, violação de dados por **31%** e fraude/falsificação de identidade por **19%**.
+  - Fonte 1: ENISA. *ENISA Threat Landscape 2026*. 22 de setembro de 2026.
+    https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
+  - Fonte 2 (secundária, cobertura técnica independente que reproduz os mesmos números centrais):
+    Industrial Cyber. *ENISA Threat Landscape 2026 highlights ransomware, vulnerability exploitation,
+    AI-enabled attacks across EU organizations*. 2026.
+    https://industrialcyber.co/reports/enisa-threat-landscape-2026-highlights-ransomware-vulnerability-exploitation-ai-enabled-attacks-across-eu-organizations/
+    (ver também Help Net Security, *Europe's technology backbone is becoming a cyber target*, 24/9/2026,
+    https://www.helpnetsecurity.com/2026/09/24/enisa-eu-cyber-threats-report/, que traz os mesmos números
+    de 8.257 incidentes, 32%/8%/8% de setores e 73% de entidades essenciais/importantes de forma
+    independente)
+  - Observações: **este dado substitui, como referência mais atual, os valores de 4.875 incidentes,
+    38,2% (administração pública), 53,7% (entidades essenciais/importantes) e 77%/2% (DDoS/disrupção
+    real) da edição 2025 já registrados acima**, mantidos no dossiê por preservar o histórico de
+    pesquisa. Este ciclo resolve a pendência **[NÃO CONFIRMADO]** registrada na revisão profunda de
+    2026-09-24/25 ("só a própria ENISA; coberturas secundárias inacessíveis (403) ou com números da
+    edição 2025"): o acesso direto ao PDF oficial e a domínios como industrialcyber.co, dig.watch,
+    hard2bit.com, secrails.com e helpnetsecurity.com continuou bloqueado por política de rede desta
+    sessão (nenhuma exceção nova em relação ao ciclo anterior), mas a busca (WebSearch) retornou o mesmo
+    conjunto de números de forma consistente em pelo menos quatro veículos distintos (Industrial Cyber,
+    Help Net Security, Digital Watch Observatory e Acompli), o que satisfaz a regra de ≥2 fontes
+    independentes mesmo sem fetch direto — mesmo padrão já usado neste dossiê quando o fetch de um PDF
+    retorna 403 (ex.: IBM Cost of a Data Breach, ver acima). **Permanece NÃO CONFIRMADO** o equivalente
+    2026 de dois números da edição 2025 que continuam em uso nos capítulos: "ameaças a OT como 18,2% das
+    categorias de ameaça" e "42.595 novas vulnerabilidades divulgadas" — nenhuma fonte (nem via busca)
+    trouxe um número claramente equivalente para a edição 2026 com dupla confirmação; um resultado de
+    busca mencionou "60,4%" para exploração de vulnerabilidades como vetor de acesso não autorizado, mas
+    o valor não pôde ser corroborado por uma segunda fonte independente e por isso não foi incorporado.
+
 ### WEF Global Risks Report 2026 — riscos adjacentes (IA adversa, quântica)
 
 - **Dado:** o risco cibernético em 2026 é descrito como acelerado por avanços em IA, pela ameaça iminente da
@@ -733,9 +773,16 @@
 | Espionagem (% de incidentes) | ~15–17% | Verizon DBIR 2025 | **Divergência não resolvida entre fontes** |
 | Motivação financeira agregada | ≥52% dos incidentes | Microsoft Digital Defense Report 2025 | Confirmado (2 fontes); cuidado com leitura de manchete |
 | Phishing com apoio de IA (taxa de clique) | 54% (4x o tradicional) | Microsoft Digital Defense Report 2025 | Confirmado (2 fontes) |
-| Incidentes analisados (UE) | 4.875 (jul/2024–jun/2025) | ENISA Threat Landscape 2025 | Confirmado (2 fontes) |
-| Setor mais visado na UE (volume) | Administração pública, 38,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); energia fora do top 5 por volume |
-| Ameaças a OT (% de categorias) | 18,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes) |
+| Incidentes analisados (UE) | 4.875 (jul/2024–jun/2025) | ENISA Threat Landscape 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Incidentes analisados (UE, 2026, atualização 2026-09-28) | 8.257 (jan–dez/2025) | ENISA Threat Landscape 2026 | Confirmado (2 fontes) |
+| Setor mais visado na UE (volume) | Administração pública, 38,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); energia fora do top 5 por volume; **superado pela edição 2026, ver linha abaixo** |
+| Setor mais visado na UE (volume, 2026, atualização 2026-09-28) | Administração pública, 32%; serviços empresariais e manufatura, 8% cada | ENISA Threat Landscape 2026 | Confirmado (2 fontes); energia e finanças não aparecem nominalmente no topo |
+| Entidades essenciais/importantes (NIS2) entre vítimas | 53,7% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| Entidades essenciais/importantes (NIS2) entre vítimas (2026, atualização 2026-09-28) | 73% | ENISA Threat Landscape 2026 | Confirmado (2 fontes) |
+| DDoS (% de incidentes reportados na UE) | 77% (2% com disrupção real) | ENISA Threat Landscape 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
+| DDoS / acesso não autorizado (% de incidentes, 2026, atualização 2026-09-28) | DDoS 51,3%; acesso não autorizado 39,5% | ENISA Threat Landscape 2026 | Confirmado (2 fontes); métrica de "disrupção real" sem equivalente 2026 |
+| Ransomware / violação de dados / fraude, entre eventos financeiramente motivados (2026, atualização 2026-09-28) | 40% / 31% / 19% | ENISA Threat Landscape 2026 | Confirmado (2 fontes); categoria nova, sem equivalente direto na edição 2025 |
+| Ameaças a OT (% de categorias) | 18,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); sem equivalente 2026 confirmado — **[NÃO CONFIRMADO em 2026-09-28]** |
 | IA em ataques (% de violações) | 16% (IBM) / phishing 80%+ das campanhas (ENISA) | IBM 2025 / ENISA 2025 | Confirmado (2 fontes cada); métricas não somáveis entre si |
 | Ranking WEF — cyber insecurity (2 anos) | #6 | WEF Global Risks Report 2026 | Confirmado (2 fontes) |
 | AI como driver #1 de mudança (2026) | 94% dos líderes | WEF Global Cybersecurity Outlook 2026 | Confirmado (2 fontes) |
@@ -3359,3 +3406,45 @@ que não muda). Adicionada entrada em `fontes.incorporacoesRecentes`.
 - Unit 42 (Palo Alto Networks). *An AI-Assisted Cyber Attack: Inside a Unit 42 Investigation*. Set/2026. https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/
 - Cybernews. *AI agents speed ransomware breach to under 10 hours*. Set/2026. https://cybernews.com/security/ai-agents-ransomware-attack-security-audit/
 - TechTimes. *Agentic Ransomware Took Down Enterprise in Ten Hours: AI Left 80-Page Audit*. 03/09/2026. https://www.techtimes.com/articles/326409/20260903/agentic-ransomware-took-down-enterprise-ten-hours-ai-left-80-page-audit.htm
+
+## Registro do refresh — 2026-09-28 (varredura rotativa: grupo 0 — Global/Comparativo + caps 01 e 04)
+
+Ciclo de 3 dias. Janela recente (item 2): nenhuma edição nova de CrowdStrike GTR, Microsoft MDDR, Verizon
+DBIR, IBM CODB, Mandiant M-Trends, WEF ou Sophos além das já incorporadas; nenhum incidente-marco novo em
+financeiro/energia nos últimos 3 dias com relevância global (o desligamento de usina no Reino Unido
+ligado a atores iranianos já consta do repositório desde o ciclo anterior — cap. 03/AA26-097A — e é
+anterior à janela). Varredura rotativa (item 2b), grupo 0 = `global`, `comparativoGlobal`, `comparativo`
++ caps. 01 e 04:
+
+| Item auditado | Veredito |
+| :-- | :-- |
+| IBM Cost of a Data Breach 2026 (custo global, financeiro, energia, 247 dias) | Confirmado atual — sem edição mais nova |
+| Mandiant M-Trends 2026 (dwell time 14 dias; Alta Tecnologia 17%; financeiro 14,6%) | Confirmado atual — sem edição mais nova |
+| Verizon DBIR 2026 (48% ransomware; 31% exploits) | Confirmado atual — sem edição mais nova; *snapshot* financeiro 2026 continua não localizado |
+| CrowdStrike Global Threat Report 2026 (29 min; 27 s; 82% malware-free) | Confirmado atual — sem edição mais nova |
+| Microsoft Digital Defense Report 2025 (52% motivação financeira; 54% clique com IA) | Confirmado atual — MDDR 2026 ainda não publicado |
+| WEF Global Cybersecurity Outlook / Global Risks Report 2026 | Confirmado atual — sem edição mais nova |
+| ENISA Threat Landscape | **Atualizado** — edição 2026 (22/9/2026) confirmada por 4 veículos via busca (ver seção "Atualização 2026-09-28" acima); resolve pendência NÃO CONFIRMADO da revisão de 2026-09-24/25 |
+| Sophos State of Ransomware | Sem edição 2026 localizada; edição usada no repositório (se houver) segue vigente |
+| Ameaças a OT (ENISA, % de categorias) e novas vulnerabilidades (ENISA, contagem) | Permanece **[NÃO CONFIRMADO em 2026-09-28]** — sem equivalente 2026 com 2 fontes independentes |
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida nos blocos
+`global`/`comparativoGlobal`/`comparativo` do painel nem nos capítulos 01 e 04 (checagem por padrões
+"previsto", "até 202x", "próximos N meses", "entrará em vigor" não encontrou pendências).
+
+Destinos atualizados: `01-panorama-global/README.md` (parágrafo ENISA e nota sobre OT/DDoS, refs.
+[52]-[54] novas) e este dossiê (tabela-resumo + nova entrada "Atualização 2026-09-28"). O painel
+(`dashboard/src/data/dashboard.json`) não tem número numérico oriundo da ENISA nos blocos `global`,
+`comparativoGlobal` ou `comparativo` — nenhuma alteração de dado necessária ali; adicionada apenas
+entrada em `fontes.incorporacoesRecentes` e atualização de `meta.geradoEm`/`meta.verificadoEm`. Nenhum
+SVG pendente identificado neste ciclo (o inventário visual do capítulo 01/04 não referencia números
+específicos da ENISA).
+
+#### Fontes desta revisão
+
+- ENISA. *ENISA Threat Landscape 2026*. 22/09/2026. https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
+- Industrial Cyber. *ENISA Threat Landscape 2026 highlights ransomware, vulnerability exploitation, AI-enabled attacks across EU organizations*. 2026. https://industrialcyber.co/reports/enisa-threat-landscape-2026-highlights-ransomware-vulnerability-exploitation-ai-enabled-attacks-across-eu-organizations/
+- Help Net Security. *Europe's technology backbone is becoming a cyber target*. 24/09/2026. https://www.helpnetsecurity.com/2026/09/24/enisa-eu-cyber-threats-report/
+- Digital Watch Observatory. *ENISA Cyber threat landscape 2026 reports on the leading and converging threats on the European cyber environment*. 2026. https://dig.watch/updates/enisa-eu-cyber-threat-landscape-2026
+- Acompli. *ENISA Threat Landscape Confirms Public Administration as Most Targeted Sector*. 2026. https://acompli.ie/news/enisa-threat-landscape-2026-public-administration/
+- SecurityWeek. *Iran-Linked Hackers Shut Down UK Power Plant for Four Days*. 22/08/2026 (verificado como já incorporado ao repositório em ciclo anterior). https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/

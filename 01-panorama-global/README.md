@@ -144,17 +144,25 @@ diretamente conciliáveis porque medem populações diferentes — engajamentos 
 Mandiant versus base própria de IR do IBM X-Force — e todos são registrados aqui em vez de se escolher
 arbitrariamente um "vencedor".
 
-O *ENISA Threat Landscape 2025*, que mede **volume de incidentes reportados** na União Europeia (não
-severidade), traz um retrato ainda diferente: administração pública lidera com **38,2%** dos 4.875
-incidentes analisados, seguida de transporte (7,5%), infraestrutura e serviços digitais (4,8%), finanças
-(4,5%) e manufatura (2,9%) — energia também fica fora do topo cinco por esse critério [14][15]. A
-explicação mais provável é metodológica: a ENISA mede volume bruto (dominado por DDoS de baixo impacto
-promovido por hacktivistas — 77% dos incidentes reportados, mas apenas 2% com disrupção real de
-serviço), enquanto Mandiant e IBM medem severidade/tipo de engajamento (*ransomware*, exploração
-industrial). *Nota de atualização:* a ENISA publicou o *ENISA Threat Landscape 2026* em 22 de setembro
-de 2026, cobrindo o período de janeiro a dezembro de 2025 [52]; os números da ENISA citados neste
-capítulo seguem sendo os da edição 2025 até que os da nova edição sejam confirmados em uma segunda
-fonte independente. Uma quarta leitura, agregando cobertura de mercado sobre 2025, estima que cerca de **70%**
+O *ENISA Threat Landscape*, que mede **volume de incidentes reportados** na União Europeia (não
+severidade), foi atualizado em 22 de setembro de 2026 para a edição 2026 (8.257 incidentes analisados,
+janeiro a dezembro de 2025 — ante 4.875 incidentes na edição 2025, referentes a jul/2024–jun/2025)
+[52][53][54]. Administração pública segue líder isolada, agora com **32%** dos alvos identificados
+(ante 38,2% na edição anterior), seguida por serviços empresariais e manufatura, empatados em **8%**
+cada — energia e finanças deixaram de aparecer nominalmente entre os setores mais citados nesta edição,
+mas isso é o mesmo padrão metodológico já registrado abaixo (volume bruto dominado por DDoS de
+hacktivistas, não severidade) [52][53][54]. **73%** das vítimas identificadas são entidades essenciais ou
+importantes conforme a Diretiva NIS2 (ante 53,7% na edição anterior). Quanto ao tipo de ataque, DDoS
+segue dominante em volume (**51,3%** dos incidentes) e acesso não autorizado aparece em **39,5%**;
+dentro dos eventos financeiramente motivados, *ransomware* responde por **40%**, violação de dados por
+**31%** e fraude/falsificação de identidade por **19%** [52][53][54]. **[NÃO CONFIRMADO em 2026-09-28]** —
+não foi possível localizar, em fonte independente acessível, o equivalente 2026 do indicador "ameaças a
+OT como 18,2% das categorias de ameaça" nem da contagem de novas vulnerabilidades (42.595 na edição
+2025); esses dois números permanecem atribuídos explicitamente à edição 2025 nas seções abaixo até
+confirmação. A explicação mais provável para energia/finanças ficarem fora do topo de volume é
+metodológica: a ENISA mede volume bruto (dominado por DDoS de baixo impacto promovido por
+hacktivistas), enquanto Mandiant e IBM medem severidade/tipo de engajamento (*ransomware*, exploração
+industrial). Uma quarta leitura, agregando cobertura de mercado sobre 2025, estima que cerca de **70%**
 de todos os incidentes do ano envolveram organizações em setores críticos (energia, manufatura,
 finanças, transporte, saúde), com **2.332 dos 4.701** incidentes de *ransomware* registrados (50%)
 mirando especificamente esses setores, e alta de **80%** ano a ano em *ransomware* contra energia e
@@ -255,9 +263,13 @@ milhões** globalmente,
 crescimento de 3.269 incidentes estudados em 2018 para 7.868 em 2025, e tempo médio de contenção de
 **81 dias** [27][28]. DDoS aparece em alta probabilidade e impacto tipicamente baixo — consistente com o
 achado da ENISA de que 77% dos incidentes reportados na UE são DDoS, mas apenas 2% causam disrupção real
-de serviço [14][15]. Por fim, ameaças a tecnologia operacional (OT/ICS) são posicionadas como
-quase-críticas mesmo com baixa frequência observada: a ENISA já mede ameaças a OT como 18,2% de todas as
-categorias de ameaça identificadas [14][15], e o impacto potencial — físico, operacional, por vezes com
+de serviço [14][15] — na edição 2026, o DDoS segue líder mas com participação menor (51,3% dos
+incidentes, ante 39,5% de acesso não autorizado); a métrica de "disrupção real" (2%) não tem
+equivalente 2026 confirmado, então segue atribuída à edição 2025 [52][53][54]. Por fim, ameaças a
+tecnologia operacional (OT/ICS) são posicionadas como quase-críticas mesmo com baixa frequência
+observada: a ENISA mede ameaças a OT como 18,2% de todas as categorias de ameaça identificadas na
+edição 2025 — número ainda sem equivalente 2026 confirmado por fonte independente [14][15], e o impacto
+potencial — físico, operacional, por vezes com
 risco à integridade humana — justifica tratamento como risco de cauda grossa, não como evento raro e
 irrelevante. Esse recorte é aprofundado no capítulo 03 (Setor Energia).
 
@@ -463,3 +475,10 @@ https://databreachcost.com/report/2026
 
 [52] ENISA. *ENISA Threat Landscape 2026*. 22 de setembro de 2026.
 https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026
+
+[53] Industrial Cyber. *ENISA Threat Landscape 2026 highlights ransomware, vulnerability exploitation,
+AI-enabled attacks across EU organizations*. 2026.
+https://industrialcyber.co/reports/enisa-threat-landscape-2026-highlights-ransomware-vulnerability-exploitation-ai-enabled-attacks-across-eu-organizations/
+
+[54] Help Net Security. *Europe's technology backbone is becoming a cyber target*. 24 de setembro de
+2026. https://www.helpnetsecurity.com/2026/09/24/enisa-eu-cyber-threats-report/
