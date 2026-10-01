@@ -3448,3 +3448,53 @@ específicos da ENISA).
 - Digital Watch Observatory. *ENISA Cyber threat landscape 2026 reports on the leading and converging threats on the European cyber environment*. 2026. https://dig.watch/updates/enisa-eu-cyber-threat-landscape-2026
 - Acompli. *ENISA Threat Landscape Confirms Public Administration as Most Targeted Sector*. 2026. https://acompli.ie/news/enisa-threat-landscape-2026-public-administration/
 - SecurityWeek. *Iran-Linked Hackers Shut Down UK Power Plant for Four Days*. 22/08/2026 (verificado como já incorporado ao repositório em ciclo anterior). https://www.securityweek.com/iran-linked-hackers-shut-down-uk-power-plant-for-four-days/
+
+## Registro do refresh — 2026-10-01 (varredura rotativa: grupo 1 — setor financeiro, recorte global + cap. 02)
+
+Ciclo de 3 dias. Janela recente (item 2): nenhuma edição nova de CrowdStrike GTR, Microsoft MDDR, IBM
+CODB ou Mandiant M-Trends além das já incorporadas; nenhum incidente-marco novo em financeiro/energia nos
+últimos 3 dias. Varredura rotativa (item 2b), grupo 1 = `setores[id=financeiro]` itens **globais** (custo,
+*ransomware* contra o setor, motivação DBIR, *deepfake*, DDoS, barra, pizza) + cap. 02 (FS-ISAC, IBM, DBIR
+Finance, Black Kite, Akamai/Cloudflare/Radware). Este recorte já havia sido auditado a fundo em
+2026-09-24 (ver "Atualização 2026-09-24 — setor financeiro, recorte global" acima); esta é a primeira
+passagem da rotação por esse mesmo grupo desde que o esquema de 5 grupos entrou em vigor (2026-09-25).
+Por isso vários itens aparecem abaixo como "confirmado atual, sem mudança" — o que é esperado sete dias
+depois de uma revisão profunda — enquanto outros evoluíram de "não confirmado" para "confirmado" com a
+pesquisa adicional desta passagem.
+
+| Item | Valor no painel (antes) | Veredito | Evidência |
+| :-- | :-- | :-: | :-- |
+| Custo médio de violação (IBM CODB 2026) | USD 6,3 mi | Confirmado atual | Sem edição mais nova; IBM publica anualmente em jul. |
+| *Ransomware* direto (Black Kite, anual) | 156→202 (2024→2025); Q1 2026 +76% (65) | Confirmado atual | Sem mudança nos números anuais/Q1 |
+| *Ransomware* — Q2 2026 (monitoramento) | CYFIRMA 114 vítimas (fonte única, não comparável) | **Atualizado** | Black Kite (mesmo fornecedor da série anual) publicou o *2026 Ransomware Report* (abr/2025–mar/2026, 7.551 vítimas, +24,9%): financeiro soma **135 ataques não divulgados no Q2 2026** — métrica mais comparável à série principal do que a estimativa isolada da CYFIRMA. Fonte 1 (Black Kite) + Fonte 2 independente (Help Net Security) |
+| Vulnerabilidades críticas em fornecedores do setor financeiro | "quase quintuplicaram" (sem números exatos) | **Atualizado (precisão)** | Confirmado com números exatos: de **15 para 73** fornecedores com CVSS ≥ 9 entre os 140 mais concentrados no setor (alta de **387%**) — mesma fonte primária [75] já citada, precisão adicional via Efficiently Connected |
+| Motivação (DBIR 2025 Finance Snapshot) | 90% financeira / 12% espionagem | Confirmado como valor histórico | Superado pela edição 2026 (linha abaixo) |
+| Motivação (DBIR 2026, p. 84) | 98% / 3%; 3.809 incidentes / 1.300 violações — **não confirmado em 24/09/2026** (fonte primária única) | **Atualizado — encerra a ressalva de fonte única** | Confirmado por convergência de múltiplas coberturas secundárias independentes do mesmo relatório primário (Keepnet Labs, SpyCloud, entre outras), que reproduzem os mesmos números: 88% atores externos/12% internos; vetores de acesso inicial do padrão Intrusão de Sistema — exploração de vulnerabilidade 22%, *phishing* 20%, abuso de credencial 15%; elemento humano presente em 65% das violações do setor. Não existe *Finance Snapshot* 2026 como PDF avulso (diferente de 2025) — os dados estão integrados ao corpo do relatório principal, o que já havia sido observado em 24/09/2026 e se confirma agora |
+| *Deepfake* (Signicat 6,5% / Entrust 20%) | — | Confirmado atual, sem mudança de KPI | Dois novos *trackers* globais de fraude por *deepfake* foram localizados (Surfshark, 2026: US$ 2,5 bi em 2025 + US$ 764 mi no H1 2026; Shufti Identity Fraud Index 2026: alta projetada de 495% em 2026) — mas medem fraude de identidade **cross-setorial**, não a taxa específica do setor financeiro medida pela Signicat/Entrust, e não devem ser somados a ela (mesmo cuidado metodológico já registrado no dossiê para este tema). **[NÃO PROMOVIDO A KPI — métrica não comparável]** |
+| DDoS (FS-ISAC/Akamai; Akamai SOTI 2026) | Alvo nº 1 em 2024; L7 +23%; L3/L4 +738% desde 2024 | Confirmado atual + novo dado complementar | Radware *H1 2026 Global Threat Report* (fonte independente, não usada antes neste capítulo): setor financeiro foi o **2º setor mais atingido por ataques de rede (20,8%) no H1 2026**, atrás apenas de tecnologia; Web DDoS global +110,6% a/a. Fonte 1 (Radware/GlobeNewswire) + Fonte 2 independente (The Fast Mode) |
+| API — Akamai (96% dos líderes do setor com incidente de API em 12 meses) | — | **Incorporado** (dado já citado, não escrito no texto) | O número já estava disponível na fonte [73]/[74] já citada no capítulo (mesmo comunicado Akamai de 20/5/2026, que cobre DDoS e API), mas não constava na prosa — corrigido |
+| FS-ISAC *Navigating Cyber 2026* | — | Não localizado (reconfirmado) | Última edição continua sendo 2025 (publicada em mai/2025); nenhuma nova edição encontrada em 01/10/2026 |
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida nos itens auditados
+deste grupo (os prazos regulatórios do Pix/Open Finance pertencem ao grupo 2, não a este ciclo).
+
+Destinos atualizados: `02-setor-financeiro/README.md` (tabela de indicadores, seções "Verizon DBIR",
+"DDoS e *ransomware*", refs. [78]-[84] novas) e `dashboard/src/data/dashboard.json` (KPI e gráfico de
+pizza de motivação DBIR atualizados para a edição 2026, com o valor anterior preservado no campo `delta`/
+`nota`; KPI e dimensão de *ransomware* e de DDoS com nota complementar; `meta.geradoEm` e
+`meta.verificadoEm` atualizados para 2026-10-01). Nenhum SVG referencia os números trocados nesta
+passagem — nenhuma pendência manual de SVG.
+
+#### Fontes desta revisão
+
+- Verizon. *2026 Data Breach Investigations Report* (p. 84, "Financial and Insurance"). 2026. https://www.verizon.com/business/resources/Td15/reports/2026-dbir-data-breach-investigations-report.pdf
+- Keepnet Labs. *2026 Verizon DBIR: Voice and SMS Phishing Decoded*. 2026. https://keepnetlabs.com/blog/2026-verizon-data-breach-investigations-report
+- SpyCloud. *2026 Verizon DBIR: Key Takeaways for Identity Threat Protection and Defense*. 2026. https://spycloud.com/blog/top-takeaways-from-the-2026-verizon-data-breach-investigations-report/
+- Black Kite. *2026 Ransomware Report: 7,551 Victims, Up 24.9%*. 2026. https://blackkite.com/reports/2026-ransomware-report
+- Help Net Security. *Ransomware in 2026: More groups, more victims, no slowdown*. 24/07/2026. https://www.helpnetsecurity.com/2026/07/24/ransomware-attack-trends-2026-report/
+- Efficiently Connected. *Financial Services Faces a Two-Front Cyber Threat in 2026*. 2026. https://www.efficientlyconnected.com/financial-services-third-party-cyber-risk-2026/
+- Radware (via GlobeNewswire). *Radware H1 2026 Global Threat Report Shows Web DDoS Attacks Jump More Than 110% as Cyber Threats Accelerate*. 09/09/2026. https://www.globenewswire.com/news-release/2026/09/09/3358409/8980/en/radware-h1-2026-global-threat-report-shows-web-ddos-attacks-jump-more-than-110-as-cyber-threats-accelerate.html
+- The Fast Mode. *Radware H1 2026 Report Shows Web DDoS Attacks Surge 110.6%*. 2026. https://www.thefastmode.com/market-trends/50546-radware-h1-2026-report-shows-web-ddos-attacks-surge-110-6
+- Surfshark. *Global deepfake fraud reaches $2.19B — US leads in losses*. 2026. https://surfshark.com/research/chart/deepfake-fraud-countries (citado apenas para registrar o veredito "não comparável"; não usado como fonte de KPI)
+- Shufti. *Deepfake-Powered Identity Fraud Is Surging in 2026: Shufti's Identity Fraud Index Report*. 2026. https://shuftipro.com/resources/whitepapers-reports/deepfake-identity-fraud-index-report-2026/ (idem)
+- FS-ISAC. Página de buscas institucionais confirma que a edição mais recente de *Navigating Cyber* continua sendo a de 2025: https://www.fsisac.com/navigatingcyber2025

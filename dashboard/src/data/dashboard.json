@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-09-28",
-    "verificadoEm": "2026-09-28",
+    "geradoEm": "2026-10-01",
+    "verificadoEm": "2026-10-01",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -16,8 +16,8 @@
       "riscoLabel": "Elevado",
       "kpis": [
         { "label": "Custo médio de violação de dados", "valor": "6,3", "unidade": "US$ mi", "delta": "+13% a/a (ante US$ 5,56 mi em 2025)", "fonte": "cap. 02", "estimativa": false },
-        { "label": "Ransomware direto contra instituições", "valor": "202", "unidade": "incidentes em 2025", "delta": "+30% a/a (+76% Q1 2026)", "fonte": "cap. 02", "estimativa": false },
-        { "label": "Motivação financeira das violações (DBIR 2025)", "valor": "90", "unidade": "%", "delta": "espionagem: 12% (DBIR 2026 traz 98%/3% — não confirmado)", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Ransomware direto contra instituições", "valor": "202", "unidade": "incidentes em 2025", "delta": "+30% a/a (+76% Q1 2026; 135 ataques não divulgados no Q2 2026, Black Kite)", "fonte": "cap. 02", "estimativa": false },
+        { "label": "Motivação financeira das violações (DBIR 2026)", "valor": "98", "unidade": "%", "delta": "espionagem: 3% (ante 90%/12% no DBIR 2025); elemento humano em 65% das violações do setor", "fonte": "cap. 02", "estimativa": false },
         { "label": "Fraude por deepfake nas tentativas de fraude (Signicat, 2025)", "valor": "6,5", "unidade": "%", "delta": "+2.137% em 3 anos (de 0,1%); 20% da fraude biométrica (Entrust 2026)", "fonte": "cap. 02", "estimativa": false },
         { "label": "Duração mediana de DDoS L3/L4 no setor (desde 2024)", "valor": "+738", "unidade": "%", "delta": "alvo nº 1 de DDoS volumétrico em 2024; L7 +23% 2023→2024 (antes: +154% 2022→2023)", "fonte": "cap. 02", "estimativa": false },
         { "label": "Prejuízo com golpes financeiros no Brasil (2024)", "valor": "10,1", "unidade": "R$ bi", "delta": "+17% a/a", "fonte": "cap. 02", "estimativa": false },
@@ -26,8 +26,8 @@
       ],
       "dimensoes": [
         { "nome": "Fraude / PIX", "nivel": "vermelho", "justificativa": "28 milhões de fraudes envolvendo Pix (jan–set/2025, ADDP); R$ 10,1 bi em prejuízo com golpes em 2024 (+17%, Febraban — ainda o dado mais recente da série); 2,26 milhões de estelionatos registrados em 2025 (+2,7%; +20,6% por meio eletrônico, FBSP); R$ 2,7 bi em fraude Pix formalmente apurada pela Febraban em 2 anos (+43%). Resposta regulatória: MED 2.0 obrigatório desde 02/02/2026 (Res. BCB 493/2025) e marcação de suspeita de fraude no DICT (Res. BCB 587, de 18/09/2026).", "fonte": "cap. 02" },
-        { "nome": "DDoS", "nivel": "ambar", "justificativa": "Setor foi o alvo nº 1 de DDoS volumétrico em 2024, com DDoS de aplicação (L7) +23% frente a 2023 (FS-ISAC/Akamai, jun/2025); em 2025 a duração mediana dos ataques L3/L4 subiu 738% frente a 2024 (Akamai SOTI 2026). Série anterior: +154% em 2022→2023, com 35%+ de todo DDoS observado.", "fonte": "cap. 02", "estimativa": false },
-        { "nome": "Ransomware", "nivel": "vermelho", "justificativa": "156→202 incidentes diretos (2024→2025, +30%), com Q1 2026 já 76% acima do mesmo período de 2025; grupos ativos subiram de 37 (2023) para 48 (2025); Qilin reivindicou 59 vítimas, incluindo caso GJTec com 32 instituições sul-coreanas via um único MSP.", "fonte": "cap. 02" },
+        { "nome": "DDoS", "nivel": "ambar", "justificativa": "Setor foi o alvo nº 1 de DDoS volumétrico em 2024, com DDoS de aplicação (L7) +23% frente a 2023 (FS-ISAC/Akamai, jun/2025); em 2025 a duração mediana dos ataques L3/L4 subiu 738% frente a 2024 (Akamai SOTI 2026), que também aponta 96% das organizações do setor com ao menos um incidente de segurança de API em 12 meses. No H1 2026, o setor foi o 2º mais atingido por ataques de rede (20,8%), atrás de tecnologia (Radware). Série anterior: +154% em 2022→2023, com 35%+ de todo DDoS observado.", "fonte": "cap. 02", "estimativa": false },
+        { "nome": "Ransomware", "nivel": "vermelho", "justificativa": "156→202 incidentes diretos (2024→2025, +30%), com Q1 2026 já 76% acima do mesmo período de 2025 e 135 ataques não divulgados no Q2 2026 (Black Kite); grupos ativos subiram de 37 (2023) para 48 (2025); Qilin reivindicou 59 vítimas, incluindo caso GJTec com 32 instituições sul-coreanas via um único MSP; fornecedores do setor com CVEs críticas (CVSS≥9) subiram de 15 para 73 (+387%).", "fonte": "cap. 02" },
         { "nome": "Terceiros / cadeia de suprimentos", "nivel": "vermelho", "justificativa": "Caso C&M Software forçou suspensão de três instituições do Pix (Transfeera, Soffy, Nuoro Pay), com R$ 813 mi desviados segundo a PF (estimativa inicial: ≥ R$ 400 mi); no fim de ago/2025, a Sinqia teve R$ 710 mi desviados (HSBC e Artta) via credenciais de fornecedores de TI; caso FictorPay (R$ 26 mi, ~280 transações Pix) foi o quarto incidente contra fintechs brasileiras em três meses, com R$ 1,74 bi em perdas acumuladas desde jul/2024. Em jan/2026, o Banco do Nordeste sofreu ataque via PSTI terceirizado com prejuízo de R$ 146,6 mi, só revelado no balanço do 1º tri. 2026. Em ago/2026, a registradora TAG (Stone) barrou tentativa de fraude de R$ 350 mi em recebíveis, e a PF deflagrou a Operação Pane Seca (invasões a sistemas de instituições financeiras, ~R$ 227 mi).", "fonte": "cap. 02" },
         { "nome": "Regulação", "nivel": "ambar", "justificativa": "Resoluções CMN nº 4.893/2021 e BCB nº 85/2021 estão entre as mais maduras do mundo e foram atualizadas por CMN nº 5.274/2025 e BCB nº 538/2025 (18/12/2025), cujo prazo de adequação venceu em 1º/03/2026 — o marco está agora em fase de supervisão. Em 2026 vieram o MED 2.0 obrigatório (Res. BCB 493/2025, desde 02/02/2026) e a Res. BCB 587/2026 (marcação de suspeita de fraude no DICT). O próprio BC reportou 76 incidentes cibernéticos relevantes no SFN em 2025 (+29% vs. 59 em 2024), atribuídos a dependência de terceiros e uso de APIs sem avaliação de risco adequada.", "fonte": "cap. 02" }
       ],
@@ -38,12 +38,12 @@
         "fonte": "cap. 02"
       },
       "pizza": {
-        "titulo": "Motivação das violações — % das violações do setor (DBIR 2025)",
+        "titulo": "Motivação das violações — % das violações do setor (DBIR 2026)",
         "itens": [
-          { "nome": "Financeira", "valor": 90 },
-          { "nome": "Espionagem", "valor": 12 }
+          { "nome": "Financeira", "valor": 98 },
+          { "nome": "Espionagem", "valor": 3 }
         ],
-        "nota": "Categorias do Verizon DBIR podem coocorrer — não somam 100%. DBIR 2026 (p. 84) traz 98%/3%, fonte primária única, não confirmado em 24/09/2026.",
+        "nota": "Categorias do Verizon DBIR podem coocorrer — não somam 100%. Ante 90%/12% no DBIR 2025. Confirmado em 01/10/2026 por convergência de múltiplas fontes secundárias independentes (até 24/09/2026 era fonte primária única).",
         "fonte": "cap. 02"
       }
     },
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-10-01",
+        "fonte": "Varredura rotativa (grupo 1/5) — setor financeiro (recorte global), cap. 02",
+        "oQueMudou": "Motivação das violações do setor financeiro atualizada para o DBIR 2026 (financeira 98%/espionagem 3%, ante 90%/12% no DBIR 2025), encerrando a ressalva de fonte única registrada em 24/09/2026 — confirmado agora por convergência de múltiplas coberturas secundárias independentes; vieram junto novos detalhes do DBIR 2026 para o setor (vetores de acesso: exploração de vulnerabilidade 22%, phishing 20%, abuso de credencial 15%; elemento humano em 65% das violações; 88% atores externos/12% internos; 3.809 incidentes/1.300 violações confirmadas, ante 3.336/927). Ransomware: Black Kite passou a publicar um número comparável para o Q2 2026 (135 ataques não divulgados no setor), substituindo a referência de fonte única da CYFIRMA como principal ponto de monitoramento; e os números de fornecedores com CVEs críticas (CVSS≥9) ficaram precisos (15→73, +387%, ante 'quase quintuplicaram'). DDoS: nova fonte independente (Radware H1 2026) mostra o setor como 2º mais atingido por ataques de rede (20,8%) no semestre; e um dado já citado da Akamai (incidente de API em 96% das organizações do setor em 12 meses) foi incorporado ao texto do capítulo, que já tinha a fonte mas não o número. Deepfake: dois novos rastreadores globais (Surfshark, Shufti) foram localizados mas não são comparáveis à métrica setorial da Signicat/Entrust já usada — não promovidos a KPI. FS-ISAC Navigating Cyber 2026 continua não publicado. Pizza, KPIs de ransomware/motivação/DDoS e dimensões 'DDoS'/'Ransomware' do setor financeiro atualizados; valores anteriores preservados nos campos delta/nota."
+      },
       {
         "data": "2026-09-28",
         "fonte": "Varredura rotativa (grupo 0/5) — Global/Comparativo, caps. 01 e 04",
