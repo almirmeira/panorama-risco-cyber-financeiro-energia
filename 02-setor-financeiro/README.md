@@ -35,11 +35,17 @@ brasileiro — Pix, Open Finance, regulação do Banco Central e incidentes conh
 | Ranking de setor mais atacado (FS-ISAC)                   | 2º lugar, atrás de saúde                 | FS-ISAC [1][2]                  |
 | Custo médio de violação — setor financeiro                 | USD 6,3 milhões (ante USD 5,56 milhões em 2025) | IBM [36][37]              |
 | Detecção/escalonamento no custo total (setor financeiro)    | 34% (vs. 29% global)                     | IBM [3][4]                      |
-| Incidentes / violações confirmadas (DBIR 2025 Finance Snapshot) | 3.336 / 927                           | Verizon DBIR [5]                |
-| Motivação financeira / espionagem (DBIR 2025 Finance Snapshot)  | 90% / 12%                             | Verizon DBIR [5]                |
+| Incidentes / violações confirmadas (DBIR 2026, Financeiro)  | 3.809 / 1.300 (ante 3.336 / 927 no DBIR 2025) | Verizon DBIR [66][78][79]       |
+| Motivação financeira / espionagem (DBIR 2026, Financeiro)   | 98% / 3% (ante 90%/12% no DBIR 2025)    | Verizon DBIR [66][78][79]       |
+| Vetor de acesso inicial (DBIR 2026, Financeiro)             | Exploração de vulnerabilidade 22%; *phishing* 20%; abuso de credencial 15% | Verizon DBIR [66][78][79] |
+| Elemento humano nas violações (DBIR 2026, Financeiro)       | 65%                                     | Verizon DBIR [66][78][79]       |
 | DDoS no setor financeiro (2024)                             | Alvo nº 1 de DDoS volumétrico; DDoS de aplicação (L7) +23% frente a 2023 | FS-ISAC/Akamai [71][72] |
 | DDoS no setor financeiro (2025)                             | Duração mediana dos ataques L3/L4 +738% desde 2024 | Akamai SOTI 2026 [73][74] |
+| DDoS no setor financeiro (H1 2026)                          | 2º setor mais atingido por ataques de rede (20,8%), atrás de tecnologia | Radware [83][84] |
 | DDoS no setor financeiro (2022→2023, série anterior)        | +154%; 35%+ de todo DDoS observado       | FS-ISAC/Akamai [6][7]           |
+| Incidentes de segurança de API no setor financeiro (12 meses) | 96% das organizações sofreram ao menos um incidente — maior entre todos os setores | Akamai [73][74] |
+| *Ransomware* não divulgado no setor financeiro (Q2 2026)    | 135 ataques (série própria da Black Kite, mais comparável que estimativas de terceiros) | Black Kite [80][81] |
+| Fornecedores do setor com CVEs críticas (CVSS ≥ 9, 2024→2025) | 15 → 73 fornecedores (+387%), entre os 140 mais concentrados | Black Kite [75][82] |
 | Roubo de ativos digitais (DPRK-nexus, 2025)                  | USD 2,02 bilhões (+51% a/a)              | CrowdStrike [8][9]              |
 | Maior roubo cripto único (PRESSURE CHOLLIMA)                 | USD 1,46 bilhão                          | CrowdStrike [8][9]              |
 | *Ransomware* direto no setor financeiro (2024→2025)           | 156 → 202 incidentes (+~30%)             | Black Kite [10][11]             |
@@ -93,14 +99,21 @@ e **12%** motivação de espionagem [5]. Em 24/9/2026 esses números foram confe
 do PDF do *2025 DBIR Finance Snapshot* (frequência, padrões, atores e motivações), o que encerra a
 ressalva de confirmação parcial registrada anteriormente no dossiê.
 
-**Nota de atualização (não confirmada):** o *2026 DBIR* (incidentes de 1º/11/2024 a 31/10/2025) traz, na
-página 84, um novo recorte "Financial and Insurance": **3.809 incidentes** e **1.300 violações
-confirmadas**; atores externos em 88% e internos em 12%; e motivação **financeira em 98%** e de
-**espionagem em 3%** das violações [66]. O dado foi lido na fonte primária, mas é fonte única — o
-*Finance Snapshot* 2026 não foi localizado e nenhuma segunda fonte independente reproduz esses números —,
-por isso permanece **não confirmado em 24/9/2026** e os valores de referência deste capítulo seguem sendo
-os do DBIR 2025. Atenção a um erro frequente em resumos de terceiros: o "12% de espionagem" citado para o
-DBIR 2026 é o número **global** do relatório, não o do setor financeiro.
+**Atualização 2026-10-01 — ressalva de fonte única encerrada:** o *2026 DBIR* (incidentes de 1º/11/2024 a
+31/10/2025) traz, na página 84, um recorte "Financial and Insurance": **3.809 incidentes** e **1.300
+violações confirmadas**; atores externos em 88% e internos em 12%; e motivação **financeira em 98%** e de
+**espionagem em 3%** das violações [66]. Em 24/9/2026 este dado só tinha fonte primária (a ressalva ficou
+registrada como "não confirmado"); em 1/10/2026 ele foi confirmado por convergência de múltiplas
+coberturas secundárias independentes do mesmo relatório (Keepnet Labs, SpyCloud, entre outras), que
+reproduzem os mesmos números e acrescentam detalhe: o padrão Intrusão de Sistema segue na liderança desde
+2022, com **exploração de vulnerabilidade (22%)**, ***phishing* (20%)** e **abuso de credencial (15%)**
+como principais vetores de acesso inicial, e o **elemento humano presente em 65%** das violações do setor
+[66][78][79]. Diferente da edição 2025, a Verizon não publicou um *Finance Snapshot* avulso em PDF para
+2026 — os dados do setor estão integrados ao corpo do relatório principal, o que explica por que não
+havia uma segunda fonte primária dedicada. Os valores de referência deste capítulo passam a ser os do
+DBIR 2026; os números do DBIR 2025 (3.336/927; 90%/12%) ficam registrados como a edição anterior. Atenção
+a um erro frequente em resumos de terceiros: o "12% de espionagem" citado para o DBIR 2026 em algumas
+coberturas é o número **global** do relatório, não o do setor financeiro (que é 3%).
 
 ### DDoS e *ransomware*: sofisticação crescente
 
@@ -115,8 +128,16 @@ alta de **23%** nos ataques DDoS de camada de aplicação (L7) frente a 2023; os
 combinar reconhecimento sistemático e táticas adaptativas em campanhas multivetor [71][72]. Para 2025, o
 *State of the Internet — Financial Services 2026* da Akamai (maio de 2026) registra alta de **738%** na
 duração mediana dos ataques DDoS de camadas 3 e 4 contra o setor desde 2024 — ataques de minutos que
-viraram campanhas prolongadas [73][74]. O *Navigating Cyber 2025* da FS-ISAC mantém o DDoS entre as quatro
-ameaças principais ao setor [1][2].
+viraram campanhas prolongadas [73][74]. O mesmo comunicado da Akamai traz um dado complementar sobre risco
+de API — tema correlato ao de terceiros/cadeia de suprimentos: **96%** dos líderes de segurança do setor
+financeiro relataram ao menos um incidente de segurança de API nos últimos 12 meses, a maior proporção
+entre todos os setores pesquisados [73][74]. O *Navigating Cyber 2025* da FS-ISAC mantém o DDoS entre as
+quatro ameaças principais ao setor [1][2]; a edição *Navigating Cyber 2026* ainda não havia sido publicada
+em 1/10/2026 (a mais recente continua sendo a de maio de 2025). **Atualização 2026-10-01:** o *H1 2026
+Global Threat Report* da Radware — fonte independente não utilizada anteriormente neste capítulo — mostra
+o setor financeiro como o **2º setor mais atingido por ataques de rede (20,8%) no 1º semestre de 2026**,
+atrás apenas de tecnologia, em um contexto de alta global de **110,6%** em ataques Web DDoS ano a ano
+[83][84].
 
 Do lado do *ransomware* direto (não apenas DDoS como vetor de extorsão), o *2026 State of Financial
 Services Report* da Black Kite registra reaceleração: de **156 incidentes em 2024 para 202 em 2025**
@@ -133,15 +154,22 @@ instituições financeiras** sul-coreanas sem necessidade de invadir cada uma in
 mais de 1 milhão de arquivos e mais de 2 terabytes de dados — um exemplo direto de como o risco de
 terceiros amplifica o *blast radius* de um único comprometimento [10][11]. Fornecedores com CVEs críticas
 (CVSS ≥ 9) quase quintuplicaram entre os 140 fornecedores mais concentrados no setor financeiro no mesmo
-período [10][11].
+período — **atualização 2026-10-01: números exatos confirmados, de 15 para 73 fornecedores (alta de
+387%)** [10][11][82].
 
-**Nota de monitoramento (fonte única, não confirmada):** a série da Black Kite vai até o 1º trimestre de
-2026. Dois rastreadores de *leak sites*, com metodologias próprias e não comparáveis à da Black Kite,
-sinalizam que a pressão continuou: a CYFIRMA contou **114 vítimas** do setor financeiro em sua janela de
-90 dias do "Q2 2026" (ante 78 na janela anterior, +46,2%), em relatório datado de 18/5/2026 — ou seja,
-uma janela que não coincide com o trimestre-calendário [76]; a Comparitech registrou **257 ataques** ao
-setor financeiro no 1º semestre de 2026, dos quais 22 confirmados, patamar próximo dos 260 do 2º semestre
-de 2025 [77]. Cada número tem uma única fonte e serve apenas para acompanhamento.
+**Nota de monitoramento:** a série anual/trimestral citada acima da Black Kite vai até o 1º trimestre de
+2026. Dois rastreadores de *leak sites* de terceiros, com metodologias próprias e não comparáveis entre
+si, sinalizaram no ciclo anterior que a pressão continuou: a CYFIRMA contou **114 vítimas** do setor
+financeiro em sua janela de 90 dias do "Q2 2026" (ante 78 na janela anterior, +46,2%), em relatório datado
+de 18/5/2026 — uma janela que não coincide com o trimestre-calendário [76]; a Comparitech registrou **257
+ataques** ao setor financeiro no 1º semestre de 2026, dos quais 22 confirmados, patamar próximo dos 260 do
+2º semestre de 2025 [77]. **Atualização 2026-10-01:** a própria Black Kite passou a publicar um número
+mais comparável para esse período — seu *2026 Ransomware Report* (abril de 2025 a março de 2026, 7.551
+vítimas globais, alta de 24,9%) atribui ao setor financeiro **135 ataques não divulgados no Q2 2026**,
+contados pela mesma metodologia da série principal (confirmado por fonte 2 independente, Help Net
+Security) [80][81]. Os números da CYFIRMA e da Comparitech continuam com fonte única cada e servem apenas
+de referência cruzada qualitativa — a pressão sobre o setor no Q2 2026 é confirmada por mais de uma fonte,
+mesmo que os valores absolutos não sejam diretamente comparáveis entre metodologias.
 
 ### Roubo de ativos digitais: atores DPRK-nexus
 
@@ -176,7 +204,12 @@ início de 2025, uma conglomerada de energia europeia (nome não identificado na
 **USD 25 milhões** quando atacantes usaram um clone de áudio *deepfake* do CFO para emitir instruções ao
 vivo de transferência eletrônica urgente [14][15]. A Resemble AI relatou **980 casos de infiltração
 corporativa** via *deepfake* em vídeo ao vivo durante reuniões no 3º trimestre de 2025, com o objetivo de
-autorizar transações fraudulentas [14][15].
+autorizar transações fraudulentas [14][15]. **Nota de verificação (2026-10-01):** dois novos rastreadores
+globais de fraude por *deepfake* foram localizados nesta passagem — Surfshark (perdas globais de US$ 2,5
+bi em 2025 e US$ 764 milhões no 1º semestre de 2026) e o *Identity Fraud Index 2026* da Shufti (alta
+projetada de 495% em 2026) — mas ambos medem fraude de identidade agregada e cross-setorial, não a taxa
+específica de tentativas no setor financeiro medida pela Signicat/Entrust; por isso não substituem nem se
+somam aos números de 6,5%/20% acima, que seguem como os mais recentes e comparáveis para este capítulo.
 
 Em **5 de agosto de 2026**, essa tendência ganhou um caso concreto de grande escala: uma onda coordenada de
 ataques de *vishing* com clonagem de voz por IA atingiu simultaneamente várias das maiores gestoras de recursos
@@ -735,3 +768,25 @@ https://www.cyfirma.com/research/finance-q2-2026-industry-report/
 
 [77] Comparitech. *Ransomware Roundup: H1 2026 stats on attacks, ransoms, and active gangs*. 2 de julho de
 2026. https://www.comparitech.com/news/ransomware-roundup-h1-2026-stats-on-attacks-ransoms-and-active-gangs/
+
+[78] Keepnet Labs. *2026 Verizon DBIR: Voice and SMS Phishing Decoded*. 2026.
+https://keepnetlabs.com/blog/2026-verizon-data-breach-investigations-report
+
+[79] SpyCloud. *2026 Verizon DBIR: Key Takeaways for Identity Threat Protection and Defense*. 2026.
+https://spycloud.com/blog/top-takeaways-from-the-2026-verizon-data-breach-investigations-report/
+
+[80] Black Kite. *2026 Ransomware Report: 7,551 Victims, Up 24.9%*. 2026.
+https://blackkite.com/reports/2026-ransomware-report
+
+[81] Help Net Security. *Ransomware in 2026: More groups, more victims, no slowdown*. 24 de julho de 2026.
+https://www.helpnetsecurity.com/2026/07/24/ransomware-attack-trends-2026-report/
+
+[82] Efficiently Connected. *Financial Services Faces a Two-Front Cyber Threat in 2026*. 2026.
+https://www.efficientlyconnected.com/financial-services-third-party-cyber-risk-2026/
+
+[83] Radware (via GlobeNewswire). *Radware H1 2026 Global Threat Report Shows Web DDoS Attacks Jump More
+Than 110% as Cyber Threats Accelerate*. 9 de setembro de 2026.
+https://www.globenewswire.com/news-release/2026/09/09/3358409/8980/en/radware-h1-2026-global-threat-report-shows-web-ddos-attacks-jump-more-than-110-as-cyber-threats-accelerate.html
+
+[84] The Fast Mode. *Radware H1 2026 Report Shows Web DDoS Attacks Surge 110.6%*. 2026.
+https://www.thefastmode.com/market-trends/50546-radware-h1-2026-report-shows-web-ddos-attacks-surge-110-6
