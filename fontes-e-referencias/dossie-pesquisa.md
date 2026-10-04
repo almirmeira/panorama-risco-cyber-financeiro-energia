@@ -1360,6 +1360,95 @@ inventar um valor consolidado.
 
 ---
 
+### Atualização 2026-10-04 — varredura rotativa (grupo 2/5): setor financeiro, recorte Brasil
+
+Grupo da rotação de 2026-10-04 (dia do ano 277 → (277÷3)%5 = 2): `setores[id=financeiro]` itens do
+BRASIL (golpes, Open Finance, incidentes reportados ao BC, Pix/MED, terceiros/PSTI, regulação CMN/BCB) +
+cap. 02. A última auditoria profunda deste recorte foi a revisão de 2026-09-24/25 (ver seção acima); esta
+passagem reverifica cada item contra a edição mais recente publicada em qualquer data e cobre a janela
+24/09–04/10/2026 em busca de incidentes/edições não vistas.
+
+| Item do grupo 2 | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Fraude Pix (28 mi casos jan–set/2025, ADDP; 24 mi vítimas jul/2024–jun/2025) | Confirmado atual — sem edição mais recente localizada | Sem mudança desde 2026-07-21 |
+| Prejuízo com golpes financeiros no Brasil (R$ 10,1 bi, 2024, Febraban) | Confirmado atual — Pesquisa Febraban de Tecnologia Bancária 2026 (jun/2026) não traz o dado de 2025 | Confirmado em 2026-09-24; sem edição nova |
+| Prejuízo Pix formalmente apurado (R$ 2,7 bi/2 anos, +43%, Febraban) | Confirmado atual | Sem mudança |
+| Estelionato FBSP (2,26 milhões de registros em 2025, +2,7%) | Confirmado atual (Anuário 2026, jul/2026) | Sem edição mais nova localizada |
+| GASA — Estado dos Golpes no Brasil 2026 (~16,5 mi vítimas; ~R$ 21,2 bi) | Confirmado atual (estimativa por *survey*, 6/8/2026) | Sem edição mais nova |
+| Open Finance — consentimentos ativos (200+ mi, jul/2026; 208,8–239,8 mi) | Confirmado atual — nenhuma leitura mais recente do dashboard oficial (Let's Money/Zetta) localizada para ago–set/2026 | **[NÃO CONFIRMADO uma atualização ago–set/2026]**; mantido o valor de jul/2026 |
+| Incidentes relevantes reportados ao BC (76 em 2025, +29%) | Confirmado atual — Relatório Integrado 2025 é a edição mais recente | Sem mudança |
+| Regulação CMN 4.893/2021, BCB 85/2021, CMN 5.274/2025, BCB 538/2025 (prazo vencido em 1º/3/2026) | Confirmado atual | Sem mudança |
+| MED 2.0 — Resolução BCB nº 493/2025 (obrigatório desde 2/2/2026) | Confirmado atual | Sem mudança |
+| Resolução BCB nº 587/2026 (marcação de fraude no DICT, 18/9/2026) | Confirmado atual — é a norma mais recente; nenhuma resolução posterior localizada | Sem mudança |
+| Casos de terceiros/PSTI (C&M R$ 813 mi; Sinqia R$ 710 mi; FictorPay R$ 26 mi; Banco do Nordeste R$ 146,6 mi; BTG Pactual R$ 100 mi; Pane Seca R$ 227 mi; TAG/Stone R$ 350 mi) | Confirmados atuais, sem mudança | Já incorporados em 2026-09-24 |
+| Banco Rendimento (21/4/2026) | Confirmado atual — volumes financeiros seguem não divulgados pelo banco | Sem mudança |
+| Banco Neon (alegação de 30 mi de clientes, fev/2025) | Confirmado atual — disputa segue sem arbitragem | Sem mudança |
+| Atores de ameaça (FIN7, PRESSURE/FAMOUS/STARDUST CHOLLIMA, VAULT PANDA, Qilin, Akira, UNC6671) | Confirmados atuais | Sem mudança |
+
+**Gaps identificados nesta janela (incorporados ao capítulo `02-setor-financeiro/README.md` e à tabela-resumo
+abaixo):**
+
+- **Pefisa — exposição de dados cadastrais de 28.203 chaves Pix (incidente pré-existente, não
+  incorporado até aqui):** em **21 de março de 2026**, o Banco Central comunicou a exposição de dados
+  cadastrais de **28.203 chaves Pix** vinculadas à **Pefisa S.A.** (sociedade de crédito, financiamento e
+  investimento), decorrente de falhas pontuais em sistemas da instituição, com janela de exposição entre
+  **30 de agosto de 2025 e 27 de fevereiro de 2026**. Os dados expostos incluíam nome, CPF, instituição e
+  agência/conta vinculadas, e data de criação/posse da chave; segundo o Banco Central, a exposição **não
+  alcançou** saldos, senhas, extratos ou sigilo bancário, nem permitiu movimentação de recursos. Foi o
+  terceiro incidente envolvendo o Pix em 2026 e o 23º desde o lançamento do sistema, em novembro de 2020.
+  - Fonte 1: Agência Brasil (EBC). *BC comunica exposição de dados de 28 mil chaves Pix*. 21/3/2026.
+    https://agenciabrasil.ebc.com.br/economia/noticia/2026-03/bc-comunica-exposicao-de-dados-de-28-mil-chaves-pix
+  - Fonte 2 (independente, mesmo caso): Jornal de Brasília. *Banco Central divulga vazamento de 28 mil
+    chaves Pix da Pefisa*. Março de 2026.
+    https://jornaldebrasilia.com.br/noticias/economia/banco-central-divulga-vazamento-de-28-mil-chaves-pix-da-pefisa/
+  - Observações: corroborado adicionalmente por Olhar Digital, Cidade de Niterói, FEEB-PR e Francês News,
+    todos convergindo nos mesmos números (28.203 chaves; janela 30/8/2025–27/2/2026). Acesso direto via
+    *fetch* automatizado a todas essas fontes foi bloqueado pelo proxy de saída deste ambiente; números
+    confirmados por convergência de busca entre coberturas independentes. Qualitativamente distinto dos
+    casos de "Terceiros/PSTI" (C&M, Sinqia, Banco do Nordeste) — a Pefisa é participante direta do Pix, não
+    uma prestadora terceirizada —, por isso tratado como caso autônomo, no mesmo padrão do caso Banco Neon
+    (vazamento de dados sem fraude financeira direta confirmada).
+
+- **Swap — tentativa de invasão bloqueada (19/6/2026):** a fintech **Swap** (provedora de *Banking as a
+  Service*) teve uma tentativa de invasão detectada e neutralizada por seus próprios sistemas de
+  monitoramento; a empresa afirma não ter havido comprometimento de dados pessoais nem perda financeira. O
+  Banco Central emitiu alerta aos participantes do Sistema de Pagamentos Instantâneos (SPI) sobre o evento.
+  - Fonte 1: Finsiders Brasil. *Fintech Swap sofre tentativa de ataque hacker*. Junho de 2026.
+    https://finsidersbrasil.com.br/pagamentos/pix/fintech-swap-sofre-tentativa-de-ataque-hacker/
+  - Fonte 2 (independente, mesmo caso): CISO Advisor. *Fintech Swap confirma ter bloqueado tentativa de
+    invasão*. Junho de 2026. https://www.cisoadvisor.com.br/fintech-swap-confirma-ter-bloqueado-tentativa-de-invasao/
+  - Observações: incidente sem impacto financeiro confirmado; incorporado por reforçar o padrão de
+    tentativas frequentes contra participantes do Pix ao longo de 2026. Não altera nenhuma dimensão
+    quantitativa do painel.
+
+- **Slim Spider — novo ator financeiramente motivado mirando instituições brasileiras (CrowdStrike,
+  divulgado em setembro de 2026):** ativo desde pelo menos **março de 2026**, o grupo rouba credenciais de
+  ambientes de nuvem e segredos de custódia de criptoativos de instituições financeiras brasileiras,
+  mirando diretamente a infraestrutura do Pix. Técnicas documentadas pela CrowdStrike incluem scripts Bash
+  e ferramentas nativas de nuvem, pivô para o Azure DevOps com *pipelines* maliciosos que implantaram
+  artefatos em um cluster Kubernetes gerenciado — incluindo um implante batizado "spi", em alusão ao
+  Sistema de Pagamentos Instantâneos —, além de um "Painel Pix" próprio para disparar transferências Pix
+  não autorizadas em lote a partir de contas comprometidas.
+  - Fonte 1 (primária): CrowdStrike. *Slim Spider Adversary Profile*. 2026.
+    https://www.crowdstrike.com/en-us/adversaries/slim-spider/
+  - Fonte 2 (independente): The Hacker News. *Slim Spider Steals Crypto Custody Secrets From Brazilian
+    Financial Institution*. Setembro de 2026. https://thehackernews.com/2026/09/slim-spider-steals-crypto-custody.html
+  - Observações: corroborado adicionalmente por SecurityWeek-adjacent coverage (SecurityArsenal, Livecoins,
+    SpaceMoney, InfoSec Today), todos citando a mesma pesquisa da CrowdStrike, sem divergência relevante.
+    Acesso direto via *fetch* automatizado à página da CrowdStrike e ao artigo do The Hacker News foi
+    bloqueado pelo proxy de saída deste ambiente; conteúdo confirmado por convergência de busca. Não
+    corresponde a nenhuma dimensão quantitativa existente do painel (não é *ransomware*, nem caso de
+    terceiros/PSTI no sentido já tabulado) — registrado no capítulo e na tabela de atores como novo perfil.
+
+**Não confirmado, não incorporado:** notícia da Febraban ("Golpe da Falsa Venda é o mais aplicado contra
+clientes bancários no 1º semestre do ano" — 174 mil ocorrências, +314% a/a) foi localizada, mas o acesso
+direto ao portal.febraban.org.br e a uma cobertura secundária (Suno Notícias) foi bloqueado pelo proxy de
+saída deste ambiente, e não foi possível arbitrar com segurança, só por resumo de busca, se o "1º semestre"
+citado é de 2025 ou de 2026 — **[NÃO CONFIRMADO em 2026-10-04 — ano de referência ambíguo e fontes primárias
+inacessíveis]**. Não incorporado ao capítulo nem ao painel até confirmação.
+
+---
+
 ### Tabela-resumo — Financeiro
 
 | Métrica | Valor | Relatório primário | Status |
@@ -1388,6 +1477,9 @@ inventar um valor consolidado.
 | Ataque Banco do Nordeste / PSTI terceirizado (jan/2026; prejuízo revelado mai/2026) | R$ 146,6 milhões (item não recorrente no balanço 1º tri. 2026) | Agência Brasil / Finsiders Brasil | Confirmado (2 fontes) |
 | Ataque Banco Rendimento / conta de cliente (abr/2026) | R$ 100 milhões desviados; prejuízo líquido R$ 20–40 milhões | CNN Brasil / ConvergenciaDigital | Confirmado (2 fontes); vetor técnico exato **[NÃO PLENAMENTE CONFIRMADO]** |
 | Ransomware Qilin no setor financeiro | 59 vítimas; caso GJTec afetou 32 instituições (Coreia do Sul) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
+| Vazamento Pefisa / chaves Pix (mar/2026, incidente ago/2025–fev/2026) | 28.203 chaves Pix; apenas dados cadastrais, sem acesso a saldos/senhas | Banco Central (via Agência Brasil / Jornal de Brasília) | Confirmado (2 fontes); fetch direto bloqueado pelo proxy |
+| Tentativa de invasão — fintech Swap (19/6/2026) | Bloqueada pela própria empresa; sem perda financeira ou de dados | Finsiders Brasil / CISO Advisor | Confirmado (2 fontes) |
+| Ator Slim Spider (CrowdStrike, divulgado set/2026) | Ativo desde mar/2026; rouba credenciais de nuvem e custódia cripto; mira infra do Pix | CrowdStrike / The Hacker News | Confirmado (2 fontes); fetch direto bloqueado pelo proxy |
 
 **Legenda:** idêntica à da tabela-resumo Global. Itens "Parcialmente confirmado" indicam que o valor numérico
 central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de ouro
