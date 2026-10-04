@@ -234,6 +234,7 @@ clientes [40][41].
 | Qilin                       | 59 vítimas no setor em 2025; caso GJTec afetou 32 instituições sul-coreanas via um único MSP | Black Kite [10][11]   |
 | Akira                        | ~USD 244,17 milhões em proventos até final de setembro de 2025 (cross-setorial) | Black Kite [10][11]   |
 | UNC6671 (BlackFile)           | *Vishing* via *IT helpdesk* com clonagem de voz por IA; atacou Citadel, Point72, Two Sigma e Millennium Management em 5/8/2026 | BleepingComputer [40][41] |
+| Slim Spider                  | *eCrime* financeiramente motivado, ativo desde mar/2026; rouba credenciais de nuvem e segredos de custódia cripto mirando a infraestrutura do Pix (implante "spi"; "Painel Pix" para transferências em lote) | CrowdStrike / The Hacker News [89][90] |
 
 Nenhuma campanha específica e nomeada de FIN7 contra o setor financeiro datada de 2025–2026 foi
 localizada no escopo desta pesquisa — as fontes descrevem o perfil histórico e atual do grupo, não um
@@ -424,6 +425,17 @@ ou dano às contas de clientes [42][43]. A extensão financeira do incidente só
 meses depois**, quando o balanço do 1º trimestre de 2026 (divulgado em 13 de maio de 2026) revelou um item
 não recorrente de **R$ 146,6 milhões** em prejuízo [43].
 
+Em **21 de março de 2026**, o Banco Central comunicou a exposição de dados cadastrais de **28.203 chaves
+Pix** vinculadas à **Pefisa S.A.** (sociedade de crédito, financiamento e investimento), decorrente de
+falhas pontuais em sistemas da instituição, com janela de exposição entre **30 de agosto de 2025 e 27 de
+fevereiro de 2026**. Os dados expostos incluíam nome, CPF, instituição e agência/conta vinculadas, e data
+de criação/posse da chave; segundo o Banco Central, a exposição **não alcançou** saldos, senhas, extratos
+ou sigilo bancário, nem permitiu movimentação de recursos — foi o terceiro incidente envolvendo o Pix em
+2026 e o 23º desde o lançamento do sistema, em novembro de 2020 [85][86]. Diferentemente dos casos de
+terceiros/PSTI acima, a Pefisa é participante direta do Pix, não uma prestadora terceirizada — o caso é
+qualitativamente mais próximo do vazamento de dados do Banco Neon do que dos episódios de desvio de
+recursos via fornecedor.
+
 Em **22 de março de 2026** (domingo), o **BTG Pactual** identificou atividades atípicas em operações Pix,
 suspendeu o serviço preventivamente e o retomou no dia seguinte, após um ataque que desviou cerca de
 **R$ 100 milhões**. Segundo o banco, a falha foi "localizada internamente", não afetou a estrutura geral
@@ -445,6 +457,13 @@ que as fontes confirmem essa técnica [44][45].
 > Pactual** de 22/3/2026, citado na mesma reportagem da ConvergenciaDigital como caso anterior; a
 > cobertura do incidente do Rendimento registra que o banco não abriu volumes financeiros [44][45][46].
 
+Em **19 de junho de 2026**, a fintech **Swap** (provedora de *Banking as a Service*) teve uma tentativa de
+invasão detectada e neutralizada pelos próprios sistemas de monitoramento da empresa, que afirma não ter
+havido comprometimento de dados pessoais nem perda financeira; o Banco Central emitiu alerta aos
+participantes do Sistema de Pagamentos Instantâneos (SPI) sobre o evento [87][88]. Diferentemente dos
+casos anteriores, este episódio não resultou em prejuízo, mas confirma que tentativas de intrusão contra
+participantes do Pix seguem frequentes ao longo de 2026.
+
 Em **agosto de 2026**, dois episódios reforçaram a pressão sobre o ecossistema. No dia **18**, a Polícia
 Federal deflagrou a **Operação Pane Seca** contra um grupo acusado de invadir sistemas de instituições
 financeiras e realizar transferências e pagamentos de boletos, com os recursos passando por contas
@@ -457,6 +476,15 @@ trocar a titularidade de recebíveis de grandes empresas e liquidar os valores e
 alerta de uma instituição financeira permitiu cancelar as operações antes da liquidação, **sem prejuízo
 financeiro** [64][65]. O caso estende o risco de terceiros a uma infraestrutura menos visível do sistema,
 a de registro de recebíveis.
+
+Em setembro de 2026, a CrowdStrike publicou o perfil de um novo ator financeiramente motivado, batizado
+**Slim Spider**, ativo desde pelo menos **março de 2026** e especializado em instituições financeiras
+brasileiras: o grupo rouba credenciais de ambientes de nuvem e segredos de custódia de criptoativos,
+mirando diretamente a infraestrutura do Pix. Entre as técnicas documentadas estão o uso de *scripts* Bash
+e ferramentas nativas de nuvem, o pivô para o Azure DevOps com *pipelines* maliciosos que implantaram
+artefatos em um cluster Kubernetes gerenciado — incluindo um implante batizado "spi", em alusão ao Sistema
+de Pagamentos Instantâneos —, além de um "Painel Pix" próprio, desenvolvido para disparar transferências
+Pix não autorizadas em lote a partir de contas comprometidas [89][90].
 
 ## Superfície de ataque: Pix e Open Finance
 
@@ -790,3 +818,21 @@ https://www.globenewswire.com/news-release/2026/09/09/3358409/8980/en/radware-h1
 
 [84] The Fast Mode. *Radware H1 2026 Report Shows Web DDoS Attacks Surge 110.6%*. 2026.
 https://www.thefastmode.com/market-trends/50546-radware-h1-2026-report-shows-web-ddos-attacks-surge-110-6
+
+[85] Agência Brasil (EBC). *BC comunica exposição de dados de 28 mil chaves Pix*. 21 de março de 2026.
+https://agenciabrasil.ebc.com.br/economia/noticia/2026-03/bc-comunica-exposicao-de-dados-de-28-mil-chaves-pix
+
+[86] Jornal de Brasília. *Banco Central divulga vazamento de 28 mil chaves Pix da Pefisa*. Março de 2026.
+https://jornaldebrasilia.com.br/noticias/economia/banco-central-divulga-vazamento-de-28-mil-chaves-pix-da-pefisa/
+
+[87] Finsiders Brasil. *Fintech Swap sofre tentativa de ataque hacker*. Junho de 2026.
+https://finsidersbrasil.com.br/pagamentos/pix/fintech-swap-sofre-tentativa-de-ataque-hacker/
+
+[88] CISO Advisor. *Fintech Swap confirma ter bloqueado tentativa de invasão*. Junho de 2026.
+https://www.cisoadvisor.com.br/fintech-swap-confirma-ter-bloqueado-tentativa-de-invasao/
+
+[89] CrowdStrike. *Slim Spider Adversary Profile*. 2026.
+https://www.crowdstrike.com/en-us/adversaries/slim-spider/
+
+[90] The Hacker News. *Slim Spider Steals Crypto Custody Secrets From Brazilian Financial Institution*.
+Setembro de 2026. https://thehackernews.com/2026/09/slim-spider-steals-crypto-custody.html
