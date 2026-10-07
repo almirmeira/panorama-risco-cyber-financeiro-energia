@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-10-04",
-    "verificadoEm": "2026-10-04",
+    "geradoEm": "2026-10-07",
+    "verificadoEm": "2026-10-07",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -63,7 +63,7 @@
       ],
       "dimensoes": [
         { "nome": "Segmentação TI/OT", "nivel": "ambar", "justificativa": "Padrão observado de segmentação bem-sucedida em incidentes brasileiros (Eletrobras/Copel 2021, Petrobras/SAExploration 2025, Cemig 2026 — vazamento de ~135 mil clientes, sem impacto operacional), mas a convergência TI/OT crescente exige reforço constante da DMZ industrial (Nível 3,5 do Modelo Purdue).", "fonte": "cap. 03" },
-        { "nome": "APT estatal", "nivel": "vermelho", "justificativa": "Sandworm/GRU 74455 (BlackEnergy 2015, Industroyer 2016, Industroyer2 2022, e a campanha contra ~30 instalações eólicas/solares e uma usina de cogeração na Polônia em dez/2025 — atribuição contestada, CERT Polska nomeia Static Tundra/FSB), Volt Typhoon/VOLTZITE (pré-posicionamento de ~300 dias em concessionária de Massachusetts), um ator ligado ao Irã (pequeno gerador de energia no Reino Unido desligado por 4 dias, jul/2026, grupo não identificado) e o APT afiliado ao Irã que manipulou PLCs e falsificou telas IHM/SCADA em organizações de energia, água e governo nos EUA desde mar/2026 (CISA AA26-097A) ilustram foco de atores estatais em sabotagem/pré-posicionamento geopolítico.", "fonte": "cap. 03" },
+        { "nome": "APT estatal", "nivel": "vermelho", "justificativa": "Sandworm/GRU 74455 (BlackEnergy 2015, Industroyer 2016, Industroyer2 2022, e a campanha contra ~30 instalações eólicas/solares e uma usina de cogeração na Polônia em dez/2025 — atribuição contestada, CERT Polska nomeia Static Tundra/FSB), Volt Typhoon/VOLTZITE (pré-posicionamento de ~300 dias em concessionária de Massachusetts), um ator ligado ao Irã (pequeno gerador de energia no Reino Unido desligado por 4 dias, jul/2026, grupo não identificado) e o grupo CyberAv3ngers/Shahid Kaveh Group (vinculado ao IRGC Cyber Electronic Command, segundo cobertura especializada — Tenable, Security Boulevard; nomeação não confirmada no texto oficial da CISA) que manipulou PLCs e falsificou telas IHM/SCADA em organizações de energia, água e governo nos EUA desde mar/2026 (CISA AA26-097A) ilustram foco de atores estatais em sabotagem/pré-posicionamento geopolítico.", "fonte": "cap. 03" },
         { "nome": "Ransomware industrial", "nivel": "vermelho", "justificativa": "Ataques +64% a/a em 2025 (grupos +49%, de 80 para 119; ~3.300 organizações impactadas), após +87% em 2024, e nova alta em 2026 (1.140 incidentes no 2º tri., +12% sobre o 1º); dwell time médio de 42 dias em ambientes OT, caindo para 5 dias apenas com visibilidade OT dedicada.", "fonte": "cap. 03" },
         { "nome": "Regulação ANEEL", "nivel": "ambar", "justificativa": "RN ANEEL nº 964/2021 (ARCiber) em vigor desde jul/2022 e controles mínimos do ONS no Submódulo 5.13 (RO-CB.BR.01, vigente desde 9/7/2021, conformidade exigida até out/2023), mas a 1ª fiscalização concreta da ANEEL só ocorreu via Despacho nº 427/2025; o setor elétrico brasileiro já é alvo de APT (Armored Likho, jul/2026).", "fonte": "cap. 03" },
         { "nome": "Sistemas legados", "nivel": "vermelho", "justificativa": "ICS legados com ciclo de vida de décadas, frequentemente sem suporte de segurança do fabricante; apenas 6% de mais de 500 mil redes sem fio analisadas (Nozomi, 2º sem. 2024) estavam adequadamente protegidas contra ataques de desautenticação (deauth).", "fonte": "cap. 03" }
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-10-07",
+        "fonte": "Varredura rotativa (grupo 3/5) — setor energia, cap. 03 (auditoria contra Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM energia, ANEEL e ONS)",
+        "oQueMudou": "Reverificação completa de todos os números-chave de energia (KPIs, dimensões, barra, pizza) contra a edição mais recente de cada fonte primária publicada até 2026-10-07: todos confirmados atuais, sem edição mais nova disponível (Dragos e Kaspersky ICS CERT ainda não publicaram relatório do 3º trimestre de 2026; Fortinet OT 2026 e IBM Cost of a Data Breach 2026 seguem como edições mais recentes; nenhum ato normativo novo da ANEEL/ONS localizado; nenhum incidente-marco novo em energia no Brasil ou no mundo). Único ajuste incorporado: atribuição mais precisa do ator por trás do advisório conjunto FBI/CISA/NSA/EPA/DOE/CNMF AA26-097A (manipulação de PLCs/IHM-SCADA em energia, água e governo dos EUA desde mar/2026) — cobertura especializada independente (Tenable; Security Boulevard) nomeia o grupo CyberAv3ngers/Shahid Kaveh Group, vinculado ao IRGC Cyber Electronic Command e também rastreado como Storm-0784 (Microsoft), Bauxite (Dragos) e UNC5691 (Mandiant); a nomeação explícita pela CISA no texto oficial do advisório não foi confirmada de forma independente. Texto da dimensão 'APT estatal' e da tabela de casos-marco do cap. 03 atualizados; nenhum KPI numérico mudou, pois a correção é de atribuição, não de valor. Também verificada uma notícia de fonte única (Cenário Energia, 24/09/2026) sobre a ANEEL ter passado a integrar o Sisbin (Sistema Brasileiro de Inteligência) — não incorporada por não atender à regra de duas fontes independentes, registrada como [NÃO CONFIRMADO em 2026-10-07] no dossiê."
+      },
       {
         "data": "2026-10-04",
         "fonte": "Varredura rotativa (grupo 2/5) — setor financeiro (recorte Brasil), cap. 02",
