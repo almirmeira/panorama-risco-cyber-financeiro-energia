@@ -3590,3 +3590,56 @@ passagem — nenhuma pendência manual de SVG.
 - Surfshark. *Global deepfake fraud reaches $2.19B — US leads in losses*. 2026. https://surfshark.com/research/chart/deepfake-fraud-countries (citado apenas para registrar o veredito "não comparável"; não usado como fonte de KPI)
 - Shufti. *Deepfake-Powered Identity Fraud Is Surging in 2026: Shufti's Identity Fraud Index Report*. 2026. https://shuftipro.com/resources/whitepapers-reports/deepfake-identity-fraud-index-report-2026/ (idem)
 - FS-ISAC. Página de buscas institucionais confirma que a edição mais recente de *Navigating Cyber* continua sendo a de 2025: https://www.fsisac.com/navigatingcyber2025
+
+## Registro do refresh — 2026-10-07 (varredura rotativa: grupo 3 — setor energia + cap. 03)
+
+Ciclo de 3 dias. Janela recente (item 2): nenhuma edição nova de CrowdStrike GTR, Microsoft MDDR, Verizon
+DBIR, IBM CODB, Mandiant M-Trends, Dragos OT Year in Review, Kaspersky ICS CERT, WEF, ENISA, FS-ISAC, Banco
+Central, ANEEL ou ONS além das já incorporadas; nenhum incidente-marco novo em financeiro/energia nos
+últimos 3 dias. Varredura rotativa (item 2b), grupo 3 = `setores[id=energia]` (kpis, dimensões, barra,
+pizza) + cap. 03, auditado contra as fontes primárias indicadas (Dragos, Kaspersky ICS CERT, Fortinet OT,
+Claroty/Nozomi/Waterfall, CISA, IBM energia, ANEEL e ONS). Este grupo não era auditado isoladamente desde a
+revisão profunda de 2026-09-24/25 (ver seções acima) — por isso o volume de itens confirmados sem mudança é
+alto, o que é o resultado esperado doze dias depois de uma revisão profunda recente.
+
+| Item auditado | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Ransomware industrial (Dragos, anual e trimestral: +87%/2024, +64%/2025, 1.140 no 2T2026) | Confirmado atual | Nenhum relatório trimestral do 3º tri. 2026 publicado até 07/10/2026 — Dragos historicamente publica a análise trimestral ~40 dias após o fechamento do trimestre (Q2 2026 saiu em 10/8/2026); nada localizado para Q3 |
+| Dwell time de ransomware em OT (42→5 dias) | Confirmado atual | Mesma fonte (Dragos YIR 2026); sem atualização |
+| Computadores ICS atacados — energia elétrica 22,8% (H1 2025) e série global (19,15% no 2T2026) | Confirmado atual | Kaspersky ICS CERT ainda não publicou o relatório do 3º tri. 2026 (o do 2º tri. saiu em 25/8/2026); a leitura isolada de 21,3% para energia no 2T2026 permanece **[NÃO CONFIRMADO]**, como já registrado em 24/09/2026 |
+| Intrusões em OT — Fortinet 2026 (71%/24%) | Confirmado atual | Relatório anual; próxima edição só em 2027 |
+| Advisórios ICS CISA 2025 (>500; 508 Forescout / 506 CSAF) | Confirmado atual | Número é histórico (ano encerrado); sem contestação nova |
+| Custo médio de violação — energia USD 5,2 mi (IBM CODB 2026) | Confirmado atual | Edição anual; próxima só em jul/2027. Recorte OT específico (15%/25%/USD 4,56 mi, ed. 2025) permanece sem equivalente 2026 — **[NÃO CONFIRMADO]**, como já registrado em 24/09/2026 |
+| Nozomi Networks — Manipulação de Dados como técnica dominante; 6% de redes Wi-Fi protegidas | Confirmado atual | Nenhuma edição 2026 do *OT/IoT Security Report* localizada nesta busca (checado diretamente no site da Nozomi) |
+| RN ANEEL nº 964/2021, Despacho nº 427/2025, Submódulo 5.13/ONS | Confirmado atual | Nenhum ato normativo novo da ANEEL ou do ONS localizado; achado adicional de fonte única (ver obsolescência/não confirmados abaixo) |
+| Casos Brasil — Eletrobras/Copel (2021), Petrobras/Everest (2025), Cemig (2026) | Confirmado atual | Nenhum desfecho novo localizado para a divergência Petrobras×Everest (segue contestada, sem posição conciliadora em 2026); nenhum incidente novo em energia no Brasil |
+| Armored Likho (jul/2026) | Confirmado atual | Nenhuma atualização ou vítima brasileira nomeada localizada desde a incorporação em 24/09/2026 |
+| Atribuição — AA26-097A (CISA, Iran-affiliated PLC manipulation) | **Atualizado (precisão de atribuição)** | O capítulo tratava o ator apenas como "APT afiliado ao Irã" sem nomear o grupo. Cobertura especializada independente e convergente (Tenable; Security Boulevard; corroborada por RISI Data, Securonix, Hivepro, Cybersecurity News) nomeia o grupo **CyberAv3ngers/Shahid Kaveh Group**, vinculado ao IRGC Cyber Electronic Command, também rastreado como Storm-0784 (Microsoft), Bauxite (Dragos) e UNC5691 (Mandiant) — o mesmo grupo da campanha de 2023 contra CLPs Unitronics (AA23-335A). Há divergência entre fontes secundárias sobre se o texto oficial da CISA chega a nomear o grupo explicitamente (Security Boulevard diz que sim; IBTimes diz que não) — por isso a nomeação foi incorporada com nota de cautela explícita, não como atribuição direta da CISA |
+| Modelo Purdue, IEC 62443 (fundamentos técnicos) | Confirmado atual | Sem mudança normativa/conceitual a registrar |
+
+**Não confirmado (fonte única) — não incorporado:** ANEEL passou a integrar o Sisbin (Sistema Brasileiro de
+Inteligência), segundo reportagem de 24/09/2026 do Cenário Energia (portaria no Diário Oficial não
+localizada de forma independente nesta busca) — **[NÃO CONFIRMADO em 2026-10-07]**, mantido fora do
+capítulo e do painel até surgir uma segunda fonte independente ou o texto oficial da portaria.
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida no bloco `energia` do
+painel nem no cap. 03. Os dois prazos futuros da Ordem Executiva 14420 (120 dias/24-12-2026 e 180
+dias/22-02-2027) ainda não venceram em 07/10/2026 e continuam corretamente descritos como pendentes. Os
+prazos já vencidos (ondas do Submódulo 5.13 até out/2023; Despacho ANEEL 427/2025 até 30/06/2025) já
+estavam redigidos no passado desde a revisão profunda de 24/09/2026.
+
+Destinos atualizados: `03-setor-energia/README.md` (tabela de casos-marco + novo parágrafo em "Atores
+relevantes" sobre CyberAv3ngers + refs. [74][75] novas) e `dashboard/src/data/dashboard.json` (texto da
+dimensão "APT estatal" do setor energia; `meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-10-07;
+nova entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico do painel mudou — a correção é de
+atribuição, não de valor. SVGs pendentes (não editados, já sinalizados em ciclos anteriores):
+`02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`,
+`06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- Tenable. *What to Know About CyberAv3ngers: The IRGC-Linked Group Targeting Critical Infrastructure*. 2026. https://www.tenable.com/blog/what-to-know-about-cyberav3ngers-the-irgc-linked-group-targeting-critical-infrastructure
+- Security Boulevard. *Iranian Attackers Are Targeting U.S. Energy, Water Systems, Federal Agencies Say*. Abril de 2026. https://securityboulevard.com/2026/04/iranian-attackers-are-targeting-u-s-energy-water-systems-federal-agencies-say/
+- RISI Data (CS2AI). *Iran-linked CyberAv3ngers multi-sector PLC disruption campaign against US critical infrastructure*. 2026. https://www.risidata.com/Database/Detail/iran-cyberav3ngers-plc-us-infrastructure-2026
+- Securonix. *CyberAv3ngers Reprised: Inside the Ongoing IOCONTROL Campaign Against U.S. PLCs*. 2026. https://connect.securonix.com/threat-research-intelligence-62/cyberav3ngers-reprised-inside-the-ongoing-iocontrol-campaign-against-u-s-plcs-460
+- Cenário Energia. *ANEEL é integrada ao Sistema Brasileiro de Inteligência para reforçar proteção de infraestruturas críticas*. 24/09/2026. https://cenarioenergia.com.br/2026/09/24/aneel-integrada-sistema-brasileiro-inteligencia-sisbin/ (citado apenas para registrar o veredito "não confirmado"; não usado como fonte de conteúdo do capítulo)

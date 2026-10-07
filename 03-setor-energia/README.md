@@ -179,7 +179,7 @@ fonte que a fez, nunca tratada como fato único e definitivo.
 | 2022 (13/4)      | Pipedream / Incontroller — *framework* modular contra PLCs      | CHERNOVITE, segundo Dragos (alta confiança); Mandiant nota consistência com interesse histórico russo [24][25] | Sem uso ativo confirmado até a data do advisório conjunto CISA/FBI/NSA/DOE          |
 | 2024 (jan.; identificado em abr.) | FrostyGoop — interrupção de aquecimento distrital em Lviv, Ucrânia | Não identificado — nenhuma atribuição de grupo de ameaça localizada, segundo Dragos [26][27] | Mais de 600 prédios residenciais; ~2 dias sem aquecimento em temperaturas negativas   |
 | 2025 (29/12); 2ª instalação revelada em 9/8/2026 | Pivô por APN celular privada — de parque eólico a usina de cogeração (CHP) na Polônia | Sandworm, segundo ESET (Dragos também associa); Static Tundra/FSB, segundo CERT Polska — atribuição contestada [48][49] | ~30 instalações eólicas/solares comprometidas; turbina a vapor e estação de tratamento de água de usina CHP (50 mil residentes) desligadas por sabotagem; sem interrupção ao público; 1º caso documentado de pivô TI→OT via APN privada |
-| 2026 (desde mar.; advisório de 7/4, atualizado em 22/7) | Manipulação de PLCs expostos e falsificação de telas IHM/SCADA em Energia, Água e Governo (EUA) | APT afiliado ao Irã, segundo FBI, CISA, NSA, EPA, DOE e CNMF (AA26-097A) [69][70] | Interrupções operacionais e perdas financeiras em múltiplas vítimas |
+| 2026 (desde mar.; advisório de 7/4, atualizado em 22/7) | Manipulação de PLCs expostos e falsificação de telas IHM/SCADA em Energia, Água e Governo (EUA) | CyberAv3ngers/Shahid Kaveh Group, vinculado ao IRGC Cyber Electronic Command (também rastreado como Storm-0784 pela Microsoft, Bauxite pela Dragos e UNC5691 pela Mandiant), segundo cobertura especializada sobre o advisório conjunto FBI/CISA/NSA/EPA/DOE/CNMF (AA26-097A) — nomeação explícita do grupo pela CISA no texto oficial não confirmada de forma independente nesta pesquisa [69][70][74][75] | Interrupções operacionais e perdas financeiras em múltiplas vítimas |
 | 2026 (jul.; revelado em 23/8/2026) | Pequeno gerador de energia desligado por 4 dias no Reino Unido | Ligado ao Irã, segundo o *The Telegraph* — nome do grupo/APT não identificado [53][54] | Instalação de pequena escala; sem risco à rede nacional; 1º ataque desse tipo bem-sucedido contra infraestrutura de energia britânica, segundo autoridades |
 
 O padrão histórico é revelador: o ataque de 2015 dependeu de acesso manual a interfaces homem-máquina
@@ -245,6 +245,19 @@ dias** (fevereiro a novembro de 2023) antes de o FBI alertar a empresa; o objeti
 exfiltração de dados operacionais de OT (procedimentos de operação, layout da rede elétrica), não
 disrupção imediata [30][31]. A Dragos afirma que a atividade da VOLTZITE contra infraestrutura crítica
 ocidental continuou ao longo de 2025 — registrado aqui como atribuição da própria Dragos.
+
+Um terceiro ator relevante para o recorte 2026 é o **CyberAv3ngers** (também conhecido como Shahid Kaveh
+Group, Storm-0784 na nomenclatura da Microsoft, Bauxite na da Dragos e UNC5691 na da Mandiant), vinculado ao
+IRGC Cyber Electronic Command — o mesmo grupo responsável pela campanha de 2023 contra CLPs Unitronics em
+sistemas de água dos EUA (advisório AA23-335A). Cobertura especializada (Tenable, Security Boulevard)
+associa esse grupo à atividade descrita no advisório conjunto FBI/CISA/NSA/EPA/DOE/CNMF **AA26-097A** (7 de
+abril de 2026, atualizado em 22 de julho), que documentou manipulação de CLPs expostos à internet
+(inicialmente Rockwell/Allen-Bradley, ampliado em julho para também incluir Schneider Electric e Siemens) e
+falsificação de telas de IHM/SCADA em organizações de energia, água e governo dos EUA, com interrupções
+operacionais e perdas financeiras em múltiplas vítimas desde março de 2026. **Nota de atribuição:** a
+nomeação explícita do grupo no texto oficial do advisório da CISA não foi confirmada de forma independente
+nesta pesquisa — a atribuição acima vem de cobertura secundária especializada, e é tratada aqui com o mesmo
+cuidado já aplicado às demais atribuições deste capítulo [69][70][74][75].
 
 ### Fundamentos técnicos: Modelo Purdue e IEC 62443
 
@@ -621,3 +634,11 @@ https://www.securityweek.com/armored-likho-apt-targeting-government-electric-pow
 
 [73] Infosecurity Magazine. *Significant Rise in Ransomware Targeting Industrial Operations*. 17 de
 fevereiro de 2026. https://www.infosecurity-magazine.com/news/rise-in-ransomware-targeting/
+
+[74] Tenable. *What to Know About CyberAv3ngers: The IRGC-Linked Group Targeting Critical
+Infrastructure*. 2026.
+https://www.tenable.com/blog/what-to-know-about-cyberav3ngers-the-irgc-linked-group-targeting-critical-infrastructure
+
+[75] Security Boulevard. *Iranian Attackers Are Targeting U.S. Energy, Water Systems, Federal Agencies
+Say*. Abril de 2026.
+https://securityboulevard.com/2026/04/iranian-attackers-are-targeting-u-s-energy-water-systems-federal-agencies-say/
