@@ -2241,8 +2241,10 @@ integralmente em 2026-07-21.
   criminosa — ver ecossistema RaaS abaixo), **hacktivismo** (motivação política/ideológica, DDoS e vazamentos —
   ver item específico abaixo), **insider** (colaborador ou ex-colaborador com acesso legítimo abusado, por
   negligência ou má-fé) e **Initial Access Broker — IAB** (especialista em obter e revender acesso inicial a
-  redes comprometidas, sem executar o ataque final). A CrowdStrike, por exemplo, rastreia mais de **180 atores
-  de ameaça globais** distribuídos entre essas categorias, usando convenção de nomenclatura própria (animal
+  redes comprometidas, sem executar o ataque final). A CrowdStrike, por exemplo, rastreava mais de **180
+  atores de ameaça globais** (valor consultado em 2026-07-21 na página estática "Adversary Profiling" —
+  **[SUPERADO em 2026-10-10]**, ver atualização abaixo) distribuídos entre essas categorias, usando convenção
+  de nomenclatura própria (animal
   nacional para Estado-nação, ex.: "BEAR" para Rússia, "PANDA" para China; "SPIDER"/"LYNX" para eCrime; "JACKAL"
   para hacktivismo).
   - Fonte 1: CrowdStrike. *Adversary Profiling | CrowdStrike Falcon® Threat Intelligence*.
@@ -2254,6 +2256,30 @@ integralmente em 2026-07-21.
     Microsoft, Dragos) usam convenções de nomenclatura próprias e distintas para atividade equivalente ou
     sobreposta — ver item "Convergência de nomenclatura entre fornecedores" abaixo, que trata exatamente dessa
     fragmentação e da tentativa recente do mercado de resolvê-la.
+
+#### Atualização 2026-10-10 — CrowdStrike eleva a contagem de adversários nomeados rastreados
+
+- **Dado:** o valor de "180+" citado acima vem de uma página institucional estática da CrowdStrike (sem data de
+  relatório), e está defasado. Os relatórios periódicos mais recentes da própria CrowdStrike usam números
+  substancialmente mais altos: o **CrowdStrike 2026 Global Threat Report** (fevereiro de 2026) cita **mais de
+  280** adversários nomeados rastreados, com **24 novos grupos** identificados somente em 2025; o **CrowdStrike
+  2026 Threat Hunting Report** (agosto de 2026, cobrindo julho/2025–junho/2026) eleva a contagem para **mais de
+  290**. Este dossiê passa a usar **290+** como valor vigente, mantendo 180+ registrado acima como referência
+  histórica (valor da página estática, não de um relatório periódico específico).
+  - Fonte 1 (primária/wire oficial): CrowdStrike / Business Wire. *2026 CrowdStrike Global Threat Report: AI
+    Accelerates Adversaries and Reshapes the Attack Surface*. Fevereiro de 2026.
+    https://www.businesswire.com/news/home/20260224017260/en/2026-crowdstrike-global-threat-report-ai-accelerates-adversaries-and-reshapes-the-attack-surface/
+  - Fonte 2 (cobertura independente do relatório seguinte, agosto/2026): SecurityMEA. *CrowdStrike Launches
+    2026 Threat Hunting Report*. Agosto de 2026.
+    https://securitymea.com/2026/08/04/crowdstrike-launches-2026-threat-hunting-report/ (relatório original via
+    Business Wire: https://secure.businesswire.com/news/home/20260803155652/en/CrowdStrike-2026-Threat-Hunting-Report-AI-is-Now-Embedded-Across-Modern-Adversary-Operations)
+  - Observações: as duas fontes primárias são do próprio fornecedor (CrowdStrike), mas de dois relatórios
+    distintos, divulgados por canais de imprensa (wire) independentes e separados por seis meses — tratado como
+    confirmação suficiente de que o número evoluiu, e não como fonte única. Sem acesso direto ao PDF de nenhum
+    dos dois relatórios nesta pesquisa (bloqueado pela política de rede desta sessão); os números vêm dos
+    comunicados de imprensa oficiais, replicados sem divergência pela cobertura jornalística consultada.
+    Diferença de metodologia entre os dois relatórios (GTR anual vs. Threat Hunting semestral) não detalhada —
+    tratar 290+ como o valor mais recente, não necessariamente como série estritamente comparável ano a ano.
 
 ### MITRE ATT&CK (Enterprise) — versão atual e táticas relevantes
 
@@ -2562,7 +2588,7 @@ integralmente em 2026-07-21.
 | :-- | :-- | :-- | :-- |
 | MITRE ATT&CK Enterprise — versão atual | v19.1 (28/4/2026); 15 táticas | MITRE ATT&CK (site oficial) | Confirmado (2 fontes) |
 | MITRE ATT&CK for ICS — estrutura | 12 táticas / 107 técnicas | MITRE ATT&CK (site oficial) | Confirmado (2 fontes) |
-| Atores de ameaça rastreados (CrowdStrike) | 180+ globalmente | CrowdStrike Adversary Profiling | Confirmado (2 fontes) |
+| Atores de ameaça rastreados (CrowdStrike) [atualizado 10/10] | 290+ nomeados (ante 180+ da página estática, superado) | CrowdStrike 2026 GTR (280+) / Threat Hunting Report 2026 (290+), via Business Wire / SecurityMEA | Confirmado (2 fontes) |
 | LockBit — Operation Cronos (fev/2024) | 34 servidores; 14.000 contas; 200 contas cripto congeladas | NCA / Trend Micro | Confirmado (2 fontes) |
 | LockBit — resgates extorquidos (histórico) | >USD 120 milhões; >2.000 vítimas | NCA | Confirmado (2 fontes) |
 | ALPHV/BlackCat — exit scam (mar/2024) | USD 22 milhões (Change Healthcare) não repassados a afiliado | The Hacker News / TechTarget | Confirmado (2 fontes) |
@@ -3643,3 +3669,49 @@ atribuição, não de valor. SVGs pendentes (não editados, já sinalizados em c
 - RISI Data (CS2AI). *Iran-linked CyberAv3ngers multi-sector PLC disruption campaign against US critical infrastructure*. 2026. https://www.risidata.com/Database/Detail/iran-cyberav3ngers-plc-us-infrastructure-2026
 - Securonix. *CyberAv3ngers Reprised: Inside the Ongoing IOCONTROL Campaign Against U.S. PLCs*. 2026. https://connect.securonix.com/threat-research-intelligence-62/cyberav3ngers-reprised-inside-the-ongoing-iocontrol-campaign-against-u-s-plcs-460
 - Cenário Energia. *ANEEL é integrada ao Sistema Brasileiro de Inteligência para reforçar proteção de infraestruturas críticas*. 24/09/2026. https://cenarioenergia.com.br/2026/09/24/aneel-integrada-sistema-brasileiro-inteligencia-sisbin/ (citado apenas para registrar o veredito "não confirmado"; não usado como fonte de conteúdo do capítulo)
+
+## Registro do refresh — 2026-10-10 (varredura rotativa: grupo 4 — Tendências/Recomendações + Atores e TTPs, caps. 05-08)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 283 ÷ 3) mod 5 = **4** → `tendencias`, `recomendacoes` + caps. 05
+(Atores e TTPs), 06, 07 e 08. Este grupo não era auditado isoladamente desde 2026-09-25 (15 dias). Janela
+recente (item 2): nenhuma edição nova de Anthropic (threat intelligence), CrowdStrike, Sysdig, Unit 42,
+OWASP, CISA, NIST ou Sonatype além das já incorporadas; nenhum incidente-marco novo em financeiro/energia
+ligado a IA ofensiva, deepfake ou cadeia de suprimentos nos últimos 3 dias.
+
+| Item verificado | Veredito em 2026-10-10 |
+| :-- | :-- |
+| Atores de ameaça rastreados pela CrowdStrike (cap. 05) | **Atualizado**: "180+" vinha de página estática sem data; o CrowdStrike 2026 Global Threat Report (fev/2026) já citava "mais de 280" (24 novos grupos em 2025), e o CrowdStrike 2026 Threat Hunting Report (ago/2026) eleva para "mais de 290". Adotado 290+ como valor vigente; 180+ preservado como referência histórica |
+| MITRE ATT&CK Enterprise — versão (v19.1 vs. indício de v19.2) | Confirmado sem troca, mesma limitação de 25/09: há changelogs públicos (`v19.1-v19.2`) sugerindo um release ágil de agosto/2026, mas o site oficial (attack.mitre.org) continua inacessível a esta sessão (DNS bloqueado) e nenhuma segunda fonte plenamente independente foi localizada — mantido v19.1 no texto |
+| Qilin — liderança sustentada (cap. 05) | Confirmado sem mudança material: ZeroFox (ago/2026) mantém Qilin na liderança desde o 2º tri. de 2025 (~17 meses), com 1.835 ataques no período (ante 905 da Akira, 2ª colocada) — número mais amplo que os 1.480 incidentes (set/2025–ago/2026) já registrados, mas de janela e metodologia distintas (contagem cumulativa desde o 2T/2025, não o ano corrido); fonte cruzada (CybelAngel, citando Halcyon) mostra queda de ~1/3 no volume mensal e a liderança mensal passando para "The Gentlemen" em junho/2026 — tensão entre rastreadores já é o padrão registrado para esta métrica; texto mantido sem troca por não haver convergência clara de um número substituto |
+| RaaS — grupos ativos rastreados (cap. 05, "124 grupos") | Confirmado como ordem de grandeza, sem troca: Black Kite (abr/2025–mar/2026) chega a 146 grupos; Check Point oscila entre 71 (1T/2026) e 93 (2T/2026); GuidePoint e S-RM usam metodologias distintas. Dispersão entre 71 e 146 confirma a leitura já registrada de "mais fragmentado do que nunca", mas nenhuma fonte substitui com segurança o valor pontual já citado — mantido sem troca |
+| Ransomware conduzido por IA (cap. 06) | Confirmado sem caso novo desde a investigação Unit 42 (set/2026) já incorporada em 25/09; nenhuma cobertura de outubro/2026 localizada |
+| Anthropic — relatório de inteligência de ameaças | Confirmado sem edição mais nova que a de set/2026 (dez/2025–ago/2026), já incorporada |
+| PQC — FIPS 206 (FN-DSA) | Confirmado sem mudança: continua rascunho, previsão de finalização ainda apontada para final de 2026/início de 2027 por fontes secundárias (sem fonte primária NIST que confirme data) |
+| PQC — HQC | Confirmado sem mudança: NIST ainda não publicou o rascunho de padrão anunciado para ~1 ano após a seleção (mar/2025); página do NIST CSRC segue classificando HQC como "FIPS coming soon" |
+| NIST IR 8596 (Cyber AI Profile) | Confirmado sem mudança: segue como *Initial Preliminary Draft* (16/12/2025); indício de um *Public Draft* previsto para o verão (hemisfério norte) de 2026 é de fonte terciária, não incorporado |
+| OWASP Top 10 for Agentic Applications 2026 / Guia CISA de IA agêntica | Confirmado sem revisão nova desde a publicação original |
+| Cl0p — contagem de vítimas Oracle EBS | Confirmado sem mudança no número agregado (~29-30 nomeadas); casos individuais adicionais (Michelin, Korean Air, Madison Square Garden) são detalhamento, não uma contagem agregada substituta — não incorporados por não alterar o número citado |
+| ANEEL — Portarias 7.058/2026 e 7.062/2026 (cibersegurança, fev/2026) | **Não confirmado, não incorporado**: localizadas apenas em nota de rodapé de um único artigo jurídico (Machado Meyer), sem data, texto ou resumo de conteúdo verificável e sem segunda fonte independente — registrado como [NÃO CONFIRMADO em 2026-10-10], mesmo padrão já aplicado ao item Sisbin/ANEEL de 24/09 |
+| Cap. 07 — NIST CSF 2.0, ISO/IEC 27001:2022+Amd1, IEC 62443, Zero Trust SP 800-207 | Confirmado sem mudança: nenhuma nova edição localizada |
+| Cap. 08 — recomendações | Revisado; nenhuma afirmação numérica desatualizada localizada |
+| Obsolescência temporal (item 2c) | Nenhum trecho dos caps. 05-08 trata como futuro algo já vencido; todos os prazos (OMB M-26-15 2030/2035, G7 CEG meados de 2030) seguem genuinamente no futuro em 10/10/2026 |
+
+**Arquivos alterados:** `fontes-e-referencias/dossie-pesquisa.md` (seção Atores e TTPs — contagem de
+adversários CrowdStrike), `05-atores-e-ttps/README.md` (resumo executivo + seção "Taxonomia de Atores de
+Ameaça" + refs. [37][38] novas) e `dashboard/src/data/dashboard.json` (`meta.geradoEm`/`meta.verificadoEm`
+atualizados para 2026-10-10; nova entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico do
+`dashboard.json` precisou mudar: o painel não tem indicador dedicado à contagem de adversários rastreados
+pela CrowdStrike. SVGs pendentes (não editados, já sinalizados em ciclos anteriores):
+`02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`,
+`06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- CrowdStrike / Business Wire. *2026 CrowdStrike Global Threat Report: AI Accelerates Adversaries and Reshapes the Attack Surface*. Fevereiro de 2026. https://www.businesswire.com/news/home/20260224017260/en/2026-crowdstrike-global-threat-report-ai-accelerates-adversaries-and-reshapes-the-attack-surface/
+- CrowdStrike / Business Wire. *CrowdStrike 2026 Threat Hunting Report: AI is Now Embedded Across Modern Adversary Operations*. Agosto de 2026. https://secure.businesswire.com/news/home/20260803155652/en/CrowdStrike-2026-Threat-Hunting-Report-AI-is-Now-Embedded-Across-Modern-Adversary-Operations
+- SecurityMEA. *CrowdStrike Launches 2026 Threat Hunting Report*. Agosto de 2026. https://securitymea.com/2026/08/04/crowdstrike-launches-2026-threat-hunting-report/
+- ZeroFox. *Qilin's latest spree of alleged victims*. 2026. https://www.zerofox.com/intelligence/qilins-latest-spree-of-alleged-victims/
+- CybelAngel. *Qilin Ransomware: Tactics and Attack Status in 2026*. 2026. https://cybelangel.com/blog/qilin-ransomware-tactics-attack/
+- Black Kite. Dados de contagem de grupos de ransomware ativos (abr/2025–mar/2026), via cobertura DEV Community. https://dev.to/netsecops_io/black-kite-report-ransomware-victims-up-25-as-new-groups-emerge-j5j
+- Check Point Research. *The State of Ransomware – Q2 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q2-2026/
+- Machado Meyer. *Evolução da Cibersegurança no Cenário brasileiro*. 2026. https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/direito-digital/evolucao-da-ciberseguranca-no-cenario-brasileiro (citado apenas para registrar o veredito "não confirmado" das Portarias ANEEL 7.058/7.062; não usado como fonte de conteúdo do capítulo)
