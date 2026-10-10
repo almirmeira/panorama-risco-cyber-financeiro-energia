@@ -3,8 +3,9 @@
 > **Resumo Executivo**
 > - A indústria de inteligência de ameaças organiza atores em cinco categorias amplas e não
 >   excludentes — estado-nação/APT, *ransomware*/RaaS, hacktivismo, insider e *Initial Access
->   Broker* (IAB) —, e a CrowdStrike, só ela, já rastreia mais de **180 atores de ameaça** globais
->   distribuídos entre elas [1][2].
+>   Broker* (IAB) —, e a CrowdStrike, só ela, já rastreia mais de **290 atores de ameaça** nomeados
+>   globalmente, distribuídos entre elas — alta frente aos "180+" de sua página de referência
+>   consultada em 2026-07-21, hoje defasada [1][2][37][38].
 > - Dois frameworks do MITRE sustentam este capítulo: o **ATT&CK Enterprise**, na versão **v19.1**
 >   (15 táticas), cobre TI corporativa; o **ATT&CK for ICS** acrescenta 12 táticas e 107 técnicas
 >   específicas de ambiente industrial — duas delas sem equivalente em TI [3][4][5][6].
@@ -38,10 +39,16 @@ creditada explicitamente a quem a fez.
 
 ## Taxonomia de Atores de Ameaça
 
-A CrowdStrike, por exemplo, rastreia mais de **180 atores de ameaça** globalmente, distribuídos
-entre categorias não excludentes e usando convenção de nomenclatura própria (animal nacional para
-estado-nação — "BEAR" para Rússia, "PANDA" para China —; "SPIDER"/"LYNX" para cibercrime financeiro;
-"JACKAL" para hacktivismo) [1][2]. As cinco categorias relevantes a este dossiê:
+A CrowdStrike rastreia mais de **290 atores de ameaça** nomeados globalmente — o *CrowdStrike 2026
+Global Threat Report* (fevereiro de 2026) já citava "mais de 280" (24 novos grupos identificados só
+em 2025); o *CrowdStrike 2026 Threat Hunting Report* (agosto de 2026) elevou a contagem para "mais de
+290". O número de ~180, usado até a revisão anterior deste capítulo, vinha da página de referência
+"Adversary Profiling" da própria CrowdStrike e está **superado**: a contagem evolui continuamente
+conforme novos grupos são identificados, e os relatórios anuais/semestrais mais recentes da empresa
+já não a usam [1][2][37][38]. Os atores são distribuídos entre categorias não excludentes, usando
+convenção de nomenclatura própria (animal nacional para estado-nação — "BEAR" para Rússia, "PANDA"
+para China —; "SPIDER"/"LYNX" para cibercrime financeiro; "JACKAL" para hacktivismo). As cinco
+categorias relevantes a este dossiê:
 
 - **Estado-nação / APT** — motivação de espionagem, sabotagem ou pré-posicionamento estratégico,
   raramente lucro imediato. Exemplos: **Sandworm/APT44** — atribuído pelo governo dos EUA à unidade
@@ -319,3 +326,12 @@ https://www.zerofox.com/intelligence/flash-report-qilin-claims-record-number-of-
 [36] Barracuda Networks. *Qilin ransomware surges into 2026*. Janeiro de 2026.
 https://blog.barracuda.com/2026/01/15/qilin-ransomware-surges-into-2026 (ver também Check Point
 Research. *The State of Ransomware – Q1 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q1-2026/)
+
+[37] CrowdStrike / Business Wire. *2026 CrowdStrike Global Threat Report: AI Accelerates Adversaries
+and Reshapes the Attack Surface*. Fevereiro de 2026.
+https://www.businesswire.com/news/home/20260224017260/en/2026-crowdstrike-global-threat-report-ai-accelerates-adversaries-and-reshapes-the-attack-surface/
+
+[38] CrowdStrike. *CrowdStrike 2026 Threat Hunting Report: AI is Now Embedded Across Modern Adversary
+Operations*. Agosto de 2026. https://secure.businesswire.com/news/home/20260803155652/en/CrowdStrike-2026-Threat-Hunting-Report-AI-is-Now-Embedded-Across-Modern-Adversary-Operations
+(cobertura independente convergente: SecurityMEA. *CrowdStrike Launches 2026 Threat Hunting Report*.
+Agosto de 2026. https://securitymea.com/2026/08/04/crowdstrike-launches-2026-threat-hunting-report/)
