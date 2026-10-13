@@ -128,6 +128,18 @@ líderes de segurança já citam a IA como o principal fator de mudança em cibe
 **87%** apontam vulnerabilidades relacionadas a IA como o risco de crescimento mais rápido ao longo de
 2025 [4][5].
 
+O *Microsoft Digital Defense Report 2026* — publicado por volta de 1º de outubro de 2026, já durante a
+janela deste ciclo de pesquisa, e com o tema central de que "a IA inclinou a vantagem de curto prazo para
+os atacantes" — reforça essa leitura com um dado específico de sua própria carteira de resposta a
+incidentes: *phishing* como vetor de acesso inicial saltou para **23%** dos casos investigados, ante
+**7%** na edição anterior, alta atribuída em parte a mensagens de engenharia social personalizadas por IA
+[55][56][57]. É uma métrica distinta — e **não substitui** — o dado já citado de que 28% das violações
+começam por *phishing*/engenharia social na edição 2025 [12][13]: aquele número mede o conjunto amplo de
+violações, este mede especificamente a amostra de casos de IR da própria Microsoft. Os demais números já
+citados da edição 2025 (motivação financeira ≥52%, taxa de clique de *phishing* com IA de 54%) seguem sem
+equivalente 2026 confirmado por duas fontes independentes nesta pesquisa, e por isso permanecem no texto
+como referência vigente.
+
 ### Setores mais atacados: por que as fontes discordam
 
 Um dos achados mais úteis deste dossiê é justamente a ausência de consenso sobre qual setor é o mais
@@ -482,3 +494,12 @@ https://industrialcyber.co/reports/enisa-threat-landscape-2026-highlights-ransom
 
 [54] Help Net Security. *Europe's technology backbone is becoming a cyber target*. 24 de setembro de
 2026. https://www.helpnetsecurity.com/2026/09/24/enisa-eu-cyber-threats-report/
+
+[55] AI Weekly. *Microsoft 2026 Digital Defense Report: AI Has Tipped Near-Term Advantage to Attackers*.
+2026. https://aiweekly.co/alerts/microsoft-2026-digital-defense-report-ai-has-tipped-near-term-advantage-to
+
+[56] SC World. *Microsoft report: AI accelerates cyberattacks, challenging defenders*. 2026.
+https://www.scworld.com/brief/microsoft-report-ai-accelerates-cyberattacks-challenging-defenders
+
+[57] MyABT. *Microsoft Digital Defense Report 2026: What Banks, Credit Unions, and Lenders Should Do
+First*. 2026. https://www.myabt.com/blog/microsoft-digital-defense-report-2026-financial-institutions

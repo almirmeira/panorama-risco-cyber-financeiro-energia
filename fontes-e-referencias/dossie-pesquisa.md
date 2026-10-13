@@ -743,6 +743,39 @@
   - Observações: sem divergência relevante quanto à narrativa qualitativa (IA + quântica + cadeia de suprimentos
     como amplificadores do risco cibernético).
 
+### Atualização 2026-10-13 — Microsoft Digital Defense Report 2026 (nova edição, publicada em ~01/10/2026)
+
+- **Dado:** a Microsoft publicou a edição 2026 do *Digital Defense Report* por volta de 1º de outubro de 2026
+  (Mês de Conscientização em Segurança Cibernética), substituindo a edição 2025 usada até aqui como fonte
+  principal de vários números deste capítulo. Tema central: "a IA inclinou a vantagem de curto prazo para os
+  atacantes" ("AI has tipped near-term advantage to attackers"). Entre os dados de IR (resposta a incidentes)
+  da própria Microsoft: **phishing como vetor de acesso inicial saltou para 23% dos casos investigados, ante
+  7% na edição anterior** — um salto de mais de 3x, atribuído em parte a mensagens de phishing personalizadas
+  por IA.
+  - Fonte 1: AI Weekly. *Microsoft 2026 Digital Defense Report: AI Has Tipped Near-Term Advantage to
+    Attackers*. 2026.
+    https://aiweekly.co/alerts/microsoft-2026-digital-defense-report-ai-has-tipped-near-term-advantage-to
+  - Fonte 2 (independente): SC World. *Microsoft report: AI accelerates cyberattacks, challenging defenders*.
+    2026. https://www.scworld.com/brief/microsoft-report-ai-accelerates-cyberattacks-challenging-defenders
+  - Fonte 3 (independente, cita página 33 do relatório): MyABT. *Microsoft Digital Defense Report 2026: What
+    Banks, Credit Unions, and Lenders Should Do First*. 2026.
+    https://www.myabt.com/blog/microsoft-digital-defense-report-2026-financial-institutions
+  - Fonte 4 (independente, data de publicação): Skill Sprinters. *Microsoft Digital Defense Report 2026: KI,
+    Angriffe, KMU*. 1º de outubro de 2026. https://skill-sprinters.de/blog/news/microsoft-digital-defense-report-2026-ki-angriffe-kmu/
+  - Observações: **este dado é metodologicamente distinto** do já citado "28% das violações começam por
+    *phishing*/engenharia social" (MDDR 2025, [12][13]) — a nova métrica mede especificamente o vetor de
+    acesso inicial dentro da própria carteira de casos de resposta a incidentes investigados pela Microsoft,
+    não o conjunto amplo de violações/incidentes medido pela estatística anterior; por isso os dois números
+    **não substituem um ao outro** e ambos são mantidos, com a distinção de amostra explícita no texto do
+    capítulo. Não foi possível acessar diretamente o PDF oficial ou a página do relatório no site da Microsoft
+    (404 em todas as tentativas de *fetch* direto nesta sessão); o dado é confirmado por convergência de 3
+    veículos de tecnologia independentes que reproduzem o mesmo par de números (23%/7%, página 33),
+    satisfazendo a regra de ≥2 fontes independentes pelo mesmo padrão já usado neste dossiê para o ENISA
+    Threat Landscape 2026. Outros achados da cobertura desta edição (ex.: setor público como mais afetado,
+    27%; setor financeiro como 4% da atividade entre os dez setores mais afetados; *voice phishing* via Teams
+    +502%; ~72 mil CVEs publicados esperados em 2026) apareceram em **fonte única** cada um nesta pesquisa e
+    **não foram incorporados** — registrados aqui apenas como pista para o próximo ciclo.
+
 ---
 
 ## Tabela-resumo — números-chave e status de confirmação
@@ -773,6 +806,7 @@
 | Espionagem (% de incidentes) | ~15–17% | Verizon DBIR 2025 | **Divergência não resolvida entre fontes** |
 | Motivação financeira agregada | ≥52% dos incidentes | Microsoft Digital Defense Report 2025 | Confirmado (2 fontes); cuidado com leitura de manchete |
 | Phishing com apoio de IA (taxa de clique) | 54% (4x o tradicional) | Microsoft Digital Defense Report 2025 | Confirmado (2 fontes) |
+| Phishing como vetor de acesso inicial (casos de IR da própria Microsoft, atualização 2026-10-13) | 23% (ante 7% na edição anterior) | Microsoft Digital Defense Report 2026 | Confirmado (3 fontes); métrica de amostra própria de IR, não substitui o dado de 28% (MDDR 2025) acima |
 | Incidentes analisados (UE) | 4.875 (jul/2024–jun/2025) | ENISA Threat Landscape 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
 | Incidentes analisados (UE, 2026, atualização 2026-09-28) | 8.257 (jan–dez/2025) | ENISA Threat Landscape 2026 | Confirmado (2 fontes) |
 | Setor mais visado na UE (volume) | Administração pública, 38,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); energia fora do top 5 por volume; **superado pela edição 2026, ver linha abaixo** |
@@ -3715,3 +3749,49 @@ pela CrowdStrike. SVGs pendentes (não editados, já sinalizados em ciclos anter
 - Black Kite. Dados de contagem de grupos de ransomware ativos (abr/2025–mar/2026), via cobertura DEV Community. https://dev.to/netsecops_io/black-kite-report-ransomware-victims-up-25-as-new-groups-emerge-j5j
 - Check Point Research. *The State of Ransomware – Q2 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q2-2026/
 - Machado Meyer. *Evolução da Cibersegurança no Cenário brasileiro*. 2026. https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/direito-digital/evolucao-da-ciberseguranca-no-cenario-brasileiro (citado apenas para registrar o veredito "não confirmado" das Portarias ANEEL 7.058/7.062; não usado como fonte de conteúdo do capítulo)
+
+## Registro do refresh — 2026-10-13 (varredura rotativa: grupo 0 — Global/Comparativo + caps 01 e 04)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 286 ÷ 3) mod 5 = **0** → `global`, `comparativoGlobal`, `comparativo`
++ caps. 01 e 04. Este grupo não era auditado isoladamente desde 2026-09-28 (15 dias). Janela recente (item
+2): nenhum incidente-marco de escala verdadeiramente global em financeiro/energia nos últimos 3 dias (o
+candidato mais próximo — uma série de invasões a bancos sul-coreanos entre 02 e 06/10/2026, com suspeita não
+confirmada de uso de IA — tem escopo nacional, está fora da janela estrita de 3 dias e fora do recorte
+Brasil/global deste capítulo; não incorporado, registrado apenas como pista).
+
+| Item auditado | Veredito |
+| :-- | :-- |
+| IBM Cost of a Data Breach 2026 (custo global, financeiro, energia, 247 dias) | Confirmado atual — sem edição mais nova; próxima só em jul/2027 |
+| Mandiant M-Trends 2026 (dwell time 14 dias; Alta Tecnologia 17%; financeiro 14,6%) | Confirmado atual — sem edição mais nova |
+| Verizon DBIR 2026 (48% ransomware; 31% exploits) | Confirmado atual — sem edição mais nova; próxima só em mai/2027 |
+| CrowdStrike Global Threat Report 2026 (29 min; 27 s; 82% malware-free) | Confirmado atual — sem edição mais nova |
+| Microsoft Digital Defense Report | **Atualizado** — MDDR 2026 publicado em ~01/10/2026 (ver "Atualização 2026-10-13" acima); resolve a pendência "MDDR 2026 ainda não publicado" registrada em 28/09/2026. Novo dado incorporado: phishing como vetor de acesso inicial em 23% dos casos de IR da própria Microsoft (ante 7%) — métrica de amostra própria, não substitui os números já citados da edição 2025 (52% motivação financeira, 54% clique com IA, 28% phishing/engenharia social como início de violação), que seguem sem equivalente 2026 confirmado por 2 fontes e por isso permanecem no texto |
+| WEF Global Cybersecurity Outlook / Global Risks Report 2026 | Confirmado atual — sem edição mais nova; pesquisa da edição 2027 abriu/fechou em out/2026, mas relatório só sai em jan/2027 |
+| ENISA Threat Landscape 2026 | Confirmado atual, sem edição mais nova. Os dois pontos pendentes desde 28/09/2026 (ameaças a OT como % das categorias; contagem de novas vulnerabilidades) **permanecem [NÃO CONFIRMADO em 2026-10-13]** — buscas adicionais só encontraram menções qualitativas ou de fonte única (ex.: "+48 mil CVEs, +22% a/a" em agregador não citável isoladamente), sem a segunda fonte independente exigida |
+| Sophos State of Ransomware | Edição 2026 **existe** (7ª edição, 2.158 respondentes, campo jan–mar/2026), mas foi publicada antes do corte de 28/09/2026 — não é novidade deste ciclo. Nenhum capítulo do repositório cita a Sophos com um número específico hoje (consta apenas na lista de fontes da metodologia), portanto não há valor a substituir; registrada aqui como fonte disponível para uso futuro |
+| Prazo CMN 5.274/2025 + BCB 538/2025 (cap. 04) | **Corrigido (consistência temporal, item 2c)** — cap. 04 ainda tratava o prazo de 1º/03/2026 sem registrar que já havia vencido, enquanto o cap. 02 e o `dashboard.json` já traziam a redação correta ("prazo vencido... fase de supervisão") desde o ciclo de 24/09/2026; texto do cap. 04 alinhado |
+
+Obsolescência temporal (item 2c): além do item acima (cap. 04), nenhuma outra ocorrência de prazo/data futura
+já vencida foi localizada nos blocos `global`/`comparativoGlobal`/`comparativo` do painel nem nos caps. 01 e
+04 (checagem por padrões "previsto", "até 202x", "próximos N meses", "entrará em vigor" não encontrou novas
+pendências).
+
+Destinos atualizados: `fontes-e-referencias/dossie-pesquisa.md` (nova seção "Atualização 2026-10-13" +
+tabela-resumo + este registro), `01-panorama-global/README.md` (novo parágrafo sobre o MDDR 2026 + refs.
+[55]-[58] novas) e `04-comparativo/README.md` (correção de tempo verbal no eixo "Pressão / maturidade
+regulatória", sem mudança de número). `dashboard/src/data/dashboard.json`: nenhum KPI numérico dos blocos
+`global`/`comparativoGlobal`/`comparativo` precisou mudar — nenhum desses blocos tem indicador dedicado ao
+MDDR; apenas `meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-10-13 e nova entrada em
+`fontes.incorporacoesRecentes`. Nenhum SVG pendente novo identificado neste ciclo (pendências já conhecidas
+de ciclos anteriores seguem: `02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`,
+`03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`).
+
+#### Fontes desta revisão
+
+- AI Weekly. *Microsoft 2026 Digital Defense Report: AI Has Tipped Near-Term Advantage to Attackers*. 2026. https://aiweekly.co/alerts/microsoft-2026-digital-defense-report-ai-has-tipped-near-term-advantage-to
+- SC World. *Microsoft report: AI accelerates cyberattacks, challenging defenders*. 2026. https://www.scworld.com/brief/microsoft-report-ai-accelerates-cyberattacks-challenging-defenders
+- MyABT. *Microsoft Digital Defense Report 2026: What Banks, Credit Unions, and Lenders Should Do First*. 2026. https://www.myabt.com/blog/microsoft-digital-defense-report-2026-financial-institutions
+- Skill Sprinters. *Microsoft Digital Defense Report 2026: KI, Angriffe, KMU*. 1º de outubro de 2026. https://skill-sprinters.de/blog/news/microsoft-digital-defense-report-2026-ki-angriffe-kmu/
+- Zawya. *Microsoft Digital Defense Report 2026 highlights evolving cyber risks as UAE accelerates AI powered security*. 2026. https://www.zawya.com/en/press-release/companies-news/microsoft-digital-defense-report-2026-highlights-evolving-cyber-risks-as-uae-accelerates-ai-powered-security-1486896
+- Sophos. *Sophos State of Ransomware 2026*. 2026. https://www.sophos.com/en-us/blog/sophos-state-of-ransomware-2026 (citado apenas para registrar existência da edição; nenhum número incorporado por não haver citação prévia da Sophos em nenhum capítulo)
+- BleepingComputer. *South Korea probes bank breaches amid suspected AI-powered attacks*. Outubro de 2026. https://bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks (citado apenas para registrar o veredito "não incorporado — escopo nacional, fora da janela"; não usado como fonte de conteúdo do capítulo)
