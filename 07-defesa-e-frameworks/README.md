@@ -1,5 +1,7 @@
 # 07 — Defesa e Frameworks
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![NIST CSF 2.0](https://img.shields.io/badge/NIST%20CSF%202.0-58a6ff?style=flat-square) ![ISO/IEC 27001:2022](https://img.shields.io/badge/ISO%2FIEC%2027001%3A2022-58a6ff?style=flat-square) ![IEC 62443](https://img.shields.io/badge/IEC%2062443-58a6ff?style=flat-square) ![Zero Trust](https://img.shields.io/badge/Zero%20Trust-3fb950?style=flat-square)
+
 > **Resumo Executivo**
 > - O **NIST Cybersecurity Framework (CSF) 2.0**, publicado em **26 de fevereiro de 2024**, formaliza
 >   **seis funções nucleares** — as cinco originais (*Identify*, *Protect*, *Detect*, *Respond*,

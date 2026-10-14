@@ -1,5 +1,7 @@
 # 05 — Atores e TTPs
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-58a6ff?style=flat-square) ![ATT&CK for ICS](https://img.shields.io/badge/ATT%26CK%20for%20ICS-58a6ff?style=flat-square) ![RaaS](https://img.shields.io/badge/RaaS-f85149?style=flat-square) ![APT](https://img.shields.io/badge/APT-f85149?style=flat-square)
+
 > **Resumo Executivo**
 > - A indústria de inteligência de ameaças organiza atores em cinco categorias amplas e não
 >   excludentes — estado-nação/APT, *ransomware*/RaaS, hacktivismo, insider e *Initial Access

@@ -7,6 +7,10 @@
 **Autor:** Almir Meira
 **Data:** 21 de julho de 2026
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![Risco Cibernético](https://img.shields.io/badge/Risco%20Cibern%C3%A9tico-f85149?style=flat-square) ![Threat Intelligence](https://img.shields.io/badge/Threat%20Intelligence-58a6ff?style=flat-square) ![9 capítulos](https://img.shields.io/badge/9%20cap%C3%ADtulos-8b949e?style=flat-square)
+
+![Mapa do projeto: setores financeiro e energia convergindo no comparativo, trilha de 9 capítulos e selos de método](assets/diagramas/00-mapa-do-projeto.svg)
+
 ---
 
 ## Propósito

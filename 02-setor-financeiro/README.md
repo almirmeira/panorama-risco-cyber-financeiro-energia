@@ -1,5 +1,7 @@
 # 02 — Setor Financeiro
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![PIX](https://img.shields.io/badge/PIX-a371f7?style=flat-square) ![Open Finance](https://img.shields.io/badge/Open%20Finance-a371f7?style=flat-square) ![Bacen](https://img.shields.io/badge/Bacen-a371f7?style=flat-square) ![Febraban](https://img.shields.io/badge/Febraban-a371f7?style=flat-square) ![Fraude](https://img.shields.io/badge/Fraude-f85149?style=flat-square)
+
 > **Resumo Executivo**
 > - O setor financeiro segue entre os mais visados do mundo: 2º lugar no ranking da FS-ISAC (atrás
 >   apenas de saúde), com quatro ameaças dominantes — fraude potencializada por IA generativa (incluindo

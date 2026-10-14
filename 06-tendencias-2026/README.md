@@ -1,5 +1,7 @@
 # 06 — Tendências 2026
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![IA ofensiva](https://img.shields.io/badge/IA%20ofensiva-f85149?style=flat-square) ![Deepfake](https://img.shields.io/badge/Deepfake-f85149?style=flat-square) ![PQC](https://img.shields.io/badge/PQC-58a6ff?style=flat-square) ![FIPS 203/204/205](https://img.shields.io/badge/FIPS%20203%2F204%2F205-58a6ff?style=flat-square) ![Supply Chain](https://img.shields.io/badge/Supply%20Chain-f85149?style=flat-square)
+
 > **Resumo Executivo**
 > - Em **14 de novembro de 2025**, a Anthropic divulgou o que descreve como o **primeiro ataque
 >   cibernético em larga escala orquestrado por IA com envolvimento humano mínimo** — um grupo

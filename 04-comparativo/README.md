@@ -1,5 +1,7 @@
 # 04 — Comparativo: Setor Financeiro × Setor Energia
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![Radar](https://img.shields.io/badge/Radar-a371f7?style=flat-square) ![Financeiro × Energia](https://img.shields.io/badge/Financeiro%20%C3%97%20Energia-a371f7?style=flat-square)
+
 > **Resumo Executivo**
 > - A mesma ameaça produz dois desfechos opostos: *ransomware* cresceu em ambos os setores em
 >   2025 — **+30%** no financeiro (156→202 incidentes diretos) e **+64%** no universo

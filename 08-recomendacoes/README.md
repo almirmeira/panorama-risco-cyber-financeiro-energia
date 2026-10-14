@@ -1,5 +1,7 @@
 # 08 — Recomendações
 
+![PT-BR](https://img.shields.io/badge/PT--BR-58a6ff?style=flat-square) ![Financeiro](https://img.shields.io/badge/Financeiro-58a6ff?style=flat-square) ![Energia](https://img.shields.io/badge/Energia-e3b341?style=flat-square) ![Global → Brasil](https://img.shields.io/badge/Global%20%E2%86%92%20Brasil-a371f7?style=flat-square) ![2025–2026](https://img.shields.io/badge/2025%E2%80%932026-8b949e?style=flat-square) ![Fontes ≥2 por número](https://img.shields.io/badge/Fontes%20%E2%89%A52%20por%20n%C3%BAmero-3fb950?style=flat-square) ![Roadmap](https://img.shields.io/badge/Roadmap-3fb950?style=flat-square) ![Quick Wins](https://img.shields.io/badge/Quick%20Wins-3fb950?style=flat-square) ![Board Questions](https://img.shields.io/badge/Board%20Questions-3fb950?style=flat-square)
+
 > **Resumo Executivo**
 > - **Financeiro, prioridade máxima:** antifraude no Pix e defesa da superfície de API do Open
 >   Finance — hoje acima de **128–154 milhões de consentimentos ativos** e em expansão contínua —,
