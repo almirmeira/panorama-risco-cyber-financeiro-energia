@@ -235,6 +235,7 @@ clientes [40][41].
 | Akira                        | ~USD 244,17 milhões em proventos até final de setembro de 2025 (cross-setorial) | Black Kite [10][11]   |
 | UNC6671 (BlackFile)           | *Vishing* via *IT helpdesk* com clonagem de voz por IA; atacou Citadel, Point72, Two Sigma e Millennium Management em 5/8/2026 | BleepingComputer [40][41] |
 | Slim Spider                  | *eCrime* financeiramente motivado, ativo desde mar/2026; rouba credenciais de nuvem e segredos de custódia cripto mirando a infraestrutura do Pix (implante "spi"; "Painel Pix" para transferências em lote) | CrowdStrike / The Hacker News [89][90] |
+| BREEZE COMET (ex-UNC5669)    | *eCrime* financeiramente motivado, ativo desde 2024; mira organizações brasileiras com acesso a Pix/STR/boleto, usa o tunelador COBALTSPIN e LLMs para acelerar *scripts* de reconhecimento; infraestrutura sugere expansão para América Latina e África | Google Threat Intelligence/Mandiant / Dark Reading [91][92] |
 
 Nenhuma campanha específica e nomeada de FIN7 contra o setor financeiro datada de 2025–2026 foi
 localizada no escopo desta pesquisa — as fontes descrevem o perfil histórico e atual do grupo, não um
@@ -485,6 +486,30 @@ e ferramentas nativas de nuvem, o pivô para o Azure DevOps com *pipelines* mali
 artefatos em um cluster Kubernetes gerenciado — incluindo um implante batizado "spi", em alusão ao Sistema
 de Pagamentos Instantâneos —, além de um "Painel Pix" próprio, desenvolvido para disparar transferências
 Pix não autorizadas em lote a partir de contas comprometidas [89][90].
+
+**Atualização 2026-10-16:** em **1º de setembro de 2026**, o Google Threat Intelligence Group e a Mandiant
+publicaram o perfil de **BREEZE COMET** (antigo UNC5669), ator financeiramente motivado ativo desde pelo
+menos 2024 e especializado em organizações brasileiras com permissão para movimentar recursos via Pix, STR
+e boleto. O grupo usa *scripts* personalizados para buscar credenciais mTLS e certificados administrativos
+de autenticação em *core banking* (com termos de busca como "boleto", "cnab", "remessa" e "webhook"),
+obtém acesso inicial por *password spraying* e engenharia social — incluindo falsa personificação de
+suporte de TI para induzir a instalação de ferramentas de RMM (AnyDesk) — e por exploração de servidores
+JBoss AS vulneráveis, usa o tunelador em Rust **COBALTSPIN** para atravessar redes segmentadas e, segundo a
+Mandiant, chegou a empregar LLMs para acelerar a criação de *scripts* de reconhecimento e extração de
+dados; a campanha já executou centenas de transferências fraudulentas e apagou registros de evento para
+dificultar a detecção, com infraestrutura que sugere intenção de expansão para outros países da América
+Latina e da África [91][92].
+
+Em **17 de setembro de 2026**, o **BRB (Banco de Brasília)** sofreu um ataque contra o **BRBJUS**, sistema
+usado para administrar depósitos judiciais do Tribunal de Justiça da Bahia (TJBA): 520 transferências Pix
+não autorizadas, iniciadas por volta das 6h10 e só bloqueadas quatro horas depois, desviaram cerca de
+**R$ 53,1 milhões** (estimativa inicial de R$ 43 milhões, revisada para cima). A hipótese principal do BRB é
+uso indevido de certificado digital combinado à exploração de uma interface do sistema; o banco e o TJBA
+divergem publicamente sobre a origem do incidente — o BRB aponta origem externa ao ambiente que administra,
+o tribunal sustenta que ocorreu em ambiente de propriedade e gestão do banco. O BRB acionou o mecanismo de
+devolução do Pix, comunicou o Banco Central e se comprometeu a restituir o valor total às contas judiciais;
+o caso tem repercussão no STF, por estar ligado a um contrato em disputa judicial. Até a data desta revisão,
+não havia confirmação pública de conclusão da apuração nem do volume efetivamente recuperado [93][94].
 
 ## Superfície de ataque: Pix e Open Finance
 
@@ -836,3 +861,16 @@ https://www.crowdstrike.com/en-us/adversaries/slim-spider/
 
 [90] The Hacker News. *Slim Spider Steals Crypto Custody Secrets From Brazilian Financial Institution*.
 Setembro de 2026. https://thehackernews.com/2026/09/slim-spider-steals-crypto-custody.html
+
+[91] Google Cloud (Google Threat Intelligence Group / Mandiant). *Financially Motivated Threat Actor
+BREEZE COMET Targets Brazil*. 1º de setembro de 2026.
+https://cloud.google.com/blog/topics/threat-intelligence/financially-motivated-threat-actor-breeze-comet-targets-brazil
+
+[92] Dark Reading. *'Breeze Comet' Tears Into Brazilian & Global Financial Systems*. Setembro de 2026.
+https://www.darkreading.com/threat-intelligence/breeze-comet-brazilian-global-financial-systems
+
+[93] Baguete. *Ataque ao BRB desvia R$ 53 milhões do TJBA*. Outubro de 2026.
+https://www.baguete.com.br/noticias/ataque-ao-brb-desvia-r-53-milhoes-do-tjba
+
+[94] Convergência Digital. *Hackers usaram 520 transferências Pix para roubar R$ 53,1 milhões no BRB*.
+Outubro de 2026. https://convergenciadigital.com.br/seguranca/hackers-usaram-520-transferencias-pix-para-roubar-r-531-milhoes-no-brb/

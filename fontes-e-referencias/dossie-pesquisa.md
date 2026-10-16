@@ -3795,3 +3795,101 @@ de ciclos anteriores seguem: `02-mapa-regulatorio-financeiro-br`, `02-superficie
 - Zawya. *Microsoft Digital Defense Report 2026 highlights evolving cyber risks as UAE accelerates AI powered security*. 2026. https://www.zawya.com/en/press-release/companies-news/microsoft-digital-defense-report-2026-highlights-evolving-cyber-risks-as-uae-accelerates-ai-powered-security-1486896
 - Sophos. *Sophos State of Ransomware 2026*. 2026. https://www.sophos.com/en-us/blog/sophos-state-of-ransomware-2026 (citado apenas para registrar existência da edição; nenhum número incorporado por não haver citação prévia da Sophos em nenhum capítulo)
 - BleepingComputer. *South Korea probes bank breaches amid suspected AI-powered attacks*. Outubro de 2026. https://bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks (citado apenas para registrar o veredito "não incorporado — escopo nacional, fora da janela"; não usado como fonte de conteúdo do capítulo)
+
+## Registro do refresh — 2026-10-16 (varredura rotativa: grupo 1 — setor financeiro, recorte global + cap. 02)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 289 ÷ 3) mod 5 = **1** → `setores[id=financeiro]` itens **globais**
+(custo, *ransomware* contra o setor, motivação DBIR, *deepfake*, DDoS, barra, pizza) + cap. 02 (FS-ISAC,
+IBM, DBIR Finance, Black Kite, Akamai/Cloudflare/Radware). Este mesmo grupo foi auditado em 2026-10-01 (15
+dias atrás) — por isso o volume de itens "confirmado atual, sem mudança" é alto, resultado esperado.
+
+| Item | Veredito | Evidência |
+| :-- | :-: | :-- |
+| Custo médio de violação (IBM CODB 2026, US$ 6,3 mi) | Confirmado atual | Sem edição mais nova; próxima edição só em jul/2027 |
+| *Ransomware* direto (Black Kite, 156→202; Q1 2026 +76%; Q2 2026: 135) | Confirmado atual | Nenhuma atualização Q3 2026 localizada na Black Kite nem em cobertura secundária |
+| Motivação DBIR 2026 (98%/3%) | Confirmado atual | Sem *Finance Snapshot* 2026 avulso; sem mudança desde 01/10/2026 |
+| *Deepfake* (Signicat 6,5%/Entrust 20%) | Confirmado atual | Nenhum novo *tracker* setorial específico (apenas trackers cross-setoriais já descartados em ciclos anteriores) |
+| DDoS (Akamai SOTI 2026: +738% global; Radware H1 2026: 2º setor, 20,8%) | Confirmado atual + nota de granularidade | O mesmo relatório Akamai SOTI 2026 [73][74] traz um recorte regional (EMEA: +1.033% na duração mediana L3/L4, de 3 para 34 min em 2025, 62% dos eventos globais de L3/L4 contra o setor) — mesma fonte primária já citada, não é edição nova; não promovido a KPI por ser granularidade adicional do mesmo dado, não um número substituto |
+| FS-ISAC *Navigating Cyber 2026* | Não localizado (reconfirmado) | Edição mais recente continua sendo a de maio de 2025 |
+
+Janela recente (item 2) — fora do recorte estrito do grupo 1, mas dentro da regra de checagem de
+incidentes-marco a cada ciclo: duas lacunas foram localizadas e incorporadas ao cap. 02 (seção "Atores de
+ameaça" e "Incidentes conhecidos no setor financeiro brasileiro") e à dimensão "Fraude / PIX" do painel.
+
+- **BREEZE COMET (ex-UNC5669):** o Google Threat Intelligence Group e a Mandiant divulgaram, em **1º de
+  setembro de 2026**, o perfil de um ator financeiramente motivado ativo desde 2024, especializado em
+  organizações brasileiras com acesso a Pix/STR/boleto — *scripts* personalizados para localizar
+  credenciais mTLS e certificados administrativos de *core banking*, acesso inicial via *password
+  spraying*/engenharia social (falsa personificação de suporte de TI) e exploração de servidores JBoss AS,
+  tunelador em Rust COBALTSPIN, e uso de LLMs (segundo a Mandiant) para acelerar reconhecimento e extração
+  de dados; centenas de transferências fraudulentas executadas, com infraestrutura sugerindo expansão para
+  outros países da América Latina e da África. Esta é uma lacuna de rotação: o perfil já existia havia 33
+  dias quando a varredura rotativa do grupo 2 (recorte Brasil) passou por este capítulo em 04/10/2026
+  (ver seção correspondente acima) e não o capturou; incorporado agora para não esperar a próxima passagem
+  daquele grupo.
+  - Fonte 1 (primária): Google Cloud (GTIG/Mandiant). *Financially Motivated Threat Actor BREEZE COMET
+    Targets Brazil*. 1º/9/2026. https://cloud.google.com/blog/topics/threat-intelligence/financially-motivated-threat-actor-breeze-comet-targets-brazil
+  - Fonte 2 (independente): Dark Reading. *'Breeze Comet' Tears Into Brazilian & Global Financial
+    Systems*. Setembro de 2026. https://www.darkreading.com/threat-intelligence/breeze-comet-brazilian-global-financial-systems
+  - Observações: corroborado adicionalmente por SC World, The Hacker News, CyberNexora, CiberLATAM,
+    SecurityOnline e UFO Feed, todos citando a mesma pesquisa GTIG/Mandiant, sem divergência relevante no
+    núcleo factual. Uma fonte (BlackTree) atribui à CrowdStrike uma cronologia de ativo desde setembro de
+    2023 para um possível mesmo cluster sob outro nome — não arbitrado nesta passagem, registrado apenas
+    como ressalva. Acesso direto via *fetch* automatizado ao Google Cloud Blog e ao Dark Reading foi
+    bloqueado pelo proxy de saída deste ambiente; conteúdo confirmado por convergência de busca.
+
+- **BRB/TJBA — ataque ao BRBJUS (17/9/2026, divulgado a partir de 1º/10/2026):** 520 transferências Pix não
+  autorizadas desviaram **R$ 53,1 milhões** (estimativa inicial de R$ 43 milhões, revisada para cima) de
+  contas judiciais do Tribunal de Justiça da Bahia administradas pelo BRB (Banco de Brasília) no sistema
+  BRBJUS; as operações começaram por volta das 6h10 e só foram bloqueadas quatro horas depois. A hipótese
+  principal do banco é uso indevido de certificado digital combinado à exploração de uma interface do
+  sistema; BRB e TJBA divergem publicamente sobre a origem do incidente. O BRB acionou o mecanismo de
+  devolução do Pix, notificou o Banco Central e se comprometeu a restituir o valor total; o caso tem
+  repercussão no STF por estar ligado a um contrato em disputa judicial. Sem confirmação pública, até a
+  data desta revisão, da conclusão da apuração ou do volume recuperado.
+  - Fonte 1: Baguete. *Ataque ao BRB desvia R$ 53 milhões do TJBA*. Outubro de 2026.
+    https://www.baguete.com.br/noticias/ataque-ao-brb-desvia-r-53-milhoes-do-tjba
+  - Fonte 2 (independente): Convergência Digital. *Hackers usaram 520 transferências Pix para roubar
+    R$ 53,1 milhões no BRB*. Outubro de 2026. https://convergenciadigital.com.br/seguranca/hackers-usaram-520-transferencias-pix-para-roubar-r-531-milhoes-no-brb/
+  - Observações: corroborado adicionalmente por Sindpd, Mundo BA, Painel Político e Correio Braziliense
+    (fonte original da revisão de valor para R$ 53,1 milhões, citada pelas demais). Acesso direto via
+    *fetch* automatizado a Baguete e Convergência Digital foi bloqueado pelo proxy de saída deste
+    ambiente; conteúdo confirmado por convergência de busca. Não corresponde a nenhuma dimensão
+    quantitativa já tabulada do painel (não é *ransomware* nem caso de terceiros/PSTI no sentido já
+    registrado) — tratado como caso autônomo na dimensão "Fraude / PIX" e na seção de incidentes do cap. 02.
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida foi localizada nos
+itens do grupo 1 nem no texto novo incorporado nesta passagem.
+
+Destinos atualizados: `02-setor-financeiro/README.md` (novos parágrafos sobre BREEZE COMET e BRB/TJBA na
+seção de atores e de incidentes conhecidos, nova linha na tabela de atores, refs. [91]-[94] novas) e
+`dashboard/src/data/dashboard.json` (dimensão "Fraude / PIX" do setor financeiro ampliada com os dois casos;
+`meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-10-16; nova entrada em
+`fontes.incorporacoesRecentes`). Nenhum KPI numérico do bloco financeiro precisou mudar — nenhum dos dois
+itens tem impacto quantificado comparável aos KPIs já existentes. Nenhum SVG referencia os números ou casos
+tratados nesta passagem — nenhuma pendência manual de SVG nova; pendências já conhecidas de ciclos
+anteriores seguem (`02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`,
+`03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`).
+
+#### Fontes desta revisão
+
+- IBM / DataBreachCost.com. Confirmação de ausência de edição mais nova do *Cost of a Data Breach* além da
+  2026 (próxima prevista para jul/2027). 2026.
+- Black Kite. *2026 State of Financial Services Report* / *2026 Ransomware Report*. 2026.
+  https://blackkite.com/reports/2026-financial-services-report / https://blackkite.com/reports/2026-ransomware-report (reconfirmados sem Q3 2026)
+- Akamai. *Financial Services at Risk: DDoS Attacks Are Bigger, Longer, and More Complex* (State of the
+  Internet — Financial Services 2026). 20/5/2026. https://www.akamai.com/newsroom/press-release/financial-services-at-risk-ddos-attacks-are-bigger-longer-and-more-complex-akamai-research-finds
+- IT Brief / SecurityBrief (rede CFOtech/ITBrief, múltiplas edições regionais). *Akamai warns of surging
+  DDoS attacks on financial firms*. 2026. https://itbrief.co.nz/story/akamai-warns-of-surging-ddos-attacks-on-financial-firms (granularidade regional EMEA do mesmo relatório Akamai; não citável como segunda fonte independente por ser a mesma rede de republicação)
+- Google Cloud (GTIG/Mandiant). *Financially Motivated Threat Actor BREEZE COMET Targets Brazil*. 1º/9/2026.
+  https://cloud.google.com/blog/topics/threat-intelligence/financially-motivated-threat-actor-breeze-comet-targets-brazil
+- Dark Reading. *'Breeze Comet' Tears Into Brazilian & Global Financial Systems*. Setembro de 2026.
+  https://www.darkreading.com/threat-intelligence/breeze-comet-brazilian-global-financial-systems
+- The Hacker News. *Breeze Comet Executes Hundreds Of...*. Setembro de 2026.
+  https://thehackernews.com/2026/09/breeze-comet-executes-hundreds-of.html
+- Baguete. *Ataque ao BRB desvia R$ 53 milhões do TJBA*. Outubro de 2026.
+  https://www.baguete.com.br/noticias/ataque-ao-brb-desvia-r-53-milhoes-do-tjba
+- Convergência Digital. *Hackers usaram 520 transferências Pix para roubar R$ 53,1 milhões no BRB*.
+  Outubro de 2026. https://convergenciadigital.com.br/seguranca/hackers-usaram-520-transferencias-pix-para-roubar-r-531-milhoes-no-brb/
+- FS-ISAC. Página institucional confirma que a edição mais recente de *Navigating Cyber* continua sendo a
+  de 2025: https://www.fsisac.com/navigatingcyber2025
