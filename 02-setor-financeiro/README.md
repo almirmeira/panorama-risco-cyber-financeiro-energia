@@ -263,6 +263,13 @@ alta de **43%** nas transações fraudulentas [20][21]. Os três números (28 mi
 vítimas, R$ 2,7 bilhões em fraude Pix formalmente apurada) coexistem sem se contradizerem tecnicamente,
 mas medem populações e recortes diferentes e não devem ser somados ou tratados como sinônimos.
 
+Em levantamento divulgado em **11 de novembro de 2025**, a Febraban apontou o **"golpe da falsa venda"**
+(páginas falsas simulando lojas online, promoções inexistentes e perfis adulterados de estabelecimentos em
+redes sociais) como o mais relatado por clientes de bancos associados no **1º semestre de 2025**, com **174
+mil ocorrências** — alta de **314%** frente ao mesmo período de 2024 — saltando da 3ª para a 1ª posição no
+ranking de reclamações; o "golpe da falsa central" (atendimento falso) ficou em 2º lugar, com 139 mil
+relatos [95][96].
+
 Um mecanismo de fraude específico do Pix ilustra a sofisticação do golpe: o Mecanismo Especial de
 Devolução (MED) foi explorado em fraude de "devolução dupla" — o golpista transfere para a conta da
 vítima, alega erro e pede devolução; ao mesmo tempo, aciona o MED junto ao próprio banco, fazendo o valor
@@ -355,6 +362,16 @@ cada instituição [28][29]. Em 2026, o arcabouço específico do Pix também av
 desde 2/2/2026 (Resolução BCB nº 493/2025) e a marcação de suspeita de fraude no DICT (Resolução BCB
 nº 587/2026), detalhados na seção sobre fraude no Pix [53][54][55][56].
 
+Em paralelo à política geral de segurança cibernética, o Banco Central criou uma trilha regulatória
+específica para o risco de **terceiros/PSTI** — o mesmo vetor por trás dos casos C&M Software, Sinqia e
+Banco do Nordeste descritos adiante. A **Resolução BCB nº 498/2025** (5/9/2025) instituiu o **credenciamento
+obrigatório de Provedores de Serviços de Tecnologia da Informação (PSTI)** que processam dados com acesso à
+Rede do Sistema Financeiro Nacional (RSFN), exigindo capital social e patrimônio líquido mínimos de **R$ 15
+milhões** (podendo ser exigido valor maior), comprovação de capacidade técnico-operacional e adesão às
+regras da RSFN; a **Instrução Normativa BCB nº 664/2025** fixou os prazos de adequação para PSTIs já em
+operação. A **Resolução BCB nº 547/2026** alterou a 498/2025, endurecendo requisitos de capital, governança,
+segurança da informação, auditoria, controles e continuidade para os provedores já credenciados [103][104].
+
 > **Nota de precisão regulatória:** não existe uma "Resolução BCB nº 4.893" — o número correto é
 > **Resolução CMN nº 4.893/2021** (emitida pelo Conselho Monetário Nacional). A resolução paralela,
 > emitida pelo próprio Banco Central com número próprio para instituições de pagamento, é a **Resolução
@@ -436,6 +453,17 @@ ou sigilo bancário, nem permitiu movimentação de recursos — foi o terceiro 
 terceiros/PSTI acima, a Pefisa é participante direta do Pix, não uma prestadora terceirizada — o caso é
 qualitativamente mais próximo do vazamento de dados do Banco Neon do que dos episódios de desvio de
 recursos via fornecedor.
+
+O caso Pefisa é o terceiro de uma série de **quatro episódios do mesmo tipo em 2026**, que somam mais de
+**33,5 mil chaves Pix** expostas no ano — em todos, segundo o Banco Central, sem acesso a saldos, senhas,
+extratos ou movimentação de recursos. O **1º** foi o **Agibank**, comunicado pelo BC em **13 de fevereiro de
+2026**: **5.290 chaves Pix** com dados cadastrais expostos entre 26/12/2025 e 30/1/2026, por falha pontual
+em sistemas do próprio banco. O **2º** envolveu o **Ministério Público de Goiás (MPGO)**, comunicado em
+**17 de março de 2026**: **93 chaves Pix** (vinculadas a 51 CPFs) expostas após acesso indevido a sistema do
+órgão em 1º/3/2026, decorrente do comprometimento da credencial de um integrante do MPGO que reutilizou uma
+senha institucional em serviço externo. O **4º** foi a **Credifit** (Sociedade de Crédito Direto), comunicado
+em meados de maio de 2026: **46 chaves Pix** expostas entre 26 e 28 de abril de 2026, por falhas pontuais em
+seus sistemas [97][98][99][100][101][102].
 
 Em **22 de março de 2026** (domingo), o **BTG Pactual** identificou atividades atípicas em operações Pix,
 suspendeu o serviço preventivamente e o retomou no dia seguinte, após um ataque que desviou cerca de
@@ -874,3 +902,35 @@ https://www.baguete.com.br/noticias/ataque-ao-brb-desvia-r-53-milhoes-do-tjba
 
 [94] Convergência Digital. *Hackers usaram 520 transferências Pix para roubar R$ 53,1 milhões no BRB*.
 Outubro de 2026. https://convergenciadigital.com.br/seguranca/hackers-usaram-520-transferencias-pix-para-roubar-r-531-milhoes-no-brb/
+
+[95] Diário de Pernambuco. *Febraban: Golpe da falsa venda lidera entre os golpes mais relatados por
+clientes bancários no primeiro semestre*. 11 de novembro de 2025.
+https://www.diariodepernambuco.com.br/economia/2025/11/11700388-febraban-golpe-da-falsa-venda-lidera-entre-os-golpes-mais-relatados-por-clientes-bancarios-no-primeiro-semestre.html
+
+[96] Tribuna de Minas. *Golpe da falsa venda dispara e lidera reclamações bancárias no país*. 15 de
+novembro de 2025. https://tribunademinas.com.br/noticias/defesa-consumidor/15-11-2025/golpe-da-falsa-venda-dispara-e-lidera-reclamacoes-bancarias-no-pais.html?amp=1
+
+[97] CNN Brasil. *BC comunica vazamento de chaves Pix do Agibank*. 13 de fevereiro de 2026.
+https://www.cnnbrasil.com.br/economia/macroeconomia/bc-comunica-vazamento-de-chaves-pix-do-agibank/
+
+[98] Revista Oeste. *Banco Central identifica vazamento de mais de 5 mil chaves Pix do Agibank*.
+Fevereiro de 2026. https://www.revistaoeste.com/economia/banco-central-identifica-vazamento-de-mais-de-5-mil-chaves-pix-do-agibank/
+
+[99] Folha de Pernambuco. *BC comunica exposição de chaves Pix em sistema do MP de Goiás*. 17 de março de
+2026. https://www.folhape.com.br/economia/bc-comunica-exposicao-de-chaves-pix-em-sistema-do-mp-de-goias/474296/
+
+[100] Tribuna do Sertão. *Banco Central comunica incidente de segurança envolvendo sistema do MP-GO*. 17 de
+março de 2026. https://www.tribunadosertao.com.br/geral/2026/03/17/874088-banco-central-comunica-incidente-de-seguranca-envolvendo-sistema-do-mp-go
+
+[101] Finsiders Brasil. *BC informa novo vazamento de chaves Pix, o quarto no ano*. Maio de 2026.
+https://finsidersbrasil.com.br/pagamentos/pix/bc-informa-novo-vazamento-de-chaves-pix-o-quarto-no-ano/
+
+[102] Convergência Digital. *Banco Central comunica 4º vazamento de dados vinculados a chaves Pix em
+2026*. Maio de 2026. https://convergenciadigital.com.br/mercado/banco-central-comunica-4o-vazamento-de-dados-vinculados-a-chaves-pix-em-2026/
+
+[103] Machado, Meyer, Sendacz e Opice Advogados. *BCB publica novas regras com intuito de reforçar a
+segurança do Sistema Financeiro Nacional e do Sistema de Pagamentos Brasileiro*. 2025.
+https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/direito-digital/bcb-novas-regras-para-aumentar-a-ciberseguranca-do-sfn-e-do-spb
+
+[104] Okai. *PSTI: nova regulação e impactos na contratação de serviços*. 2026.
+https://okai.com.br/blog/psti-nova-regulacao-e-impactos-na-contratacao-do-servicos
