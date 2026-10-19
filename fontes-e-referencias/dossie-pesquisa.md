@@ -1474,12 +1474,141 @@ abaixo):**
     corresponde a nenhuma dimensão quantitativa existente do painel (não é *ransomware*, nem caso de
     terceiros/PSTI no sentido já tabulado) — registrado no capítulo e na tabela de atores como novo perfil.
 
-**Não confirmado, não incorporado:** notícia da Febraban ("Golpe da Falsa Venda é o mais aplicado contra
-clientes bancários no 1º semestre do ano" — 174 mil ocorrências, +314% a/a) foi localizada, mas o acesso
-direto ao portal.febraban.org.br e a uma cobertura secundária (Suno Notícias) foi bloqueado pelo proxy de
-saída deste ambiente, e não foi possível arbitrar com segurança, só por resumo de busca, se o "1º semestre"
-citado é de 2025 ou de 2026 — **[NÃO CONFIRMADO em 2026-10-04 — ano de referência ambíguo e fontes primárias
-inacessíveis]**. Não incorporado ao capítulo nem ao painel até confirmação.
+**Não confirmado, não incorporado (em 2026-10-04):** notícia da Febraban ("Golpe da Falsa Venda é o mais
+aplicado contra clientes bancários no 1º semestre do ano" — 174 mil ocorrências, +314% a/a) foi localizada,
+mas o acesso direto ao portal.febraban.org.br e a uma cobertura secundária (Suno Notícias) foi bloqueado
+pelo proxy de saída deste ambiente, e não foi possível arbitrar com segurança, só por resumo de busca, se o
+"1º semestre" citado é de 2025 ou de 2026 — **[NÃO CONFIRMADO em 2026-10-04 — ano de referência ambíguo e
+fontes primárias inacessíveis]**. **Resolvido em 2026-10-19 — ver seção "Atualização 2026-10-19" abaixo: o
+"1º semestre" é confirmadamente de 2025.**
+
+---
+
+### Atualização 2026-10-19 — varredura rotativa (grupo 2/5): setor financeiro, recorte Brasil
+
+Grupo da rotação de 2026-10-19 (dia do ano 292 → (292÷3)%5 = 2): mesmo recorte do ciclo anterior (grupo 2,
+2026-10-04) — `setores[id=financeiro]` itens do BRASIL (golpes, Open Finance, incidentes reportados ao BC,
+Pix/MED, terceiros/PSTI, regulação CMN/BCB) + cap. 02. Esta passagem fecha o primeiro ciclo completo da
+rotação de 5 grupos (≈15 dias) e reverifica cada item do grupo contra a edição mais recente publicada até
+hoje, cobrindo também a janela 04/10–19/10/2026 em busca de incidentes/edições não vistas.
+
+| Item do grupo 2 | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Fraude Pix (28 mi casos jan–set/2025, ADDP; 24 mi vítimas jul/2024–jun/2025) | Confirmado atual | Sem edição mais recente localizada |
+| Prejuízo com golpes financeiros no Brasil (R$ 10,1 bi, 2024, Febraban) | Confirmado atual | Pesquisa Febraban 2026 segue sem o dado de 2025 |
+| Prejuízo Pix formalmente apurado (R$ 2,7 bi/2 anos, +43%, Febraban) | Confirmado atual | Sem mudança |
+| **Golpe da falsa venda (174 mil ocorrências, +314% a/a, Febraban)** | **Atualizado — agora confirmado** | Ano do "1º semestre" era a única pendência; confirmado como **1º semestre de 2025** por convergência de múltiplas coberturas independentes publicadas em novembro de 2025 — ver detalhamento abaixo |
+| Estelionato FBSP (2,26 milhões de registros em 2025, +2,7%) | Confirmado atual | Sem edição mais nova localizada |
+| GASA — Estado dos Golpes no Brasil 2026 (~16,5 mi vítimas; ~R$ 21,2 bi) | Confirmado atual | Sem edição mais nova |
+| Open Finance — consentimentos ativos (200+ mi, jul/2026; 208,8–239,8 mi) | Confirmado atual | Nenhuma leitura oficial de set–out/2026 localizada; mantido o intervalo já registrado |
+| Incidentes relevantes reportados ao BC (76 em 2025, +29%) | Confirmado atual | Relatório Integrado 2025 segue a edição mais recente |
+| Regulação CMN 4.893/2021, BCB 85/2021, CMN 5.274/2025, BCB 538/2025 (prazo vencido em 1º/3/2026) | Confirmado atual | Sem mudança |
+| MED 2.0 — Resolução BCB nº 493/2025 (obrigatório desde 2/2/2026) | Confirmado atual | Sem mudança |
+| Resolução BCB nº 587/2026 (marcação de fraude no DICT, 18/9/2026) | Confirmado atual | Sem mudança |
+| **Regulação de credenciamento de PSTI (Res. BCB nº 498/2025)** | **Corrigido — reclassificado** | Ciclos anteriores (2026-08-01, 2026-09-16) descartaram a Res. BCB nº 498/2025 por julgá-la "superada" pela Res. BCB nº 538/2025; **essa classificação estava equivocada** — são normas de objeto distinto (498/2025 trata do credenciamento de PSTIs para acesso à RSFN; 538/2025 atualiza a política geral de segurança cibernética das instituições). Corrigido e incorporado nesta atualização — ver detalhamento abaixo |
+| Casos de terceiros/PSTI (C&M R$ 813 mi; Sinqia R$ 710 mi; FictorPay R$ 26 mi; Banco do Nordeste R$ 146,6 mi; BTG Pactual R$ 100 mi; Pane Seca R$ 227 mi; TAG/Stone R$ 350 mi) | Confirmados atuais, sem mudança | Já incorporados em ciclos anteriores |
+| Banco Rendimento (21/4/2026) | Confirmado atual | Sem mudança |
+| Banco Neon (alegação de 30 mi de clientes, fev/2025) | Confirmado atual | Disputa segue sem arbitragem |
+| **Vazamentos de chaves Pix (Pefisa, 28.203 chaves, mar/2026)** | **Atualizado — parte de uma série de 4 em 2026** | Localizados três outros episódios do mesmo tipo em 2026, ainda não incorporados ao dossiê: Agibank (1º/2026), MP de Goiás (2º/2026) e Credifit (4º/2026) — ver detalhamento abaixo |
+| Atores de ameaça (FIN7, PRESSURE/FAMOUS/STARDUST CHOLLIMA, VAULT PANDA, Qilin, Akira, UNC6671, Slim Spider, BREEZE COMET) | Confirmados atuais | Sem mudança |
+
+**Gaps identificados e incorporados nesta janela (ao capítulo `02-setor-financeiro/README.md` e à tabela-resumo
+abaixo):**
+
+- **Febraban — "golpe da falsa venda" lidera reclamações bancárias no 1º semestre de 2025 (resolve pendência
+  de 2026-10-04):** a Febraban divulgou, em **11 de novembro de 2025**, que o "golpe da falsa venda"
+  (páginas falsas simulando lojas online, promoções inexistentes e perfis adulterados de estabelecimentos em
+  redes sociais) foi o mais relatado por clientes de bancos associados no **1º semestre de 2025**, com
+  **174 mil ocorrências**, alta de **314%** frente ao mesmo período de 2024 — a fraude saltou da 3ª para a
+  1ª posição no ranking de reclamações. O "golpe da falsa central" (atendimento falso) ficou em 2º lugar,
+  com 139 mil relatos.
+  - Fonte 1 (cobertura de agência/wire, replicada por múltiplos veículos com o mesmo texto): Diário de
+    Pernambuco. *Febraban: Golpe da falsa venda lidera entre os golpes mais relatados por clientes bancários
+    no primeiro semestre*. 11/11/2025.
+    https://www.diariodepernambuco.com.br/economia/2025/11/11700388-febraban-golpe-da-falsa-venda-lidera-entre-os-golpes-mais-relatados-por-clientes-bancarios-no-primeiro-semestre.html
+  - Fonte 2 (independente, mesmo levantamento, veículo e redação distintos): Tribuna de Minas. *Golpe da
+    falsa venda dispara e lidera reclamações bancárias no país*. 15/11/2025.
+    https://tribunademinas.com.br/noticias/defesa-consumidor/15-11-2025/golpe-da-falsa-venda-dispara-e-lidera-reclamacoes-bancarias-no-pais.html?amp=1
+  - Observações: corroborado adicionalmente por IstoÉ Dinheiro, Correio do Estado e Okai, todos de
+    novembro de 2025 e convergentes quanto aos números e ao período (1º semestre de **2025**, não 2026,
+    conforme confirmado por consulta de busca direcionada em 2026-10-19). Resolve a pendência
+    **[NÃO CONFIRMADO em 2026-10-04]** registrada acima.
+
+- **Série de vazamentos de chaves Pix em 2026 — Agibank, MP de Goiás e Credifit (complementam o caso Pefisa
+  já registrado):** o Banco Central comunicou, ao longo de 2026, uma série de quatro episódios de exposição
+  de dados cadastrais vinculados a chaves Pix, dos quais apenas o terceiro (Pefisa) constava do dossiê até
+  esta atualização. Os quatro, em ordem cronológica de divulgação, somam mais de **33,5 mil chaves Pix**
+  expostas no ano:
+  1. **Agibank** — 1º incidente de 2026 e 21º desde o lançamento do Pix (nov/2020); BC comunicou em
+     **13/2/2026** a exposição de dados cadastrais de **5.290 chaves Pix**, com janela de exposição entre
+     26/12/2025 e 30/1/2026 (algumas coberturas trazem a janela com erro de um ano, 2024–2025, inconsistente
+     com a data de divulgação e com a maioria das fontes). Falha pontual em sistemas do próprio banco; sem
+     exposição de senhas, saldos ou extratos; banco afirma que nenhum cliente teve prejuízo financeiro.
+  2. **Ministério Público de Goiás (MPGO)** — 2º incidente de 2026 e 22º desde o lançamento; BC comunicou em
+     **17/3/2026** a exposição de **93 chaves Pix** (vinculadas a 51 CPFs), decorrente de acesso indevido a
+     sistema do MPGO em 1º/3/2026, após comprometimento de credencial de um integrante do órgão por reuso de
+     senha institucional em serviço externo.
+  3. **Pefisa** — 3º incidente de 2026 e 23º desde o lançamento; **28.203 chaves Pix**, já registrado no
+     dossiê (ver seção acima).
+  4. **Credifit** (Sociedade de Crédito Direto) — 4º incidente de 2026 e 24º desde o lançamento; BC comunicou
+     em **~12/5/2026** a exposição de **46 chaves Pix**, com janela entre 26 e 28/4/2026, por falhas pontuais
+     nos sistemas da fintech de crédito.
+  Em nenhum dos quatro casos houve, segundo o Banco Central, exposição de senhas, saldos, extratos ou
+  movimentação de recursos — o padrão replica o já registrado para a Pefisa (dado cadastral exposto, sem
+  fraude financeira direta confirmada), distinto dos casos de terceiros/PSTI com desvio de recursos (C&M,
+  Sinqia, Banco do Nordeste).
+  - Fonte 1 (Agibank): CNN Brasil. *BC comunica vazamento de chaves Pix do Agibank*. 13/2/2026.
+    https://www.cnnbrasil.com.br/economia/macroeconomia/bc-comunica-vazamento-de-chaves-pix-do-agibank/
+  - Fonte 2 (Agibank, independente): Revista Oeste. *Banco Central identifica vazamento de mais de 5 mil
+    chaves Pix do Agibank*. Fevereiro de 2026.
+    https://www.revistaoeste.com/economia/banco-central-identifica-vazamento-de-mais-de-5-mil-chaves-pix-do-agibank/
+  - Fonte 3 (MPGO): Folha de Pernambuco. *BC comunica exposição de chaves Pix em sistema do MP de Goiás*.
+    17/3/2026. https://www.folhape.com.br/economia/bc-comunica-exposicao-de-chaves-pix-em-sistema-do-mp-de-goias/474296/
+  - Fonte 4 (MPGO, independente): Tribuna do Sertão. *Banco Central comunica incidente de segurança
+    envolvendo sistema do MP-GO*. 17/3/2026.
+    https://www.tribunadosertao.com.br/geral/2026/03/17/874088-banco-central-comunica-incidente-de-seguranca-envolvendo-sistema-do-mp-go
+  - Fonte 5 (Credifit): Finsiders Brasil. *BC informa novo vazamento de chaves Pix, o quarto no ano*. Maio
+    de 2026. https://finsidersbrasil.com.br/pagamentos/pix/bc-informa-novo-vazamento-de-chaves-pix-o-quarto-no-ano/
+  - Fonte 6 (Credifit, independente): Convergência Digital. *Banco Central comunica 4º vazamento de dados
+    vinculados a chaves Pix em 2026*. Maio de 2026.
+    https://convergenciadigital.com.br/mercado/banco-central-comunica-4o-vazamento-de-dados-vinculados-a-chaves-pix-em-2026/
+  - Observações: acesso direto via *fetch* automatizado às seis fontes foi bloqueado pelo proxy de saída
+    deste ambiente (mesma limitação já registrada para outras fontes .com.br ao longo deste dossiê); todos
+    os números foram confirmados por resumo de busca convergente entre coberturas independentes (adicional:
+    Monitor Mercantil e Diário do Comércio para Agibank; Rota Jurídica e SBT News para MPGO; amdjus.com.br
+    para Credifit). O total agregado de **>33,5 mil chaves expostas em 4 episódios** é citado diretamente
+    pela cobertura do caso Credifit ao somar os quatro casos do ano.
+
+- **Correção — Resolução BCB nº 498/2025 (credenciamento de PSTI):** ciclos anteriores deste dossiê (registro
+  de 2026-08-01, linha "Banco Central (BACEN/CMN)", e registro de 2026-09-16) classificaram a **Resolução
+  BCB nº 498/2025** (5/9/2025) como "já superada" pela Resolução BCB nº 538/2025 e a descartaram sem
+  incorporar. **Essa classificação está equivocada**: as duas normas têm objeto distinto. A Res. BCB
+  538/2025 (com a CMN 5.274/2025) atualiza a **política geral de segurança cibernética** das instituições
+  autorizadas (CMN 4.893/BCB 85, de 2021). Já a **Res. BCB nº 498/2025** cria o **regime de credenciamento
+  de Provedores de Serviços de Tecnologia da Informação (PSTI)** para prestação de processamento de dados
+  com acesso à Rede do Sistema Financeiro Nacional (RSFN) — capital social e patrimônio líquido mínimos de
+  R$ 15 milhões (podendo ser exigido valor maior), comprovação de capacidade técnico-operacional e adesão
+  às regras da RSFN. A **Instrução Normativa BCB nº 664/2025** fixou prazos de adequação para PSTIs já em
+  operação, e a **Resolução BCB nº 547/2026** (não uma resolução autônoma de credenciamento, como um
+  registro anterior deste dossiê chegou a sugerir, mas uma **alteração** da própria 498/2025) endureceu
+  requisitos de capital, governança, segurança da informação, auditoria, controles e continuidade para
+  PSTIs já credenciados. Esse arcabouço é diretamente relevante ao padrão de risco de terceiros/PSTI já
+  documentado nos casos C&M Software, Sinqia e Banco do Nordeste — é a resposta regulatória específica a
+  esse vetor, distinta da política geral de segurança cibernética (CMN 5.274/BCB 538).
+  - Fonte 1: Machado, Meyer, Sendacz e Opice Advogados. *BCB publica novas regras com intuito de reforçar a
+    segurança do Sistema Financeiro Nacional e do Sistema de Pagamentos Brasileiro*. 2025.
+    https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/direito-digital/bcb-novas-regras-para-aumentar-a-ciberseguranca-do-sfn-e-do-spb
+  - Fonte 2 (independente): Okai. *PSTI: nova regulação e impactos na contratação de serviços*. 2026.
+    https://okai.com.br/blog/psti-nova-regulacao-e-impactos-na-contratacao-do-servicos
+  - Observações: acesso direto às duas fontes via *fetch* automatizado foi bloqueado pelo proxy de saída
+    deste ambiente; conteúdo confirmado por convergência de busca entre as duas fontes (análises jurídicas
+    de escritórios distintos) e por normasbrasil.com.br/okai.com.br (reprodução do texto normativo). Não
+    altera nenhum KPI numérico do painel — é uma atualização qualitativa/regulatória, incorporada à
+    dimensão "Regulação" e à seção de regulação do cap. 02.
+
+**Não confirmado, não incorporado (nesta janela):** nenhum item adicional do grupo 2 ficou sem arbitragem
+em 2026-10-19; todos os gaps identificados nesta passagem foram confirmados por ≥2 fontes independentes e
+incorporados acima.
 
 ---
 
@@ -1509,11 +1638,18 @@ inacessíveis]**. Não incorporado ao capítulo nem ao painel até confirmação
 | Ataque FictorPay (out/2025) | R$ 26 milhões desviados; ~280 transações Pix | Cobertura de imprensa especializada | Confirmado (2 fontes) para o valor da FictorPay isoladamente |
 | Perdas acumuladas em ataques a fintechs BR (desde jul/2024) | R$ 1,74 bilhão | Cobertura de imprensa especializada | Confirmado (2 fontes) |
 | Ataque Banco do Nordeste / PSTI terceirizado (jan/2026; prejuízo revelado mai/2026) | R$ 146,6 milhões (item não recorrente no balanço 1º tri. 2026) | Agência Brasil / Finsiders Brasil | Confirmado (2 fontes) |
-| Ataque Banco Rendimento / conta de cliente (abr/2026) | R$ 100 milhões desviados; prejuízo líquido R$ 20–40 milhões | CNN Brasil / ConvergenciaDigital | Confirmado (2 fontes); vetor técnico exato **[NÃO PLENAMENTE CONFIRMADO]** |
+| Ataque Banco Rendimento / conta de cliente (abr/2026) | Volumes financeiros não divulgados pelo banco; vetor técnico exato **[NÃO PLENAMENTE CONFIRMADO]** | CNN Brasil / ConvergenciaDigital | Confirmado (2 fontes) para a ocorrência; **errata de 24/9/2026 — ver abaixo** |
+| Ataque BTG Pactual / Pix (22–23/3/2026) | R$ 100 milhões desviados; prejuízo líquido entre R$ 20–40 milhões ainda rastreados | Agência Brasil / ConvergenciaDigital | Confirmado (2 fontes) |
 | Ransomware Qilin no setor financeiro | 59 vítimas; caso GJTec afetou 32 instituições (Coreia do Sul) | Black Kite 2026 State of Financial Services | Confirmado (2 fontes) |
-| Vazamento Pefisa / chaves Pix (mar/2026, incidente ago/2025–fev/2026) | 28.203 chaves Pix; apenas dados cadastrais, sem acesso a saldos/senhas | Banco Central (via Agência Brasil / Jornal de Brasília) | Confirmado (2 fontes); fetch direto bloqueado pelo proxy |
+| Vazamento Pefisa / chaves Pix (3º de 2026, mar/2026, incidente ago/2025–fev/2026) | 28.203 chaves Pix; apenas dados cadastrais, sem acesso a saldos/senhas | Banco Central (via Agência Brasil / Jornal de Brasília) | Confirmado (2 fontes); fetch direto bloqueado pelo proxy |
+| Vazamento Agibank / chaves Pix (1º de 2026, fev/2026) | 5.290 chaves Pix; apenas dados cadastrais | Banco Central (via CNN Brasil / Revista Oeste) | Confirmado (2 fontes); incorporado em 2026-10-19 |
+| Vazamento MP de Goiás / chaves Pix (2º de 2026, mar/2026) | 93 chaves Pix (51 CPFs); apenas dados cadastrais | Banco Central (via Folha PE / Tribuna do Sertão) | Confirmado (2 fontes); incorporado em 2026-10-19 |
+| Vazamento Credifit / chaves Pix (4º de 2026, mai/2026) | 46 chaves Pix; apenas dados cadastrais | Banco Central (via Finsiders Brasil / ConvergenciaDigital) | Confirmado (2 fontes); incorporado em 2026-10-19 |
+| Agregado — vazamentos de chaves Pix em 2026 (4 episódios) | Mais de 33,5 mil chaves Pix expostas no ano | Banco Central (soma de Agibank+MPGO+Pefisa+Credifit) | Confirmado (2 fontes); incorporado em 2026-10-19 |
 | Tentativa de invasão — fintech Swap (19/6/2026) | Bloqueada pela própria empresa; sem perda financeira ou de dados | Finsiders Brasil / CISO Advisor | Confirmado (2 fontes) |
 | Ator Slim Spider (CrowdStrike, divulgado set/2026) | Ativo desde mar/2026; rouba credenciais de nuvem e custódia cripto; mira infra do Pix | CrowdStrike / The Hacker News | Confirmado (2 fontes); fetch direto bloqueado pelo proxy |
+| Golpe da falsa venda (1º semestre de 2025, Febraban) | 174 mil ocorrências (+314% a/a); saltou da 3ª para a 1ª posição no ranking de reclamações | Febraban (via Diário de Pernambuco / Tribuna de Minas) | Confirmado (2 fontes); incorporado em 2026-10-19 |
+| Regulação — credenciamento de PSTI (Res. BCB nº 498/2025, IN BCB nº 664/2025, Res. BCB nº 547/2026) | Capital mínimo R$ 15 milhões; requisitos de governança, auditoria e continuidade para PSTIs com acesso à RSFN | Banco Central (via Machado Meyer / Okai) | Confirmado (2 fontes); incorporado em 2026-10-19 — corrige classificação equivocada de ciclos anteriores |
 
 **Legenda:** idêntica à da tabela-resumo Global. Itens "Parcialmente confirmado" indicam que o valor numérico
 central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de ouro
