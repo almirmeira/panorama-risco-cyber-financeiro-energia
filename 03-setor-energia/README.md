@@ -178,7 +178,7 @@ fonte que a fez, nunca tratada como fato único e definitivo.
 | 2022 (8/4)       | Industroyer2 — tentativa de apagão contra distribuidora ucraniana | Sandworm, segundo ESET e CERT-UA [22][23]                              | ~2 milhões de pessoas na área de cobertura; apagão evitado por intervenção do CERT-UA |
 | 2022 (13/4)      | Pipedream / Incontroller — *framework* modular contra PLCs      | CHERNOVITE, segundo Dragos (alta confiança); Mandiant nota consistência com interesse histórico russo [24][25] | Sem uso ativo confirmado até a data do advisório conjunto CISA/FBI/NSA/DOE          |
 | 2024 (jan.; identificado em abr.) | FrostyGoop — interrupção de aquecimento distrital em Lviv, Ucrânia | Não identificado — nenhuma atribuição de grupo de ameaça localizada, segundo Dragos [26][27] | Mais de 600 prédios residenciais; ~2 dias sem aquecimento em temperaturas negativas   |
-| 2025 (29/12); 2ª instalação revelada em 9/8/2026 | Pivô por APN celular privada — de parque eólico a usina de cogeração (CHP) na Polônia | Sandworm, segundo ESET (Dragos também associa); Static Tundra/FSB, segundo CERT Polska — atribuição contestada [48][49] | ~30 instalações eólicas/solares comprometidas; turbina a vapor e estação de tratamento de água de usina CHP (50 mil residentes) desligadas por sabotagem; sem interrupção ao público; 1º caso documentado de pivô TI→OT via APN privada |
+| 2025 (29/12); 2ª instalação revelada em 9/8/2026 | Pivô por APN celular privada — de parque eólico a usina de cogeração (CHP) na Polônia; *wiper* **DynoWiper** | Sandworm, segundo ESET (confiança média); ELECTRUM, segundo Dragos (confiança moderada; sobreposição com o cluster Sandworm); Static Tundra/FSB, segundo CERT Polska — atribuição contestada [48][49][76][77] | ~30 instalações eólicas/solares comprometidas; turbina a vapor e estação de tratamento de água de usina CHP (50 mil residentes) desligadas por sabotagem; sem interrupção ao público; 1º caso documentado de pivô TI→OT via APN privada |
 | 2026 (desde mar.; advisório de 7/4, atualizado em 22/7) | Manipulação de PLCs expostos e falsificação de telas IHM/SCADA em Energia, Água e Governo (EUA) | CyberAv3ngers/Shahid Kaveh Group, vinculado ao IRGC Cyber Electronic Command (também rastreado como Storm-0784 pela Microsoft, Bauxite pela Dragos e UNC5691 pela Mandiant), segundo cobertura especializada sobre o advisório conjunto FBI/CISA/NSA/EPA/DOE/CNMF (AA26-097A) — nomeação explícita do grupo pela CISA no texto oficial não confirmada de forma independente nesta pesquisa [69][70][74][75] | Interrupções operacionais e perdas financeiras em múltiplas vítimas |
 | 2026 (jul.; revelado em 23/8/2026) | Pequeno gerador de energia desligado por 4 dias no Reino Unido | Ligado ao Irã, segundo o *The Telegraph* — nome do grupo/APT não identificado [53][54] | Instalação de pequena escala; sem risco à rede nacional; 1º ataque desse tipo bem-sucedido contra infraestrutura de energia britânica, segundo autoridades |
 
@@ -200,9 +200,16 @@ ponto de apoio para os atacantes alcançarem, via um roteador celular Teltonika 
 da distribuidora local, uma usina de cogeração (CHP) não relacionada, onde CLPs Siemens foram colocados em
 modo STOP. O CERT Polska classificou esse movimento — pivô entre instalações sem relação direta, unidas apenas
 por compartilharem a mesma rede celular privada de um operador — como o primeiro caso documentado desse tipo.
-Em 9 de agosto de 2026, no DEF CON, o CERT Polska revelou que uma segunda instalação menor havia sido
-comprometida pela mesma campanha por meio de um controlador WAGO PFC200 com credenciais padrão, achado cuja
-análise levou mais de três meses e por isso ficou fora do relatório original de janeiro de 2026 [48][49]. Mais
+O malware destrutivo usado contra a usina de cogeração foi batizado pela ESET de **DynoWiper** (detectado
+como Win32/KillFiles.NMO): um *wiper* de destruição pura, que sobrescreve e apaga arquivos até o sistema
+operacional ficar inutilizável, forçando restauração a partir de *backup*. A ESET atribui a campanha ao
+Sandworm com confiança média; a Dragos, de forma independente, atribui com confiança moderada ao ator que
+rastreia como **ELECTRUM** — o mesmo nome já usado neste capítulo para o grupo associado ao
+Industroyer/CrashOverride (2016), que a Dragos avalia ter sobreposição com o cluster mais amplo Sandworm,
+não um sinônimo estrito dele [48][76][77]. Em 9 de agosto de 2026, no DEF CON, o CERT Polska revelou que uma
+segunda instalação menor havia sido comprometida pela mesma campanha por meio de um controlador WAGO PFC200
+com credenciais padrão, achado cuja análise levou mais de três meses e por isso ficou fora do relatório
+original de janeiro de 2026 [48][49]. Mais
 um episódio de sabotagem contra infraestrutura de energia foi revelado em 23 de agosto de 2026, quando o
 *The Telegraph* noticiou que hackers ligados ao Irã haviam derrubado, em julho de 2026, um pequeno gerador de
 energia no Reino Unido por quatro dias — sem afetar a rede nacional, mas descrito por autoridades britânicas
@@ -327,7 +334,12 @@ revisão ≥ 01.)
 A primeira fiscalização concreta veio somente quatro anos depois: por meio do **Despacho ANEEL nº 427,
 de 17 de fevereiro de 2025**, os agentes do setor elétrico tiveram até **30 de junho de 2025** para
 enviar à ANEEL as informações necessárias ao acompanhamento da implementação de suas políticas de
-segurança cibernética, conforme exigido pela RN nº 964/2021 [40][41]. A Figura 2 organiza essas camadas
+segurança cibernética, conforme exigido pela RN nº 964/2021 [40][41]. Em **2 de dezembro de 2025**, o ONS
+abriu uma pesquisa com os agentes do setor para colher sugestões e pontos de atenção sobre a versão em
+vigor da RO-CB.BR.01, como insumo para um ciclo de revisão **previsto para ocorrer ao longo de 2026**,
+com foco em modernizar as exigências e incorporar práticas internacionais; até 22 de outubro de 2026 não
+havia texto revisado publicado nem cronograma definitivo de conclusão — a versão vigente (rev. 00,
+9/7/2021) permanece em vigor [78][79]. A Figura 2 organiza essas camadas
 regulatórias em linha do tempo, incluindo a referência técnica internacional da IEC 62443 (não é norma
 brasileira, mas é amplamente usada para operacionalizar os requisitos mais genéricos da RN 964/2021) e o
 submódulo de cibersegurança do ONS (Submódulo 5.13, vigente desde 9/7/2021).
@@ -397,7 +409,7 @@ ao cliente comprometidos sem impacto confirmado em OT.
 | LGPD (Lei nº 13.709/2018)                                    | Congresso Nacional / ANPD | Todos os setores, dados pessoais                   | Consentimento e governança de dados                  | Em vigor desde 2020 (transversal)                |
 | Resolução CNPE nº 24/2021                                    | CNPE                       | Coordenação setorial de resposta a incidentes       | Atribui à ANEEL a coordenação setorial                | Em vigor                                          |
 | RN ANEEL nº 964/2021                                        | ANEEL                      | Concessionárias, permissionárias, autorizadas, ONS  | Política de segurança cibernética + define o ARCiber  | Vigente desde 1º/7/2022                          |
-| Submódulo 5.13 — RO-CB.BR.01 (ONS)                           | ONS / ANEEL                | Centros de operação e infraestrutura ONS↔agentes    | Controles mínimos de segurança cibernética no ARCiber | Vigente desde 9/7/2021; ondas de 18 e 27 meses (até out/2023) |
+| Submódulo 5.13 — RO-CB.BR.01 (ONS)                           | ONS / ANEEL                | Centros de operação e infraestrutura ONS↔agentes    | Controles mínimos de segurança cibernética no ARCiber | Vigente desde 9/7/2021; ondas de 18 e 27 meses (até out/2023); revisão em curso (consulta aberta em dez/2025, prevista ao longo de 2026, sem texto novo até out/2026) |
 | Despacho ANEEL nº 427/2025                                   | ANEEL                      | Todos os agentes sob a RN nº 964/2021               | Envio de informações sobre implementação da política  | Prazo encerrado em 30/6/2025                     |
 | ISA/IEC 62443                                                | ISA/IEC (internacional)   | IACS em geral — referência técnica                  | Zonas, conduítes, Níveis de Segurança (SL 1–4)        | Referência técnica; não é lei brasileira         |
 
@@ -642,3 +654,17 @@ https://www.tenable.com/blog/what-to-know-about-cyberav3ngers-the-irgc-linked-gr
 [75] Security Boulevard. *Iranian Attackers Are Targeting U.S. Energy, Water Systems, Federal Agencies
 Say*. Abril de 2026.
 https://securityboulevard.com/2026/04/iranian-attackers-are-targeting-u-s-energy-water-systems-federal-agencies-say/
+
+[76] The Hacker News. *Russia-Aligned ELECTRUM Tied to December 2025 Cyber Attack on Polish Power Grid*.
+Janeiro de 2026. https://thehackernews.com/2026/01/russian-electrum-tied-to-december-2025.html
+
+[77] The Register. *Moscow likely behind wiper attack on Poland's power grid, experts say*. 26 de janeiro
+de 2026. https://www.theregister.com/2026/01/26/moscow_likely_behind_wiper_attack/
+
+[78] Cenário Energia. *ONS abre consulta para aprimorar rotina de segurança cibernética do setor
+elétrico*. 2 de dezembro de 2025.
+https://cenarioenergia.com.br/2025/12/02/ons-abre-consulta-para-aprimorar-rotina-de-seguranca-cibernetica-do-setor-eletrico/
+
+[79] Brasil Energia / EnergiaHoje. *Novas rotinas de segurança cibernética do ONS começam a mexer com
+agentes*. Dezembro de 2025.
+https://brasilenergia.com.br/energia/operacao/novas-rotinas-de-seguranca-cibernetica-do-ons-comecam-a-mexer-com-agentes

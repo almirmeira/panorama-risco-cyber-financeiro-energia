@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-10-19",
-    "verificadoEm": "2026-10-19",
+    "geradoEm": "2026-10-22",
+    "verificadoEm": "2026-10-22",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -63,9 +63,9 @@
       ],
       "dimensoes": [
         { "nome": "Segmentação TI/OT", "nivel": "ambar", "justificativa": "Padrão observado de segmentação bem-sucedida em incidentes brasileiros (Eletrobras/Copel 2021, Petrobras/SAExploration 2025, Cemig 2026 — vazamento de ~135 mil clientes, sem impacto operacional), mas a convergência TI/OT crescente exige reforço constante da DMZ industrial (Nível 3,5 do Modelo Purdue).", "fonte": "cap. 03" },
-        { "nome": "APT estatal", "nivel": "vermelho", "justificativa": "Sandworm/GRU 74455 (BlackEnergy 2015, Industroyer 2016, Industroyer2 2022, e a campanha contra ~30 instalações eólicas/solares e uma usina de cogeração na Polônia em dez/2025 — atribuição contestada, CERT Polska nomeia Static Tundra/FSB), Volt Typhoon/VOLTZITE (pré-posicionamento de ~300 dias em concessionária de Massachusetts), um ator ligado ao Irã (pequeno gerador de energia no Reino Unido desligado por 4 dias, jul/2026, grupo não identificado) e o grupo CyberAv3ngers/Shahid Kaveh Group (vinculado ao IRGC Cyber Electronic Command, segundo cobertura especializada — Tenable, Security Boulevard; nomeação não confirmada no texto oficial da CISA) que manipulou PLCs e falsificou telas IHM/SCADA em organizações de energia, água e governo nos EUA desde mar/2026 (CISA AA26-097A) ilustram foco de atores estatais em sabotagem/pré-posicionamento geopolítico.", "fonte": "cap. 03" },
+        { "nome": "APT estatal", "nivel": "vermelho", "justificativa": "Sandworm/GRU 74455 (BlackEnergy 2015, Industroyer 2016, Industroyer2 2022, e a campanha com o wiper DynoWiper contra ~30 instalações eólicas/solares e uma usina de cogeração na Polônia em dez/2025 — ESET atribui a Sandworm, Dragos atribui com confiança moderada a ELECTRUM/sobreposição Sandworm, CERT Polska nomeia Static Tundra/FSB), Volt Typhoon/VOLTZITE (pré-posicionamento de ~300 dias em concessionária de Massachusetts), um ator ligado ao Irã (pequeno gerador de energia no Reino Unido desligado por 4 dias, jul/2026, grupo não identificado) e o grupo CyberAv3ngers/Shahid Kaveh Group (vinculado ao IRGC Cyber Electronic Command, segundo cobertura especializada — Tenable, Security Boulevard; nomeação não confirmada no texto oficial da CISA) que manipulou PLCs e falsificou telas IHM/SCADA em organizações de energia, água e governo nos EUA desde mar/2026 (CISA AA26-097A) ilustram foco de atores estatais em sabotagem/pré-posicionamento geopolítico.", "fonte": "cap. 03" },
         { "nome": "Ransomware industrial", "nivel": "vermelho", "justificativa": "Ataques +64% a/a em 2025 (grupos +49%, de 80 para 119; ~3.300 organizações impactadas), após +87% em 2024, e nova alta em 2026 (1.140 incidentes no 2º tri., +12% sobre o 1º); dwell time médio de 42 dias em ambientes OT, caindo para 5 dias apenas com visibilidade OT dedicada.", "fonte": "cap. 03" },
-        { "nome": "Regulação ANEEL", "nivel": "ambar", "justificativa": "RN ANEEL nº 964/2021 (ARCiber) em vigor desde jul/2022 e controles mínimos do ONS no Submódulo 5.13 (RO-CB.BR.01, vigente desde 9/7/2021, conformidade exigida até out/2023), mas a 1ª fiscalização concreta da ANEEL só ocorreu via Despacho nº 427/2025; o setor elétrico brasileiro já é alvo de APT (Armored Likho, jul/2026).", "fonte": "cap. 03" },
+        { "nome": "Regulação ANEEL", "nivel": "ambar", "justificativa": "RN ANEEL nº 964/2021 (ARCiber) em vigor desde jul/2022 e controles mínimos do ONS no Submódulo 5.13 (RO-CB.BR.01, vigente desde 9/7/2021, conformidade exigida até out/2023), mas a 1ª fiscalização concreta da ANEEL só ocorreu via Despacho nº 427/2025; o ONS abriu em dez/2025 revisão da RO-CB.BR.01 prevista para ocorrer ao longo de 2026, ainda sem texto novo publicado; o setor elétrico brasileiro já é alvo de APT (Armored Likho, jul/2026).", "fonte": "cap. 03" },
         { "nome": "Sistemas legados", "nivel": "vermelho", "justificativa": "ICS legados com ciclo de vida de décadas, frequentemente sem suporte de segurança do fabricante; apenas 6% de mais de 500 mil redes sem fio analisadas (Nozomi, 2º sem. 2024) estavam adequadamente protegidas contra ataques de desautenticação (deauth).", "fonte": "cap. 03" }
       ],
       "barra": {
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-10-22",
+        "fonte": "Varredura rotativa (grupo 3/5) — setor energia, cap. 03",
+        "oQueMudou": "Reverificação completa do grupo 3 (ransomware industrial, computadores ICS atacados, intrusões OT, advisórios CISA, custo de violação, regulação ANEEL/ONS): todos os números já registrados seguem confirmados atuais (nenhuma edição trimestral nova da Dragos ou da Kaspersky ICS CERT até 22/10/2026). Dois achados de precisão/contexto regulatório incorporados, sem alterar nenhum KPI numérico: (1) o ONS abriu, em 2/12/2025, uma consulta aos agentes do setor elétrico para revisar a Rotina Operacional RO-CB.BR.01 (Submódulo 5.13), com ciclo de revisão previsto para ocorrer ao longo de 2026 — ainda sem texto novo publicado até esta data; incorporado como contexto na dimensão 'Regulação ANEEL' e na tabela de obrigações regulatórias do cap. 03 (a versão vigente, de 9/7/2021, não mudou); (2) precisão no caso Sandworm/Polônia (dez/2025): o wiper usado foi nomeado DynoWiper pela ESET, e a Dragos atribui a campanha, com confiança moderada, ao ator que rastreia como ELECTRUM (mesma nomenclatura já usada no capítulo para o caso Industroyer/CrashOverride de 2016) — e não apenas 'Sandworm' de forma genérica, como o capítulo descrevia antes. Nenhum SVG afetado."
+      },
       {
         "data": "2026-10-19",
         "fonte": "Varredura rotativa (grupo 2/5) — setor financeiro (recorte Brasil), cap. 02 — fecha o 1º ciclo completo da rotação (5 grupos × 3 dias ≈ 15 dias)",
