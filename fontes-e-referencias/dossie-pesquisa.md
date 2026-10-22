@@ -4029,3 +4029,102 @@ anteriores seguem (`02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openf
   Outubro de 2026. https://convergenciadigital.com.br/seguranca/hackers-usaram-520-transferencias-pix-para-roubar-r-531-milhoes-no-brb/
 - FS-ISAC. Página institucional confirma que a edição mais recente de *Navigating Cyber* continua sendo a
   de 2025: https://www.fsisac.com/navigatingcyber2025
+
+## Registro do refresh — 2026-10-22 (varredura rotativa: grupo 3 — setor energia + cap. 03)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 295 ÷ 3) mod 5 = **3** → `setores[id=energia]` (kpis, dimensões,
+barra, pizza) + cap. 03 (Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM
+energia, ANEEL/ONS). Este grupo foi auditado isoladamente em 2026-10-07 (15 dias atrás) — por isso o
+volume de itens "confirmado atual, sem mudança" é alto, resultado esperado.
+
+Janela recente (item 2): nenhuma edição nova do Dragos *OT/ICS Cybersecurity Year in Review*, da análise
+trimestral de *ransomware* industrial da Dragos (3º tri. 2026 ainda não publicado — a Dragos historicamente
+publica ~40 dias após o fechamento do trimestre; 30/9 + 40 ≈ 9/11/2026), da Kaspersky ICS CERT (3º tri. 2026
+também não publicado; 2º tri. 2026 em 25/8/2026 continua a edição mais recente), do Fortinet, Nozomi (nenhuma
+edição 2026 do *OT/IoT Security Report* localizada nesta busca, mesma situação já registrada em 07/10/2026),
+CISA, IBM, ANEEL ou ONS. Nenhum incidente-marco novo em energia nos últimos 3 dias (advisórios ICS da CISA
+de 6/10 e 8/10/2026 são rotina de patch de fornecedor — Hitachi Energy, Grid Protection Alliance, Red Lion,
+Satel, Lantronix —, não um incidente novo).
+
+| Item auditado | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Ransomware industrial (Dragos, 2023→2024→2025: +87%/+64%; 1.140 no 2T2026) | Confirmado atual | Nenhum relatório trimestral do 3º tri. 2026 publicado até 22/10/2026 |
+| Dwell time de ransomware em OT (42→5 dias) | Confirmado atual | Mesma fonte (Dragos YIR 2026); sem atualização |
+| Computadores ICS atacados — global (19,15% no 2T2026) e energia elétrica 22,8% (H1 2025, ⚠ estimativa) | Confirmado atual | Kaspersky ICS CERT ainda não publicou o relatório do 3º tri. 2026; sem detalhamento setorial novo |
+| Intrusões em OT — Fortinet 2026 (71%/24%) | Confirmado atual | Relatório anual; próxima edição só em 2027 |
+| Advisórios ICS CISA 2025 (>500; 508 Forescout / 506 CSAF) | Confirmado atual | Número é histórico (ano encerrado); advisórios de out/2026 são de 2026, contagem do ano corrente não substitui o dado anual de 2025 |
+| Custo médio de violação — energia USD 5,2 mi (IBM CODB 2026) | Confirmado atual | Edição anual; próxima só em jul/2027 |
+| Nozomi Networks — Manipulação de Dados / 6% de redes Wi-Fi protegidas | Confirmado atual | Nenhuma edição 2026 localizada, mesma lacuna já registrada em 07/10/2026 |
+| RN ANEEL nº 964/2021, Despacho nº 427/2025 | Confirmado atual | Nenhum ato normativo novo publicado que os altere |
+| Submódulo 5.13/ONS (RO-CB.BR.01) | **Atualizado (contexto regulatório novo)** | Ver achado abaixo — revisão em curso, ainda sem novo texto publicado |
+| Casos Brasil — Eletrobras/Copel (2021), Petrobras/Everest (2025), Cemig (2026) | Confirmado atual | Nenhum desfecho novo localizado para a divergência Petrobras×Everest; nenhum incidente novo em energia no Brasil |
+| Armored Likho (jul/2026) | Confirmado atual | Nenhuma atualização ou vítima brasileira nomeada localizada |
+| Atribuição — AA26-097A / CyberAv3ngers | Confirmado atual | Nenhuma atualização do advisório ou da atribuição localizada desde 07/10/2026 |
+| Caso Sandworm/Static Tundra — Polônia (dez/2025) | **Atualizado (precisão)** | Ver achado abaixo — nome do malware e nomenclatura específica da Dragos não estavam no capítulo |
+| Modelo Purdue, IEC 62443 (fundamentos técnicos) | Confirmado atual | Sem mudança normativa/conceitual a registrar |
+
+**Achado 1 — ONS abriu revisão da Rotina Operacional RO-CB.BR.01 (Submódulo 5.13), ainda em curso.** Em
+**2 de dezembro de 2025**, o ONS abriu uma pesquisa com os agentes do setor elétrico para colher
+percepções, sugestões e pontos de atenção sobre a versão em vigor da Rotina Operacional RO-CB.BR.01
+(controles mínimos de cibersegurança do ARCiber), como insumo para um ciclo de revisão **previsto para
+ocorrer ao longo de 2026**, com foco em modernizar as exigências e incorporar práticas internacionais.
+Até 22/10/2026 não foi localizado texto revisado publicado nem cronograma definitivo de conclusão — a
+versão vigente (RO-CB.BR.01 rev. 00, 9/7/2021, já descrita no capítulo) permanece a norma em vigor. Este é
+um processo regulatório em andamento, não uma norma nova: incorporado como contexto no capítulo e na
+tabela de obrigações regulatórias, sem alterar o status/prazo já registrado para o Submódulo 5.13.
+- Fonte 1: Cenário Energia. *ONS abre consulta para aprimorar rotina de segurança cibernética do setor
+  elétrico*. 2 de dezembro de 2025. https://cenarioenergia.com.br/2025/12/02/ons-abre-consulta-para-aprimorar-rotina-de-seguranca-cibernetica-do-setor-eletrico/
+- Fonte 2 (independente, mesma janela, mesmo processo): Brasil Energia / EnergiaHoje. *Novas rotinas de
+  segurança cibernética do ONS começam a mexer com agentes*. Dezembro de 2025.
+  https://brasilenergia.com.br/energia/operacao/novas-rotinas-de-seguranca-cibernetica-do-ons-comecam-a-mexer-com-agentes
+  (acesso ao corpo do texto bloqueado por paywall nesta pesquisa; título e linha de apoio, sobre a TI Safe
+  dobrando de tamanho para atender à demanda gerada pelas novas rotinas do ONS, confirmam de forma
+  independente a existência do mesmo processo regulatório relatado pela Cenário Energia)
+
+**Achado 2 — precisão no caso Polônia (dez/2025): nome do malware e nomenclatura específica da Dragos.**
+O capítulo já registrava o caso (CLPs Siemens em modo STOP, atribuição contestada Sandworm/ESET vs. Static
+Tundra/CERT Polska), mas sem nomear o malware *wiper* nem a designação específica que a Dragos usa para o
+ator. A ESET (fonte já citada no capítulo como [48]) batizou o *wiper* usado no ataque de **DynoWiper**
+(detectado como Win32/KillFiles.NMO) — malware de destruição pura, que sobrescreve e apaga arquivos até o
+sistema operacional se tornar inutilizável, exigindo restauração a partir de backup. A Dragos, por sua vez,
+atribui a campanha (confiança moderada) ao ator que rastreia como **ELECTRUM** — o mesmo nome, já registrado
+neste capítulo na nota de nomenclatura sobre o caso Industroyer/CrashOverride (2016), para o grupo que a
+Dragos avalia ter sobreposição/vínculo com o cluster mais amplo Sandworm — e não simplesmente "Sandworm"
+como o capítulo descrevia de forma genérica (atribuída à Dragos apenas via cobertura de imprensa). Mantido
+o mesmo tratamento de atribuição contestada já no capítulo (ESET/Dragos → Sandworm/ELECTRUM; CERT Polska →
+Static Tundra/FSB), agora com a precisão adicional de que a nomenclatura específica da Dragos é ELECTRUM,
+não uma repetição de "Sandworm".
+- Fonte 1 (primária, já citada como [48]): ESET WeLiveSecurity. *ESET Research: Sandworm behind
+  cyberattack on Poland's power grid in late 2025*. Janeiro de 2026.
+  https://www.welivesecurity.com/en/eset-research/eset-research-sandworm-cyberattack-poland-power-grid-late-2025/
+- Fonte 2 (independente, nomenclatura Dragos/ELECTRUM): The Hacker News. *Russia-Aligned ELECTRUM Tied to
+  December 2025 Cyber Attack on Polish Power Grid*. Janeiro de 2026.
+  https://thehackernews.com/2026/01/russian-electrum-tied-to-december-2025.html
+- Fonte 3 (corroboração independente adicional): The Register. *Moscow likely behind wiper attack on
+  Poland's power grid, experts say*. 26 de janeiro de 2026. https://www.theregister.com/2026/01/26/moscow_likely_behind_wiper_attack/
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida localizada no bloco
+`energia` do painel nem no cap. 03. Os dois prazos futuros da Ordem Executiva 14420 (120 dias/24-12-2026 e
+180 dias/22-02-2027) ainda não venceram em 22/10/2026 e continuam corretamente descritos como pendentes.
+
+Destinos atualizados: `03-setor-energia/README.md` (parágrafo e linha de tabela sobre o caso Polônia
+com DynoWiper/ELECTRUM; nova menção à revisão do Submódulo 5.13 na seção de regulação e na tabela de
+obrigações regulatórias; refs. [76]-[78] novas) e `dashboard/src/data/dashboard.json` (dimensões "APT
+estatal" e "Regulação ANEEL" do setor energia; `meta.geradoEm`/`meta.verificadoEm` atualizados para
+2026-10-22; nova entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico do painel mudou — ambos os
+achados são de precisão/contexto regulatório, não de valor. SVGs pendentes (não editados, já sinalizados em
+ciclos anteriores): `02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`,
+`03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- Cenário Energia. *ONS abre consulta para aprimorar rotina de segurança cibernética do setor elétrico*. 2
+  de dezembro de 2025. https://cenarioenergia.com.br/2025/12/02/ons-abre-consulta-para-aprimorar-rotina-de-seguranca-cibernetica-do-setor-eletrico/
+- Brasil Energia / EnergiaHoje. *Novas rotinas de segurança cibernética do ONS começam a mexer com
+  agentes*. Dezembro de 2025. https://brasilenergia.com.br/energia/operacao/novas-rotinas-de-seguranca-cibernetica-do-ons-comecam-a-mexer-com-agentes
+- The Hacker News. *Russia-Aligned ELECTRUM Tied to December 2025 Cyber Attack on Polish Power Grid*.
+  Janeiro de 2026. https://thehackernews.com/2026/01/russian-electrum-tied-to-december-2025.html
+- The Register. *Moscow likely behind wiper attack on Poland's power grid, experts say*. 26 de janeiro de
+  2026. https://www.theregister.com/2026/01/26/moscow_likely_behind_wiper_attack/
+- Dragos / Kaspersky ICS CERT. Confirmação de ausência de edição trimestral do 3º tri. 2026 até 22/10/2026
+  (checagem direta das páginas de publicações). 2026.
