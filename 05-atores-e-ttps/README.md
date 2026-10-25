@@ -6,9 +6,12 @@
 >   Broker* (IAB) —, e a CrowdStrike, só ela, já rastreia mais de **290 atores de ameaça** nomeados
 >   globalmente, distribuídos entre elas — alta frente aos "180+" de sua página de referência
 >   consultada em 2026-07-21, hoje defasada [1][2][37][38].
-> - Dois frameworks do MITRE sustentam este capítulo: o **ATT&CK Enterprise**, na versão **v19.1**
->   (15 táticas), cobre TI corporativa; o **ATT&CK for ICS** acrescenta 12 táticas e 107 técnicas
->   específicas de ambiente industrial — duas delas sem equivalente em TI [3][4][5][6].
+> - Dois frameworks do MITRE sustentam este capítulo: o **ATT&CK Enterprise**, atualizado para a
+>   versão **v20** em 13 de outubro de 2026 (ante v19.1), cobre TI corporativa e passou a catalogar
+>   **5 técnicas focadas em abuso de IA** — *prompt injection* direta e indireta, exfiltração via
+>   agentes de IA corporativos, envenenamento de resultados de IA e desativação de defesas autônomas
+>   — entre 9 adições totais; o **ATT&CK for ICS** acrescenta 12 táticas e 107 técnicas específicas
+>   de ambiente industrial — duas delas sem equivalente em TI [3][4][5][6][39][40].
 > - O ecossistema *Ransomware-as-a-Service* (RaaS) terceiriza papéis entre grupos distintos, e
 >   2024–2025 confirmou um padrão recorrente: a queda ou a traição de um operador dominante — LockBit
 >   por ação policial (*Operation Cronos*), ALPHV/BlackCat por *exit scam*, RansomHub por disputa
@@ -123,14 +126,28 @@ fez, em vez de tratar qualquer nome como identificador único e estável entre f
 
 ## MITRE ATT&CK (Enterprise) e MITRE ATT&CK for ICS
 
-A versão vigente do **MITRE ATT&CK Enterprise** em 2026-07-21 é a **v19.1** (lançamento da v19 em 28
-de abril de 2026). O domínio Enterprise organiza-se em **15 táticas**: Reconnaissance (TA0043),
-Resource Development (TA0042), Initial Access (TA0001), Execution (TA0002), Persistence (TA0003),
-Privilege Escalation (TA0004), Stealth (TA0005) e Defense Impairment (TA0112) — divisão da antiga
-tática única "Defense Evasion", introduzida a partir da v19 —, Credential Access (TA0006), Discovery
-(TA0007), Lateral Movement (TA0008), Collection (TA0009), Command and Control (TA0011), Exfiltration
-(TA0010) e Impact (TA0040). A v19 também introduziu sub-técnicas para o domínio ICS e nova cobertura
-de técnicas de IA e engenharia social [3][4].
+A versão vigente do **MITRE ATT&CK Enterprise** é a **v20**, lançada em **13 de outubro de 2026**
+(ante a v19.1 de 28 de abril de 2026, vigente na pesquisa original de 2026-07-21). O domínio
+Enterprise organiza-se em **15 táticas**: Reconnaissance (TA0043), Resource Development (TA0042),
+Initial Access (TA0001), Execution (TA0002), Persistence (TA0003), Privilege Escalation (TA0004),
+Stealth (TA0005) e Defense Impairment (TA0112) — divisão da antiga tática única "Defense Evasion",
+introduzida a partir da v19 —, Credential Access (TA0006), Discovery (TA0007), Lateral Movement
+(TA0008), Collection (TA0009), Command and Control (TA0011), Exfiltration (TA0010) e Impact (TA0040).
+A v20 acrescenta **9 técnicas/subtécnicas novas** ao Enterprise, **5 delas focadas em abuso de IA**:
+*Direct Prompt Injection* (**T1699** — instruções maliciosas submetidas diretamente a um agente/LLM)
+e *Indirect Prompt Injection* (**T1698** — instruções maliciosas embutidas em conteúdo externo
+processado pelo modelo), ambas sob Initial Access; **T1700 — AI-Enabled Exfiltration** (manipulação
+de agentes de IA corporativos para vazar dados); uma subtécnica de envenenamento de resultados de IA
+("Stage Capabilities: AI Result Poisoning"); e uma subtécnica de desativação de defesas autônomas
+operadas por IA ("Disable or Modify Tools: Impair Autonomous Defenses"). As 4 adições restantes
+cobrem evasão de CAPTCHA e **T1697** (roubo de senhas específicas de aplicativo, vetor de contorno de
+MFA). No domínio ICS, a v20 passou a catalogar a campanha **C0066 — "2026 U.S. Water Utilities
+Attacks"**: mais de 30 concessionárias de água/esgoto de Minnesota (EUA) tiveram CLPs Rockwell
+Automation/Allen-Bradley MicroLogix expostos à internet comprometidos a partir de 27 de julho de 2026,
+sem atribuição formal confirmada (suspeita não comprovada de ator ligado ao Irã) — um incidente do
+setor de **água**, não de energia elétrica, mas que ilustra o mesmo padrão de CLP exposto à internet
+já discutido no capítulo 03 para o setor elétrico. A v19 também havia introduzido sub-técnicas para o
+domínio ICS e nova cobertura de técnicas de IA e engenharia social [3][4][39][40].
 
 O **MITRE ATT&CK for ICS** é um framework irmão, dedicado a ambientes de tecnologia operacional
 (OT) e sistemas de controle industrial. Organiza-se em **12 táticas** — Initial Access, Execution,
@@ -335,3 +352,12 @@ https://www.businesswire.com/news/home/20260224017260/en/2026-crowdstrike-global
 Operations*. Agosto de 2026. https://secure.businesswire.com/news/home/20260803155652/en/CrowdStrike-2026-Threat-Hunting-Report-AI-is-Now-Embedded-Across-Modern-Adversary-Operations
 (cobertura independente convergente: SecurityMEA. *CrowdStrike Launches 2026 Threat Hunting Report*.
 Agosto de 2026. https://securitymea.com/2026/08/04/crowdstrike-launches-2026-threat-hunting-report/)
+
+[39] SecurityWeek. *MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks*. 13 de
+outubro de 2026. https://www.securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks/
+
+[40] LetsDataScience. *MITRE ATT&CK v20 Adds AI-Focused Techniques for Prompt Injection and
+Exfiltration*. Outubro de 2026. https://letsdatascience.com/news/mitre-adds-ai-attack-techniques-to-attck-35cf4042
+(ver também GBHackers. *MITRE ATT&CK v20: New AI Techniques*. https://gbhackers.com/mitre-attack-v20-ai-techniques/
+e, sobre a campanha C0066, a própria página do MITRE — criada em 08/10/2026, última modificação em
+13/10/2026: https://attack.mitre.org/campaigns/C0066/)

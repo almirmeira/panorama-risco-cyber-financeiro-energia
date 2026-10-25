@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-10-22",
-    "verificadoEm": "2026-10-22",
+    "geradoEm": "2026-10-25",
+    "verificadoEm": "2026-10-25",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-10-25",
+        "fonte": "Varredura rotativa (grupo 4/5) — Tendências/Recomendações e Atores e TTPs, caps. 05-08",
+        "oQueMudou": "Cap. 05: MITRE ATT&CK Enterprise atualizado de v19.1 para v20 (lançada em 13/10/2026) — 9 técnicas novas, 5 focadas em abuso de IA (T1698/T1699 prompt injection direta/indireta, T1700 exfiltração via agentes de IA, subtécnicas de envenenamento de resultado de IA e de desativação de defesas autônomas) e T1697 (roubo de senha de app, contorno de MFA); no ICS, nova campanha catalogada (C0066, ataque a concessionárias de água em Minnesota, sem atribuição confirmada — incidente do setor de água, não de energia elétrica). Cap. 06: anotado [DESFECHO NÃO CONFIRMADO em 2026-10-25] sobre o prazo vencido (~mar/2026) do rascunho de padrão do HQC, sem confirmação de publicação. Dossiê: registrada nota [NÃO CONFIRMADO] sobre possível crescimento não verificado da contagem de vítimas Cl0p/Oracle EBS acima de ~29-30 (indícios dispersos de '100+', sem 2 fontes independentes para um número substituto). Demais itens do grupo (CrowdStrike 290+, Qilin, RaaS, Anthropic, ransomware conduzido por IA, FIPS 206, NIST IR 8596, Portarias ANEEL 7.058/7.062, OWASP/CISA, insider threat, hacktivismo) confirmados sem mudança. Nenhum KPI numérico do dashboard precisou mudar — o painel não tem indicador dedicado à versão do MITRE ATT&CK, à contagem de vítimas do Cl0p nem ao cronograma do HQC."
+      },
       {
         "data": "2026-10-22",
         "fonte": "Varredura rotativa (grupo 3/5) — setor energia, cap. 03",
