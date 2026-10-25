@@ -238,7 +238,10 @@ imediatamente, dado que a migração completa levará tempo considerável [9][10
 - **HQC** (*Hamming Quasi-Cyclic*): em **11 de março de 2025**, o NIST selecionou o HQC como quinto
   algoritmo, um mecanismo de encapsulamento de chaves baseado em códigos corretores de erro, para
   servir de reserva ao ML-KEM caso surjam fragilidades nos reticulados. O plano anunciado era um
-  rascunho de padrão cerca de um ano depois e a versão final em **2027** [24][25].
+  rascunho de padrão cerca de um ano depois (ou seja, por volta de março de 2026) e a versão final em
+  **2027** [24][25]. O prazo do rascunho já venceu há sete meses nesta revisão, sem confirmação pública
+  de publicação **[DESFECHO NÃO CONFIRMADO em 2026-10-25 — nenhuma fonte localizada confirma se o NIST
+  já publicou o rascunho de padrão do HQC previsto para ~1 ano após a seleção de março de 2025]**.
 - **Cronograma de deprecação:** o **NIST IR 8547** propõe **deprecar** RSA/ECC de 112 bits após
   **2030** e **proibi-los** após **2035** — mas o documento **permanece como rascunho** (*Initial
   Public Draft*, novembro de 2024). Em **24 de junho de 2026**, o memorando **OMB M-26-15**, que

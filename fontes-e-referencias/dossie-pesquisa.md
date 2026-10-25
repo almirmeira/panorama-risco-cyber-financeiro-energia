@@ -2478,6 +2478,41 @@ integralmente em 2026-07-21.
     pesquisa — **[NÃO CONFIRMADO o número exato de técnicas na v19.1 em 2026-07-21; usar a v19 como referência de
     versão, não o detalhamento numérico de técnicas]**.
 
+#### Atualização 2026-10-25 — MITRE ATT&CK Enterprise avança para v20 (técnicas de abuso de IA)
+
+- **Dado:** em **13 de outubro de 2026**, o MITRE lançou a **v20** do ATT&CK Enterprise, sucedendo a v19.1
+  citada acima (a v19.2, um release ágil de agosto de 2026 identificado mas não incorporado no ciclo de
+  2026-09-25 por falta de segunda fonte independente, foi superada pela v20 antes de ser confirmada). A nova
+  versão acrescenta **9 técnicas/subtécnicas**, das quais **5 voltadas a abuso de IA**: **T1699 — Direct
+  Prompt Injection** e **T1698 — Indirect Prompt Injection** (ambas sob Initial Access — instruções maliciosas
+  submetidas diretamente a um agente/LLM, ou embutidas em conteúdo externo que o modelo processa), **T1700 —
+  AI-Enabled Exfiltration** (manipulação de agentes de IA corporativos para vazar dados), uma subtécnica de
+  envenenamento de resultados de IA ("Stage Capabilities: AI Result Poisoning") e uma subtécnica de
+  desativação de defesas autônomas operadas por IA ("Disable or Modify Tools: Impair Autonomous Defenses"). As
+  4 adições restantes cobrem evasão de CAPTCHA e **T1697** (roubo de senhas específicas de aplicativo, vetor
+  de contorno de MFA). No domínio ICS, a v20 passou a catalogar a campanha **C0066 — "2026 U.S. Water
+  Utilities Attacks"**: mais de 30 concessionárias de água/esgoto de Minnesota (EUA) tiveram CLPs Rockwell
+  Automation/Allen-Bradley MicroLogix 1100/1400 expostos à internet comprometidos a partir de 27 de julho de
+  2026, sem atribuição formal confirmada (suspeita não comprovada de ator ligado ao Irã). Este dossiê passa a
+  usar **v20** como versão vigente do ATT&CK Enterprise, preservando v19.1 acima como referência histórica.
+  - Fonte 1 (cobertura técnica independente, com referência direta às notas de lançamento do MITRE):
+    SecurityWeek. *MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks*. 13 de outubro de
+    2026. https://www.securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks/
+  - Fonte 2 (cobertura técnica independente e convergente, com a lista de IDs de técnica): LetsDataScience.
+    *MITRE ATT&CK v20 Adds AI-Focused Techniques for Prompt Injection and Exfiltration*. Outubro de 2026.
+    https://letsdatascience.com/news/mitre-adds-ai-attack-techniques-to-attck-35cf4042 (ver também GBHackers.
+    *MITRE ATT&CK v20: New AI Techniques*. https://gbhackers.com/mitre-attack-v20-ai-techniques/ e, sobre a
+    campanha C0066, a própria página do MITRE — criada em 08/10/2026, última modificação em 13/10/2026:
+    https://attack.mitre.org/campaigns/C0066/)
+  - Observações: o site oficial attack.mitre.org permanece bloqueado pela política de rede desta sessão (mesma
+    limitação já registrada nos ciclos de 2026-09-25 e 2026-10-10 para a v19.2); a confirmação desta vez vem
+    de duas coberturas técnicas independentes (SecurityWeek e LetsDataScience/GBHackers) que convergem na data
+    de lançamento, na contagem de 9 adições/5 focadas em IA e nos IDs de técnica — tratado como confirmação
+    suficiente para trocar a versão vigente de v19.1 para v20, mesmo sem acesso direto ao site oficial do
+    MITRE. A campanha C0066 (água, Minnesota) é citada aqui apenas como exemplo do novo catálogo de campanhas
+    da v20 — é um incidente do setor de **água**, não de energia elétrica, e por isso não altera nenhum dado do
+    capítulo 03 (Energia) deste dossiê.
+
 ### MITRE ATT&CK for ICS — táticas e técnicas relevantes ao setor de energia
 
 - **Dado:** o MITRE ATT&CK for ICS organiza-se em **12 táticas**: Initial Access, Execution, Persistence,
@@ -2590,6 +2625,14 @@ integralmente em 2026-07-21.
     Este caso reforça o padrão de "extorsão sem implantação de ransomware" (roubo e ameaça de vazamento de dados
     via vulnerabilidade de aplicação empresarial, sem necessariamente cifrar arquivos) já característico do modus
     operandi do Cl0p em campanhas anteriores (MOVEit 2023, GoAnywhere 2023).
+  - **Atualização 2026-10-25 — NÃO CONFIRMADO:** há indícios dispersos em cobertura subsequente (a partir de
+    nov/2025) de que a contagem de vítimas nomeadas no site de vazamento tenha crescido além de 29 —
+    referências não sistemáticas a "mais de 40" e depois "mais de 100" organizações —, mas nenhuma fonte
+    localizada nesta revisão apresenta uma contagem pontual e verificável por 2 fontes plenamente
+    independentes (a maior parte é estimativa qualitativa da cobertura jornalística, não uma lista nomeada e
+    datada equivalente à já usada para o valor de ~29). **[NÃO CONFIRMADO em 2026-10-25 — número exato de
+    vítimas Cl0p/Oracle EBS acima de ~29-30 organizações nomeadas; valor mantido sem troca até confirmação por
+    2 fontes independentes]**.
 
 ### RansomHub — encerramento (2025), cartel DragonForce e ascensão do Qilin
 
@@ -2756,13 +2799,13 @@ integralmente em 2026-07-21.
 
 | Métrica | Valor | Relatório/fonte primária | Status |
 | :-- | :-- | :-- | :-- |
-| MITRE ATT&CK Enterprise — versão atual | v19.1 (28/4/2026); 15 táticas | MITRE ATT&CK (site oficial) | Confirmado (2 fontes) |
+| MITRE ATT&CK Enterprise — versão atual [atualizado 25/10] | v20 (13/10/2026); 15 táticas; 9 técnicas novas, 5 de IA (ante v19.1 de 28/4/2026, superada) | SecurityWeek / LetsDataScience (site oficial ainda bloqueado a esta sessão) | Confirmado (2 fontes) |
 | MITRE ATT&CK for ICS — estrutura | 12 táticas / 107 técnicas | MITRE ATT&CK (site oficial) | Confirmado (2 fontes) |
 | Atores de ameaça rastreados (CrowdStrike) [atualizado 10/10] | 290+ nomeados (ante 180+ da página estática, superado) | CrowdStrike 2026 GTR (280+) / Threat Hunting Report 2026 (290+), via Business Wire / SecurityMEA | Confirmado (2 fontes) |
 | LockBit — Operation Cronos (fev/2024) | 34 servidores; 14.000 contas; 200 contas cripto congeladas | NCA / Trend Micro | Confirmado (2 fontes) |
 | LockBit — resgates extorquidos (histórico) | >USD 120 milhões; >2.000 vítimas | NCA | Confirmado (2 fontes) |
 | ALPHV/BlackCat — exit scam (mar/2024) | USD 22 milhões (Change Healthcare) não repassados a afiliado | The Hacker News / TechTarget | Confirmado (2 fontes) |
-| Cl0p — campanha Oracle EBS (2025) | CVE-2025-61882 (CVSS 9,8); ~29 vítimas nomeadas | Mandiant/Google Cloud / SecurityWeek | Confirmado (2 fontes) |
+| Cl0p — campanha Oracle EBS (2025) | CVE-2025-61882 (CVSS 9,8); ~29 vítimas nomeadas | Mandiant/Google Cloud / SecurityWeek | Confirmado (2 fontes); contagem pode estar desatualizada — ver nota [NÃO CONFIRMADO em 25/10] |
 | RansomHub — encerramento / migração de afiliados | Inativo desde abr/2025; Qilin de 36→75 vítimas/mês (3T/2025) | The Hacker News / Check Point | Confirmado (2 fontes) |
 | Qilin — liderança sustentada em 2026 [atualizado 25/09] | 1.480 incidentes (set/2025–ago/2026); 641 vítimas no 1S/2026; recorde de 165 em ago/2026 | ZeroFox / Barracuda (Check Point Q1/2026) | Confirmado (2 fontes) |
 | IAB — crescimento de anúncios (2023→2025) | +100%+ em 2 anos; mediana ~USD 500 | Rapid7 / Darknet.org.uk | Confirmado (2 fontes) |
@@ -2895,6 +2938,12 @@ integralmente em 2026-07-21.
   quânticos necessários para quebrar RSA-2048 de cerca de 20 milhões de qubits para menos de 1 milhão (e,
   segundo arquiteturas mais recentes, potencialmente já na casa de 100 mil qubits) — o que, segundo essas
   análises, pode acelerar o cronograma de risco frente às estimativas anteriores de "10 a 15 anos".
+  **Atualização 2026-10-25 — obsolescência temporal (HQC):** o NIST selecionou o HQC como quinto algoritmo
+  PQC em 11 de março de 2025, com plano anunciado de publicar um rascunho de padrão "cerca de um ano depois"
+  (ou seja, por volta de março de 2026) — prazo já vencido há sete meses nesta revisão, sem que nenhuma fonte
+  localizada confirme se o rascunho foi de fato publicado. **[DESFECHO NÃO CONFIRMADO em 2026-10-25 — não
+  localizada confirmação de publicação do rascunho de padrão do HQC previsto para ~1 ano após a seleção de
+  março de 2025; páginas oficiais do NIST/CSRC permaneceram inacessíveis a esta sessão]**.
   - Fonte 1: NIST. *NIST Releases First 3 Finalized Post-Quantum Encryption Standards*. Agosto de 2024.
     https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards
   - Fonte 2 (secundária, síntese técnica consolidada sobre os três padrões e o quarto em preparação): QNSQY.
@@ -4128,3 +4177,52 @@ ciclos anteriores): `02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-open
   2026. https://www.theregister.com/2026/01/26/moscow_likely_behind_wiper_attack/
 - Dragos / Kaspersky ICS CERT. Confirmação de ausência de edição trimestral do 3º tri. 2026 até 22/10/2026
   (checagem direta das páginas de publicações). 2026.
+
+## Registro do refresh — 2026-10-25 (varredura rotativa: grupo 4 — Tendências/Recomendações + Atores e TTPs, caps. 05-08)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 298 ÷ 3) mod 5 = **4** → `tendencias`, `recomendacoes` + caps. 05
+(Atores e TTPs), 06, 07 e 08. Este grupo foi auditado isoladamente em 2026-10-10 (15 dias atrás).
+
+Janela recente (item 2): nenhum incidente-marco novo nos últimos 3 dias (22-25/10/2026) envolvendo IA
+ofensiva, *ransomware*, *deepfake* ou cadeia de suprimentos contra os setores financeiro ou de energia
+(Brasil ou global); nenhuma edição nova de relatório primário da Anthropic, CrowdStrike, Sysdig, Unit 42,
+OWASP, CISA, NIST ou Sonatype além das já incorporadas.
+
+| Item verificado | Veredito em 2026-10-25 |
+| :-- | :-- |
+| MITRE ATT&CK Enterprise — versão (v19.1 → v19.2 → ?) | **Atualizado**: o MITRE lançou a **v20** em 13/10/2026 — 9 técnicas novas, 5 focadas em abuso de IA (T1698/T1699 *prompt injection*, T1700 exfiltração via agentes de IA, subtécnicas de envenenamento de resultado de IA e desativação de defesas autônomas) e T1697 (roubo de senha de app, MFA bypass); no ICS, nova campanha catalogada (C0066, água de Minnesota, sem atribuição confirmada). Confirmado por 2 fontes técnicas independentes (SecurityWeek, LetsDataScience/GBHackers); site oficial attack.mitre.org seguiu bloqueado a esta sessão |
+| CrowdStrike — contagem de adversários (290+) | Confirmado sem mudança: nenhum relatório posterior ao Threat Hunting Report (ago/2026) localizado |
+| Qilin — liderança de ransomware | Confirmado sem mudança material: Check Point *State of Ransomware Q2 2026* (checkpoint.com) mostra Qilin com 279 vítimas no período vs. 269 do "The Gentlemen" (que o superou isoladamente em junho/2026); ZeroFox confirma 17 meses consecutivos de liderança agregada desde o 2T/2025; nenhum relatório do 3º tri. 2026 publicado até 25/10/2026 |
+| RaaS — grupos ativos rastreados | Confirmado sem mudança: 93 grupos no Q2 2026 (Check Point) já estava incorporado desde 10/10/2026; nenhum dado do 3º tri. 2026 publicado |
+| Anthropic — relatório de inteligência de ameaças | Confirmado sem edição mais nova que a de set/2026, já incorporada |
+| Ransomware conduzido por IA (cap. 06) | Confirmado sem caso novo desde a investigação Unit 42 (set/2026) |
+| PQC — FIPS 206 (FN-DSA) | Confirmado sem mudança: ainda rascunho; expectativa de finalização "final de 2026/início de 2027" repetida por fonte secundária (EncryptionConsulting) e um rascunho IETF de maio/2026, sem finalização pelo NIST |
+| PQC — HQC | **Obsolescência temporal identificada (item 2c)**: o prazo informal de "~1 ano após a seleção" (mar/2025 → ~mar/2026) já venceu há 7 meses sem confirmação de publicação do rascunho de padrão. Marcado **[DESFECHO NÃO CONFIRMADO em 2026-10-25]** no cap. 06 e nesta seção do dossiê — valor/cronograma vigente mantido sem troca |
+| NIST IR 8596 (Cyber AI Profile) | Confirmado sem mudança: segue como *Initial Preliminary Draft* (16/12/2025), apesar do período de comentários encerrado em 30/1/2026; nenhum *Public Draft* localizado |
+| OWASP Top 10 for Agentic Applications 2026 / Guia CISA de IA agêntica | Confirmado sem revisão nova desde a publicação original |
+| Portarias ANEEL 7.058/2026 e 7.062/2026 | Confirmado **[NÃO CONFIRMADO]**, sem mudança de veredito: localizada data (6/2/2026) e resumo de conteúdo (reforço de estrutura interna da ANEEL — ETIR —, sem obrigação direta a agentes) apenas pela mesma fonte secundária única (Machado Meyer); nenhuma segunda fonte independente ou texto oficial (DOU/ANEEL) localizado |
+| Insider threat — custo médio anual (Ponemon/DTEX) | Confirmado sem mudança: USD 19,5 milhões (edição 2026) segue sendo o valor mais recente |
+| Hacktivismo — crescimento de DDoS | Confirmado sem mudança material: Radware H1 2026 mostra Israel como alvo nº1 (784 ataques) e Ucrânia 2º (390) — dado complementar, qualitativo, que não substitui os percentuais já citados (StormWall Q1 2026: +168% a/a); nenhum relatório do 3º tri. 2026 localizado |
+| Cl0p — contagem de vítimas Oracle EBS | **NÃO CONFIRMADO** (ver nota na seção Atores e TTPs): indícios dispersos de crescimento para "40+" e depois "100+" vítimas em cobertura de nov/2025 em diante, sem 2 fontes independentes para um número pontual substituto — valor de ~29 mantido |
+| Cap. 07 — NIST CSF 2.0, ISO/IEC 27001:2022+Amd1, IEC 62443, Zero Trust SP 800-207 | Confirmado sem mudança: nenhuma nova edição localizada |
+| Cap. 08 — recomendações | Revisado; nenhuma afirmação numérica desatualizada localizada |
+
+**Arquivos alterados:** `fontes-e-referencias/dossie-pesquisa.md` (seção Atores e TTPs — atualização MITRE
+ATT&CK v20 e nota NÃO CONFIRMADO sobre Cl0p; seção Tendências 2026 — nota DESFECHO NÃO CONFIRMADO sobre HQC;
+este registro), `05-atores-e-ttps/README.md` (resumo executivo + seção MITRE ATT&CK + refs. [39][40] novas) e
+`06-tendencias-2026/README.md` (nota sobre o prazo vencido do rascunho HQC) e `dashboard/src/data/dashboard.json`
+(`meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-10-25; nova entrada em `fontes.incorporacoesRecentes`).
+Nenhum KPI numérico do `dashboard.json` precisou mudar: o painel não tem indicador dedicado à versão do MITRE
+ATT&CK, à contagem de vítimas do Cl0p nem ao cronograma do HQC. SVGs pendentes (não editados, já sinalizados em
+ciclos anteriores): `02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`,
+`03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- SecurityWeek. *MITRE ATT&CK v20 Catalogs AI Abuse, MFA Bypass, Water Utility Attacks*. 13 de outubro de 2026. https://www.securityweek.com/mitre-attck-v20-catalogs-ai-abuse-mfa-bypass-water-utility-attacks/
+- LetsDataScience. *MITRE ATT&CK v20 Adds AI-Focused Techniques for Prompt Injection and Exfiltration*. Outubro de 2026. https://letsdatascience.com/news/mitre-adds-ai-attack-techniques-to-attck-35cf4042
+- GBHackers. *MITRE ATT&CK v20: New AI Techniques*. Outubro de 2026. https://gbhackers.com/mitre-attack-v20-ai-techniques/
+- MITRE ATT&CK. *Campaign C0066 — 2026 U.S. Water Utilities Attacks*. https://attack.mitre.org/campaigns/C0066/
+- Check Point Research. *The State of Ransomware – Q2 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q2-2026/
+- ZeroFox. *Qilin's latest spree of alleged victims*. 2026. https://www.zerofox.com/intelligence/qilins-latest-spree-of-alleged-victims/
+- Radware. *H1 2026 Global Threat Analysis Report*. 2026. https://www.radware.com/security/threat-intelligence/
