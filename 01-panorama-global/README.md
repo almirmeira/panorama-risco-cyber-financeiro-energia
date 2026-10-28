@@ -138,7 +138,14 @@ começam por *phishing*/engenharia social na edição 2025 [12][13]: aquele núm
 violações, este mede especificamente a amostra de casos de IR da própria Microsoft. Os demais números já
 citados da edição 2025 (motivação financeira ≥52%, taxa de clique de *phishing* com IA de 54%) seguem sem
 equivalente 2026 confirmado por duas fontes independentes nesta pesquisa, e por isso permanecem no texto
-como referência vigente.
+como referência vigente. **Atualização 2026-10-28:** o próprio comunicado oficial da Microsoft sobre esta
+edição confirma, agora com segunda fonte jornalística independente, um achado antes registrado como de
+fonte única: o **setor público (governos) tornou-se o mais afetado por volume de atividade de ameaça
+observada pela Microsoft, com 27% do total, ante 17% na edição anterior** — um terceiro recorte de "setor
+mais atacado", distinto tanto do *ranking* de intrusões da Mandiant (Alta Tecnologia, ver abaixo) quanto
+da base de resposta a incidentes do IBM X-Force (Manufatura) [60][61]. O detalhamento equivalente para o
+setor financeiro nesta mesma edição (uma cobertura isolada cita 4% da atividade entre os dez setores mais
+afetados) permanece em fonte única e **não foi incorporado**.
 
 ### Setores mais atacados: por que as fontes discordam
 
@@ -167,11 +174,16 @@ hacktivistas, não severidade) [52][53][54]. **73%** das vítimas identificadas 
 importantes conforme a Diretiva NIS2 (ante 53,7% na edição anterior). Quanto ao tipo de ataque, DDoS
 segue dominante em volume (**51,3%** dos incidentes) e acesso não autorizado aparece em **39,5%**;
 dentro dos eventos financeiramente motivados, *ransomware* responde por **40%**, violação de dados por
-**31%** e fraude/falsificação de identidade por **19%** [52][53][54]. **[NÃO CONFIRMADO em 2026-09-28]** —
-não foi possível localizar, em fonte independente acessível, o equivalente 2026 do indicador "ameaças a
-OT como 18,2% das categorias de ameaça" nem da contagem de novas vulnerabilidades (42.595 na edição
-2025); esses dois números permanecem atribuídos explicitamente à edição 2025 nas seções abaixo até
-confirmação. A explicação mais provável para energia/finanças ficarem fora do topo de volume é
+**31%** e fraude/falsificação de identidade por **19%** [52][53][54]. **Atualização 2026-10-28:** a
+contagem de novas vulnerabilidades foi confirmada — a edição 2026 registra **mais de 48.000 novas
+vulnerabilidades com identificador CVE divulgadas em 2025, alta de cerca de 22%** frente ao ano anterior,
+superando como referência mais atual o valor de 42.595 (+27%) já registrado para a edição 2025 [58][59];
+a mesma leitura aponta exploração de vulnerabilidades conhecidas como a via de entrada em cerca de
+**60%** dos incidentes de acesso não autorizado em que a origem pôde ser identificada [58][59].
+**[NÃO CONFIRMADO em 2026-10-28, 3º ciclo consecutivo]** — não foi possível localizar, em fonte
+independente acessível, o equivalente 2026 do indicador "ameaças a OT como 18,2% das categorias de
+ameaça"; o número permanece atribuído explicitamente à edição 2025 até confirmação. A explicação mais
+provável para energia/finanças ficarem fora do topo de volume é
 metodológica: a ENISA mede volume bruto (dominado por DDoS de baixo impacto promovido por
 hacktivistas), enquanto Mandiant e IBM medem severidade/tipo de engajamento (*ransomware*, exploração
 industrial). Uma quarta leitura, agregando cobertura de mercado sobre 2025, estima que cerca de **70%**
@@ -503,3 +515,18 @@ https://www.scworld.com/brief/microsoft-report-ai-accelerates-cyberattacks-chall
 
 [57] MyABT. *Microsoft Digital Defense Report 2026: What Banks, Credit Unions, and Lenders Should Do
 First*. 2026. https://www.myabt.com/blog/microsoft-digital-defense-report-2026-financial-institutions
+
+[58] IEU Monitoring. *ENISA warns cyber dependencies widen risks to EU digital infrastructure*
+(comunicado, Atenas, 22 de setembro de 2026). 2026.
+https://ieu-monitoring.com/editorial/enisa-warns-cyber-dependencies-widen-risks-to-eu-digital-infrastructure/1250546/
+
+[59] Cloud Security Alliance. *ENISA Threat Landscape 2026: Dependencies Turn EU Cyber Risk Systemic*
+(research note). Setembro de 2026.
+https://labs.cloudsecurityalliance.org/research/csa-research-note-enisa-threat-landscape-2026-systemic-risk/
+
+[60] Microsoft. *Microsoft Digital Defense Report: Governments Now Most Impacted Sector, Facing 27% of
+Threat Activity*. Outubro de 2026.
+https://news.microsoft.com/source/emea/features/microsoft-digital-defense-report-2026-government-cyber-threats/
+
+[61] Mezha.ua. *Ukraine is first in Europe target for cyberattacks*. Outubro de 2026.
+https://mezha.ua/en/news/ukraine-is-first-in-europe-target-for-cyberattacks-315890/

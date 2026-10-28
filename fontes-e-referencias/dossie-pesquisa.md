@@ -778,6 +778,54 @@
 
 ---
 
+### Atualização 2026-10-28 — varredura rotativa (grupo 0/5): ENISA (vulnerabilidades) e Microsoft MDDR 2026 (setor público)
+
+- **Dado:** a contagem de novas vulnerabilidades da ENISA Threat Landscape 2026, pendente desde
+  2026-09-28, foi confirmada nesta janela: **mais de 48.000 novas vulnerabilidades com identificador CVE
+  divulgadas em 2025, alta de cerca de 22%** frente ao ano anterior (ante 42.595, +27%, já registrado para
+  a edição 2025). A mesma cobertura aponta exploração de vulnerabilidades conhecidas como via de entrada
+  em cerca de **60%** dos incidentes de acesso não autorizado com origem identificável nesta edição. Já o
+  segundo ponto pendente desde 2026-09-28 — "ameaças a OT como 18,2% das categorias de ameaça" —
+  **permanece sem equivalente 2026 localizado**, agora pelo terceiro ciclo consecutivo de varredura
+  rotativa do grupo 0 (checado em 2026-09-28, 2026-10-13 e 2026-10-28); mantido atribuído à edição 2025
+  até confirmação.
+  - Fonte 1 (reproduz o comunicado oficial da ENISA, Atenas, 22/9/2026): IEU Monitoring. *ENISA warns
+    cyber dependencies widen risks to EU digital infrastructure*. 2026.
+    https://ieu-monitoring.com/editorial/enisa-warns-cyber-dependencies-widen-risks-to-eu-digital-infrastructure/1250546/
+  - Fonte 2 (análise técnica independente que reproduz o mesmo total e taxa de crescimento): Cloud
+    Security Alliance. *ENISA Threat Landscape 2026: Dependencies Turn EU Cyber Risk Systemic* (research
+    note). Setembro de 2026.
+    https://labs.cloudsecurityalliance.org/research/csa-research-note-enisa-threat-landscape-2026-systemic-risk/
+  - Observações: **este dado substitui, como referência mais atual, o valor de 42.595 (+27%) da edição
+    2025 já registrado acima**, mantido no dossiê por preservar o histórico de pesquisa. Nova busca
+    específica por um equivalente 2026 de "ameaças a OT como 18,2% das categorias de ameaça" (veículos
+    checados: Industrial Cyber, Help Net Security, dig.watch, e as duas notas da própria Cloud Security
+    Alliance) não retornou nenhum número claramente equivalente — é possível que a ENISA tenha
+    reestruturado a categorização de ameaças nesta edição e descontinuado esse recorte específico, mas essa
+    hipótese não foi confirmada; o **[NÃO CONFIRMADO]** é mantido.
+
+- **Dado:** o achado do *Microsoft Digital Defense Report 2026* registrado em 2026-10-13 como de fonte
+  única e por isso não incorporado — setor público (governos) como mais afetado por volume de atividade
+  de ameaça, em **27%** (ante 17% na edição anterior) — está **resolvido** nesta janela: o próprio
+  comunicado oficial da Microsoft confirma o dado, agora com segunda fonte jornalística independente que
+  reproduz os mesmos números.
+  - Fonte 1 (primária, comunicado oficial da Microsoft): Microsoft. *Microsoft Digital Defense Report:
+    Governments Now Most Impacted Sector, Facing 27% of Threat Activity*. Outubro de 2026.
+    https://news.microsoft.com/source/emea/features/microsoft-digital-defense-report-2026-government-cyber-threats/
+  - Fonte 2 (independente): Mezha.ua. *Ukraine is first in Europe target for cyberattacks*. Outubro de
+    2026. https://mezha.ua/en/news/ukraine-is-first-in-europe-target-for-cyberattacks-315890/
+  - Observações: **este dado substitui, como referência mais atual, a nota de fonte única registrada em
+    2026-10-13** ("setor público como mais afetado, 27%... apareceu em fonte única e não foi
+    incorporado"). O detalhamento equivalente para o setor financeiro nesta mesma edição (uma cobertura
+    isolada cita 4% da atividade entre os dez setores mais afetados) permanece em **fonte única** e
+    **não foi incorporado** — registrado como pista para um próximo ciclo. IBM Cost of a Data Breach,
+    Verizon DBIR, Mandiant M-Trends, CrowdStrike Global Threat Report e WEF seguem confirmados como atuais
+    nesta janela, sem edição mais nova publicada desde o ciclo de 2026-10-13. Nenhum incidente-marco novo
+    de escala global relevante a financeiro/energia foi localizado na janela recente (2026-10-13 a
+    2026-10-28).
+
+---
+
 ## Tabela-resumo — números-chave e status de confirmação
 
 | Métrica | Valor | Relatório primário | Status |
@@ -816,7 +864,10 @@
 | DDoS (% de incidentes reportados na UE) | 77% (2% com disrupção real) | ENISA Threat Landscape 2025 | Confirmado (2 fontes); **superado pela edição 2026, ver linha abaixo** |
 | DDoS / acesso não autorizado (% de incidentes, 2026, atualização 2026-09-28) | DDoS 51,3%; acesso não autorizado 39,5% | ENISA Threat Landscape 2026 | Confirmado (2 fontes); métrica de "disrupção real" sem equivalente 2026 |
 | Ransomware / violação de dados / fraude, entre eventos financeiramente motivados (2026, atualização 2026-09-28) | 40% / 31% / 19% | ENISA Threat Landscape 2026 | Confirmado (2 fontes); categoria nova, sem equivalente direto na edição 2025 |
-| Ameaças a OT (% de categorias) | 18,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); sem equivalente 2026 confirmado — **[NÃO CONFIRMADO em 2026-09-28]** |
+| Ameaças a OT (% de categorias) | 18,2% | ENISA Threat Landscape 2025 | Confirmado (2 fontes); sem equivalente 2026 confirmado — **[NÃO CONFIRMADO em 2026-10-28, 3º ciclo]** |
+| Novas vulnerabilidades divulgadas (global, com CVE) | 48.000+ (+22% a/a, atualização 2026-10-28) | ENISA Threat Landscape 2026 | Confirmado (2 fontes); substitui 42.595 (+27%) da edição 2025 |
+| Exploração de vulnerabilidades como via de entrada (acesso não autorizado) | ~60% | ENISA Threat Landscape 2026 (atualização 2026-10-28) | Confirmado (2 fontes) |
+| Setor mais afetado por volume de atividade de ameaça (telemetria própria) | Setor público, 27% (ante 17%, atualização 2026-10-28) | Microsoft Digital Defense Report 2026 | Confirmado (2 fontes); recorte distinto do ranking Mandiant/IBM X-Force acima |
 | IA em ataques (% de violações) | 16% (IBM) / phishing 80%+ das campanhas (ENISA) | IBM 2025 / ENISA 2025 | Confirmado (2 fontes cada); métricas não somáveis entre si |
 | Ranking WEF — cyber insecurity (2 anos) | #6 | WEF Global Risks Report 2026 | Confirmado (2 fontes) |
 | AI como driver #1 de mudança (2026) | 94% dos líderes | WEF Global Cybersecurity Outlook 2026 | Confirmado (2 fontes) |
@@ -4226,3 +4277,48 @@ ciclos anteriores): `02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-open
 - Check Point Research. *The State of Ransomware – Q2 2026*. https://research.checkpoint.com/2026/the-state-of-ransomware-q2-2026/
 - ZeroFox. *Qilin's latest spree of alleged victims*. 2026. https://www.zerofox.com/intelligence/qilins-latest-spree-of-alleged-victims/
 - Radware. *H1 2026 Global Threat Analysis Report*. 2026. https://www.radware.com/security/threat-intelligence/
+
+## Registro do refresh — 2026-10-28 (varredura rotativa: grupo 0 — Global/Comparativo + caps. 01 e 04)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 301 ÷ 3) mod 5 = **0** → `global`, `comparativoGlobal`, `comparativo`
++ caps. 01 e 04. Este grupo não era auditado isoladamente desde 2026-10-13 (15 dias).
+
+Janela recente (item 2): nenhum incidente-marco de escala verdadeiramente global em financeiro/energia nos
+últimos 3 dias (25-28/10/2026); nenhuma edição nova de IBM Cost of a Data Breach, Verizon DBIR, Mandiant
+M-Trends, CrowdStrike Global Threat Report ou WEF além das já incorporadas (todas anuais, próximas edições
+só entre jan/2027 e mai/2027).
+
+| Item auditado | Veredito |
+| :-- | :-- |
+| IBM Cost of a Data Breach 2026 (custo global, financeiro, energia, 247 dias) | Confirmado atual — sem edição mais nova; próxima só em jul/2027 |
+| Mandiant M-Trends 2026 (dwell time 14 dias; Alta Tecnologia 17%; financeiro 14,6%) | Confirmado atual — sem edição mais nova |
+| Verizon DBIR 2026 (48% ransomware; 31% exploits) | Confirmado atual — sem edição mais nova |
+| CrowdStrike Global Threat Report 2026 (29 min; 27 s; 82% malware-free) | Confirmado atual — sem edição mais nova |
+| Microsoft Digital Defense Report 2026 (phishing 23% dos casos de IR) | Confirmado atual, sem edição mais nova. **Atualizado**: achado de fonte única do ciclo anterior (setor público como mais afetado, 27% ante 17%) agora confirmado por comunicado oficial da Microsoft + 2ª fonte independente — ver "Atualização 2026-10-28" acima. Setor financeiro (4%) permanece fonte única, não incorporado |
+| WEF Global Cybersecurity Outlook / Global Risks Report 2026 | Confirmado atual — sem edição mais nova |
+| ENISA Threat Landscape 2026 | **Atualizado parcialmente** — contagem de novas vulnerabilidades confirmada (48.000+, +22% a/a; substitui 42.595/+27% da edição 2025), agora com exploração de vulnerabilidades como via de entrada em ~60% dos acessos não autorizados também confirmada. Ameaças a OT (18,2% na edição 2025) **permanece [NÃO CONFIRMADO]** pelo 3º ciclo consecutivo — ver "Atualização 2026-10-28" acima |
+| Sophos State of Ransomware 2026 | Sem novidade — edição 2026 já registrada em 2026-10-13; nenhum capítulo cita a Sophos com número específico, nada a substituir |
+| Prazos regulatórios citados nos caps. 01/04 (item 2c) | Nenhuma nova ocorrência de prazo futuro já vencido localizada; a correção de 13/10/2026 (cap. 04, prazo CMN 5.274/BCB 538) permanece válida e consistente com o cap. 02 e o `dashboard.json` |
+
+Obsolescência temporal (item 2c): nenhuma ocorrência nova de prazo/data futura já vencida foi localizada
+nos blocos `global`/`comparativoGlobal`/`comparativo` do painel nem nos caps. 01 e 04 (checagem por padrões
+"previsto", "até 202x", "próximos N meses", "entrará em vigor" não encontrou pendências além das já
+corrigidas em ciclos anteriores).
+
+Destinos atualizados: `fontes-e-referencias/dossie-pesquisa.md` (nova seção "Atualização 2026-10-28" +
+tabela-resumo + este registro) e `01-panorama-global/README.md` (parágrafo da ENISA atualizado com a
+contagem de vulnerabilidades confirmada e novo parágrafo sobre o setor público no MDDR 2026; refs.
+[58]-[61] novas). `04-comparativo/README.md`: nenhuma mudança — o capítulo não cita ENISA nem o recorte
+setorial do MDDR. `dashboard/src/data/dashboard.json`: nenhum KPI numérico dos blocos
+`global`/`comparativoGlobal`/`comparativo` precisou mudar — nenhum desses blocos tem indicador dedicado a
+ENISA ou ao recorte setorial do MDDR; apenas `meta.geradoEm`/`meta.verificadoEm` atualizados para
+2026-10-28 e nova entrada em `fontes.incorporacoesRecentes`. Nenhum SVG pendente novo identificado neste
+ciclo (pendências já conhecidas de ciclos anteriores seguem: `02-mapa-regulatorio-financeiro-br`,
+`02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`).
+
+#### Fontes desta revisão
+
+- IEU Monitoring. *ENISA warns cyber dependencies widen risks to EU digital infrastructure*. 22 de setembro de 2026. https://ieu-monitoring.com/editorial/enisa-warns-cyber-dependencies-widen-risks-to-eu-digital-infrastructure/1250546/
+- Cloud Security Alliance. *ENISA Threat Landscape 2026: Dependencies Turn EU Cyber Risk Systemic* (research note). Setembro de 2026. https://labs.cloudsecurityalliance.org/research/csa-research-note-enisa-threat-landscape-2026-systemic-risk/
+- Microsoft. *Microsoft Digital Defense Report: Governments Now Most Impacted Sector, Facing 27% of Threat Activity*. Outubro de 2026. https://news.microsoft.com/source/emea/features/microsoft-digital-defense-report-2026-government-cyber-threats/
+- Mezha.ua. *Ukraine is first in Europe target for cyberattacks*. Outubro de 2026. https://mezha.ua/en/news/ukraine-is-first-in-europe-target-for-cyberattacks-315890/
