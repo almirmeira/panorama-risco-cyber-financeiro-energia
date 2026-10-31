@@ -4322,3 +4322,83 @@ ciclo (pendências já conhecidas de ciclos anteriores seguem: `02-mapa-regulato
 - Cloud Security Alliance. *ENISA Threat Landscape 2026: Dependencies Turn EU Cyber Risk Systemic* (research note). Setembro de 2026. https://labs.cloudsecurityalliance.org/research/csa-research-note-enisa-threat-landscape-2026-systemic-risk/
 - Microsoft. *Microsoft Digital Defense Report: Governments Now Most Impacted Sector, Facing 27% of Threat Activity*. Outubro de 2026. https://news.microsoft.com/source/emea/features/microsoft-digital-defense-report-2026-government-cyber-threats/
 - Mezha.ua. *Ukraine is first in Europe target for cyberattacks*. Outubro de 2026. https://mezha.ua/en/news/ukraine-is-first-in-europe-target-for-cyberattacks-315890/
+
+## Registro do refresh — 2026-10-31 (varredura rotativa: grupo 1 — setor financeiro, recorte global + cap. 02)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 304 ÷ 3) mod 5 = **1** → `setores[id=financeiro]` itens **globais**
+(custo, *ransomware* contra o setor, motivação DBIR, *deepfake*, DDoS, barra, pizza) + cap. 02 (FS-ISAC,
+IBM, DBIR Finance, Black Kite, Akamai/Cloudflare/Radware). Este mesmo grupo foi auditado em 2026-10-16 (15
+dias atrás) — por isso o volume de itens "confirmado atual, sem mudança" é alto, resultado esperado.
+
+| Item do grupo 1 | Veredito | Evidência |
+| :-- | :-: | :-- |
+| Custo médio de violação (IBM CODB 2026, US$ 6,3 mi) | Confirmado atual | Sem edição mais nova; próxima só em jul/2027 |
+| *Ransomware* direto (Black Kite, 156→202; Q1 2026 +76%; Q2 2026: 135) | Confirmado atual | Nenhuma atualização Q3 2026 localizada na Black Kite nem em cobertura secundária |
+| Motivação DBIR 2026 (98%/3%; 3.809/1.300) | Confirmado atual | Sem *Finance Snapshot* 2026 avulso publicado pela Verizon; sem mudança desde 01/10/2026 |
+| *Deepfake* (Signicat 6,5%/Entrust 20%) | Confirmado atual | Nenhum novo *tracker* setorial específico localizado nesta janela |
+| DDoS (Akamai SOTI 2026: +738% global; Radware H1 2026: 2º setor, 20,8%) | Confirmado atual | Sem edição mais nova da Akamai ou da Radware |
+| FS-ISAC *Navigating Cyber 2026* | Não localizado (reconfirmado) | Edição mais recente continua sendo a de maio de 2025 |
+
+Janela recente (item 2) — fora do recorte estrito do grupo 1, mas dentro da regra de checagem de
+incidentes-marco a cada ciclo: um incidente de escala global foi localizado e incorporado ao cap. 02
+(nova seção "Intrusão com ferramentas de IA agêntica: a onda sul-coreana de 2026") e à dimensão
+"Ransomware" do painel (como caso correlato, não como *ransomware*).
+
+- **Onda de invasões ao setor financeiro sul-coreano (set.–out. de 2026), com atribuição parcial a
+  ferramenta de IA agêntica (ARTEX):** o Shinhan Bank confirmou violação em 30/9/2026 (divulgada em
+  1º/10/2026, ~25 mil clientes). Em reunião de emergência de 14/10/2026, a Comissão de Serviços
+  Financeiros (FSC) da Coreia do Sul confirmou **16 instituições financeiras** afetadas na mesma janela
+  — bancos Shinhan, KB Kookmin, Busan e Hana, e as financeiras de poupança Yegaram, Welcome, DB e OK —,
+  somando cerca de **100 mil registros pessoais expostos**. Em outubro a onda se espalhou para a
+  corretora Daishin Securities (38.490 clientes expostos, divulgado em 28/10/2026), a *exchange* de
+  criptoativos Bithumb (acesso não autorizado a sistema interno de *groupware* de terceiro, sem
+  confirmação de exposição de dados de clientes) e a gestora Mirae Asset Global Investments (incidente
+  confirmado, sem confirmação de exfiltração). A CrowdStrike atribuiu parte da campanha (final de
+  setembro a início de outubro) a um ator não identificado operando **ARTEX**, ferramenta de *pentest*
+  agêntico de código aberto desenvolvida na China, combinada a múltiplos LLMs (DeepSeek v4.1-flash,
+  GLM-5.3, Grok 4.6) — a atribuição só foi possível porque o atacante deixou expostos, em diretório
+  aberto, históricos de sessão do Claude Code e arquivos de memória da IA usados na operação; a
+  CrowdStrike Intelligence identificou ao menos 9 instituições sul-coreanas sondadas pela ferramenta. A
+  contagem de instituições comprometidas diverge entre fontes (16 pela FSC; ao menos 9 pela
+  CrowdStrike) — investigação em andamento, tratar como preliminar.
+  - Fonte 1 (primária, atribuição técnica): CrowdStrike. *Unknown Threat Actor Uses AI-Driven ARTEX to
+    Target South Korean Finance*. Outubro de 2026.
+    https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+  - Fonte 2 (independente, mesma atribuição com detalhe sobre as sessões do Claude Code): BleepingComputer.
+    *ARTEX AI, Claude agents used in cyberattacks on South Korean banks*. Outubro de 2026.
+    https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/
+  - Fonte 3 (independente, cobertura da resposta regulatória e da onda de outubro — Daishin/Bithumb/Mirae
+    Asset): TechCrunch. *South Korea's financial industry hit by fresh wave of cyberattacks*. 28 de
+    outubro de 2026. https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks
+  - Observações: corroborado adicionalmente por Korea Herald, Infosecurity Magazine e Yonhap (via
+    cobertura agregada). Não é um caso de *ransomware* — é intrusão/vazamento de dados; incorporado à
+    dimensão "Ransomware" do painel por proximidade geográfica e temática com o caso Qilin/GJTec já
+    registrado (mesmo país, mesmo padrão de comprometimento via terceiro/ferramenta compartilhada), com
+    nota explícita distinguindo os dois casos. Não altera nenhum KPI numérico do bloco financeiro.
+    Reguladores sul-coreanos não confirmaram publicamente a atribuição da CrowdStrike ao fechamento
+    desta pesquisa — tratar o vínculo ARTEX/campanha de outubro como parcial, não como fato consolidado.
+
+**Não confirmado, não incorporado (nesta janela):** nenhum outro gap do grupo 1 ficou sem arbitragem em
+2026-10-31; a divergência entre a contagem da FSC (16) e da CrowdStrike (9) para instituições afetadas
+é registrada como característica de uma investigação em andamento, não como erro a corrigir.
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida foi localizada nos
+itens do grupo 1 nem no texto novo incorporado nesta passagem; os prazos regulatórios brasileiros já
+corrigidos em ciclos anteriores (CMN 5.274/BCB 538, MED 2.0, Res. BCB 587/2026) permanecem consistentes
+entre o cap. 02 e o `dashboard.json`.
+
+Destinos atualizados: `fontes-e-referencias/dossie-pesquisa.md` (este registro), `02-setor-financeiro/README.md`
+(nova seção "Intrusão com ferramentas de IA agêntica: a onda sul-coreana de 2026", refs. [105]-[107] novas)
+e `dashboard/src/data/dashboard.json` (dimensão "Ransomware" do setor financeiro ampliada com o caso,
+com nota distinguindo-o de *ransomware*; `meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-10-31;
+nova entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico do bloco financeiro precisou mudar —
+o incidente não tem impacto financeiro quantificado e divulgado. Nenhum SVG pendente novo identificado
+neste ciclo (pendências já conhecidas de ciclos anteriores seguem: `02-mapa-regulatorio-financeiro-br`,
+`02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`).
+
+#### Fontes desta revisão
+
+- CrowdStrike. *Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance*. Outubro de 2026. https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+- BleepingComputer. *ARTEX AI, Claude agents used in cyberattacks on South Korean banks*. Outubro de 2026. https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/
+- TechCrunch. *South Korea's financial industry hit by fresh wave of cyberattacks*. 28 de outubro de 2026. https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks
+- BleepingComputer. *South Korea probes bank breaches amid suspected AI-powered attacks*. Outubro de 2026. https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/ (cobertura anterior da mesma onda, usada apenas para contexto cronológico)

@@ -183,6 +183,30 @@ financeiras cresceram **43%** globalmente e **48%** na América do Norte em dois
 dupla ("*big game hunting*") listaram **423 entidades do setor financeiro** em sites de vazamento
 dedicados, alta de **27%** frente ao ano anterior [8][9].
 
+### Intrusão com ferramentas de IA agêntica: a onda sul-coreana de 2026
+
+Entre o final de setembro e outubro de 2026, uma onda de invasões atingiu o setor financeiro da Coreia
+do Sul. O Shinhan Bank confirmou uma violação em 30 de setembro, divulgada em 1º de outubro, com cerca de
+**25 mil clientes afetados**. Em reunião de emergência de **14 de outubro de 2026**, a Comissão de
+Serviços Financeiros (FSC) sul-coreana confirmou que **16 instituições financeiras** — os bancos Shinhan,
+KB Kookmin, Busan e Hana, e as financeiras de poupança Yegaram, Welcome, DB e OK — sofreram violação de
+dados na mesma janela, somando cerca de **100 mil registros pessoais expostos**, incluindo números de
+registro de residentes. A onda se espalhou em outubro para a corretora **Daishin Securities** (dados de
+**38.490 clientes** expostos, divulgado em 28/10/2026), a *exchange* de criptoativos **Bithumb** (acesso
+não autorizado a sistema interno de *groupware* operado por terceiro, sem confirmação de exposição de
+dados de clientes segundo a própria empresa) e a gestora **Mirae Asset Global Investments** (incidente
+confirmado, sem confirmação de exfiltração de dados). A CrowdStrike atribuiu parte da campanha (final de
+setembro a início de outubro) a um ator não identificado operando **ARTEX**, ferramenta de *pentest*
+agêntico de código aberto desenvolvida na China, combinada a múltiplos modelos de linguagem (DeepSeek
+v4.1-flash, GLM-5.3 e Grok 4.6) — a atribuição foi possível porque o próprio atacante deixou expostos, em
+diretório aberto, históricos de sessão do Claude Code e arquivos de memória da IA usados na operação. A
+CrowdStrike Intelligence identificou ao menos **9 instituições financeiras** sul-coreanas sondadas pela
+ferramenta, e caracteriza o caso como uso de IA agêntica como ferramenta dentro de uma intrusão ainda
+operada por humanos, não uma operação autônoma. O número de instituições efetivamente comprometidas varia
+entre fontes — 16 segundo a FSC, ao menos 9 segundo a CrowdStrike — refletindo estágios e critérios de
+contagem distintos de uma investigação em andamento; reguladores não confirmaram publicamente a
+atribuição da CrowdStrike até o fechamento desta pesquisa [105][106][107].
+
 ### Deepfake e engenharia social: a nova fronteira da fraude
 
 Tentativas de fraude por *deepfake* cresceram **2.137%** em três anos, passando de 0,1% para **6,5%** de
@@ -934,3 +958,12 @@ https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/direito-
 
 [104] Okai. *PSTI: nova regulação e impactos na contratação de serviços*. 2026.
 https://okai.com.br/blog/psti-nova-regulacao-e-impactos-na-contratacao-do-servicos
+
+[105] CrowdStrike. *Unknown Threat Actor Uses AI-Driven ARTEX to Target South Korean Finance*. Outubro
+de 2026. https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+
+[106] BleepingComputer. *ARTEX AI, Claude agents used in cyberattacks on South Korean banks*. Outubro de
+2026. https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/
+
+[107] TechCrunch. *South Korea's financial industry hit by fresh wave of cyberattacks*. 28 de outubro de
+2026. https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks
