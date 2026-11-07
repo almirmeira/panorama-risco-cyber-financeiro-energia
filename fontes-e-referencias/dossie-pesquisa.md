@@ -2216,6 +2216,10 @@ em 2026-07-21.
 
 ### Atualização 2026-09-01 — Resposta regulatória dos EUA: emergência nacional para o sistema de energia em massa
 
+> **[SUPERADO em 2026-11-07]** A ordem foi renumerada para **Ordem Executiva 14421** — ver atualização de
+> 2026-11-07 abaixo, que preserva este registro original e acrescenta o novo número, o primeiro passo do
+> processo de regulamentação (RFI do DOE) e seus prazos.
+
 - **Dado:** em **26 de agosto de 2026**, o presidente dos EUA assinou a **Ordem Executiva 14420**, declarando
   emergência nacional sobre riscos associados a equipamentos elétricos do sistema de energia em massa
   (*bulk-power system*) produzidos no exterior — citando explicitamente riscos de cibersegurança, acesso
@@ -2248,6 +2252,39 @@ em 2026-07-21.
     técnicos específicos]**. Fora do escopo direto de ANEEL/ONS/BACEN (é regulação dos EUA, não do Brasil),
     mas registrado aqui como contraponto regulatório internacional relevante ao capítulo Energia, no mesmo
     padrão já usado para a norma NERC CIP.
+
+### Atualização 2026-11-07 — Ordem Executiva do sistema elétrico dos EUA renumerada para 14421; DOE abre RFI
+
+- **Dado:** a ordem registrada acima desde 2026-09-01 como "Ordem Executiva 14420" aparece, desde setembro
+  de 2026, renumerada para **Ordem Executiva 14421** — numeração usada de forma consistente pelo próprio
+  Departamento de Energia dos EUA (FAQ oficial sobre a ordem e o RFI, atualizada em 6 de outubro de 2026) e
+  por múltiplos escritórios de advocacia especializados em direito regulatório de energia desde setembro de
+  2026 (Pillsbury, Steptoe, Davis Wright Tremaine, McGuireWoods); a numeração 14420 permanece em uso por
+  coberturas jurídicas mais antigas (ex.: Baker McKenzie, Holland & Knight, já citadas acima) — nenhuma
+  fonte consultada explica publicamente o motivo da renumeração. Como primeiro passo concreto do processo
+  de regulamentação previsto pela ordem, o DOE publicou, em **9 de setembro de 2026**, um *Request for
+  Information* (RFI) no *Federal Register* (Docket **DOE-HQ-2026-1123**, RIN **1901-AB79**), com prazo de
+  comentários encerrado em **9 de outubro de 2026**, e promoveu um webinar informativo em 16 de setembro de
+  2026. O prazo de 120 dias para as regras de implementação do DOE (até 24/12/2026) permanece o próximo
+  marco — ainda não vencido nesta data (07/11/2026) — e não foi antecipado nem alterado por este RFI.
+  - Fonte 1: McGuireWoods. *DOE Issues Request for Information on Securing U.S. Bulk-Power System Under
+    Executive Order 14421*. Setembro de 2026.
+    https://www.mcguirewoods.com/client-resources/alerts/2026/9/doe-issues-request-for-information-on-securing-u-s-bulk-power-system-under-executive-order-14421/
+  - Fonte 2 (independente, confirma renumeração e cronograma do RFI): Davis Wright Tremaine (DWT). *U.S.
+    Department of Energy Seeks Input on Bulk-Power System Executive Order*. Setembro de 2026.
+    https://www.dwt.com/blogs/energy--environmental-law-blog/2026/09/doe-bulk-power-system-rfi-eo-14421
+    (ver também DWT, *DOE's Bulk-Power System RFI Webinar Features Important Takeaways for Stakeholders*,
+    setembro de 2026, https://www.dwt.com/blogs/energy--environmental-law-blog/2026/09/doe-bulk-power-rfi-guidance)
+  - Fonte 3 (independente, detalha docket/RIN e prazo do RFI): Mayer Brown. *Department of Energy Issues
+    Request for Information with a Deadline of October 9, 2026, as First Step of Rulemaking Process for
+    Restrictions on Foreign-Sourced Bulk Power Equipment*. Setembro de 2026.
+    https://www.mayerbrown.com/en/insights/publications/2026/09/department-of-energy-issues-request-for-information-with-a-deadline-of-october-9-2026-as-first-step-of-rulemaking-process-for-restrictions-on-foreign-sourced-bulk-power-equipment
+  - Observações: achado de precisão/contexto regulatório — não altera nenhum KPI numérico do painel (a
+    ordem não tem representação numérica própria no `dashboard.json`; os dois prazos de 120/180 dias já
+    registrados em 2026-09-01 permanecem corretos e pendentes). Mantido o registro original de
+    2026-09-01 (incluindo a numeração 14420), com nota de superação, por preservar o histórico de pesquisa,
+    conforme a regra deste dossiê. **[NÃO CONFIRMADO — motivo da renumeração de 14420 para 14421 não
+    localizado em fonte oficial nesta pesquisa, em 2026-11-07]**.
 
 ---
 
@@ -2437,7 +2474,7 @@ em 2026-07-21.
 | Brasil — Eletrobras/Eletronuclear e Copel (fev/2021) | Ransomware DarkSide (Copel); sem impacto em Angra 1/2 | BleepingComputer / Canaltech | Confirmado (2 fontes) |
 | Brasil — Petrobras/Everest (nov/2025) | >176 GB alegados (>90 GB atribuídos à Petrobras) | Hackread / Cybernews | Parcialmente confirmado — Petrobras contesta atribuição direta |
 | Brasil — Cemig (vazamento de dados, mai/2026) | ~135 mil clientes; sem impacto operacional | CanalEnergia / ConvergenciaDigital | Confirmado (2 fontes) |
-| EUA — Emergência Nacional para o Bulk-Power System (26/8/2026) | Ordem Executiva 14420; prazos DOE: 120 dias (regras) / 180 dias (revisão FAR) | The White House / Holland & Knight | Confirmado (2 fontes); regras de implementação do DOE ainda não publicadas |
+| EUA — Emergência Nacional para o Bulk-Power System (26/8/2026) | Ordem Executiva 14421 (antes citada como 14420); RFI do DOE publicado 9/9/2026, comentários encerrados 9/10/2026; prazos: 120 dias (regras, até 24/12/2026) / 180 dias (revisão FAR, até 22/2/2027) | The White House / Holland & Knight / McGuireWoods / DWT | Confirmado (2+ fontes); regras de implementação do DOE ainda não publicadas |
 
 **Legenda:** idêntica à das tabelas-resumo Global e Financeiro. "Parcialmente confirmado" indica que o valor
 numérico central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de
@@ -4402,3 +4439,73 @@ neste ciclo (pendências já conhecidas de ciclos anteriores seguem: `02-mapa-re
 - BleepingComputer. *ARTEX AI, Claude agents used in cyberattacks on South Korean banks*. Outubro de 2026. https://www.bleepingcomputer.com/news/security/hacker-used-artex-ai-and-claude-agents-to-target-south-korean-banks/
 - TechCrunch. *South Korea's financial industry hit by fresh wave of cyberattacks*. 28 de outubro de 2026. https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks
 - BleepingComputer. *South Korea probes bank breaches amid suspected AI-powered attacks*. Outubro de 2026. https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/ (cobertura anterior da mesma onda, usada apenas para contexto cronológico)
+
+## Registro do refresh — 2026-11-07 (varredura rotativa: grupo 3 — setor energia + cap. 03)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 311 ÷ 3) mod 5 = **3** → `setores[id=energia]` (kpis, dimensões,
+barra, pizza) + cap. 03 (Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM
+energia, ANEEL/ONS). Este grupo foi auditado isoladamente em 2026-10-22 (16 dias atrás).
+
+Janela recente (item 2): nenhuma edição nova do Dragos *OT/ICS Cybersecurity Year in Review* nem da análise
+trimestral de ransomware industrial da Dragos para o 3º trimestre de 2026 (a edição do 2º tri. saiu em
+10/8/2026; a estimativa registrada em 22/10/2026 previa a do 3º tri. para ~9/11/2026 — ainda não publicada
+em 07/11/2026). Kaspersky ICS CERT também não publicou o relatório do 3º tri. 2026 (2º tri. em 25/8/2026
+continua a edição mais recente). Nenhum incidente-marco novo em energia (Brasil ou global) nos últimos 3
+dias; os advisórios ICS da CISA localizados em outubro de 2026 (Hitachi Energy, Savannah lwIP) são rotina
+de patch de fornecedor, não um incidente novo.
+
+| Item auditado | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Ransomware industrial (Dragos, anual e trimestral: +87%/2024, +64%/2025, 1.140 no 2T2026) | Confirmado atual | Nenhum relatório do 3º tri. 2026 publicado até 07/11/2026 |
+| Dwell time de ransomware em OT (42→5 dias) | Confirmado atual | Mesma fonte (Dragos YIR 2026); sem atualização |
+| Computadores ICS atacados — energia elétrica 22,8% (H1 2025) e série global (19,15% no 2T2026) | Confirmado atual | Kaspersky ICS CERT não publicou o relatório do 3º tri. 2026; nenhum detalhamento setorial novo |
+| Intrusões em OT — Fortinet 2026 (71%/24%) | Confirmado atual | Relatório anual; sem edição mais nova |
+| Advisórios ICS CISA 2025 (>500; 508 Forescout / 506 CSAF) | Confirmado atual | Número histórico (ano encerrado) |
+| Custo médio de violação — energia USD 5,2 mi (IBM CODB 2026) | Confirmado atual | Edição anual; próxima só em jul/2027 |
+| Nozomi Networks — Manipulação de Dados / 6% de redes Wi-Fi protegidas | Confirmado atual | Nenhuma edição 2026 localizada, mesma lacuna já registrada em ciclos anteriores |
+| RN ANEEL nº 964/2021, Despacho nº 427/2025 | Confirmado atual | Nenhum ato normativo novo publicado |
+| Submódulo 5.13/ONS (RO-CB.BR.01) — revisão em curso | Confirmado atual | Nenhum texto revisado publicado até 07/11/2026; processo segue aberto desde dez/2025 |
+| Casos Brasil — Eletrobras/Copel (2021), Petrobras/Everest (2025), Cemig (2026) | Confirmado atual | Nenhum desfecho novo para a divergência Petrobras×Everest; nenhum incidente novo |
+| Sandworm/Static Tundra — Polônia (dez/2025) e ator ligado ao Irã — Reino Unido (jul/2026) | Confirmado atual | Nenhuma atualização nova localizada |
+| Atribuição — AA26-097A / CyberAv3ngers | Confirmado atual | Nenhuma atualização do advisório desde 22/7/2026 |
+| ANEEL/Sisbin (achado de 24/09/2026) | Confirmado [NÃO CONFIRMADO] | Ainda fonte única (Cenário Energia); texto oficial da portaria não localizado nesta busca |
+| **Ordem Executiva 14420 do sistema elétrico dos EUA (26/8/2026)** | **Atualizado (precisão/contexto)** | Ver achado abaixo — renumerada para 14421; DOE abriu RFI |
+| Modelo Purdue, IEC 62443 (fundamentos técnicos) | Confirmado atual | Sem mudança normativa/conceitual a registrar |
+
+**Achado — Ordem Executiva renumerada para 14421; DOE abre RFI como primeiro passo da regulamentação.**
+Ver seção "Atualização 2026-11-07" no bloco Energia do dossiê (acima) para o registro completo. Em
+resumo: a ordem de 26/8/2026 sobre o *bulk-power system*, registrada desde 01/09/2026 como "Ordem
+Executiva 14420", é citada desde setembro de 2026 por três escritórios de advocacia independentes e pela
+própria FAQ do DOE como **Ordem Executiva 14421** (motivo da renumeração não encontrado em fonte oficial).
+O DOE publicou em 9/9/2026 um RFI no Federal Register (Docket DOE-HQ-2026-1123, RIN 1901-AB79; comentários
+encerrados em 9/10/2026) — primeiro passo formal do processo que deve culminar nas regras de implementação
+até 24/12/2026 (prazo que permanece pendente e inalterado).
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida localizada no bloco
+`energia` do painel nem no cap. 03. Os dois prazos futuros da ordem (120 dias/24-12-2026 e 180
+dias/22-02-2027) ainda não venceram em 07/11/2026 e continuam corretamente descritos como pendentes; o RFI
+do DOE (prazo de comentários em 9/10/2026) já está corretamente redigido no passado nesta atualização.
+
+Destinos atualizados: `fontes-e-referencias/dossie-pesquisa.md` (nova seção "Atualização 2026-11-07" no
+bloco Energia, com nota de superação no registro de 01/09/2026; linha da tabela-resumo atualizada; este
+registro de ciclo), `03-setor-energia/README.md` (parágrafo sobre a ordem executiva atualizado com a nova
+numeração e o RFI; refs. [80]-[82] novas) e `dashboard/src/data/dashboard.json`
+(`meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-11-07; nova entrada em
+`fontes.incorporacoesRecentes`). Nenhum KPI numérico do painel mudou — o achado é de precisão/contexto
+regulatório, não de valor; a ordem não tem indicador numérico dedicado no `dashboard.json`. SVGs
+pendentes (não editados, já sinalizados em ciclos anteriores): `02-mapa-regulatorio-financeiro-br`,
+`02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- McGuireWoods. *DOE Issues Request for Information on Securing U.S. Bulk-Power System Under Executive
+  Order 14421*. Setembro de 2026. https://www.mcguirewoods.com/client-resources/alerts/2026/9/doe-issues-request-for-information-on-securing-u-s-bulk-power-system-under-executive-order-14421/
+- Davis Wright Tremaine (DWT). *U.S. Department of Energy Seeks Input on Bulk-Power System Executive
+  Order*. Setembro de 2026. https://www.dwt.com/blogs/energy--environmental-law-blog/2026/09/doe-bulk-power-system-rfi-eo-14421
+  (ver também DWT, *DOE's Bulk-Power System RFI Webinar Features Important Takeaways for Stakeholders*,
+  setembro de 2026, https://www.dwt.com/blogs/energy--environmental-law-blog/2026/09/doe-bulk-power-rfi-guidance)
+- Mayer Brown. *Department of Energy Issues Request for Information with a Deadline of October 9, 2026, as
+  First Step of Rulemaking Process for Restrictions on Foreign-Sourced Bulk Power Equipment*. Setembro de
+  2026. https://www.mayerbrown.com/en/insights/publications/2026/09/department-of-energy-issues-request-for-information-with-a-deadline-of-october-9-2026-as-first-step-of-rulemaking-process-for-restrictions-on-foreign-sourced-bulk-power-equipment
+- Dragos / Kaspersky ICS CERT. Confirmação de ausência de edição trimestral do 3º tri. 2026 até
+  07/11/2026 (checagem direta das páginas de publicações). 2026.
