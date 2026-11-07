@@ -217,15 +217,20 @@ como o primeiro caso desse tipo bem-sucedido contra o setor de energia do país;
 não foi identificado nas fontes consultadas [53][54].
 
 Poucos dias depois, em 26 de agosto de 2026, o governo dos EUA deu uma resposta regulatória de peso a esse tipo
-de ameaça: o presidente assinou a **Ordem Executiva 14420**, declarando **emergência nacional** sobre riscos
-associados a equipamentos elétricos do sistema de energia em massa (*bulk-power system*) produzidos no exterior,
-citando explicitamente riscos de cibersegurança, acesso remoto não autorizado, sabotagem e disrupção de cadeia de
-suprimentos. A ordem autoriza o Departamento de Energia dos EUA (DOE) a proibir, condicionar ou desfazer
-transações envolvendo esses equipamentos, com prazo de **120 dias** (até 24/12/2026) para regras de implementação
-e **180 dias** (até 22/2/2027) para recomendações de revisão do regulamento federal de aquisições (FAR) [55][56].
-É a primeira declaração formal de emergência nacional dos EUA motivada especificamente por risco
-cibernético/cadeia de suprimentos ao sistema elétrico identificada nesta pesquisa — as regras de implementação do
-DOE ainda não haviam sido publicadas até a data desta atualização, então o efeito prático segue em aberto.
+de ameaça: o presidente assinou a **Ordem Executiva 14421** (citada em cobertura mais antiga, e neste capítulo
+até a atualização de novembro de 2026, como "Ordem Executiva 14420" — a renumeração não tem motivo publicamente
+explicado nas fontes consultadas), declarando **emergência nacional** sobre riscos associados a equipamentos
+elétricos do sistema de energia em massa (*bulk-power system*) produzidos no exterior, citando explicitamente
+riscos de cibersegurança, acesso remoto não autorizado, sabotagem e disrupção de cadeia de suprimentos. A ordem
+autoriza o Departamento de Energia dos EUA (DOE) a proibir, condicionar ou desfazer transações envolvendo esses
+equipamentos, com prazo de **120 dias** (até 24/12/2026) para regras de implementação e **180 dias** (até
+22/2/2027) para recomendações de revisão do regulamento federal de aquisições (FAR) [55][56]. Como primeiro
+passo concreto desse processo, o DOE publicou em 9 de setembro de 2026 um *Request for Information* (RFI) no
+*Federal Register* (Docket DOE-HQ-2026-1123, RIN 1901-AB79), com prazo de comentários encerrado em 9 de
+outubro de 2026 [80][81][82]. É a primeira declaração formal de emergência nacional dos EUA motivada
+especificamente por risco cibernético/cadeia de suprimentos ao sistema elétrico identificada nesta pesquisa — as
+regras de implementação do DOE, previstas para 24/12/2026, ainda não haviam sido publicadas até a data desta
+atualização, então o efeito prático segue em aberto.
 
 ### Atores relevantes: Sandworm/ELECTRUM e Volt Typhoon/VOLTZITE
 
@@ -668,3 +673,15 @@ https://cenarioenergia.com.br/2025/12/02/ons-abre-consulta-para-aprimorar-rotina
 [79] Brasil Energia / EnergiaHoje. *Novas rotinas de segurança cibernética do ONS começam a mexer com
 agentes*. Dezembro de 2025.
 https://brasilenergia.com.br/energia/operacao/novas-rotinas-de-seguranca-cibernetica-do-ons-comecam-a-mexer-com-agentes
+
+[80] McGuireWoods. *DOE Issues Request for Information on Securing U.S. Bulk-Power System Under Executive
+Order 14421*. Setembro de 2026.
+https://www.mcguirewoods.com/client-resources/alerts/2026/9/doe-issues-request-for-information-on-securing-u-s-bulk-power-system-under-executive-order-14421/
+
+[81] Davis Wright Tremaine (DWT). *U.S. Department of Energy Seeks Input on Bulk-Power System Executive
+Order*. Setembro de 2026.
+https://www.dwt.com/blogs/energy--environmental-law-blog/2026/09/doe-bulk-power-system-rfi-eo-14421
+
+[82] Mayer Brown. *Department of Energy Issues Request for Information with a Deadline of October 9, 2026,
+as First Step of Rulemaking Process for Restrictions on Foreign-Sourced Bulk Power Equipment*. Setembro de
+2026. https://www.mayerbrown.com/en/insights/publications/2026/09/department-of-energy-issues-request-for-information-with-a-deadline-of-october-9-2026-as-first-step-of-rulemaking-process-for-restrictions-on-foreign-sourced-bulk-power-equipment

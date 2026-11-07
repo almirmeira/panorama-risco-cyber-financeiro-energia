@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-10-31",
-    "verificadoEm": "2026-11-01",
+    "geradoEm": "2026-11-07",
+    "verificadoEm": "2026-11-07",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-11-07",
+        "fonte": "Varredura rotativa (grupo 3/5) — setor energia, cap. 03 (Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM energia, ANEEL/ONS) + janela recente (item 2)",
+        "oQueMudou": "Nenhuma edição trimestral nova de Dragos (Q3 2026) ou Kaspersky ICS CERT (Q3 2026) até 07/11/2026; nenhum incidente-marco novo em energia nos últimos 3 dias; nenhum ato normativo novo de ANEEL/ONS (revisão do Submódulo 5.13 segue em curso, sem texto publicado); divergência Petrobras×Everest segue sem desfecho; ANEEL/Sisbin segue [NÃO CONFIRMADO] por fonte única. Achado de precisão/contexto confirmado por 3 fontes jurídicas independentes (McGuireWoods, DWT, Mayer Brown) e pela FAQ oficial do DOE: a Ordem Executiva de 26/8/2026 sobre o bulk-power system, registrada neste dossiê desde 01/09/2026 como 'Ordem Executiva 14420', aparece desde set/2026 renumerada para 'Ordem Executiva 14421' (motivo da renumeração não localizado). Como primeiro passo do processo de regulamentação, o DOE publicou em 9/9/2026 um Request for Information (RFI) no Federal Register (Docket DOE-HQ-2026-1123, RIN 1901-AB79), com prazo de comentários encerrado em 9/10/2026; o prazo de 120 dias para as regras de implementação (24/12/2026) permanece o próximo marco, ainda não vencido. Nenhum KPI numérico do bloco energia mudou — o painel não tem indicador dedicado a esta ordem; atualização incorporada como contexto no cap. 03 e no dossiê."
+      },
       {
         "data": "2026-10-31",
         "fonte": "Varredura rotativa (grupo 1/5) — setor financeiro (recorte global), cap. 02 + janela recente (item 2)",
