@@ -4509,3 +4509,103 @@ pendentes (não editados, já sinalizados em ciclos anteriores): `02-mapa-regula
   2026. https://www.mayerbrown.com/en/insights/publications/2026/09/department-of-energy-issues-request-for-information-with-a-deadline-of-october-9-2026-as-first-step-of-rulemaking-process-for-restrictions-on-foreign-sourced-bulk-power-equipment
 - Dragos / Kaspersky ICS CERT. Confirmação de ausência de edição trimestral do 3º tri. 2026 até
   07/11/2026 (checagem direta das páginas de publicações). 2026.
+
+## Registro do refresh — 2026-11-16 (varredura rotativa: grupo 1 — setor financeiro, recorte global + cap. 02)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 320 ÷ 3) mod 5 = **1** → `setores[id=financeiro]` itens **globais**
+(custo, *ransomware* contra o setor, motivação DBIR, *deepfake*, DDoS, barra, pizza) + cap. 02 (FS-ISAC,
+IBM, DBIR Finance, Black Kite, Akamai/Cloudflare/Radware). Este mesmo grupo foi auditado em 2026-10-31 (16
+dias atrás), por isso o volume de itens "confirmado atual, sem mudança" é alto, resultado esperado.
+
+| Item do grupo 1 | Veredito | Evidência |
+| :-- | :-: | :-- |
+| Custo médio de violação (IBM CODB 2026, US$ 6,3 mi) | Confirmado atual | Edição anual; próxima só em jul/2027 |
+| *Ransomware* direto (Black Kite, 156→202; Q1 2026 +76%; Q2 2026: 135) | Confirmado atual | Nenhum relatório do 3º tri. 2026 localizado na Black Kite nem em cobertura secundária |
+| Motivação DBIR 2026 (98%/3%; 3.336/927 base 2025) | Confirmado atual | Nenhum *Finance Snapshot* 2026 avulso publicado pela Verizon (verificado por busca dedicada no padrão de URL `verizon.com/business/resources/infographics/2026-dbir-finance-snapshot.pdf`, inexistente); seção financeira segue coberta apenas no corpo do DBIR 2026 e no sumário executivo |
+| *Deepfake* (Signicat 6,5%/Entrust 20%) | Confirmado atual | Nenhum novo *tracker* setorial específico do setor financeiro localizado nesta janela; pesquisas recentes (OSFI Canadá, AU10TIX Q1 2026, Reality Defender) medem fraude de identidade agregada, não a métrica Signicat/Entrust citada no capítulo |
+| DDoS (Akamai SOTI 2026: +738% global; Radware H1 2026: 2º setor, 20,8%) | Confirmado atual | Sem edição mais nova da Akamai; relatório H2 2026 da Radware ainda não publicado (período em curso) |
+| FS-ISAC *Navigating Cyber 2026* | Não localizado (reconfirmado) | Edição mais recente continua sendo a de maio de 2025; FS-ISAC divulgou apenas um *advisory* sobre IA (abril de 2026) e o *2025 Year in Review*, não um relatório anual novo |
+
+Janela recente (item 2) — fora do recorte estrito do grupo 1, mas dentro da regra de checagem de
+incidentes-marco a cada ciclo: um incidente de escala relevante foi localizado e incorporado ao cap. 02
+e à dimensão "Ransomware" do painel (como caso correlato de ataque a terceiro/cadeia de suprimentos, não
+como *ransomware*).
+
+- **Comprometimento de prestador terceirizado desvia cerca de € 100 milhões do Crédit Mutuel Arkéa
+  (novembro de 2026):** em 4/11/2026 o grupo bancário francês Crédit Mutuel Arkéa confirmou um ataque
+  cibernético que explorou a plataforma de um prestador de serviços terceirizado (não identificado
+  publicamente) para obter acesso a uma conta própria do banco e, a partir dela, emitir transferências
+  fraudulentas para contas em outras instituições financeiras — não contas de clientes, que o banco afirma
+  não terem sido afetadas (algumas transações foram suspensas por precaução, gerando atrasos). A Reuters
+  noticiou em 5/11/2026, citando o banco, um desvio de aproximadamente **€100 milhões (≈ US$ 112,6
+  milhões)**, que o banco está tentando recuperar; parte dos recursos já havia sido bloqueada. A OCCRP,
+  com fontes próprias, relatou um valor superior, de aproximadamente **€118 milhões (≈ US$ 133 milhões)**
+  — o banco não confirmou esse número, dizendo apenas que é "da ordem de grandeza correta", nem confirmou
+  se os recursos desviados foram convertidos em criptoativos (hipótese levantada por parte da cobertura). O
+  Crédit Mutuel Arkéa notificou o Banco Central Europeu, os supervisores bancários franceses e abriu queixa
+  junto ao Ministério Público; a unidade de crimes cibernéticos da Procuradoria de Paris abriu investigação
+  em 5/11/2026. Veículos franceses atribuíram o ponto de entrada à Fortuneo, subsidiária de banco digital do
+  grupo, mas isso não foi confirmado oficialmente pelo banco — ao contrário, o banco negou especificamente
+  que a Fortuneo fosse o ponto de entrada em pelo menos uma declaração.
+  - Fonte 1 (agência de notícias, reproduzida por múltiplos veículos com a mesma matéria): Reuters (Mathieu
+    Rosemain, Elizabeth Howcroft e Mateusz Rabiega). *French bank Credit Mutuel Arkea says €100 million
+    missing after cyberattack*. 5 de novembro de 2026.
+    https://wmbdradio.com/2026/11/05/french-bank-credit-mutuel-arkea-says-e100-million-missing-after-cyberattack/
+  - Fonte 2 (independente, apuração própria com valor distinto): OCCRP. *Hackers Steal Estimated €118
+    Million in Cyberattack on French Bank*. Novembro de 2026.
+    https://www.occrp.org/en/news/hackers-steal-estimated-118-million-euros-in-cyberattack-on-french-bank
+  - Fonte 3 (independente, imprensa especializada em segurança/cibercrime): GovInfoSecurity (ISMG). *French
+    Bank Loses 100 Million Euros in Cyberattack*. Novembro de 2026.
+    https://www.govinfosecurity.com/french-bank-loses-100-million-euros-in-cyberattack-a-33309
+  - Observações: corroborado adicionalmente por BleepingComputer, Security Affairs, CSOonline e Computing.co.uk
+    (cobertura agregada, mesmos fatos). **[Valor exato não confirmado em 2026-11-16 — divergência entre
+    €100 milhões (Reuters/declaração do banco) e €118 milhões (OCCRP); tratar como estimativa até o banco
+    publicar um número final]**. Não é um caso de *ransomware* — é fraude/desvio via comprometimento de
+    terceiro; incorporado à dimensão "Ransomware" do painel por ser, como o caso GJTec/Qilin já registrado
+    nesta seção, outro exemplo concreto de como o risco de terceiros amplifica o impacto de um único
+    comprometimento no setor financeiro, com nota explícita distinguindo-o de *ransomware*. Não altera
+    nenhum KPI numérico do bloco financeiro — o valor exato do desvio é disputado e não há métrica dedicada
+    a esse tipo de incidente no `dashboard.json`.
+
+Outras checagens da janela recente (item 2): nenhuma atualização regulatória nova do Banco Central do
+Brasil localizada desde 13/11/2026 (o marco regulatório vigente continua sendo as Resoluções CMN
+5.274/BCB 538, de dezembro de 2025, com prazo de conformidade vencido em 1º/3/2026, já registradas em
+ciclos anteriores); nenhum incidente-marco novo no setor de energia localizado nesta janela (checagem
+qualitativa, fora do recorte estrito do grupo 1 — o grupo 3/energia foi auditado em profundidade em
+07/11/2026).
+
+**Não confirmado, não incorporado (nesta janela):** menções de imprensa a supostos ataques a bancos na
+Malásia e na Indonésia (novembro de 2026) e à suposta reivindicação do grupo Qilin contra o Habib Bank AG
+Zurich foram descartadas desta rodada — a primeira por cobertura de fonte única sem números confirmáveis,
+e a segunda por se referir a um incidente de novembro de **2025** (já historicamente anterior ao escopo
+deste ciclo), não a um evento novo de 2026 como sugeriam alguns resultados de busca.
+
+Obsolescência temporal (item 2c): nenhuma ocorrência de prazo/data futura já vencida foi localizada nos
+itens do grupo 1 nem no texto novo incorporado nesta passagem; os prazos regulatórios brasileiros e o
+cronograma da Ordem Executiva 14421 (EUA, energia), já corrigidos em ciclos anteriores, permanecem
+consistentes entre os capítulos e o `dashboard.json`.
+
+Destinos atualizados: `fontes-e-referencias/dossie-pesquisa.md` (este registro), `02-setor-financeiro/README.md`
+(nova seção "Comprometimento de terceiro desvia cerca de € 100 milhões do Crédit Mutuel Arkéa (novembro de
+2026)", refs. [108]-[110] novas) e `dashboard/src/data/dashboard.json` (dimensão "Ransomware" do setor
+financeiro ampliada com o caso, com nota distinguindo-o de *ransomware*; `meta.geradoEm`/`meta.verificadoEm`
+atualizados para 2026-11-16; nova entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico do bloco
+financeiro precisou mudar — o valor do desvio é disputado entre fontes e não há métrica dedicada a este
+tipo de incidente no painel. Nenhum SVG pendente novo identificado neste ciclo (pendências já conhecidas de
+ciclos anteriores seguem: `02-mapa-regulatorio-financeiro-br`, `02-superficie-pix-openfinance`,
+`03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`).
+
+#### Fontes desta revisão
+
+- Reuters (Mathieu Rosemain, Elizabeth Howcroft e Mateusz Rabiega). *French bank Credit Mutuel Arkea says
+  €100 million missing after cyberattack*. 5 de novembro de 2026.
+  https://wmbdradio.com/2026/11/05/french-bank-credit-mutuel-arkea-says-e100-million-missing-after-cyberattack/
+- OCCRP. *Hackers Steal Estimated €118 Million in Cyberattack on French Bank*. Novembro de 2026.
+  https://www.occrp.org/en/news/hackers-steal-estimated-118-million-euros-in-cyberattack-on-french-bank
+- GovInfoSecurity (ISMG). *French Bank Loses 100 Million Euros in Cyberattack*. Novembro de 2026.
+  https://www.govinfosecurity.com/french-bank-loses-100-million-euros-in-cyberattack-a-33309
+- Black Kite. Confirmação de ausência de edição trimestral (Q3 2026) do *2026 State of Financial Services
+  Report* até 16/11/2026 (checagem direta da página de publicações). 2026.
+- Verizon / FS-ISAC / Akamai / Radware. Confirmação de ausência de edições novas (DBIR Finance Snapshot
+  2026, Navigating Cyber 2026, SOTI financeiro H2 2026, Radware H2 2026) até 16/11/2026 (checagem direta
+  das páginas de publicações). 2026.
