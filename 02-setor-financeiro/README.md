@@ -207,6 +207,28 @@ entre fontes — 16 segundo a FSC, ao menos 9 segundo a CrowdStrike — refletin
 contagem distintos de uma investigação em andamento; reguladores não confirmaram publicamente a
 atribuição da CrowdStrike até o fechamento desta pesquisa [105][106][107].
 
+### Comprometimento de terceiro desvia cerca de € 100 milhões do Crédit Mutuel Arkéa (novembro de 2026)
+
+Em **4 de novembro de 2026**, o grupo bancário francês **Crédit Mutuel Arkéa** confirmou um ataque
+cibernético que explorou a plataforma de um prestador de serviços terceirizado (não identificado
+publicamente) para obter acesso a uma conta própria do banco e, a partir dela, emitir transferências
+fraudulentas para contas em outras instituições financeiras — não contas de clientes, que o banco afirma
+não terem sido afetadas (algumas transações foram suspensas por precaução, gerando atrasos). A Reuters
+noticiou, em 5/11/2026, citando o banco, um desvio de aproximadamente **€100 milhões (≈ US$ 112,6
+milhões)**, que o banco está tentando recuperar; parte dos recursos já havia sido bloqueada [108]. A OCCRP,
+com apuração própria, relatou um valor superior, de aproximadamente **€118 milhões (≈ US$ 133 milhões)**
+[109] — o banco não confirmou esse número, dizendo apenas que é "da ordem de grandeza correta", nem
+confirmou se os recursos desviados foram convertidos em criptoativos, hipótese levantada por parte da
+cobertura [108][109][110]. O banco notificou o Banco Central Europeu e os supervisores bancários franceses
+e apresentou queixa ao Ministério Público; a unidade de crimes cibernéticos da Procuradoria de Paris abriu
+investigação em 5/11/2026. Veículos franceses associaram o ponto de entrada à Fortuneo, subsidiária de
+banco digital do grupo, mas o banco não confirmou essa informação oficialmente. O caso ilustra, com um
+valor concreto já reconhecido pelo próprio banco, a categoria de ameaça "ataques à cadeia de
+suprimentos/terceiros" apontada pela FS-ISAC como a 2ª mais relevante ao setor [1][2] — na mesma linha do
+caso GJTec/Qilin já registrado nesta seção, porém por fraude/desvio de transferência, não por *ransomware*.
+**[Valor exato não confirmado em 2026-11-16 — divergência entre €100 milhões (Reuters/banco) e €118
+milhões (OCCRP); tratar como estimativa até o banco publicar um número final]** [108][109][110].
+
 ### Deepfake e engenharia social: a nova fronteira da fraude
 
 Tentativas de fraude por *deepfake* cresceram **2.137%** em três anos, passando de 0,1% para **6,5%** de
@@ -967,3 +989,13 @@ de 2026. https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-
 
 [107] TechCrunch. *South Korea's financial industry hit by fresh wave of cyberattacks*. 28 de outubro de
 2026. https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks
+
+[108] Reuters (Mathieu Rosemain, Elizabeth Howcroft e Mateusz Rabiega). *French bank Credit Mutuel Arkea
+says €100 million missing after cyberattack*. 5 de novembro de 2026.
+https://wmbdradio.com/2026/11/05/french-bank-credit-mutuel-arkea-says-e100-million-missing-after-cyberattack/
+
+[109] OCCRP. *Hackers Steal Estimated €118 Million in Cyberattack on French Bank*. Novembro de 2026.
+https://www.occrp.org/en/news/hackers-steal-estimated-118-million-euros-in-cyberattack-on-french-bank
+
+[110] GovInfoSecurity (ISMG). *French Bank Loses 100 Million Euros in Cyberattack*. Novembro de 2026.
+https://www.govinfosecurity.com/french-bank-loses-100-million-euros-in-cyberattack-a-33309
