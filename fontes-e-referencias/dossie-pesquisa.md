@@ -1663,6 +1663,107 @@ incorporados acima.
 
 ---
 
+### Atualização 2026-11-19 — varredura rotativa (grupo 2/5): setor financeiro, recorte Brasil
+
+Grupo da rotação de 2026-11-19 (dia do ano 323 → (323÷3)%5 = 2): mesmo recorte dos ciclos anteriores (grupo 2,
+2026-10-04 e 2026-10-19) — `setores[id=financeiro]` itens do BRASIL (golpes, Open Finance, incidentes
+reportados ao BC, Pix/MED, terceiros/PSTI, regulação CMN/BCB) + cap. 02. Esta passagem reverifica cada item do
+grupo contra a edição mais recente publicada até hoje (um mês após o ciclo anterior).
+
+| Item do grupo 2 | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Fraude Pix (28 mi casos jan–set/2025, ADDP; 24 mi vítimas jul/2024–jun/2025) | Confirmado atual | Sem edição mais recente localizada |
+| Prejuízo com golpes financeiros no Brasil (R$ 10,1 bi, 2024, Febraban) | Confirmado atual | Busca direcionada à Pesquisa Febraban de Tecnologia Bancária 2026 (Deloitte) não encontrou balanço oficial de prejuízo de 2025 em reais; só menções de imprensa sem fonte primária (ex.: "mais de R$ 2 bi" em ataques hacker a bancos/fintechs, não comparável à série de golpes ao consumidor). R$ 10,1 bi/2024 segue o dado mais recente da série |
+| Prejuízo Pix formalmente apurado (R$ 2,7 bi/2 anos, +43%, Febraban) | Confirmado atual | Sem mudança |
+| Golpe da falsa venda (174 mil ocorrências, +314% a/a, Febraban, 1º sem./2025) | Confirmado atual | Sem edição mais nova |
+| Estelionato FBSP (2,26 milhões de registros em 2025, +2,7%) | Confirmado atual | Sem edição mais nova localizada |
+| Open Finance — consentimentos ativos (200+ mi, jul/2026; 208,8–239,8 mi) | Confirmado atual, sem atualização confiável | Localizados números de ago/2026 (208,79 mi no dashboard oficial em 31/7; 223,5 mi segundo a Associação Open Finance Brasil; 254,1 mi em série semanal citada por agregador de terceiros) — **divergentes entre si e não confirmáveis por fetch direto** (domínios bloqueados pelo proxy de saída deste ambiente); mantido o intervalo já registrado em vez de propagar um número não arbitrável |
+| **Incidentes relevantes/cibernéticos reportados ao BC (76 em 2025, +29%)** | **Atualizado — nova série parcial de 2026** | O Relatório de Estabilidade Financeira (REF, Vol. 25) do BC, de 27/10/2026, registra **99 incidentes entre jan–set/2026** (68 fraudes, ~69%), já superando o total de 2025 — ver detalhamento abaixo |
+| Regulação CMN 4.893/2021, BCB 85/2021, CMN 5.274/2025, BCB 538/2025 (prazo vencido em 1º/3/2026) | Confirmado atual | Sem mudança |
+| MED 2.0 — Resolução BCB nº 493/2025 / Resolução BCB nº 587/2026 | Confirmados atuais | Sem mudança |
+| Regulação de credenciamento de PSTI (Res. BCB nº 498/2025, IN 664/2025, Res. BCB nº 547/2026) | Confirmado atual | Sem mudança |
+| **Regulação — PSAVs (prestadoras de serviços de ativos virtuais)** | **Novo — incorporado** | Localizada a **Resolução BCB nº 552/2026** (3/3/2026, pré-existente, ainda não incorporada ao dossiê), que estende a política de segurança cibernética da Resolução BCB nº 85/2021 às PSAVs — ver detalhamento abaixo |
+| Vazamentos de chaves Pix (série de 2026: Agibank, MPGO, Pefisa, Credifit, >33,5 mil chaves) | **Atualizado — 5º episódio** | Localizado um 5º episódio do mesmo padrão, envolvendo o Tesouro Nacional (órgão federal, não instituição financeira) — ver detalhamento abaixo |
+| Casos de terceiros/PSTI (C&M, Sinqia, FictorPay, Banco do Nordeste, BTG Pactual, Pane Seca, TAG/Stone) | Confirmados atuais, sem mudança | Sem novo caso localizado nesta janela |
+| Caso BRB/TJBA (520 Pix, R$ 53,1 milhões, 17/9/2026) | Confirmado atual, sem desfecho novo | TJBA restabeleceu o BRBJUS com limites operacionais temporários (R$ 1 milhão/dia, R$ 100 mil à noite); disputa entre banco e tribunal sobre origem do incidente e eventual rescisão contratual segue sem decisão publicada — **[DESFECHO NÃO CONFIRMADO em 2026-11-19]** |
+| Atores de ameaça (Slim Spider, BREEZE COMET, Qilin, FIN7 etc.) | Confirmados atuais | Sem novo ator localizado nesta janela |
+
+**Gaps identificados e incorporados nesta janela (ao capítulo `02-setor-financeiro/README.md`,
+`dashboard/src/data/dashboard.json` e à tabela-resumo abaixo):**
+
+- **Banco Central — Relatório de Estabilidade Financeira (REF), out/2026 — nova série parcial de incidentes
+  cibernéticos em 2026:** divulgado em **27 de outubro de 2026**, o REF (Volume 25) registra **99 incidentes
+  cibernéticos** no Sistema Financeiro Nacional entre janeiro e setembro de 2026 — o maior número da série
+  desde pelo menos 2018, já superior aos 76 incidentes de todo o ano de 2025. Dos 99, **68 (≈69%)** foram
+  classificados como fraude, alta de ≈74% frente aos 39 casos de fraude de 2025 (números consistentes com os
+  já registrados no dossiê para 2025, confirmando que ambos os relatórios usam a mesma metodologia de
+  contagem). O relatório atribui o recorde ao mesmo padrão estrutural já descrito (dependência de PSTIs,
+  exploração de credenciais de funcionários/prestadores via phishing, abuso de APIs) e não identifica as
+  instituições afetadas.
+  - Fonte 1 (primária): Banco Central do Brasil. *Relatório de Estabilidade Financeira*, Volume 25.
+    27/10/2026. https://www.bcb.gov.br/content/publicacoes/ref/202610/RELESTAB202610-refPub.pdf
+  - Fonte 2 (independente, cobertura do mesmo relatório): Tribuna do Sertão (reproduzindo O Globo).
+    *Incidentes cibernéticos no sistema financeiro batem recorde, e fraudes já são 7 em cada 10 casos, diz
+    BC*. 27/10/2026. https://www.tribunadosertao.com.br/financas/2026/10/27/1007146-incidentes-ciberneticos-no-sistema-financeiro-batem-recorde-e-fraudes-ja-sao-7-em-cada-10-casos-diz-bc
+  - Fonte 3 (independente): Agenda do Poder. *Incidentes cibernéticos no setor financeiro batem recorde e
+    fraudes sobem 74%, diz BC*. Outubro de 2026. https://agendadopoder.com.br/incidentes-ciberneticos-no-setor-financeiro-batem-recorde-e-fraudes-sobem-74-diz-bc/
+  - Observações: acesso direto ao PDF primário via *fetch* automatizado foi bloqueado pelo proxy de saída
+    deste ambiente; números confirmados por convergência entre três coberturas independentes do mesmo
+    relatório (adicionalmente: CryptoID, NN1, Boca.com.br, Brasil em Folhas, Gazeta Mercantil). Esta métrica
+    é a mesma série/metodologia já citada como "Relatório Integrado" para anos fechados (2024, 2025); o REF é
+    o veículo semestral do BC que também a reporta para dados parciais do ano corrente. Atualiza o KPI
+    "Incidentes relevantes reportados ao BC" do painel (preservando o valor anterior no campo `delta`).
+
+- **Tesouro Nacional — 5º episódio da série de vazamentos de chaves Pix em 2026:** acesso não autorizado às
+  bases do portal e-Serviços e de consultas internas de pagamentos federais, identificado em **4 de novembro
+  de 2026** e divulgado publicamente em **12 de novembro de 2026**: cerca de **30 mil cadastros** (nome, CPF,
+  e-mail) e cerca de **4 mil chaves Pix** de beneficiários de pagamentos federais (com dados das respectivas
+  transações) foram expostos. Sem acesso a senhas ou saldos, e sem prejuízo financeiro identificado; o órgão
+  comunicou o caso à ANPD e apontou como principal risco o uso das informações por terceiros para golpes e
+  comunicações enganosas. Diferentemente dos quatro episódios anteriores (Agibank, MPGO, Pefisa, Credifit,
+  todos envolvendo instituições financeiras ou participantes diretos do Pix), este é o primeiro da série a
+  envolver um órgão público federal — mantido na mesma série por se tratar do mesmo padrão de exposição de
+  dados cadastrais vinculados a chaves Pix comunicado publicamente com a mesma metodologia. Eleva o total
+  agregado da série de 2026 de mais de 33,5 mil para mais de **37,6 mil chaves Pix** expostas no ano.
+  - Fonte 1: IstoÉ. *Ataque ao Tesouro Nacional expõe 30 mil cadastros e 4 mil chaves Pix*. 12/11/2026.
+    https://istoe.com.br/ataque-tesouro-nacional-dados-chaves-pix-2
+  - Fonte 2 (independente): Times Brasil (licenciado CNBC). *Tesouro Nacional confirma vazamento de dados de
+    30 mil cadastros e 4 mil chaves Pix*. Novembro de 2026.
+    https://timesbrasil.com.br/brasil/tesouro-nacional-confirma-vazamento-de-dados-de-30-mil-cadastros-e-4-mil-chaves-pix/
+  - Observações: corroborado adicionalmente por InvestNews, Gameoverdrive, A Crítica (Campo Grande) e SBT
+    News, todos de novembro de 2026 e convergentes quanto aos números. Acesso direto via *fetch* automatizado
+    bloqueado pelo proxy de saída deste ambiente para a maioria dos domínios; números confirmados por
+    convergência de busca entre coberturas independentes.
+
+- **Resolução BCB nº 552/2026 — extensão da política de segurança cibernética às PSAVs:** em **3 de março de
+  2026** (dado pré-existente, ainda não incorporado ao dossiê), a Resolução BCB nº 552/2026 — publicada junto
+  com a Resolução BCB nº 553/2026, de natureza prudencial/contábil — alterou a Resolução BCB nº 85/2021 para
+  estender às **Prestadoras de Serviços de Ativos Virtuais (PSAVs)** a exigência de política de segurança
+  cibernética documentada e demais normativos de conformidade, remuneração e contratação de serviços de
+  tecnologia/computação em nuvem já aplicáveis a instituições de pagamento. É relevante ao escopo deste
+  dossiê por ampliar o perímetro regulatório de cibersegurança do BC para o segmento de criptoativos,
+  adjacente ao padrão de risco de terceiros/Pix já documentado.
+  - Fonte 1: Capital Aberto. *Novo marco regulatório e contábil das PSAVs e as prioridades do BCB para 2026*.
+    Março de 2026. https://capitalaberto.com.br/artigos/novo-marco-regulatorio-e-contabil-das-psavs-prioridades-do-bcb/
+  - Fonte 2 (independente): Convergência Digital. *Banco Central impõe mais governança, responsabilidade e
+    resiliência operacional à segurança cibernética nas instituições financeiras*. Março de 2026.
+    https://convergenciadigital.com.br/seguranca/banco-central-impoe-mais-governanca-responsabilidade-e-resiliencia-operacional-a-seguranca-cibernetica-nas-instituicoes-financeiras/
+  - Observações: acesso direto às duas fontes via *fetch* automatizado foi bloqueado pelo proxy de saída
+    deste ambiente; conteúdo confirmado por convergência de busca (incluindo folhape.com.br e
+    campograndenews.com.br). Não altera nenhum KPI numérico do painel — atualização qualitativa/regulatória,
+    incorporada à seção de regulação do cap. 02 e à dimensão "Regulação" do painel.
+
+**Verificado e não alterado (obsolescência temporal, item 2c):** o caso BRB/TJBA (ver tabela acima) não tem
+desfecho publicamente confirmado sobre a disputa contratual entre banco e tribunal; mantido o tempo verbal
+de disputa em curso, sem marcação de prazo futuro já vencido. Nenhum outro trecho do capítulo 02 ou do bloco
+`financeiro` do `dashboard.json` trata como futuro algo cuja data já passou.
+
+**Não confirmado, não incorporado (nesta janela):** o número de consentimentos ativos do Open Finance Brasil
+para set–out/2026 (ver linha acima) — fontes conflitantes (208,79–254,1 milhões) sem arbitragem possível com
+os recursos de acesso disponíveis neste ambiente; mantido o intervalo já registrado no dossiê e no painel.
+
+---
+
 ### Tabela-resumo — Financeiro
 
 | Métrica | Valor | Relatório primário | Status |
@@ -1696,11 +1797,15 @@ incorporados acima.
 | Vazamento Agibank / chaves Pix (1º de 2026, fev/2026) | 5.290 chaves Pix; apenas dados cadastrais | Banco Central (via CNN Brasil / Revista Oeste) | Confirmado (2 fontes); incorporado em 2026-10-19 |
 | Vazamento MP de Goiás / chaves Pix (2º de 2026, mar/2026) | 93 chaves Pix (51 CPFs); apenas dados cadastrais | Banco Central (via Folha PE / Tribuna do Sertão) | Confirmado (2 fontes); incorporado em 2026-10-19 |
 | Vazamento Credifit / chaves Pix (4º de 2026, mai/2026) | 46 chaves Pix; apenas dados cadastrais | Banco Central (via Finsiders Brasil / ConvergenciaDigital) | Confirmado (2 fontes); incorporado em 2026-10-19 |
-| Agregado — vazamentos de chaves Pix em 2026 (4 episódios) | Mais de 33,5 mil chaves Pix expostas no ano | Banco Central (soma de Agibank+MPGO+Pefisa+Credifit) | Confirmado (2 fontes); incorporado em 2026-10-19 |
+| Agregado — vazamentos de chaves Pix em 2026 (4 episódios) | **[SUPERADO em 2026-11-19 — ver linha abaixo]** Mais de 33,5 mil chaves Pix expostas no ano | Banco Central (soma de Agibank+MPGO+Pefisa+Credifit) | Confirmado (2 fontes); incorporado em 2026-10-19 |
 | Tentativa de invasão — fintech Swap (19/6/2026) | Bloqueada pela própria empresa; sem perda financeira ou de dados | Finsiders Brasil / CISO Advisor | Confirmado (2 fontes) |
 | Ator Slim Spider (CrowdStrike, divulgado set/2026) | Ativo desde mar/2026; rouba credenciais de nuvem e custódia cripto; mira infra do Pix | CrowdStrike / The Hacker News | Confirmado (2 fontes); fetch direto bloqueado pelo proxy |
 | Golpe da falsa venda (1º semestre de 2025, Febraban) | 174 mil ocorrências (+314% a/a); saltou da 3ª para a 1ª posição no ranking de reclamações | Febraban (via Diário de Pernambuco / Tribuna de Minas) | Confirmado (2 fontes); incorporado em 2026-10-19 |
 | Regulação — credenciamento de PSTI (Res. BCB nº 498/2025, IN BCB nº 664/2025, Res. BCB nº 547/2026) | Capital mínimo R$ 15 milhões; requisitos de governança, auditoria e continuidade para PSTIs com acesso à RSFN | Banco Central (via Machado Meyer / Okai) | Confirmado (2 fontes); incorporado em 2026-10-19 — corrige classificação equivocada de ciclos anteriores |
+| Incidentes cibernéticos no SFN (jan–set/2026) | 99 incidentes (68 fraude, ~69%); já supera os 76 de todo 2025 | Banco Central (Relatório de Estabilidade Financeira, Vol. 25, 27/10/2026) | Confirmado (3 fontes); incorporado em 2026-11-19 |
+| Vazamento Tesouro Nacional / chaves Pix (5º de 2026, nov/2026) | ~30 mil cadastros + ~4 mil chaves Pix; apenas dados cadastrais | Tesouro Nacional (via IstoÉ / Times Brasil) | Confirmado (2 fontes); incorporado em 2026-11-19 |
+| Agregado — vazamentos de chaves Pix em 2026 (5 episódios) | Mais de 37,6 mil chaves Pix expostas no ano | Banco Central (soma de Agibank+MPGO+Pefisa+Credifit+Tesouro Nacional) | Confirmado (2 fontes); incorporado em 2026-11-19 |
+| Regulação — PSAVs / segurança cibernética (Res. BCB nº 552/2026) | Estende a política de segurança cibernética da Res. BCB nº 85/2021 às Prestadoras de Serviços de Ativos Virtuais | Banco Central (via Capital Aberto / Convergência Digital) | Confirmado (2 fontes); incorporado em 2026-11-19 |
 
 **Legenda:** idêntica à da tabela-resumo Global. Itens "Parcialmente confirmado" indicam que o valor numérico
 central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de ouro

@@ -53,6 +53,7 @@ brasileiro — Pix, Open Finance, regulação do Banco Central e incidentes conh
 | Fraude por *deepfake* (evolução em 3 anos, dado de 2025)      | 0,1% → 6,5% das tentativas (+2.137%)    | Signicat [67][68]               |
 | *Deepfake* nas tentativas de fraude biométrica (2025)         | 1 em cada 5 (20%)                        | Entrust 2026 [69][70]           |
 | Incidentes relevantes reportados ao BC — Brasil (2024→2025)   | 59 → 76 incidentes (+29%)                | Banco Central (Relatório Integrado) [38][39] |
+| Incidentes cibernéticos no SFN — Brasil (jan–set/2026)        | 99 incidentes (68 fraude, ~69%); já supera o total de 2025 | Banco Central (Relatório de Estabilidade Financeira) [111][112][113] |
 
 ### FS-ISAC: as quatro ameaças que definem o setor
 
@@ -417,6 +418,12 @@ milhões** (podendo ser exigido valor maior), comprovação de capacidade técni
 regras da RSFN; a **Instrução Normativa BCB nº 664/2025** fixou os prazos de adequação para PSTIs já em
 operação. A **Resolução BCB nº 547/2026** alterou a 498/2025, endurecendo requisitos de capital, governança,
 segurança da informação, auditoria, controles e continuidade para os provedores já credenciados [103][104].
+Em **3 de março de 2026**, a **Resolução BCB nº 552/2026** — publicada junto com a Resolução BCB nº
+553/2026, de natureza prudencial/contábil — alterou a Resolução BCB nº 85/2021 para estender a exigência de
+**política de segurança cibernética documentada** (e os demais normativos de conformidade, remuneração e
+contratação de serviços de tecnologia/computação em nuvem já aplicáveis a instituições de pagamento) às
+**Prestadoras de Serviços de Ativos Virtuais (PSAVs)** — isto é, exchanges e demais provedores de
+criptoativos regulados pelo BC desde a Lei nº 14.478/2022 [116][117].
 
 > **Nota de precisão regulatória:** não existe uma "Resolução BCB nº 4.893" — o número correto é
 > **Resolução CMN nº 4.893/2021** (emitida pelo Conselho Monetário Nacional). A resolução paralela,
@@ -425,7 +432,7 @@ segurança da informação, auditoria, controles e continuidade para os provedor
 > números distintos — distinção confirmada por múltiplas fontes jurídicas (Migalhas, NDM Advogados,
 > SecOffice) [26][27][28][29].
 
-### Panorama agregado: incidentes reportados ao Banco Central em 2025
+### Panorama agregado: incidentes reportados ao Banco Central em 2025–2026
 
 Além dos casos individuais documentados abaixo, o **Relatório Integrado** do Banco Central referente a 2025
 registrou **76 incidentes cibernéticos considerados "relevantes"** no Sistema Financeiro Nacional — alta de
@@ -439,6 +446,15 @@ métrica é conceitualmente distinta do volume de fraude ao consumidor via Pix (
 e do *ransomware* direto contra instituições (156→202 incidentes, Black Kite): mede a contagem oficial de
 incidentes comunicados ao BC por instituições supervisionadas, uma métrica de governança/supervisão, não de
 volume de ataques ou de vítimas.
+
+O **Relatório de Estabilidade Financeira** (REF, Volume 25) do Banco Central, divulgado em **27 de outubro de
+2026**, atualiza essa série com dados parciais de 2026: entre janeiro e setembro já foram **99 incidentes
+cibernéticos** no Sistema Financeiro Nacional — o maior número da série desde pelo menos 2018 e já superior
+aos 76 de todo o ano de 2025. Desses 99, **68 casos (cerca de 69%) foram classificados como fraude**, alta de
+aproximadamente **74%** frente aos 39 casos de fraude de 2025. O relatório reafirma que os incidentes geraram
+perdas relevantes em casos específicos, mas não comprometeram o funcionamento do SFN, e aponta elevado grau de
+conhecimento dos grupos criminosos sobre a operação do sistema — consistente com o padrão de risco de
+terceiros/PSTI já descrito [111][112][113].
 
 ### Incidentes conhecidos no setor financeiro brasileiro (2025–2026)
 
@@ -500,8 +516,8 @@ terceiros/PSTI acima, a Pefisa é participante direta do Pix, não uma prestador
 qualitativamente mais próximo do vazamento de dados do Banco Neon do que dos episódios de desvio de
 recursos via fornecedor.
 
-O caso Pefisa é o terceiro de uma série de **quatro episódios do mesmo tipo em 2026**, que somam mais de
-**33,5 mil chaves Pix** expostas no ano — em todos, segundo o Banco Central, sem acesso a saldos, senhas,
+O caso Pefisa é o terceiro de uma série de **cinco episódios do mesmo tipo em 2026**, que somam mais de
+**37,6 mil chaves Pix** expostas no ano — em todos, segundo o Banco Central, sem acesso a saldos, senhas,
 extratos ou movimentação de recursos. O **1º** foi o **Agibank**, comunicado pelo BC em **13 de fevereiro de
 2026**: **5.290 chaves Pix** com dados cadastrais expostos entre 26/12/2025 e 30/1/2026, por falha pontual
 em sistemas do próprio banco. O **2º** envolveu o **Ministério Público de Goiás (MPGO)**, comunicado em
@@ -509,7 +525,13 @@ em sistemas do próprio banco. O **2º** envolveu o **Ministério Público de Go
 órgão em 1º/3/2026, decorrente do comprometimento da credencial de um integrante do MPGO que reutilizou uma
 senha institucional em serviço externo. O **4º** foi a **Credifit** (Sociedade de Crédito Direto), comunicado
 em meados de maio de 2026: **46 chaves Pix** expostas entre 26 e 28 de abril de 2026, por falhas pontuais em
-seus sistemas [97][98][99][100][101][102].
+seus sistemas [97][98][99][100][101][102]. O **5º**, e o primeiro a envolver um órgão federal em vez de uma
+instituição financeira ou participante direto do Pix, foi o **Tesouro Nacional**: um acesso indevido
+identificado em **4 de novembro de 2026** e divulgado publicamente em **12 de novembro de 2026** expôs cerca
+de **30 mil cadastros** (nome, CPF, e-mail) do portal e-Serviços e cerca de **4 mil chaves Pix** de
+beneficiários de pagamentos federais, com dados das respectivas transações; o órgão não identificou prejuízo
+financeiro e apontou como principal risco o uso das informações por terceiros para golpes e comunicações
+enganosas, tendo comunicado o caso à ANPD [114][115].
 
 Em **22 de março de 2026** (domingo), o **BTG Pactual** identificou atividades atípicas em operações Pix,
 suspendeu o serviço preventivamente e o retomou no dia seguinte, após um ataque que desviou cerca de
@@ -644,6 +666,7 @@ exigência-chave associada [23][26][27][28][29].*
 | Resolução BCB nº 493/2025 (MED 2.0)        | Banco Central do Brasil  | Participantes do Pix (provedores de conta transacional e liquidantes especiais) | Rastreio do caminho do dinheiro na devolução; autoatendimento para contestação | Obrigatório desde 2/2/2026 |
 | Resolução CMN nº 5.274/2025 + BCB nº 538/2025 | CMN / Banco Central do Brasil | Atualização do marco de segurança cibernética | MFA, *security by design*, pentest anual independente, trilhas de auditoria | Vencido em 1º/3/2026  |
 | Resolução BCB nº 587/2026                  | Banco Central do Brasil  | Participantes do Pix                       | Marcação de suspeita de fraude no DICT (até 5 anos), bloqueio e contestação | Imediato (18/9/2026); demais itens 1º/2/2027 e 1º/7/2027 |
+| Resolução BCB nº 552/2026                  | Banco Central do Brasil  | Prestadoras de Serviços de Ativos Virtuais (PSAVs) | Estende a BCB 85/2021: política de segurança cibernética documentada e demais normativos de conformidade | Em vigor desde 3/3/2026 |
 
 ## Fontes
 
@@ -999,3 +1022,28 @@ https://www.occrp.org/en/news/hackers-steal-estimated-118-million-euros-in-cyber
 
 [110] GovInfoSecurity (ISMG). *French Bank Loses 100 Million Euros in Cyberattack*. Novembro de 2026.
 https://www.govinfosecurity.com/french-bank-loses-100-million-euros-in-cyberattack-a-33309
+
+[111] Banco Central do Brasil. *Relatório de Estabilidade Financeira*, Volume 25. 27 de outubro de 2026.
+https://www.bcb.gov.br/content/publicacoes/ref/202610/RELESTAB202610-refPub.pdf
+
+[112] Tribuna do Sertão (reproduzindo O Globo). *Incidentes cibernéticos no sistema financeiro batem
+recorde, e fraudes já são 7 em cada 10 casos, diz BC*. 27 de outubro de 2026.
+https://www.tribunadosertao.com.br/financas/2026/10/27/1007146-incidentes-ciberneticos-no-sistema-financeiro-batem-recorde-e-fraudes-ja-sao-7-em-cada-10-casos-diz-bc
+
+[113] Agenda do Poder. *Incidentes cibernéticos no setor financeiro batem recorde e fraudes sobem 74%, diz
+BC*. Outubro de 2026.
+https://agendadopoder.com.br/incidentes-ciberneticos-no-setor-financeiro-batem-recorde-e-fraudes-sobem-74-diz-bc/
+
+[114] IstoÉ. *Ataque ao Tesouro Nacional expõe 30 mil cadastros e 4 mil chaves Pix*. 12 de novembro de 2026.
+https://istoe.com.br/ataque-tesouro-nacional-dados-chaves-pix-2
+
+[115] Times Brasil (licenciado CNBC). *Tesouro Nacional confirma vazamento de dados de 30 mil cadastros e
+4 mil chaves Pix*. Novembro de 2026.
+https://timesbrasil.com.br/brasil/tesouro-nacional-confirma-vazamento-de-dados-de-30-mil-cadastros-e-4-mil-chaves-pix/
+
+[116] Capital Aberto. *Novo marco regulatório e contábil das PSAVs e as prioridades do BCB para 2026*.
+Março de 2026. https://capitalaberto.com.br/artigos/novo-marco-regulatorio-e-contabil-das-psavs-prioridades-do-bcb/
+
+[117] Convergência Digital. *Banco Central impõe mais governança, responsabilidade e resiliência
+operacional à segurança cibernética nas instituições financeiras*. Março de 2026.
+https://convergenciadigital.com.br/seguranca/banco-central-impoe-mais-governanca-responsabilidade-e-resiliencia-operacional-a-seguranca-cibernetica-nas-instituicoes-financeiras/
