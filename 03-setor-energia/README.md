@@ -3,9 +3,9 @@
 > **Resumo Executivo**
 > - *Ransomware* contra organizações industriais acelerou dois anos seguidos: +87% em 2024 (80 grupos
 >   ativos) e +64% nos ataques em 2025 (grupos +49%, de 80 para 119; ~3.300 organizações impactadas) — e
->   seguiu subindo em 2026 (1.140 incidentes no 2º trimestre, +12% sobre o 1º) —, com manufatura respondendo
->   por mais de dois terços das vítimas — mas a energia elétrica já é o 3º setor mais atacado do mundo
->   por volume de objetos maliciosos bloqueados em computadores ICS.
+>   seguiu subindo em 2026 (1.140 incidentes no 2º trimestre, +12% sobre o 1º; 1.266 no 3º, +11% sobre o 2º)
+>   —, com manufatura respondendo por mais de dois terços das vítimas — mas a energia elétrica já é o 3º
+>   setor mais atacado do mundo por volume de objetos maliciosos bloqueados em computadores ICS.
 > - A Ucrânia sofreu os dois apagões mais documentados da história causados por ciberataque —
 >   BlackEnergy (2015) e Industroyer/CrashOverride (2016) — e uma tentativa neutralizada em 2022
 >   (Industroyer2), todos atribuídos ao grupo Sandworm por múltiplas fontes ocidentais (governo dos
@@ -47,7 +47,8 @@ pesquisa.
 |:------------------------------------------------------------------|:------------------------------------------------|:-----------------------------|
 | *Ransomware* contra orgs. industriais (2023→2024)                   | +87% a/a; 80 grupos ativos (+60%)              | Dragos [1][2]                |
 | *Ransomware* contra orgs. industriais (2024→2025)                   | Ataques +64% a/a; grupos +49% (80→119); ~3.300 orgs. impactadas | Dragos [3][4][73]            |
-| *Ransomware* industrial (1º→2º tri. 2026)                           | 1.140 incidentes no 2º tri. (+12% sobre 1.020 no 1º) | Dragos [61][62]              |
+| *Ransomware* industrial (1º→3º tri. 2026)                           | 1.020 → 1.140 → 1.266 incidentes (+12%; +11%)  | Dragos [61][62][83][84]      |
+| Incidentes com impacto físico confirmado (*cyber-physical*, global, cross-setorial) | 57 em 2025 (-25% vs. 76 em 2024); 23 foram *ransomware* (ante 45) | Waterfall Security/ICS STRIVE [85][86] |
 | *Dwell time* de *ransomware* em ambientes OT                        | 42 dias (5 dias com visibilidade OT plena)     | Dragos [3][4]                |
 | Computadores ICS atacados — energia elétrica (1º sem. 2025)        | 22,8% (3º setor mais atacado globalmente)      | Kaspersky ICS CERT [50][51]  |
 | Computadores ICS atacados — global (2º tri. 2026)                   | 19,15% (menor patamar desde 2022)              | Kaspersky ICS CERT [50][59][60] |
@@ -90,7 +91,14 @@ e monitoramento OT dedicados [3][4]. Malware confirmado e *ransomware* correspon
 engajamentos de resposta a incidentes da Dragos ao longo de 2025 [3][4]. Em 2026 a curva seguiu subindo:
 **1.020** incidentes de *ransomware* industrial no 1º trimestre e **1.140** no 2º (+12%). No 2º trimestre,
 a Dragos não observou nenhum operador alcançando o Estágio 2 da ICS Cyber Kill Chain — a disrupção de
-produção veio de TI, ERP e virtualização, sem acesso direto ao controle [61][62].
+produção veio de TI, ERP e virtualização, sem acesso direto ao controle [61][62]. No 3º trimestre de 2026, a
+alta continuou: **1.266** incidentes (+11% sobre o 2º trimestre), com os Estados Unidos novamente na
+liderança (**473** incidentes, 37% do total) e a Alemanha em 2º lugar (**66**); entre os grupos, a **Qilin**
+assumiu a liderança com 195 incidentes (ante 140 no 2º tri.), seguida por **The Gentlemen** com 167,
+enquanto a Akira caiu para 52 (ante 129) — queda cuja causa a própria Dragos não soube explicar. Mais uma
+vez, nenhum caso atingiu o Estágio 2 da ICS Cyber Kill Chain [83][84]. (O detalhamento por manufatura —
+876 incidentes, 69% do total, segundo a Dragos — não foi confirmado por uma 2ª fonte independente nesta
+pesquisa.)
 
 ### Vulnerabilidades, superfície de exposição e técnica dominante
 
@@ -131,7 +139,12 @@ ambientes de clientes nos relatórios publicados em 2025 — três vezes mais fr
 — e também a técnica dominante especificamente nos três setores mais monitorados: Manufatura, Transporte
 e **Energia, Utilities e Resíduos** [7][8]. Em análise de mais de 500 mil redes sem fio no mundo (2º semestre de 2024), apenas
 **6%** estavam adequadamente protegidas contra ataques de desautenticação (*deauth*) sem fio — vetor
-usado para obter acesso profundo a infraestrutura crítica [7][8]. A pesquisa *2026 State of Operational
+usado para obter acesso profundo a infraestrutura crítica [7][8]. Em outra métrica de severidade — não de
+volume —, a Waterfall Security Solutions, em parceria com a ICS STRIVE, registrou **57** incidentes
+cibernéticos industriais com impacto físico confirmado (*cyber-physical*) em 2025, no cômputo global
+cross-setorial — queda de **25%** frente aos 76 de 2024 —, dos quais 23 foram atribuídos a *ransomware*
+(ante 45 em 2024); o relatório não detalha, nas fontes consultadas nesta pesquisa, um recorte específico
+para o setor de energia elétrica dentro desse total [85][86]. A pesquisa *2026 State of Operational
 Technology and Cybersecurity* da Fortinet (junho de 2026, mais de 700 profissionais de OT em setores
 críticos, incluindo energia) constatou que **71%** das organizações relataram de 1 a 9 intrusões no
 último ano (ante 47% na edição 2025) — alta que a própria Fortinet atribui em parte à melhor capacidade
@@ -271,6 +284,17 @@ nomeação explícita do grupo no texto oficial do advisório da CISA não foi c
 nesta pesquisa — a atribuição acima vem de cobertura secundária especializada, e é tratada aqui com o mesmo
 cuidado já aplicado às demais atribuições deste capítulo [69][70][74][75].
 
+Em 19 de agosto de 2026, NSA, CISA, FBI, DOE e EPA publicaram um advisório conjunto distinto — **AA26-231A**,
+*Defending Against an Active Threat to Siemens S7 Series PLCs* —, alertando sobre reconhecimento e
+pré-posicionamento ativos contra CLPs da série Siemens S7 (variantes de S7-200 a S7-1500) expostos à
+internet ou mal segmentados, usando *scripts* de exploração gerados por IA sobre a biblioteca `snap7`. O
+advisório não nomeia nenhum grupo ou país responsável, mas pesquisadores independentes (Tenable; Claroty)
+associam o padrão de atividade ao mesmo grupo vinculado ao IRGC rastreado como CyberAv3ngers — uma ligação
+não confirmada oficialmente, distinta da atribuição explícita do advisório anterior AA26-097A. Uma síntese
+de cobertura secundária lista o setor de energia entre os afetados, junto com manufatura crítica,
+água/esgoto, química e alimentos, mas essa especificação setorial **não foi confirmada diretamente no
+texto oficial** nesta pesquisa [87][88][89].
+
 ### Fundamentos técnicos: Modelo Purdue e IEC 62443
 
 O **Modelo Purdue** (Purdue Enterprise Reference Architecture, 1991) organiza ambientes industriais em
@@ -342,7 +366,7 @@ enviar à ANEEL as informações necessárias ao acompanhamento da implementaç�
 segurança cibernética, conforme exigido pela RN nº 964/2021 [40][41]. Em **2 de dezembro de 2025**, o ONS
 abriu uma pesquisa com os agentes do setor para colher sugestões e pontos de atenção sobre a versão em
 vigor da RO-CB.BR.01, como insumo para um ciclo de revisão **previsto para ocorrer ao longo de 2026**,
-com foco em modernizar as exigências e incorporar práticas internacionais; até 22 de outubro de 2026 não
+com foco em modernizar as exigências e incorporar práticas internacionais; até 22 de novembro de 2026 não
 havia texto revisado publicado nem cronograma definitivo de conclusão — a versão vigente (rev. 00,
 9/7/2021) permanece em vigor [78][79]. A Figura 2 organiza essas camadas
 regulatórias em linha do tempo, incluindo a referência técnica internacional da IEC 62443 (não é norma
@@ -414,7 +438,7 @@ ao cliente comprometidos sem impacto confirmado em OT.
 | LGPD (Lei nº 13.709/2018)                                    | Congresso Nacional / ANPD | Todos os setores, dados pessoais                   | Consentimento e governança de dados                  | Em vigor desde 2020 (transversal)                |
 | Resolução CNPE nº 24/2021                                    | CNPE                       | Coordenação setorial de resposta a incidentes       | Atribui à ANEEL a coordenação setorial                | Em vigor                                          |
 | RN ANEEL nº 964/2021                                        | ANEEL                      | Concessionárias, permissionárias, autorizadas, ONS  | Política de segurança cibernética + define o ARCiber  | Vigente desde 1º/7/2022                          |
-| Submódulo 5.13 — RO-CB.BR.01 (ONS)                           | ONS / ANEEL                | Centros de operação e infraestrutura ONS↔agentes    | Controles mínimos de segurança cibernética no ARCiber | Vigente desde 9/7/2021; ondas de 18 e 27 meses (até out/2023); revisão em curso (consulta aberta em dez/2025, prevista ao longo de 2026, sem texto novo até out/2026) |
+| Submódulo 5.13 — RO-CB.BR.01 (ONS)                           | ONS / ANEEL                | Centros de operação e infraestrutura ONS↔agentes    | Controles mínimos de segurança cibernética no ARCiber | Vigente desde 9/7/2021; ondas de 18 e 27 meses (até out/2023); revisão em curso (consulta aberta em dez/2025, prevista ao longo de 2026, sem texto novo até nov/2026) |
 | Despacho ANEEL nº 427/2025                                   | ANEEL                      | Todos os agentes sob a RN nº 964/2021               | Envio de informações sobre implementação da política  | Prazo encerrado em 30/6/2025                     |
 | ISA/IEC 62443                                                | ISA/IEC (internacional)   | IACS em geral — referência técnica                  | Zonas, conduítes, Níveis de Segurança (SL 1–4)        | Referência técnica; não é lei brasileira         |
 
@@ -685,3 +709,26 @@ https://www.dwt.com/blogs/energy--environmental-law-blog/2026/09/doe-bulk-power-
 [82] Mayer Brown. *Department of Energy Issues Request for Information with a Deadline of October 9, 2026,
 as First Step of Rulemaking Process for Restrictions on Foreign-Sourced Bulk Power Equipment*. Setembro de
 2026. https://www.mayerbrown.com/en/insights/publications/2026/09/department-of-energy-issues-request-for-information-with-a-deadline-of-october-9-2026-as-first-step-of-rulemaking-process-for-restrictions-on-foreign-sourced-bulk-power-equipment
+
+[83] Dragos. *Industrial Ransomware Analysis for Q3 2026*. Novembro de 2026.
+https://www.dragos.com/blog/dragos-industrial-ransomware-analysis-q3-2026
+
+[84] IT Brief Australia / SecurityBrief Australia. *Australia logs 20 industrial ransomware incidents in
+Q3*. 17 de novembro de 2026. https://itbrief.com.au/story/australia-logs-20-industrial-ransomware-incidents-in-q3
+
+[85] Waterfall Security Solutions (com ICS STRIVE). *2026 OT Cyber Threat Report*. Março de 2026.
+https://waterfall-security.com/ot-insights-center/ot-cybersecurity-insights-center/2026-ot-cyber-threat-report/
+
+[86] Dale Peterson. *Number of Cyber Incidents With a Physical Impact Down in 2025*. 31 de março de 2026.
+https://dale-peterson.com/2026/03/31/number-of-cyber-incidents-with-a-physical-impact-down-in-2025/
+
+[87] NSA, CISA, FBI, DOE e EPA. *AA26-231A — Defending Against an Active Threat to Siemens S7 Series
+PLCs*. 19 de agosto de 2026.
+https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4578318/nsa-and-others-release-report-on-active-threats-of-programmable-logic-controlle/
+
+[88] Tenable. *Frequently asked questions about the active threat to Siemens S7 Series PLCs*. Agosto de
+2026. https://www.tenable.com/blog/frequently-asked-questions-about-the-active-threat-to-siemens-s7-series-plcs
+
+[89] SecurityAffairs. *NSA, CISA, FBI, DOE, and EPA Warn of Active AI-Assisted Attacks on Siemens S7
+PLCs*. 19 de agosto de 2026.
+https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html
