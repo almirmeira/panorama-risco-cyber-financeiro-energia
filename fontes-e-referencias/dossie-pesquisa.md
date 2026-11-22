@@ -2551,13 +2551,95 @@ em 2026-07-21.
 
 ---
 
+### Atualização 2026-11-22 — Dragos Q3 2026, relatório Waterfall/ICS STRIVE e advisório AA26-231A (Siemens S7)
+
+- **Dado 1 (Dragos, ransomware industrial, 3º tri. 2026):** a Dragos publicou o *Industrial Ransomware
+  Analysis for Q3 2026*, registrando **1.266** incidentes de *ransomware* contra organizações industriais
+  no 3º trimestre de 2026 — alta de **11%** sobre os 1.140 do 2º trimestre (que por sua vez foram +12% sobre
+  os 1.020 do 1º). Os Estados Unidos lideraram com **473** incidentes (37% do total), seguidos pela Alemanha
+  com **66**. Entre os grupos, a **Qilin** assumiu a liderança com **195** incidentes (ante 140 no 2º tri.),
+  seguida por **The Gentlemen** com **167**; a **Akira** caiu para **52** incidentes (ante 129), queda cuja
+  causa a própria Dragos não soube explicar. Nenhum caso do trimestre atingiu o Estágio 2 da ICS Cyber Kill
+  Chain — mesma observação já registrada para o 2º trimestre. A Dragos também atribuiu **876** incidentes
+  (69% do total) à manufatura, mas esse detalhamento setorial específico **não foi confirmado por uma 2ª
+  fonte independente** nesta pesquisa.
+  - Fonte 1 (primária): Dragos. *Industrial Ransomware Analysis for Q3 2026*. Novembro de 2026.
+    https://www.dragos.com/blog/dragos-industrial-ransomware-analysis-q3-2026
+  - Fonte 2 (independente, com reportagem própria sobre a Austrália/ANZ, não mera republicação): IT Brief
+    Austrália / SecurityBrief Austrália. *Australia logs 20 industrial ransomware incidents in Q3*. 17 de
+    novembro de 2026. https://itbrief.com.au/story/australia-logs-20-industrial-ransomware-incidents-in-q3
+  - Observações: confirma e estende a série trimestral de 2026 já registrada (1.020 → 1.140 → 1.266).
+    Atualiza o KPI "Organizações industriais impactadas por ransomware" do painel (valor anual ~3.300 de 2025
+    preservado; delta trimestral estendido). O dado de manufatura (876/69%) foi incorporado ao cap. 03 com a
+    ressalva explícita de fonte única.
+
+- **Dado 2 (Waterfall Security/ICS STRIVE — incidentes com impacto físico):** a Waterfall Security
+  Solutions, em parceria com a ICS STRIVE, publicou o *2026 OT Cyber Threat Report*, registrando **57**
+  incidentes cibernéticos industriais com impacto físico confirmado (*cyber-physical*) em 2025 — queda de
+  **25%** frente aos 76 de 2024 —, dos quais 23 foram atribuídos a *ransomware* (ante 45 em 2024). É a
+  primeira incorporação de dados da Waterfall a este dossiê (fonte prevista desde o design original do
+  projeto, mas sem dado qualificado localizado em ciclos anteriores). O relatório não detalha, nas fontes
+  consultadas nesta pesquisa, um recorte específico para o setor de energia elétrica dentro desse total —
+  o número é cross-setorial (manufatura, transporte, energia e outras indústrias pesadas agregadas).
+  - Fonte 1 (primária): Waterfall Security Solutions / ICS STRIVE. *2026 OT Cyber Threat Report*. Março de
+    2026. https://waterfall-security.com/ot-insights-center/ot-cybersecurity-insights-center/2026-ot-cyber-threat-report/
+  - Fonte 2 (independente — analista especializado, não republicação do press release, com detalhamento
+    próprio adicional): Dale Peterson. *Number of Cyber Incidents With a Physical Impact Down in 2025*. 31
+    de março de 2026. https://dale-peterson.com/2026/03/31/number-of-cyber-incidents-with-a-physical-impact-down-in-2025/
+  - Observações: dado pré-existente (relatório de março de 2026), não localizado em ciclos anteriores de
+    varredura rotativa do grupo 3 — corrige uma lacuna, não uma mudança recente. Sem KPI numérico dedicado
+    no painel; incorporado como texto ao cap. 03.
+
+- **Dado 3 (advisório AA26-231A — CLPs Siemens S7):** em 19 de agosto de 2026, NSA, CISA, FBI, DOE e EPA
+  publicaram o advisório conjunto **AA26-231A**, *Defending Against an Active Threat to Siemens S7 Series
+  PLCs*, sobre reconhecimento e pré-posicionamento ativos contra CLPs Siemens S7 (variantes de S7-200 a
+  S7-1500) expostos à internet, usando *scripts* de exploração gerados por IA sobre a biblioteca `snap7`. O
+  advisório não nomeia grupo ou país responsável. Pesquisadores independentes (Tenable; Claroty) associam o
+  padrão ao grupo vinculado ao IRGC rastreado como CyberAv3ngers — ligação não confirmada oficialmente,
+  distinta da atribuição explícita do advisório anterior AA26-097A (abril/2026, já registrado neste
+  dossiê). Uma síntese de cobertura secundária lista o setor de energia entre os afetados, ao lado de
+  manufatura crítica, água/esgoto, química e alimentos — **essa especificação setorial não foi confirmada
+  diretamente no texto oficial** nesta pesquisa (acesso ao PDF primário do IC3/NSA bloqueado na rede desta
+  sessão).
+  - Fonte 1 (primária): NSA, CISA, FBI, DOE e EPA. *AA26-231A — Defending Against an Active Threat to
+    Siemens S7 Series PLCs*. 19 de agosto de 2026.
+    https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4578318/nsa-and-others-release-report-on-active-threats-of-programmable-logic-controlle/
+  - Fonte 2 (independente): Tenable. *Frequently asked questions about the active threat to Siemens S7
+    Series PLCs*. Agosto de 2026. https://www.tenable.com/blog/frequently-asked-questions-about-the-active-threat-to-siemens-s7-series-plcs
+  - Fonte 3 (independente): SecurityAffairs. *NSA, CISA, FBI, DOE, and EPA Warn of Active AI-Assisted
+    Attacks on Siemens S7 PLCs*. 19 de agosto de 2026.
+    https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html
+  - Observações: advisório pré-existente (agosto/2026) não localizado em ciclos anteriores de varredura
+    rotativa do grupo 3 (10/07, 10/22, 11/07/2026) — corrige uma lacuna da varredura profunda (item 2b), não
+    um evento novo. Sem KPI numérico dedicado no painel; incorporado como texto ao cap. 03, na seção
+    "Atores relevantes".
+
+- **Itens investigados e descartados nesta atualização:**
+  - **Portarias ANEEL nº 7.058/2026 e nº 7.062/2026** (citadas em achado preliminar como de 06/02/2026,
+    sobre gestão de risco/governança cibernética): permanecem apenas em fonte única (análise jurídica da
+    Machado Meyer), sem texto oficial localizado no Diário Oficial da União nem em gov.br/aneel. A única
+    fonte disponível descreve o conteúdo como relativo à estrutura **interna** da própria ANEEL (formalização
+    de equipe de resposta a incidentes institucional — ETIR), não uma nova exigência regulatória para os
+    agentes do setor elétrico. Mantido como **[NÃO CONFIRMADO em 2026-11-22]** — mesmo status já registrado
+    em 2026-10-10 e 2026-10-25 (grupo 4), não incorporado ao cap. 03.
+  - **Suposta consulta pública/AIR da ANEEL em 2026 sobre nova política de cibersegurança** (datas
+    aventadas: 11/3 a 26/4/2026): **descartado** — verificação mostrou que essas datas pertencem à Consulta
+    Pública ANEEL nº 007/2021 (1ª fase 11/3/2021–26/4/2021), processo que já teve desfecho conhecido e
+    registrado neste dossiê (resultou na RN ANEEL nº 964/2021, após 226 contribuições). Não há evidência de
+    processo equivalente aberto em 2026; acerto de registro para não repetir a confusão de datas em ciclos
+    futuros.
+
+---
+
 ### Tabela-resumo — Energia
 
 | Métrica | Valor | Relatório primário | Status |
 | :-- | :-- | :-- | :-- |
 | Ransomware contra organizações industriais (2023→2024) | +87% a/a; 80 grupos (+60%) | Dragos OT/ICS Year in Review 2025 (dados 2024) | Confirmado (2 fontes) |
 | Ransomware contra organizações industriais (2024→2025) | +64% a/a; 119 grupos; ~3.300 orgs. impactadas | Dragos OT/ICS Year in Review 2026 (dados 2025) | Confirmado (2 fontes) |
+| Ransomware industrial trimestral 2026 (1T→2T→3T) | 1.020 → 1.140 (+12%) → 1.266 (+11%) incidentes; EUA 473 (37%); Qilin líder (195) | Dragos Industrial Ransomware Analysis Q1–Q3 2026 | Confirmado (2 fontes) |
 | Dwell time de ransomware em OT | 42 dias (5 dias com visibilidade OT plena) | Dragos OT/ICS Year in Review 2026 | Confirmado (2 fontes) |
+| Incidentes com impacto físico confirmado (cyber-physical, global, cross-setorial, 2025) | 57 (-25% vs. 76 em 2024); 23 foram ransomware | Waterfall Security/ICS STRIVE 2026 OT Cyber Threat Report | Confirmado (2 fontes); sem recorte setorial de energia disponível |
 | Computadores ICS atacados (global, 2025) | ~20–22% por trimestre | Kaspersky ICS CERT (Q1–Q3 2025) | Confirmado (2 fontes) |
 | Computadores ICS atacados — energia elétrica (H1 2025) | 22,8% (3º setor mais atacado) | Kaspersky ICS CERT | Parcialmente confirmado (detalhamento setorial via agregador) |
 | Incidentes de cibersegurança em OT (organizações pesquisadas) | 50% relataram ≥1 incidente | Fortinet 2025 State of OT/Cybersecurity | Confirmado (2 fontes) |
@@ -2580,6 +2662,7 @@ em 2026-07-21.
 | Brasil — Petrobras/Everest (nov/2025) | >176 GB alegados (>90 GB atribuídos à Petrobras) | Hackread / Cybernews | Parcialmente confirmado — Petrobras contesta atribuição direta |
 | Brasil — Cemig (vazamento de dados, mai/2026) | ~135 mil clientes; sem impacto operacional | CanalEnergia / ConvergenciaDigital | Confirmado (2 fontes) |
 | EUA — Emergência Nacional para o Bulk-Power System (26/8/2026) | Ordem Executiva 14421 (antes citada como 14420); RFI do DOE publicado 9/9/2026, comentários encerrados 9/10/2026; prazos: 120 dias (regras, até 24/12/2026) / 180 dias (revisão FAR, até 22/2/2027) | The White House / Holland & Knight / McGuireWoods / DWT | Confirmado (2+ fontes); regras de implementação do DOE ainda não publicadas |
+| EUA — advisório AA26-231A, ameaça ativa a CLPs Siemens S7 (19/8/2026) | NSA/CISA/FBI/DOE/EPA; scripts de exploração gerados por IA; associação (não oficial) ao CyberAv3ngers | NSA / Tenable / SecurityAffairs | Confirmado (3 fontes); menção ao setor de energia não confirmada no texto oficial |
 
 **Legenda:** idêntica à das tabelas-resumo Global e Financeiro. "Parcialmente confirmado" indica que o valor
 numérico central foi localizado e é consistente entre as fontes disponíveis, mas ao menos uma condição da regra de
@@ -4714,3 +4797,89 @@ ciclos anteriores seguem: `02-mapa-regulatorio-financeiro-br`, `02-superficie-pi
 - Verizon / FS-ISAC / Akamai / Radware. Confirmação de ausência de edições novas (DBIR Finance Snapshot
   2026, Navigating Cyber 2026, SOTI financeiro H2 2026, Radware H2 2026) até 16/11/2026 (checagem direta
   das páginas de publicações). 2026.
+
+## Registro do refresh — 2026-11-22 (varredura rotativa: grupo 3 — setor energia + cap. 03)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 326 ÷ 3) mod 5 = **3** → `setores[id=energia]` (kpis, dimensões,
+barra, pizza) + cap. 03 (Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM
+energia, ANEEL/ONS). Este grupo foi auditado isoladamente em 2026-11-07 (15 dias atrás).
+
+Janela recente (item 2): verificado se houve edição nova de Dragos (Q3 2026), Kaspersky ICS CERT (Q3
+2026), Fortinet OT, Nozomi, Claroty ou Waterfall desde 07/11/2026; se houve novo ato normativo ANEEL/ONS;
+e se houve incidente-marco novo em energia (Brasil ou global) entre 07/11 e 22/11/2026. Resultado: a
+Dragos **publicou** a edição do 3º trimestre (ver achado abaixo); a Kaspersky ICS CERT **não** publicou a
+edição do 3º trimestre (padrão histórico indica ~dezembro/2026); nenhum ato normativo novo de ANEEL/ONS;
+nenhum incidente-marco novo em energia elétrica (a onda de ataques cibernéticos no Brasil em
+novembro/2026 atingiu Tesouro Nacional, Caixa, Porto de Santos, Enem/Inep e o site institucional da
+Petrobras — nenhum deles concessionária/geradora/distribuidora de energia elétrica ou o ONS/ANEEL).
+
+| Item auditado | Veredito | Evidência |
+| :-- | :-- | :-- |
+| Ransomware industrial trimestral 2026 (Dragos) | **Atualizado** | Q3 2026 publicado: 1.266 incidentes (+11% s/ 1.140 no Q2); confirmado por 2ª fonte (IT Brief/SecurityBrief Austrália) |
+| Dwell time de ransomware em OT (42→5 dias) | Confirmado atual | Dado do relatório anual (Dragos YIR 2026); sem atualização trimestral equivalente |
+| Computadores ICS atacados — energia elétrica 22,8% (H1 2025) e série global (19,15% no 2T2026) | Confirmado atual | Kaspersky ICS CERT não publicou o relatório do 3º tri. 2026 até 22/11/2026 |
+| Intrusões em OT — Fortinet 2026 (71%/24%) | Confirmado atual | Relatório anual; sem edição mais nova |
+| Advisórios ICS CISA 2025 (>500; 508 Forescout / 506 CSAF) | Confirmado atual | Número histórico (ano encerrado); nenhuma contagem oficial de 2026 (ano corrente) disponível ainda |
+| Custo médio de violação — energia USD 5,2 mi (IBM CODB 2026) | Confirmado atual | Edição anual; próxima só em jul/2027 |
+| Nozomi Networks — Manipulação de Dados / 6% de redes Wi-Fi protegidas | Confirmado atual | Nenhuma edição 2026 localizada com dado substituto qualificado |
+| Incidentes com impacto físico (cyber-physical), cross-setorial | **Novo — incorporado** | Waterfall Security/ICS STRIVE 2026 OT Cyber Threat Report: 57 em 2025 (-25% vs. 76 em 2024); confirmado por 2ª fonte (Dale Peterson) |
+| RN ANEEL nº 964/2021, Despacho nº 427/2025 | Confirmado atual | Nenhum ato normativo novo publicado |
+| Submódulo 5.13/ONS (RO-CB.BR.01) — revisão em curso | Confirmado atual | Nenhum texto revisado publicado até 22/11/2026; processo segue aberto desde dez/2025; data de verificação do cap. 03 atualizada |
+| Portarias ANEEL 7.058/26 e 7.062/26 | [NÃO CONFIRMADO] mantido | Fonte única; conteúdo aparenta ser interno à ANEEL, não regulatório setorial — não incorporado |
+| Suposta consulta pública AIR 2026 sobre nova política de cibersegurança | **Descartado** | Confusão de datas — as datas citadas (11/3–26/4) pertencem à CP 007/2021, já resolvida (→ RN 964/2021) |
+| Casos Brasil — Eletrobras/Copel (2021), Petrobras/Everest (2025), Cemig (2026) | Confirmado atual | Nenhum desfecho novo para a divergência Petrobras×Everest; nenhum incidente novo no setor elétrico |
+| Sandworm/Static Tundra — Polônia (dez/2025) e ator ligado ao Irã — Reino Unido (jul/2026) | Confirmado atual | Nenhuma atualização nova localizada |
+| Atribuição — AA26-097A / CyberAv3ngers | Confirmado atual | Nenhuma atualização do advisório desde 22/7/2026 |
+| Advisório AA26-231A — CLPs Siemens S7 | **Novo — incorporado** | NSA/CISA/FBI/DOE/EPA, 19/8/2026; confirmado por Tenable e SecurityAffairs; menção a energia como setor afetado não confirmada no texto oficial |
+| Ordem Executiva 14421 / RFI do DOE | Confirmado atual | Nenhuma regra de implementação publicada; prazo de 24/12/2026 segue pendente e não vencido |
+| Modelo Purdue, IEC 62443 (fundamentos técnicos) | Confirmado atual | Sem mudança normativa/conceitual a registrar |
+
+**Achados — Dragos Q3 2026, relatório Waterfall/ICS STRIVE e advisório AA26-231A.** Ver seção
+"Atualização 2026-11-22" no bloco Energia do dossiê (acima) para o registro completo de cada um,
+incluindo os dois itens investigados e descartados (Portarias ANEEL e a suposta consulta pública AIR de
+2026).
+
+Obsolescência temporal (item 2c): a data de verificação da revisão do Submódulo 5.13/ONS foi atualizada
+de "até 22 de outubro de 2026" para "até 22 de novembro de 2026" no cap. 03 e na tabela de obrigações
+regulatórias — o processo continua corretamente descrito como em curso, sem texto novo. Os prazos futuros
+da Ordem Executiva 14421 (120 dias/24-12-2026 e 180 dias/22-02-2027) ainda não venceram em 22/11/2026 e
+continuam corretamente descritos como pendentes. Nenhuma outra ocorrência de prazo/data futura já vencida
+localizada no bloco `energia` do painel nem no cap. 03.
+
+Destinos atualizados: `fontes-e-referencias/dossie-pesquisa.md` (nova seção "Atualização 2026-11-22" no
+bloco Energia, com itens descartados registrados; duas linhas novas e uma linha estendida na
+tabela-resumo; este registro de ciclo), `03-setor-energia/README.md` (Resumo Executivo, tabela de
+indicadores, parágrafo de ransomware industrial estendido com o 3º tri. 2026, novo parágrafo sobre o
+relatório Waterfall/ICS STRIVE, novo parágrafo sobre o advisório AA26-231A na seção "Atores relevantes",
+datas de verificação do Submódulo 5.13/ONS atualizadas, refs. [83]-[89] novas) e
+`dashboard/src/data/dashboard.json` (`meta.geradoEm`/`meta.verificadoEm` atualizados para 2026-11-22; KPI
+"Organizações industriais impactadas por ransomware" com delta trimestral estendido ao 3º tri. 2026; nova
+entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico novo foi criado para os dados da Waterfall
+ou do advisório AA26-231A — ambos entraram como texto no cap. 03, sem indicador dedicado no painel. SVGs
+pendentes (não editados, já sinalizados em ciclos anteriores): `02-mapa-regulatorio-financeiro-br`,
+`02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- Dragos. *Industrial Ransomware Analysis for Q3 2026*. Novembro de 2026.
+  https://www.dragos.com/blog/dragos-industrial-ransomware-analysis-q3-2026
+- IT Brief Austrália / SecurityBrief Austrália. *Australia logs 20 industrial ransomware incidents in
+  Q3*. 17 de novembro de 2026. https://itbrief.com.au/story/australia-logs-20-industrial-ransomware-incidents-in-q3
+- Waterfall Security Solutions / ICS STRIVE. *2026 OT Cyber Threat Report*. Março de 2026.
+  https://waterfall-security.com/ot-insights-center/ot-cybersecurity-insights-center/2026-ot-cyber-threat-report/
+- Dale Peterson. *Number of Cyber Incidents With a Physical Impact Down in 2025*. 31 de março de 2026.
+  https://dale-peterson.com/2026/03/31/number-of-cyber-incidents-with-a-physical-impact-down-in-2025/
+- NSA, CISA, FBI, DOE e EPA. *AA26-231A — Defending Against an Active Threat to Siemens S7 Series
+  PLCs*. 19 de agosto de 2026.
+  https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4578318/nsa-and-others-release-report-on-active-threats-of-programmable-logic-controlle/
+- Tenable. *Frequently asked questions about the active threat to Siemens S7 Series PLCs*. Agosto de
+  2026. https://www.tenable.com/blog/frequently-asked-questions-about-the-active-threat-to-siemens-s7-series-plcs
+- SecurityAffairs. *NSA, CISA, FBI, DOE, and EPA Warn of Active AI-Assisted Attacks on Siemens S7 PLCs*.
+  19 de agosto de 2026.
+  https://securityaffairs.com/197566/ics-scada/nsa-cisa-fbi-doe-and-epa-warn-of-active-ai-assisted-attacks-on-siemens-s7-plcs.html
+- Machado Meyer. *Cibersegurança no setor elétrico: avanços regulatórios e implicações para os agentes*
+  (fonte única para as Portarias ANEEL 7.058/26 e 7.062/26 — não incorporada por falta de 2ª fonte).
+  https://www.machadomeyer.com.br/pt/inteligencia-juridica/publicacoes-ij/infraestrutura-e-energia-ij/ciberseguranca-no-setor-eletrico-avancos-regulatorios-e-implicacoes-para-os-agentes
+- ANEEL. Voto da 47ª Reunião Pública Ordinária da Diretoria (confirma que a CP nº 007/2021, não um
+  processo de 2026, é a origem das datas 11/3–26/4 investigadas e descartadas nesta atualização).
+  https://www2.aneel.gov.br/cedoc/aren2021964_1.pdf

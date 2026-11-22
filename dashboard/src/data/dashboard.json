@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-11-19",
-    "verificadoEm": "2026-11-19",
+    "geradoEm": "2026-11-22",
+    "verificadoEm": "2026-11-22",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -55,7 +55,7 @@
       "riscoLabel": "Crítico",
       "kpis": [
         { "label": "Custo médio de violação de dados", "valor": "5,2", "unidade": "US$ mi", "delta": "+8% a/a (US$ 5,24 mi; ante US$ 4,83 mi em 2025)", "fonte": "cap. 03", "estimativa": false },
-        { "label": "Organizações industriais impactadas por ransomware", "valor": "~3.300", "unidade": "organizações (2025)", "delta": "ataques +64% a/a; grupos +49% (80→119); 2T2026: 1.140 incidentes (+12% s/ 1T2026)", "fonte": "cap. 03", "estimativa": false },
+        { "label": "Organizações industriais impactadas por ransomware", "valor": "~3.300", "unidade": "organizações (2025)", "delta": "ataques +64% a/a; grupos +49% (80→119); 2026: 1.020 (1T) → 1.140 (2T, +12%) → 1.266 (3T, +11%) incidentes", "fonte": "cap. 03", "estimativa": false },
         { "label": "Computadores ICS atacados — energia elétrica", "valor": "22,8", "unidade": "% (H1 2025)", "delta": "3º setor mais atacado globalmente; último recorte setorial disponível — a série global caiu para 19,15% no 2º tri. 2026, mas o setor não foi remedido", "fonte": "cap. 03", "estimativa": true },
         { "label": "Dwell time de ransomware em OT", "valor": "42 → 5", "unidade": "dias", "delta": "8x mais rápido com visibilidade OT plena", "fonte": "cap. 03", "estimativa": false },
         { "label": "Organizações com 1 a 9 intrusões em OT", "valor": "71", "unidade": "% (Fortinet 2026)", "delta": "ante 47% em 2025 (parte da alta = melhor detecção); TI+OT simultâneas: 24% (ante 60%); antes: 50% com ≥1 incidente (Fortinet 2025)", "fonte": "cap. 03", "estimativa": false },
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-11-22",
+        "fonte": "Varredura rotativa (grupo 3/5) — setor energia, cap. 03 (Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM energia, ANEEL/ONS) + janela recente (item 2)",
+        "oQueMudou": "Três achados novos confirmados por ≥2 fontes independentes e incorporados ao cap. 03 e a este painel: (1) a Dragos publicou o 'Industrial Ransomware Analysis for Q3 2026' (confirmado por cobertura independente da IT Brief/SecurityBrief Austrália, 17/11/2026) — 1.266 incidentes de ransomware industrial no 3º trimestre (+11% sobre os 1.140 do 2º), EUA na liderança (473, 37%), Alemanha em 2º (66); Qilin assumiu a liderança entre os grupos (195 incidentes, ante 140), seguida por The Gentlemen (167), com Akira em queda (52, ante 129); atualiza o KPI 'Organizações industriais impactadas por ransomware' (valor anual ~3.300 preservado, delta trimestral estendido); (2) novo achado incorporado ao cap. 03 (ainda sem KPI dedicado no painel): a Waterfall Security Solutions/ICS STRIVE (2026 OT Cyber Threat Report, confirmado por análise independente de Dale Peterson) registrou 57 incidentes cibernéticos com impacto físico confirmado em 2025 (-25% vs. 76 em 2024, cross-setorial, sem recorte específico de energia disponível); (3) advisório conjunto NSA/CISA/FBI/DOE/EPA AA26-231A (19/8/2026, confirmado por Tenable e SecurityAffairs) sobre ameaça ativa a CLPs Siemens S7 — associado por pesquisadores independentes (não oficialmente) ao grupo ligado ao IRGC CyberAv3ngers; menção ao setor de energia entre os afetados vem de cobertura secundária não confirmada no texto oficial, registrada com essa ressalva. Kaspersky ICS CERT ainda não publicou o relatório do 3º trimestre de 2026 (padrão histórico aponta para ~dezembro/2026) — 22,8%/19,15% seguem confirmados atuais. Checados e descartados por falta de 2ª fonte/dados inconsistentes: Portarias ANEEL 7.058/2026 e 7.062/2026 (fonte única; conteúdo parece interno à própria ANEEL, não regulatório para agentes do setor) e uma 'consulta pública AIR 2026' sobre nova política de cibersegurança (as datas citadas, 11/3–26/4, pertencem na verdade à CP 007/2021, que já resultou na RN 964/2021 — confusão de datas, não há processo equivalente em 2026). Nenhum incidente novo no setor elétrico brasileiro (a onda de ataques de nov/2026 no Brasil atingiu Tesouro Nacional, Caixa, Porto de Santos e Petrobras/site institucional — fora do recorte de energia elétrica); disputa Petrobras×Everest (nov/2025) segue sem desfecho. Obsolescência temporal (item 2c): datas de verificação da revisão do Submódulo 5.13/ONS atualizadas de 'até out/2026' para 'até nov/2026' no cap. 03 — prazos futuros da EO 14421 (24/12/2026 e 22/2/2027) permanecem corretamente no futuro, não vencidos. Detalhamento completo por item no dossiê."
+      },
       {
         "data": "2026-11-19",
         "fonte": "Varredura rotativa (grupo 2/5) — setor financeiro (recorte Brasil), cap. 02 + janela recente (item 2)",
