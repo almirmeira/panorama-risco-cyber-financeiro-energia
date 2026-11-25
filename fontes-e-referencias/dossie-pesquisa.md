@@ -2835,6 +2835,30 @@ integralmente em 2026-07-21.
     rastreados" é citado por fonte agregadora (Adaptive Security) sem reprodução por uma segunda fonte
     plenamente independente dentro do escopo desta pesquisa — **[PARCIALMENTE CONFIRMADO — contagem exata de 124
     grupos ativos não verificada por segunda fonte primária em 2026-07-21; tratar como ordem de grandeza]**.
+    Valor superado — ver atualização abaixo com contagem confirmada do 3º trimestre de 2026.
+  - **Atualização 2026-11-25 — contagem de grupos ativos confirmada para o 3º trimestre de 2026:** três
+    rastreadores independentes convergem para uma faixa de **111 a 116 grupos de ransomware/RaaS ativos** no
+    3º trimestre de 2026 — GuidePoint Security (relatório GRIT) contou **112 grupos** distintos, responsáveis
+    por **2.760 vítimas reivindicadas** em 29 setores e 115 países (alta de 23% sobre o 2º trimestre e de 75%
+    ano a ano); a Halcyon contou **111 grupos** (2.766 reivindicações de ataque em 122 países); e a BlackFog
+    contou **116 grupos distintos** (incluindo ataques não divulgados). O volume trimestral de ataques é
+    descrito por múltiplas coberturas como recorde histórico. Esta faixa confirmada substitui, para o
+    período mais recente, a estimativa de "124 grupos" acima (fonte única, ordem de grandeza, vigente até
+    2026-07-21) — não se trata de queda real no número de grupos, mas da primeira contagem com confirmação
+    plena por mais de duas fontes primárias independentes dentro do escopo desta pesquisa.
+    - Fonte 1: GuidePoint Security (GRIT). *GRIT Q3 2026 Ransomware and Cyber Threat Insights Report*.
+      Outubro de 2026. https://www.guidepointsecurity.com/resources/grit-q3-2026-ransomware-cyber-threat-insights-report/
+      (síntese: https://www.guidepointsecurity.com/blog/ransomware-insights-q3-2026/)
+    - Fonte 2 (independente, mesma métrica): Halcyon, via LetsDataScience. *Halcyon Reports Ransomware
+      Claims Up 39% in Q3, With AI Use Cited as a Factor*. 2026.
+      https://letsdatascience.com/news/halcyon-reports-ransomware-claims-up-39-in-q3-with-ai-use-ci-d76ce39a
+    - Fonte 3 (independente, mesma métrica): BlackFog, via Comparitech. *Ransomware Roundup: Q3 2026 —
+      Stats on Attacks, Ransoms and Active Gangs*. Novembro de 2026.
+      https://www.comparitech.com/news/ransomware-roundup-q3-2026-stats-on-attacks-ransoms-and-active-gangs/
+    - Observações: as três contagens (111/112/116) divergem levemente por metodologia (ataques divulgados
+      vs. também não divulgados, janela de corte), mas convergem como ordem de grandeza — tratada aqui como
+      intervalo confirmado, não como número único definitivo, seguindo o mesmo padrão já usado para outras
+      métricas de ransomware neste dossiê.
 
 ### LockBit — Operation Cronos (fevereiro de 2024) e desdobramentos até 2025
 
@@ -2948,6 +2972,32 @@ integralmente em 2026-07-21.
     único definitivo. Complementa, sem substituir, o caso setorial já registrado na seção Financeiro (59 vítimas
     financeiras, caso GJTec).
 
+#### Atualização 2026-11-25 — liderança do Qilin passa a ser contestada no 3º trimestre de 2026
+
+- **Dado:** pela primeira vez desde a ascensão do Qilin registrada acima, a liderança isolada do grupo deixou de
+  ser consenso entre rastreadores no 3º trimestre de 2026. O GuidePoint Security (relatório GRIT) registra o
+  grupo **"The Gentlemen"** superando o Qilin por margem mínima — **12,9%** das vítimas observadas no trimestre,
+  contra **12,6%** do Qilin, dentro de um total de 2.760 vítimas reivindicadas por 112 grupos. Já outros dois
+  rastreadores independentes mostram o padrão oposto ou empatado no mesmo trimestre: a Comparitech registra o
+  Qilin com **357 ataques** contra **342** do "The Gentlemen", e a BlackFog registra os dois grupos **empatados
+  em 347 ataques cada**. Não há, portanto, consenso entre fontes sobre qual grupo liderou o 3º trimestre de
+  2026 — o dado tratado aqui é a tendência qualitativa (a distância entre os dois grupos encolheu
+  significativamente frente aos trimestres anteriores, em que o Qilin tinha vantagem de dois dígitos), não uma
+  substituição do Qilin como "o grupo mais ativo", posição que seguiu consolidada ao longo de set/2025–ago/2026
+  (ver atualização acima).
+  - Fonte 1: Infosecurity Magazine. *The Gentlemen Overtakes Qilin as Most Prolific Ransomware Threat*. 2026.
+    https://www.infosecurity-magazine.com/news/the-gentlemen-most-prolific/ (dado primário: GuidePoint
+    Security/GRIT, ver fonte 1 da atualização de contagem de grupos acima)
+  - Fonte 2 (independente, dado contrário): Comparitech. *Ransomware Roundup: Q3 2026 — Stats on Attacks,
+    Ransoms and Active Gangs*. Novembro de 2026.
+    https://www.comparitech.com/news/ransomware-roundup-q3-2026-stats-on-attacks-ransoms-and-active-gangs/
+    (ver também BlackFog, citado na mesma cobertura, com os dois grupos empatados em 347 ataques)
+  - Observações: **[NÃO CONFIRMADO — qual grupo liderou isoladamente o 3º trimestre de 2026 em 2026-11-25;
+    rastreadores divergem (GRIT: "The Gentlemen" à frente por 0,3 p.p.; Comparitech: Qilin à frente por 15
+    ataques; BlackFog: empate técnico) — tratar como "liderança disputada", não como mudança de líder]**. Este
+    é um fenômeno distinto da contagem de grupos ativos (atualização acima), que tem consenso entre fontes; aqui
+    o próprio ranking de topo é que está em disputa conforme a metodologia do rastreador.
+
 ### Initial Access Brokers (IAB) — mercado, precificação e tendência 2025
 
 - **Dado:** o volume de anúncios de acesso inicial à venda em fóruns clandestinos (Exploit, XSS, BreachForums,
@@ -2993,6 +3043,24 @@ integralmente em 2026-07-21.
     financeiro (FS-ISAC/Akamai, seção Financeiro: alta de 154% em DDoS contra o setor 2022→2023). O detalhe
     numérico de "70% da atividade concentrada em dois grupos" (Keymous+/DieNet) refere-se a uma janela específica
     de 72 horas em torno do conflito Irã–EUA–Israel de fevereiro/2026, não a todo o período.
+  - **Atualização 2026-11-25 — dado complementar (DDoS geral, não atribuído especificamente a hacktivismo):** a
+    Cloudflare (Cloudforce One) mitigou **18,2 milhões de ataques DDoS de camada de rede** no 3º trimestre de
+    2026 — alta de **208%** ano a ano —, com 96% dos ataques durando menos de 10 minutos e 98% abaixo de 1
+    Gbps (perfil consistente com enxames de dispositivos comprometidos, não com os grandes botnets volumétricos
+    de trimestres anteriores). O relatório não atribui o volume especificamente a atores hacktivistas — é um
+    agregado de todo o tráfego malicioso de camada de rede mitigado pela empresa —, por isso tratado aqui como
+    dado complementar que confirma a trajetória geral de crescimento de DDoS, sem substituir os percentuais
+    específicos de hacktivismo já citados (StormWall Q1 2026: +168% a/a; Radware H1 2026).
+    - Fonte 1 (primária): Cloudflare / Cloudforce One. *DDoS Threat Report 2026 Q3: More swarms, fewer giants*.
+      Outubro de 2026. https://blog.cloudflare.com/ddos-threat-report-2026-q3/
+    - Fonte 2 (secundária, cobertura independente com os mesmos números): The Hacker News. *Cloudflare Reports
+      18.2 Million Network-Layer DDoS Attacks in Q3 2026, a 208% Increase*. Outubro de 2026.
+      https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html (ver também CRN Asia. *DDoS
+      attacks surge 208% as Indonesia ranks third globally*. 2026.
+      https://www.crnasia.com/news/2026/cybersecurity/ddos-attacks-surge-208-as-indonesia-ranks-third-globally)
+    - Observações: sem divergência relevante entre fontes quanto aos números centrais. Nenhum relatório
+      localizado nesta revisão isola especificamente o componente hacktivista do volume global de DDoS do 3º
+      trimestre de 2026.
 
 ### Insider threat — dados 2025 (Ponemon Institute / DTEX)
 
@@ -3083,11 +3151,14 @@ integralmente em 2026-07-21.
 | ALPHV/BlackCat — exit scam (mar/2024) | USD 22 milhões (Change Healthcare) não repassados a afiliado | The Hacker News / TechTarget | Confirmado (2 fontes) |
 | Cl0p — campanha Oracle EBS (2025) | CVE-2025-61882 (CVSS 9,8); ~29 vítimas nomeadas | Mandiant/Google Cloud / SecurityWeek | Confirmado (2 fontes); contagem pode estar desatualizada — ver nota [NÃO CONFIRMADO em 25/10] |
 | RansomHub — encerramento / migração de afiliados | Inativo desde abr/2025; Qilin de 36→75 vítimas/mês (3T/2025) | The Hacker News / Check Point | Confirmado (2 fontes) |
-| Qilin — liderança sustentada em 2026 [atualizado 25/09] | 1.480 incidentes (set/2025–ago/2026); 641 vítimas no 1S/2026; recorde de 165 em ago/2026 | ZeroFox / Barracuda (Check Point Q1/2026) | Confirmado (2 fontes) |
+| RaaS — grupos ativos rastreados [atualizado 25/11] | 111–116 grupos no 3º tri. 2026 (GRIT: 112/2.760 vítimas; Halcyon: 111; BlackFog: 116); ante "124" de fonte única (superado) | GuidePoint/GRIT / Halcyon / BlackFog (via Comparitech) | Confirmado (3 fontes) |
+| Qilin — liderança sustentada set/2025–ago/2026 [atualizado 25/09] | 1.480 incidentes (set/2025–ago/2026); 641 vítimas no 1S/2026; recorde de 165 em ago/2026 | ZeroFox / Barracuda (Check Point Q1/2026) | Confirmado (2 fontes) |
+| Qilin × "The Gentlemen" — liderança no 3º tri. 2026 [novo 25/11] | Disputada: GRIT dá "The Gentlemen" à frente (12,9% vs. 12,6%); Comparitech e BlackFog mostram Qilin à frente ou empatado | GuidePoint/GRIT (via Infosecurity Magazine) / Comparitech / BlackFog | [NÃO CONFIRMADO] — rastreadores divergem |
 | IAB — crescimento de anúncios (2023→2025) | +100%+ em 2 anos; mediana ~USD 500 | Rapid7 / Darknet.org.uk | Confirmado (2 fontes) |
 | IAB — deslocamento para PMEs (2024-2025) | 60,5% dos anúncios visam empresas de USD 5–50 milhões | Rapid7 | Confirmado (2 fontes); tensão com narrativa de "alvos premium" |
 | Hacktivismo — crescimento DDoS (Q1 2026 a/a) | +168% (ante +80% no Q4 2025) | StormWall / The Hacker News | Confirmado (2 fontes) |
 | Hacktivismo — onda pós-conflito Irã (fev-mar/2026) | 150+ ataques DDoS / 100+ organizações / 16 países em 72h | The Hacker News | Confirmado (2 fontes) |
+| DDoS geral (não hacktivismo-específico) — 3º tri. 2026 [novo 25/11] | 18,2 milhões de ataques de camada de rede; +208% a/a | Cloudflare/Cloudforce One / The Hacker News | Confirmado (2 fontes); dado complementar, sem atribuição a hacktivismo |
 | Insider threat — custo médio anual (global) [atualizado 25/09] | USD 19,5 milhões em 2026 (ante USD 17,4 mi em 2025; superado, mantido como referência histórica) | Ponemon/DTEX 2026 (Ponemon.org / Infosecurity Magazine) | Confirmado (2 fontes) |
 | Insider threat — tempo médio de contenção | 81 dias (edição 2025; sem atualização direta na edição 2026, que passou a reportar custo por faixa de dias de contenção: <30d = USD 14,2 mi; >90d = USD 21,9 mi) | Ponemon/DTEX 2025 e 2026 | Confirmado (2 fontes) |
 | Deconflição de nomenclatura de atores (Microsoft/CrowdStrike) | 80+ adversários deconflitados | Microsoft Security Blog | Confirmado (2 fontes) |
@@ -3220,6 +3291,13 @@ integralmente em 2026-07-21.
   localizada confirme se o rascunho foi de fato publicado. **[DESFECHO NÃO CONFIRMADO em 2026-10-25 — não
   localizada confirmação de publicação do rascunho de padrão do HQC previsto para ~1 ano após a seleção de
   março de 2025; páginas oficiais do NIST/CSRC permaneceram inacessíveis a esta sessão]**.
+  **Reverificado em 2026-11-25:** mesmo resultado — nenhuma fonte localizada (vendor, imprensa especializada
+  ou página oficial do NIST, ainda inacessível a esta sessão) confirma a publicação do rascunho; o prazo
+  informal segue vencido, agora há **oito meses**. **[DESFECHO NÃO CONFIRMADO em 2026-11-25 — mantido sem
+  mudança]**. O quarto padrão, **FIPS 206 (FN-DSA)**, também segue sem finalização: um rascunho de
+  Internet-Draft do IETF sobre certificados FN-DSA, datado de maio de 2026, mostra que o algoritmo ainda não
+  saiu da fase de rascunho em nível de padronização NIST — consistente com a expectativa já registrada de
+  finalização "final de 2026/início de 2027".
   - Fonte 1: NIST. *NIST Releases First 3 Finalized Post-Quantum Encryption Standards*. Agosto de 2024.
     https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards
   - Fonte 2 (secundária, síntese técnica consolidada sobre os três padrões e o quarto em preparação): QNSQY.
@@ -4883,3 +4961,64 @@ pendentes (não editados, já sinalizados em ciclos anteriores): `02-mapa-regula
 - ANEEL. Voto da 47ª Reunião Pública Ordinária da Diretoria (confirma que a CP nº 007/2021, não um
   processo de 2026, é a origem das datas 11/3–26/4 investigadas e descartadas nesta atualização).
   https://www2.aneel.gov.br/cedoc/aren2021964_1.pdf
+
+## Registro do refresh — 2026-11-25 (varredura rotativa: grupo 4 — Tendências/Recomendações + Atores e TTPs, caps. 05-08)
+
+Ciclo de 3 dias. GRUPO = (dia-do-ano 329 ÷ 3) mod 5 = **4** → `tendencias`, `recomendacoes` + caps. 05
+(Atores e TTPs), 06, 07 e 08. Este grupo não era auditado isoladamente desde 2026-10-25 (31 dias atrás —
+intervalo maior que os 15 dias esperados pela rotação, por conta de lacunas no ritmo real de disparo do
+ciclo entre 28/10 e 07/11/2026).
+
+Janela recente (item 2): nenhum incidente-marco novo nos últimos 3 dias (22-25/11/2026) envolvendo IA
+ofensiva, *ransomware*, *deepfake* ou cadeia de suprimentos contra os setores financeiro ou de energia
+(Brasil ou global); nenhuma edição nova de relatório primário da Anthropic, CrowdStrike, OWASP, CISA ou
+NIST além das já incorporadas.
+
+| Item verificado | Veredito em 2026-11-25 |
+| :-- | :-- |
+| MITRE ATT&CK Enterprise — versão (v20 → v20.1?) | **Indício não confirmado**: buscas apontam a existência de um changelog "v20.0-v20.1" no site oficial attack.mitre.org (timestamp de modificação ~03/11/2026), mas o site oficial segue bloqueado pela política de rede desta sessão e nenhuma cobertura jornalística independente descreve o conteúdo de uma v20.1 — **[NÃO CONFIRMADO em 2026-11-25 — existência e conteúdo de uma versão v20.1 não verificados por 2 fontes independentes; versão do capítulo mantida em v20]** |
+| CrowdStrike — contagem de adversários (290+) | Confirmado sem mudança: nenhum relatório posterior ao Threat Hunting Report (ago/2026) localizado |
+| RaaS — grupos ativos rastreados | **Atualizado**: 111–116 grupos confirmados no 3º tri. 2026 por 3 fontes independentes (GRIT/GuidePoint, Halcyon, BlackFog), substituindo a estimativa de fonte única "124 grupos" vigente desde 2026-07-21 — ver seção Atores e TTPs do dossiê |
+| Qilin — liderança de ransomware | **Contestada, não confirmada**: GRIT (via Infosecurity Magazine) mostra "The Gentlemen" à frente por margem mínima (12,9% vs. 12,6%) no 3º tri. 2026; Comparitech e BlackFog mostram o padrão oposto ou empate técnico no mesmo trimestre — rastreadores divergem; tratado como liderança disputada, não como queda confirmada do Qilin |
+| Anthropic — relatório de inteligência de ameaças | Confirmado sem edição mais nova que a de set/2026, já incorporada |
+| Ransomware conduzido por IA (cap. 06) | Confirmado sem caso novo desde a investigação Unit 42 (set/2026); um relatório adicional (SOCRadar, 2026) cita estatística de infraestrutura ofensiva com IA, mas de fonte única — não incorporado |
+| PQC — FIPS 206 (FN-DSA) | Confirmado sem mudança: ainda rascunho; rascunho de Internet-Draft do IETF sobre certificados FN-DSA (maio/2026) confirma que a padronização NIST não avançou; expectativa de finalização "final de 2026/início de 2027" mantida |
+| PQC — HQC | Reverificado: **[DESFECHO NÃO CONFIRMADO em 2026-11-25]** — prazo informal do rascunho de padrão (~mar/2026) segue vencido, agora há oito meses, sem nenhuma fonte confirmando publicação |
+| NIST IR 8596 (Cyber AI Profile) | Confirmado sem mudança: segue como *Initial Preliminary Draft* (16/12/2025); nenhum *Initial Public Draft* localizado, apesar da expectativa de "lançamento ainda em 2026" citada por cobertura de dez/2025 |
+| OWASP Top 10 for Agentic Applications 2026 / Guia CISA de IA agêntica | Confirmado sem revisão nova desde a publicação original |
+| Portarias ANEEL 7.058/2026 e 7.062/2026 | Não reauditado neste ciclo — já investigado e descartado na varredura do grupo 3 (2026-11-22): fonte única, conteúdo aparenta ser interno à ANEEL, não regulatório para agentes do setor |
+| Insider threat — custo médio anual (Ponemon/DTEX) | Confirmado sem mudança: USD 19,5 milhões (edição 2026, fev/2026) segue sendo a edição mais recente; nenhuma atualização ou nova edição localizada |
+| Hacktivismo — crescimento de DDoS | Confirmado sem mudança material nos percentuais específicos de hacktivismo; **dado complementar novo incorporado**: Cloudflare (Cloudforce One) registrou 18,2 milhões de ataques DDoS de camada de rede no 3º tri. 2026 (+208% a/a), sem atribuição específica a hacktivismo — ver seção Atores e TTPs |
+| Cl0p — contagem de vítimas Oracle EBS | Confirmado sem mudança: nenhuma fonte com data posterior a nov/2025 localizada nesta revisão; valor de ~29 mantido, nota [NÃO CONFIRMADO em 2026-10-25] preservada |
+| Cap. 07 — NIST CSF 2.0, ISO/IEC 27001:2022+Amd1, IEC 62443, Zero Trust SP 800-207 | Confirmado sem mudança: nenhuma nova edição localizada |
+| Cap. 08 — recomendações | Revisado; nenhuma afirmação numérica desatualizada localizada; horizontes (0–90 dias, etc.) seguem contados a partir de set/2026, conforme já declarado no capítulo — não é uma data futura vencida, é a baseline metodológica declarada |
+
+**Arquivos alterados:** `fontes-e-referencias/dossie-pesquisa.md` (seção Atores e TTPs — contagem de
+grupos RaaS atualizada com 3 fontes, nova nota sobre liderança Qilin×"The Gentlemen" contestada, nota
+complementar de DDoS da Cloudflare na seção Hacktivismo, reverificação da nota HQC; seção Tendências 2026
+— nota HQC reverificada para 2026-11-25; tabela-resumo de Atores e TTPs com 3 linhas novas/atualizadas;
+este registro), `05-atores-e-ttps/README.md` (seção "Ecossistema RaaS" com contagem de grupos do 3º tri.
+2026 e nota sobre liderança contestada do Qilin; seção "Hacktivismo" com dado complementar da Cloudflare;
+refs. [41]-[48] novas) e `dashboard/src/data/dashboard.json` (`meta.geradoEm`/`meta.verificadoEm`
+atualizados para 2026-11-25; nova entrada em `fontes.incorporacoesRecentes`). Nenhum KPI numérico do
+`dashboard.json` precisou mudar: o painel não tem indicador dedicado à contagem de grupos RaaS, à
+liderança de grupos de ransomware individuais nem ao cronograma do HQC/FIPS 206. SVGs pendentes (não
+editados, já sinalizados em ciclos anteriores): `02-mapa-regulatorio-financeiro-br`,
+`02-superficie-pix-openfinance`, `03-mapa-regulatorio-energia-br`, `06-tendencias-radar`, `08-roadmap`.
+
+#### Fontes desta revisão
+
+- GuidePoint Security (GRIT). *GRIT Q3 2026 Ransomware and Cyber Threat Insights Report*. Outubro de 2026.
+  https://www.guidepointsecurity.com/resources/grit-q3-2026-ransomware-cyber-threat-insights-report/
+- Halcyon, via LetsDataScience. *Halcyon Reports Ransomware Claims Up 39% in Q3, With AI Use Cited as a
+  Factor*. 2026. https://letsdatascience.com/news/halcyon-reports-ransomware-claims-up-39-in-q3-with-ai-use-ci-d76ce39a
+- BlackFog / Comparitech. *Ransomware Roundup: Q3 2026 — Stats on Attacks, Ransoms and Active Gangs*.
+  Novembro de 2026. https://www.comparitech.com/news/ransomware-roundup-q3-2026-stats-on-attacks-ransoms-and-active-gangs/
+- Infosecurity Magazine. *The Gentlemen Overtakes Qilin as Most Prolific Ransomware Threat*. 2026.
+  https://www.infosecurity-magazine.com/news/the-gentlemen-most-prolific/
+- Cloudflare / Cloudforce One. *DDoS Threat Report 2026 Q3: More swarms, fewer giants*. Outubro de 2026.
+  https://blog.cloudflare.com/ddos-threat-report-2026-q3/
+- The Hacker News. *Cloudflare Reports 18.2 Million Network-Layer DDoS Attacks in Q3 2026, a 208%
+  Increase*. Outubro de 2026. https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html
+- DigiCert / EncryptionConsulting / IETF (draft-ietf-lamps-fn-dsa-certificates, maio de 2026) — status de
+  FIPS 206 (FN-DSA) reverificado, ainda em rascunho.
