@@ -3,8 +3,8 @@
     "titulo": "Panorama de Risco Cibernético — Setor Financeiro e Energia",
     "subtitulo": "Brasil e o mundo, 2025–2026 — síntese executiva para board e comitês de risco",
     "periodo": "2025–2026",
-    "geradoEm": "2026-11-22",
-    "verificadoEm": "2026-11-22",
+    "geradoEm": "2026-11-25",
+    "verificadoEm": "2026-11-25",
     "notaMetodo": "Dados curados a partir de relatórios primários de vendors, reguladores e órgãos setoriais (CrowdStrike, IBM, Mandiant, Dragos, Verizon, Kaspersky ICS CERT, FS-ISAC, ANEEL, Banco Central etc.), com regra de duas fontes independentes por número-chave e marcação explícita de incerteza (selo ⚠ = estimativa/parcialmente confirmado). Rastreabilidade completa em fontes-e-referencias/dossie-pesquisa.md e nos capítulos 00 a 08 do repositório."
   },
   "setores": [
@@ -240,6 +240,11 @@
       }
     ],
     "incorporacoesRecentes": [
+      {
+        "data": "2026-11-25",
+        "fonte": "Varredura rotativa (grupo 4/5) — Tendências/Recomendações + Atores e TTPs, caps. 05-08 (MITRE ATT&CK, CrowdStrike, RaaS/Qilin, Anthropic, PQC/NIST, OWASP Agentic, insider threat, hacktivismo, NIST CSF/ISO 27001/IEC 62443/Zero Trust) + janela recente (item 2)",
+        "oQueMudou": "Dois achados confirmados por ≥2 fontes independentes e incorporados ao cap. 05 e a este painel: (1) a contagem de grupos de ransomware/RaaS ativos foi atualizada para o 3º trimestre de 2026 — três rastreadores independentes (GuidePoint/GRIT: 112 grupos, 2.760 vítimas reivindicadas, +23% trim./trim. e +75% a/a; Halcyon: 111 grupos; BlackFog: 116 grupos) convergem para uma faixa de 111-116 grupos, substituindo a estimativa de fonte única de '124 grupos' vigente desde 2026-07-21; (2) a liderança isolada do Qilin entre os grupos de ransomware passou a ser contestada no 3º trimestre de 2026 — o GRIT (via Infosecurity Magazine) mostra o grupo 'The Gentlemen' à frente por margem mínima (12,9% vs. 12,6%), mas Comparitech e BlackFog mostram o padrão oposto ou empate técnico no mesmo trimestre; tratado como liderança disputada entre rastreadores, não como queda confirmada do Qilin, que seguiu líder consolidado em set/2025-ago/2026. Dado complementar incorporado à seção de hacktivismo do cap. 05 (sem KPI dedicado): a Cloudflare registrou 18,2 milhões de ataques DDoS de camada de rede no 3º trimestre de 2026 (+208% a/a), sem atribuição específica a atores hacktivistas. Checados e confirmados sem mudança: versão do MITRE ATT&CK (v20, mantida — um changelog 'v20.0-v20.1' foi localizado no site oficial, mas sem conteúdo descrito por 2ª fonte independente, então não incorporado), contagem de adversários da CrowdStrike (290+), relatório de inteligência de ameaças da Anthropic (set/2026), casos de ransomware conduzido por IA (sem caso novo desde Unit 42/set-2026), status de PQC (FIPS 206 e HQC ainda em rascunho — nota de obsolescência temporal do HQC reverificada e atualizada de 'sete meses' para 'oito meses' de atraso), NIST IR 8596 (ainda rascunho preliminar), OWASP Top 10 for Agentic Applications 2026 (sem revisão), insider threat Ponemon/DTEX (USD 19,5 mi, edição 2026 inalterada), contagem de vítimas do Cl0p/Oracle EBS (~29, sem atualização confiável) e os quatro frameworks do cap. 07 (NIST CSF 2.0, ISO/IEC 27001:2022, IEC 62443, Zero Trust SP 800-207). Portarias ANEEL 7.058/2026 e 7.062/2026 não reauditadas neste ciclo — já investigadas e descartadas na varredura do grupo 3 em 2026-11-22. Nenhum KPI numérico do dashboard.json precisou mudar: o painel não tem indicador dedicado à contagem de grupos RaaS, à liderança de ransomware individual nem ao cronograma do HQC/FIPS 206. Detalhamento completo por item no dossiê."
+      },
       {
         "data": "2026-11-22",
         "fonte": "Varredura rotativa (grupo 3/5) — setor energia, cap. 03 (Dragos, Kaspersky ICS CERT, Fortinet OT, Claroty/Nozomi/Waterfall, CISA, IBM energia, ANEEL/ONS) + janela recente (item 2)",

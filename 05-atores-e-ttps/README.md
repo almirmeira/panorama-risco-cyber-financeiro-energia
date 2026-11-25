@@ -82,7 +82,10 @@ categorias relevantes a este dossiê:
   cresceu 80% ano a ano no 4º trimestre de 2025 e 168% no 1º trimestre de 2026, com uma onda
   retaliatória pós-conflito Irã–EUA–Israel (fevereiro/março de 2026) somando mais de 150 ataques
   DDoS contra 100+ organizações em 16 países em menos de 72 horas — os grupos **Keymous+** e
-  **DieNet** responderam por cerca de 70% dessa atividade concentrada [23][24]. Peso setorial:
+  **DieNet** responderam por cerca de 70% dessa atividade concentrada [23][24]. Como dado
+  complementar (não atribuído especificamente a hacktivismo), a Cloudflare mitigou **18,2 milhões de
+  ataques DDoS de camada de rede** no 3º trimestre de 2026 — alta de **208%** ano a ano —, confirmando
+  a trajetória geral de crescimento sem isolar o componente hacktivista [47][48]. Peso setorial:
   atinge **ambos** os setores de forma comparável.
 - **Insider** — colaborador ou ex-colaborador com acesso legítimo abusado, por negligência ou
   má-fé. Segundo o Ponemon Institute/DTEX, o número de incidentes estudados cresceu de 3.269 (2018)
@@ -199,9 +202,14 @@ tipicamente por **USD 500 a USD 5.000 por acesso**; (4) **negociador** — funç
 uma "central de atendimento" terceirizada) focada em maximizar o valor do pagamento nas negociações
 com a vítima, preservando a integridade das transações em criptomoeda. Serviços de suporte adicionais
 incluem hospedagem à prova de balas (*bulletproof hosting*) e lavagem de criptoativos. O cenário de
-RaaS em 2025–2026 é descrito como mais fragmentado do que nunca, com **124 grupos rastreados** (ordem
-de grandeza, sem confirmação plena por segunda fonte primária) e migração rápida de afiliados entre
-plataformas [29][30].
+RaaS em 2025–2026 segue mais fragmentado do que nunca: no **3º trimestre de 2026**, três rastreadores
+independentes confirmam uma faixa de **111 a 116 grupos ativos** — GuidePoint Security (relatório GRIT)
+contou **112 grupos**, responsáveis por **2.760 vítimas reivindicadas** em 29 setores e 115 países (alta
+de 23% sobre o trimestre anterior e de 75% ano a ano); a Halcyon contou **111 grupos**; e a BlackFog,
+**116**. A faixa confirmada substitui, com dados do trimestre mais recente, a estimativa anterior de
+"124 grupos" (fonte única, ordem de grandeza não verificada por segunda fonte primária, vigente até
+2026-07-21) — não é indício de queda real no número de grupos, mas a primeira contagem com confirmação
+plena por mais de duas fontes independentes neste dossiê [29][30][41][42][43].
 
 O diagrama abaixo ilustra o fluxo de valor completo do ecossistema — do broker de acesso inicial até
 a divisão de lucros após o pagamento do resgate:
@@ -227,6 +235,16 @@ reduzem a marca de um grupo, mas raramente reduzem a capacidade agregada de exto
 o volume de afiliados e de acesso inicial disponível via IAB simplesmente se realoca para o operador
 seguinte, e o caso Cl0p mostra que a extorsão por vazamento de dados — sem sequer cifrar arquivos —
 já é um modelo de negócio autônomo dentro do mesmo ecossistema.
+
+No **3º trimestre de 2026**, porém, a liderança isolada do Qilin deixou de ser consenso entre
+rastreadores — primeira vez desde sua ascensão em 2025. O GuidePoint Security (relatório GRIT) registra
+o grupo **"The Gentlemen"** à frente por margem mínima (**12,9%** das vítimas observadas contra **12,6%**
+do Qilin, em um total de 2.760 vítimas reivindicadas por 112 grupos), mas dois outros rastreadores
+independentes mostram o padrão oposto ou empatado no mesmo trimestre: a Comparitech registra o Qilin com
+357 ataques contra 342 do "The Gentlemen", e a BlackFog registra os dois grupos empatados em 347 ataques
+cada. Não há consenso entre fontes sobre qual grupo liderou isoladamente o trimestre — tratado aqui como
+**liderança disputada**, não como substituição do Qilin, que seguiu consolidado como o grupo mais ativo
+ao longo de set/2025–ago/2026 (tabela acima) [44][45][46].
 
 ## Fontes
 
@@ -361,3 +379,30 @@ Exfiltration*. Outubro de 2026. https://letsdatascience.com/news/mitre-adds-ai-a
 (ver também GBHackers. *MITRE ATT&CK v20: New AI Techniques*. https://gbhackers.com/mitre-attack-v20-ai-techniques/
 e, sobre a campanha C0066, a própria página do MITRE — criada em 08/10/2026, última modificação em
 13/10/2026: https://attack.mitre.org/campaigns/C0066/)
+
+[41] GuidePoint Security (GRIT). *GRIT Q3 2026 Ransomware and Cyber Threat Insights Report*. Outubro de
+2026. https://www.guidepointsecurity.com/resources/grit-q3-2026-ransomware-cyber-threat-insights-report/
+(síntese: https://www.guidepointsecurity.com/blog/ransomware-insights-q3-2026/)
+
+[42] Halcyon, via LetsDataScience. *Halcyon Reports Ransomware Claims Up 39% in Q3, With AI Use Cited as
+a Factor*. 2026. https://letsdatascience.com/news/halcyon-reports-ransomware-claims-up-39-in-q3-with-ai-use-ci-d76ce39a
+
+[43] BlackFog, via Comparitech. *Ransomware Roundup: Q3 2026 — Stats on Attacks, Ransoms and Active
+Gangs*. Novembro de 2026. https://www.comparitech.com/news/ransomware-roundup-q3-2026-stats-on-attacks-ransoms-and-active-gangs/
+
+[44] Infosecurity Magazine. *The Gentlemen Overtakes Qilin as Most Prolific Ransomware Threat*. 2026.
+https://www.infosecurity-magazine.com/news/the-gentlemen-most-prolific/
+
+[45] Comparitech. *Ransomware Roundup: Q3 2026* (ver fonte [43] para o detalhamento completo).
+https://www.comparitech.com/news/ransomware-roundup-q3-2026/
+
+[46] GuidePoint Security. *GuidePoint Security Reports Record High Ransomware Activity as Victims Rise
+75% Year-Over-Year*. Outubro de 2026. https://vmblog.com/news/guidepoint-security-reports-record-high-ransomware-activity-as-victims-rise-75-year-over-year/
+
+[47] Cloudflare / Cloudforce One. *DDoS Threat Report 2026 Q3: More swarms, fewer giants*. Outubro de
+2026. https://blog.cloudflare.com/ddos-threat-report-2026-q3/
+
+[48] The Hacker News. *Cloudflare Reports 18.2 Million Network-Layer DDoS Attacks in Q3 2026, a 208%
+Increase*. Outubro de 2026. https://thehackernews.com/2026/10/cloudflare-reports-182-million-network.html
+(ver também CRN Asia. *DDoS attacks surge 208% as Indonesia ranks third globally*. 2026.
+https://www.crnasia.com/news/2026/cybersecurity/ddos-attacks-surge-208-as-indonesia-ranks-third-globally)
